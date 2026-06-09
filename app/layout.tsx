@@ -63,12 +63,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: siteConfig.twitter,
+    creator: siteConfig.twitter,
     title: `${siteConfig.name} | オーストラリアワーホリ完全ガイド`,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
   },
   verification: {
     google: "ezO1vZH7DGubzC9OdUF0Px4k8PDry3DX1v8D9T0LvWA",

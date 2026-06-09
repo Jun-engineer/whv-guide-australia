@@ -6,7 +6,7 @@
  * Falls back to the Vercel deployment URL when the variable is not set.
  */
 
-const FALLBACK_URL = "https://wh-guide-australia.vercel.app";
+const FALLBACK_URL = "https://whv-guide-australia.com";
 
 function resolveSiteUrl(): string {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL;
@@ -45,7 +45,8 @@ export const siteConfig = {
     "オーストラリア 生活",
   ],
   ogImage: "/opengraph-image",
-  twitter: "@wh_guide_au",
+  twitter: "@whv_guide_au",
+  adsenseClient: "ca-pub-5434162081070782",
 } as const;
 
 export function absoluteUrl(path = ""): string {

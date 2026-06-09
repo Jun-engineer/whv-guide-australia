@@ -1,0 +1,20 @@
+<svg width="440" height="120" viewBox="0 0 440 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WH Guide Australia">
+  <defs>
+    <linearGradient id="markBg" x1="12" y1="12" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0ea5e9"/>
+      <stop offset="0.55" stop-color="#0369a1"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <clipPath id="markRounded">
+      <rect x="12" y="12" width="96" height="96" rx="22"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#markRounded)">
+    <rect x="12" y="12" width="96" height="96" fill="url(#markBg)"/>
+    <circle cx="60" cy="52" r="16" fill="#fbbf24"/>
+    <path d="M6 84 L34 60 L51 74 L70 56 L88 73 L102 63 L116 76 L116 114 L6 114 Z" fill="#ffffff"/>
+    <path d="M6 91 L30 73 L48 86 L68 69 L87 84 L105 72 L116 83 L116 114 L6 114 Z" fill="#e2e8f0"/>
+  </g>
+  <text x="128" y="56" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="34" font-weight="800" fill="#0c4a6e">WH Guide</text>
+  <text x="129" y="84" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="5" fill="#0284c7">AUSTRALIA</text>
+</svg>
