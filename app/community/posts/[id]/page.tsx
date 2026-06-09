@@ -8,6 +8,7 @@ import { LikeButton } from "@/components/forum/LikeButton";
 import { AdBanner } from "@/components/ads/AdBanner";
 import { getCommentsByPostId, getForumPostById } from "@/lib/forum";
 import { canUserPost, getViewerProfile } from "@/lib/auth";
+import { absoluteUrl } from "@/lib/siteConfig";
 
 type PostPageProps = {
   params: Promise<{ id: string }>;
@@ -19,6 +20,15 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   return {
     title: post ? post.title : "投稿詳細",
     description: post ? post.body.slice(0, 80) : "掲示板投稿の詳細とコメント。",
+    alternates: {
+      canonical: `/community/posts/${id}`,
+    },
+    openGraph: {
+      type: "article",
+      title: post ? post.title : "投稿詳細",
+      description: post ? post.body.slice(0, 80) : "掲示板投稿の詳細とコメント。",
+      url: `/community/posts/${id}`,
+    },
   };
 }
 
@@ -38,8 +48,16 @@ export default async function CommunityPostPage({ params }: PostPageProps) {
     "@type": "DiscussionForumPosting",
     headline: post.title,
     text: post.body,
+    url: absoluteUrl(`/community/posts/${post.id}`),
     datePublished: post.createdAt,
+    inLanguage: "ja",
     author: { "@type": "Person", name: post.authorName },
+    interactionStatistic: {
+      "@type": "InteractionCounter",
+      interactionType: "https://schema.org/LikeAction",
+      userInteractionCount: post.likeCount,
+    },
+    commentCount: comments.length,
   };
 
   return (

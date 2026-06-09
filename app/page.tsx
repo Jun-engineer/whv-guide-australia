@@ -1,10 +1,18 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
 import { getFeaturedArticles } from "@/lib/articles";
 import { getLatestForumPosts } from "@/lib/forum";
 import { ArticleList } from "@/components/articles/ArticleList";
 import { PostCard } from "@/components/forum/PostCard";
 import { AdBanner } from "@/components/ads/AdBanner";
+import { siteConfig, absoluteUrl } from "@/lib/siteConfig";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   const featuredArticles = getFeaturedArticles(4);
@@ -13,10 +21,22 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "WH Guide Australia",
-    url: "https://wh-guide-australia.vercel.app",
-    description:
-      "オーストラリアワーホリ向けに、ビザ、渡航準備、現地生活、仕事探し、掲示板をまとめたガイドサイト。",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    inLanguage: "ja",
+    description: siteConfig.description,
+  };
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "人気のワーホリガイド記事",
+    itemListElement: featuredArticles.map((article, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: absoluteUrl(`/guides/${article.slug}`),
+      name: article.title,
+    })),
   };
 
   return (
@@ -24,6 +44,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
       <section className="bg-[radial-gradient(circle_at_top,_#0ea5e9,_#0369a1_45%,_#0f172a)] py-16 text-white">
         <Container className="space-y-5">

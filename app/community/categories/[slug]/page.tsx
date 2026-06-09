@@ -16,6 +16,15 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   return {
     title: category ? `掲示板: ${category.name}` : "掲示板カテゴリ",
     description: category?.description ?? "カテゴリ別の掲示板投稿一覧。",
+    alternates: {
+      canonical: `/community/categories/${slug}`,
+    },
+    openGraph: {
+      type: "website",
+      title: category ? `掲示板: ${category.name}` : "掲示板カテゴリ",
+      description: category?.description ?? "カテゴリ別の掲示板投稿一覧。",
+      url: `/community/categories/${slug}`,
+    },
   };
 }
 

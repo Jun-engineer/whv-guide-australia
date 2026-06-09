@@ -9,7 +9,8 @@ import { ArticleList } from "@/components/articles/ArticleList";
 import { ArticleAd } from "@/components/ads/ArticleAd";
 import { ShareButtons } from "@/components/common/ShareButtons";
 import { Container } from "@/components/layout/Container";
-import { getArticleBySlug, getRelatedArticles } from "@/lib/articles";
+import { getArticleBySlug, getRelatedArticles, getCategoryLabel } from "@/lib/articles";
+import { siteConfig, absoluteUrl } from "@/lib/siteConfig";
 
 type GuideDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -28,8 +29,22 @@ export async function generateMetadata({ params }: GuideDetailPageProps): Promis
   return {
     title: article.title,
     description: article.description,
+    keywords: [getCategoryLabel(article.category), "オーストラリア ワーホリ", article.title],
     alternates: {
       canonical: `/guides/${article.slug}`,
+    },
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.description,
+      url: absoluteUrl(`/guides/${article.slug}`),
+      modifiedTime: article.updatedAt,
+      siteName: siteConfig.name,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.description,
     },
   };
 }
@@ -51,7 +66,41 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
     description: article.description,
     dateModified: article.updatedAt,
     inLanguage: "ja",
-    mainEntityOfPage: `/guides/${article.slug}`,
+    mainEntityOfPage: absoluteUrl(`/guides/${article.slug}`),
+    image: absoluteUrl("/opengraph-image"),
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/opengraph-image"),
+      },
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "ホーム", item: siteConfig.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: getCategoryLabel(article.category),
+        item: absoluteUrl(`/${article.category}`),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: absoluteUrl(`/guides/${article.slug}`),
+      },
+    ],
   };
 
   return (
@@ -59,6 +108,10 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <ArticleHeader article={article} />
       <ShareButtons title={article.title} />
