@@ -12,6 +12,23 @@ export function getLatestForumPosts(limit = 5) {
   return forumPosts.filter((post) => !post.isHidden).slice(0, limit);
 }
 
+export function getAllForumPosts() {
+  return forumPosts.filter((post) => !post.isHidden);
+}
+
+export function searchForumPosts(query: string) {
+  const keyword = query.trim().toLowerCase();
+  if (!keyword) {
+    return getAllForumPosts();
+  }
+  return getAllForumPosts().filter(
+    (post) =>
+      post.title.toLowerCase().includes(keyword) ||
+      post.body.toLowerCase().includes(keyword) ||
+      post.authorName.toLowerCase().includes(keyword),
+  );
+}
+
 export function getForumPostById(postId: string) {
   return forumPosts.find((post) => post.id === postId && !post.isHidden);
 }

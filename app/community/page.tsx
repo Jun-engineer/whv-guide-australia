@@ -3,8 +3,9 @@ import { Container } from "@/components/layout/Container";
 import { CategoryCard } from "@/components/forum/CategoryCard";
 import { PostCard } from "@/components/forum/PostCard";
 import { PostForm } from "@/components/forum/PostForm";
+import { ForumSearch } from "@/components/forum/ForumSearch";
 import { AdBanner } from "@/components/ads/AdBanner";
-import { getForumCategories, getLatestForumPosts } from "@/lib/forum";
+import { getAllForumPosts, getForumCategories, getLatestForumPosts } from "@/lib/forum";
 import { canUserPost, getViewerProfile } from "@/lib/auth";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default async function CommunityPage() {
   const categories = getForumCategories();
   const latestPosts = getLatestForumPosts();
+  const allPosts = getAllForumPosts();
   const viewer = await getViewerProfile();
 
   return (
@@ -31,6 +33,11 @@ export default async function CommunityPage() {
       </section>
 
       <PostForm canPost={canUserPost(viewer)} viewer={viewer} />
+
+      <section className="space-y-4">
+        <h2 className="text-xl font-bold">投稿を検索</h2>
+        <ForumSearch posts={allPosts} />
+      </section>
 
       <section className="space-y-4">
         <h2 className="text-xl font-bold">最新投稿</h2>

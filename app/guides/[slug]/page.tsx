@@ -7,6 +7,7 @@ import { StepBlock } from "@/components/articles/StepBlock";
 import { WarningBox } from "@/components/articles/WarningBox";
 import { ArticleList } from "@/components/articles/ArticleList";
 import { ArticleAd } from "@/components/ads/ArticleAd";
+import { ShareButtons } from "@/components/common/ShareButtons";
 import { Container } from "@/components/layout/Container";
 import { getArticleBySlug, getRelatedArticles } from "@/lib/articles";
 
@@ -43,9 +44,24 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
 
   const relatedArticles = getRelatedArticles(article.relatedSlugs);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    dateModified: article.updatedAt,
+    inLanguage: "ja",
+    mainEntityOfPage: `/guides/${article.slug}`,
+  };
+
   return (
     <Container className="space-y-8 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <ArticleHeader article={article} />
+      <ShareButtons title={article.title} />
       <TableOfContents steps={article.steps} />
 
       <article className="space-y-5 rounded-2xl border border-slate-200 bg-white p-6">
