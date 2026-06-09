@@ -1,65 +1,118 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Container } from "@/components/layout/Container";
+import { getFeaturedArticles } from "@/lib/articles";
+import { getLatestForumPosts } from "@/lib/forum";
+import { ArticleList } from "@/components/articles/ArticleList";
+import { PostCard } from "@/components/forum/PostCard";
+import { AdBanner } from "@/components/ads/AdBanner";
 
 export default function Home() {
+  const featuredArticles = getFeaturedArticles(4);
+  const latestPosts = getLatestForumPosts(3);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "WH Guide Australia",
+    url: "https://wh-guide-australia.vercel.app",
+    description:
+      "オーストラリアワーホリ向けに、ビザ、渡航準備、現地生活、仕事探し、掲示板をまとめたガイドサイト。",
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="space-y-12 pb-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <section className="bg-[radial-gradient(circle_at_top,_#0ea5e9,_#0369a1_45%,_#0f172a)] py-16 text-white">
+        <Container className="space-y-5">
+          <p className="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-bold tracking-wide">
+            Working Holiday Starter
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <h1 className="max-w-3xl text-4xl font-black leading-tight sm:text-5xl">
+            オーストラリアワーホリを、迷わず進める。
+          </h1>
+          <p className="max-w-2xl text-sky-100">
+            ビザ申請から現地の家探し・仕事探しまで、必要な順番で学べる日本語ガイドです。
+          </p>
+          <Link
+            href="/preparation"
+            className="inline-block rounded-full bg-amber-300 px-5 py-3 font-bold text-slate-900"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+            まず何をすればいいか見る
+          </Link>
+        </Container>
+      </section>
+
+      <Container className="space-y-12">
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900">初心者向け導線</h2>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["/preparation", "渡航前"],
+              ["/arrival", "到着後"],
+              ["/jobs", "仕事探し"],
+              ["/second-visa", "セカンドビザ"],
+            ].map(([href, label]) => (
+              <Link
+                key={href}
+                href={href}
+                className="rounded-2xl border border-sky-100 bg-white p-4 text-center font-semibold text-sky-800"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-slate-900">人気記事</h2>
+          <ArticleList articles={featuredArticles} />
+        </section>
+
+        <AdBanner slotName="トップページ中段" />
+
+        <section className="grid gap-4 md:grid-cols-2">
+          <Link href="/farm" className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
+            <h3 className="text-xl font-bold text-emerald-900">ファームジョブ</h3>
+            <p className="mt-2 text-sm text-emerald-800">
+              セカンドビザに必要な88日間の探し方と、地域・職種の選び方を解説します。
+            </p>
+          </Link>
+          <Link href="/uber-eats" className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
+            <h3 className="text-xl font-bold text-amber-900">ギグワーク</h3>
+            <p className="mt-2 text-sm text-amber-800">
+              Uber EatsやDoorDashの始め方、ABN取得、税金の扱いまでまとめました。
+            </p>
+          </Link>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-slate-900">エリアガイド</h2>
+          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
+            {["Sydney", "Melbourne", "Brisbane", "Cairns", "Perth"].map((area) => (
+              <span
+                key={area}
+                className="rounded-2xl border border-slate-200 bg-white p-3 text-center text-sm font-semibold text-slate-700"
+              >
+                {area}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-slate-900">掲示板の最新投稿</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {latestPosts.map((post) => (
+              <PostCard key={post.id} post={post} />
+            ))}
+          </div>
+        </section>
+
+        <AdBanner slotName="トップページ下部" />
+      </Container>
     </div>
   );
 }

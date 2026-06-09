@@ -1,0 +1,34 @@
+export type ForumCategory = {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+};
+
+export type ForumPost = {
+  id: string;
+  categorySlug: string;
+  userId: string;
+  authorName: string;
+  title: string;
+  body: string;
+  isHidden: boolean;
+  likeCount: number;
+  createdAt: string;
+};
+
+export type ForumComment = {
+  id: string;
+  postId: string;
+  userId: string;
+  authorName: string;
+  body: string;
+  isHidden: boolean;
+  createdAt: string;
+};
+
+export type Like = {
+  id: string;
+  userId: string;
+  postId: string;
+};
