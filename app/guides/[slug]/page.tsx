@@ -9,12 +9,16 @@ import { ArticleList } from "@/components/articles/ArticleList";
 import { ArticleAd } from "@/components/ads/ArticleAd";
 import { ShareButtons } from "@/components/common/ShareButtons";
 import { Container } from "@/components/layout/Container";
-import { getArticleBySlug, getRelatedArticles, getCategoryLabel } from "@/lib/articles";
+import { getArticleBySlug, getRelatedArticles, getCategoryLabel, getAllArticles } from "@/lib/articles";
 import { siteConfig, absoluteUrl } from "@/lib/siteConfig";
 
 type GuideDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export function generateStaticParams() {
+  return getAllArticles().map((article) => ({ slug: article.slug }));
+}
 
 export async function generateMetadata({ params }: GuideDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
