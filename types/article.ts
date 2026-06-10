@@ -7,7 +7,10 @@ export type ArticleCategory =
   | "super"
   | "tax-return"
   | "bank"
+  | "money"
   | "sim"
+  | "transport"
+  | "license"
   | "housing"
   | "jobs"
   | "farm"
@@ -23,6 +26,21 @@ export type ArticleStep = {
   description: string;
 };
 
+export type ArticleFaq = {
+  question: string;
+  answer: string;
+};
+
+export type ArticleFact = {
+  label: string;
+  value: string;
+};
+
+export type ArticleLink = {
+  label: string;
+  url: string;
+};
+
 export type Article = {
   id: string;
   title: string;
@@ -31,6 +49,10 @@ export type Article = {
   description: string;
   content: string[];
   steps: ArticleStep[];
+  keyFacts?: ArticleFact[];
+  tips?: string[];
+  faqs?: ArticleFaq[];
+  sources?: ArticleLink[];
   warnings?: string[];
   relatedSlugs: string[];
   updatedAt: string;

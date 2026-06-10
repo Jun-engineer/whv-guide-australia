@@ -95,6 +95,44 @@ export default function Home() {
           <ArticleList articles={featuredArticles} />
         </section>
 
+        <section className="space-y-4">
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900">お金・生活インフラ</h2>
+            <p className="mt-1 text-sm text-slate-600">
+              現金を持ち歩かなくても大丈夫。両替・送金から決済・交通までスマートに。
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            <Link
+              href="/money"
+              className="rounded-2xl border border-sky-200 bg-sky-50 p-6 transition hover:border-sky-300"
+            >
+              <h3 className="text-lg font-bold text-sky-900">送金・両替（Wise）</h3>
+              <p className="mt-2 text-sm text-sky-800">
+                日本円→豪ドルはWiseが有利。マルチカレンシー口座とデビットで現金いらず。
+              </p>
+            </Link>
+            <Link
+              href="/transport"
+              className="rounded-2xl border border-sky-200 bg-sky-50 p-6 transition hover:border-sky-300"
+            >
+              <h3 className="text-lg font-bold text-sky-900">交通・決済</h3>
+              <p className="mt-2 text-sm text-sky-800">
+                OpalやmykiもOK。クレカ/スマホのタッチ決済でそのまま乗車できます。
+              </p>
+            </Link>
+            <Link
+              href="/bank"
+              className="rounded-2xl border border-sky-200 bg-sky-50 p-6 transition hover:border-sky-300"
+            >
+              <h3 className="text-lg font-bold text-sky-900">銀行口座・運転免許</h3>
+              <p className="mt-2 text-sm text-sky-800">
+                渡航前の口座開設、TFN登録、国際免許や現地免許への切り替えまで。
+              </p>
+            </Link>
+          </div>
+        </section>
+
         <AdBanner slotName="トップページ中段" />
 
         <section className="grid gap-4 md:grid-cols-2">

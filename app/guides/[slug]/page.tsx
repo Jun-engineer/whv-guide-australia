@@ -6,6 +6,10 @@ import { TableOfContents } from "@/components/articles/TableOfContents";
 import { StepBlock } from "@/components/articles/StepBlock";
 import { WarningBox } from "@/components/articles/WarningBox";
 import { ArticleList } from "@/components/articles/ArticleList";
+import { KeyFacts } from "@/components/articles/KeyFacts";
+import { TipsBox } from "@/components/articles/TipsBox";
+import { FaqList } from "@/components/articles/FaqList";
+import { SourceLinks } from "@/components/articles/SourceLinks";
 import { ArticleAd } from "@/components/ads/ArticleAd";
 import { ShareButtons } from "@/components/common/ShareButtons";
 import { Container } from "@/components/layout/Container";
@@ -107,6 +111,22 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
     ],
   };
 
+  const faqJsonLd =
+    article.faqs && article.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: article.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }
+      : null;
+
   return (
     <Container className="space-y-8 py-10">
       <script
@@ -117,13 +137,24 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      ) : null}
       <ArticleHeader article={article} />
       <ShareButtons title={article.title} />
+
+      {article.keyFacts && article.keyFacts.length > 0 ? (
+        <KeyFacts facts={article.keyFacts} />
+      ) : null}
+
       <TableOfContents steps={article.steps} />
 
       <article className="space-y-5 rounded-2xl border border-slate-200 bg-white p-6">
         {article.content.map((paragraph) => (
-          <p key={paragraph} className="text-slate-700">
+          <p key={paragraph} className="leading-relaxed text-slate-700">
             {paragraph}
           </p>
         ))}
@@ -135,8 +166,16 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
         ))}
       </section>
 
+      {article.tips && article.tips.length > 0 ? <TipsBox tips={article.tips} /> : null}
+
       <WarningBox items={article.warnings ?? []} />
       <ArticleAd />
+
+      {article.faqs && article.faqs.length > 0 ? <FaqList faqs={article.faqs} /> : null}
+
+      {article.sources && article.sources.length > 0 ? (
+        <SourceLinks sources={article.sources} />
+      ) : null}
 
       <section className="space-y-4">
         <div className="flex items-center justify-between">
