@@ -76,6 +76,7 @@ export default async function CommunityPostPage({ params }: PostPageProps) {
           <div className="flex items-center gap-2">
             <LikeButton initialCount={post.likeCount} disabled={!canPost} />
             <ReportButton targetType="post" targetId={post.id} />
+            <ReportButton targetType="user" targetId={post.userId} label="ユーザーを通報" />
           </div>
         </div>
       </article>

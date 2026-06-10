@@ -7,6 +7,12 @@ const statusLabel: Record<Report["status"], string> = {
   rejected: "却下",
 };
 
+const targetTypeLabel: Record<Report["targetType"], string> = {
+  post: "投稿",
+  comment: "コメント",
+  user: "ユーザー",
+};
+
 export function ReportTable({ reports }: { reports: Report[] }) {
   if (reports.length === 0) {
     return <p className="text-sm text-slate-600">通報はありません。</p>;
@@ -28,7 +34,7 @@ export function ReportTable({ reports }: { reports: Report[] }) {
           {reports.map((report) => (
             <tr key={report.id} className="border-t border-slate-100">
               <td className="px-4 py-3">
-                {report.targetType} / {report.targetId}
+                {targetTypeLabel[report.targetType]} / {report.targetId}
               </td>
               <td className="px-4 py-3">{report.reason}</td>
               <td className="px-4 py-3">{report.reporterName}</td>

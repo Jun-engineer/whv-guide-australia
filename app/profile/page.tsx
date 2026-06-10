@@ -15,7 +15,9 @@ export default async function ProfilePage() {
     <Container className="py-10">
       <div className="mx-auto max-w-xl space-y-4">
         <h1 className="text-3xl font-extrabold">プロフィール</h1>
-        <p className="text-sm text-slate-600">Supabaseのprofilesテーブルと連携して表示できます。</p>
+        <p className="text-sm text-slate-600">
+          ログイン中のアカウント情報と、掲示板での権限・利用ステータスを確認できます。
+        </p>
         <UserMenu viewer={viewer} />
       </div>
     </Container>

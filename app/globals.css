@@ -22,3 +22,16 @@ body {
 a {
   text-decoration: none;
 }
+
+/* Tailwind v4 ではボタン要素のデフォルトカーソルが pointer ではなくなったため復元する */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+label[for],
+summary {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}

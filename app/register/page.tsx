@@ -12,7 +12,9 @@ export default function RegisterPage() {
     <Container className="py-10">
       <div className="mx-auto max-w-lg space-y-4">
         <h1 className="text-3xl font-extrabold">新規登録</h1>
-        <p className="text-sm text-slate-600">登録後にメール認証を行うと投稿機能が利用できます。</p>
+        <p className="text-sm text-slate-600">
+          メール認証と電話番号（SMS）認証により、安心して使えるコミュニティを保っています。
+        </p>
         <RegisterForm />
       </div>
     </Container>
