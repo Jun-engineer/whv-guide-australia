@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { REPORT_REASONS, type ReportTargetType } from "@/types/report";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
+import { sendNotification } from "@/lib/notify";
 
 type ReportButtonProps = {
   targetType: ReportTargetType;
@@ -35,6 +36,12 @@ export function ReportButton({ targetType, targetId, label }: ReportButtonProps)
 
     if (!hasSupabaseEnv || !supabase) {
       // 環境未設定でも操作確認できるようにフィードバックを返す
+      await sendNotification({
+        kind: "report",
+        targetType,
+        targetId,
+        reason: combinedReason,
+      });
       setStatus("done");
       setMessage("通報を受け付けました。運営が確認します。ご協力ありがとうございます。");
       return;
@@ -57,6 +64,13 @@ export function ReportButton({ targetType, targetId, label }: ReportButtonProps)
       setMessage("送信に失敗しました。時間をおいて再度お試しください。");
       return;
     }
+
+    await sendNotification({
+      kind: "report",
+      targetType,
+      targetId,
+      reason: combinedReason,
+    });
 
     setStatus("done");
     setMessage("通報を受け付けました。運営が確認します。ご協力ありがとうございます。");

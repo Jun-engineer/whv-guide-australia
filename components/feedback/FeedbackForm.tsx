@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { feedbackSchema, type FeedbackInput } from "@/lib/validations";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
+import { sendNotification } from "@/lib/notify";
 
 const feedbackTypeOptions: Array<{ value: FeedbackInput["type"]; label: string }> = [
   { value: "correction", label: "情報の修正依頼" },
@@ -41,6 +42,14 @@ export function FeedbackForm() {
         return;
       }
     }
+
+    await sendNotification({
+      kind: "feedback",
+      type: values.type,
+      title: values.title,
+      body: values.body,
+      pageUrl: values.pageUrl || undefined,
+    });
 
     setSubmitted(true);
     setServerMessage("送信しました。ご協力ありがとうございます。");
