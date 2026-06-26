@@ -24,6 +24,32 @@ export const otpSchema = z.object({
 });
 export type OtpInput = z.infer<typeof otpSchema>;
 
+export const emailChangeSchema = z.object({
+  email: z.string().email("有効なメールアドレスを入力してください。"),
+});
+export type EmailChangeInput = z.infer<typeof emailChangeSchema>;
+
+export const passwordChangeSchema = z
+  .object({
+    password: z.string().min(8, "パスワードは8文字以上にしてください。"),
+    confirm: z.string().min(8, "確認用パスワードを入力してください。"),
+  })
+  .refine((values) => values.password === values.confirm, {
+    message: "パスワードが一致しません。",
+    path: ["confirm"],
+  });
+export type PasswordChangeInput = z.infer<typeof passwordChangeSchema>;
+
+export const phoneChangeSchema = z.object({
+  phone: z
+    .string()
+    .regex(
+      /^\+[1-9]\d{7,14}$/,
+      "国番号付きの形式で入力してください（例: 日本 +819012345678 / 豪州 +61412345678）。",
+    ),
+});
+export type PhoneChangeInput = z.infer<typeof phoneChangeSchema>;
+
 export const feedbackSchema = z.object({
   type: z.enum(["correction", "article_request", "experience", "question", "other"]),
   pageUrl: z

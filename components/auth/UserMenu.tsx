@@ -51,6 +51,8 @@ export function UserMenu() {
 
   const email = session?.user?.email;
   const phoneVerified = Boolean(session?.user?.phone);
+  const isStaff = profile.role === "moderator" || profile.role === "admin";
+  const showStatus = profile.status !== "active";
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-5">
@@ -59,19 +61,25 @@ export function UserMenu() {
       {email ? <p className="mt-1 text-sm text-slate-600">{email}</p> : null}
       <dl className="mt-3 grid grid-cols-2 gap-2 text-sm">
         <div>
-          <dt className="text-slate-500">権限</dt>
-          <dd className="font-medium text-slate-800">{roleLabel[profile.role] ?? profile.role}</dd>
-        </div>
-        <div>
-          <dt className="text-slate-500">利用ステータス</dt>
-          <dd className="font-medium text-slate-800">
-            {statusLabel[profile.status] ?? profile.status}
-          </dd>
-        </div>
-        <div>
           <dt className="text-slate-500">電話番号認証</dt>
           <dd className="font-medium text-slate-800">{phoneVerified ? "認証済み" : "未認証"}</dd>
         </div>
+        {isStaff ? (
+          <div>
+            <dt className="text-slate-500">権限</dt>
+            <dd className="font-medium text-slate-800">
+              {roleLabel[profile.role] ?? profile.role}
+            </dd>
+          </div>
+        ) : null}
+        {showStatus ? (
+          <div>
+            <dt className="text-slate-500">利用ステータス</dt>
+            <dd className="font-medium text-rose-700">
+              {statusLabel[profile.status] ?? profile.status}
+            </dd>
+          </div>
+        ) : null}
       </dl>
       <div className="mt-4 flex gap-2 text-sm">
         <button
