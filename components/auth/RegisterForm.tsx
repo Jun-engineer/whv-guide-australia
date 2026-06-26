@@ -37,10 +37,21 @@ export function RegisterForm() {
       return;
     }
 
+    // BAN済みの電話番号での再登録をブロック
+    const { data: banned } = await supabase.rpc("is_phone_banned", {
+      check_phone: values.phone,
+    });
+    if (banned === true) {
+      setMessage("この電話番号は利用できません。サポートが必要な場合はお問い合わせください。");
+      return;
+    }
+
     const { data, error } = await supabase.auth.signUp({
       email: values.email,
       password: values.password,
       options: {
+        emailRedirectTo:
+          typeof window !== "undefined" ? `${window.location.origin}/auth/callback` : undefined,
         data: {
           display_name: values.displayName,
           phone: values.phone,

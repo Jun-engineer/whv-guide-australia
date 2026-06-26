@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Logo } from "@/components/layout/Logo";
+import { HeaderAuth } from "@/components/layout/HeaderAuth";
 
 const navItems = [
   { href: "/visa", label: "ビザ" },
@@ -25,12 +26,7 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2 text-sm">
-          <Link href="/login" className="rounded-full border border-sky-200 px-3 py-1 text-sky-700">
-            ログイン
-          </Link>
-          <Link href="/profile" className="rounded-full bg-sky-600 px-3 py-1 text-white">
-            プロフィール
-          </Link>
+          <HeaderAuth />
         </div>
       </Container>
     </header>

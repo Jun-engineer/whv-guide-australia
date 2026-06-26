@@ -7,7 +7,6 @@ import { ReportButton } from "@/components/forum/ReportButton";
 import { LikeButton } from "@/components/forum/LikeButton";
 import { AdBanner } from "@/components/ads/AdBanner";
 import { getCommentsByPostId, getForumPostById } from "@/lib/forum";
-import { canUserPost, getViewerProfile } from "@/lib/auth";
 import { absoluteUrl } from "@/lib/siteConfig";
 
 type PostPageProps = {
@@ -40,8 +39,6 @@ export default async function CommunityPostPage({ params }: PostPageProps) {
   }
 
   const comments = getCommentsByPostId(post.id);
-  const viewer = await getViewerProfile();
-  const canPost = canUserPost(viewer);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -74,14 +71,14 @@ export default async function CommunityPostPage({ params }: PostPageProps) {
             {post.authorName} / {post.createdAt}
           </span>
           <div className="flex items-center gap-2">
-            <LikeButton initialCount={post.likeCount} disabled={!canPost} />
+            <LikeButton postId={post.id} initialCount={post.likeCount} />
             <ReportButton targetType="post" targetId={post.id} />
             <ReportButton targetType="user" targetId={post.userId} label="ユーザーを通報" />
           </div>
         </div>
       </article>
 
-      <CommentForm canPost={canPost} viewer={viewer} />
+      <CommentForm postId={post.id} />
 
       <section className="space-y-3">
         <h2 className="text-xl font-bold">コメント</h2>

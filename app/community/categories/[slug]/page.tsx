@@ -4,7 +4,6 @@ import { Container } from "@/components/layout/Container";
 import { PostCard } from "@/components/forum/PostCard";
 import { PostForm } from "@/components/forum/PostForm";
 import { getForumCategories, getForumPostsByCategory } from "@/lib/forum";
-import { canUserPost, getViewerProfile } from "@/lib/auth";
 
 type CategoryPageProps = {
   params: Promise<{ slug: string }>;
@@ -37,7 +36,6 @@ export default async function CommunityCategoryPage({ params }: CategoryPageProp
   }
 
   const posts = getForumPostsByCategory(slug);
-  const viewer = await getViewerProfile();
 
   return (
     <Container className="space-y-8 py-10">
@@ -46,7 +44,7 @@ export default async function CommunityCategoryPage({ params }: CategoryPageProp
         <p className="mt-2 text-slate-600">{category.description}</p>
       </section>
 
-      <PostForm canPost={canUserPost(viewer)} viewer={viewer} />
+      <PostForm categoryId={category.id} />
 
       <section className="space-y-4">
         {posts.length === 0 ? (

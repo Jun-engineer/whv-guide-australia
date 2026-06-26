@@ -1,25 +1,28 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { AdminGuard } from "@/components/admin/AdminGuard";
-import { getViewerProfile } from "@/lib/auth";
-import { isModerator, getPendingReportCount } from "@/lib/moderation";
-import { getPendingFeedbackCount } from "@/lib/feedback";
+import { AdminGate } from "@/components/admin/AdminGate";
+import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
 
-export const metadata: Metadata = {
-  title: "管理ダッシュボード",
-  robots: { index: false, follow: false },
-};
+function usePendingCount(table: string) {
+  const hasDb = hasSupabaseEnv && Boolean(supabase);
+  const [count, setCount] = useState<number | null>(hasDb ? null : 0);
+  useEffect(() => {
+    if (!hasDb || !supabase) return;
+    supabase
+      .from(table)
+      .select("id", { count: "exact", head: true })
+      .eq("status", "pending")
+      .then(({ count: c }) => setCount(c ?? 0));
+  }, [table, hasDb]);
+  return count;
+}
 
-export default async function AdminPage() {
-  const viewer = await getViewerProfile();
-
-  if (!isModerator(viewer)) {
-    return <AdminGuard message="このページは管理者・モデレーターのみアクセスできます。" />;
-  }
-
-  const pendingReports = getPendingReportCount();
-  const pendingFeedback = getPendingFeedbackCount();
+function Dashboard() {
+  const reportCount = usePendingCount("reports");
+  const feedbackCount = usePendingCount("feedback_requests");
 
   return (
     <Container className="space-y-8 py-10">
@@ -27,13 +30,21 @@ export default async function AdminPage() {
       <div className="grid gap-4 sm:grid-cols-2">
         <Link href="/admin/reports" className="rounded-2xl border border-slate-200 bg-white p-6">
           <p className="text-sm text-slate-500">未対応の通報</p>
-          <p className="mt-2 text-3xl font-bold text-rose-700">{pendingReports}</p>
+          <p className="mt-2 text-3xl font-bold text-rose-700">{reportCount ?? "—"}</p>
         </Link>
         <Link href="/admin/requests" className="rounded-2xl border border-slate-200 bg-white p-6">
           <p className="text-sm text-slate-500">未対応のリクエスト</p>
-          <p className="mt-2 text-3xl font-bold text-sky-700">{pendingFeedback}</p>
+          <p className="mt-2 text-3xl font-bold text-sky-700">{feedbackCount ?? "—"}</p>
         </Link>
       </div>
     </Container>
+  );
+}
+
+export default function AdminPage() {
+  return (
+    <AdminGate>
+      <Dashboard />
+    </AdminGate>
   );
 }

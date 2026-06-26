@@ -1,24 +1,60 @@
 "use client";
 
 import { useState } from "react";
-import type { Profile } from "@/types/user";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/components/auth/AuthProvider";
+import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
 
 type CommentFormProps = {
-  canPost: boolean;
-  viewer: Profile;
+  postId: string;
 };
 
-export function CommentForm({ canPost, viewer }: CommentFormProps) {
+export function CommentForm({ postId }: CommentFormProps) {
+  const { isLoggedIn, profile } = useAuth();
+  const router = useRouter();
   const [body, setBody] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  const banned = profile?.status === "banned";
+  const canPost = isLoggedIn && !banned;
+
+  async function onSubmit() {
+    if (!canPost || !hasSupabaseEnv || !supabase || !profile) {
+      setMessage("コメントにはログインが必要です。");
+      return;
+    }
+    setSubmitting(true);
+    setMessage("");
+    const { error } = await supabase.from("forum_comments").insert({
+      post_id: postId,
+      user_id: profile.id,
+      body,
+    });
+    if (error) {
+      setMessage(
+        "コメントを保存できませんでした。デモ投稿には保存できません（掲示板データのDB移行後に有効になります）。",
+      );
+    } else {
+      setBody("");
+      setMessage("コメントを投稿しました。");
+      router.refresh();
+    }
+    setSubmitting(false);
+  }
 
   return (
-    <form className="rounded-2xl border border-slate-200 bg-white p-4">
+    <form
+      className="rounded-2xl border border-slate-200 bg-white p-4"
+      onSubmit={(event) => {
+        event.preventDefault();
+        void onSubmit();
+      }}
+    >
       <h3 className="text-lg font-semibold text-slate-900">コメント投稿</h3>
       {!canPost ? (
         <p className="mt-2 text-sm text-rose-700">
-          {viewer.status === "banned"
-            ? "BAN中のユーザーはコメントできません。"
-            : "コメントにはログインが必要です。"}
+          {banned ? "BAN中のユーザーはコメントできません。" : "コメントにはログインが必要です。"}
         </p>
       ) : null}
       <textarea
@@ -28,12 +64,13 @@ export function CommentForm({ canPost, viewer }: CommentFormProps) {
         className="mt-3 h-28 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
         disabled={!canPost}
       />
+      {message ? <p className="mt-2 text-sm text-slate-600">{message}</p> : null}
       <button
-        type="button"
-        disabled={!canPost || body.length === 0}
+        type="submit"
+        disabled={!canPost || body.length === 0 || submitting}
         className="mt-3 rounded-full bg-sky-700 px-4 py-2 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:bg-slate-300"
       >
-        コメントする (MVPデモ)
+        {submitting ? "送信中…" : "コメントする"}
       </button>
     </form>
   );

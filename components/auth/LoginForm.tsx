@@ -1,14 +1,26 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, type LoginInput } from "@/lib/validations";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
 
+function resolveRedirectTarget(): string {
+  if (typeof window === "undefined") return "/";
+  const param = new URLSearchParams(window.location.search).get("redirect");
+  // オープンリダイレクト防止: 同一サイト内の絶対パスのみ許可
+  if (param && param.startsWith("/") && !param.startsWith("//")) {
+    return param;
+  }
+  return "/";
+}
+
 export function LoginForm() {
   const [message, setMessage] = useState("");
+  const router = useRouter();
 
   const {
     register,
@@ -23,7 +35,14 @@ export function LoginForm() {
     }
 
     const { error } = await supabase.auth.signInWithPassword(values);
-    setMessage(error ? error.message : "ログイン成功");
+    if (error) {
+      setMessage(error.message);
+      return;
+    }
+    setMessage("ログインしました。ページを移動します…");
+    const target = resolveRedirectTarget();
+    router.push(target);
+    router.refresh();
   }
 
   async function handleGoogleLogin() {
@@ -32,10 +51,14 @@ export function LoginForm() {
       return;
     }
 
+    const redirectBack = resolveRedirectTarget();
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: typeof window !== "undefined" ? `${window.location.origin}/profile` : undefined,
+        redirectTo:
+          typeof window !== "undefined"
+            ? `${window.location.origin}/auth/callback?redirect=${encodeURIComponent(redirectBack)}`
+            : undefined,
       },
     });
     if (error) {

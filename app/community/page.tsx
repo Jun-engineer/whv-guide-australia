@@ -6,18 +6,16 @@ import { PostForm } from "@/components/forum/PostForm";
 import { ForumSearch } from "@/components/forum/ForumSearch";
 import { AdBanner } from "@/components/ads/AdBanner";
 import { getAllForumPosts, getForumCategories, getLatestForumPosts } from "@/lib/forum";
-import { canUserPost, getViewerProfile } from "@/lib/auth";
 
 export const metadata: Metadata = {
   title: "掲示板",
   description: "家探し、仕事探し、生活相談のコミュニティ掲示板。",
 };
 
-export default async function CommunityPage() {
+export default function CommunityPage() {
   const categories = getForumCategories();
   const latestPosts = getLatestForumPosts();
   const allPosts = getAllForumPosts();
-  const viewer = await getViewerProfile();
 
   return (
     <Container className="space-y-8 py-10">
@@ -32,7 +30,7 @@ export default async function CommunityPage() {
         ))}
       </section>
 
-      <PostForm canPost={canUserPost(viewer)} viewer={viewer} />
+      <PostForm />
 
       <section className="space-y-4">
         <h2 className="text-xl font-bold">投稿を検索</h2>

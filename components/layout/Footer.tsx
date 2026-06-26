@@ -12,6 +12,7 @@ export function Footer() {
         </div>
         <Link href="/privacy">Privacy Policy</Link>
         <Link href="/terms">Terms</Link>
+        <Link href="/about">運営者情報</Link>
         <Link href="/request">Contact / Request</Link>
         <p>Copyright {new Date().getFullYear()} WH Guide Australia</p>
       </Container>
