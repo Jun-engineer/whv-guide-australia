@@ -2,6 +2,7 @@
 
 import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import type { EmailOtpType } from "@supabase/supabase-js";
 import { Container } from "@/components/layout/Container";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
 
@@ -10,6 +11,21 @@ function safeRedirect(value: string | null): string {
     return value;
   }
   return "/";
+}
+
+const EMAIL_OTP_TYPES: EmailOtpType[] = [
+  "signup",
+  "invite",
+  "magiclink",
+  "recovery",
+  "email_change",
+  "email",
+];
+
+function asEmailOtpType(value: string | null): EmailOtpType {
+  return EMAIL_OTP_TYPES.includes(value as EmailOtpType)
+    ? (value as EmailOtpType)
+    : "email";
 }
 
 function CallbackInner() {
@@ -29,6 +45,8 @@ function CallbackInner() {
       }
 
       const target = safeRedirect(searchParams.get("redirect"));
+      const tokenHash = searchParams.get("token_hash");
+      const type = searchParams.get("type");
       const code = searchParams.get("code");
       const errorDescription = searchParams.get("error_description");
 
@@ -39,11 +57,24 @@ function CallbackInner() {
       }
 
       try {
-        // PKCE / メール確認: URLの code をセッションに交換
-        if (code) {
-          const { error } = await supabase.auth.exchangeCodeForSession(code);
+        // 推奨: token_hash 方式。code verifier が不要なため別ブラウザ/端末でも確認できる
+        if (tokenHash) {
+          const { error } = await supabase.auth.verifyOtp({
+            type: asEmailOtpType(type),
+            token_hash: tokenHash,
+          });
           if (error) {
             setMessage(`認証に失敗しました: ${error.message}`);
+            setFailed(true);
+            return;
+          }
+        } else if (code) {
+          // PKCE 方式（主に同一ブラウザでのOAuth/メール確認）
+          const { error } = await supabase.auth.exchangeCodeForSession(code);
+          if (error) {
+            setMessage(
+              "認証リンクの確認に失敗しました。リンクは登録に使用したブラウザで開く必要があります。お手数ですが、ログイン画面からログインをお試しください。",
+            );
             setFailed(true);
             return;
           }
