@@ -793,6 +793,7 @@ export const forumCategories: ForumCategory[] = [
   { id: "c10", name: "売ります・買います", slug: "buy-sell", description: "不用品の売買" },
   { id: "c11", name: "旅行", slug: "travel", description: "国内旅行や観光情報" },
   { id: "c12", name: "雑談", slug: "general", description: "自由な雑談スペース" },
+  { id: "c13", name: "その他", slug: "other", description: "どのジャンルにも当てはまらない投稿" },
 ];
 
 export const forumPosts: ForumPost[] = [

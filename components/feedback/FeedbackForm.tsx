@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { feedbackSchema, type FeedbackInput } from "@/lib/validations";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
 import { sendNotification } from "@/lib/notify";
 
@@ -16,6 +17,7 @@ const feedbackTypeOptions: Array<{ value: FeedbackInput["type"]; label: string }
 ];
 
 export function FeedbackForm() {
+  const { session } = useAuth();
   const [submitted, setSubmitted] = useState(false);
   const [serverMessage, setServerMessage] = useState("");
 
@@ -32,6 +34,7 @@ export function FeedbackForm() {
   async function onSubmit(values: FeedbackInput) {
     if (hasSupabaseEnv && supabase) {
       const { error } = await supabase.from("feedback_requests").insert({
+        user_id: session?.user?.id ?? null,
         type: values.type,
         page_url: values.pageUrl || null,
         title: values.title,
