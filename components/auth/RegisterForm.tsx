@@ -11,6 +11,7 @@ import {
   type OtpInput,
 } from "@/lib/validations";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
+import { PasswordInput } from "@/components/ui/PasswordInput";
 
 type Step = "form" | "verify" | "done";
 
@@ -197,13 +198,24 @@ export function RegisterForm() {
       </label>
       <label className="block text-sm text-slate-700">
         Password
-        <input
-          type="password"
+        <PasswordInput
+          autoComplete="new-password"
+          invalid={Boolean(errors.password)}
           {...register("password")}
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
         />
         {errors.password ? (
           <span className="text-xs text-rose-700">{errors.password.message}</span>
+        ) : null}
+      </label>
+      <label className="block text-sm text-slate-700">
+        Password（確認）
+        <PasswordInput
+          autoComplete="new-password"
+          invalid={Boolean(errors.confirmPassword)}
+          {...register("confirmPassword")}
+        />
+        {errors.confirmPassword ? (
+          <span className="text-xs text-rose-700">{errors.confirmPassword.message}</span>
         ) : null}
       </label>
       <button

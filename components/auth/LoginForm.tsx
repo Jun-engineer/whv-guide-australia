@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, type LoginInput } from "@/lib/validations";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
+import { PasswordInput } from "@/components/ui/PasswordInput";
 
 function resolveRedirectTarget(): string {
   if (typeof window === "undefined") return "/";
@@ -110,10 +111,10 @@ export function LoginForm() {
       </label>
       <label className="block text-sm text-slate-700">
         Password
-        <input
-          type="password"
+        <PasswordInput
+          autoComplete="current-password"
+          invalid={Boolean(errors.password)}
           {...register("password")}
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
         />
         {errors.password ? (
           <span className="text-xs text-rose-700">{errors.password.message}</span>
@@ -153,6 +154,14 @@ export function LoginForm() {
       </button>
       {message ? <p className="text-sm text-slate-600">{message}</p> : null}
       <p className="pt-1 text-center text-sm text-slate-600">
+        <Link
+          href="/forgot-password"
+          className="font-semibold text-sky-700 underline hover:text-sky-800"
+        >
+          パスワードをお忘れですか？
+        </Link>
+      </p>
+      <p className="text-center text-sm text-slate-600">
         アカウントをお持ちでない方は{" "}
         <Link href="/register" className="font-semibold text-sky-700 underline hover:text-sky-800">
           新規登録はこちら

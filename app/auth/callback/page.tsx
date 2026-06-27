@@ -88,6 +88,13 @@ function CallbackInner() {
         if (!active) return;
 
         if (session) {
+          // パスワード再設定（recovery）は電話認証ゲートをスキップして再設定ページへ
+          if (type === "recovery") {
+            setMessage("確認できました。新しいパスワードを設定してください…");
+            router.replace(target);
+            router.refresh();
+            return;
+          }
           // メール認証は完了。電話番号が未認証なら電話認証へ誘導する
           const user = session.user;
           const phoneVerified = Boolean(user.phone_confirmed_at || user.phone);

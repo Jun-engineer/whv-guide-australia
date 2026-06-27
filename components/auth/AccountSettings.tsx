@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { PhoneVerification } from "@/components/auth/PhoneVerification";
+import { PasswordInput } from "@/components/ui/PasswordInput";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
 import {
   emailChangeSchema,
@@ -112,10 +113,10 @@ function PasswordChange() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-3" noValidate>
       <label className="block text-sm text-slate-700">
         新しいパスワード
-        <input
-          type="password"
+        <PasswordInput
+          autoComplete="new-password"
+          invalid={Boolean(errors.password)}
           {...register("password")}
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
         />
         {errors.password ? (
           <span className="text-xs text-rose-700">{errors.password.message}</span>
@@ -123,10 +124,10 @@ function PasswordChange() {
       </label>
       <label className="block text-sm text-slate-700">
         新しいパスワード（確認）
-        <input
-          type="password"
+        <PasswordInput
+          autoComplete="new-password"
+          invalid={Boolean(errors.confirm)}
           {...register("confirm")}
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
         />
         {errors.confirm ? (
           <span className="text-xs text-rose-700">{errors.confirm.message}</span>
@@ -206,11 +207,10 @@ function DeleteAccount() {
       </p>
       <label className="block text-sm text-slate-700">
         確認のため現在のパスワードを入力してください
-        <input
-          type="password"
+        <PasswordInput
+          autoComplete="current-password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
         />
       </label>
       <label className="block text-sm text-slate-700">

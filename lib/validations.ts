@@ -6,17 +6,23 @@ export const loginSchema = z.object({
 });
 export type LoginInput = z.infer<typeof loginSchema>;
 
-export const registerSchema = z.object({
-  displayName: z.string().min(2, "表示名は2文字以上にしてください。"),
-  email: z.string().email("有効なメールアドレスを入力してください。"),
-  phone: z
-    .string()
-    .regex(
-      /^\+[1-9]\d{7,14}$/,
-      "国番号付きの形式で入力してください（例: 日本 +819012345678 / 豪州 +61412345678）。",
-    ),
-  password: z.string().min(8, "パスワードは8文字以上にしてください。"),
-});
+export const registerSchema = z
+  .object({
+    displayName: z.string().min(2, "表示名は2文字以上にしてください。"),
+    email: z.string().email("有効なメールアドレスを入力してください。"),
+    phone: z
+      .string()
+      .regex(
+        /^\+[1-9]\d{7,14}$/,
+        "国番号付きの形式で入力してください（例: 日本 +819012345678 / 豪州 +61412345678）。",
+      ),
+    password: z.string().min(8, "パスワードは8文字以上にしてください。"),
+    confirmPassword: z.string().min(8, "確認用パスワードを入力してください。"),
+  })
+  .refine((values) => values.password === values.confirmPassword, {
+    message: "パスワードが一致しません。",
+    path: ["confirmPassword"],
+  });
 export type RegisterInput = z.infer<typeof registerSchema>;
 
 export const otpSchema = z.object({
