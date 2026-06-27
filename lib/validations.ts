@@ -35,6 +35,18 @@ export const emailChangeSchema = z.object({
 });
 export type EmailChangeInput = z.infer<typeof emailChangeSchema>;
 
+export const displayNameSchema = z.object({
+  displayName: z
+    .string()
+    .trim()
+    .min(2, "表示名は2文字以上にしてください。")
+    .max(30, "表示名は30文字以内にしてください。")
+    .refine((value) => !/@/.test(value), {
+      message: "表示名にメールアドレス（@）は使用できません。",
+    }),
+});
+export type DisplayNameInput = z.infer<typeof displayNameSchema>;
+
 export const passwordChangeSchema = z
   .object({
     password: z.string().min(8, "パスワードは8文字以上にしてください。"),

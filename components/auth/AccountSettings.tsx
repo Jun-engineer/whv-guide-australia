@@ -11,6 +11,8 @@ import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
 import {
   emailChangeSchema,
   type EmailChangeInput,
+  displayNameSchema,
+  type DisplayNameInput,
   passwordUpdateSchema,
   type PasswordUpdateInput,
 } from "@/lib/validations";
@@ -30,6 +32,73 @@ function Section({
       {description ? <p className="mt-1 text-sm text-slate-600">{description}</p> : null}
       <div className="mt-4 space-y-3">{children}</div>
     </section>
+  );
+}
+
+function DisplayNameChange() {
+  const { session, profile, refresh } = useAuth();
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<DisplayNameInput>({
+    resolver: zodResolver(displayNameSchema),
+    defaultValues: { displayName: profile.displayName ?? "" },
+  });
+
+  async function onSubmit(values: DisplayNameInput) {
+    if (!hasSupabaseEnv || !supabase) return;
+    setMessage("");
+    setError("");
+
+    const userId = session?.user?.id;
+    if (!userId) {
+      setError("ログイン情報が確認できませんでした。再度ログインしてください。");
+      return;
+    }
+
+    const { error: updateError } = await supabase
+      .from("profiles")
+      .update({ display_name: values.displayName })
+      .eq("id", userId);
+    if (updateError) {
+      setError(updateError.message);
+      return;
+    }
+    // auth メタデータにも反映しておく
+    await supabase.auth.updateUser({ data: { display_name: values.displayName } });
+    setMessage("表示名を変更しました。");
+    await refresh();
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-3" noValidate>
+      <p className="text-sm text-slate-600">
+        現在の表示名: <span className="font-medium">{profile.displayName ?? "—"}</span>
+      </p>
+      <label className="block text-sm text-slate-700">
+        新しい表示名（ニックネーム）
+        <input
+          type="text"
+          {...register("displayName")}
+          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+        />
+        {errors.displayName ? (
+          <span className="text-xs text-rose-700">{errors.displayName.message}</span>
+        ) : null}
+      </label>
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="rounded-full bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800 disabled:bg-slate-300"
+      >
+        {isSubmitting ? "変更中…" : "表示名を変更"}
+      </button>
+      {message ? <p className="text-sm text-emerald-700">{message}</p> : null}
+      {error ? <p className="text-sm text-rose-700">{error}</p> : null}
+    </form>
   );
 }
 
@@ -299,6 +368,12 @@ export function AccountSettings() {
       )}
       <Section title="電話番号認証" description="投稿・コメントなどの機能を利用するには電話番号の認証が必要です。">
         <PhoneVerification />
+      </Section>
+      <Section
+        title="表示名（ニックネーム）の変更"
+        description="投稿やコメントに表示される名前です。メールアドレスが他のユーザーに見えないよう、任意のニックネームを設定してください。"
+      >
+        <DisplayNameChange />
       </Section>
       <Section
         title="メールアドレスの変更"
