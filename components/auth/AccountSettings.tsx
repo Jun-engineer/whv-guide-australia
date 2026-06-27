@@ -256,6 +256,11 @@ function DeleteAccount() {
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
 
+  // メール+パスワードのID（identity）を持つか判定する。
+  // Googleのみで登録したユーザーはパスワードが無いため、パスワード再認証を求めない。
+  const identities = session?.user?.identities ?? [];
+  const hasPassword = identities.some((identity) => identity.provider === "email");
+
   async function onDelete() {
     if (!hasSupabaseEnv || !supabase) return;
     const token = session?.access_token;
@@ -272,15 +277,18 @@ function DeleteAccount() {
     setBusy(true);
     setMessage("");
 
-    // 本人確認: 入力されたパスワードで再認証する
-    const { error: reauthError } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-    if (reauthError) {
-      setMessage("パスワードが正しくありません。");
-      setBusy(false);
-      return;
+    // 本人確認: パスワードを持つユーザーのみ、入力されたパスワードで再認証する。
+    // Google等のOAuthユーザーは有効なログインセッション（Bearerトークン）で本人確認とする。
+    if (hasPassword) {
+      const { error: reauthError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      if (reauthError) {
+        setMessage("パスワードが正しくありません。");
+        setBusy(false);
+        return;
+      }
     }
 
     try {
@@ -308,14 +316,20 @@ function DeleteAccount() {
       <p className="text-sm text-slate-600">
         アカウントを削除すると、プロフィール・投稿・コメントなどの関連データも削除され、復元できません。
       </p>
-      <label className="block text-sm text-slate-700">
-        確認のため現在のパスワードを入力してください
-        <PasswordInput
-          autoComplete="current-password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-      </label>
+      {hasPassword ? (
+        <label className="block text-sm text-slate-700">
+          確認のため現在のパスワードを入力してください
+          <PasswordInput
+            autoComplete="current-password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </label>
+      ) : (
+        <p className="rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600">
+          Googleアカウントでログイン中のため、パスワードの入力は不要です。下の確認欄に「削除」と入力してください。
+        </p>
+      )}
       <label className="block text-sm text-slate-700">
         確認のため「削除」と入力してください
         <input
@@ -327,7 +341,7 @@ function DeleteAccount() {
       <button
         type="button"
         onClick={onDelete}
-        disabled={confirmText !== "削除" || password.length === 0 || busy}
+        disabled={confirmText !== "削除" || (hasPassword && password.length === 0) || busy}
         className="rounded-full bg-rose-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-rose-700 disabled:cursor-not-allowed disabled:bg-slate-300"
       >
         {busy ? "削除中…" : "アカウントを削除する"}
