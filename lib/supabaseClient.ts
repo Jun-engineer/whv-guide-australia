@@ -10,7 +10,9 @@ export const supabase = hasSupabaseEnv
       auth: {
         persistSession: true,
         autoRefreshToken: true,
-        detectSessionInUrl: true,
+        // /auth/callback で手動でコード/トークンを処理するため自動検出は無効化する
+        // （有効だと code が二重に消費され OAuth ログインが失敗する）
+        detectSessionInUrl: false,
         flowType: "pkce",
       },
     })
