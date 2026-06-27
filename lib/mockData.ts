@@ -792,8 +792,11 @@ export const forumCategories: ForumCategory[] = [
   { id: "c9", name: "生活相談", slug: "life", description: "現地生活の困りごと" },
   { id: "c10", name: "売ります・買います", slug: "buy-sell", description: "不用品の売買" },
   { id: "c11", name: "旅行", slug: "travel", description: "国内旅行や観光情報" },
-  { id: "c12", name: "雑談", slug: "general", description: "自由な雑談スペース" },
-  { id: "c13", name: "その他", slug: "other", description: "どのジャンルにも当てはまらない投稿" },
+  { id: "c12", name: "英語学習", slug: "english", description: "語学学校・勉強法・英語の悩み" },
+  { id: "c13", name: "健康・医療", slug: "health", description: "病院・保険・メンタルヘルスの相談" },
+  { id: "c14", name: "恋愛・出会い", slug: "relationships", description: "友達作り・恋愛・コミュニティ" },
+  { id: "c15", name: "雑談", slug: "general", description: "自由な雑談スペース" },
+  { id: "c16", name: "その他", slug: "other", description: "どのジャンルにも当てはまらない投稿" },
 ];
 
 export const forumPosts: ForumPost[] = [
