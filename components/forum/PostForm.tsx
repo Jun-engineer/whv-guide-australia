@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
@@ -10,7 +11,7 @@ type PostFormProps = {
 };
 
 export function PostForm({ categoryId = null }: PostFormProps) {
-  const { isLoggedIn, profile } = useAuth();
+  const { isLoggedIn, profile, canAct, emailVerified, phoneVerified } = useAuth();
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -18,11 +19,11 @@ export function PostForm({ categoryId = null }: PostFormProps) {
   const [submitting, setSubmitting] = useState(false);
 
   const banned = profile?.status === "banned";
-  const canPost = isLoggedIn && !banned;
+  const canPost = canAct;
 
   async function onSubmit() {
     if (!canPost || !hasSupabaseEnv || !supabase || !profile) {
-      setMessage("投稿にはログインが必要です。");
+      setMessage("投稿するには本人確認（メール・電話番号認証）が必要です。");
       return;
     }
     setSubmitting(true);
@@ -55,7 +56,28 @@ export function PostForm({ categoryId = null }: PostFormProps) {
       <h3 className="text-lg font-semibold text-slate-900">投稿作成</h3>
       {!canPost ? (
         <p className="mt-2 text-sm text-rose-700">
-          {banned ? "BAN中のユーザーは投稿できません。" : "投稿にはログインが必要です。"}
+          {banned ? (
+            "BAN中のユーザーは投稿できません。"
+          ) : !isLoggedIn ? (
+            <>
+              投稿には{" "}
+              <Link href="/login" className="font-semibold underline">
+                ログイン
+              </Link>{" "}
+              が必要です。
+            </>
+          ) : !emailVerified ? (
+            "投稿するにはメールアドレスの認証を完了してください。"
+          ) : !phoneVerified ? (
+            <>
+              投稿するには電話番号の認証が必要です。{" "}
+              <Link href="/verify-phone" className="font-semibold underline">
+                電話番号を認証する
+              </Link>
+            </>
+          ) : (
+            "投稿できません。"
+          )}
         </p>
       ) : null}
       <div className="mt-3 space-y-3">

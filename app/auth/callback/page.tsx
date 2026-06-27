@@ -88,6 +88,14 @@ function CallbackInner() {
         if (!active) return;
 
         if (session) {
+          // メール認証は完了。電話番号が未認証なら電話認証へ誘導する
+          const user = session.user;
+          const phoneVerified = Boolean(user.phone_confirmed_at || user.phone);
+          if (!phoneVerified) {
+            setMessage("メール認証が完了しました。続けて電話番号認証を行います…");
+            router.replace(`/verify-phone?redirect=${encodeURIComponent(target)}`);
+            return;
+          }
           setMessage("認証が完了しました。移動します…");
           router.replace(target);
           router.refresh();

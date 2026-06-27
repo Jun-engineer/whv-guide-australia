@@ -5,16 +5,13 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { PhoneVerification } from "@/components/auth/PhoneVerification";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
 import {
   emailChangeSchema,
   type EmailChangeInput,
   passwordChangeSchema,
   type PasswordChangeInput,
-  phoneChangeSchema,
-  type PhoneChangeInput,
-  otpSchema,
-  type OtpInput,
 } from "@/lib/validations";
 
 function Section({
@@ -147,136 +144,19 @@ function PasswordChange() {
   );
 }
 
-function PhoneVerification() {
-  const { session, refresh } = useAuth();
-  const [step, setStep] = useState<"input" | "verify">("input");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-
-  const phoneForm = useForm<PhoneChangeInput>({ resolver: zodResolver(phoneChangeSchema) });
-  const otpForm = useForm<OtpInput>({ resolver: zodResolver(otpSchema) });
-
-  const verified = Boolean(session?.user?.phone);
-
-  async function sendCode(values: PhoneChangeInput) {
-    if (!hasSupabaseEnv || !supabase) return;
-    setMessage("");
-    const { error } = await supabase.auth.updateUser({ phone: values.phone });
-    if (error) {
-      setMessage(error.message);
-      return;
-    }
-    setPhone(values.phone);
-    setStep("verify");
-    setMessage(`${values.phone} 宛に認証コードを送信しました。`);
-  }
-
-  async function verifyCode(values: OtpInput) {
-    if (!hasSupabaseEnv || !supabase) return;
-    setMessage("");
-    const { error } = await supabase.auth.verifyOtp({
-      phone,
-      token: values.token,
-      type: "phone_change",
-    });
-    if (error) {
-      setMessage(error.message);
-      return;
-    }
-    setMessage("電話番号の認証が完了しました。");
-    setStep("input");
-    await refresh();
-  }
-
-  if (verified) {
-    return (
-      <p className="text-sm text-emerald-700">
-        電話番号は認証済みです（{session?.user?.phone}）。
-      </p>
-    );
-  }
-
-  if (step === "verify") {
-    return (
-      <form onSubmit={otpForm.handleSubmit(verifyCode)} className="space-y-3" noValidate>
-        <p className="text-sm text-slate-700">{phone} 宛に送信した6桁のコードを入力してください。</p>
-        <label className="block text-sm text-slate-700">
-          認証コード
-          <input
-            inputMode="numeric"
-            maxLength={6}
-            {...otpForm.register("token")}
-            className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 tracking-widest"
-          />
-          {otpForm.formState.errors.token ? (
-            <span className="text-xs text-rose-700">
-              {otpForm.formState.errors.token.message}
-            </span>
-          ) : null}
-        </label>
-        <div className="flex gap-2">
-          <button
-            type="submit"
-            disabled={otpForm.formState.isSubmitting}
-            className="rounded-full bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800 disabled:bg-slate-300"
-          >
-            {otpForm.formState.isSubmitting ? "確認中…" : "認証する"}
-          </button>
-          <button
-            type="button"
-            onClick={() => setStep("input")}
-            className="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-600 transition hover:bg-slate-50"
-          >
-            戻る
-          </button>
-        </div>
-        {message ? <p className="text-sm text-slate-600">{message}</p> : null}
-      </form>
-    );
-  }
-
-  return (
-    <form onSubmit={phoneForm.handleSubmit(sendCode)} className="space-y-3" noValidate>
-      <label className="block text-sm text-slate-700">
-        電話番号（国番号付き）
-        <input
-          type="tel"
-          inputMode="tel"
-          placeholder="+819012345678"
-          {...phoneForm.register("phone")}
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
-        />
-        {phoneForm.formState.errors.phone ? (
-          <span className="text-xs text-rose-700">{phoneForm.formState.errors.phone.message}</span>
-        ) : (
-          <span className="text-xs text-slate-500">
-            SMSで認証コードを送信します。日本は先頭の0を除き +81 を付けます。
-          </span>
-        )}
-      </label>
-      <button
-        type="submit"
-        disabled={phoneForm.formState.isSubmitting}
-        className="rounded-full bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800 disabled:bg-slate-300"
-      >
-        {phoneForm.formState.isSubmitting ? "送信中…" : "認証コードを送信"}
-      </button>
-      {message ? <p className="text-sm text-slate-600">{message}</p> : null}
-    </form>
-  );
-}
-
 function DeleteAccount() {
   const { session, signOut } = useAuth();
   const router = useRouter();
   const [confirmText, setConfirmText] = useState("");
+  const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
 
   async function onDelete() {
     if (!hasSupabaseEnv || !supabase) return;
     const token = session?.access_token;
-    if (!token) {
+    const email = session?.user?.email;
+    if (!token || !email) {
       setMessage("ログイン情報が確認できませんでした。再度ログインしてください。");
       return;
     }
@@ -287,6 +167,18 @@ function DeleteAccount() {
 
     setBusy(true);
     setMessage("");
+
+    // 本人確認: 入力されたパスワードで再認証する
+    const { error: reauthError } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    if (reauthError) {
+      setMessage("パスワードが正しくありません。");
+      setBusy(false);
+      return;
+    }
+
     try {
       const res = await fetch("/api/account/delete", {
         method: "POST",
@@ -313,6 +205,15 @@ function DeleteAccount() {
         アカウントを削除すると、プロフィール・投稿・コメントなどの関連データも削除され、復元できません。
       </p>
       <label className="block text-sm text-slate-700">
+        確認のため現在のパスワードを入力してください
+        <input
+          type="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+        />
+      </label>
+      <label className="block text-sm text-slate-700">
         確認のため「削除」と入力してください
         <input
           value={confirmText}
@@ -323,7 +224,7 @@ function DeleteAccount() {
       <button
         type="button"
         onClick={onDelete}
-        disabled={confirmText !== "削除" || busy}
+        disabled={confirmText !== "削除" || password.length === 0 || busy}
         className="rounded-full bg-rose-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-rose-700 disabled:cursor-not-allowed disabled:bg-slate-300"
       >
         {busy ? "削除中…" : "アカウントを削除する"}
@@ -334,7 +235,7 @@ function DeleteAccount() {
 }
 
 export function AccountSettings() {
-  const { loading, isLoggedIn } = useAuth();
+  const { loading, isLoggedIn, emailVerified, phoneVerified, isVerified } = useAuth();
 
   if (loading) {
     return <p className="text-sm text-slate-500">読み込み中…</p>;
@@ -346,7 +247,23 @@ export function AccountSettings() {
 
   return (
     <div className="space-y-4">
-      <Section title="電話番号認証" description="投稿・コメントの信頼性向上のため、電話番号の認証ができます。">
+      {!isVerified ? (
+        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
+          <p className="font-semibold">本人確認を完了してください</p>
+          <p className="mt-1">
+            投稿・コメント・いいねなどの機能は、メールアドレスと電話番号の両方の認証完了後にご利用いただけます。
+          </p>
+          <ul className="mt-2 space-y-1">
+            <li>{emailVerified ? "✅" : "⬜"} メールアドレス認証</li>
+            <li>{phoneVerified ? "✅" : "⬜"} 電話番号認証</li>
+          </ul>
+        </div>
+      ) : (
+        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800">
+          本人確認が完了しています。すべての機能をご利用いただけます。
+        </div>
+      )}
+      <Section title="電話番号認証" description="投稿・コメントなどの機能を利用するには電話番号の認証が必要です。">
         <PhoneVerification />
       </Section>
       <Section title="メールアドレスの変更">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
@@ -10,18 +11,18 @@ type CommentFormProps = {
 };
 
 export function CommentForm({ postId }: CommentFormProps) {
-  const { isLoggedIn, profile } = useAuth();
+  const { isLoggedIn, profile, canAct, emailVerified, phoneVerified } = useAuth();
   const router = useRouter();
   const [body, setBody] = useState("");
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
   const banned = profile?.status === "banned";
-  const canPost = isLoggedIn && !banned;
+  const canPost = canAct;
 
   async function onSubmit() {
     if (!canPost || !hasSupabaseEnv || !supabase || !profile) {
-      setMessage("コメントにはログインが必要です。");
+      setMessage("コメントするには本人確認（メール・電話番号認証）が必要です。");
       return;
     }
     setSubmitting(true);
@@ -54,7 +55,28 @@ export function CommentForm({ postId }: CommentFormProps) {
       <h3 className="text-lg font-semibold text-slate-900">コメント投稿</h3>
       {!canPost ? (
         <p className="mt-2 text-sm text-rose-700">
-          {banned ? "BAN中のユーザーはコメントできません。" : "コメントにはログインが必要です。"}
+          {banned ? (
+            "BAN中のユーザーはコメントできません。"
+          ) : !isLoggedIn ? (
+            <>
+              コメントには{" "}
+              <Link href="/login" className="font-semibold underline">
+                ログイン
+              </Link>{" "}
+              が必要です。
+            </>
+          ) : !emailVerified ? (
+            "コメントするにはメールアドレスの認証を完了してください。"
+          ) : !phoneVerified ? (
+            <>
+              コメントするには電話番号の認証が必要です。{" "}
+              <Link href="/verify-phone" className="font-semibold underline">
+                電話番号を認証する
+              </Link>
+            </>
+          ) : (
+            "コメントできません。"
+          )}
         </p>
       ) : null}
       <textarea

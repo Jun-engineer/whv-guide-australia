@@ -10,12 +10,12 @@ type LikeButtonProps = {
 };
 
 export function LikeButton({ postId, initialCount }: LikeButtonProps) {
-  const { isLoggedIn, profile } = useAuth();
+  const { canAct, profile } = useAuth();
   const [count, setCount] = useState(initialCount);
   const [liked, setLiked] = useState(false);
   const [busy, setBusy] = useState(false);
 
-  const enabled = isLoggedIn && profile?.status === "active";
+  const enabled = canAct;
 
   async function toggleLike() {
     if (!enabled || !hasSupabaseEnv || !supabase || !profile) return;
@@ -43,6 +43,7 @@ export function LikeButton({ postId, initialCount }: LikeButtonProps) {
       onClick={toggleLike}
       disabled={!enabled || busy}
       aria-pressed={liked}
+      title={enabled ? undefined : "いいねには本人確認（メール・電話番号認証）が必要です。"}
       className={`rounded-full border px-3 py-1 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60 ${
         liked ? "border-rose-300 bg-rose-50 text-rose-700" : "border-slate-300 text-slate-700"
       }`}

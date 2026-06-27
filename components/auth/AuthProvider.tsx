@@ -17,6 +17,10 @@ type AuthContextValue = {
   profile: Profile;
   loading: boolean;
   isLoggedIn: boolean;
+  emailVerified: boolean;
+  phoneVerified: boolean;
+  isVerified: boolean;
+  canAct: boolean;
   refresh: () => Promise<void>;
   signOut: () => Promise<void>;
 };
@@ -112,17 +116,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
   }, [applySession, hasDb]);
 
-  const value = useMemo<AuthContextValue>(
-    () => ({
+  const value = useMemo<AuthContextValue>(() => {
+    const user = session?.user;
+    const isLoggedIn = Boolean(user);
+    const emailVerified = Boolean(user?.email_confirmed_at);
+    const phoneVerified = Boolean(user?.phone_confirmed_at || user?.phone);
+    const isVerified = isLoggedIn && emailVerified && phoneVerified;
+    return {
       session,
       profile,
       loading,
-      isLoggedIn: Boolean(session?.user),
+      isLoggedIn,
+      emailVerified,
+      phoneVerified,
+      isVerified,
+      canAct: isVerified && profile.status === "active",
       refresh,
       signOut,
-    }),
-    [session, profile, loading, refresh, signOut],
-  );
+    };
+  }, [session, profile, loading, refresh, signOut]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

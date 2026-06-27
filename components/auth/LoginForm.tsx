@@ -18,6 +18,26 @@ function resolveRedirectTarget(): string {
   return "/";
 }
 
+function friendlyLoginError(message: string): string {
+  const normalized = message.toLowerCase();
+  if (normalized.includes("invalid login credentials")) {
+    return "メールアドレスまたはパスワードが正しくありません。";
+  }
+  if (normalized.includes("email not confirmed")) {
+    return "メールアドレスの認証が完了していません。登録時に送信された確認メールのリンクをクリックしてください。";
+  }
+  if (normalized.includes("too many requests") || normalized.includes("rate limit")) {
+    return "試行回数が上限に達しました。しばらく時間をおいて再度お試しください。";
+  }
+  if (normalized.includes("user not found")) {
+    return "このメールアドレスのアカウントは見つかりませんでした。";
+  }
+  if (normalized.includes("network") || normalized.includes("fetch")) {
+    return "通信エラーが発生しました。インターネット接続をご確認ください。";
+  }
+  return "ログインに失敗しました。入力内容をご確認のうえ、再度お試しください。";
+}
+
 export function LoginForm() {
   const [message, setMessage] = useState("");
   const router = useRouter();
@@ -36,7 +56,7 @@ export function LoginForm() {
 
     const { error } = await supabase.auth.signInWithPassword(values);
     if (error) {
-      setMessage(error.message);
+      setMessage(friendlyLoginError(error.message));
       return;
     }
     setMessage("ログインしました。ページを移動します…");
