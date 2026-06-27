@@ -13,9 +13,11 @@ type PostPageProps = {
   params: Promise<{ id: string }>;
 };
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
   const { id } = await params;
-  const post = getForumPostById(id);
+  const post = await getForumPostById(id);
   return {
     title: post ? post.title : "投稿詳細",
     description: post ? post.body.slice(0, 80) : "掲示板投稿の詳細とコメント。",
@@ -33,12 +35,12 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
 export default async function CommunityPostPage({ params }: PostPageProps) {
   const { id } = await params;
-  const post = getForumPostById(id);
+  const post = await getForumPostById(id);
   if (!post) {
     notFound();
   }
 
-  const comments = getCommentsByPostId(post.id);
+  const comments = await getCommentsByPostId(post.id);
 
   const jsonLd = {
     "@context": "https://schema.org",

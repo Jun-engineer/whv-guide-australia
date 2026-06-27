@@ -9,9 +9,12 @@ type CategoryPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const category = getForumCategories().find((item) => item.slug === slug);
+  const categories = await getForumCategories();
+  const category = categories.find((item) => item.slug === slug);
   return {
     title: category ? `掲示板: ${category.name}` : "掲示板カテゴリ",
     description: category?.description ?? "カテゴリ別の掲示板投稿一覧。",
@@ -29,13 +32,14 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
 export default async function CommunityCategoryPage({ params }: CategoryPageProps) {
   const { slug } = await params;
-  const category = getForumCategories().find((item) => item.slug === slug);
+  const categories = await getForumCategories();
+  const category = categories.find((item) => item.slug === slug);
 
   if (!category) {
     notFound();
   }
 
-  const posts = getForumPostsByCategory(slug);
+  const posts = await getForumPostsByCategory(slug);
 
   return (
     <Container className="space-y-8 py-10">

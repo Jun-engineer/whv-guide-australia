@@ -14,9 +14,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+// トップの最新投稿を定期的に更新する（ISR）
+export const revalidate = 60;
+
+export default async function Home() {
   const featuredArticles = getFeaturedArticles(4);
-  const latestPosts = getLatestForumPosts(3);
+  const latestPosts = await getLatestForumPosts(3);
 
   const jsonLd = {
     "@context": "https://schema.org",

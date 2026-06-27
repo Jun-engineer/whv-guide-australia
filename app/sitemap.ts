@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { getAllArticles, getArticleCategories } from "@/lib/articles";
 import { getAllForumPosts, getForumCategories } from "@/lib/forum";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = (
@@ -57,16 +57,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const forumCategoryRoutes: MetadataRoute.Sitemap = getForumCategories().map((category) => ({
+  const [forumCategories, forumPosts] = await Promise.all([
+    getForumCategories(),
+    getAllForumPosts(),
+  ]);
+
+  const forumCategoryRoutes: MetadataRoute.Sitemap = forumCategories.map((category) => ({
     url: `${siteConfig.url}/community/categories/${category.slug}`,
     lastModified: now,
     changeFrequency: "daily",
     priority: 0.6,
   }));
 
-  const forumPostRoutes: MetadataRoute.Sitemap = getAllForumPosts().map((post) => ({
+  const forumPostRoutes: MetadataRoute.Sitemap = forumPosts.map((post) => ({
     url: `${siteConfig.url}/community/posts/${post.id}`,
-    lastModified: new Date(post.createdAt),
+    lastModified: post.createdAt ? new Date(post.createdAt) : now,
     changeFrequency: "weekly",
     priority: 0.5,
   }));

@@ -12,10 +12,15 @@ export const metadata: Metadata = {
   description: "家探し、仕事探し、生活相談のコミュニティ掲示板。",
 };
 
-export default function CommunityPage() {
-  const categories = getForumCategories();
-  const latestPosts = getLatestForumPosts();
-  const allPosts = getAllForumPosts();
+// 投稿は随時更新されるため常に最新をDBから取得する
+export const dynamic = "force-dynamic";
+
+export default async function CommunityPage() {
+  const [categories, latestPosts, allPosts] = await Promise.all([
+    getForumCategories(),
+    getLatestForumPosts(),
+    getAllForumPosts(),
+  ]);
 
   return (
     <Container className="space-y-8 py-10">
@@ -39,11 +44,17 @@ export default function CommunityPage() {
 
       <section className="space-y-4">
         <h2 className="text-xl font-bold">最新投稿</h2>
-        <div className="grid gap-4 md:grid-cols-2">
-          {latestPosts.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
-        </div>
+        {latestPosts.length === 0 ? (
+          <p className="rounded-2xl border border-dashed border-slate-300 bg-white p-6 text-center text-sm text-slate-500">
+            まだ投稿がありません。最初の投稿をしてみましょう。
+          </p>
+        ) : (
+          <div className="grid gap-4 md:grid-cols-2">
+            {latestPosts.map((post) => (
+              <PostCard key={post.id} post={post} />
+            ))}
+          </div>
+        )}
       </section>
 
       <AdBanner slotName="掲示板一覧下部" />
