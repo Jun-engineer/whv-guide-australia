@@ -5,6 +5,7 @@ import { CommentList } from "@/components/forum/CommentList";
 import { CommentForm } from "@/components/forum/CommentForm";
 import { ReportButton } from "@/components/forum/ReportButton";
 import { LikeButton } from "@/components/forum/LikeButton";
+import { PostActions } from "@/components/forum/PostActions";
 import { AdBanner } from "@/components/ads/AdBanner";
 import { getCommentsByPostId, getForumPostById } from "@/lib/forum";
 import { absoluteUrl } from "@/lib/siteConfig";
@@ -78,6 +79,12 @@ export default async function CommunityPostPage({ params }: PostPageProps) {
             <ReportButton targetType="user" targetId={post.userId} label="ユーザーを通報" />
           </div>
         </div>
+        <PostActions
+          postId={post.id}
+          authorId={post.userId}
+          initialTitle={post.title}
+          initialBody={post.body}
+        />
       </article>
 
       <CommentForm postId={post.id} />

@@ -5,31 +5,42 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
+import type { ForumCategory } from "@/types/forum";
 
 type PostFormProps = {
   categoryId?: string | null;
+  // カテゴリ固定でない場合（/community のフォーム）に選択肢を渡す
+  categories?: ForumCategory[];
 };
 
-export function PostForm({ categoryId = null }: PostFormProps) {
+export function PostForm({ categoryId = null, categories }: PostFormProps) {
   const { isLoggedIn, profile, canAct, emailVerified, phoneVerified } = useAuth();
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const [selectedCategoryId, setSelectedCategoryId] = useState("");
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
   const banned = profile?.status === "banned";
   const canPost = canAct;
+  // カテゴリ固定（カテゴリページ）でなければ選択UIを表示する
+  const showCategorySelect = !categoryId && Array.isArray(categories) && categories.length > 0;
 
   async function onSubmit() {
     if (!canPost || !hasSupabaseEnv || !supabase || !profile) {
       setMessage("投稿するには本人確認（メール・電話番号認証）が必要です。");
       return;
     }
+    const resolvedCategoryId = categoryId ?? (selectedCategoryId || null);
+    if (showCategorySelect && !resolvedCategoryId) {
+      setMessage("ジャンルを選択してください。");
+      return;
+    }
     setSubmitting(true);
     setMessage("");
     const { error } = await supabase.from("forum_posts").insert({
-      category_id: categoryId,
+      category_id: resolvedCategoryId,
       user_id: profile.id,
       title,
       body,
@@ -39,6 +50,7 @@ export function PostForm({ categoryId = null }: PostFormProps) {
     } else {
       setTitle("");
       setBody("");
+      setSelectedCategoryId("");
       setMessage("投稿しました。");
       router.refresh();
     }
@@ -81,6 +93,21 @@ export function PostForm({ categoryId = null }: PostFormProps) {
         </p>
       ) : null}
       <div className="mt-3 space-y-3">
+        {showCategorySelect ? (
+          <select
+            value={selectedCategoryId}
+            onChange={(event) => setSelectedCategoryId(event.target.value)}
+            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+            disabled={!canPost}
+          >
+            <option value="">ジャンルを選択してください</option>
+            {categories!.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+        ) : null}
         <input
           value={title}
           onChange={(event) => setTitle(event.target.value)}

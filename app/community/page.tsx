@@ -35,7 +35,7 @@ export default async function CommunityPage() {
         ))}
       </section>
 
-      <PostForm />
+      <PostForm categories={categories} />
 
       <section className="space-y-4">
         <h2 className="text-xl font-bold">投稿を検索</h2>
