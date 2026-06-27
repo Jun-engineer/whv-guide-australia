@@ -11,8 +11,8 @@ import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
 import {
   emailChangeSchema,
   type EmailChangeInput,
-  passwordChangeSchema,
-  type PasswordChangeInput,
+  passwordUpdateSchema,
+  type PasswordUpdateInput,
 } from "@/lib/validations";
 
 function Section({
@@ -57,7 +57,7 @@ function EmailChange() {
       return;
     }
     setMessage(
-      "確認メールを新しいメールアドレス宛に送信しました。メール内のリンクをクリックすると変更が完了します。",
+      "確認メールを送信しました。新しいメールアドレスに届いたリンクをクリックすると変更が完了します。完了後は新しいメールアドレスでログインしてください。",
     );
     await refresh();
   }
@@ -89,20 +89,42 @@ function EmailChange() {
 }
 
 function PasswordChange() {
+  const { session } = useAuth();
   const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<PasswordChangeInput>({ resolver: zodResolver(passwordChangeSchema) });
+  } = useForm<PasswordUpdateInput>({ resolver: zodResolver(passwordUpdateSchema) });
 
-  async function onSubmit(values: PasswordChangeInput) {
+  async function onSubmit(values: PasswordUpdateInput) {
     if (!hasSupabaseEnv || !supabase) return;
     setMessage("");
-    const { error } = await supabase.auth.updateUser({ password: values.password });
-    if (error) {
-      setMessage(error.message);
+    setError("");
+
+    const email = session?.user?.email;
+    if (!email) {
+      setError("ログイン情報が確認できませんでした。再度ログインしてください。");
+      return;
+    }
+
+    // 本人確認: 現在のパスワードで再認証する
+    const { error: reauthError } = await supabase.auth.signInWithPassword({
+      email,
+      password: values.currentPassword,
+    });
+    if (reauthError) {
+      setError("現在のパスワードが正しくありません。");
+      return;
+    }
+
+    const { error: updateError } = await supabase.auth.updateUser({
+      password: values.password,
+    });
+    if (updateError) {
+      setError(updateError.message);
       return;
     }
     setMessage("パスワードを変更しました。");
@@ -111,6 +133,17 @@ function PasswordChange() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-3" noValidate>
+      <label className="block text-sm text-slate-700">
+        現在のパスワード
+        <PasswordInput
+          autoComplete="current-password"
+          invalid={Boolean(errors.currentPassword)}
+          {...register("currentPassword")}
+        />
+        {errors.currentPassword ? (
+          <span className="text-xs text-rose-700">{errors.currentPassword.message}</span>
+        ) : null}
+      </label>
       <label className="block text-sm text-slate-700">
         新しいパスワード
         <PasswordInput
@@ -140,7 +173,8 @@ function PasswordChange() {
       >
         {isSubmitting ? "変更中…" : "パスワードを変更"}
       </button>
-      {message ? <p className="text-sm text-slate-600">{message}</p> : null}
+      {message ? <p className="text-sm text-emerald-700">{message}</p> : null}
+      {error ? <p className="text-sm text-rose-700">{error}</p> : null}
     </form>
   );
 }
@@ -266,7 +300,10 @@ export function AccountSettings() {
       <Section title="電話番号認証" description="投稿・コメントなどの機能を利用するには電話番号の認証が必要です。">
         <PhoneVerification />
       </Section>
-      <Section title="メールアドレスの変更">
+      <Section
+        title="メールアドレスの変更"
+        description="新しいメールアドレスに確認リンクを送信します。リンクをクリックすると変更が完了し、以降は新しいメールアドレスでログインできます。"
+      >
         <EmailChange />
       </Section>
       <Section title="パスワードの変更">

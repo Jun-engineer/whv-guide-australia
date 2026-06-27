@@ -46,6 +46,22 @@ export const passwordChangeSchema = z
   });
 export type PasswordChangeInput = z.infer<typeof passwordChangeSchema>;
 
+export const passwordUpdateSchema = z
+  .object({
+    currentPassword: z.string().min(1, "現在のパスワードを入力してください。"),
+    password: z.string().min(8, "パスワードは8文字以上にしてください。"),
+    confirm: z.string().min(8, "確認用パスワードを入力してください。"),
+  })
+  .refine((values) => values.password === values.confirm, {
+    message: "パスワードが一致しません。",
+    path: ["confirm"],
+  })
+  .refine((values) => values.currentPassword !== values.password, {
+    message: "現在のパスワードと異なるパスワードを設定してください。",
+    path: ["password"],
+  });
+export type PasswordUpdateInput = z.infer<typeof passwordUpdateSchema>;
+
 export const phoneChangeSchema = z.object({
   phone: z
     .string()
