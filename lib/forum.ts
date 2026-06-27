@@ -1,6 +1,6 @@
 import { forumCategories, forumComments, forumPosts } from "@/lib/mockData";
 import { getSupabaseServerClient } from "@/lib/supabaseServer";
-import type { ForumCategory, ForumComment, ForumPost } from "@/types/forum";
+import type { ForumCategory, ForumComment, ForumCommentNode, ForumPost } from "@/types/forum";
 
 type PostRow = {
   id: string;
@@ -10,6 +10,7 @@ type PostRow = {
   body: string;
   is_hidden: boolean;
   created_at: string | null;
+  edited_at: string | null;
   profiles: { display_name: string | null } | null;
   forum_categories: { slug: string | null } | null;
   likes: { count: number }[] | null;
@@ -22,11 +23,13 @@ type CommentRow = {
   body: string;
   is_hidden: boolean;
   created_at: string | null;
+  edited_at: string | null;
+  parent_comment_id: string | null;
   profiles: { display_name: string | null } | null;
 };
 
 const POST_SELECT =
-  "id, category_id, user_id, title, body, is_hidden, created_at, profiles(display_name), forum_categories(slug), likes(count)";
+  "id, category_id, user_id, title, body, is_hidden, created_at, edited_at, profiles(display_name), forum_categories(slug), likes(count)";
 
 function toDateString(value: string | null): string {
   return value ? value.slice(0, 10) : "";
@@ -43,6 +46,7 @@ function mapPostRow(row: PostRow): ForumPost {
     isHidden: row.is_hidden,
     likeCount: row.likes?.[0]?.count ?? 0,
     createdAt: toDateString(row.created_at),
+    editedAt: row.edited_at ?? null,
   };
 }
 
@@ -55,6 +59,8 @@ function mapCommentRow(row: CommentRow): ForumComment {
     body: row.body,
     isHidden: row.is_hidden,
     createdAt: toDateString(row.created_at),
+    editedAt: row.edited_at ?? null,
+    parentId: row.parent_comment_id ?? null,
   };
 }
 
@@ -165,7 +171,9 @@ export async function getCommentsByPostId(postId: string): Promise<ForumComment[
 
   const { data, error } = await client
     .from("forum_comments")
-    .select("id, post_id, user_id, body, is_hidden, created_at, profiles(display_name)")
+    .select(
+      "id, post_id, user_id, body, is_hidden, created_at, edited_at, parent_comment_id, profiles(display_name)",
+    )
     .eq("post_id", postId)
     .eq("is_hidden", false)
     .order("created_at", { ascending: true });
@@ -173,4 +181,27 @@ export async function getCommentsByPostId(postId: string): Promise<ForumComment[
   if (error || !data) return [];
 
   return (data as unknown as CommentRow[]).map(mapCommentRow);
+}
+
+/**
+ * フラットなコメント配列を親子ツリーに変換する。
+ * 親が見つからない（削除済み等）コメントはトップレベル扱いにする。
+ */
+export function buildCommentTree(comments: ForumComment[]): ForumCommentNode[] {
+  const nodeById = new Map<string, ForumCommentNode>();
+  for (const comment of comments) {
+    nodeById.set(comment.id, { ...comment, replies: [] });
+  }
+
+  const roots: ForumCommentNode[] = [];
+  for (const node of nodeById.values()) {
+    const parentId = node.parentId;
+    if (parentId && nodeById.has(parentId)) {
+      nodeById.get(parentId)!.replies.push(node);
+    } else {
+      roots.push(node);
+    }
+  }
+
+  return roots;
 }

@@ -15,6 +15,7 @@ export type ForumPost = {
   isHidden: boolean;
   likeCount: number;
   createdAt: string;
+  editedAt?: string | null;
 };
 
 export type ForumComment = {
@@ -25,6 +26,12 @@ export type ForumComment = {
   body: string;
   isHidden: boolean;
   createdAt: string;
+  editedAt?: string | null;
+  parentId?: string | null;
+};
+
+export type ForumCommentNode = ForumComment & {
+  replies: ForumCommentNode[];
 };
 
 export type Like = {

@@ -34,7 +34,7 @@ export function PostActions({ postId, authorId, initialTitle, initialBody }: Pos
     setMessage("");
     const { error } = await supabase
       .from("forum_posts")
-      .update({ title, body, updated_at: new Date().toISOString() })
+      .update({ title, body, updated_at: new Date().toISOString(), edited_at: new Date().toISOString() })
       .eq("id", postId);
     if (error) {
       setMessage("更新できませんでした。時間をおいて再度お試しください。");

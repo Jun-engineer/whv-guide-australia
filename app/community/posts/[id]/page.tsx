@@ -68,15 +68,21 @@ export default async function CommunityPostPage({ params }: PostPageProps) {
       />
       <article className="rounded-2xl border border-slate-200 bg-white p-6">
         <h1 className="text-2xl font-bold text-slate-900">{post.title}</h1>
-        <p className="mt-3 text-slate-700">{post.body}</p>
+        <p className="mt-3 whitespace-pre-wrap text-slate-700">{post.body}</p>
         <div className="mt-4 flex items-center justify-between text-sm text-slate-500">
           <span>
             {post.authorName} / {post.createdAt}
+            {post.editedAt ? <span className="text-slate-400">（編集済み）</span> : null}
           </span>
           <div className="flex items-center gap-2">
             <LikeButton postId={post.id} initialCount={post.likeCount} />
-            <ReportButton targetType="post" targetId={post.id} />
-            <ReportButton targetType="user" targetId={post.userId} label="ユーザーを通報" />
+            <ReportButton targetType="post" targetId={post.id} authorId={post.userId} />
+            <ReportButton
+              targetType="user"
+              targetId={post.userId}
+              authorId={post.userId}
+              label="ユーザーを通報"
+            />
           </div>
         </div>
         <PostActions
@@ -91,7 +97,7 @@ export default async function CommunityPostPage({ params }: PostPageProps) {
 
       <section className="space-y-3">
         <h2 className="text-xl font-bold">コメント</h2>
-        <CommentList comments={comments} />
+        <CommentList postId={post.id} comments={comments} />
       </section>
 
       <AdBanner slotName="掲示板詳細下部" />

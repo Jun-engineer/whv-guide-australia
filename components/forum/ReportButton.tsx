@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { REPORT_REASONS, type ReportTargetType } from "@/types/report";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
 import { sendNotification } from "@/lib/notify";
 
@@ -9,6 +10,8 @@ type ReportButtonProps = {
   targetType: ReportTargetType;
   targetId: string;
   label?: string;
+  // 対象の作成者ID。ログイン中ユーザーが本人なら通報ボタンを表示しない。
+  authorId?: string;
 };
 
 const targetLabel: Record<ReportTargetType, string> = {
@@ -17,12 +20,19 @@ const targetLabel: Record<ReportTargetType, string> = {
   user: "ユーザー",
 };
 
-export function ReportButton({ targetType, targetId, label }: ReportButtonProps) {
+export function ReportButton({ targetType, targetId, label, authorId }: ReportButtonProps) {
+  const { profile } = useAuth();
   const [open, setOpen] = useState(false);
   const [reason, setReason] = useState<string>(REPORT_REASONS[0]);
   const [detail, setDetail] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [message, setMessage] = useState("");
+
+  // 自分自身（自分の投稿・コメント・自分自身）は通報できないようにする
+  const isOwnTarget = Boolean(authorId) && profile?.id === authorId;
+  if (isOwnTarget) {
+    return null;
+  }
 
   async function submit() {
     if (!reason) {

@@ -19,7 +19,8 @@ export type ArticleCategory =
   | "doordash"
   | "cars"
   | "food"
-  | "clothing";
+  | "clothing"
+  | "area";
 
 export type ArticleStep = {
   title: string;

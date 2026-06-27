@@ -8,9 +8,24 @@ import { hasSupabaseEnv, supabase } from "@/lib/supabaseClient";
 
 type CommentFormProps = {
   postId: string;
+  // 返信先コメントID（トップレベルコメントなら未指定）
+  parentId?: string | null;
+  // 返信フォーム等で使うコンパクト表示
+  compact?: boolean;
+  placeholder?: string;
+  submitLabel?: string;
+  // 投稿成功後に呼ばれる（返信フォームを閉じる等）
+  onPosted?: () => void;
 };
 
-export function CommentForm({ postId }: CommentFormProps) {
+export function CommentForm({
+  postId,
+  parentId = null,
+  compact = false,
+  placeholder,
+  submitLabel,
+  onPosted,
+}: CommentFormProps) {
   const { isLoggedIn, profile, canAct, emailVerified, phoneVerified } = useAuth();
   const router = useRouter();
   const [body, setBody] = useState("");
@@ -30,15 +45,15 @@ export function CommentForm({ postId }: CommentFormProps) {
     const { error } = await supabase.from("forum_comments").insert({
       post_id: postId,
       user_id: profile.id,
+      parent_comment_id: parentId,
       body,
     });
     if (error) {
-      setMessage(
-        "コメントを保存できませんでした。デモ投稿には保存できません（掲示板データのDB移行後に有効になります）。",
-      );
+      setMessage("コメントを保存できませんでした。時間をおいて再度お試しください。");
     } else {
       setBody("");
-      setMessage("コメントを投稿しました。");
+      setMessage("");
+      onPosted?.();
       router.refresh();
     }
     setSubmitting(false);
@@ -46,15 +61,21 @@ export function CommentForm({ postId }: CommentFormProps) {
 
   return (
     <form
-      className="rounded-2xl border border-slate-200 bg-white p-4"
+      className={
+        compact
+          ? "rounded-xl border border-slate-200 bg-slate-50 p-3"
+          : "rounded-2xl border border-slate-200 bg-white p-4"
+      }
       onSubmit={(event) => {
         event.preventDefault();
         void onSubmit();
       }}
     >
-      <h3 className="text-lg font-semibold text-slate-900">コメント投稿</h3>
+      {compact ? null : (
+        <h3 className="text-lg font-semibold text-slate-900">コメント投稿</h3>
+      )}
       {!canPost ? (
-        <p className="mt-2 text-sm text-rose-700">
+        <p className={compact ? "text-xs text-rose-700" : "mt-2 text-sm text-rose-700"}>
           {banned ? (
             "BAN中のユーザーはコメントできません。"
           ) : !isLoggedIn ? (
@@ -82,18 +103,33 @@ export function CommentForm({ postId }: CommentFormProps) {
       <textarea
         value={body}
         onChange={(event) => setBody(event.target.value)}
-        placeholder="コメント内容"
-        className="mt-3 h-28 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+        placeholder={placeholder ?? "コメント内容"}
+        className={
+          compact
+            ? "mt-2 h-20 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+            : "mt-3 h-28 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm"
+        }
         disabled={!canPost}
       />
-      {message ? <p className="mt-2 text-sm text-slate-600">{message}</p> : null}
-      <button
-        type="submit"
-        disabled={!canPost || body.length === 0 || submitting}
-        className="mt-3 rounded-full bg-sky-700 px-4 py-2 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:bg-slate-300"
-      >
-        {submitting ? "送信中…" : "コメントする"}
-      </button>
+      {message ? <p className="mt-2 text-sm text-rose-700">{message}</p> : null}
+      <div className="mt-2 flex items-center gap-2">
+        <button
+          type="submit"
+          disabled={!canPost || body.length === 0 || submitting}
+          className="rounded-full bg-sky-700 px-4 py-2 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:bg-slate-300"
+        >
+          {submitting ? "送信中…" : submitLabel ?? "コメントする"}
+        </button>
+        {compact && onPosted ? (
+          <button
+            type="button"
+            onClick={onPosted}
+            className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white"
+          >
+            キャンセル
+          </button>
+        ) : null}
+      </div>
     </form>
   );
 }
