@@ -4,6 +4,7 @@ import { GuideCategoryPage } from "@/components/articles/GuideCategoryPage";
 export const metadata: Metadata = {
   title: "エリアガイド",
   description: "シドニー・メルボルン・ブリスベン・パース・ケアンズなど主要都市の特徴を比較。",
+  alternates: { canonical: "/area" },
 };
 
 export default function AreaPage() {

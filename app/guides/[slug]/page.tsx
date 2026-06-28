@@ -12,6 +12,7 @@ import { FaqList } from "@/components/articles/FaqList";
 import { SourceLinks } from "@/components/articles/SourceLinks";
 import { ArticleAd } from "@/components/ads/ArticleAd";
 import { ShareButtons } from "@/components/common/ShareButtons";
+import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
 import { getArticleBySlug, getRelatedArticles, getCategoryLabel, getAllArticles } from "@/lib/articles";
 import { siteConfig, absoluteUrl } from "@/lib/siteConfig";
@@ -72,8 +73,12 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
     "@type": "Article",
     headline: article.title,
     description: article.description,
+    datePublished: article.updatedAt,
     dateModified: article.updatedAt,
     inLanguage: "ja",
+    articleSection: getCategoryLabel(article.category),
+    keywords: [getCategoryLabel(article.category), "オーストラリア ワーホリ", article.title].join(", "),
+    wordCount: article.content.join("").length,
     mainEntityOfPage: absoluteUrl(`/guides/${article.slug}`),
     image: absoluteUrl("/opengraph-image"),
     author: {
@@ -90,6 +95,24 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
       },
     },
   };
+
+  const howToJsonLd =
+    article.steps && article.steps.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          name: article.title,
+          description: article.description,
+          inLanguage: "ja",
+          step: article.steps.map((step, index) => ({
+            "@type": "HowToStep",
+            position: index + 1,
+            name: step.title,
+            text: step.description,
+            url: absoluteUrl(`/guides/${article.slug}#step-${index + 1}`),
+          })),
+        }
+      : null;
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -143,6 +166,19 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       ) : null}
+      {howToJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+        />
+      ) : null}
+      <Breadcrumbs
+        items={[
+          { label: "ホーム", href: "/" },
+          { label: getCategoryLabel(article.category), href: `/${article.category}` },
+          { label: article.title },
+        ]}
+      />
       <ArticleHeader article={article} />
       <ShareButtons title={article.title} />
 

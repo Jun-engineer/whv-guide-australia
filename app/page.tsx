@@ -154,15 +154,32 @@ export default async function Home() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-slate-900">エリアガイド</h2>
+          <div className="flex items-end justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900">エリアガイド</h2>
+              <p className="mt-1 text-sm text-slate-600">
+                主要都市の仕事・家賃・気候を比較。自分に合った拠点を見つけましょう。
+              </p>
+            </div>
+            <Link href="/area" className="shrink-0 text-sm font-semibold text-sky-700 hover:underline">
+              すべて見る →
+            </Link>
+          </div>
           <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            {["Sydney", "Melbourne", "Brisbane", "Cairns", "Perth"].map((area) => (
-              <span
-                key={area}
-                className="rounded-2xl border border-slate-200 bg-white p-3 text-center text-sm font-semibold text-slate-700"
+            {[
+              { label: "Sydney", slug: "area-sydney" },
+              { label: "Melbourne", slug: "area-melbourne" },
+              { label: "Brisbane", slug: "area-brisbane" },
+              { label: "Perth / Cairns", slug: "area-perth-cairns" },
+              { label: "都市の選び方", slug: "area-overview" },
+            ].map((area) => (
+              <Link
+                key={area.slug}
+                href={`/guides/${area.slug}`}
+                className="rounded-2xl border border-slate-200 bg-white p-3 text-center text-sm font-semibold text-slate-700 transition hover:border-sky-300 hover:text-sky-700"
               >
-                {area}
-              </span>
+                {area.label}
+              </Link>
             ))}
           </div>
         </section>
