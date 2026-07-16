@@ -12,6 +12,7 @@ import { PhraseList } from "@/components/articles/PhraseList";
 import { FaqList } from "@/components/articles/FaqList";
 import { SourceLinks } from "@/components/articles/SourceLinks";
 import { ArticleAd } from "@/components/ads/ArticleAd";
+import { ArticleFeedback } from "@/components/feedback/ArticleFeedback";
 import { ShareButtons } from "@/components/common/ShareButtons";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
@@ -217,6 +218,8 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
       {article.sources && article.sources.length > 0 ? (
         <SourceLinks sources={article.sources} />
       ) : null}
+
+      <ArticleFeedback slug={article.slug} title={article.title} />
 
       <section className="space-y-4">
         <div className="flex items-center justify-between">

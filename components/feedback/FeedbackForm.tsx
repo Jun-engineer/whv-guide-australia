@@ -16,7 +16,20 @@ const feedbackTypeOptions: Array<{ value: FeedbackInput["type"]; label: string }
   { value: "other", label: "その他" },
 ];
 
-export function FeedbackForm() {
+const feedbackTypeValues = feedbackTypeOptions.map((option) => option.value);
+
+function resolveType(value: string | undefined): FeedbackInput["type"] {
+  return (feedbackTypeValues as string[]).includes(value ?? "")
+    ? (value as FeedbackInput["type"])
+    : "article_request";
+}
+
+type FeedbackFormProps = {
+  defaultType?: string;
+  defaultPageUrl?: string;
+};
+
+export function FeedbackForm({ defaultType, defaultPageUrl }: FeedbackFormProps = {}) {
   const { session } = useAuth();
   const [submitted, setSubmitted] = useState(false);
   const [serverMessage, setServerMessage] = useState("");
@@ -28,7 +41,12 @@ export function FeedbackForm() {
     formState: { errors, isSubmitting },
   } = useForm<FeedbackInput>({
     resolver: zodResolver(feedbackSchema),
-    defaultValues: { type: "article_request", pageUrl: "", title: "", body: "" },
+    defaultValues: {
+      type: resolveType(defaultType),
+      pageUrl: defaultPageUrl ?? "",
+      title: "",
+      body: "",
+    },
   });
 
   async function onSubmit(values: FeedbackInput) {

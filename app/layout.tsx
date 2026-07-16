@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AuthProvider } from "@/components/auth/AuthProvider";
+import { FloatingFeedback } from "@/components/feedback/FloatingFeedback";
 import { siteConfig } from "@/lib/siteConfig";
 
 const geistSans = Geist({
@@ -140,6 +141,7 @@ export default function RootLayout({
           <Header />
           <main className="min-h-[70vh]">{children}</main>
           <Footer />
+          <FloatingFeedback />
         </AuthProvider>
       </body>
     </html>

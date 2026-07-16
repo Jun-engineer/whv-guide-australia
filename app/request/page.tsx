@@ -7,7 +7,13 @@ export const metadata: Metadata = {
   description: "記事リクエスト、情報の修正依頼、体験談の共有を受け付けています。",
 };
 
-export default function RequestPage() {
+type RequestPageProps = {
+  searchParams: Promise<{ type?: string; url?: string }>;
+};
+
+export default async function RequestPage({ searchParams }: RequestPageProps) {
+  const { type, url } = await searchParams;
+
   return (
     <Container className="py-10">
       <div className="mx-auto max-w-2xl space-y-4">
@@ -15,7 +21,7 @@ export default function RequestPage() {
         <p className="text-sm text-slate-600">
           知りたい情報、古くなった内容、あなたの体験談を共有してください。運営が確認します。
         </p>
-        <FeedbackForm />
+        <FeedbackForm defaultType={type} defaultPageUrl={url} />
       </div>
     </Container>
   );

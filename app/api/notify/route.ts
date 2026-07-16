@@ -31,6 +31,7 @@ const feedbackTypeLabel: Record<string, string> = {
   experience: "体験談の共有",
   question: "質問",
   other: "その他",
+  article_vote: "記事評価（👍/👎）",
 };
 
 function truncate(value: string, max: number): string {
