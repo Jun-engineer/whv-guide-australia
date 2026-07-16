@@ -5,6 +5,7 @@ import { RegisterForm } from "@/components/auth/RegisterForm";
 export const metadata: Metadata = {
   title: "新規登録",
   description: "掲示板機能を利用するためのアカウント登録。",
+  robots: { index: false, follow: false },
 };
 
 export default function RegisterPage() {

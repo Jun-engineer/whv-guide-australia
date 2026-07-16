@@ -29,7 +29,7 @@ export function StepBlock({ step, index }: StepBlockProps) {
             <figcaption className="mt-1 text-xs text-slate-500">{step.image.caption}</figcaption>
           ) : null}
         </figure>
-      ) : step.imageHint ? (
+      ) : step.imageHint && process.env.NODE_ENV !== "production" ? (
         <div className="mt-3 flex items-center gap-3 rounded-xl border border-dashed border-sky-200 bg-white/70 px-4 py-3 text-xs text-slate-500">
           <span aria-hidden="true" className="text-lg">
             📷

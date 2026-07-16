@@ -5,6 +5,7 @@ import { LoginForm } from "@/components/auth/LoginForm";
 export const metadata: Metadata = {
   title: "ログイン",
   description: "掲示板投稿に必要なログインページ。",
+  robots: { index: false, follow: false },
 };
 
 export default function LoginPage() {
