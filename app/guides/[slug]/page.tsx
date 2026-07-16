@@ -16,7 +16,7 @@ import { ArticleFeedback } from "@/components/feedback/ArticleFeedback";
 import { ShareButtons } from "@/components/common/ShareButtons";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
-import { getArticleBySlug, getRelatedArticles, getCategoryLabel, getAllArticles } from "@/lib/articles";
+import { getArticleBySlug, getAutoRelatedArticles, getCategoryLabel, getAllArticles } from "@/lib/articles";
 import { siteConfig, absoluteUrl } from "@/lib/siteConfig";
 
 type GuideDetailPageProps = {
@@ -68,14 +68,14 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
     notFound();
   }
 
-  const relatedArticles = getRelatedArticles(article.relatedSlugs);
+  const relatedArticles = getAutoRelatedArticles(article, 3);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
     description: article.description,
-    datePublished: article.updatedAt,
+    datePublished: article.publishedAt ?? article.updatedAt,
     dateModified: article.updatedAt,
     inLanguage: "ja",
     articleSection: getCategoryLabel(article.category),
@@ -217,6 +217,39 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
 
       {article.sources && article.sources.length > 0 ? (
         <SourceLinks sources={article.sources} />
+      ) : null}
+
+      {article.verifiedAt || (article.officialSources && article.officialSources.length > 0) ? (
+        <section className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-sm">
+          <h2 className="font-bold text-emerald-900">情報の確認状況</h2>
+          {article.verifiedAt ? (
+            <p className="mt-1 text-emerald-800">
+              公式情報と照合した最終確認日：
+              <time dateTime={article.verifiedAt} className="font-semibold">
+                {article.verifiedAt}
+              </time>
+            </p>
+          ) : null}
+          {article.officialSources && article.officialSources.length > 0 ? (
+            <div className="mt-2">
+              <p className="font-semibold text-emerald-900">公式情報源</p>
+              <ul className="mt-1 space-y-1">
+                {article.officialSources.map((source) => (
+                  <li key={source.url}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-800 underline underline-offset-2 hover:text-emerald-900"
+                    >
+                      {source.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </section>
       ) : null}
 
       <ArticleFeedback slug={article.slug} title={article.title} />

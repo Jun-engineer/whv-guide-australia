@@ -4,10 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/validate-content.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate:favicon": "node scripts/generate-favicon.mjs"
+    "generate:favicon": "node scripts/generate-favicon.mjs",
+    "generate:content": "node scripts/generate-content-registry.mjs",
+    "validate:content": "node scripts/validate-content.mjs",
+    "test:content": "node --test scripts/content.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
@@ -27,6 +31,7 @@
     "eslint-config-next": "^16.2.7",
     "png-to-ico": "^3.0.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "yaml": "^2.9.0"
   }
 }

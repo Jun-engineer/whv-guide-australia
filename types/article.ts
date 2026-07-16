@@ -1,3 +1,5 @@
+import type { ContentPriority, ContentStatus, HubId } from "./content";
+
 export type ArticleCategory =
   | "visa"
   | "preparation"
@@ -84,4 +86,23 @@ export type Article = {
   relatedSlugs: string[];
   updatedAt: string;
   published: boolean;
+
+  // --- コンテンツ管理レイヤー（Phase A）向けの任意メタ ---
+  /**
+   * トピックのハブ（未指定なら category から自動導出）。
+   * 型は types/content.ts の HubId と同じ文字列。
+   */
+  hub?: HubId;
+  /** ライフサイクル状態。未指定かつ published なら "published" 扱い。 */
+  status?: ContentStatus;
+  /** 実装優先度（未指定なら "keep"）。 */
+  priority?: ContentPriority;
+  /** 一覧・カード用の要約（未指定なら description を使用）。 */
+  summary?: string;
+  /** 初回公開日（ISO 文字列, 任意）。 */
+  publishedAt?: string;
+  /** 内容を公式情報と照合して最終確認した日（YMYL 記事向け, 任意）。 */
+  verifiedAt?: string;
+  /** 公式情報源（政府サイト等。YMYL の裏付けを明示する, 任意）。 */
+  officialSources?: ArticleLink[];
 };
