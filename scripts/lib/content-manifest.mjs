@@ -37,6 +37,7 @@ export const STATUS_VALUES = [
   "draft",
   "review",
   "published",
+  "merged",
   "archived",
   "existing",
 ];
@@ -73,6 +74,7 @@ export function loadManifest(manifestPath) {
     intent: item.intent,
     brief: item.brief,
     update: item.update,
+    mergedInto: item.merged_into,
   });
 
   return {
@@ -114,7 +116,7 @@ export function extractArticleSlugs(mockDataText) {
  * Validate the manifest for integrity and cannibalization risks.
  * @returns {{ errors: string[], warnings: string[] }}
  */
-export function validateContent({ hubs, existing, planned, codeSlugs = [] }) {
+export function validateContent({ hubs, existing, planned, codeSlugs = [], redirects = [] }) {
   const errors = [];
   const warnings = [];
   const all = [...existing, ...planned];
@@ -198,12 +200,56 @@ export function validateContent({ hubs, existing, planned, codeSlugs = [] }) {
         );
       }
     }
-    // A planned slug must never collide with a live article slug.
+    // A planned slug must never collide with a live article slug. Entries that
+    // have been reconciled (published/existing/merged) are expected to match.
+    const reconciledStatuses = new Set(["published", "existing", "merged"]);
     for (const item of planned) {
-      if (codeSet.has(item.slug)) {
+      if (codeSet.has(item.slug) && !reconciledStatuses.has(item.status)) {
         errors.push(
           `Planned slug "${item.slug}" collides with a live published article.`,
         );
+      }
+    }
+
+    // Merged entries must point to a live published article (redirect target).
+    for (const item of all) {
+      if (item.status !== "merged") continue;
+      if (!item.mergedInto) {
+        errors.push(`[${item.slug}] status "merged" but no merged_into target.`);
+        continue;
+      }
+      if (!codeSet.has(item.mergedInto)) {
+        errors.push(
+          `[${item.slug}] merged_into "${item.mergedInto}" is not a live published article.`,
+        );
+      }
+      const mergedTarget = all.find((x) => x.slug === item.mergedInto);
+      if (mergedTarget && mergedTarget.status === "merged") {
+        errors.push(
+          `[${item.slug}] merged_into "${item.mergedInto}" is itself merged (chain not allowed).`,
+        );
+      }
+    }
+
+    // Validate the app-level redirect table (lib/content/redirects.ts).
+    if (redirects.length > 0) {
+      const fromSet = new Set(redirects.map((r) => r.from));
+      for (const r of redirects) {
+        if (!codeSet.has(r.to)) {
+          errors.push(
+            `Redirect "${r.from}" → "${r.to}": target is not a live published article.`,
+          );
+        }
+        if (codeSet.has(r.from)) {
+          errors.push(
+            `Redirect "${r.from}" → "${r.to}": source shadows a live published article.`,
+          );
+        }
+        if (fromSet.has(r.to)) {
+          errors.push(
+            `Redirect chain detected: "${r.from}" → "${r.to}" (target is also a redirect source).`,
+          );
+        }
       }
     }
   }

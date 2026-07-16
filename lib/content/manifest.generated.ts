@@ -543,7 +543,7 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "working-holiday-budget",
     "title": "オーストラリアワーホリ初期費用はいくら？予算と必要貯金の完全ガイド",
     "hub": "start-here",
-    "status": "planned",
+    "status": "published",
     "type": "article",
     "priority": "P0",
     "path": "/guides/working-holiday-budget",
@@ -555,7 +555,7 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "working-holiday-timeline",
     "title": "ワーホリ準備スケジュール｜1年前・6か月前・3か月前・1か月前にやること",
     "hub": "start-here",
-    "status": "planned",
+    "status": "published",
     "type": "article",
     "priority": "P0",
     "path": "/guides/working-holiday-timeline",
@@ -567,7 +567,7 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "first-30-days-roadmap",
     "title": "到着後30日ロードマップ｜手続き・家・仕事を進める順番",
     "hub": "start-here",
-    "status": "planned",
+    "status": "published",
     "type": "article",
     "priority": "P0",
     "path": "/guides/first-30-days-roadmap",
@@ -1119,25 +1119,27 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "sim-esim-guide",
     "title": "オーストラリアのSIM・eSIM完全ガイド｜契約と本人確認",
     "hub": "arrival",
-    "status": "planned",
+    "status": "merged",
     "type": "article",
     "priority": "P0",
     "path": "/guides/sim-esim-guide",
     "intent": "how-to",
     "brief": "到着直後の通信確保、番号、本人確認を解説。",
-    "update": "monthly"
+    "update": "monthly",
+    "mergedInto": "sim-guide"
   },
   {
     "slug": "mobile-carrier-comparison",
     "title": "Telstra・Optus・Vodafone系の通信エリアと格安SIM比較",
     "hub": "arrival",
-    "status": "planned",
+    "status": "merged",
     "type": "article",
     "priority": "P0",
     "path": "/guides/mobile-carrier-comparison",
     "intent": "comparison",
     "brief": "都市・地方・ファームでのカバレッジを重視。",
-    "update": "monthly"
+    "update": "monthly",
+    "mergedInto": "sim-guide"
   },
   {
     "slug": "mygov-account-guide",
@@ -1359,7 +1361,7 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "whm-tax-rates",
     "title": "ワーホリ税率（Working Holiday Maker tax）の仕組み",
     "hub": "tax",
-    "status": "planned",
+    "status": "published",
     "type": "article",
     "priority": "P0",
     "path": "/guides/whm-tax-rates",
@@ -1491,13 +1493,14 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "abn-application",
     "title": "ABNの申請方法｜Sole Traderとして無料で登録する手順",
     "hub": "tax",
-    "status": "planned",
+    "status": "merged",
     "type": "article",
     "priority": "P0",
     "path": "/guides/abn-application",
     "intent": "how-to",
     "brief": "申請準備、事業内容、開始日、結果確認。",
-    "update": "quarterly"
+    "update": "quarterly",
+    "mergedInto": "abn-guide"
   },
   {
     "slug": "sole-trader-basics",
@@ -1587,25 +1590,27 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "find-lost-super",
     "title": "複数のSuper口座を確認・統合する方法",
     "hub": "tax",
-    "status": "planned",
+    "status": "merged",
     "type": "article",
     "priority": "P1",
     "path": "/guides/find-lost-super",
     "intent": "how-to",
     "brief": "myGov/ATOでの確認と保険消失への注意。",
-    "update": "quarterly"
+    "update": "quarterly",
+    "mergedInto": "super-guide"
   },
   {
     "slug": "dasp-guide",
     "title": "帰国後のSuper返金（DASP）申請ガイド",
     "hub": "tax",
-    "status": "planned",
+    "status": "merged",
     "type": "article",
     "priority": "P0",
     "path": "/guides/dasp-guide",
     "intent": "how-to",
     "brief": "申請時期、必要情報、税、口座受取。",
-    "update": "monthly"
+    "update": "monthly",
+    "mergedInto": "dasp-refund"
   },
   {
     "slug": "job-search-websites",
@@ -2883,13 +2888,14 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "buy-used-car-guide",
     "title": "ワーホリの中古車購入完全ガイド｜探し方から名義変更まで",
     "hub": "transport",
-    "status": "planned",
+    "status": "merged",
     "type": "article",
     "priority": "P0",
     "path": "/guides/buy-used-car-guide",
     "intent": "how-to",
     "brief": "予算、内見、整備、登録、保険。",
-    "update": "monthly"
+    "update": "monthly",
+    "mergedInto": "cars-guide"
   },
   {
     "slug": "used-car-inspection-checklist",

@@ -420,7 +420,7 @@ planned_content:
 - slug: working-holiday-budget
   title: オーストラリアワーホリ初期費用はいくら？予算と必要貯金の完全ガイド
   hub: start-here
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: cost
@@ -430,7 +430,7 @@ planned_content:
 - slug: working-holiday-timeline
   title: ワーホリ準備スケジュール｜1年前・6か月前・3か月前・1か月前にやること
   hub: start-here
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: checklist
@@ -440,7 +440,7 @@ planned_content:
 - slug: first-30-days-roadmap
   title: 到着後30日ロードマップ｜手続き・家・仕事を進める順番
   hub: start-here
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: checklist
@@ -900,7 +900,8 @@ planned_content:
 - slug: sim-esim-guide
   title: オーストラリアのSIM・eSIM完全ガイド｜契約と本人確認
   hub: arrival
-  status: planned
+  status: merged
+  merged_into: sim-guide
   type: article
   priority: P0
   intent: how-to
@@ -910,7 +911,8 @@ planned_content:
 - slug: mobile-carrier-comparison
   title: Telstra・Optus・Vodafone系の通信エリアと格安SIM比較
   hub: arrival
-  status: planned
+  status: merged
+  merged_into: sim-guide
   type: article
   priority: P0
   intent: comparison
@@ -1100,7 +1102,7 @@ planned_content:
 - slug: whm-tax-rates
   title: ワーホリ税率（Working Holiday Maker tax）の仕組み
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: tax
@@ -1210,7 +1212,8 @@ planned_content:
 - slug: abn-application
   title: ABNの申請方法｜Sole Traderとして無料で登録する手順
   hub: tax
-  status: planned
+  status: merged
+  merged_into: abn-guide
   type: article
   priority: P0
   intent: how-to
@@ -1290,7 +1293,8 @@ planned_content:
 - slug: find-lost-super
   title: 複数のSuper口座を確認・統合する方法
   hub: tax
-  status: planned
+  status: merged
+  merged_into: super-guide
   type: article
   priority: P1
   intent: how-to
@@ -1300,7 +1304,8 @@ planned_content:
 - slug: dasp-guide
   title: 帰国後のSuper返金（DASP）申請ガイド
   hub: tax
-  status: planned
+  status: merged
+  merged_into: dasp-refund
   type: article
   priority: P0
   intent: how-to
@@ -2370,7 +2375,8 @@ planned_content:
 - slug: buy-used-car-guide
   title: ワーホリの中古車購入完全ガイド｜探し方から名義変更まで
   hub: transport
-  status: planned
+  status: merged
+  merged_into: cars-guide
   type: article
   priority: P0
   intent: how-to

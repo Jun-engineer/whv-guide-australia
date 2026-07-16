@@ -43,7 +43,9 @@ test("every entry maps to a known hub", () => {
 test("planned entries never collide with live article slugs", () => {
   const { planned, codeSlugs } = load();
   const live = new Set(codeSlugs);
+  const reconciled = new Set(["published", "existing", "merged"]);
   for (const item of planned) {
+    if (reconciled.has(item.status)) continue;
     assert.ok(!live.has(item.slug), `planned slug collides with live: ${item.slug}`);
   }
 });

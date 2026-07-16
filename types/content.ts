@@ -13,6 +13,7 @@ export type ContentStatus =
   | "draft"
   | "review"
   | "published"
+  | "merged"
   | "archived"
   /** manifest 上で「既存記事」を表すマーカー（コード側の実記事に対応） */
   | "existing";
@@ -63,6 +64,8 @@ export type ContentHub = {
 export type OfficialSource = {
   label: string;
   url: string;
+  /** 実際に内容を確認した日（ISO 文字列, 任意）。 */
+  accessedAt?: string;
 };
 
 /**
@@ -80,6 +83,8 @@ export type ManifestItem = {
   intent?: string;
   brief?: string;
   update?: string;
+  /** status が "merged" の場合の統合先 slug。 */
+  mergedInto?: string;
 };
 
 /**
@@ -101,6 +106,12 @@ export type ContentItem = {
   verifiedAt?: string;
   officialSources?: OfficialSource[];
   relatedSlugs?: string[];
+  /** 検索意図（重複検知・クラスタリング用の短いラベル）。 */
+  searchIntent?: string;
+  /** 統合先の primary slug（status: merged のとき）。 */
+  mergedInto?: string;
+  /** この記事へ統合された旧 slug（リダイレクト元）。 */
+  redirectFrom?: string[];
   /** true の場合、コード側に実際の本文（Article）が存在する。 */
   hasBody: boolean;
 };

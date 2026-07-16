@@ -1,4 +1,9 @@
-import type { ContentPriority, ContentStatus, HubId } from "./content";
+import type {
+  ContentPriority,
+  ContentStatus,
+  HubId,
+  OfficialSource,
+} from "./content";
 
 export type ArticleCategory =
   | "visa"
@@ -104,5 +109,11 @@ export type Article = {
   /** 内容を公式情報と照合して最終確認した日（YMYL 記事向け, 任意）。 */
   verifiedAt?: string;
   /** 公式情報源（政府サイト等。YMYL の裏付けを明示する, 任意）。 */
-  officialSources?: ArticleLink[];
+  officialSources?: OfficialSource[];
+  /** 検索意図（重複検知用の短いラベル, 任意）。 */
+  searchIntent?: string;
+  /** 統合先の primary slug（status: merged のとき）。 */
+  mergedInto?: string;
+  /** この記事へ統合された旧 slug（リダイレクト元）。 */
+  redirectFrom?: string[];
 };

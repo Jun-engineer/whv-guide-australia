@@ -20,16 +20,53 @@ const ROOT = resolve(__dirname, "..");
 const { hubs, existing, planned } = loadManifest(
   resolve(ROOT, "whv-guide-content-plan/content-manifest.yaml"),
 );
-const codeSlugs = extractArticleSlugs(
-  readFileSync(resolve(ROOT, "lib/mockData.ts"), "utf8"),
+const mockDataText = readFileSync(resolve(ROOT, "lib/mockData.ts"), "utf8");
+const codeSlugs = extractArticleSlugs(mockDataText);
+
+// Parse the app-level redirect table (lib/content/redirects.ts) so build-time
+// validation can confirm every redirect target is a live published article and
+// that no redirect chains or shadowed live pages exist.
+const redirectsText = readFileSync(
+  resolve(ROOT, "lib/content/redirects.ts"),
+  "utf8",
 );
+const redirects = [];
+const redirectRe =
+  /from:\s*"([^"]+)"\s*,\s*to:\s*"([^"]+)"/g;
+let rm;
+while ((rm = redirectRe.exec(redirectsText)) !== null) {
+  redirects.push({ from: rm[1], to: rm[2] });
+}
 
 const { errors, warnings } = validateContent({
   hubs,
   existing,
   planned,
   codeSlugs,
+  redirects,
 });
+
+// Internal-link integrity: every relatedSlugs entry must resolve to a real
+// article slug (or a registered redirect source that forwards to one).
+const slugSet = new Set(codeSlugs);
+const redirectFromSet = new Set(redirects.map((r) => r.from));
+const relatedRe = /relatedSlugs:\s*\[([^\]]*)\]/g;
+let rel;
+const brokenLinks = new Set();
+while ((rel = relatedRe.exec(mockDataText)) !== null) {
+  const refs = rel[1]
+    .split(",")
+    .map((s) => s.trim().replace(/^["']|["']$/g, ""))
+    .filter(Boolean);
+  for (const ref of refs) {
+    if (!slugSet.has(ref) && !redirectFromSet.has(ref)) {
+      brokenLinks.add(ref);
+    }
+  }
+}
+for (const ref of brokenLinks) {
+  errors.push(`relatedSlugs references unknown article slug: "${ref}"`);
+}
 
 for (const w of warnings) console.warn(`⚠️  ${w}`);
 for (const e of errors) console.error(`❌ ${e}`);

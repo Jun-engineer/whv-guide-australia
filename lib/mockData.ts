@@ -106,7 +106,7 @@ export const articles: Article[] = [
       },
     ],
     warnings: ["ビザ制度・申請料・必要資金は予告なく変更されます。申請前に必ず公式情報を確認してください。"],
-    relatedSlugs: ["visa-application", "arrival-checklist", "money-transfer-wise"],
+    relatedSlugs: ["visa-application", "arrival-checklist", "money-transfer-wise", "working-holiday-budget", "working-holiday-timeline", "first-30-days-roadmap"],
     updatedAt: "2026-07-16",
     published: true,
   },
@@ -183,7 +183,21 @@ export const articles: Article[] = [
     sources: [
       { label: "ImmiAccount ログイン", url: "https://online.immi.gov.au/" },
     ],
-    relatedSlugs: ["whv-complete-guide", "arrival-checklist"],
+    verifiedAt: "2026-07-16",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417",
+        accessedAt: "2026-07-16",
+      },
+      {
+        label: "First Working Holiday visa（申請料 AUD840）",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/first-working-holiday-417",
+        accessedAt: "2026-07-16",
+      },
+    ],
+    searchIntent: "417ビザの申請手順・費用",
+    relatedSlugs: ["whv-complete-guide", "arrival-checklist", "working-holiday-timeline", "working-holiday-budget"],
     updatedAt: "2026-07-16",
     published: true,
   },
@@ -232,7 +246,7 @@ export const articles: Article[] = [
           "働き始めること自体は可能ですが、TFNを雇用主に提出しないと高い税率で源泉徴収されます。申請から28日以内に提出すれば通常税率が適用されるので、到着後すぐ申請しましょう。",
       },
     ],
-    relatedSlugs: ["housing-guide", "tfn-guide", "bank-account-guide", "sim-guide", "transport-payment-guide"],
+    relatedSlugs: ["housing-guide", "tfn-guide", "bank-account-guide", "sim-guide", "transport-payment-guide", "first-30-days-roadmap"],
     updatedAt: "2026-06-16",
     published: true,
   },
@@ -275,7 +289,7 @@ export const articles: Article[] = [
     sources: [
       { label: "ATO - Apply for a TFN", url: "https://www.ato.gov.au/individuals-and-families/tax-file-number/apply-for-a-tfn" },
     ],
-    relatedSlugs: ["abn-guide", "tax-return-guide", "bank-account-guide"],
+    relatedSlugs: ["abn-guide", "tax-return-guide", "bank-account-guide", "whm-tax-rates"],
     updatedAt: "2026-06-10",
     published: true,
   },
@@ -360,8 +374,22 @@ export const articles: Article[] = [
       { label: "ATO - Lodging your tax return", url: "https://www.ato.gov.au/individuals-and-families/your-tax-return" },
       { label: "myGov", url: "https://my.gov.au/" },
     ],
-    relatedSlugs: ["super-guide", "tfn-guide", "abn-guide"],
-    updatedAt: "2026-06-10",
+    verifiedAt: "2026-07-16",
+    officialSources: [
+      {
+        label: "ATO｜Tax rates – working holiday maker（2025–26年度）",
+        url: "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-working-holiday-makers",
+        accessedAt: "2026-07-16",
+      },
+      {
+        label: "ATO｜Your tax return（申告手続き）",
+        url: "https://www.ato.gov.au/individuals-and-families/your-tax-return",
+        accessedAt: "2026-07-16",
+      },
+    ],
+    searchIntent: "タックスリターンの基本と税率",
+    relatedSlugs: ["super-guide", "tfn-guide", "abn-guide", "whm-tax-rates"],
+    updatedAt: "2026-07-16",
     published: true,
   },
   {
@@ -821,7 +849,7 @@ export const articles: Article[] = [
       { label: "Fair Work Ombudsman（労働条件・最低賃金）", url: "https://www.fairwork.gov.au/" },
       { label: "SEEK（求人サイト）", url: "https://www.seek.com.au/" },
     ],
-    relatedSlugs: ["farm-second-visa", "tfn-guide", "whv-complete-guide"],
+    relatedSlugs: ["farm-second-visa", "tfn-guide", "whv-complete-guide", "first-30-days-roadmap"],
     updatedAt: "2026-06-10",
     published: true,
   },
@@ -903,7 +931,7 @@ export const articles: Article[] = [
     warnings: [
       "海外転出・年金・税金の取り扱いは個人の状況で異なります。判断に迷う場合は市区町村の窓口で確認してください。",
     ],
-    relatedSlugs: ["whv-complete-guide", "money-transfer-wise", "arrival-checklist"],
+    relatedSlugs: ["whv-complete-guide", "money-transfer-wise", "arrival-checklist", "working-holiday-timeline", "working-holiday-budget"],
     updatedAt: "2026-06-10",
     published: true,
   },
@@ -1011,11 +1039,25 @@ export const articles: Article[] = [
         url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work",
       },
     ],
+    verifiedAt: "2026-07-16",
+    officialSources: [
+      {
+        label: "Second Working Holiday visa（3か月のspecified work・申請料 AUD1,000）",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/second-working-holiday-417",
+        accessedAt: "2026-07-16",
+      },
+      {
+        label: "Third Working Holiday visa（6か月のspecified work・申請料 AUD1,000）",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/third-working-holiday-417",
+        accessedAt: "2026-07-16",
+      },
+    ],
+    searchIntent: "セカンド/サードビザの条件と申請",
     warnings: [
       "対象業種・指定地域・必要日数の定義は予告なく変更されます。働き始める前に必ず公式情報で最新の条件を確認してください。",
     ],
-    relatedSlugs: ["farm-second-visa", "whv-complete-guide", "jobs-guide"],
-    updatedAt: "2026-06-10",
+    relatedSlugs: ["farm-second-visa", "farm-finding", "whv-complete-guide", "jobs-guide"],
+    updatedAt: "2026-07-16",
     published: true,
   },
   {
@@ -1443,8 +1485,22 @@ export const articles: Article[] = [
       "制度・要件は頻繁に変わります。最新情報は必ず公式で確認しましょう。",
     ],
     warnings: ["ビザ制度は予告なく変更されます。重大な判断の前に必ず公式情報・専門家で確認してください。"],
+    verifiedAt: "2026-07-16",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜List of all visas",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing",
+        accessedAt: "2026-07-16",
+      },
+      {
+        label: "Working Holiday visa (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417",
+        accessedAt: "2026-07-16",
+      },
+    ],
+    searchIntent: "ワーホリ後の在留延長・ビザ選択",
     relatedSlugs: ["second-visa-guide", "whv-complete-guide", "language-school"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-16",
     published: true,
   },
   {
@@ -1963,6 +2019,297 @@ export const articles: Article[] = [
     ],
     warnings: ["命に関わる緊急時は迷わず000に電話してください。我慢や自己判断は禁物です。"],
     relatedSlugs: ["medicare-oshc", "safety-emergency"],
+    updatedAt: "2026-07-16",
+    published: true,
+  },
+  {
+    id: "a48",
+    title: "オーストラリアワーホリの初期費用と必要貯金｜モデル予算で解説",
+    slug: "working-holiday-budget",
+    category: "preparation",
+    hub: "start-here",
+    priority: "P0",
+    searchIntent: "ワーホリの初期費用・必要貯金額",
+    description:
+      "ワーホリ渡航にいくら必要か。確定費用（ビザ申請料）と変動費用（航空券・保険・当初の生活費）を分けて、渡航前に用意したい貯金の目安をモデル予算で整理します。",
+    content: [
+      "結論から言うと、確実にかかる出費で唯一の「公式な固定額」はビザ申請料です。ファーストワーホリ（サブクラス417）の申請料は AUD840、セカンド／サードは各 AUD1,000 です（2026年7月時点、Department of Home Affairs 公式）。その他の航空券・保険・当初の家賃などは時期や選び方で大きく変わる変動費用なので、「固定費用＋変動費用の目安＋予備費」で予算を組むのが失敗しない考え方です。",
+      "渡航前に用意しておきたい資金の全体像は、大きく「①出発までに支払うもの（ビザ・航空券・保険）」「②到着後すぐ必要なもの（当面の宿泊費・家のボンド・食費・交通費）」「③予備費」の3つに分けられます。仕事が決まって最初の給料が入るまでには数週間かかることが多いため、②の生活費は最低でも1〜2か月分を現金・カードで確保しておくと安心です。",
+      "ビザ申請時に残高証明の提出を求められることがあります。目安として一般に約5,000 AUD程度の資金証明が案内されることが多いですが、金額や要否は申請状況により異なります。実際に必要な証明額や条件は、申請前に必ず公式の案内で確認してください（本記事末尾の公式リンク参照）。",
+      "以下の変動費用はあくまで一般的な「目安」で、為替・時期・都市・保険プランによって上下します。正確な金額は必ず自分で見積もりを取ってください。航空券は往復・時期により変動、海外旅行保険（またはワーホリ保険）は補償内容で年額が大きく変わり、家賃は都市・シェアかどうかで差が出ます。特にシドニー・メルボルンなど大都市は家賃・ボンドが高くなりやすい点に注意しましょう。",
+      "予備費を軽視しないことが最大のコツです。到着直後は「SIM・交通・食費・当面の宿・家のボンド」が一気に出ていきます。加えて、仕事が見つかるまでの期間や、体調を崩したときの出費も想定しておく必要があります。楽観的な最低ラインだけで渡航すると、仕事が決まる前に資金が尽きる、という典型的な失敗につながります。",
+    ],
+    keyFacts: [
+      { label: "初回ビザ申請料（417）", value: "AUD840（公式・固定額）" },
+      { label: "セカンド/サード申請料", value: "各 AUD1,000（公式・固定額）" },
+      { label: "残高証明の目安", value: "約5,000 AUD（要否・金額は申請状況による／要公式確認）" },
+      { label: "到着後の生活費", value: "最低1〜2か月分を確保（給料が入るまでの空白に備える）" },
+      { label: "予算の考え方", value: "固定費用＋変動費用の目安＋予備費" },
+    ],
+    steps: [
+      {
+        title: "① 固定費用を確定させる",
+        description:
+          "ビザ申請料（ファースト AUD840）は公式の固定額。ここは正確に計上できます。セカンド/サードを見据えるなら各 AUD1,000 も頭に入れておきます。",
+      },
+      {
+        title: "② 出発前費用の見積もりを取る",
+        description:
+          "航空券と保険は実際に見積もりを取って金額を確定します。保険は補償額・治療費上限・持病の扱いを比較し、料金だけで選ばないことが重要です。",
+      },
+      {
+        title: "③ 到着後1〜2か月の生活費を積む",
+        description:
+          "当面の宿泊費、家のボンド（数週間分の家賃相当が一般的）、食費、交通費、SIM代を1〜2か月分まとめて確保します。",
+      },
+      {
+        title: "④ 予備費を上乗せする",
+        description:
+          "仕事が決まるまでの期間や、体調不良・急な出費に備えて予備費を必ず上乗せします。ここを削ると資金切れのリスクが跳ね上がります。",
+      },
+      {
+        title: "⑤ 為替とカードを準備",
+        description:
+          "現金を全部両替せず、海外対応のデビット/クレジットカードと少額の現地通貨を組み合わせます。到着直後の交通・買い物はタッチ決済が使えます。",
+      },
+    ],
+    tips: [
+      "「最低ライン」ではなく「仕事が決まらなくても数か月耐えられる額」で計画すると失敗しにくいです。",
+      "保険は年額の安さだけで選ばず、治療費・入院・持病の補償を必ず確認しましょう。",
+      "大都市（シドニー・メルボルン）は家賃・ボンドが高め。最初は生活費の安い地域から始める選択肢もあります。",
+    ],
+    warnings: [
+      "本記事の航空券・保険・家賃などの金額は一般的な目安で、公式に定められた固定額ではありません。必ず自分で最新の見積もりを取ってください。",
+      "残高証明の要否・必要額はビザ申請状況によって異なります。渡航直前に公式情報で確認してください。",
+    ],
+    faqs: [
+      {
+        question: "結局いくら貯金があれば渡航できますか？",
+        answer:
+          "固定額はビザ申請料（ファースト AUD840）のみで、それ以外は選び方次第です。ビザ・航空券・保険に加えて、到着後1〜2か月分の生活費と予備費を足した金額を最低ラインと考えると安全です。正確な航空券・保険料は見積もりを取り、残高証明の要否は公式で確認してください。",
+      },
+      {
+        question: "現地で働けば生活費は稼げますか？",
+        answer:
+          "多くの人は現地収入で生活しますが、仕事が決まり最初の給料が入るまでには数週間かかります。その空白期間を貯金でしのげるかが重要です。",
+      },
+    ],
+    sources: [
+      { label: "ImmiAccount ログイン", url: "https://online.immi.gov.au/" },
+    ],
+    verifiedAt: "2026-07-16",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417)（申請料 AUD840 / セカンド・サード AUD1,000）",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417",
+        accessedAt: "2026-07-16",
+      },
+    ],
+    relatedSlugs: ["whv-complete-guide", "visa-application", "insurance-guide", "working-holiday-timeline", "first-30-days-roadmap"],
+    updatedAt: "2026-07-16",
+    published: true,
+  },
+  {
+    id: "a49",
+    title: "ワーホリ準備スケジュール｜1年前・6か月前・3か月前・1か月前にやること",
+    slug: "working-holiday-timeline",
+    category: "preparation",
+    hub: "start-here",
+    priority: "P0",
+    searchIntent: "ワーホリ準備のスケジュール・逆算",
+    description:
+      "渡航日から逆算して、いつ何を準備すればいいかを時系列で整理。ビザ・航空券・保険・貯金・パスポートの準備タイミングを、つまずきやすい順序の落とし穴とあわせて解説します。",
+    content: [
+      "先に要点を言うと、準備は「①パスポート確認 → ②貯金 → ③ビザ申請 → ④航空券 → ⑤保険・現地手配」の順で進めるのが安全です。特に重要なのは、ビザが許可されてから航空券を確定させること。Department of Home Affairs は「ビザ許可の通知が書面で届くまで渡航手配をしないように」と明記しており、申請が混み合う時期は処理に想定以上の時間がかかることがあるためです。",
+      "1年〜半年前にやることは「土台づくり」です。まずパスポートの有効期限を確認します。滞在予定より長い有効期限が必要で、残りが少ない場合は先に更新します。並行して渡航資金を貯め始め、行きたい地域や仕事のイメージをざっくり固めておくと、後の判断がスムーズになります。",
+      "3か月前前後は「ビザ申請」の時期です。ワーホリ（417）はImmiAccountからオンラインで申請します。処理期間は時期により変動し、繁忙期は長引くことがあるため、渡航予定が決まっているなら早めの申請が安心です。ビザが許可されると通常は許可日から12か月以内に初回入国が必要になるので、この入国期限を確認してから航空券を検討します。",
+      "1か月前は「確定と手配」の時期です。ビザ許可を確認したうえで航空券を購入し、海外旅行保険（またはワーホリ保険）に加入します。到着後最初の数泊の宿（ホステルや短期滞在先）を予約し、eSIM対応スマホならSIMを事前手配しておくと、到着直後からネットが使えて動きやすくなります。",
+      "出発直前は「持ち物と書類」の最終確認です。パスポート、ビザ許可通知（Grant Notification）のPDF、保険証券、残高証明（求められた場合に備えて）、海外対応カードをそろえ、重要書類はスマホとクラウドの両方に保存します。日本側では、住民票・年金・健康保険・税金（住民税）などの手続きも必要に応じて済ませておきましょう。",
+    ],
+    keyFacts: [
+      { label: "1年〜半年前", value: "パスポート確認・更新／貯金開始／地域・仕事の方向性" },
+      { label: "約3か月前", value: "ImmiAccountでビザ申請（繁忙期は早めに）" },
+      { label: "許可後〜1か月前", value: "航空券購入・保険加入・初期の宿とSIM手配" },
+      { label: "直前", value: "書類・カード・日本側の手続きの最終確認" },
+      { label: "重要原則", value: "ビザ許可の書面通知が届くまで渡航を確定しない" },
+    ],
+    steps: [
+      { title: "パスポートの有効期限を確認", description: "滞在予定より長い残存期間が必要。少なければ渡航準備の最初に更新します。" },
+      { title: "渡航資金を貯める", description: "ビザ・航空券・保険＋到着後1〜2か月の生活費と予備費を目標に貯めます。" },
+      { title: "ビザを申請する", description: "約3か月前を目安にImmiAccountで申請。繁忙期は処理が長引くため早めに。" },
+      { title: "許可を確認して航空券を購入", description: "Grant Notificationと初回入国期限を確認してから航空券を確定します。" },
+      { title: "保険・初期の宿・SIMを手配", description: "保険に加入し、最初の宿を予約。eSIMなら事前手配で到着後すぐ使えます。" },
+    ],
+    tips: [
+      "航空券はビザ許可の後に確定するのが鉄則。先に買って許可が遅れると予定が崩れます。",
+      "Grant NotificationのPDFはスマホ・クラウドの両方に保存しておきましょう。",
+      "日本側の住民票・年金・健康保険・住民税の扱いも、出発前に確認しておくと帰国後に慌てません。",
+    ],
+    warnings: [
+      "ビザの処理期間は時期により大きく変動します。渡航手配は必ずビザ許可の書面通知を受け取ってから確定してください。",
+    ],
+    faqs: [
+      {
+        question: "ビザ申請はいつすればいいですか？",
+        answer:
+          "渡航予定の約3か月前を目安にすると余裕を持てます。処理期間は時期により変動し繁忙期は長引くため、日程が決まっているなら早めの申請が安全です。ただしビザ許可後は通常12か月以内の初回入国が必要なので、早すぎる申請は入国期限にも注意しましょう。",
+      },
+      {
+        question: "航空券とビザ、どちらを先に用意すべきですか？",
+        answer:
+          "ビザが先です。公式も、ビザ許可の書面通知が届くまで渡航手配をしないよう案内しています。許可を確認してから航空券を購入してください。",
+      },
+    ],
+    sources: [
+      { label: "ImmiAccount ログイン", url: "https://online.immi.gov.au/" },
+    ],
+    verifiedAt: "2026-07-16",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417)（処理期間・入国期限の案内）",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417",
+        accessedAt: "2026-07-16",
+      },
+    ],
+    relatedSlugs: ["working-holiday-budget", "visa-application", "packing-list", "preparation-checklist", "first-30-days-roadmap"],
+    updatedAt: "2026-07-16",
+    published: true,
+  },
+  {
+    id: "a50",
+    title: "到着後30日ロードマップ｜家・仕事・手続きを進める順番",
+    slug: "first-30-days-roadmap",
+    category: "arrival",
+    hub: "start-here",
+    priority: "P0",
+    searchIntent: "到着後にやることの順番・ロードマップ",
+    description:
+      "オーストラリア到着後の最初の30日で、SIM・住居・銀行・TFN・仕事探しを「どの順番で」進めるべきかを週ごとに整理。郵送物の受け取りでつまずかない導線を示します。",
+    content: [
+      "最初に結論を言うと、到着後は「SIM → 住居 → 銀行口座 → TFN → 仕事探し」の順で進めるのが失敗しにくい流れです。理由はシンプルで、銀行のカードやTFNの通知など重要な郵送物は登録した住所に届くため、住所が定まらないうちに手続きを進めると受け取れなくなるからです。まず連絡手段（SIM）と受取先（住居）を確保してから、口座開設と納税者番号の申請に進みます。",
+      "1週目は『つながる・住む・移動する』を整えます。到着したらまずSIM/eSIMでネットをつなぎ、数週間は滞在できる拠点（ホステルや短期のシェアハウス）を確保します。市内までの移動や日々の買い物はタッチ決済が使えるので、到着直後に大量の現金は不要です。詳しい通信・住居の選び方は各詳細記事にまとめています。",
+      "2週目は『お金と番号』です。住所が決まったら銀行口座を開設し、そのうえでTFN（Tax File Number＝納税者番号）を申請します。TFNは仕事を始めるときに必須で、提出しないと高い税率が源泉徴収されてしまいます。あわせてmyGovアカウントを作っておくと、後の税務手続き（タックスリターン）がスムーズです。",
+      "3週目は『仕事探し』に本格的に動きます。英文レジュメを用意し、求人サイト・店頭への持ち込み・地域のコミュニティなど複数の経路で応募します。職種によってはRSA（アルコール提供）やWhite Card（建設）などの資格が必要になるため、狙う仕事に合わせて早めに取得を検討します。",
+      "4週目は『生活基盤の仕上げ』です。中期的に住むシェアハウスを固め、必要なら中古車や公共交通の定期を検討し、医療（Medicare対象国かOSHC/保険）や緊急連絡先を確認します。ここまで整えば、あとは働きながら生活のリズムを作っていく段階です。",
+    ],
+    keyFacts: [
+      { label: "推奨の順番", value: "SIM → 住居 → 銀行 → TFN → 仕事探し" },
+      { label: "1週目", value: "SIM/eSIM・当面の住居・交通と買い物のタッチ決済" },
+      { label: "2週目", value: "銀行口座 → TFN申請 → myGov作成" },
+      { label: "3週目", value: "英文レジュメ・応募・必要資格（RSA/White Card）" },
+      { label: "4週目", value: "中期の住居・交通・医療と緊急連絡先の確認" },
+    ],
+    steps: [
+      { title: "SIM/eSIMでネット確保", description: "到着直後にデータ通信を確保。詳しくはSIM・通信ガイドを参照します。" },
+      { title: "当面の住居を確保", description: "数週間滞在できる拠点を押さえ、郵送物を受け取れる住所を作ります。" },
+      { title: "銀行口座を開設", description: "住所確定後にオンライン/店頭で開設。給料の受け取り口座にします。" },
+      { title: "TFNを申請", description: "口座と住所が整ったらTFNを申請。仕事開始までに取得しておきます。" },
+      { title: "仕事を探し始める", description: "英文レジュメを用意し、複数経路で応募。必要な資格も早めに取得します。" },
+    ],
+    tips: [
+      "銀行のカードやTFN通知は郵送。住所が定まる前に手続きを急ぐと受け取れないことがあります。",
+      "TFNを提出せずに働くと高い税率で源泉徴収されます。仕事開始前の取得がおすすめです。",
+      "myGovは早めに作成。後のタックスリターンやIncome Statementの確認が楽になります。",
+    ],
+    warnings: [
+      "『内見前に家賃やボンドを振り込んで』と急かす相手は詐欺の可能性があります。現物確認と契約書を必ず確認してください。",
+    ],
+    faqs: [
+      {
+        question: "銀行口座とTFN、どちらが先ですか？",
+        answer:
+          "一般的には住所確定後に銀行口座を開設し、その後にTFNを申請する流れがスムーズです。どちらも郵送物や本人確認が関わるため、まず住居（受取先の住所）を固めることが先決です。",
+      },
+      {
+        question: "仕事はいつから探し始めるべきですか？",
+        answer:
+          "生活の基盤（SIM・住居・銀行・TFN）が整い始める2〜3週目から本格化するのが効率的です。ただしレジュメ作成や資格取得は1週目から並行して進めておくと早く動けます。",
+      },
+    ],
+    sources: [
+      { label: "ATO｜Tax file number", url: "https://www.ato.gov.au/individuals-and-families/tax-file-number" },
+      { label: "myGov", url: "https://my.gov.au/" },
+    ],
+    verifiedAt: "2026-07-16",
+    officialSources: [
+      {
+        label: "ATO｜Tax file number（TFNの申請）",
+        url: "https://www.ato.gov.au/individuals-and-families/tax-file-number",
+        accessedAt: "2026-07-16",
+      },
+    ],
+    relatedSlugs: ["arrival-checklist", "sim-guide", "bank-account-guide", "tfn-guide", "jobs-guide", "share-house-finding"],
+    updatedAt: "2026-07-16",
+    published: true,
+  },
+  {
+    id: "a51",
+    title: "ワーホリの所得税率（Working Holiday Maker税率）2025–26年度",
+    slug: "whm-tax-rates",
+    category: "tax-return",
+    hub: "tax",
+    priority: "P1",
+    searchIntent: "ワーホリの所得税率・WHM税率",
+    description:
+      "ワーホリ（417/462）に適用されるWorking Holiday Maker税率を、2025–26年度のATO公式の税額表で解説。15%が適用される範囲、TFN未提出時の45%源泉、確認方法までまとめます。",
+    content: [
+      "結論から言うと、ワーホリ（サブクラス417・462）には「Working Holiday Maker（WHM）税率」という専用の所得税率が適用され、課税所得の0〜45,000 AUDの部分は1ドルあたり15セント（15%）で課税されます。これは全国共通の連邦（国）税で、州や準州によって変わるものではありません。以下は2025–26年度のATO公式の税額表です。",
+      "【2025–26年度 WHM税率（課税所得に対する税額）】 0〜45,000 AUD：1ドルにつき15セント／ 45,001〜135,000 AUD：6,750 AUD ＋ 45,000超の1ドルにつき30セント／ 135,001〜190,000 AUD：33,750 AUD ＋ 135,000超の1ドルにつき37セント／ 190,001 AUD以上：54,100 AUD ＋ 190,000超の1ドルにつき45セント。（出典：ATO Tax rates – working holiday maker）",
+      "給与からの源泉徴収の仕組みも知っておきましょう。雇用主がATOに「WHM雇用主」として登録している場合、あなたに支払う額が年間45,000 AUDに達するまでは一律15%で源泉徴収されます。45,000 AUDを超えた分からは上の表に沿った高い率が適用されます。登録していない雇用主は外国居住者向けの税率で源泉徴収します。",
+      "TFN（納税者番号）を雇用主に提出していないと、支払額に対して45%という高い率で源泉徴収されます。仕事を始める前にTFNを取得・提出しておくことが、手取りを守るうえで非常に重要です。TFN未提出のまま働くと、後から取り戻すには確定申告（タックスリターン）が必要になります。",
+      "実際の年間の税額や、還付になるか追加納税になるかは、1年間の総所得と源泉徴収額によって決まります。会計年度（7月1日〜翌6月30日）の終了後、7月1日〜10月31日の申告期間にmyGov経由でタックスリターンを行うと、源泉徴収が多すぎた分は還付されます。正確な自分の税額はATOの計算ツールで試算できます。",
+    ],
+    keyFacts: [
+      { label: "適用対象", value: "サブクラス417・462のワーホリ（全国共通の連邦税）" },
+      { label: "0〜45,000 AUD", value: "1ドルにつき15セント（15%）" },
+      { label: "45,001〜135,000 AUD", value: "6,750 AUD ＋ 45,000超に30セント/ドル" },
+      { label: "135,001〜190,000 AUD", value: "33,750 AUD ＋ 135,000超に37セント/ドル" },
+      { label: "190,001 AUD以上", value: "54,100 AUD ＋ 190,000超に45セント/ドル" },
+      { label: "TFN未提出時", value: "支払額に対し45%で源泉徴収" },
+    ],
+    steps: [
+      { title: "TFNを取得・提出", description: "仕事開始前にTFNを取得し雇用主へ提出。未提出だと45%源泉になります。" },
+      { title: "Payslipで源泉額を確認", description: "毎回のPayslipで源泉徴収額（Tax/PAYG）が正しく引かれているか確認します。" },
+      { title: "会計年度末に総所得を把握", description: "6月30日で締め。全雇用主のIncome Statementが揃うのを待ちます。" },
+      { title: "タックスリターンで精算", description: "myGov経由で申告し、源泉が多すぎた分の還付を受けます。" },
+    ],
+    tips: [
+      "税率は会計年度ごとに改定されることがあります。年度をまたぐ場合は必ず該当年度の表を確認しましょう。",
+      "ATOの「Simple tax calculator」で自分の年間税額を試算できます。",
+    ],
+    warnings: [
+      "本記事の税率は2025–26年度のATO公式表に基づきます。年度が変わると数値が変わる可能性があるため、申告前に必ず該当年度の公式表を確認してください。",
+      "本記事は一般的な情報提供であり、個別の税務に関する専門的助言ではありません。",
+    ],
+    faqs: [
+      {
+        question: "ワーホリの税率は本当に15%ですか？",
+        answer:
+          "課税所得の最初の45,000 AUDまでの部分が15%です。45,000 AUDを超える部分には、より高い率が段階的に適用されます（2025–26年度の公式表を参照）。なおTFNを提出していない場合は45%で源泉徴収されます。",
+      },
+      {
+        question: "州によって税率は違いますか？",
+        answer:
+          "違いません。所得税は連邦（国）の税で全国共通です。州・準州によって変わるのは、州税に該当するもの（例：自動車登録や印紙税など）であり、ワーホリの所得税率は全国で同じです。",
+      },
+    ],
+    sources: [
+      { label: "ATO｜Tax rates – working holiday maker", url: "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-working-holiday-makers" },
+    ],
+    verifiedAt: "2026-07-16",
+    officialSources: [
+      {
+        label: "ATO｜Tax rates – working holiday maker（2025–26年度の税額表）",
+        url: "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-working-holiday-makers",
+        accessedAt: "2026-07-16",
+      },
+      {
+        label: "ATO｜Schedule 15 – Tax table for working holiday makers（源泉徴収の仕組み）",
+        url: "https://www.ato.gov.au/rates/schedule-15---tax-table-for-working-holiday-makers/",
+        accessedAt: "2026-07-16",
+      },
+    ],
+    relatedSlugs: ["tax-return-guide", "tfn-guide", "super-guide", "abn-guide"],
     updatedAt: "2026-07-16",
     published: true,
   },
