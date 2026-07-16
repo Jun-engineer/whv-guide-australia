@@ -7,20 +7,17 @@
 
 | 区分 | 件数 |
 | --- | --- |
-| コード内の実記事（`lib/mockData.ts` の `articles`） | 51（すべて `published: true`） |
-| うち公式照合済み（`verifiedAt` 付き） | 8 |
-| マニフェスト `existing_articles` | 39 |
-| マニフェスト `planned_content` | 338（内訳: planned 328 / published 4 / merged 6） |
+| コード内の実記事（`lib/mockData.ts` の `articles`） | 54（すべて `published: true`） |
+| うち公式照合済み（`verifiedAt` 付き） | 11 |
+| マニフェスト `existing_articles` | 47 |
+| マニフェスト `planned_content` | 338（内訳: planned 325 / published 7 / merged 6） |
 | ハブ数 | 21 |
-| 計画総数（existing + planned） | 377 |
+| 計画総数（existing + planned） | 385 |
 
-> 注: マニフェストの `existing_articles`（39）とコードの実記事（51）に差があるのは、
-> コードに存在するがマニフェスト `existing_articles` に未登録の記事（例:
-> `abn-guide`, `super-guide`, `cars-guide`, `license-guide`, `sim-guide`,
-> `food-guide`, `clothing-guide`, `dasp-refund` および本サイクルで新規公開した4件）が
-> あるためです。ビルド時の検証（`scripts/validate-content.mjs`）は、これらを
-> **警告**として一覧化します（ハードエラーではありません）。将来 `existing_articles`
-> へ移設して整合を取ることを推奨します。
+> 注: マニフェストの `existing_articles`（47）には、以前未登録だった既存公開記事
+> （`abn-guide`, `super-guide`, `dasp-refund`, `cars-guide`, `license-guide`, `sim-guide`,
+> `food-guide`, `clothing-guide`）を本サイクルで追加登録済み。本サイクルで新規公開した7件は
+> `planned_content` 内で `status: published` として扱います（検証はこれを既登録と見なします）。
 
 ## 2. 検索意図（search intent）クラスタリング分析
 
@@ -86,5 +83,5 @@
 
 - ビルド: 成功（Next.js 16.2.7 Turbopack、TypeScript 型チェック通過）。
 - Lint: エラー0・警告0。
-- コンテンツ検証: エラー0・警告78（大半は上記の粗い意図クラスタと existing 未登録の情報提供）。
+- コンテンツ検証: エラー0・警告66（大半は上記の粗い意図クラスタの過検出）。
 - コンテンツテスト（`node:test`）: 5/5 パス。

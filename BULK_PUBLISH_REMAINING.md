@@ -1,14 +1,14 @@
 # BULK_PUBLISH_REMAINING
 
-生成日: 2026-07-16
+生成日: 2026-07-16（更新）
 
 本サイクルで**公開しなかった**計画コンテンツの完全一覧です。
 
 ## 未公開の理由（全項目共通）
 
-各記事は YMYL（お金・ビザ・税・健康・法）領域を含み、**タイトルの問いに答える主要な数値・料金・要件・期限・法規則を、記事単位で最新の公式一次情報に照合して確認する作業**が必要です。この照合はコンテンツ1件ずつ公式サイト（immi.homeaffairs.gov.au / ato.gov.au / fairwork.gov.au / servicesaustralia.gov.au / 各州政府等）にあたる必要があり、本サイクル1回では全 328 件分を責任を持って完了できません。マスタープランの方針「maximum valid publication, not forced publication」「検証不能なコンテンツは review のままにする」に従い、これらは公開せず計画（planned）状態で保持します。
+各記事は YMYL（お金・ビザ・税・健康・法）領域を含み、**タイトルの問いに答える主要な数値・料金・要件・期限・法規則を、記事単位で最新の公式一次情報に照合して確認する作業**が必要です。この照合はコンテンツ1件ずつ公式サイト（immi.homeaffairs.gov.au / ato.gov.au / fairwork.gov.au / servicesaustralia.gov.au / 各州政府等）にあたる必要があり、本サイクル1回では全件を責任を持って完了できません。マスタープランの方針「maximum valid publication, not forced publication」「検証不能なコンテンツは review のままにする」に従い、これらは公開せず計画（planned）状態で保持します。
 
-- 合計: 328 件（status: planned）
+- 合計: 325 件（status: planned）
 - 公開条件: 記事単位の公式一次情報照合 + verifiedAt 付与 + 内部リンク整備 + 品質チェック通過
 
 ## ハブ別の残タスク一覧
@@ -152,15 +152,12 @@
 - `working-with-children-check` — WWCC/Blue Cardなど子ども関連チェックの州別概要 _(優先度 P2、意図: qualification)_
 - `barista-course-guide` — バリスタコースは受けるべき？費用と選び方 _(優先度 P3、意図: qualification)_
 
-### farm — ファーム・Specified Work (39件)
+### farm — ファーム・Specified Work (36件)
 
 - `farm-season-calendar` — オーストラリア農作物シーズンカレンダー｜州・月・作物別 _(優先度 P0、意図: database)_
 - `harvest-trail-guide` — Harvest Trailでファーム求人を探す方法 _(優先度 P0、意図: how-to)_
 - `piecework-vs-hourly` — 歩合制と時給制の違い｜Pieceworkの最低保証と確認事項 _(優先度 P0、意図: legal)_
 - `farm-payslip-evidence` — セカンドビザ用の証拠書類｜Payslip・銀行明細・日数記録 _(優先度 P0、意図: checklist)_
-- `88-day-calculation` — セカンドビザ88日の数え方｜週5日・週7日・短時間勤務 _(優先度 P0、意図: calculation)_
-- `six-month-specified-work` — サードビザ6か月の数え方と証拠 _(優先度 P0、意図: calculation)_
-- `specified-work-industries` — Specified Work対象業種一覧｜農業・建設・災害復旧ほか _(優先度 P0、意図: legal)_
 - `specified-work-postcodes` — セカンドビザ対象地域・郵便番号の確認方法 _(優先度 P0、意図: how-to)_
 - `farm-employer-verification` — ファーム・雇用主がセカンド対象か確認する方法 _(優先度 P0、意図: risk)_
 - `farm-labour-hire-contractors` — コントラクター・Labour Hire経由で働く注意点 _(優先度 P0、意図: risk)_

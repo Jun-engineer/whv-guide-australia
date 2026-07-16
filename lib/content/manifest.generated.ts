@@ -534,6 +534,86 @@ export const manifestExistingItems: ManifestItem[] = [
     "priority": "keep",
     "path": "/guides/intercity-transport",
     "update": "review_6_months"
+  },
+  {
+    "slug": "abn-guide",
+    "title": "ABN取得とギグワークの始め方",
+    "hub": "tax",
+    "status": "existing",
+    "type": "article",
+    "priority": "keep",
+    "path": "/guides/abn-guide",
+    "update": "review_6_months"
+  },
+  {
+    "slug": "super-guide",
+    "title": "Superannuation（退職年金）の引き出し｜DASP申請",
+    "hub": "tax",
+    "status": "existing",
+    "type": "article",
+    "priority": "keep",
+    "path": "/guides/super-guide",
+    "update": "review_6_months"
+  },
+  {
+    "slug": "dasp-refund",
+    "title": "スーパーアニュエーション返金（DASP）｜帰国時の手続き",
+    "hub": "tax",
+    "status": "existing",
+    "type": "article",
+    "priority": "keep",
+    "path": "/guides/dasp-refund",
+    "update": "review_6_months"
+  },
+  {
+    "slug": "cars-guide",
+    "title": "車の購入とRego・保険｜州ごとのルールと名義変更",
+    "hub": "transport",
+    "status": "existing",
+    "type": "article",
+    "priority": "keep",
+    "path": "/guides/cars-guide",
+    "update": "review_6_months"
+  },
+  {
+    "slug": "license-guide",
+    "title": "オーストラリアの運転免許｜国際免許と現地免許への切り替え",
+    "hub": "transport",
+    "status": "existing",
+    "type": "article",
+    "priority": "keep",
+    "path": "/guides/license-guide",
+    "update": "review_6_months"
+  },
+  {
+    "slug": "sim-guide",
+    "title": "オーストラリアのSIM・通信ガイド｜到着後すぐ使える設定",
+    "hub": "daily-life",
+    "status": "existing",
+    "type": "article",
+    "priority": "keep",
+    "path": "/guides/sim-guide",
+    "update": "review_6_months"
+  },
+  {
+    "slug": "food-guide",
+    "title": "食費を抑える！自炊・スーパー・外食ガイド",
+    "hub": "daily-life",
+    "status": "existing",
+    "type": "article",
+    "priority": "keep",
+    "path": "/guides/food-guide",
+    "update": "review_6_months"
+  },
+  {
+    "slug": "clothing-guide",
+    "title": "服装・気候ガイド｜都市別の気候と持っていく服",
+    "hub": "daily-life",
+    "status": "existing",
+    "type": "article",
+    "priority": "keep",
+    "path": "/guides/clothing-guide",
+    "update": "review_6_months"
   }
 ];
 
@@ -2084,7 +2164,7 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "88-day-calculation",
     "title": "セカンドビザ88日の数え方｜週5日・週7日・短時間勤務",
     "hub": "farm",
-    "status": "planned",
+    "status": "published",
     "type": "article",
     "priority": "P0",
     "path": "/guides/88-day-calculation",
@@ -2096,7 +2176,7 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "six-month-specified-work",
     "title": "サードビザ6か月の数え方と証拠",
     "hub": "farm",
-    "status": "planned",
+    "status": "published",
     "type": "article",
     "priority": "P0",
     "path": "/guides/six-month-specified-work",
@@ -2108,7 +2188,7 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "specified-work-industries",
     "title": "Specified Work対象業種一覧｜農業・建設・災害復旧ほか",
     "hub": "farm",
-    "status": "planned",
+    "status": "published",
     "type": "article",
     "priority": "P0",
     "path": "/guides/specified-work-industries",

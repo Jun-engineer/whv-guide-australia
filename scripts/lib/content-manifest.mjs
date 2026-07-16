@@ -186,6 +186,11 @@ export function validateContent({ hubs, existing, planned, codeSlugs = [], redir
   if (codeSlugs.length > 0) {
     const codeSet = new Set(codeSlugs);
     const existingSet = new Set(existing.map((e) => e.slug));
+    // A code slug is considered "registered" if it appears in existing_articles
+    // or as a planned entry that has already been published.
+    const publishedPlanned = new Set(
+      planned.filter((p) => p.status === "published").map((p) => p.slug),
+    );
     for (const item of existing) {
       if (!codeSet.has(item.slug)) {
         warnings.push(
@@ -194,7 +199,7 @@ export function validateContent({ hubs, existing, planned, codeSlugs = [], redir
       }
     }
     for (const slug of codeSlugs) {
-      if (!existingSet.has(slug)) {
+      if (!existingSet.has(slug) && !publishedPlanned.has(slug)) {
         warnings.push(
           `Article "${slug}" exists in code but is missing from manifest existing_articles.`,
         );

@@ -416,6 +416,70 @@ existing_articles:
   priority: keep
   update: review_6_months
   path: /guides/intercity-transport
+- slug: abn-guide
+  title: ABN取得とギグワークの始め方
+  hub: tax
+  status: existing
+  type: article
+  priority: keep
+  update: review_6_months
+  path: /guides/abn-guide
+- slug: super-guide
+  title: Superannuation（退職年金）の引き出し｜DASP申請
+  hub: tax
+  status: existing
+  type: article
+  priority: keep
+  update: review_6_months
+  path: /guides/super-guide
+- slug: dasp-refund
+  title: スーパーアニュエーション返金（DASP）｜帰国時の手続き
+  hub: tax
+  status: existing
+  type: article
+  priority: keep
+  update: review_6_months
+  path: /guides/dasp-refund
+- slug: cars-guide
+  title: 車の購入とRego・保険｜州ごとのルールと名義変更
+  hub: transport
+  status: existing
+  type: article
+  priority: keep
+  update: review_6_months
+  path: /guides/cars-guide
+- slug: license-guide
+  title: オーストラリアの運転免許｜国際免許と現地免許への切り替え
+  hub: transport
+  status: existing
+  type: article
+  priority: keep
+  update: review_6_months
+  path: /guides/license-guide
+- slug: sim-guide
+  title: オーストラリアのSIM・通信ガイド｜到着後すぐ使える設定
+  hub: daily-life
+  status: existing
+  type: article
+  priority: keep
+  update: review_6_months
+  path: /guides/sim-guide
+- slug: food-guide
+  title: 食費を抑える！自炊・スーパー・外食ガイド
+  hub: daily-life
+  status: existing
+  type: article
+  priority: keep
+  update: review_6_months
+  path: /guides/food-guide
+- slug: clothing-guide
+  title: 服装・気候ガイド｜都市別の気候と持っていく服
+  hub: daily-life
+  status: existing
+  type: article
+  priority: keep
+  update: review_6_months
+  path: /guides/clothing-guide
 planned_content:
 - slug: working-holiday-budget
   title: オーストラリアワーホリ初期費用はいくら？予算と必要貯金の完全ガイド
@@ -1705,7 +1769,7 @@ planned_content:
 - slug: 88-day-calculation
   title: セカンドビザ88日の数え方｜週5日・週7日・短時間勤務
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: calculation
@@ -1715,7 +1779,7 @@ planned_content:
 - slug: six-month-specified-work
   title: サードビザ6か月の数え方と証拠
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: calculation
@@ -1725,7 +1789,7 @@ planned_content:
 - slug: specified-work-industries
   title: Specified Work対象業種一覧｜農業・建設・災害復旧ほか
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: legal

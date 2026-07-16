@@ -24,7 +24,7 @@
 
 ## 1. 公開・更新した記事
 
-### 新規公開（4件）
+### 新規公開（7件）
 すべて `verifiedAt: 2026-07-16`、`officialSources` 付き、冒頭でタイトルの問いに直接回答、
 `keyFacts`/`steps`/`tips`/`warnings`/`faqs`/`sources`/`relatedSlugs` を完備。
 
@@ -34,6 +34,14 @@
 | `working-holiday-timeline` | /guides/working-holiday-timeline | start-here | P0 |
 | `first-30-days-roadmap` | /guides/first-30-days-roadmap | start-here | P0 |
 | `whm-tax-rates` | /guides/whm-tax-rates | tax | P0 |
+| `88-day-calculation` | /guides/88-day-calculation | farm | P0 |
+| `specified-work-industries` | /guides/specified-work-industries | farm | P0 |
+| `six-month-specified-work` | /guides/six-month-specified-work | farm | P0 |
+
+> 追加バッチ（farm 3件）は、Department of Home Affairs の公式ページ
+> 「Specified work」（ページ更新 2025-09-11、アクセス 2026-07-16）で、3か月=最低88暦日 /
+> 6か月=最低179暦日、対象業種・数え方（フルタイム相当・悪天候の無給日は不算入・1暦日=最大1日）
+> を実照合して作成。
 
 ### 既存記事の強化（4件）
 `verifiedAt` + `officialSources` を付与し、`relatedSlugs` と `updatedAt` を更新。
@@ -78,17 +86,17 @@
 
 | チェック | 結果 |
 | --- | --- |
-| コンテンツ検証（`npm run validate:content`） | エラー0 / 警告78 |
+| コンテンツ検証（`npm run validate:content`） | エラー0 / 警告66 |
 | コンテンツテスト（`npm run test:content`, node:test） | 5/5 パス |
 | Lint（`npm run lint`） | エラー0 / 警告0 |
-| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（型チェック通過） |
+| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（108静的ページ生成） |
 
 警告78の大半は、粒度の粗い検索意図クラスタの共食い候補（過検出）と、コードに存在するが
 マニフェスト `existing_articles` 未登録である旨の情報提供です（`CONTENT_AUDIT.md` 参照）。
 
 ## 5. 非公開（review/planned のまま）
 
-- 残り **328件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
+- 残り **325件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
 - 非公開コンテンツは公開一覧・サイトマップ・構造化データ・内部リンクに露出していません
   （`isPublishedArticle` により自動除外）。
 
