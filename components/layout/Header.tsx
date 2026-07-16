@@ -11,6 +11,7 @@ const navItems = [
   { href: "/area", label: "エリア" },
   { href: "/jobs", label: "仕事" },
   { href: "/farm", label: "ファーム" },
+  { href: "/news", label: "ニュース" },
   { href: "/community", label: "掲示板" },
   { href: "/request", label: "リクエスト" },
 ];

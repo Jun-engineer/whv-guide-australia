@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
 import { getFeaturedArticles } from "@/lib/articles";
 import { getLatestForumPosts } from "@/lib/forum";
+import { getLatestNews, getNewsCategoryLabel } from "@/lib/news";
 import { ArticleList } from "@/components/articles/ArticleList";
 import { PostCard } from "@/components/forum/PostCard";
 import { AdBanner } from "@/components/ads/AdBanner";
@@ -20,6 +21,7 @@ export const revalidate = 60;
 export default async function Home() {
   const featuredArticles = getFeaturedArticles(4);
   const latestPosts = await getLatestForumPosts(3);
+  const latestNews = getLatestNews(3);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -73,6 +75,40 @@ export default async function Home() {
       </section>
 
       <Container className="space-y-12">
+        <section className="space-y-4">
+          <div className="flex items-end justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900">ニュース・お知らせ</h2>
+              <p className="mt-1 text-sm text-slate-600">
+                ビザ申請料の改定など、ワーホリに関わる最新情報をお届けします。
+              </p>
+            </div>
+            <Link href="/news" className="shrink-0 text-sm font-semibold text-sky-700 hover:underline">
+              お知らせ一覧 →
+            </Link>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {latestNews.map((item) => (
+              <Link
+                key={item.id}
+                href={`/news/${item.slug}`}
+                className="rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-sky-300 hover:shadow-sm"
+              >
+                <div className="flex flex-wrap items-center gap-2 text-xs">
+                  <time className="font-semibold text-slate-500" dateTime={item.date}>
+                    {item.date}
+                  </time>
+                  <span className="rounded-full bg-sky-50 px-2.5 py-0.5 font-semibold text-sky-700">
+                    {getNewsCategoryLabel(item.category)}
+                  </span>
+                </div>
+                <h3 className="mt-2 text-base font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-1 text-sm text-slate-600">{item.summary}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <section>
           <h2 className="text-2xl font-bold text-slate-900">初心者向け導線</h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

@@ -8,6 +8,7 @@ import { WarningBox } from "@/components/articles/WarningBox";
 import { ArticleList } from "@/components/articles/ArticleList";
 import { KeyFacts } from "@/components/articles/KeyFacts";
 import { TipsBox } from "@/components/articles/TipsBox";
+import { PhraseList } from "@/components/articles/PhraseList";
 import { FaqList } from "@/components/articles/FaqList";
 import { SourceLinks } from "@/components/articles/SourceLinks";
 import { ArticleAd } from "@/components/ads/ArticleAd";
@@ -203,6 +204,10 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
       </section>
 
       {article.tips && article.tips.length > 0 ? <TipsBox tips={article.tips} /> : null}
+
+      {article.phrases && article.phrases.length > 0 ? (
+        <PhraseList phrases={article.phrases} />
+      ) : null}
 
       <WarningBox items={article.warnings ?? []} />
       <ArticleAd />

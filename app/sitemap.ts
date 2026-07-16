@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/siteConfig";
 import { getAllArticles, getArticleCategories } from "@/lib/articles";
 import { getAllForumPosts, getForumCategories } from "@/lib/forum";
+import { getAllNews } from "@/lib/news";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
@@ -34,6 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       { path: "/english", priority: 0.8, changeFrequency: "weekly" },
       { path: "/health", priority: 0.8, changeFrequency: "weekly" },
       { path: "/community", priority: 0.9, changeFrequency: "daily" },
+      { path: "/news", priority: 0.8, changeFrequency: "weekly" },
       { path: "/request", priority: 0.5, changeFrequency: "monthly" },
       { path: "/about", priority: 0.4, changeFrequency: "yearly" },
       { path: "/terms", priority: 0.3, changeFrequency: "yearly" },
@@ -60,6 +62,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  const newsRoutes: MetadataRoute.Sitemap = getAllNews().map((item) => ({
+    url: `${siteConfig.url}/news/${item.slug}`,
+    lastModified: new Date(item.date),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   const [forumCategories, forumPosts] = await Promise.all([
     getForumCategories(),
     getAllForumPosts(),
@@ -84,6 +93,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticRoutes,
     ...categoryRoutes,
     ...articleRoutes,
+    ...newsRoutes,
     ...forumCategoryRoutes,
     ...forumPostRoutes,
   ].filter((entry) => {

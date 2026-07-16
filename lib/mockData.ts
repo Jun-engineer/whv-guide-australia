@@ -46,7 +46,8 @@ export const articles: Article[] = [
     keyFacts: [
       { label: "対象年齢", value: "申請時に18〜30歳（日本国籍は30歳まで）" },
       { label: "滞在期間", value: "1回の入国で最長12か月。セカンド/サードで延長可" },
-      { label: "ビザ申請料", value: "650 AUD（2024年7月改定。変更の可能性あり）" },
+      { label: "ビザ申請料", value: "840 AUD（2025年7月改定。ファースト）" },
+      { label: "セカンド/サード申請料", value: "各1,000 AUD" },
       { label: "必要資金の目安", value: "5,000 AUD以上＋帰国用航空券相当" },
       { label: "同一雇用主の就労", value: "原則6か月まで（例外あり）" },
     ],
@@ -102,7 +103,7 @@ export const articles: Article[] = [
     ],
     warnings: ["ビザ制度・申請料・必要資金は予告なく変更されます。申請前に必ず公式情報を確認してください。"],
     relatedSlugs: ["visa-application", "arrival-checklist", "money-transfer-wise"],
-    updatedAt: "2026-06-10",
+    updatedAt: "2026-07-16",
     published: true,
   },
   {
@@ -118,26 +119,46 @@ export const articles: Article[] = [
     ],
     keyFacts: [
       { label: "申請方法", value: "ImmiAccount（オンライン）" },
-      { label: "申請料", value: "650 AUD（クレジットカード払い）" },
+      { label: "申請料（ファースト）", value: "840 AUD（2025年7月改定・カード払い）" },
+      { label: "申請料（セカンド/サード）", value: "各1,000 AUD" },
       { label: "標準処理期間", value: "即日〜数週間（時期により変動）" },
       { label: "必要なもの", value: "パスポート、メールアドレス、クレジットカード" },
     ],
     steps: [
-      { title: "ImmiAccountを作成", description: "公式サイトでアカウントを登録し、メール認証を完了します。" },
+      {
+        title: "ImmiAccountを作成",
+        description: "公式サイトでアカウントを登録し、メール認証を完了します。",
+        imageHint: "ImmiAccountの新規登録（Create account）画面のスクリーンショット",
+      },
       {
         title: "申請フォームを入力",
         description: "パスポート情報、滞在計画、健康・経歴に関する質問に回答します。虚偽申告は不許可の原因になります。",
+        imageHint: "ビザ申請フォーム（サブクラス417を選択する画面）のスクリーンショット",
       },
       {
         title: "必要書類をアップロード",
         description: "パスポートのコピーなど求められた書類を添付します。残高証明は提出を求められたら用意します。",
+        imageHint: "書類アップロード（Attach documents）画面のスクリーンショット",
       },
-      { title: "申請料を支払う", description: "650 AUDをカードで決済すると審査が始まります。" },
-      { title: "許可通知を受け取る", description: "Grant Notificationのメールを保存し、入国時に提示できるようにします。" },
+      {
+        title: "申請料を支払う",
+        description: "840 AUD（ファースト）をカードで決済すると審査が始まります。",
+        imageHint: "支払い（Pay for this application）画面のスクリーンショット",
+      },
+      {
+        title: "許可通知を受け取る",
+        description: "Grant Notificationのメールを保存し、入国時に提示できるようにします。",
+        imageHint: "Visa Grant Notificationのメール/PDFのサンプル画像",
+      },
     ],
     tips: [
       "パスポートは滞在予定期間より長い有効期限が必要。残り1年を切っていれば先に更新を。",
       "Grant NotificationのPDFはスマホとクラウドの両方に保存しておくと安心です。",
+    ],
+    phrases: [
+      { en: "I'd like to apply for a Working Holiday visa (subclass 417).", ja: "ワーキングホリデービザ（サブクラス417）を申請したいです。", note: "問い合わせ時" },
+      { en: "Could you tell me the current visa application charge?", ja: "現在のビザ申請料を教えてもらえますか？" },
+      { en: "Has my visa been granted?", ja: "私のビザは許可されましたか？" },
     ],
     faqs: [
       {
@@ -155,7 +176,7 @@ export const articles: Article[] = [
       { label: "ImmiAccount ログイン", url: "https://online.immi.gov.au/" },
     ],
     relatedSlugs: ["whv-complete-guide", "arrival-checklist"],
-    updatedAt: "2026-06-10",
+    updatedAt: "2026-07-16",
     published: true,
   },
   {
@@ -909,6 +930,7 @@ export const articles: Article[] = [
     keyFacts: [
       { label: "セカンド条件", value: "Specified Workを88日（フルタイム相当）" },
       { label: "サード条件", value: "2年目に6か月（約179日）のSpecified Work" },
+      { label: "申請料（各回）", value: "約1,000 AUD（2025年7月改定）" },
       { label: "対象業種", value: "農業・畜産・建設・鉱業・漁業・植林など" },
       { label: "地域要件", value: "指定された地方（regional）のポストコードのみ対象" },
       { label: "証明", value: "Payslip・雇用主の書類・銀行入金記録を保管" },
@@ -1466,8 +1488,16 @@ export const articles: Article[] = [
       "トライアルが無給か有給かは事前に確認を。無給トライアルが長時間に及ぶ場合は注意。",
       "聞き取れなかったら『Sorry, could you say that again?』と素直に聞き返せばOKです。",
     ],
+    phrases: [
+      { en: "How long are you planning to stay in Australia?", ja: "オーストラリアにはどのくらい滞在する予定ですか？", note: "在豪期間の質問。ビザの残り期間を答える" },
+      { en: "Which days and hours are you available to work?", ja: "何曜日・何時間働けますか？", note: "シフトの質問。即答できるように" },
+      { en: "Do you have any hospitality experience?", ja: "接客（飲食）の経験はありますか？" },
+      { en: "I can start immediately / from next week.", ja: "すぐに／来週から働けます。" },
+      { en: "Is this trial paid or unpaid?", ja: "このトライアルは有給ですか、無給ですか？", note: "トライアル前に確認したいとき" },
+      { en: "Sorry, could you say that again?", ja: "すみません、もう一度言ってもらえますか？" },
+    ],
     relatedSlugs: ["resume-guide", "certifications", "jobs-guide"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-16",
     published: true,
   },
   {
@@ -1537,9 +1567,16 @@ export const articles: Article[] = [
           "部屋を入居時の状態に戻して退去すれば原則返金されます。入居時に既存の傷・汚れを写真に残しておくと、退去時のトラブルを防げます。",
       },
     ],
+    phrases: [
+      { en: "Is this room still available?", ja: "この部屋はまだ空いていますか？", note: "問い合わせの最初のひとこと" },
+      { en: "Can I come and inspect the room?", ja: "内見に行ってもいいですか？" },
+      { en: "Are bills (electricity, gas, Wi-Fi) included in the rent?", ja: "家賃に光熱費・Wi-Fiは含まれていますか？" },
+      { en: "How much is the bond and when is it refunded?", ja: "ボンド（敷金）はいくらで、いつ返金されますか？" },
+      { en: "Is there a minimum stay?", ja: "最低滞在期間はありますか？" },
+    ],
     warnings: ["相場より極端に安い物件や前払いを急かす相手は詐欺を疑ってください。"],
     relatedSlugs: ["housing-guide", "safety-emergency", "area-overview"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-16",
     published: true,
   },
   {
@@ -1768,6 +1805,136 @@ export const articles: Article[] = [
     ],
     relatedSlugs: ["preparation-checklist", "clothing-guide", "insurance-guide"],
     updatedAt: "2026-06-20",
+    published: true,
+  },
+  {
+    id: "a45",
+    title: "ワーホリの労働者の権利｜Fair Workと最低賃金の基礎知識",
+    slug: "working-rights",
+    category: "jobs",
+    description:
+      "ワーホリでもオーストラリアの労働法（Fair Work）で守られています。最低賃金、Payslip、残業、不当な扱いへの対処法を解説します。",
+    content: [
+      "ワーキングホリデーで働く人も、オーストラリアの労働法（Fair Work）によってローカルの労働者と同じように守られています。ビザの種類や国籍に関係なく、最低賃金・休憩・Payslip（給与明細）の受け取りは法律で保障された権利です。",
+      "残念ながら、ワーホリの立場の弱さにつけ込み、最低賃金を大きく下回る賃金やPayslipなしの現金払い（cash in hand）を持ちかける雇用主もいます。おかしいと感じたらFair Work Ombudsman（公正労働オンブズマン）に無料で相談できます。",
+    ],
+    keyFacts: [
+      { label: "全国最低賃金", value: "時給約24 AUD前後（毎年7月に改定。要公式確認）" },
+      { label: "カジュアル手当", value: "casual雇用は基本時給に上乗せ（loading）あり" },
+      { label: "Payslip", value: "給与支払い後1営業日以内に受け取る権利がある" },
+      { label: "相談先", value: "Fair Work Ombudsman（無料・多言語対応）" },
+    ],
+    steps: [
+      { title: "雇用形態を確認", description: "casual / part-time / full-time のどれか、時給はいくらかを最初に確認します。" },
+      { title: "Payslipを必ず受け取る", description: "労働時間・時給・税金・Superが記載されているか毎回チェックします。" },
+      { title: "労働時間を記録", description: "自分でも勤務時間をメモし、Payslipと照合してズレがないか確認します。" },
+      { title: "問題があれば相談", description: "未払いや違法な扱いはFair Work Ombudsmanに無料で相談・通報できます。" },
+    ],
+    tips: [
+      "『cash in hand（現金手渡し・記録なし）』はSuperやタックスリターン、セカンドビザの証明で不利になります。",
+      "最低賃金は毎年7月1日に改定されます。最新額はFair Workの公式サイトで確認しましょう。",
+      "相談したことを理由にした解雇・報復も違法です。泣き寝入りする必要はありません。",
+    ],
+    phrases: [
+      { en: "Could I get a payslip, please?", ja: "給与明細（Payslip）をもらえますか？" },
+      { en: "What is my hourly rate?", ja: "私の時給はいくらですか？" },
+      { en: "Am I employed as casual or part-time?", ja: "私はカジュアル雇用ですか、パートタイムですか？" },
+      { en: "Is superannuation included?", ja: "退職年金（Super）は含まれていますか？" },
+    ],
+    faqs: [
+      {
+        question: "英語に自信がなくても相談できますか？",
+        answer:
+          "Fair Work Ombudsmanは無料の通訳サービス（TIS）を通じて日本語でも相談できます。ビザの状況に関係なく、誰でも安全に利用できます。",
+      },
+    ],
+    sources: [
+      { label: "Fair Work Ombudsman（公式）", url: "https://www.fairwork.gov.au/" },
+    ],
+    warnings: ["最低賃金や手当は毎年改定されます。金額は必ずFair Work公式で最新情報を確認してください。"],
+    relatedSlugs: ["jobs-guide", "tfn-guide", "super-guide"],
+    updatedAt: "2026-07-16",
+    published: true,
+  },
+  {
+    id: "a46",
+    title: "店の営業時間と祝日（Public Holiday）の注意点",
+    slug: "opening-hours-holidays",
+    category: "arrival",
+    description:
+      "オーストラリアは店の閉店が早く、祝日は休業や割増料金も。買い物・手続きで困らないための営業時間と祝日の基礎知識です。",
+    content: [
+      "日本の感覚で夜に買い物へ行くと、多くの店がすでに閉まっていて驚くことがあります。オーストラリアはスーパーや商業施設の閉店が比較的早く、平日は17〜18時頃、週に一度だけ夜遅くまで開く『Late Night Shopping（木曜が多い）』の日があります。",
+      "また祝日（Public Holiday）は州ごとに異なり、多くの店が休業したり、営業しても料金に割増（public holiday surcharge）が付くことがあります。銀行や役所も休みになるため、手続きは祝日を避けて計画しましょう。",
+    ],
+    keyFacts: [
+      { label: "平日の閉店", value: "スーパーは17〜21時。店により大きく異なる" },
+      { label: "Late Night", value: "週1回夜遅くまで営業（木曜が多い）" },
+      { label: "日曜", value: "営業時間が短縮される店が多い" },
+      { label: "祝日", value: "州ごとに異なる。休業や割増料金に注意" },
+    ],
+    steps: [
+      { title: "近所の店の営業時間を確認", description: "Googleマップで最寄りのスーパー・薬局の営業時間を保存しておきます。" },
+      { title: "祝日カレンダーを確認", description: "滞在する州のPublic Holidayを調べ、手続きや買い物の予定を立てます。" },
+      { title: "祝日前に買い出し", description: "連休前はスーパーが混雑・品薄になりがち。早めに買い物を済ませます。" },
+      { title: "割増料金を想定", description: "祝日のカフェ・レストランは会計に割増が付く場合があると理解しておきます。" },
+    ],
+    tips: [
+      "ColesやWoolworthsの大型店は比較的遅くまで開いていますが、店舗ごとに違うので事前確認を。",
+      "祝日は銀行・郵便局・役所が休み。TFNや口座関連の手続きは平日に。",
+      "州が違うと祝日も違います。旅行先の州の祝日もチェックしておくと安心です。",
+    ],
+    relatedSlugs: ["arrival-checklist", "food-guide", "area-overview"],
+    updatedAt: "2026-07-16",
+    published: true,
+  },
+  {
+    id: "a47",
+    title: "海外生活のメンタルヘルス｜ホームシックと不安への対処",
+    slug: "mental-health",
+    category: "health",
+    description:
+      "慣れない環境・言葉の壁で心が疲れるのは自然なこと。ホームシックや孤独への対処法と、無料で使える相談窓口を紹介します。",
+    content: [
+      "ワーホリは楽しいことばかりではありません。言葉の壁、仕事や家探しのストレス、孤独やホームシックで気持ちが落ち込むのは、多くの人が経験する自然なことです。『自分だけが上手くいっていない』と感じる必要はありません。",
+      "大切なのは、無理をしすぎないことと、つらいときに助けを求めることです。オーストラリアには無料・匿名で使えるメンタルヘルスの相談窓口があり、電話やチャットで気軽に相談できます。命に関わる緊急時は迷わず000に電話してください。",
+    ],
+    keyFacts: [
+      { label: "よくある原因", value: "言葉の壁・孤独・お金や仕事の不安・生活リズムの乱れ" },
+      { label: "緊急時", value: "000（警察・救急・消防。命に関わるとき）" },
+      { label: "無料相談", value: "Lifeline（13 11 14）・Beyond Blueなど" },
+      { label: "GP", value: "気分の落ち込みが続くときはGP（かかりつけ医）に相談" },
+    ],
+    steps: [
+      { title: "生活リズムを整える", description: "睡眠・食事・軽い運動・日光を意識すると気分が安定しやすくなります。" },
+      { title: "つながりを持つ", description: "友達・家族・コミュニティと定期的に連絡を取り、孤立を防ぎます。" },
+      { title: "早めに相談する", description: "つらさが続くときは我慢せず、無料の相談窓口やGPに相談します。" },
+      { title: "緊急時は迷わず連絡", description: "自分や誰かの命が危ないと感じたら000、またはLifelineに連絡します。" },
+    ],
+    tips: [
+      "ホームシックは弱さではなく自然な反応。無理にポジティブを装わなくて大丈夫です。",
+      "Lifeline（13 11 14）は24時間・無料。英語でも落ち着いて話せば対応してもらえます。",
+      "合わない環境なら都市や仕事を変えるのも立派な選択。逃げではなく戦略です。",
+    ],
+    phrases: [
+      { en: "I've been feeling really down lately.", ja: "最近ずっと気分が落ち込んでいます。", note: "GPに状態を伝えるとき" },
+      { en: "I'd like to talk to someone. Can you help?", ja: "誰かに話を聞いてほしいです。助けてもらえますか？" },
+      { en: "I need to see a doctor about my mental health.", ja: "メンタルの不調について医師に診てもらいたいです。" },
+    ],
+    faqs: [
+      {
+        question: "相談したらビザに影響しますか？",
+        answer:
+          "メンタルヘルスの相談がビザに不利に働くことはありません。相談窓口は匿名で利用でき、内容が移民局に共有されることもありません。安心して利用してください。",
+      },
+    ],
+    sources: [
+      { label: "Lifeline Australia", url: "https://www.lifeline.org.au/" },
+      { label: "Beyond Blue", url: "https://www.beyondblue.org.au/" },
+    ],
+    warnings: ["命に関わる緊急時は迷わず000に電話してください。我慢や自己判断は禁物です。"],
+    relatedSlugs: ["medicare-oshc", "safety-emergency"],
+    updatedAt: "2026-07-16",
     published: true,
   },
 ];
