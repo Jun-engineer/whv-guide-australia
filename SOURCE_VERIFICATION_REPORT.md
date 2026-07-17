@@ -152,6 +152,46 @@
 | `bank-scam-security` | 詐欺通報（Scamwatch）・即時危険000・銀行へ送金停止依頼・IDCARE・ReportCyber | Scamwatch / ReportCyber / IDCARE |
 | `close-bank-account-before-leaving` | 帰国前の口座閉鎖/保持の判断（Super/税還付の着金口座に注意） | ASIC Moneysmart / ATO |
 
+### バッチ6（tax）で公開した記事の公式照合（2026-07-18）
+
+税・ABN/Sole Trader・Super の17件を公開。各記事は `verifiedAt: 2026-07-18` を付与し、
+`officialSources` に以下の公式一次情報（ato.gov.au / fairwork.gov.au / abr.gov.au /
+tpb.gov.au）を明示した。
+
+#### Super（ato.gov.au）
+- Super Guarantee（SG）率: **12%**（2025年7月1日から。段階引上げの最終段階）
+- 対象: 18歳以上は労働時間に関わらず対象。18歳未満は週30時間以上勤務時に対象。
+  （2022年11月に月$450の収入基準は撤廃済み）
+- 加入手続き: 就労開始時に Standard Choice Form でファンドを選択。未選択時は Stapled
+  Super（既存の紐付けファンド）へ拠出。
+- **Payday Super: 2026年7月1日から施行**（給与支払いと同じタイミングでSGを拠出する制度）。
+- 出典: ATO「How much super to pay」「Super for employers」「Departing Australia
+  Superannuation Payment (DASP)」
+
+#### ABN・Sole Trader（abr.gov.au / ato.gov.au / fairwork.gov.au）
+- ABN 申請は無料（Australian Business Register / abr.gov.au）。
+- GST 登録基準: 年間売上 **$75,000** 以上で登録義務。ただしライドソーシング
+  （Uber等の旅客運送）は売上に関わらず登録義務。基準到達から **21日以内** に登録。
+- GST 登録後は BAS（Business Activity Statement）で申告（通常四半期）。
+- Contractor と Employee の区別・Sham Contracting は Fair Work / ATO の基準に基づく。
+- 出典: ATO「Registering for GST」「When to charge GST」、ABR「Apply for an ABN」、
+  Fair Work「Independent contractors」
+
+#### 税務手続き（ato.gov.au / fairwork.gov.au / tpb.gov.au）
+- TFN Declaration: 雇用開始時に提出（紙 NAT 3092 または ATO オンラインサービス経由）。
+  未提出時は 45% 源泉徴収。
+- Payslip: 雇用主は給与支払いから **1営業日以内** に発行義務（Fair Work）。記載必須項目
+  （雇用主名/ABN・期間・総支給/手取り・時給/時間・Super・控除）を確認。
+- Income Statement は myGov（ATO連携）で確認。雇用主のSTP確定後に「Tax ready」となり、
+  多くは7月14日ごろまでに確定。申告は全てTax ready後が原則。
+- myGov–ATO 連携: 本人確認情報が不足する場合はATO（13 28 61 / 海外 +61 2 6216 1111）
+  で linking code を取得（発行後およそ24時間で失効）。
+- タックスリターン期限: 原則 **10月31日**。登録Tax Agent経由なら延長される場合あり。
+  Tax Agent は TPB（tpb.gov.au）登録者のみが報酬を得て代理可能。
+- 出典: ATO「TFN declaration」「How to get your income statement」「Link the ATO to
+  your myGov account」「Deductions you can claim」「Your tax residency」、Fair Work
+  「Pay slips」、Tax Practitioners Board「Register」
+
 ## 3. 未解決・要注意の記述（限定事項）
 
 - **「88日」対「3 months」（解決済み）:** immi の Specified work ページ（更新 2025-09-11）を実照合し、

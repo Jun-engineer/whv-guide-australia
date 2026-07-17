@@ -103,6 +103,31 @@
   Scamwatch/ReportCyber/IDCARE（詐欺対策）、外務省（在留届・たびレジ）等。
   詳細は `SOURCE_VERIFICATION_REPORT.md` の「バッチ4/5」。
 
+### 追加バッチ 6: tax（2026-07-18、17件）
+
+`tax` ハブ17件（税・ABN/Sole Trader・Super）を、記事単位で公式一次情報に照合して新規公開。
+すべて `verifiedAt: 2026-07-18`、`officialSources`（`accessedAt: 2026-07-18`）付き、
+冒頭でタイトルの問いに回答、`keyFacts`/`steps`/`tips`/`warnings`/`faqs`/`sources`/`relatedSlugs` を完備。
+記事は該当カテゴリモジュール（`lib/content/articles/{tfn,super,abn,tax-return}.ts`）にのみ追加
+（`mockData.ts` へは追加せず）。
+
+- **税・手続き（9件、tax-return/tfn）:** `tax-residency-australia`, `tfn-declaration-form`,
+  `payslip-guide`, `income-statement-tax-ready`, `mygov-ato-linking`, `tax-return-deductions`,
+  `tax-return-multiple-jobs`, `tax-return-overseas-income`, `tax-agent-guide`
+- **ABN/Sole Trader（7件、abn）:** `abn-eligibility`, `sole-trader-basics`, `contractor-vs-employee`,
+  `invoice-template-australia`, `abn-record-keeping`, `gst-registration-basics`, `bas-basics`
+- **Super（1件、super）:** `superannuation-basics`
+- **統合/リダイレクト:** このバッチでは新規の全面重複がなく、統合・リダイレクトは発生せず。
+  既存公開記事（`tfn-guide`, `tax-return-guide`, `tax-return-howto`, `whm-tax-rates`,
+  `abn-guide`, `super-guide`, `dasp-refund`）とは検索意図が明確に異なるため統合せず、
+  `relatedSlugs` で相互接続。`content-manifest.yaml` の該当17件を
+  `status: planned` → `status: published` に更新。
+- **照合出典:** ato.gov.au（Super Guarantee 12%（2025-07-01〜）、Payday Super（2026-07-01〜）、
+  GST登録基準 $75,000・ライドソーシングは全件登録・21日以内、TFN declaration、Income Statement/
+  Tax ready、myGov連携、控除、居住性）、fairwork.gov.au（Payslip 1営業日以内・記載項目）、
+  abr.gov.au（ABN無料申請）、tpb.gov.au（Tax Agent登録）。
+  詳細は `SOURCE_VERIFICATION_REPORT.md` の「バッチ6」。
+
 ## 2. 統合とリダイレクト
 
 計画（未公開）の重複トピック6件を既存公開記事へ統合し、308恒久リダイレクトを登録
@@ -138,15 +163,15 @@
 | 型チェック（`npx tsc --noEmit`） | エラー0 |
 | コンテンツテスト（`npm run test:content`, node:test） | 5/5 パス |
 | Lint（`npm run lint`） | エラー0 / 警告0 |
-| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（171静的ページ生成、バッチ4/5公開後） |
+| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（tax バッチ 17 件を含む全 134 記事を prerender、バッチ6公開後） |
 
 警告66の大半は、粒度の粗い検索意図クラスタの共食い候補（過検出）と、コードに存在するが
 マニフェスト `existing_articles` 未登録である旨の情報提供です（`CONTENT_AUDIT.md` 参照）。
 
 ## 5. 非公開（review/planned のまま）
 
-- 残り **262件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
-  （start-here 7件 + visa 16件 + preparation 20件 + arrival 10件 + money 10件を公開済み。次バッチは tax ハブ。）
+- 残り **245件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
+  （start-here 7件 + visa 16件 + preparation 20件 + arrival 10件 + money 10件 + tax 17件を公開済み。次バッチは jobs ハブ。）
 - 非公開コンテンツは公開一覧・サイトマップ・構造化データ・内部リンクに露出していません
   （`isPublishedArticle` により自動除外）。
 

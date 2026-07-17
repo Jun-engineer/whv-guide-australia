@@ -1176,7 +1176,7 @@ planned_content:
 - slug: tax-residency-australia
   title: ワーホリはオーストラリアの税務上の居住者？判定の考え方
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: tax
@@ -1186,7 +1186,7 @@ planned_content:
 - slug: tfn-declaration-form
   title: TFN Declarationの書き方｜入社時に迷いやすい項目
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -1196,7 +1196,7 @@ planned_content:
 - slug: payslip-guide
   title: Payslipの見方｜時給・Penalty・Super・Taxを確認する方法
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -1206,7 +1206,7 @@ planned_content:
 - slug: income-statement-tax-ready
   title: Income StatementとTax Readyとは？myGovで確認する方法
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -1216,7 +1216,7 @@ planned_content:
 - slug: mygov-ato-linking
   title: myGovとATOを連携する方法｜エラー時の確認事項
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -1226,7 +1226,7 @@ planned_content:
 - slug: tax-return-deductions
   title: ワーホリの経費控除｜仕事用品・制服・車・在宅勤務
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: tax
@@ -1236,7 +1236,7 @@ planned_content:
 - slug: tax-return-multiple-jobs
   title: 複数の職場で働いた場合のタックスリターン
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: tax
@@ -1246,7 +1246,7 @@ planned_content:
 - slug: tax-return-overseas-income
   title: 日本の副業・給与・利息がある場合の豪州申告
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: tax
@@ -1256,7 +1256,7 @@ planned_content:
 - slug: tax-agent-guide
   title: Tax Agentに依頼するべき人・料金・登録確認
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: decision
@@ -1266,7 +1266,7 @@ planned_content:
 - slug: abn-eligibility
   title: ABNは誰に必要？会社員・配達員・フリーランスの違い
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: eligibility
@@ -1287,7 +1287,7 @@ planned_content:
 - slug: sole-trader-basics
   title: Sole Traderとは？ABNで働く前に知る責任と税金
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: guide
@@ -1297,7 +1297,7 @@ planned_content:
 - slug: contractor-vs-employee
   title: ContractorとEmployeeの違い｜Sham Contractingに注意
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: legal
@@ -1307,7 +1307,7 @@ planned_content:
 - slug: invoice-template-australia
   title: オーストラリアのInvoiceの書き方｜ABN・GST・支払期限
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: template
@@ -1317,7 +1317,7 @@ planned_content:
 - slug: abn-record-keeping
   title: ABN収入の記帳と領収書保存｜初心者向け管理方法
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -1327,7 +1327,7 @@ planned_content:
 - slug: gst-registration-basics
   title: GST登録が必要になる条件とInvoiceの変化
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: tax
@@ -1337,7 +1337,7 @@ planned_content:
 - slug: bas-basics
   title: BASとは？GST登録したSole Traderの申告基礎
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: tax
@@ -1347,7 +1347,7 @@ planned_content:
 - slug: superannuation-basics
   title: Superannuation完全ガイド｜口座選び・雇用主への提出
   hub: tax
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: finance

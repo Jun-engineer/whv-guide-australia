@@ -19,16 +19,18 @@
 - 状態: `validate:content` 0 error / 66 warning、`tsc --noEmit` クリーン、`eslint`
   クリーン、`test:content` 5/5 pass、`next build` 成功（151静的ページ）— 移行前と同一
 
-**次のコンテンツバッチ: arrival（到着後セットアップ）ハブ 10 件**（下記「ハブ別の残タスク一覧」参照）。
+**次のコンテンツバッチ: jobs（仕事探し・労働条件）ハブ 26 件**（下記「ハブ別の残タスク一覧」参照）。
 
 ## 進捗（2026-07-18 時点）
 
 325件の計画記事を、ハブ単位のバッチで公式照合しながら順次公開しています。
 
-- **公開済み合計: 63 件**（残り 262 件）
-- **現在のカテゴリ: visa（完了）・preparation（完了）・arrival（完了）・money（完了）**
-- **次のカテゴリ: tax（未着手）**
-- **最終検証: `validate:content` 0 error / 66 warning（cannibalization の想定内警告のみ）、`tsc --noEmit` クリーン、`eslint` クリーン、`test:content` 5/5 pass、`next build` 成功（171静的ページ）**
+- **公開済み合計: 80 件**（残り 245 件）
+- **現在のカテゴリ: visa（完了）・preparation（完了）・arrival（完了）・money（完了）・tax（完了）**
+- **次のカテゴリ: jobs（未着手・26件）**
+- **最終検証: `validate:articles` OK（ユニーク slug 134・重複 0）、`validate:content` 0 error / 66 warning（cannibalization の想定内警告のみ）、`tsc --noEmit` クリーン、`eslint` クリーン、`test:content` 5/5 pass、`next build` 成功**
+- **最終ビルド: `next build` 成功（tax バッチ 17 件を含む全 134 記事を prerender）**
+- **変更ファイル: `lib/content/articles/{tfn,super,abn,tax-return}.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`**
 
 ### 完了済み slug（バッチ1: start-here ハブ / commit 78a5e61）
 
@@ -108,6 +110,28 @@
 - `bank-scam-security`
 - `close-bank-account-before-leaving`
 
+### 完了済み slug（バッチ6: tax ハブ / 17件 / commit `feat: publish tax content batch`）
+
+- `tax-residency-australia`
+- `tfn-declaration-form`
+- `payslip-guide`
+- `income-statement-tax-ready`
+- `mygov-ato-linking`
+- `tax-return-deductions`
+- `tax-return-multiple-jobs`
+- `tax-return-overseas-income`
+- `tax-agent-guide`
+- `abn-eligibility`
+- `sole-trader-basics`
+- `contractor-vs-employee`
+- `invoice-template-australia`
+- `abn-record-keeping`
+- `gst-registration-basics`
+- `bas-basics`
+- `superannuation-basics`
+
+**tax バッチ 統合（merged）: なし。** 既存の公開記事（`tfn-guide` / `tax-return-guide` / `tax-return-howto` / `whm-tax-rates` / `abn-guide` / `super-guide` / `dasp-refund`）と 17 件はいずれも検索意図が明確に異なるため、統合せず個別公開し `relatedSlugs` で相互リンクしました（`abn-application`→`abn-guide`、`find-lost-super`→`super-guide`、`dasp-guide`→`dasp-refund` は過去バッチで統合済み）。
+
 ### 統合（merged）済み slug（→ 統合先）
 
 - `sim-esim-guide` → `sim-guide`
@@ -125,32 +149,12 @@
 
 各記事は YMYL（お金・ビザ・税・健康・法）領域を含み、**タイトルの問いに答える主要な数値・料金・要件・期限・法規則を、記事単位で最新の公式一次情報に照合して確認する作業**が必要です。この照合はコンテンツ1件ずつ公式サイト（immi.homeaffairs.gov.au / ato.gov.au / fairwork.gov.au / servicesaustralia.gov.au / 各州政府等）にあたる必要があり、一度に全件を責任を持って完了できません。マスタープランの方針「maximum valid publication, not forced publication」「検証不能なコンテンツは review のままにする」に従い、未照合のものは公開せず計画（planned）状態で保持します。
 
-- 残り合計: 262 件（status: planned）
+- 残り合計: 245 件（status: planned）
 - 公開条件: 記事単位の公式一次情報照合 + verifiedAt 付与 + 内部リンク整備 + 品質チェック通過
 
 ## ハブ別の残タスク一覧
 
-### tax — 税金・ABN・Super (17件) ← 次のカテゴリ
-
-- `tax-residency-australia` — ワーホリはオーストラリアの税務上の居住者？判定の考え方 _(優先度 P1、意図: tax)_
-- `tfn-declaration-form` — TFN Declarationの書き方｜入社時に迷いやすい項目 _(優先度 P0、意図: how-to)_
-- `payslip-guide` — Payslipの見方｜時給・Penalty・Super・Taxを確認する方法 _(優先度 P0、意図: how-to)_
-- `income-statement-tax-ready` — Income StatementとTax Readyとは？myGovで確認する方法 _(優先度 P0、意図: how-to)_
-- `mygov-ato-linking` — myGovとATOを連携する方法｜エラー時の確認事項 _(優先度 P0、意図: how-to)_
-- `tax-return-deductions` — ワーホリの経費控除｜仕事用品・制服・車・在宅勤務 _(優先度 P1、意図: tax)_
-- `tax-return-multiple-jobs` — 複数の職場で働いた場合のタックスリターン _(優先度 P1、意図: tax)_
-- `tax-return-overseas-income` — 日本の副業・給与・利息がある場合の豪州申告 _(優先度 P1、意図: tax)_
-- `tax-agent-guide` — Tax Agentに依頼するべき人・料金・登録確認 _(優先度 P2、意図: decision)_
-- `abn-eligibility` — ABNは誰に必要？会社員・配達員・フリーランスの違い _(優先度 P0、意図: eligibility)_
-- `sole-trader-basics` — Sole Traderとは？ABNで働く前に知る責任と税金 _(優先度 P0、意図: guide)_
-- `contractor-vs-employee` — ContractorとEmployeeの違い｜Sham Contractingに注意 _(優先度 P0、意図: legal)_
-- `invoice-template-australia` — オーストラリアのInvoiceの書き方｜ABN・GST・支払期限 _(優先度 P1、意図: template)_
-- `abn-record-keeping` — ABN収入の記帳と領収書保存｜初心者向け管理方法 _(優先度 P1、意図: how-to)_
-- `gst-registration-basics` — GST登録が必要になる条件とInvoiceの変化 _(優先度 P2、意図: tax)_
-- `bas-basics` — BASとは？GST登録したSole Traderの申告基礎 _(優先度 P3、意図: tax)_
-- `superannuation-basics` — Superannuation完全ガイド｜口座選び・雇用主への提出 _(優先度 P0、意図: finance)_
-
-### jobs — 仕事探し・労働条件 (26件)
+### jobs — 仕事探し・労働条件 (26件) ← 次のカテゴリ
 
 - `job-search-websites` — SEEK・Indeed・Jora・Gumtreeの使い分け _(優先度 P0、意図: comparison)_
 - `facebook-job-groups` — Facebookで仕事を探す方法｜求人グループと怪しい投稿の見分け方 _(優先度 P1、意図: how-to)_

@@ -77,4 +77,76 @@ export const superArticles: Article[] = [
     updatedAt: "2026-06-20",
     published: true,
   },
+
+  {
+    id: "a134",
+    title: "Superannuation完全ガイド｜仕組み・口座選び・雇用主への提出",
+    slug: "superannuation-basics",
+    category: "super",
+    hub: "tax",
+    priority: "P0",
+    searchIntent: "Superの仕組みと口座選び・提出",
+    description:
+      "オーストラリアのSuperannuation（退職年金）の仕組みを基礎から解説。拠出率12%、口座（ファンド）の選び方、Standard Choice Formで雇用主に提出する方法、手数料・保険、Stapled Super、帰国時のDASPまでをワーホリ向けにまとめます。",
+    content: [
+      "Superannuation（通称Super）は、雇用主が給与とは別に積み立てる退職年金です。ワーホリ（サブクラス417・462）も対象で、雇用主はあなたのOTE（通常の労働に対する賃金）の12%をSuperファンドに拠出します。この12%は2025年7月1日から適用されている率で、給料から引かれるものではなく雇用主が追加で負担します。結論として、Superは『もらえる権利のあるお金』であり、口座を1つに決めて正しく積み立てられているか確認するのが最初の一歩です。",
+      "対象条件はシンプルで、18歳以上の従業員なら月の収入額にかかわらずSuperが支払われます（以前あった月450 AUD未満は対象外というルールは2022年7月に撤廃されました）。18歳未満の場合は週30時間超の勤務が条件です。カジュアル・パートタイム・フルタイムいずれも対象で、雇用形態は問いません。ただしABNで働く個人事業主（Sole Trader）自身にはSuperは付きません。",
+      "口座（Superファンド）の選び方：手数料が低く、運用実績が安定した大手ファンドを1つ選ぶのが基本です。ワーホリは短期滞在で運用益より『手数料の低さ』と『不要な保険を付けない』ことが重要です。多くのファンドは加入時に生命保険・所得補償保険が自動付帯され、掛金が残高から引かれます。短期滞在で不要なら加入後に保険をオフにできる場合があります。",
+      "雇用主への提出方法：入社時に『Superannuation Standard Choice Form』で自分のファンド（ファンド名・USI・メンバー番号）を指定して提出します。指定しない場合、雇用主はATOに照会してあなたの既存の『Stapled Super（紐づけられた既定のファンド）』に支払います。Stapledもなければ雇用主の既定ファンドが使われます。複数の職場で毎回新しい口座を作ると口座が乱立し手数料が無駄になるため、最初の1口座を使い回すのが賢明です。",
+      "確認とトラブル対応：毎回のPayslipに『Super』の金額とファンド名が記載されているか確認し、実際にファンドのアプリ／myGov（ATO連携）で入金されているかをチェックしましょう。未払いの雇用主も存在するため、四半期ごとに確認するのが安全です（2026年7月1日からは給与と同時にSuperを支払う『Payday Super』制度が始まっています）。帰国してビザが失効した後は、積み立てたSuperをDASPとして払い戻し請求できます（ワーホリの源泉税率は高め）。",
+    ],
+    keyFacts: [
+      { label: "拠出率", value: "OTEの12%（2025年7月1日から。雇用主負担）" },
+      { label: "対象", value: "18歳以上は収入額にかかわらず対象（雇用形態不問）" },
+      { label: "提出書類", value: "Superannuation Standard Choice Form" },
+      { label: "口座未指定時", value: "ATO照会のStapled Superまたは雇用主の既定ファンド" },
+      { label: "帰国後", value: "DASPとして払い戻し請求（ビザ失効・出国後）" },
+    ],
+    steps: [
+      { title: "ファンドを1つ選ぶ", description: "手数料の低い大手ファンドを選び、口座を開設します。" },
+      { title: "不要な保険を確認", description: "自動付帯の保険が不要なら加入後にオフにできるか確認します。" },
+      { title: "Standard Choice Formを提出", description: "入社時にファンド名・USI・メンバー番号を雇用主へ提出します。" },
+      { title: "毎回Payslipで確認", description: "SuperがPayslipに記載され、実際に入金されているか確認します。" },
+      { title: "口座を使い回す", description: "転職しても同じ口座を使い、口座の乱立と手数料の無駄を防ぎます。" },
+    ],
+    tips: [
+      "myGovとATOを連携しておくと、自分のSuper口座と残高をまとめて確認・統合できます。",
+      "短期滞在なら『低手数料・保険なし』を優先。運用益より手数料の差の方が残高に効きます。",
+    ],
+    warnings: [
+      "拠出率・制度（Payday Super等）は改定されることがあります。最新の率はATOのSuper guaranteeページで確認してください。",
+      "本記事は一般的な情報提供であり、個別の金融・税務助言ではありません。",
+    ],
+    faqs: [
+      {
+        question: "Superは給料から引かれるのですか？",
+        answer:
+          "いいえ。SuperはOTE（賃金）の12%を雇用主が別途負担して積み立てるもので、あなたの給料から天引きされるものではありません。時給表示が『Super込み（inclusive of super）』の求人もあるため、契約時に『時給＋Super』か『Super込み』かを確認しましょう。",
+      },
+      {
+        question: "口座を指定しないとどうなりますか？",
+        answer:
+          "雇用主がATOにあなたの『Stapled Super（既存の紐づけファンド）』を照会し、そこへ支払います。過去にオーストラリアで働いたことがなければStapledは無いため、雇用主の既定ファンドが使われます。無駄な口座を増やさないためにも、最初に1つ選んで指定するのがおすすめです。",
+      },
+    ],
+    sources: [
+      { label: "ATO - Super for employers（SG rate）", url: "https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee" },
+    ],
+    verifiedAt: "2026-07-18",
+    officialSources: [
+      {
+        label: "ATO｜How much super to pay（SG率12%・2025–26年度）",
+        url: "https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-contributions/how-much-super-to-pay",
+        accessedAt: "2026-07-18",
+      },
+      {
+        label: "ATO｜Key superannuation rates and thresholds – super guarantee",
+        url: "https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee",
+        accessedAt: "2026-07-18",
+      },
+    ],
+    relatedSlugs: ["super-guide", "dasp-refund", "payslip-guide", "tax-return-guide", "tfn-guide"],
+    updatedAt: "2026-07-18",
+    published: true,
+  },
 ];
