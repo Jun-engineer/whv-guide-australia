@@ -4,6 +4,23 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## アーキテクチャ移行（2026-07-18 完了）
+
+記事データを確実に編集できるよう、単一の巨大配列（`lib/mockData.ts` の `articles`）を
+**カテゴリ単位のモジュール**（`lib/content/articles/<category>.ts` + `index.ts`）へ
+分割しました。**構成のみの変更で、記事の追加・本文/タイトル/slug/メタデータ/公開状態の
+変更・URL の変更は一切ありません。**
+
+- 記事数: 97 → 97（不変）、ユニーク slug: 97 → 97、重複 slug: 0
+- `lib/mockData.ts` は後方互換のため `articles` を再エクスポート（既存 import は不変）
+- 記事以外のモックデータ（forum/report/feedback）は `lib/mockData.ts` に残置
+- 詳細・記事の追加場所: `docs/article-data-architecture.md`
+- 検証: `npm run validate:articles`（重複 slug/パス・必須欠落・不正カテゴリ・重複エクスポート）
+- 状態: `validate:content` 0 error / 66 warning、`tsc --noEmit` クリーン、`eslint`
+  クリーン、`test:content` 5/5 pass、`next build` 成功（151静的ページ）— 移行前と同一
+
+**次のコンテンツバッチ: arrival（到着後セットアップ）ハブ 10 件**（下記「ハブ別の残タスク一覧」参照）。
+
 ## 進捗（2026-07-17 時点）
 
 325件の計画記事を、ハブ単位のバッチで公式照合しながら順次公開しています。

@@ -5,7 +5,8 @@
  * The app consumes the *generated* output (lib/content/manifest.generated.ts),
  * so no YAML parsing happens at runtime.
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
+import { resolve } from "node:path";
 import { parse } from "yaml";
 
 export const HUB_IDS = [
@@ -93,20 +94,29 @@ export function loadManifest(manifestPath) {
 }
 
 /**
- * Extract article slugs from lib/mockData.ts by scanning the `articles` array
- * region. Used to reconcile the manifest against the real code.
+ * Read and concatenate the article category modules under
+ * lib/content/articles/ (excluding index.ts and types.ts). These files contain
+ * only article objects, so their combined text is safe to scan for slugs and
+ * relatedSlugs without picking up forum/report data.
  */
-export function extractArticleSlugs(mockDataText) {
-  const start = mockDataText.indexOf("export const articles");
-  if (start === -1) return [];
-  // Stop before the next top-level export so forum/report slugs are excluded.
-  const rest = mockDataText.slice(start);
-  const nextExport = rest.indexOf("\nexport const ", 1);
-  const region = nextExport === -1 ? rest : rest.slice(0, nextExport);
+export function readArticleModulesText(articlesDir) {
+  const files = readdirSync(articlesDir)
+    .filter((f) => f.endsWith(".ts") && f !== "index.ts" && f !== "types.ts")
+    .sort();
+  return files
+    .map((f) => readFileSync(resolve(articlesDir, f), "utf8"))
+    .join("\n");
+}
+
+/**
+ * Extract article slugs from the article category modules' combined text.
+ * Used to reconcile the manifest against the real code.
+ */
+export function extractArticleSlugs(articleModulesText) {
   const slugs = [];
   const re = /\bslug:\s*"([^"]+)"/g;
   let m;
-  while ((m = re.exec(region)) !== null) {
+  while ((m = re.exec(articleModulesText)) !== null) {
     slugs.push(m[1]);
   }
   return slugs;

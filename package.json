@@ -11,6 +11,7 @@
     "generate:favicon": "node scripts/generate-favicon.mjs",
     "generate:content": "node scripts/generate-content-registry.mjs",
     "validate:content": "node scripts/validate-content.mjs",
+    "validate:articles": "node scripts/validate-articles.mjs",
     "test:content": "node --test scripts/content.test.mjs"
   },
   "dependencies": {

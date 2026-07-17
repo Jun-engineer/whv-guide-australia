@@ -11,6 +11,7 @@ import { dirname, resolve } from "node:path";
 import {
   loadManifest,
   extractArticleSlugs,
+  readArticleModulesText,
   validateContent,
 } from "./lib/content-manifest.mjs";
 
@@ -20,8 +21,10 @@ const ROOT = resolve(__dirname, "..");
 const { hubs, existing, planned } = loadManifest(
   resolve(ROOT, "whv-guide-content-plan/content-manifest.yaml"),
 );
-const mockDataText = readFileSync(resolve(ROOT, "lib/mockData.ts"), "utf8");
-const codeSlugs = extractArticleSlugs(mockDataText);
+const articleModulesText = readArticleModulesText(
+  resolve(ROOT, "lib/content/articles"),
+);
+const codeSlugs = extractArticleSlugs(articleModulesText);
 
 // Parse the app-level redirect table (lib/content/redirects.ts) so build-time
 // validation can confirm every redirect target is a live published article and
@@ -60,7 +63,7 @@ const manifestSlugSet = new Set(
 const relatedRe = /relatedSlugs:\s*\[([^\]]*)\]/g;
 let rel;
 const brokenLinks = new Set();
-while ((rel = relatedRe.exec(mockDataText)) !== null) {
+while ((rel = relatedRe.exec(articleModulesText)) !== null) {
   const refs = rel[1]
     .split(",")
     .map((s) => s.trim().replace(/^["']|["']$/g, ""))

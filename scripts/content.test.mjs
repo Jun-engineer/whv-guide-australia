@@ -4,12 +4,12 @@
  */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import {
   loadManifest,
   extractArticleSlugs,
+  readArticleModulesText,
   validateContent,
 } from "./lib/content-manifest.mjs";
 
@@ -21,7 +21,7 @@ function load() {
     resolve(ROOT, "whv-guide-content-plan/content-manifest.yaml"),
   );
   const codeSlugs = extractArticleSlugs(
-    readFileSync(resolve(ROOT, "lib/mockData.ts"), "utf8"),
+    readArticleModulesText(resolve(ROOT, "lib/content/articles")),
   );
   return { hubs, existing, planned, codeSlugs };
 }
