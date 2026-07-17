@@ -47,9 +47,16 @@ const { errors, warnings } = validateContent({
 });
 
 // Internal-link integrity: every relatedSlugs entry must resolve to a real
-// article slug (or a registered redirect source that forwards to one).
+// article slug, a registered redirect source, or a catalogued slug in the
+// manifest (a planned article that will exist once published). Truly unknown
+// slugs (typos) are errors; forward-references to catalogued-but-not-yet-
+// published articles are allowed because getRelatedArticles() safely skips
+// any slug that is not yet a live article at runtime.
 const slugSet = new Set(codeSlugs);
 const redirectFromSet = new Set(redirects.map((r) => r.from));
+const manifestSlugSet = new Set(
+  [...existing, ...planned].map((item) => item.slug),
+);
 const relatedRe = /relatedSlugs:\s*\[([^\]]*)\]/g;
 let rel;
 const brokenLinks = new Set();
@@ -59,7 +66,11 @@ while ((rel = relatedRe.exec(mockDataText)) !== null) {
     .map((s) => s.trim().replace(/^["']|["']$/g, ""))
     .filter(Boolean);
   for (const ref of refs) {
-    if (!slugSet.has(ref) && !redirectFromSet.has(ref)) {
+    if (
+      !slugSet.has(ref) &&
+      !redirectFromSet.has(ref) &&
+      !manifestSlugSet.has(ref)
+    ) {
       brokenLinks.add(ref);
     }
   }

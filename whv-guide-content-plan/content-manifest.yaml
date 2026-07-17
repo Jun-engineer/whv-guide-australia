@@ -514,7 +514,7 @@ planned_content:
 - slug: working-holiday-model-plans
   title: 目的別ワーホリモデルプラン｜英語・貯金・ローカル就職・セカンド
   hub: start-here
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: comparison
@@ -524,7 +524,7 @@ planned_content:
 - slug: working-holiday-common-mistakes
   title: ワーホリでよくある失敗30選｜出発前・仕事・家・税金の対策
   hub: start-here
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: problem-solving
@@ -534,7 +534,7 @@ planned_content:
 - slug: working-holiday-with-low-english
   title: 英語に自信がなくてもワーホリできる？現実的な準備と仕事の選び方
   hub: start-here
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: reassurance
@@ -544,7 +544,7 @@ planned_content:
 - slug: working-holiday-without-car
   title: 車なしワーホリ完全ガイド｜暮らしやすい都市と仕事の選び方
   hub: start-here
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: comparison
@@ -554,7 +554,7 @@ planned_content:
 - slug: working-holiday-couple
   title: カップルでオーストラリアワーホリ｜家・仕事・お金の注意点
   hub: start-here
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: guide
@@ -564,7 +564,7 @@ planned_content:
 - slug: working-holiday-solo-woman
   title: 女性ひとりのオーストラリアワーホリ安全・生活ガイド
   hub: start-here
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: safety
@@ -574,7 +574,7 @@ planned_content:
 - slug: working-holiday-age-29-30
   title: 29歳・30歳からのラストワーホリ｜申請期限とキャリア設計
   hub: start-here
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: guide
