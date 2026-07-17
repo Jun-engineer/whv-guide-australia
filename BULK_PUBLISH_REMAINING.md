@@ -1,29 +1,50 @@
 # BULK_PUBLISH_REMAINING
 
-生成日: 2026-07-16（更新）
+生成日: 2026-07-16（更新: 2026-07-17）
 
-本サイクルで**公開しなかった**計画コンテンツの完全一覧です。
+計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
-## 未公開の理由（全項目共通）
+## 進捗（2026-07-17 時点）
 
-各記事は YMYL（お金・ビザ・税・健康・法）領域を含み、**タイトルの問いに答える主要な数値・料金・要件・期限・法規則を、記事単位で最新の公式一次情報に照合して確認する作業**が必要です。この照合はコンテンツ1件ずつ公式サイト（immi.homeaffairs.gov.au / ato.gov.au / fairwork.gov.au / servicesaustralia.gov.au / 各州政府等）にあたる必要があり、本サイクル1回では全件を責任を持って完了できません。マスタープランの方針「maximum valid publication, not forced publication」「検証不能なコンテンツは review のままにする」に従い、これらは公開せず計画（planned）状態で保持します。
+325件の計画記事を、ハブ単位のバッチで公式照合しながら順次公開しています。
 
-- 合計: 325 件（status: planned）
+- **公開済み合計: 7 件**（残り 318 件）
+- **現在のカテゴリ: start-here（完了）**
+- **次のカテゴリ: visa（未着手）**
+
+### 完了済み slug（バッチ1: start-here ハブ / commit 78a5e61）
+
+- `working-holiday-model-plans`
+- `working-holiday-common-mistakes`
+- `working-holiday-with-low-english`
+- `working-holiday-without-car`
+- `working-holiday-couple`
+- `working-holiday-solo-woman`
+- `working-holiday-age-29-30`
+
+### 統合（merged）済み slug（→ 統合先）
+
+- `sim-esim-guide` → `sim-guide`
+- `mobile-carrier-comparison` → `sim-guide`
+- `abn-application` → `abn-guide`
+- `dasp-guide` → `dasp-refund`
+- `find-lost-super` → `super-guide`
+- `buy-used-car-guide` → `cars-guide`
+
+### 未完了（部分作成中）の slug
+
+- なし（作業中の記事・カテゴリはありません。start-here は完全に公開済み）
+
+## 未公開の理由（残り全項目共通）
+
+各記事は YMYL（お金・ビザ・税・健康・法）領域を含み、**タイトルの問いに答える主要な数値・料金・要件・期限・法規則を、記事単位で最新の公式一次情報に照合して確認する作業**が必要です。この照合はコンテンツ1件ずつ公式サイト（immi.homeaffairs.gov.au / ato.gov.au / fairwork.gov.au / servicesaustralia.gov.au / 各州政府等）にあたる必要があり、一度に全件を責任を持って完了できません。マスタープランの方針「maximum valid publication, not forced publication」「検証不能なコンテンツは review のままにする」に従い、未照合のものは公開せず計画（planned）状態で保持します。
+
+- 残り合計: 318 件（status: planned）
 - 公開条件: 記事単位の公式一次情報照合 + verifiedAt 付与 + 内部リンク整備 + 品質チェック通過
 
 ## ハブ別の残タスク一覧
 
-### start-here — はじめに・ロードマップ (7件)
-
-- `working-holiday-model-plans` — 目的別ワーホリモデルプラン｜英語・貯金・ローカル就職・セカンド _(優先度 P1、意図: comparison)_
-- `working-holiday-common-mistakes` — ワーホリでよくある失敗30選｜出発前・仕事・家・税金の対策 _(優先度 P0、意図: problem-solving)_
-- `working-holiday-with-low-english` — 英語に自信がなくてもワーホリできる？現実的な準備と仕事の選び方 _(優先度 P1、意図: reassurance)_
-- `working-holiday-without-car` — 車なしワーホリ完全ガイド｜暮らしやすい都市と仕事の選び方 _(優先度 P1、意図: comparison)_
-- `working-holiday-couple` — カップルでオーストラリアワーホリ｜家・仕事・お金の注意点 _(優先度 P2、意図: guide)_
-- `working-holiday-solo-woman` — 女性ひとりのオーストラリアワーホリ安全・生活ガイド _(優先度 P1、意図: safety)_
-- `working-holiday-age-29-30` — 29歳・30歳からのラストワーホリ｜申請期限とキャリア設計 _(優先度 P2、意図: guide)_
-
-### visa — ビザ・移民手続き (16件)
+### visa — ビザ・移民手続き (16件) ← 次のカテゴリ
 
 - `working-holiday-eligibility` — ワーホリビザ417の申請条件｜年齢・国籍・資金・扶養家族 _(優先度 P0、意図: eligibility)_
 - `visa-417-vs-462` — サブクラス417と462の違い｜対象国・条件・申請方法 _(優先度 P2、意図: comparison)_
