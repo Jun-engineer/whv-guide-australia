@@ -8,9 +8,10 @@
 
 325件の計画記事を、ハブ単位のバッチで公式照合しながら順次公開しています。
 
-- **公開済み合計: 7 件**（残り 318 件）
-- **現在のカテゴリ: start-here（完了）**
-- **次のカテゴリ: visa（未着手）**
+- **公開済み合計: 43 件**（残り 282 件）
+- **現在のカテゴリ: visa（完了）・preparation（完了）**
+- **次のカテゴリ: arrival（未着手）**
+- **最終検証: `validate:content` 0 error / 66 warning（cannibalization の想定内警告のみ）、`tsc --noEmit` クリーン、`eslint` クリーン、`test:content` 5/5 pass、`next build` 成功（151静的ページ）**
 
 ### 完了済み slug（バッチ1: start-here ハブ / commit 78a5e61）
 
@@ -21,6 +22,48 @@
 - `working-holiday-couple`
 - `working-holiday-solo-woman`
 - `working-holiday-age-29-30`
+
+### 完了済み slug（バッチ2: visa ハブ / 16件）
+
+- `working-holiday-eligibility`
+- `visa-417-vs-462`
+- `visa-cost-processing-time`
+- `visa-proof-of-funds`
+- `visa-health-examination`
+- `visa-police-certificate`
+- `visa-after-passport-renewal`
+- `visa-grant-letter`
+- `visa-first-entry-deadline`
+- `visa-six-month-work-limitation`
+- `visa-study-limit`
+- `visa-travel-reentry`
+- `bridging-visa-basics`
+- `visa-refusal-cancellation`
+- `vevo-check`
+- `registered-migration-agent`
+
+### 完了済み slug（バッチ3: preparation ハブ / 20件）
+
+- `passport-validity-renewal`
+- `japan-moving-out-procedures`
+- `japan-tax-residency-before-departure`
+- `international-driving-permit`
+- `naati-licence-translation`
+- `pre-departure-health-check`
+- `medication-customs`
+- `vaccinations-before-australia`
+- `flight-booking-guide`
+- `arrival-airport-guide`
+- `temporary-accommodation-before-arrival`
+- `cards-and-cash-before-departure`
+- `keep-japanese-phone-number`
+- `mail-forwarding-and-address`
+- `document-backup`
+- `australia-customs-quarantine`
+- `baggage-packing-strategy`
+- `power-plug-voltage`
+- `farm-work-packing`
+- `send-luggage-to-australia`
 
 ### 統合（merged）済み slug（→ 統合先）
 
@@ -33,60 +76,18 @@
 
 ### 未完了（部分作成中）の slug
 
-- なし（作業中の記事・カテゴリはありません。start-here は完全に公開済み）
+- なし（作業中の記事・カテゴリはありません。start-here / visa / preparation は完全に公開済み）
 
 ## 未公開の理由（残り全項目共通）
 
 各記事は YMYL（お金・ビザ・税・健康・法）領域を含み、**タイトルの問いに答える主要な数値・料金・要件・期限・法規則を、記事単位で最新の公式一次情報に照合して確認する作業**が必要です。この照合はコンテンツ1件ずつ公式サイト（immi.homeaffairs.gov.au / ato.gov.au / fairwork.gov.au / servicesaustralia.gov.au / 各州政府等）にあたる必要があり、一度に全件を責任を持って完了できません。マスタープランの方針「maximum valid publication, not forced publication」「検証不能なコンテンツは review のままにする」に従い、未照合のものは公開せず計画（planned）状態で保持します。
 
-- 残り合計: 318 件（status: planned）
+- 残り合計: 282 件（status: planned）
 - 公開条件: 記事単位の公式一次情報照合 + verifiedAt 付与 + 内部リンク整備 + 品質チェック通過
 
 ## ハブ別の残タスク一覧
 
-### visa — ビザ・移民手続き (16件) ← 次のカテゴリ
-
-- `working-holiday-eligibility` — ワーホリビザ417の申請条件｜年齢・国籍・資金・扶養家族 _(優先度 P0、意図: eligibility)_
-- `visa-417-vs-462` — サブクラス417と462の違い｜対象国・条件・申請方法 _(優先度 P2、意図: comparison)_
-- `visa-cost-processing-time` — ワーホリビザの申請料金と審査期間｜いつ申請するべき？ _(優先度 P0、意図: current-info)_
-- `visa-proof-of-funds` — 残高証明はいくら必要？英文残高証明の取り方と注意点 _(優先度 P0、意図: how-to)_
-- `visa-health-examination` — ワーホリビザで健康診断を求められた場合の流れ _(優先度 P1、意図: how-to)_
-- `visa-police-certificate` — 犯罪経歴証明を求められた場合｜日本と豪州の取得方法 _(優先度 P2、意図: how-to)_
-- `visa-after-passport-renewal` — ビザ取得後にパスポートを更新したら？ImmiAccountで変更する方法 _(優先度 P1、意図: how-to)_
-- `visa-grant-letter` — Visa Grant Notificationの見方｜入国期限・条件・保存方法 _(優先度 P0、意図: how-to)_
-- `visa-first-entry-deadline` — ビザ許可後いつまでに入国？First Entry Dateの確認方法 _(優先度 P1、意図: faq)_
-- `visa-six-month-work-limitation` — 同一雇用主6か月制限のルールと例外 _(優先度 P0、意図: legal)_
-- `visa-study-limit` — ワーホリ中に学校へ通える期間とコース選び _(優先度 P1、意図: legal)_
-- `visa-travel-reentry` — ワーホリ中の一時帰国・海外旅行・再入国の注意点 _(優先度 P1、意図: faq)_
-- `bridging-visa-basics` — Bridging Visaとは？ワーホリから次のビザを申請する場合 _(優先度 P1、意図: legal)_
-- `visa-refusal-cancellation` — ビザ申請の却下・取消しを避けるための注意点 _(優先度 P2、意図: risk)_
-- `vevo-check` — VEVOで就労権とビザ条件を確認・共有する方法 _(優先度 P0、意図: how-to)_
-- `registered-migration-agent` — 移民エージェントに相談すべきケースと登録確認方法 _(優先度 P2、意図: decision)_
-
-### preparation — 渡航前準備 (20件)
-
-- `passport-validity-renewal` — ワーホリ前のパスポート確認・更新ガイド _(優先度 P0、意図: checklist)_
-- `japan-moving-out-procedures` — 海外転出届・住民票・国民健康保険・年金の手続き _(優先度 P0、意図: how-to)_
-- `japan-tax-residency-before-departure` — 出国前に確認する日本の税金｜住民税・所得税・納税管理人 _(優先度 P1、意図: finance)_
-- `international-driving-permit` — 国際運転免許証の取り方とオーストラリアでの有効性 _(優先度 P0、意図: how-to)_
-- `naati-licence-translation` — 日本の運転免許証のNAATI翻訳は必要？取得方法と使い分け _(優先度 P1、意図: how-to)_
-- `pre-departure-health-check` — 渡航前に受けたい健康診断・歯科・眼科チェック _(優先度 P1、意図: checklist)_
-- `medication-customs` — 薬をオーストラリアへ持ち込む方法｜処方箋・英文証明・申告 _(優先度 P0、意図: how-to)_
-- `vaccinations-before-australia` — オーストラリア渡航前に確認したい予防接種 _(優先度 P2、意図: health)_
-- `flight-booking-guide` — ワーホリ航空券の選び方｜片道・往復・変更可能運賃 _(優先度 P1、意図: comparison)_
-- `arrival-airport-guide` — 到着空港の選び方｜シドニー・メルボルン・ブリスベンほか _(優先度 P2、意図: comparison)_
-- `temporary-accommodation-before-arrival` — 最初の宿を日本から予約する方法｜ホステル・ホテル・短期賃貸 _(優先度 P0、意図: how-to)_
-- `cards-and-cash-before-departure` — 出発前に用意するクレジットカード・デビットカード・現金 _(優先度 P0、意図: finance)_
-- `keep-japanese-phone-number` — 日本の電話番号を安く維持する方法とSMS認証対策 _(優先度 P1、意図: comparison)_
-- `mail-forwarding-and-address` — 日本の郵便転送・住所変更・実家への依頼チェックリスト _(優先度 P2、意図: checklist)_
-- `document-backup` — パスポート・ビザ・保険証券を安全にバックアップする方法 _(優先度 P0、意図: security)_
-- `australia-customs-quarantine` — オーストラリア入国の税関・検疫｜食品・薬・持込禁止品 _(優先度 P0、意図: legal)_
-- `baggage-packing-strategy` — 受託手荷物と機内持込の分け方｜重量超過を防ぐ荷造り _(優先度 P2、意図: checklist)_
-- `power-plug-voltage` — オーストラリアのコンセント・電圧・変換プラグ _(優先度 P1、意図: faq)_
-- `farm-work-packing` — ファームジョブ用の服装・靴・雨具・日焼け対策 _(優先度 P0、意図: checklist)_
-- `send-luggage-to-australia` — 日本からオーストラリアへ荷物を送る方法｜郵便・国際宅配 _(優先度 P2、意図: comparison)_
-
-### arrival — 到着後セットアップ (10件)
+### arrival — 到着後セットアップ (10件) ← 次のカテゴリ
 
 - `australia-airport-arrival-flow` — オーストラリア入国審査から税関通過までの流れ _(優先度 P0、意図: how-to)_
 - `airport-to-city` — 主要空港から市内への移動方法と料金の考え方 _(優先度 P1、意図: comparison)_

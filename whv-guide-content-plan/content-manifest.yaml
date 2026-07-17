@@ -584,7 +584,7 @@ planned_content:
 - slug: working-holiday-eligibility
   title: ワーホリビザ417の申請条件｜年齢・国籍・資金・扶養家族
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: eligibility
@@ -594,7 +594,7 @@ planned_content:
 - slug: visa-417-vs-462
   title: サブクラス417と462の違い｜対象国・条件・申請方法
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: comparison
@@ -604,7 +604,7 @@ planned_content:
 - slug: visa-cost-processing-time
   title: ワーホリビザの申請料金と審査期間｜いつ申請するべき？
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: current-info
@@ -614,7 +614,7 @@ planned_content:
 - slug: visa-proof-of-funds
   title: 残高証明はいくら必要？英文残高証明の取り方と注意点
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -624,7 +624,7 @@ planned_content:
 - slug: visa-health-examination
   title: ワーホリビザで健康診断を求められた場合の流れ
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -634,7 +634,7 @@ planned_content:
 - slug: visa-police-certificate
   title: 犯罪経歴証明を求められた場合｜日本と豪州の取得方法
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: how-to
@@ -644,7 +644,7 @@ planned_content:
 - slug: visa-after-passport-renewal
   title: ビザ取得後にパスポートを更新したら？ImmiAccountで変更する方法
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -654,7 +654,7 @@ planned_content:
 - slug: visa-grant-letter
   title: Visa Grant Notificationの見方｜入国期限・条件・保存方法
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -664,7 +664,7 @@ planned_content:
 - slug: visa-first-entry-deadline
   title: ビザ許可後いつまでに入国？First Entry Dateの確認方法
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: faq
@@ -674,7 +674,7 @@ planned_content:
 - slug: visa-six-month-work-limitation
   title: 同一雇用主6か月制限のルールと例外
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: legal
@@ -684,7 +684,7 @@ planned_content:
 - slug: visa-study-limit
   title: ワーホリ中に学校へ通える期間とコース選び
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: legal
@@ -694,7 +694,7 @@ planned_content:
 - slug: visa-travel-reentry
   title: ワーホリ中の一時帰国・海外旅行・再入国の注意点
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: faq
@@ -704,7 +704,7 @@ planned_content:
 - slug: bridging-visa-basics
   title: Bridging Visaとは？ワーホリから次のビザを申請する場合
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: legal
@@ -714,7 +714,7 @@ planned_content:
 - slug: visa-refusal-cancellation
   title: ビザ申請の却下・取消しを避けるための注意点
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: risk
@@ -724,7 +724,7 @@ planned_content:
 - slug: vevo-check
   title: VEVOで就労権とビザ条件を確認・共有する方法
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -734,7 +734,7 @@ planned_content:
 - slug: registered-migration-agent
   title: 移民エージェントに相談すべきケースと登録確認方法
   hub: visa
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: decision
@@ -744,7 +744,7 @@ planned_content:
 - slug: passport-validity-renewal
   title: ワーホリ前のパスポート確認・更新ガイド
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: checklist
@@ -754,7 +754,7 @@ planned_content:
 - slug: japan-moving-out-procedures
   title: 海外転出届・住民票・国民健康保険・年金の手続き
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -764,7 +764,7 @@ planned_content:
 - slug: japan-tax-residency-before-departure
   title: 出国前に確認する日本の税金｜住民税・所得税・納税管理人
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: finance
@@ -774,7 +774,7 @@ planned_content:
 - slug: international-driving-permit
   title: 国際運転免許証の取り方とオーストラリアでの有効性
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -784,7 +784,7 @@ planned_content:
 - slug: naati-licence-translation
   title: 日本の運転免許証のNAATI翻訳は必要？取得方法と使い分け
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -794,7 +794,7 @@ planned_content:
 - slug: pre-departure-health-check
   title: 渡航前に受けたい健康診断・歯科・眼科チェック
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: checklist
@@ -804,7 +804,7 @@ planned_content:
 - slug: medication-customs
   title: 薬をオーストラリアへ持ち込む方法｜処方箋・英文証明・申告
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -814,7 +814,7 @@ planned_content:
 - slug: vaccinations-before-australia
   title: オーストラリア渡航前に確認したい予防接種
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: health
@@ -824,7 +824,7 @@ planned_content:
 - slug: flight-booking-guide
   title: ワーホリ航空券の選び方｜片道・往復・変更可能運賃
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: comparison
@@ -834,7 +834,7 @@ planned_content:
 - slug: arrival-airport-guide
   title: 到着空港の選び方｜シドニー・メルボルン・ブリスベンほか
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: comparison
@@ -844,7 +844,7 @@ planned_content:
 - slug: temporary-accommodation-before-arrival
   title: 最初の宿を日本から予約する方法｜ホステル・ホテル・短期賃貸
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -854,7 +854,7 @@ planned_content:
 - slug: cards-and-cash-before-departure
   title: 出発前に用意するクレジットカード・デビットカード・現金
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: finance
@@ -864,7 +864,7 @@ planned_content:
 - slug: keep-japanese-phone-number
   title: 日本の電話番号を安く維持する方法とSMS認証対策
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: comparison
@@ -874,7 +874,7 @@ planned_content:
 - slug: mail-forwarding-and-address
   title: 日本の郵便転送・住所変更・実家への依頼チェックリスト
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: checklist
@@ -884,7 +884,7 @@ planned_content:
 - slug: document-backup
   title: パスポート・ビザ・保険証券を安全にバックアップする方法
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: security
@@ -894,7 +894,7 @@ planned_content:
 - slug: australia-customs-quarantine
   title: オーストラリア入国の税関・検疫｜食品・薬・持込禁止品
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: legal
@@ -904,7 +904,7 @@ planned_content:
 - slug: baggage-packing-strategy
   title: 受託手荷物と機内持込の分け方｜重量超過を防ぐ荷造り
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: checklist
@@ -914,7 +914,7 @@ planned_content:
 - slug: power-plug-voltage
   title: オーストラリアのコンセント・電圧・変換プラグ
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: faq
@@ -924,7 +924,7 @@ planned_content:
 - slug: farm-work-packing
   title: ファームジョブ用の服装・靴・雨具・日焼け対策
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: checklist
@@ -934,7 +934,7 @@ planned_content:
 - slug: send-luggage-to-australia
   title: 日本からオーストラリアへ荷物を送る方法｜郵便・国際宅配
   hub: preparation
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: comparison

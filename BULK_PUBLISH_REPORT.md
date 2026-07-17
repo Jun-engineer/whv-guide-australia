@@ -55,6 +55,31 @@
 
 詳細な照合内容は `SOURCE_VERIFICATION_REPORT.md` を参照。
 
+### 追加バッチ 2/3: visa + preparation（2026-07-17、36件）
+
+`visa` ハブ16件と `preparation` ハブ20件を、記事単位で公式一次情報に照合して新規公開。
+すべて `verifiedAt: 2026-07-17`、`officialSources`（`accessedAt: 2026-07-17`）付き、
+冒頭でタイトルの問いに回答、`keyFacts`/`steps`/`tips`/`warnings`/`faqs`/`sources`/`relatedSlugs` を完備。
+
+- **visa（16件）:** `working-holiday-eligibility`, `visa-417-vs-462`, `visa-cost-processing-time`,
+  `visa-proof-of-funds`, `visa-health-examination`, `visa-police-certificate`,
+  `visa-after-passport-renewal`, `visa-grant-letter`, `visa-first-entry-deadline`,
+  `visa-six-month-work-limitation`, `visa-study-limit`, `visa-travel-reentry`,
+  `bridging-visa-basics`, `visa-refusal-cancellation`, `vevo-check`, `registered-migration-agent`
+- **preparation（20件）:** `passport-validity-renewal`, `japan-moving-out-procedures`,
+  `japan-tax-residency-before-departure`, `international-driving-permit`, `naati-licence-translation`,
+  `pre-departure-health-check`, `medication-customs`, `vaccinations-before-australia`,
+  `flight-booking-guide`, `arrival-airport-guide`, `temporary-accommodation-before-arrival`,
+  `cards-and-cash-before-departure`, `keep-japanese-phone-number`, `mail-forwarding-and-address`,
+  `document-backup`, `australia-customs-quarantine`, `baggage-packing-strategy`, `power-plug-voltage`,
+  `farm-work-packing`, `send-luggage-to-australia`
+- **統合/リダイレクト:** このバッチでは新規の全面重複がなく、統合・リダイレクトは発生せず
+  （近接トピックは `relatedSlugs` で相互接続）。`content-manifest.yaml` の該当36件を
+  `status: planned` → `status: published` に更新。
+- **照合出典:** immi.homeaffairs.gov.au（ビザ）、ABF/DAFF（税関・検疫）、TGA（薬）、
+  health.gov.au（予防接種）、外務省・国税庁・日本年金機構・日本郵便・警察庁・NAATI 等。
+  詳細は `SOURCE_VERIFICATION_REPORT.md` の「バッチ2/3」。
+
 ## 2. 統合とリダイレクト
 
 計画（未公開）の重複トピック6件を既存公開記事へ統合し、308恒久リダイレクトを登録
@@ -87,16 +112,18 @@
 | チェック | 結果 |
 | --- | --- |
 | コンテンツ検証（`npm run validate:content`） | エラー0 / 警告66 |
+| 型チェック（`npx tsc --noEmit`） | エラー0 |
 | コンテンツテスト（`npm run test:content`, node:test） | 5/5 パス |
 | Lint（`npm run lint`） | エラー0 / 警告0 |
-| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（108静的ページ生成） |
+| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（151静的ページ生成、バッチ2/3公開後） |
 
-警告78の大半は、粒度の粗い検索意図クラスタの共食い候補（過検出）と、コードに存在するが
+警告66の大半は、粒度の粗い検索意図クラスタの共食い候補（過検出）と、コードに存在するが
 マニフェスト `existing_articles` 未登録である旨の情報提供です（`CONTENT_AUDIT.md` 参照）。
 
 ## 5. 非公開（review/planned のまま）
 
-- 残り **325件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
+- 残り **282件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
+  （start-here 7件 + visa 16件 + preparation 20件を公開済み。次バッチは arrival ハブ。）
 - 非公開コンテンツは公開一覧・サイトマップ・構造化データ・内部リンクに露出していません
   （`isPublishedArticle` により自動除外）。
 

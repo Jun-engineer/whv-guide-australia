@@ -44,6 +44,19 @@
 （例: 税還付系の複数記事、到着チェックリスト系）が出た場合は、本ファイルに提案として追記し、
 人手レビューを経てから統合・リダイレクトを行う方針です。**公開中ページの自動統合は行いません。**
 
+### バッチ2/3（visa・preparation）の統合判断（2026-07-17）
+
+visa ハブ16件・preparation ハブ20件を公開。いずれも既存公開記事・バッチ内記事と
+**検索意図が異なり全面重複はないため、新規の統合・リダイレクトは発生せず**。近接トピックは
+別記事として保持し、内部リンク（`relatedSlugs`）で相互接続した。
+
+- 既存 `visa-application` / `visa-options` と新規 visa 記事: 前者は申請フロー全体・選択肢の俯瞰、
+  新規は個別論点（資金証明・健康診断・入国期限・6か月制限・VEVO等）で意図が分離。
+- 既存 `preparation-checklist` / `packing-list` / `insurance-guide` と新規 preparation 記事:
+  前者は総括チェックリスト、新規は個別手続き（海外転出・税・免許・薬・税関検疫等）で意図が分離。
+- `arrival-airport-guide`（hub: preparation、到着空港の選択）は、arrival ハブの
+  `australia-airport-arrival-flow`（入国審査の流れ）とはテーマが別。重複なし。
+
 ## 4. リダイレクト運用ルール
 
 - `to`（転送先）は必ず公開中（`published`）の実記事 slug。

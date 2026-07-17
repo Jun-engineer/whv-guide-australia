@@ -2990,6 +2990,2352 @@ export const articles: Article[] = [
     updatedAt: "2026-07-17",
     published: true,
   },
+  {
+    id: "a62",
+    title: "ワーホリビザ417の申請条件｜年齢・国籍・資金・扶養家族",
+    slug: "working-holiday-eligibility",
+    category: "visa",
+    hub: "visa",
+    priority: "P0",
+    searchIntent: "ワーホリ 417 申請条件 年齢 資金",
+    description:
+      "日本国籍者がワーキングホリデービザ（サブクラス417）を申請できる条件を、公式情報ベースで整理。年齢・パスポート・資金・扶養家族・過去の417歴まで、申請前に必ず確認すべき要件をまとめました。",
+    content: [
+      "ワーキングホリデービザ（サブクラス417）を申請するための主な条件は、①申請時に18〜30歳であること、②対象国・地域のパスポートを持っていること（日本は対象）、③オーストラリア国外から申請すること、④扶養する子ども（dependent children）を同伴しないこと、⑤過去に417または462ビザでオーストラリアに入国したことがないこと（1回目の場合）です。日本国籍者は417（Working Holiday visa）の対象で、年齢上限は30歳です。",
+      "年齢は『申請時点』で判定されます。31歳になる前（＝30歳のうち）に申請を完了すれば、許可・入国が誕生日後になっても問題ありません。誕生日が近い人は締切を逆算し、パスポート更新が必要なら先に済ませてから早めに申請しましょう。",
+      "資金要件も重要です。オーストラリア到着後の生活を支えられる資金として、目安で約5,000 AUDを保有していることが求められます。加えて、帰国用の航空券を購入できる資金、または購入済みであることが望ましいとされています。申請時に必ず提出するわけではありませんが、求められた場合に備えて英文の残高証明を用意しておくと安心です（→ 残高証明の記事参照）。",
+      "扶養家族については、申請者本人のみの申請となり、配偶者やパートナーを申請に含めることはできません。カップルで渡豪する場合も、それぞれが個別に申請します。また、扶養する子どもを同伴しての滞在は認められていません。",
+      "健康・人物（Health・Character）要件を満たすことも条件です。場合によっては健康診断や犯罪経歴証明の提出を求められることがあります。申請フォームの健康・経歴に関する質問には正直に回答してください。虚偽申告は不許可や将来のビザ取得への悪影響につながります。",
+      "これらの条件・数値は予告なく変更されることがあります。申請を検討している人は、申請直前に必ずオーストラリア内務省（Department of Home Affairs）の公式ページで最新の要件を確認してください。",
+    ],
+    keyFacts: [
+      { label: "年齢", value: "申請時に18〜30歳（日本国籍は30歳まで）" },
+      { label: "国籍", value: "対象国・地域のパスポート（日本は417の対象）" },
+      { label: "申請場所", value: "オーストラリア国外から申請（1回目）" },
+      { label: "資金の目安", value: "約5,000 AUD＋帰国用航空券相当" },
+      { label: "扶養家族", value: "扶養する子どもの同伴不可・家族を申請に含められない" },
+      { label: "過去歴", value: "過去に417/462で入国済みは1回目の対象外" },
+    ],
+    steps: [
+      { title: "年齢と国籍を確認", description: "申請時に18〜30歳か、日本のパスポートを保有しているかを確認します。" },
+      { title: "パスポートを整える", description: "有効期限が滞在予定より長く残っているか確認し、必要なら先に更新します。" },
+      { title: "資金を準備", description: "約5,000 AUD相当の資金と帰国用航空券分を確保し、英文残高証明を用意します。" },
+      { title: "健康・人物要件を確認", description: "健康診断・犯罪経歴証明を求められる可能性に備え、質問には正直に回答します。" },
+    ],
+    tips: [
+      "年齢は『申請時』で判定されます。誕生日が近い人は締切を逆算して早めに申請しましょう。",
+      "残高証明は求められてから慌てないよう、英文で事前に取得しておくと安心です。",
+      "1回目はオーストラリア国外からの申請が原則です。旅行中の申請タイミングに注意しましょう。",
+    ],
+    faqs: [
+      {
+        question: "英語試験のスコアは必要ですか？",
+        answer:
+          "417ビザの申請に英語試験（IELTS等）のスコア提出は不要です。ただし現地の仕事探しには日常会話レベルがあると有利です。",
+      },
+      {
+        question: "貯金が5,000 AUDに満たない場合は申請できませんか？",
+        answer:
+          "資金要件は目安として示されています。不足していると懸念がある場合は、申請前に公式情報を確認し、必要資金を準備してから申請するのが安全です。",
+      },
+      {
+        question: "カップルは一緒に申請できますか？",
+        answer:
+          "できません。ワーホリビザは個人単位の申請です。パートナー同士でもそれぞれ別々に申請します。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜First Working Holiday visa (417)", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/first-working-holiday-417" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Home Affairs｜First Working Holiday visa（条件・費用）",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/first-working-holiday-417",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["申請条件・資金の目安・年齢要件は変更されることがあります。申請前に必ず公式情報で最新を確認してください。"],
+    relatedSlugs: ["visa-application", "visa-cost-processing-time", "visa-proof-of-funds", "whv-complete-guide"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a63",
+    title: "サブクラス417と462の違い｜対象国・条件・申請方法",
+    slug: "visa-417-vs-462",
+    category: "visa",
+    hub: "visa",
+    priority: "P2",
+    searchIntent: "417 462 違い ワーホリ どっち",
+    description:
+      "Working Holiday visa（417）とWork and Holiday visa（462）の違いを、対象国・追加要件・申請方法の観点から整理。日本国籍者がどちらを申請するのかを最初に明確にします。",
+    content: [
+      "結論から言うと、日本国籍の人が申請するのはサブクラス417（Working Holiday visa）です。サブクラス462（Work and Holiday visa）は対象国が異なり、日本は462の対象ではありません。そのため『417か462か』で迷う必要は基本的になく、日本のパスポートで申請するのは417になります。",
+      "417と462はどちらも18〜30歳（一部国籍は35歳）の若者向けで、最長12か月の滞在、就労・就学が可能という点は共通しています。滞在期間・費用・セカンド/サードでの延長制度も基本的な枠組みは似ています。",
+      "大きな違いは『対象国』と『追加要件』です。462は国によって、学歴要件（一定の高等教育歴）、一定レベルの英語力の証明、自国政府からの推薦状（サポートレター）などの追加条件が課されることがあります。417はこうした学歴・英語要件が課されないのが一般的です。日本は417対象国のため、これらの462特有の追加要件は関係ありません。",
+      "セカンド・サードビザの要件（Specified Work）も、417と462で対象となる仕事や地域の定義が異なる場合があります。日本国籍者は417の枠組みで、3か月（セカンド）・6か月（サード）の指定労働を行うことで延長を狙えます。",
+      "他国籍の友人と情報交換する際は、相手が462対象国の場合、申請条件や必要書類が自分（417）と違うことを念頭に置きましょう。制度は国ごと・年ごとに変わるため、それぞれ自分の国籍に対応する公式ページで確認するのが確実です。",
+    ],
+    keyFacts: [
+      { label: "日本国籍", value: "417（Working Holiday visa）を申請" },
+      { label: "462の対象", value: "日本は462（Work and Holiday）の対象外" },
+      { label: "共通点", value: "18〜30歳・最長12か月・就労就学可" },
+      { label: "462の追加要件例", value: "学歴・英語力・推薦状（国により異なる）" },
+      { label: "417の特徴", value: "学歴・英語要件は原則なし" },
+    ],
+    steps: [
+      { title: "自分の国籍を確認", description: "日本のパスポートなら417が対象。462対象国の友人とは条件が異なります。" },
+      { title: "417の条件を確認", description: "年齢・資金・パスポートなど417の申請条件を満たすか確認します。" },
+      { title: "ImmiAccountで417を申請", description: "日本国籍者はサブクラス417のフォームで申請します。" },
+    ],
+    tips: [
+      "日本のパスポートでは462は申請できません。『417 vs 462』で悩む必要はなく417で進めましょう。",
+      "462対象国の人は学歴・英語証明・推薦状が必要な場合があります。他国籍の情報をそのまま自分に当てはめないよう注意。",
+    ],
+    faqs: [
+      {
+        question: "日本人でも462を選べますか？",
+        answer:
+          "選べません。462は対象国が指定されており、日本は含まれていません。日本国籍者は417を申請します。",
+      },
+      {
+        question: "417と462で現地でできることは違いますか？",
+        answer:
+          "就労・就学・滞在期間などの基本的な枠組みは似ていますが、セカンド/サードの指定労働の扱いなど細部が異なる場合があります。自分の対象ビザ（日本は417）の条件で確認しましょう。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜Working Holiday Maker program", url: "https://immi.homeaffairs.gov.au/what-we-do/whm-program/" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Home Affairs｜Work and Holiday visa (subclass 462)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-462",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["対象国・追加要件は変更されることがあります。申請前に自分の国籍に対応する公式ページで確認してください。"],
+    relatedSlugs: ["working-holiday-eligibility", "visa-application", "whv-complete-guide", "second-visa-guide"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a64",
+    title: "ワーホリビザの申請料金と審査期間｜いつ申請するべき？",
+    slug: "visa-cost-processing-time",
+    category: "visa",
+    hub: "visa",
+    priority: "P0",
+    searchIntent: "ワーホリ ビザ 申請料 費用 審査 期間",
+    description:
+      "サブクラス417の申請料金（ファースト・セカンド・サード）と支払い方法、審査期間の考え方、そして『いつ申請すべきか』のタイミングを、公式情報ベースで解説します。",
+    content: [
+      "ワーホリビザ（417）の申請料金は、ファースト（1年目）が840 AUDです。セカンド（2年目）・サード（3年目）はそれぞれ1,000 AUDです（2026年7月時点・公式）。支払いはImmiAccount上でクレジットカード等により行い、申請料を支払うと審査が始まります。カードのブランドによっては別途サーチャージ（手数料）がかかる場合があります。",
+      "審査期間は時期や申請量によって変動します。近年はワーホリ申請が非常に多く、通常より処理に時間がかかる傾向があると公式に案内されています。多くの場合は数日〜数週間で許可されますが、繁忙期（年度替わり・長期休暇前）はさらにかかることがあります。目安を知りたい場合は、公式の『visa processing times』ツールで直近の処理状況を確認できます。",
+      "重要な注意点として、オーストラリア当局は『ビザが許可されたと書面で通知されるまで渡航の手配（航空券購入等）をしないように』と明記しています。許可前に航空券を確定させると、審査が長引いた場合にリスクとなります。渡航日が決まっているなら、余裕を持って出発の2〜3か月前には申請を済ませておくのがおすすめです。",
+      "『いつ申請すべきか』は、①年齢（30歳の締切）、②パスポートの有効期限、③初回入国期限（First entry date）の3点から逆算します。許可されると通常は許可日から12か月以内に初回入国する必要があるため、あまりに早く申請すると入国期限が早まる点に注意が必要です。一般的には、渡航予定の2〜4か月前の申請がバランスの良いタイミングです。",
+      "料金・処理期間・条件は予告なく変更されます。申請直前に必ず公式ページで最新の申請料と処理時間の案内を確認してください。",
+    ],
+    keyFacts: [
+      { label: "ファースト申請料", value: "840 AUD（2026年7月時点・公式）" },
+      { label: "セカンド/サード申請料", value: "各1,000 AUD" },
+      { label: "支払い方法", value: "ImmiAccountでカード決済（サーチャージあり得る）" },
+      { label: "審査期間", value: "数日〜数週間（繁忙期はさらに変動）" },
+      { label: "渡航手配", value: "許可の書面通知が来るまで航空券を確定しない" },
+      { label: "推奨申請時期", value: "渡航の2〜4か月前が目安" },
+    ],
+    steps: [
+      { title: "申請料と処理時間を確認", description: "公式ページで最新の申請料（840 AUD）と直近の処理時間を確認します。" },
+      { title: "申請時期を逆算", description: "年齢・パスポート・初回入国期限から、いつ申請するか決めます。" },
+      { title: "ImmiAccountで支払い", description: "フォーム入力後、カードで申請料を支払うと審査開始です。" },
+      { title: "許可通知を待って手配", description: "書面での許可通知を受け取ってから航空券を確定します。" },
+    ],
+    tips: [
+      "許可される前に航空券を買わないこと。審査が長引いた場合のリスクを避けられます。",
+      "早く申請しすぎると初回入国期限が早まります。渡航の2〜4か月前がバランス良好です。",
+      "カード決済のサーチャージを避けたい場合は、対応するカードブランドを事前に確認しましょう。",
+    ],
+    faqs: [
+      {
+        question: "申請料は後で返金されますか？",
+        answer:
+          "原則として申請料は返金されません。不許可になっても返ってこないため、条件を満たしているか事前に十分確認してから申請しましょう。",
+      },
+      {
+        question: "審査を早める方法はありますか？",
+        answer:
+          "一般に個別で早める方法はありません。書類に不備がなく正確に申請することが、結果的に最短の処理につながります。繁忙期を避けて早めに申請するのが有効です。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜First Working Holiday visa（費用）", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/first-working-holiday-417" },
+      { label: "Visa processing times（処理時間の目安）", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-processing-times/global-visa-processing-times" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜First Working Holiday visa（Cost AUD840）",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/first-working-holiday-417",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["申請料・処理期間は予告なく変更されます。申請前に必ず公式情報で最新を確認してください。"],
+    relatedSlugs: ["visa-application", "working-holiday-eligibility", "visa-first-entry-deadline", "working-holiday-timeline"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a65",
+    title: "残高証明はいくら必要？英文残高証明の取り方と注意点",
+    slug: "visa-proof-of-funds",
+    category: "visa",
+    hub: "visa",
+    priority: "P0",
+    searchIntent: "ワーホリ 残高証明 いくら 英文 取り方",
+    description:
+      "ワーホリビザの資金要件（目安 約5,000 AUD）と、銀行で英文の残高証明を取得する方法・費用・注意点を解説。求められたときにすぐ提出できるよう準備しておきましょう。",
+    content: [
+      "ワーホリビザ（417）の資金要件の目安は、オーストラリア滞在を支えられる資金として約5,000 AUD（日本円で概ね50万円前後）です。加えて、帰国用の航空券を購入できる資金があること（または購入済み）が望ましいとされています。この資金は申請時に必ず提出するわけではありませんが、審査官から求められた場合に備えて『英文の残高証明書（bank balance certificate / bank statement in English）』を準備しておくと安心です。",
+      "英文残高証明は、日本の銀行の窓口またはネットバンキングで発行を依頼します。多くの銀行で英文の残高証明書または英文の取引明細を有料（1通あたり数百円〜千数百円程度）で発行できます。発行までに数日〜1週間程度かかる銀行もあるため、渡航準備の早い段階で依頼しておきましょう。",
+      "証明書には、氏名（パスポートと同じローマ字表記）、口座残高、発行日、通貨が明記されていることを確認します。氏名のスペルがパスポートと一致していないと本人確認で問題になることがあるため、依頼時にローマ字表記を正確に伝えましょう。残高は最新の日付のものを用意し、古すぎる証明にならないよう渡航時期に合わせて取得します。",
+      "資金が一時的に基準を下回っている場合、家族からの一時的な入金で見かけ上の残高を作るのはおすすめできません。審査で資金の実在性や出所を確認される可能性があり、実際に生活を支えられる資金があることが重要です。無理のない資金計画で、到着後に仕事が決まるまでの生活費（家賃・食費・当面の交通費）を賄えるようにしておきましょう。",
+      "資金の目安や運用は変更されることがあります。金額の基準は公式ページで、英文証明の発行方法・費用は利用している銀行の案内で、それぞれ最新情報を確認してください。",
+    ],
+    keyFacts: [
+      { label: "資金の目安", value: "約5,000 AUD＋帰国用航空券相当" },
+      { label: "証明書類", value: "英文の残高証明書 / 英文取引明細" },
+      { label: "発行元", value: "利用中の銀行（窓口・ネットバンキング）" },
+      { label: "費用の目安", value: "1通あたり数百円〜千数百円程度" },
+      { label: "所要日数", value: "即日〜1週間程度（銀行による）" },
+    ],
+    steps: [
+      { title: "必要額を確認", description: "目安の約5,000 AUD＋帰国航空券相当を保有しているか確認します。" },
+      { title: "銀行に英文証明を依頼", description: "窓口またはネットバンキングで英文残高証明を申し込みます。ローマ字表記を正確に伝えます。" },
+      { title: "記載内容を確認", description: "氏名・残高・発行日・通貨が正しいか、パスポート表記と一致するか確認します。" },
+      { title: "PDFで保管", description: "原本とスキャン/PDFの両方を保管し、求められたらすぐ提出できるようにします。" },
+    ],
+    tips: [
+      "氏名のローマ字はパスポートと完全一致させること。不一致は本人確認トラブルの原因です。",
+      "証明書は渡航時期に合わせて取得し、古すぎるものにならないようにしましょう。",
+      "見せ金（一時的な入金）に頼らず、実際に生活を支えられる資金を用意するのが安全です。",
+    ],
+    faqs: [
+      {
+        question: "残高証明は必ず提出しますか？",
+        answer:
+          "申請時に必ず提出するわけではありませんが、求められた場合に備えて用意しておくと安心です。すぐ提出できるよう英文でPDF保管しておきましょう。",
+      },
+      {
+        question: "円建てとドル建てのどちらで用意すべきですか？",
+        answer:
+          "日本の口座は円建てで問題ありません。目安のAUD額に相当する円を保有していることが分かれば十分です。為替変動を考慮して余裕を持って準備しましょう。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜First Working Holiday visa", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/first-working-holiday-417" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["資金の目安は変更されることがあります。金額の基準は必ず公式情報で最新を確認してください。"],
+    relatedSlugs: ["working-holiday-eligibility", "visa-application", "cards-and-cash-before-departure", "working-holiday-budget"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a66",
+    title: "ワーホリビザで健康診断を求められた場合の流れ",
+    slug: "visa-health-examination",
+    category: "visa",
+    hub: "visa",
+    priority: "P1",
+    searchIntent: "ワーホリ 健康診断 HAP 指定医療機関",
+    description:
+      "ワーホリビザ申請で健康診断（Health examination）を求められた場合の流れを解説。HAP IDの受け取り、指定医療機関（panel clinic）での受診、検査内容、結果が出るまでの流れをまとめました。",
+    content: [
+      "ワーホリビザの申請では、必ずしも全員が健康診断を求められるわけではありません。ただし、一定期間の医療・介護・保育などの仕事を予定している場合や、直近で特定の国に長期滞在した場合など、条件に該当すると健康診断（Health examination）を求められることがあります。求められた場合は、指示に従って指定の検査を受ける必要があります。",
+      "健康診断を求められると、通常はImmiAccount経由またはメールで『HAP ID（Health Assessment Portal ID）』が発行されます。このHAP IDを持って、オーストラリア当局が指定する医療機関（panel physician / panel clinic）で受診します。日本国内にも指定医療機関があり、居住地に近い場所を選べます。自分でHAP IDを取得できる『My Health Declarations』という仕組みが使える場合もあります。",
+      "検査内容は求められる範囲によって異なりますが、一般的には胸部レントゲン（結核スクリーニング）や身体診察が含まれることがあります。予約時に必要書類（パスポート、HAP ID、証明写真、眼鏡を使っている場合は眼鏡など）を確認し、指示された持ち物を用意して受診します。",
+      "検査結果は指定医療機関からオーストラリア当局へ電子的に送信されるため、自分で結果を提出する必要は基本的にありません。結果の送信・審査には日数がかかることがあるため、渡航予定がある場合は早めに受診を済ませておきましょう。費用は自己負担で、検査項目により数千円〜数万円程度かかります。",
+      "健康診断が必要かどうか、どの検査が求められるかは個々の申請内容によって異なります。指示された内容・期限・指定医療機関は、ImmiAccountの案内と公式ページで必ず確認してください。",
+    ],
+    keyFacts: [
+      { label: "対象", value: "全員ではない。条件に該当すると求められる" },
+      { label: "HAP ID", value: "健康診断用の識別番号（ImmiAccount/メールで発行）" },
+      { label: "受診先", value: "当局指定の医療機関（panel clinic、日本国内にもあり）" },
+      { label: "検査例", value: "胸部レントゲン・身体診察など（求められる範囲による）" },
+      { label: "費用", value: "自己負担（検査項目により変動）" },
+    ],
+    steps: [
+      { title: "健康診断の要否を確認", description: "ImmiAccountの案内で健康診断が求められているか確認します。" },
+      { title: "HAP IDを受け取る", description: "HAP IDを取得し、指定医療機関を検索します。" },
+      { title: "予約して受診", description: "パスポート・HAP ID・証明写真など指定の持ち物を用意して受診します。" },
+      { title: "結果送信を待つ", description: "結果は医療機関から当局へ送信されます。審査完了を待ちます。" },
+    ],
+    tips: [
+      "渡航予定があるなら早めに受診を。結果送信・審査に日数がかかることがあります。",
+      "指定医療機関でしか有効な検査を受けられません。一般の病院で自己判断で受けないよう注意。",
+    ],
+    faqs: [
+      {
+        question: "全員が健康診断を受けますか？",
+        answer:
+          "いいえ。多くのワーホリ申請者は健康診断を求められませんが、予定する仕事や滞在歴などの条件に該当すると求められることがあります。",
+      },
+      {
+        question: "どこで受ければよいですか？",
+        answer:
+          "オーストラリア当局が指定する医療機関（panel clinic）で受診します。日本国内にも指定機関があり、公式サイトで検索できます。一般の健康診断では代替できません。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜Health examinations", url: "https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/health/how-to-get-your-health-examinations" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Arranging a health examination",
+        url: "https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/health/how-to-get-your-health-examinations",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["健康診断の要否・内容・指定医療機関は個々の申請で異なります。ImmiAccountの案内と公式情報を必ず確認してください。"],
+    relatedSlugs: ["visa-application", "visa-police-certificate", "pre-departure-health-check", "working-holiday-eligibility"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a67",
+    title: "犯罪経歴証明を求められた場合｜日本と豪州の取得方法",
+    slug: "visa-police-certificate",
+    category: "visa",
+    hub: "visa",
+    priority: "P2",
+    searchIntent: "ワーホリ 犯罪経歴証明 police check 取り方",
+    description:
+      "ワーホリビザ申請でCharacter要件により犯罪経歴証明（police certificate）を求められた場合の取得方法を、日本の警察発行の証明と豪州のNational Police Checkの両面から解説します。",
+    content: [
+      "ワーホリビザ申請では、人物（Character）要件を満たすことが条件の一つです。多くの申請者は証明書の提出を求められませんが、審査の過程で犯罪経歴証明（police certificate）を求められることがあります。求められた場合は、指示された国・期間の証明書を用意して提出します。",
+      "日本での犯罪経歴証明は、警察（都道府県警察本部）が発行する『渡航証明書（警察庁の犯罪経歴証明書）』を取得します。申請は住所地を管轄する警察本部の窓口で行い、パスポートや提出先（オーストラリア移民当局）を示す書類の提示が求められます。証明書は密封されて発行されるのが一般的で、開封しないまま扱う点に注意が必要です。発行まで数週間かかることがあるため、求められたら早めに手続きしましょう。",
+      "オーストラリアに一定期間以上滞在したことがある場合は、豪州の『National Police Check（AFP＝オーストラリア連邦警察が発行）』を求められることがあります。これはオンラインで申請でき、目的として移民・ビザ用（Commonwealth purpose）を選択します。手数料と処理期間がかかるため、こちらも早めの申請が安心です。",
+      "どの国の証明が必要か、対象期間はいつからいつまでか、有効期限はどれくらいか、といった要件は申請ごとに異なります。ImmiAccountの指示に正確に従い、指定された国・期間の証明を用意してください。証明書の言語が日本語の場合、翻訳の要否も確認します。",
+      "犯罪経歴証明の取得方法・手数料・処理期間は変更されることがあります。日本の証明は警察の案内で、豪州の証明はAFPの公式サイトで、それぞれ最新情報を確認してください。",
+    ],
+    keyFacts: [
+      { label: "対象", value: "全員ではない。求められた場合に提出" },
+      { label: "日本の証明", value: "都道府県警察本部で発行（渡航用犯罪経歴証明）" },
+      { label: "豪州の証明", value: "AFP National Police Check（オンライン申請）" },
+      { label: "注意", value: "日本の証明は密封のまま扱う（開封しない）" },
+      { label: "所要期間", value: "数週間かかることがある（早めに申請）" },
+    ],
+    steps: [
+      { title: "必要な国・期間を確認", description: "ImmiAccountの指示で、どの国のどの期間の証明が必要か確認します。" },
+      { title: "日本の証明を申請", description: "住所地の警察本部で渡航用犯罪経歴証明を申請します。密封のまま保持します。" },
+      { title: "豪州の証明を申請（該当時）", description: "豪州滞在歴がある場合はAFPのNational Police Checkをオンライン申請します。" },
+      { title: "指示どおり提出", description: "求められた形式・言語で提出します。翻訳の要否も確認します。" },
+    ],
+    tips: [
+      "日本の警察発行の証明は密封されています。開封すると無効になり得るため、そのまま扱いましょう。",
+      "発行に数週間かかることがあります。求められたらすぐ手続きを始めましょう。",
+    ],
+    faqs: [
+      {
+        question: "全員が犯罪経歴証明を提出しますか？",
+        answer:
+          "いいえ。多くの申請者は求められません。審査の過程で必要と判断された場合に、指示に従って提出します。",
+      },
+      {
+        question: "オーストラリアに行ったことがなくても豪州の証明が必要ですか？",
+        answer:
+          "通常、豪州に一定期間以上滞在した経験がない場合は豪州の証明は不要です。求められる国・期間はImmiAccountの指示で確認してください。",
+      },
+    ],
+    sources: [
+      { label: "警察庁｜犯罪経歴証明書（渡航用）", url: "https://www.npa.go.jp/policies/application/koseki/index.html" },
+      { label: "Australian Federal Police｜National Police Checks", url: "https://www.afp.gov.au/what-we-do/services/criminal-records/national-police-checks" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Character requirements / Police certificates",
+        url: "https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/character/character-requirements",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Australian Federal Police｜National Police Checks",
+        url: "https://www.afp.gov.au/what-we-do/services/criminal-records/national-police-checks",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["必要な証明の国・期間・様式は申請ごとに異なります。ImmiAccountの指示と各発行機関の公式情報を必ず確認してください。"],
+    relatedSlugs: ["visa-application", "visa-health-examination", "police-check-guide", "working-holiday-eligibility"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a68",
+    title: "ビザ取得後にパスポートを更新したら？ImmiAccountで変更する方法",
+    slug: "visa-after-passport-renewal",
+    category: "visa",
+    hub: "visa",
+    priority: "P1",
+    searchIntent: "ワーホリ パスポート 更新 ビザ 紐付け 変更",
+    description:
+      "ワーホリビザ取得後にパスポートを更新した場合の対応を解説。ビザはパスポートに電子的に紐づくため、新しいパスポート情報を当局へ通知する手続きが必要です。",
+    content: [
+      "オーストラリアのビザは、パスポートに電子的に紐づいています。ビザ取得後にパスポートを更新（新しい番号のパスポートに切り替え）した場合は、新しいパスポート情報をオーストラリア当局に通知しないと、入国時に就労権やビザの確認でトラブルになる可能性があります。更新したら早めに手続きしましょう。",
+      "新しいパスポート情報の更新は、オンラインのフォーム『Form 929（Change of address and/or passport details）』を使うのが一般的です。ImmiAccountにログインして提出でき、旧パスポート番号・新パスポート番号・氏名・生年月日などを入力します。手数料は基本的にかかりません。",
+      "手続き後、VEVO（Visa Entitlement Verification Online）で自分のビザが新しいパスポートに正しく紐づいているかを確認できます。入国前にVEVOで確認しておくと、空港での本人確認がスムーズになります。念のため、旧パスポート（ビザ取得時のもの）も保管しておくと安心です。",
+      "氏名が変わった場合（結婚等）は、パスポートの氏名とビザ記録の氏名が一致するよう、同様に情報更新が必要です。氏名変更の証明書類を求められることがあります。渡航前に、パスポート・航空券・ビザ記録の氏名がすべて一致していることを確認してください。",
+      "手続き方法やフォームの名称・番号は変更されることがあります。提出前に必ずImmiAccountとオーストラリア当局の公式ページで最新の方法を確認してください。",
+    ],
+    keyFacts: [
+      { label: "理由", value: "ビザはパスポートに電子的に紐づくため更新通知が必要" },
+      { label: "手続き", value: "Form 929でパスポート情報を更新（ImmiAccount）" },
+      { label: "費用", value: "基本的に無料" },
+      { label: "確認方法", value: "VEVOで新パスポートへの紐づけを確認" },
+      { label: "注意", value: "旧パスポートも保管しておくと安心" },
+    ],
+    steps: [
+      { title: "新パスポートを用意", description: "更新後の新しいパスポートの番号・情報を手元に用意します。" },
+      { title: "Form 929を提出", description: "ImmiAccountからパスポート情報の変更を届け出ます。" },
+      { title: "VEVOで確認", description: "新しいパスポートにビザが紐づいているかVEVOで確認します。" },
+      { title: "氏名一致を確認", description: "パスポート・航空券・ビザ記録の氏名がすべて一致するか確認します。" },
+    ],
+    tips: [
+      "更新したら渡航前に必ず手続きを。入国時の就労権・ビザ確認でのトラブルを防げます。",
+      "旧パスポートは処分せず保管を。ビザ取得時の記録として役立つことがあります。",
+    ],
+    faqs: [
+      {
+        question: "ビザを取り直す必要はありますか？",
+        answer:
+          "いいえ。ビザ自体は有効なままです。パスポート情報を更新して、新しいパスポートにビザが紐づくようにするだけで済みます。",
+      },
+      {
+        question: "更新しないまま入国するとどうなりますか？",
+        answer:
+          "旧パスポートの番号でビザが登録されているため、入国審査や就労時の確認で不一致が生じる恐れがあります。渡航前に必ず情報を更新しておきましょう。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜Update your details", url: "https://immi.homeaffairs.gov.au/change-in-situation/update-details" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Update your details (Form 929)",
+        url: "https://immi.homeaffairs.gov.au/change-in-situation/update-details",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "VEVO｜Check visa details and conditions",
+        url: "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/overview",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["手続き方法・フォーム番号は変更されることがあります。提出前に必ず公式情報を確認してください。"],
+    relatedSlugs: ["visa-grant-letter", "vevo-check", "passport-validity-renewal", "visa-application"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a69",
+    title: "Visa Grant Notificationの見方｜入国期限・条件・保存方法",
+    slug: "visa-grant-letter",
+    category: "visa",
+    hub: "visa",
+    priority: "P0",
+    searchIntent: "ワーホリ ビザ 許可通知 grant notification 見方",
+    description:
+      "ビザが許可されると届くVisa Grant Notification（許可通知）の読み方を解説。ビザ番号・許可日・初回入国期限・ビザ条件など、必ず確認すべき項目と安全な保存方法をまとめました。",
+    content: [
+      "ワーホリビザが許可されると、『Visa Grant Notification（ビザ許可通知）』がメールで届きます。この書類には、あなたのビザに関する最重要情報が記載されており、入国・就労・滞在の根拠になります。届いたら内容を必ず確認し、安全に保存してください。ビザラベルはパスポートに貼られず、すべて電子的に管理されます。",
+      "確認すべき主要項目は、①ビザの種類（Working Holiday visa／subclass 417）、②ビザ許可日（Grant date）、③初回入国期限（Must make first entry by／First entry date）、④ビザの有効期限や滞在条件、⑤ビザ条件（Conditions、例：8547など）、⑥氏名・生年月日・パスポート番号が正しいか、です。特に初回入国期限は航空券手配前に必ず確認しましょう。",
+      "初回入国期限は、通常『許可日から12か月以内』に設定されます。この期限までにオーストラリアへ初回入国しないとビザが無効になります。入国後に12か月の滞在カウントが始まります。つまり、許可が早すぎると入国期限も早まる点に注意してください。",
+      "ビザ条件（Conditions）欄には、あなたが守るべきルールがコード（例：Condition 8547＝同一雇用主のもとでの就労は原則6か月まで）で記載されます。条件の意味はビザ番号（例：417-A）ごとの条件一覧で確認できます。氏名・パスポート番号などに誤りがある場合は、早めに当局へ連絡して訂正を依頼します。",
+      "保存方法は、①メールを削除しない、②PDFをスマホ本体とクラウド（Googleドライブ等）の両方に保存、③印刷したものも1部持参、の三重管理が安心です。入国時や銀行・就労時の本人確認で提示を求められることがあります。記載内容・条件は変更されることがあるため、不明点は公式のビザ条件ページで確認してください。",
+    ],
+    keyFacts: [
+      { label: "書類名", value: "Visa Grant Notification（ビザ許可通知）" },
+      { label: "受け取り方", value: "メールで届く（ビザラベルの貼付は不要）" },
+      { label: "最重要項目", value: "許可日・初回入国期限・ビザ条件" },
+      { label: "初回入国期限", value: "通常は許可日から12か月以内" },
+      { label: "保存", value: "メール・PDF・印刷の三重管理が安心" },
+    ],
+    steps: [
+      { title: "記載情報を確認", description: "氏名・生年月日・パスポート番号がパスポートと一致するか確認します。" },
+      { title: "期限を確認", description: "初回入国期限とビザ有効期限をカレンダーに記録します。" },
+      { title: "条件を確認", description: "Conditions欄のコードの意味をビザ条件一覧で確認します。" },
+      { title: "安全に保存", description: "PDFをクラウドと端末に保存し、印刷も1部持参します。" },
+    ],
+    tips: [
+      "初回入国期限は航空券手配前に必ず確認。期限を過ぎるとビザが無効になります。",
+      "氏名・パスポート番号に誤りがあれば早めに当局へ連絡して訂正しましょう。",
+      "入国審査で提示を求められることは基本ありませんが、念のためすぐ出せる状態にしておくと安心です。",
+    ],
+    faqs: [
+      {
+        question: "ビザラベルはパスポートに貼られますか？",
+        answer:
+          "いいえ。オーストラリアのビザは電子的に管理され、ラベルの貼付はありません。許可通知（PDF）とVEVOで内容を確認します。",
+      },
+      {
+        question: "許可通知を紛失したらどうなりますか？",
+        answer:
+          "ビザ自体は有効なままです。ImmiAccountから再取得できるほか、VEVOでビザ内容を確認できます。ただし普段からPDFを複数箇所に保存しておくのが安全です。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜See your visa conditions (417-A)", url: "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/see-your-visa-conditions?product=417-A" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Check visa details and conditions (VEVO)",
+        url: "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/overview",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417) conditions",
+        url: "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/see-your-visa-conditions?product=417-A",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["ビザ条件・入国期限は個々の許可通知に記載された内容が優先されます。不明点は公式情報で確認してください。"],
+    relatedSlugs: ["visa-first-entry-deadline", "visa-six-month-work-limitation", "vevo-check", "visa-application"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a70",
+    title: "ビザ許可後いつまでに入国？First Entry Dateの確認方法",
+    slug: "visa-first-entry-deadline",
+    category: "visa",
+    hub: "visa",
+    priority: "P1",
+    searchIntent: "ワーホリ 初回入国 期限 first entry date",
+    description:
+      "ワーホリビザの初回入国期限（First entry date）とは何か、いつまでに入国すればよいか、許可日・入国日・滞在開始日の違いを整理して解説します。",
+    content: [
+      "ワーホリビザ（417）が許可されると、『初回入国期限（Must make first entry by／First entry date）』が設定されます。この期限までにオーストラリアへ初回入国しないと、ビザが無効になります。多くの場合、初回入国期限は『ビザ許可日から12か月以内』です。正確な日付は必ず自分のVisa Grant Notification（許可通知）で確認してください。",
+      "混同しやすいのが『許可日』『初回入国期限』『滞在開始日』の3つです。許可日はビザが下りた日、初回入国期限はそれまでに入国が必要な締切、そして12か月の滞在カウントは実際に入国した日から始まります。つまり、許可されてすぐ入国しなくても、期限内に入国すればよく、滞在可能な1年間は入国日を起点に計算されます。",
+      "この仕組みから、申請・許可のタイミングには戦略があります。あまりに早く申請して早く許可されると、初回入国期限も早まります。渡航予定日から逆算し、初回入国期限に余裕を持てるよう、渡航の2〜4か月前の申請がバランス良好です。",
+      "初回入国は、必ずしも長期滞在の開始である必要はありません。期限直前に一度入国して『初回入国』を成立させ、その後の滞在計画を立てることも制度上は可能ですが、入国日から1年のカウントが始まる点を踏まえて計画しましょう。無理のないスケジュールで、期限を逃さないことが最重要です。",
+      "入国期限・滞在期間の扱いは個々のビザで異なる場合があります。必ず自分の許可通知に記載された日付を優先し、不明点は公式情報で確認してください。",
+    ],
+    keyFacts: [
+      { label: "初回入国期限", value: "多くは許可日から12か月以内" },
+      { label: "確認場所", value: "Visa Grant Notification（許可通知）" },
+      { label: "滞在カウント開始", value: "実際に初回入国した日から12か月" },
+      { label: "期限超過", value: "入国しないとビザが無効になる" },
+      { label: "申請時期の目安", value: "渡航の2〜4か月前" },
+    ],
+    steps: [
+      { title: "許可通知で期限を確認", description: "『Must make first entry by』の日付を確認します。" },
+      { title: "カレンダーに記録", description: "初回入国期限をリマインダー付きで記録します。" },
+      { title: "渡航日を決定", description: "期限内かつ入国日から1年を有効に使える日程を選びます。" },
+    ],
+    tips: [
+      "初回入国期限を過ぎるとビザは無効。早めに航空券を確保し余裕を持ちましょう。",
+      "滞在の1年は『入国日』起点。許可後すぐ入国する必要はありません。",
+    ],
+    faqs: [
+      {
+        question: "初回入国期限を過ぎたらどうなりますか？",
+        answer:
+          "期限までに入国しないとビザが無効になります。再度申請が必要になり、申請料も再度かかります。期限は必ず守りましょう。",
+      },
+      {
+        question: "一度入国したらすぐ出国してもいいですか？",
+        answer:
+          "ビザ有効期間内であれば出入国は自由です。ただし12か月の滞在可能期間は初回入国日から進むため、出入国のタイミングは計画的に決めましょう。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜First Working Holiday visa", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/first-working-holiday-417" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["入国期限・滞在期間は個々のビザで異なる場合があります。許可通知の記載を優先し、公式情報で確認してください。"],
+    relatedSlugs: ["visa-grant-letter", "visa-cost-processing-time", "flight-booking-guide", "working-holiday-timeline"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a71",
+    title: "同一雇用主6か月制限のルールと例外",
+    slug: "visa-six-month-work-limitation",
+    category: "visa",
+    hub: "visa",
+    priority: "P0",
+    searchIntent: "ワーホリ 同じ雇用主 6ヶ月 制限 8547",
+    description:
+      "ワーホリビザの『同一雇用主のもとでの就労は原則6か月まで』というルール（Condition 8547）を解説。制限の考え方と、6か月を超えて働ける例外・許可申請の考え方をまとめました。",
+    content: [
+      "ワーホリビザ（417）には、『同一雇用主のもとで働けるのは原則6か月まで』というルールがあります。これはビザ条件のCondition 8547に基づくもので、1人の雇用主のもとでの就労が原則6か月に制限されるという意味です。この制限は、ワーホリの目的（オーストラリアを広く体験する）を踏まえたものです。",
+      "重要なのは『同一雇用主』の数え方です。原則として、同じ雇用主のもとで働いた期間が通算6か月を超えないようにします。勤務地が異なっても雇用主（法人）が同じであればまとめてカウントされる場合があるため、フランチャイズや大手チェーンで働く場合は注意が必要です。",
+      "ただし、6か月を超えて同じ雇用主で働ける例外もあります。代表的なのは、①別々の州・地域（different locations）で働く場合（一定条件下で各地6か月まで認められることがある）、②特定の業種・地域での就労、③事前に当局の許可（permission to work longer）を得た場合、などです。例外の適用範囲は細かく定められているため、6か月を超えたい場合は必ず公式情報で確認するか、許可申請を検討してください。",
+      "この制限を守らないと、ビザ条件違反となり、ビザの取消しや将来のビザ申請への悪影響につながる可能性があります。長く同じ職場で働きたい場合は、勝手に判断せず、当局の案内に沿って例外の可否・許可申請を確認することが安全です。",
+      "6か月制限のルール・例外・許可申請の方法は変更されることがあります。自分のビザ条件（許可通知のConditions欄）を確認し、判断に迷う場合は公式情報や登録移民エージェントに相談してください。",
+    ],
+    keyFacts: [
+      { label: "ルール", value: "同一雇用主での就労は原則6か月まで（Condition 8547）" },
+      { label: "数え方", value: "同じ雇用主での通算期間でカウント" },
+      { label: "例外例", value: "別の州・地域での就労、当局の事前許可など" },
+      { label: "違反リスク", value: "ビザ取消し・将来の申請への悪影響" },
+      { label: "確認先", value: "許可通知のConditions欄・公式ビザ条件ページ" },
+    ],
+    steps: [
+      { title: "自分の条件を確認", description: "許可通知のConditions欄に8547があるか確認します。" },
+      { title: "雇用主単位で期間を管理", description: "同じ雇用主での通算勤務期間を記録します。" },
+      { title: "例外の可否を確認", description: "6か月超で働きたい場合は例外条件・許可申請を公式で確認します。" },
+      { title: "必要なら許可申請", description: "当局の許可（permission to work longer）を検討します。" },
+    ],
+    tips: [
+      "大手チェーン・フランチャイズは同一雇用主扱いになることがあります。勤務先の法人単位で管理を。",
+      "6か月を超えたいときは自己判断せず、例外条件・許可申請を公式で確認しましょう。",
+    ],
+    faqs: [
+      {
+        question: "別の店舗に移れば6か月を超えて働けますか？",
+        answer:
+          "雇用主（法人）が同じ場合は通算でカウントされることがあります。別の州・地域での就労など一定の例外はありますが、適用範囲は細かいため公式情報で確認してください。",
+      },
+      {
+        question: "6か月を超えて働くとどうなりますか？",
+        answer:
+          "例外や許可なく超えるとビザ条件違反となり、ビザ取消しや将来の申請への悪影響のリスクがあります。事前に例外の可否を確認しましょう。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜See your visa conditions (417-A)", url: "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/see-your-visa-conditions?product=417-A" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417) conditions",
+        url: "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/see-your-visa-conditions?product=417-A",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Home Affairs｜Working Holiday Maker program",
+        url: "https://immi.homeaffairs.gov.au/what-we-do/whm-program/",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["6か月制限のルール・例外は変更されることがあります。自分のビザ条件と公式情報を必ず確認してください。"],
+    relatedSlugs: ["visa-grant-letter", "working-rights", "second-visa-guide", "vevo-check"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a72",
+    title: "ワーホリ中に学校へ通える期間とコース選び",
+    slug: "visa-study-limit",
+    category: "visa",
+    hub: "visa",
+    priority: "P1",
+    searchIntent: "ワーホリ 学校 就学 期間 4ヶ月",
+    description:
+      "ワーホリビザ（417）で学校に通える期間の上限と、語学・資格コースの選び方を解説。就学可能な期間の考え方と、限られた期間を有効に使うコース選びのポイントをまとめました。",
+    content: [
+      "ワーホリビザ（417）では、就学（study）が認められていますが、期間に上限があります。オーストラリア内務省の公式案内では、このビザで学べる期間は最大4か月（up to 4 months）とされています。語学学校や短期の資格コースに通う場合も、この上限の範囲で計画します。上限を超えて長く学びたい場合は、学生ビザ等への切り替えを検討することになります。",
+      "この就学期間を有効に使う代表的な選択肢が、①語学学校（English course）で英語力と生活の基礎を固める、②仕事に直結する資格コース（例：バリスタ、RSA〈責任あるアルコール提供〉、White Card〈建設現場入場資格〉など）で就労のチャンスを広げる、の2つです。到着直後に語学学校へ短期間通い、友達づくりと生活立ち上げを兼ねる人も多いです。",
+      "コース選びのポイントは、目的を明確にすることです。英語力を上げたいのか、特定の仕事に就くための資格が欲しいのかで選ぶ学校・コースが変わります。費用・期間・開講日・立地（通いやすさ）・日本人比率などを比較し、限られた4か月を最大限に活かせるコースを選びましょう。就労に必要な資格は州ごとにルールが異なる場合があるため、働きたい州の要件も確認します。",
+      "注意点として、就学期間の上限を超えたり、就学を主目的にしたりする働き方はビザ条件に反する可能性があります。ワーホリはあくまで『休暇を主目的とし、就労・就学を組み合わせる』ビザです。長期の本格的な就学を計画している場合は、最初から学生ビザを検討するほうが適していることもあります。",
+      "就学可能期間やコースの要件は変更されることがあります。就学期間の上限は内務省の公式ページで、資格コースの要件は各州の所管機関で、それぞれ最新情報を確認してください。",
+    ],
+    keyFacts: [
+      { label: "就学上限", value: "最大4か月（公式：up to 4 months）" },
+      { label: "主な選択肢", value: "語学学校・就労直結の資格コース" },
+      { label: "人気の資格", value: "バリスタ・RSA・White Cardなど" },
+      { label: "選ぶ基準", value: "目的・費用・期間・立地・日本人比率" },
+      { label: "上限超過", value: "学生ビザ等への切替を検討" },
+    ],
+    steps: [
+      { title: "目的を決める", description: "英語力向上か就労資格取得か、就学の目的を明確にします。" },
+      { title: "コースを比較", description: "費用・期間・開講日・立地・内容を複数校で比較します。" },
+      { title: "州の要件を確認", description: "資格が必要な仕事は、働きたい州のルールを確認します。" },
+      { title: "4か月の枠内で計画", description: "就学上限を超えないようスケジュールを組みます。" },
+    ],
+    tips: [
+      "就学は最大4か月。長く学びたい場合は学生ビザへの切替を検討しましょう。",
+      "到着直後の短期語学学校は、英語・友達づくり・生活立ち上げを兼ねられます。",
+    ],
+    faqs: [
+      {
+        question: "4か月を超えて学校に通えますか？",
+        answer:
+          "ワーホリビザでの就学は最大4か月までです。それ以上学びたい場合は、学生ビザなど別のビザへの切り替えを検討する必要があります。",
+      },
+      {
+        question: "どんな資格コースが仕事に役立ちますか？",
+        answer:
+          "飲食ではバリスタやRSA（アルコール提供）、建設ではWhite Cardなどが役立ちます。ただし要件は州ごとに異なるため、働きたい州のルールを確認しましょう。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜First Working Holiday visa（study up to 4 months）", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/first-working-holiday-417" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜First Working Holiday visa（就学期間）",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/first-working-holiday-417",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["就学可能期間・コース要件は変更されることがあります。就学前に公式情報で最新を確認してください。"],
+    relatedSlugs: ["language-school", "english-prep", "certifications", "visa-options"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a73",
+    title: "ワーホリ中の一時帰国・海外旅行・再入国の注意点",
+    slug: "visa-travel-reentry",
+    category: "visa",
+    hub: "visa",
+    priority: "P1",
+    searchIntent: "ワーホリ 一時帰国 再入国 旅行 出入国",
+    description:
+      "ワーホリビザ（417）で一時帰国や近隣国旅行をする際の再入国ルールと注意点を解説。出入国は自由ですが、ビザ有効期限・パスポート・滞在日数の扱いを事前に確認しましょう。",
+    content: [
+      "ワーホリビザ（417）は、ビザの有効期間内であれば、オーストラリアからの出入国を何回でも行えます。一時帰国（日本へ戻る）や、近隣国（ニュージーランド、東南アジアなど）への旅行をして、再びオーストラリアに戻ることが可能です。再入国のたびに新しいビザを取り直す必要はありません。",
+      "ただし重要なのは『ビザの有効期限』です。ワーホリビザには全体の有効期限（この日以降は入国・滞在できないという日）があります。国外にいる間にビザの有効期限を過ぎると、再入国できなくなります。旅行や一時帰国を計画する際は、必ずビザ有効期限内に戻れる日程にしてください。",
+      "見落としがちなのが『滞在可能な12か月のカウント』です。ワーホリビザで実際にオーストラリアに滞在できるのは通算12か月ですが、国外にいた期間は滞在日数に含まれません。ビザによっては、国外滞在期間分だけ有効期限が延長される扱いがある場合もありますが、扱いは個々のビザで異なるため、長期の国外旅行を挟む場合はVEVOや公式情報で自分のビザの条件を確認しましょう。",
+      "再入国の際は、①有効なパスポート（ビザが紐づいたもの）、②ビザが有効であること、③入国カード（Incoming Passenger Card）での正しい申告、が必要です。パスポートを更新した場合は、事前にパスポート情報の更新手続きを済ませておかないと、就労権・ビザ確認で不一致が生じることがあります。",
+      "出入国・再入国のルールやビザ有効期限の扱いは変更されることがあります。旅行前に必ずVEVOでビザ内容を確認し、公式情報で最新の再入国条件をチェックしてください。",
+    ],
+    keyFacts: [
+      { label: "出入国", value: "ビザ有効期間内なら何回でも可" },
+      { label: "最重要", value: "ビザ有効期限内に戻ること" },
+      { label: "滞在カウント", value: "国外にいた期間は12か月に含まれない" },
+      { label: "再入国に必要", value: "有効なパスポート＋有効なビザ＋入国申告" },
+      { label: "確認方法", value: "VEVOで自分のビザ条件を確認" },
+    ],
+    steps: [
+      { title: "ビザ有効期限を確認", description: "許可通知またはVEVOでビザの有効期限を確認します。" },
+      { title: "戻る日程を決める", description: "有効期限内に確実に再入国できる日程で旅行を計画します。" },
+      { title: "パスポート情報を確認", description: "更新している場合は事前にパスポート情報の更新を済ませます。" },
+      { title: "入国時に正しく申告", description: "再入国時はIncoming Passenger Cardで正しく申告します。" },
+    ],
+    tips: [
+      "国外にいる間にビザ有効期限を過ぎると戻れません。余裕を持った日程に。",
+      "長期の国外旅行を挟むなら、滞在日数と有効期限の扱いをVEVOで確認しましょう。",
+    ],
+    faqs: [
+      {
+        question: "一時帰国したら滞在期間はどうなりますか？",
+        answer:
+          "オーストラリアに滞在できるのは通算12か月で、国外にいた期間はカウントされません。ビザの有効期限自体は変わらないことが多いため、有効期限内に戻る計画にしましょう。",
+      },
+      {
+        question: "再入国のときに追加費用はかかりますか？",
+        answer:
+          "ビザが有効なら再入国のための追加のビザ費用はかかりません。航空券や渡航先の入国要件は別途確認してください。",
+      },
+    ],
+    sources: [
+      { label: "VEVO｜Check visa details and conditions", url: "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/overview" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Home Affairs｜Check visa details and conditions (VEVO)",
+        url: "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/overview",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["再入国条件・有効期限の扱いは変更されることがあります。旅行前に必ずVEVOと公式情報で確認してください。"],
+    relatedSlugs: ["visa-grant-letter", "vevo-check", "visa-after-passport-renewal", "domestic-flight-guide"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a74",
+    title: "Bridging Visaとは？ワーホリから次のビザを申請する場合",
+    slug: "bridging-visa-basics",
+    category: "visa",
+    hub: "visa",
+    priority: "P1",
+    searchIntent: "ブリッジングビザ とは ワーホリ 次のビザ",
+    description:
+      "オーストラリアに滞在中に次のビザを申請した場合に関わるBridging Visa（ブリッジングビザ）の基礎を、一般的な仕組みとしてやさしく解説します。",
+    content: [
+      "Bridging Visa（ブリッジングビザ）とは、オーストラリア国内に滞在している人が、現在のビザが切れる前に次のビザを申請したとき、その審査結果が出るまでの間の滞在を合法的に保つための『つなぎ』のビザです。ワーホリビザ（417）から学生ビザや別のビザへ切り替える申請をオーストラリア国内で行った場合などに関係します。",
+      "もっとも一般的なのがBridging Visa A（BVA）です。現在のビザが有効なうちに、オーストラリア国内で次の実体ビザ（substantive visa）を申請すると、多くの場合BVAが自動的に付与されます。BVAは、現在のビザが切れた後、新しいビザの結果が出るまでの滞在を可能にします。ただしBVAには就労などの条件が引き継がれる/付く場合があり、内容は個々の申請で異なります。",
+      "注意すべきは『渡航（travel）』の扱いです。Bridging Visa Aは、そのままではオーストラリアから出国して再入国することができません。BVAを持った状態で一時帰国などをする場合は、別途Bridging Visa B（BVB、一定期間の出国・再入国を認めるもの）を申請する必要があります。BVAのまま出国すると、BVAが失効して戻れなくなる恐れがあるため、旅行予定がある人は特に注意が必要です。",
+      "ブリッジングビザは複雑で、付与条件・就労条件・渡航可否・有効になるタイミング（現在のビザが切れて初めて効力を持つ）などが個々の状況で異なります。次のビザへの切り替えを国内で計画している場合は、申請前に自分のケースでどのブリッジングビザが関わるかを確認し、必要に応じて登録移民エージェントに相談すると安心です。",
+      "ブリッジングビザの種類・条件・手続きは変更されることがあります。この記事は一般的な仕組みの説明であり、実際の申請では必ず公式情報と自分のビザ状況を確認してください。",
+    ],
+    keyFacts: [
+      { label: "役割", value: "次のビザの審査中の滞在を合法に保つ『つなぎ』ビザ" },
+      { label: "代表例", value: "Bridging Visa A（BVA）" },
+      { label: "付与のきっかけ", value: "現ビザ有効中に国内で次の実体ビザを申請" },
+      { label: "渡航の注意", value: "BVAのまま出国不可。出国にはBVBが必要" },
+      { label: "効力", value: "現ビザが切れて初めて有効になる" },
+    ],
+    steps: [
+      { title: "切替の要否を検討", description: "ワーホリ後に別のビザへ切り替えるか、国内申請かを検討します。" },
+      { title: "現ビザ有効中に申請", description: "現在のビザが有効なうちに次の実体ビザを申請します。" },
+      { title: "付与内容を確認", description: "付与されたブリッジングビザの条件（就労・渡航）を確認します。" },
+      { title: "渡航予定があればBVBを検討", description: "出国・再入国が必要ならBridging Visa Bを申請します。" },
+    ],
+    tips: [
+      "Bridging Visa Aのまま出国すると戻れなくなる恐れがあります。旅行前にBVBの要否を確認しましょう。",
+      "複雑なケースは登録移民エージェントへの相談が安全です。",
+    ],
+    faqs: [
+      {
+        question: "ブリッジングビザは自分で申請しますか？",
+        answer:
+          "多くの場合、現ビザ有効中に次の実体ビザを国内申請するとBridging Visa Aが自動的に付与されます。個別の状況で異なるため、付与内容を必ず確認してください。",
+      },
+      {
+        question: "ブリッジングビザで働けますか？",
+        answer:
+          "就労条件は付与されたブリッジングビザや元の申請内容によって異なります。就労可否・時間制限は自分のビザ条件をVEVO等で確認してください。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜Bridging visas", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/bridging-visa-a-010" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Bridging visa A (BVA) (subclass 010)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/bridging-visa-a-010",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Home Affairs｜Bridging visa B (BVB) (subclass 020)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/bridging-b-020",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["ブリッジングビザは複雑で条件が個々に異なります。この記事は一般的説明です。申請前に必ず公式情報と自分の状況を確認してください。"],
+    relatedSlugs: ["visa-options", "registered-migration-agent", "vevo-check", "second-visa-guide"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a75",
+    title: "ビザ申請の却下・取消しを避けるための注意点",
+    slug: "visa-refusal-cancellation",
+    category: "visa",
+    hub: "visa",
+    priority: "P2",
+    searchIntent: "ワーホリ ビザ 却下 取消し 理由 回避",
+    description:
+      "ワーホリビザの却下（refusal）や取消し（cancellation）を避けるために知っておくべき主な原因と対策を解説。虚偽申告・条件違反・期限管理など、リスクを減らす基本をまとめました。",
+    content: [
+      "ビザの却下・取消しを避ける最大のポイントは、①正確・正直に申請する、②ビザ条件を守る、③期限を管理する、の3つです。ワーホリビザは比較的取得しやすいビザですが、申請時の不正確な情報や、滞在中の条件違反があると、却下や取消しの対象になり得ます。",
+      "却下・取消しの主な原因としては、申請フォームでの虚偽・不正確な申告（健康・経歴の質問への不正直な回答を含む）、資金・年齢・過去のビザ歴など基本要件を満たしていないこと、ビザ条件違反（例：同一雇用主6か月制限を守らない、就学期間の上限を超える）、初回入国期限の超過、犯罪行為などが挙げられます。特に虚偽申告は、発覚すると却下されるだけでなく、将来のビザ申請（他ビザ含む）にも長期的な悪影響を及ぼします。",
+      "対策としては、まず申請時にパスポート情報・氏名・生年月日を正確に入力し、健康・経歴の質問には正直に回答することです。次に、取得後は自分のビザ条件（許可通知のConditions欄）を把握し、就労・就学のルールを守ります。パスポートを更新したら情報更新を行い、初回入国期限・ビザ有効期限をカレンダーで管理します。",
+      "もし当局から追加情報の提出を求められた場合（Request for information等）は、期限内に正確に対応することが重要です。放置すると不許可につながることがあります。複雑な事情がある場合（過去のビザ却下歴、健康・経歴上の懸念など）は、自己判断せず登録移民エージェントに相談すると安全です。",
+      "却下・取消しの基準や対応手続きは変更されることがあります。懸念がある場合は必ず公式情報を確認し、必要に応じて正規の専門家に相談してください。",
+    ],
+    keyFacts: [
+      { label: "3原則", value: "正確・正直に申請／条件遵守／期限管理" },
+      { label: "主な却下原因", value: "虚偽申告・要件未達・条件違反・期限超過" },
+      { label: "虚偽申告のリスク", value: "却下＋将来のビザ申請への長期的悪影響" },
+      { label: "追加情報要求", value: "期限内に正確に対応する" },
+      { label: "複雑な事情", value: "登録移民エージェントに相談" },
+    ],
+    steps: [
+      { title: "正確に申請", description: "パスポート情報・健康・経歴の質問に正確・正直に回答します。" },
+      { title: "条件を把握", description: "取得後は許可通知のConditions欄でビザ条件を確認します。" },
+      { title: "期限を管理", description: "初回入国期限・ビザ有効期限をカレンダーで管理します。" },
+      { title: "要求に迅速対応", description: "追加情報を求められたら期限内に正確に提出します。" },
+    ],
+    tips: [
+      "虚偽・不正確な申告は最も避けるべきリスク。分からない項目は公式情報で確認しましょう。",
+      "却下歴や経歴上の懸念があるケースは、登録移民エージェントへの相談が安全です。",
+    ],
+    faqs: [
+      {
+        question: "一度却下されると二度と申請できませんか？",
+        answer:
+          "必ずしもそうではありませんが、却下理由によっては再申請が難しくなったり、一定期間の制限がかかる場合があります。却下理由を正確に把握し、専門家に相談するのが安全です。",
+      },
+      {
+        question: "軽微な入力ミスでも却下されますか？",
+        answer:
+          "多くの軽微なミスは訂正・確認で対応可能ですが、氏名・パスポート番号の誤りは本人確認で問題になります。誤りに気づいたら早めに更新・訂正しましょう。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜Visa cancellation", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-cancellation" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Visa cancellation",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-cancellation",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Home Affairs｜Character requirements",
+        url: "https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/character/character-requirements",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["却下・取消しの基準は変更されることがあります。懸念がある場合は公式情報を確認し、正規の専門家に相談してください。"],
+    relatedSlugs: ["visa-application", "registered-migration-agent", "visa-six-month-work-limitation", "working-holiday-eligibility"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a76",
+    title: "VEVOで就労権とビザ条件を確認・共有する方法",
+    slug: "vevo-check",
+    category: "visa",
+    hub: "visa",
+    priority: "P0",
+    searchIntent: "VEVO ビザ 確認 就労権 雇用主 共有",
+    description:
+      "VEVO（Visa Entitlement Verification Online）でビザの詳細・就労権・条件を確認し、雇用主に就労権を証明する方法を解説。無料で使えるオーストラリア政府の公式サービスです。",
+    content: [
+      "VEVO（Visa Entitlement Verification Online）は、オーストラリア政府が提供する無料のオンラインサービスで、自分のビザの詳細・有効期限・条件（就労権を含む）をいつでも確認できます。ワーホリでは、雇用主に『自分が合法的に働ける（就労権がある）こと』を証明する場面で特に役立ちます。ビザラベルが貼られない現在、VEVOがビザ内容を確認する主な手段です。",
+      "自分のビザを確認するには、VEVOのオンラインフォームにアクセスし、パスポート番号、生年月日、そしてビザ許可通知に記載されている参照番号（Visa grant number、Transaction Reference Number〈TRN〉など）のいずれかを入力します。ログインすると、ビザの種類・有効期限・条件（就労可否、就学、渡航など）が表示されます。パスポートを更新した場合は、先にパスポート情報を更新しておかないと照会できないことがあります。",
+      "雇用主への就労権証明には、『Check conditions online for an organisation（雇用主向けの照会）』の仕組みを使います。自分のVEVO結果を雇用主にメールで送信する機能や、雇用主が自分の同意のもとでビザ条件を照会できる仕組みがあり、口頭で説明するより確実です。就労権に不安を持つ雇用主にはVEVO結果を提示すると信頼されやすくなります。",
+      "VEVOは、①就職時の就労権証明、②銀行・行政手続きでのビザ確認、③パスポート更新後の紐づけ確認、④ビザ有効期限の管理、など幅広く使えます。スクリーンショットやPDFを保存しておくと、オフラインでもすぐ提示できて便利です。",
+      "VEVOの利用方法・必要な参照番号は変更されることがあります。アクセス方法や照会に必要な情報は、内務省のVEVO公式ページで最新を確認してください。",
+    ],
+    keyFacts: [
+      { label: "VEVOとは", value: "ビザ詳細・就労権・条件を確認できる無料の公式サービス" },
+      { label: "必要情報", value: "パスポート番号・生年月日・ビザ参照番号（TRN等）" },
+      { label: "主な用途", value: "雇用主への就労権証明・ビザ条件確認" },
+      { label: "共有機能", value: "VEVO結果を雇用主へ送信/照会させられる" },
+      { label: "費用", value: "無料" },
+    ],
+    steps: [
+      { title: "参照番号を用意", description: "許可通知のTRNやVisa grant numberを手元に用意します。" },
+      { title: "VEVOで照会", description: "パスポート番号・生年月日・参照番号を入力してビザ内容を表示します。" },
+      { title: "条件を確認", description: "就労権・就学・渡航などの条件と有効期限を確認します。" },
+      { title: "雇用主へ共有", description: "必要に応じてVEVO結果を雇用主へ送信/照会させます。" },
+    ],
+    tips: [
+      "VEVO結果はPDF/スクショで保存しておくと、就職時にすぐ提示できます。",
+      "パスポート更新後はVEVOで新パスポートに紐づいているか確認しましょう。",
+    ],
+    faqs: [
+      {
+        question: "VEVOの利用は有料ですか？",
+        answer:
+          "無料です。オーストラリア政府（内務省）が提供する公式サービスで、自分のビザ内容を確認・共有できます。",
+      },
+      {
+        question: "参照番号が分からない場合は？",
+        answer:
+          "ビザ許可通知（Visa Grant Notification）にTRNやVisa grant numberが記載されています。見つからない場合はImmiAccountで確認できます。",
+      },
+    ],
+    sources: [
+      { label: "Department of Home Affairs｜VEVO", url: "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Check visa details and conditions (VEVO)",
+        url: "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/overview",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Home Affairs｜Check conditions online (VEVO)",
+        url: "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["VEVOの利用方法・必要情報は変更されることがあります。公式ページで最新を確認してください。"],
+    relatedSlugs: ["visa-grant-letter", "visa-after-passport-renewal", "working-rights", "jobs-guide"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a77",
+    title: "移民エージェントに相談すべきケースと登録確認方法",
+    slug: "registered-migration-agent",
+    category: "visa",
+    hub: "visa",
+    priority: "P2",
+    searchIntent: "移民エージェント 相談 登録 MARA 確認",
+    description:
+      "オーストラリアのビザ手続きで登録移民エージェント（Registered Migration Agent）に相談すべきケースと、正規の登録者かを確認する方法を解説。悪質な無登録業者を避けるための基礎知識です。",
+    content: [
+      "ワーホリビザ（417）の申請自体はシンプルで、多くの人が自分でImmiAccountから申請できます。そのため通常はエージェントに依頼する必要はありません。一方で、①過去にビザ却下・取消しの歴がある、②健康・経歴（Character）上の懸念がある、③ワーホリ後に学生・就労・永住など複雑なビザへ切り替えたい、④ブリッジングビザや複雑な国内申請が絡む、といったケースでは、登録移民エージェントに相談する価値があります。",
+      "重要なのは、オーストラリアで移民に関する助言を有料で提供できるのは、原則として登録された移民エージェント（Registered Migration Agent）または法律家に限られる、という点です。オーストラリアの登録移民エージェントは、OMARA（Office of the Migration Agents Registration Authority）に登録され、MARN（Migration Agents Registration Number）を持っています。相談前に、この登録番号で正規に登録されているかを必ず確認しましょう。",
+      "登録確認は、OMARAの公式サイトで、エージェントの名前やMARNを検索することで行えます。正規登録者は行動規範（Code of Conduct）に従う義務があり、トラブル時の相談窓口もあります。日本国内の留学・ワーホリ斡旋業者を利用する場合も、実際にオーストラリアの移民助言を行うのが登録エージェントかどうかを確認すると安心です。",
+      "悪質な無登録業者や『確実にビザが取れる』『日数を偽装して証明する』といった不正を持ちかける業者は避けてください。虚偽申告はビザ却下・将来の申請への悪影響につながり、責任は最終的に申請者本人に及びます。料金体系（着手金・成功報酬）やサービス範囲を事前に書面で確認し、うのみにしないことが大切です。",
+      "登録制度や確認方法は変更されることがあります。相談・依頼の前に、必ずOMARAの公式サイトで登録状況と最新の確認方法を確認してください。",
+    ],
+    keyFacts: [
+      { label: "通常のワーホリ", value: "自分で申請可能。エージェントは基本不要" },
+      { label: "相談を検討", value: "却下歴・経歴懸念・複雑なビザ切替・国内申請" },
+      { label: "正規の資格", value: "登録移民エージェント（MARN保有）または法律家" },
+      { label: "登録確認", value: "OMARA公式サイトで名前・MARNを検索" },
+      { label: "避けるべき", value: "無登録業者・不正を持ちかける業者" },
+    ],
+    steps: [
+      { title: "相談の要否を判断", description: "自分のケースが複雑か（却下歴・経歴・複雑な切替）を確認します。" },
+      { title: "登録を確認", description: "OMARA公式サイトでエージェントのMARN・登録状況を検索します。" },
+      { title: "料金・範囲を確認", description: "料金体系とサービス範囲を書面で確認します。" },
+      { title: "不審な業者は避ける", description: "不正を持ちかける・確実性を保証する業者は利用しません。" },
+    ],
+    tips: [
+      "『確実にビザが取れる』『日数を偽装する』は危険信号。責任は申請者本人に及びます。",
+      "有料の移民助言は登録エージェント/法律家のみが正規。MARNを必ず確認しましょう。",
+    ],
+    faqs: [
+      {
+        question: "ワーホリビザにエージェントは必要ですか？",
+        answer:
+          "多くの場合は不要です。申請はシンプルで自分でできます。却下歴や複雑なビザ切替など特別な事情がある場合に相談を検討しましょう。",
+      },
+      {
+        question: "登録エージェントかどうかはどう確認しますか？",
+        answer:
+          "OMARA（移民エージェント登録機関）の公式サイトで、エージェントの名前や登録番号（MARN）を検索して確認できます。登録がない業者の有料助言には注意が必要です。",
+      },
+    ],
+    sources: [
+      { label: "OMARA｜Office of the Migration Agents Registration Authority", url: "https://www.mara.gov.au/" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "OMARA｜Find a registered migration agent",
+        url: "https://www.mara.gov.au/",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Home Affairs｜Who can help with your application",
+        url: "https://immi.homeaffairs.gov.au/help-support/who-can-help-with-your-application/overview",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["登録制度・確認方法は変更されることがあります。依頼前に必ずOMARA公式サイトで最新を確認してください。"],
+    relatedSlugs: ["visa-refusal-cancellation", "bridging-visa-basics", "visa-options", "second-visa-guide"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a78",
+    title: "ワーホリ前のパスポート確認・更新ガイド",
+    slug: "passport-validity-renewal",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P0",
+    searchIntent: "ワーホリ パスポート 有効期限 更新 いつ",
+    description:
+      "ワーホリ前にパスポートの有効期限を確認し、必要なら更新するための手順を解説。ビザ申請前後の更新の順序、氏名変更、発行にかかる期間まで、渡航準備で最初に確認すべきポイントをまとめました。",
+    content: [
+      "ワーホリ準備で最初に確認すべきなのがパスポートです。オーストラリアのビザはパスポートに電子的に紐づくため、ビザ申請前にパスポートを整えておくのが基本です。有効期限は、滞在予定期間より長く残っていること（目安として滞在期間＋半年〜1年以上）が安心です。残り期間が少ない場合は、ビザ申請の前に更新を済ませましょう。",
+      "更新のタイミングが重要です。ビザ申請時に入力したパスポート番号にビザが紐づくため、『先に新しいパスポートを取得してからビザ申請する』のが最もシンプルです。すでにビザを取得した後にパスポートを更新した場合は、新パスポート情報を当局に届け出る手続き（→ ビザ取得後のパスポート更新の記事参照）が必要になります。",
+      "日本のパスポートは、住所地の都道府県のパスポートセンター等で申請します。必要書類は一般に、申請書、戸籍謄本（記載事項に変更がある場合など）、本人確認書類、証明写真、手数料です。発行までは申請から1週間〜10日程度かかるのが一般的で、繁忙期はさらに時間がかかることがあります。渡航スケジュールから逆算して早めに手続きしましょう。オンライン申請が利用できる場合もあるため、最新の方法は外務省・各自治体の案内で確認してください。",
+      "氏名やローマ字表記に注意しましょう。ビザ申請・航空券・各種本人確認では、パスポートの氏名（ローマ字表記）と一致していることが重要です。結婚等で氏名が変わる予定がある場合は、渡航前に手続きの順序（パスポート更新→ビザ申請）を整理しておくと、現地でのトラブルを防げます。",
+      "パスポートの申請方法・手数料・必要書類は変更されることがあります。申請前に必ず外務省および住所地の自治体の公式案内で最新情報を確認してください。",
+    ],
+    keyFacts: [
+      { label: "有効期限の目安", value: "滞在予定期間＋半年〜1年以上残っていると安心" },
+      { label: "更新の順序", value: "先にパスポート更新→その後ビザ申請が簡単" },
+      { label: "申請場所", value: "住所地のパスポートセンター等" },
+      { label: "発行期間", value: "申請から1週間〜10日程度（繁忙期は変動）" },
+      { label: "氏名", value: "ビザ・航空券とローマ字表記を一致させる" },
+    ],
+    steps: [
+      { title: "有効期限を確認", description: "滞在予定期間＋半年〜1年以上残っているか確認します。" },
+      { title: "必要なら先に更新", description: "残り期間が短い場合はビザ申請前に更新します。" },
+      { title: "書類を準備", description: "申請書・戸籍・本人確認書類・写真・手数料を用意します。" },
+      { title: "ビザ申請へ", description: "新しいパスポート番号でビザを申請します。" },
+    ],
+    tips: [
+      "『先にパスポート、次にビザ』の順序が最もトラブルが少ないです。",
+      "発行に日数がかかります。渡航スケジュールから逆算して早めに手続きを。",
+    ],
+    faqs: [
+      {
+        question: "有効期限が1年ちょうどでも申請できますか？",
+        answer:
+          "申請自体は可能な場合もありますが、滞在期間中に期限が切れると再入国やビザ確認で問題になり得ます。滞在予定＋半年〜1年以上残るよう、余裕を持って更新するのが安全です。",
+      },
+      {
+        question: "ビザ取得後にパスポートを更新してしまいました。",
+        answer:
+          "ビザ自体は有効です。新しいパスポート情報を当局に届け出る手続き（Form 929等）を行い、VEVOで紐づけを確認してください。",
+      },
+    ],
+    sources: [
+      { label: "外務省｜パスポート（旅券）", url: "https://www.mofa.go.jp/mofaj/toko/passport/index.html" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "外務省｜パスポートの申請から受領まで",
+        url: "https://www.mofa.go.jp/mofaj/toko/passport/index.html",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["パスポートの申請方法・手数料・必要書類は変更されることがあります。申請前に外務省・自治体の公式案内で確認してください。"],
+    relatedSlugs: ["visa-application", "visa-after-passport-renewal", "preparation-checklist", "working-holiday-eligibility"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a79",
+    title: "海外転出届・住民票・国民健康保険・年金の手続き",
+    slug: "japan-moving-out-procedures",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P0",
+    searchIntent: "ワーホリ 海外転出届 住民票 国民健康保険 年金",
+    description:
+      "ワーホリで長期渡航する前に必要な日本側の役所手続き（海外転出届・住民票・国民健康保険・国民年金）を、出すべきか否かの判断も含めて整理します。",
+    content: [
+      "1年以上の長期海外滞在では、出国前に住所地の市区町村役場で『海外転出届（転出届）』を提出するかどうかを検討します。海外転出届を出すと住民票が除票され、その結果として住民税・国民健康保険・国民年金などの扱いが変わります。出す・出さないは義務というより本人の状況によりますが、滞在が1年以上になる場合は提出するケースが一般的です。",
+      "海外転出届を提出すると、①住民税：翌年度以降の課税対象から外れる（住民税は1月1日時点の居住で課税されるため、出国時期により当年分の扱いが変わる）、②国民健康保険：資格を失い保険証が使えなくなる（＝海外旅行保険が必須になる）、③国民年金：強制加入ではなくなり『任意加入』を選べる、といった影響があります。それぞれメリット・デメリットがあるため、自分の滞在期間と帰国後の予定を踏まえて判断します。",
+      "国民年金の任意加入は、将来の年金受給資格・受給額に関わります。海外転出中も任意で加入し続けることができ、加入すれば納付期間としてカウントされます。加入しない場合、その期間は『カラ期間（合算対象期間）』として受給資格の判定には算入されるものの、年金額には反映されないのが一般的です。将来の年金を重視するなら任意加入を検討しましょう。",
+      "手続きの一般的な流れは、出国前に市区町村役場で①転出届（海外転出）を提出、②国民健康保険の脱退手続き、③国民年金の任意加入または資格の確認、を行います。マイナンバー・印鑑・本人確認書類などが必要になることがあります。クレジットカードや銀行、各種サービスの住所・連絡先も、実家等に変更しておくと安心です。国外転出者向けのマイナンバーカードの継続利用制度など、制度は年々変わるため最新情報を確認してください。",
+      "各手続きの要否・方法・影響は個々の状況や自治体で異なります。判断に迷う場合は、出国前に住所地の市区町村窓口や年金事務所で確認してください。この記事は一般的な整理であり、最終的な判断は公式窓口の案内に従ってください。",
+    ],
+    keyFacts: [
+      { label: "海外転出届", value: "1年以上滞在なら提出を検討（住民票が除票）" },
+      { label: "住民税", value: "1月1日時点の居住で課税。出国時期で当年の扱いが変わる" },
+      { label: "国民健康保険", value: "転出で資格喪失→海外保険が必須" },
+      { label: "国民年金", value: "任意加入を選べる（将来の年金に影響）" },
+      { label: "手続き先", value: "住所地の市区町村役場・年金事務所" },
+    ],
+    steps: [
+      { title: "滞在期間で判断", description: "1年以上か、帰国後の予定はどうかを踏まえ転出届の要否を判断します。" },
+      { title: "転出届を提出", description: "出国前に市区町村役場で海外転出届を提出します。" },
+      { title: "保険・年金を手続き", description: "国民健康保険の脱退、国民年金の任意加入/確認を行います。" },
+      { title: "住所・連絡先を整理", description: "銀行・カード・郵便の住所を実家等へ変更します。" },
+    ],
+    tips: [
+      "国民健康保険を脱退すると日本の保険は使えません。海外保険への加入とセットで考えましょう。",
+      "将来の年金を重視するなら国民年金の任意加入を検討。加入で納付期間にカウントされます。",
+    ],
+    faqs: [
+      {
+        question: "海外転出届は必ず出さないといけませんか？",
+        answer:
+          "義務というより状況によります。1年以上の滞在では提出するケースが一般的です。住民税・保険・年金への影響を踏まえ、帰国後の予定も考えて判断しましょう。",
+      },
+      {
+        question: "住民税はどうなりますか？",
+        answer:
+          "住民税は1月1日時点で日本に住所がある人に課税されます。海外転出のタイミングによって当年度分の扱いが変わるため、出国時期と合わせて確認しましょう。",
+      },
+    ],
+    sources: [
+      { label: "日本年金機構｜海外居住者の国民年金の任意加入", url: "https://www.nenkin.go.jp/service/kokunen/kanyu/20150422.html" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "日本年金機構｜任意加入制度",
+        url: "https://www.nenkin.go.jp/service/kokunen/kanyu/20150422.html",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "総務省｜マイナンバー・住民基本台帳（国外転出関連）",
+        url: "https://www.soumu.go.jp/kojinbango_card/",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["各手続きの要否・影響は個々の状況・自治体で異なります。出国前に市区町村窓口・年金事務所で確認してください。"],
+    relatedSlugs: ["japan-tax-residency-before-departure", "insurance-guide", "preparation-checklist", "mail-forwarding-and-address"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a80",
+    title: "出国前に確認する日本の税金｜住民税・所得税・納税管理人",
+    slug: "japan-tax-residency-before-departure",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P1",
+    searchIntent: "ワーホリ 出国前 税金 住民税 確定申告 納税管理人",
+    description:
+      "ワーホリで出国する前に確認しておきたい日本の税金（住民税・所得税・確定申告・納税管理人）を整理。出国時期による住民税の扱いや、日本に収入が残る場合の対応を解説します。",
+    content: [
+      "出国前に確認すべき日本の税金は、主に『住民税』と『所得税（確定申告）』です。まず住民税は、その年の1月1日時点で日本に住所がある人に対して、前年の所得を基に課税されます。つまり、出国しても前年分の住民税の納税義務は残ることがあり、出国後の納付方法（一括納付や納税管理人の指定）を事前に整理しておく必要があります。",
+      "海外転出により日本の非居住者となる場合、日本国内で発生する所得（不動産の賃貸収入、日本での副業収入など）がある人は、確定申告や納税を『納税管理人』を通じて行う必要が生じることがあります。納税管理人は、本人に代わって日本での税務手続き（申告書の提出、納税、書類の受け取り）を行う人で、出国前に税務署へ『納税管理人の届出書』を提出して指定します。",
+      "給与所得者が年の途中で出国する場合、勤務先での年末調整ができないため、状況によっては出国前に『準確定申告』を行うことがあります。医療費控除や各種控除の還付が見込まれる場合など、申告することで税金が戻るケースもあります。自分に確定申告が必要か／有利かは、収入の状況によって異なります。",
+      "実務的には、①出国前に住民税の残額と納付方法を確認する、②日本に継続的な収入が残る場合は納税管理人の指定を検討する、③還付が見込まれる場合は確定申告（または準確定申告）を検討する、という流れになります。ワーホリで日本の収入が完全になくなる（給与のみで出国時に精算済み）人は、複雑な手続きが不要なことも多いです。",
+      "税金の扱いは個々の収入状況・出国時期によって大きく異なり、制度も変わります。この記事は一般的な整理です。具体的な判断は、出国前に居住地の市区町村（住民税）および所轄の税務署（所得税）に確認してください。",
+    ],
+    keyFacts: [
+      { label: "住民税", value: "1月1日時点の居住で前年所得に課税。出国後も残ることがある" },
+      { label: "納税管理人", value: "日本に収入が残る場合、税務手続きを代行する人を指定" },
+      { label: "準確定申告", value: "年途中出国で該当する場合あり（還付の可能性）" },
+      { label: "届出", value: "納税管理人は出国前に税務署へ届出" },
+      { label: "確認先", value: "市区町村（住民税）・税務署（所得税）" },
+    ],
+    steps: [
+      { title: "住民税を確認", description: "出国時点の住民税残額と、出国後の納付方法を確認します。" },
+      { title: "日本の収入を確認", description: "不動産・副業など日本で継続する収入があるか確認します。" },
+      { title: "納税管理人を検討", description: "日本に収入が残る場合、納税管理人の指定を税務署に届け出ます。" },
+      { title: "確定申告を検討", description: "還付が見込まれる場合は確定申告/準確定申告を検討します。" },
+    ],
+    tips: [
+      "住民税は出国後も残ることがあります。納付方法（一括・納税管理人）を事前に決めておきましょう。",
+      "日本に収入が残らない人は手続きが簡単なことも。まずは自分の収入状況を整理しましょう。",
+    ],
+    faqs: [
+      {
+        question: "ワーホリの収入に日本の税金はかかりますか？",
+        answer:
+          "非居住者になった後にオーストラリアで得た給与は、原則として日本の課税対象にはなりません（豪州側で課税）。ただし居住者/非居住者の判定や日本に残る収入の扱いは個別に異なるため、税務署で確認してください。",
+      },
+      {
+        question: "納税管理人は誰に頼めばよいですか？",
+        answer:
+          "日本国内に住む家族・知人や税理士などに依頼するのが一般的です。日本に継続的な収入がない場合は指定が不要なこともあります。",
+      },
+    ],
+    sources: [
+      { label: "国税庁｜納税管理人の届出", url: "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/1900.htm" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "国税庁｜納税管理人（所得税）",
+        url: "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/1900.htm",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "国税庁｜非居住者・海外勤務者の税金",
+        url: "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1923.htm",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["税金の扱いは収入状況・出国時期で異なり制度も変わります。具体的判断は市区町村・税務署に確認してください。"],
+    relatedSlugs: ["japan-moving-out-procedures", "tax-return-guide", "preparation-checklist", "keep-australian-bank-account"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a81",
+    title: "国際運転免許証の取り方とオーストラリアでの有効性",
+    slug: "international-driving-permit",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P0",
+    searchIntent: "国際運転免許証 取り方 オーストラリア 有効",
+    description:
+      "オーストラリアで運転するための国際運転免許証（IDP）の取り方と、現地での有効性・注意点を解説。取得場所・必要書類・有効期間と、州ごとに異なる現地ルールへの導線をまとめました。",
+    content: [
+      "オーストラリアで車を運転する予定があるなら、渡航前に国際運転免許証（International Driving Permit：IDP）を取得しておくのが基本です。日本で発行されるIDPは『1949年ジュネーブ条約』に基づくもので、オーストラリアを含む多くの国で有効です。IDPは日本の運転免許証の翻訳的な位置づけで、必ず日本の免許証原本とセットで携帯します。",
+      "取得方法はシンプルです。住所地を管轄する運転免許センターや一部の警察署で申請でき、多くの場合その日のうちに発行されます。必要書類は一般に、日本の運転免許証、パスポート（渡航を確認できるもの）、証明写真1枚、手数料（数千円程度）です。有効期間は発行日から1年間です。滞在が1年を超える場合や、IDPの期限が切れた後も運転する場合は、現地免許への切り替えやNAATI翻訳など別の方法を検討します。",
+      "重要なのは、オーストラリアの運転ルールは州・準州ごとに異なるという点です。多くの州では、一時滞在者（temporary resident）は有効な外国の免許＋IDP（または英訳）で運転できますが、州によっては『一定期間を超えて居住する場合は現地免許が必要』『IDPではなくNAATI等の公式英訳が必要』といった規定があります。運転する州の交通当局（例：NSWのTransport for NSW、VICのVicRoads、QLDのDepartment of Transport and Main Roadsなど）のルールを必ず確認してください。",
+      "実務上は、①渡航前にIDPを取得（1年有効）、②日本の免許証原本も必ず持参、③運転する州のルールを事前に確認、④長期運転や1年超滞在ならNAATI翻訳や現地免許切替も検討、という流れが安心です。IDPと日本の免許証は常に一緒に携帯し、警察に提示を求められたら両方を見せられるようにします。",
+      "IDPの取得方法・手数料や、各州の外国免許の扱いは変更されることがあります。取得前に警察庁・JAFの案内で、現地ルールは運転する州の交通当局で、それぞれ最新情報を確認してください。",
+    ],
+    keyFacts: [
+      { label: "IDPの根拠", value: "1949年ジュネーブ条約（豪州で有効）" },
+      { label: "取得場所", value: "運転免許センター・一部警察署" },
+      { label: "必要書類", value: "日本の免許証・パスポート・写真・手数料" },
+      { label: "有効期間", value: "発行日から1年間" },
+      { label: "携帯", value: "日本の免許証原本と必ずセットで携帯" },
+      { label: "州ルール", value: "運転する州の交通当局で要確認（州で異なる）" },
+    ],
+    steps: [
+      { title: "運転予定を確認", description: "現地で運転するか、期間はどれくらいかを確認します。" },
+      { title: "IDPを取得", description: "免許センター等で免許証・パスポート・写真を持参し申請します。" },
+      { title: "州のルールを確認", description: "運転する州でIDP/英訳/現地免許のどれが必要か確認します。" },
+      { title: "原本とセットで携帯", description: "運転時は日本の免許証原本とIDPを必ず一緒に持ちます。" },
+    ],
+    tips: [
+      "IDPは日本の免許証原本とセットで有効。単体では使えません。",
+      "1年超滞在や長期運転はNAATI翻訳・現地免許切替も検討。州ルールを必ず確認しましょう。",
+    ],
+    faqs: [
+      {
+        question: "IDPだけで運転できますか？",
+        answer:
+          "いいえ。IDPは日本の運転免許証とセットで有効です。運転時は必ず両方を携帯してください。有効期間はIDP発行から1年です。",
+      },
+      {
+        question: "IDPとNAATI翻訳はどちらが必要ですか？",
+        answer:
+          "州によって扱いが異なります。IDPで運転できる州もあれば、NAATI等の公式英訳を求める州もあります。運転する州の交通当局で確認しましょう。",
+      },
+    ],
+    sources: [
+      { label: "警察庁｜国際運転免許証", url: "https://www.npa.go.jp/policies/application/license_renewal/kokusaimenkyo.html" },
+      { label: "JAF｜国際運転免許証", url: "https://jaf.or.jp/common/global-info/going-abroad" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "警察庁｜国際運転免許証の取得",
+        url: "https://www.npa.go.jp/policies/application/license_renewal/kokusaimenkyo.html",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Transport for NSW｜Driving on an overseas licence",
+        url: "https://www.nsw.gov.au/driving-boating-and-transport/nsw-driver-licences/driving-on-an-overseas-licence",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["IDPの取得方法や各州の外国免許の扱いは変更されることがあります。取得前・運転前に公式情報で確認してください。"],
+    relatedSlugs: ["naati-licence-translation", "japanese-licence-state-rules", "cars-guide", "convert-japanese-licence"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a82",
+    title: "日本の運転免許証のNAATI翻訳は必要？取得方法と使い分け",
+    slug: "naati-licence-translation",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P1",
+    searchIntent: "運転免許 NAATI 翻訳 オーストラリア 必要",
+    description:
+      "オーストラリアで運転する際の日本の運転免許証のNAATI翻訳について、必要になるケースと取得方法、国際運転免許証（IDP）との使い分けを解説します。",
+    content: [
+      "オーストラリアで日本の運転免許証を使って運転する方法は主に2つあります。①国際運転免許証（IDP）を日本の免許証と一緒に携帯する、②日本の免許証の『英訳（English translation）』を用意して日本の免許証と一緒に携帯する、です。この英訳として広く認められているのが、NAATI（National Accreditation Authority for Translators and Interpreters：オーストラリアの翻訳・通訳の認定機関）の認定翻訳者による翻訳です。",
+      "どちらが必要かは、運転する州のルールによって異なります。多くの州では『IDP』か『公式な英訳（NAATI認定翻訳など）』のいずれかがあれば、日本の免許証とセットで運転できます。州によっては英訳を推奨・要求するところもあるため、長期滞在や州をまたいで運転する場合は、IDPに加えてNAATI翻訳も用意しておくと安心です。",
+      "NAATI翻訳の取得方法は、①NAATI認定の翻訳者・翻訳会社に日本の運転免許証（表裏）のコピーを送る、②英訳を作成してもらう、③翻訳証明付きの書類を受け取る、という流れです。オンラインで依頼できる業者も多く、日本からでもオーストラリア到着後でも取得できます。費用は数十AUD程度、納期は数日〜が目安です。翻訳には氏名・免許種別・有効期限などが正確に反映されているか確認します。",
+      "使い分けの目安としては、①短期でIDPの有効期間（1年）内に運転を終えるならIDPで十分なことが多い、②1年を超えて滞在・運転する、またはIDPの期限が切れる場合はNAATI翻訳が有効、③現地免許への切り替えを予定しているなら、切替までのつなぎとしてNAATI翻訳を使う、といった考え方です。IDPもNAATI翻訳も、日本の免許証原本と一緒に携帯して初めて有効な点は共通です。",
+      "各州の外国免許・英訳の扱いや、NAATIの認定・翻訳の要件は変更されることがあります。運転前に運転する州の交通当局で、翻訳はNAATIおよび認定翻訳者の案内で、それぞれ最新情報を確認してください。",
+    ],
+    keyFacts: [
+      { label: "NAATIとは", value: "豪州の翻訳・通訳認定機関。認定翻訳が広く通用" },
+      { label: "使い道", value: "日本の免許証の英訳として運転時に使用" },
+      { label: "IDPとの関係", value: "多くの州でIDPか公式英訳のどちらかがあればOK" },
+      { label: "取得方法", value: "NAATI認定翻訳者に依頼（オンライン可）" },
+      { label: "費用/納期", value: "数十AUD程度・数日〜が目安" },
+      { label: "携帯", value: "日本の免許証原本と一緒に携帯" },
+    ],
+    steps: [
+      { title: "州のルールを確認", description: "運転する州でIDP/英訳のどちらが必要かを確認します。" },
+      { title: "翻訳を依頼", description: "NAATI認定翻訳者に免許証コピーを送り英訳を依頼します。" },
+      { title: "記載を確認", description: "氏名・免許種別・有効期限が正確か確認します。" },
+      { title: "原本とセットで携帯", description: "運転時は日本の免許証原本と英訳を一緒に持ちます。" },
+    ],
+    tips: [
+      "1年超の滞在・運転や、IDPの期限切れ後はNAATI翻訳が役立ちます。",
+      "翻訳だけでは運転できません。日本の免許証原本とセットで携帯を。",
+    ],
+    faqs: [
+      {
+        question: "IDPがあればNAATI翻訳は不要ですか？",
+        answer:
+          "多くの州ではIDPか公式英訳のどちらかがあれば運転できます。ただし州により扱いが異なり、1年超滞在ではIDPの期限切れに備えて翻訳を用意すると安心です。運転する州で確認しましょう。",
+      },
+      {
+        question: "NAATI翻訳はどこで頼めますか？",
+        answer:
+          "NAATI認定の翻訳者・翻訳会社に依頼します。オンラインで受け付ける業者が多く、日本からでも現地到着後でも取得できます。",
+      },
+    ],
+    sources: [
+      { label: "NAATI｜公式サイト", url: "https://www.naati.com.au/" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "NAATI｜National Accreditation Authority for Translators and Interpreters",
+        url: "https://www.naati.com.au/",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Transport for NSW｜Driving on an overseas licence",
+        url: "https://www.nsw.gov.au/driving-boating-and-transport/nsw-driver-licences/driving-on-an-overseas-licence",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["各州の外国免許・英訳の扱いは変更されることがあります。運転前に運転する州の交通当局で確認してください。"],
+    relatedSlugs: ["international-driving-permit", "japanese-licence-state-rules", "convert-japanese-licence", "cars-guide"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a83",
+    title: "渡航前の健康チェック｜歯科・眼科・持病の準備",
+    slug: "pre-departure-health-check",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P1",
+    searchIntent: "ワーホリ 渡航前 健康診断 歯医者 持病",
+    description:
+      "オーストラリア渡航前に済ませておきたい健康チェック（歯科・眼科・持病の管理）を解説。現地の医療費は高額になりがちなため、出国前にできる準備をまとめました。",
+    content: [
+      "渡航前に健康面を整えておく最大の理由は、オーストラリアの医療費が日本と比べて高額になりやすいことです。特に歯科治療は公的保険（Medicare）の対象外で、虫歯1本の治療でも数百AUDかかることがあります。出国前に日本で歯科検診・治療を済ませておくと、現地での高額な出費や痛みのリスクを大きく減らせます。",
+      "眼科も同様です。メガネやコンタクトレンズを使っている人は、渡航前に視力検査を受け、度数の合った予備のメガネを用意しておくと安心です。コンタクトレンズは滞在期間分をまとめて持参するか、現地での購入方法を事前に調べておきます。処方箋や度数を控えておくと、現地で買い替える際に役立ちます。",
+      "持病がある人・常用薬がある人は、①かかりつけ医に相談して滞在期間を見据えた対応を確認、②英文の診断書・処方内容の書類を用意、③薬の持ち込みルール（→ 薬の持ち込みの記事参照）を確認、が重要です。英文の書類があれば、現地の医療機関を受診する際や、税関で薬を申告する際にスムーズです。",
+      "実務的には、出国の1〜2か月前を目安に、①歯科検診・治療、②眼科・メガネ/コンタクトの準備、③持病・常用薬の相談と英文書類の取得、④必要なワクチン（→ ワクチンの記事参照）の確認、を進めます。健康保険（海外旅行保険）への加入とあわせて、出国前に『治せるものは日本で治す』のが結果的に節約になります。",
+      "医療・健康に関する判断は個人の状態によって異なります。持病・服薬・ワクチンについては、必ず医師に相談してください。この記事は一般的な準備の目安です。",
+    ],
+    keyFacts: [
+      { label: "歯科", value: "Medicare対象外で高額。出国前に検診・治療を" },
+      { label: "眼科", value: "予備メガネ・コンタクトを準備。度数を控える" },
+      { label: "持病・常用薬", value: "英文診断書・処方書類を用意" },
+      { label: "タイミング", value: "出国1〜2か月前を目安に開始" },
+      { label: "保険", value: "海外旅行保険への加入とセットで考える" },
+    ],
+    steps: [
+      { title: "歯科検診・治療", description: "虫歯など気になる箇所を出国前に治療します。" },
+      { title: "眼科・視力対策", description: "予備メガネ・コンタクトを準備し度数を控えます。" },
+      { title: "持病の相談", description: "かかりつけ医に相談し英文書類を取得します。" },
+      { title: "薬・ワクチン確認", description: "薬の持ち込みルールと必要なワクチンを確認します。" },
+    ],
+    tips: [
+      "歯科はMedicare対象外で高額。『治せるものは日本で』が節約になります。",
+      "常用薬は英文の処方書類を用意すると受診・税関申告がスムーズです。",
+    ],
+    faqs: [
+      {
+        question: "オーストラリアで歯医者に行くと高いですか？",
+        answer:
+          "歯科はMedicareの対象外で、治療費が高額になりやすいです。渡航前に日本で検診・治療を済ませておくのがおすすめです。",
+      },
+      {
+        question: "コンタクトレンズは現地で買えますか？",
+        answer:
+          "購入できますが、度数の確認や処方が必要な場合があります。滞在分を持参するか、度数を控えて現地での購入方法を事前に調べておくと安心です。",
+      },
+    ],
+    sources: [
+      { label: "Services Australia｜Medicare", url: "https://www.servicesaustralia.gov.au/medicare" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Services Australia｜What Medicare covers",
+        url: "https://www.servicesaustralia.gov.au/what-medicare-covers",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["医療・健康の判断は個人の状態で異なります。持病・服薬・ワクチンは必ず医師に相談してください。"],
+    relatedSlugs: ["medication-customs", "vaccinations-before-australia", "insurance-guide", "medicare-oshc"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a84",
+    title: "オーストラリアへの薬の持ち込みルールと申告方法",
+    slug: "medication-customs",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P0",
+    searchIntent: "オーストラリア 薬 持ち込み 処方薬 申告",
+    description:
+      "オーストラリアに常用薬・処方薬を持ち込む際のルールと税関での申告方法を解説。持ち込める量の目安、必要書類、申告のポイントをまとめました。",
+    content: [
+      "オーストラリアに薬を持ち込む場合、基本ルールは『個人使用のための量を、処方箋や医師の手紙とともに、税関で申告して持ち込む』ことです。オーストラリアの医薬品規制当局であるTGA（Therapeutic Goods Administration）は、旅行者が自分用の医薬品を持ち込むための仕組み（Travellers' Exemption等）を定めています。一般に、個人使用に必要な量（目安として3か月分程度まで）で、適切に申告すれば、多くの一般的な処方薬・市販薬は持ち込めます。",
+      "重要なのは『申告』です。入国時に記入するIncoming Passenger Card（入国旅客カード）には、薬などについての質問があります。処方薬や、成分によっては規制対象となる薬を持っている場合は、正直に申告することが大切です。申告を怠ると、税関で問題になったり、薬を没収されたりするリスクがあります。『疑わしいときは申告する』が原則です。",
+      "持ち込みの準備として、①薬は元の包装（パッケージ・ラベルが分かる状態）のまま持つ、②英文の処方箋または医師の手紙（薬の名前・成分・処方理由・用量が分かるもの）を用意する、③自分用であることが分かる量に留める、が基本です。成分によっては、事前の許可が必要だったり、持ち込みが制限・禁止されている薬もあります。市販薬でも、日本では普通に買えても豪州では規制対象成分を含む場合があるため、心配な薬はTGAの案内で事前に確認します。",
+      "実務上の流れは、①出国前にTGAの旅行者向けルールと自分の薬の成分を確認、②英文の処方書類を医師に用意してもらう、③薬は元の包装のまま、手荷物に入れて持参、④入国時にIncoming Passenger Cardで正直に申告、です。液体・粉末の機内持ち込み制限や、乗り継ぎ国のルールにも注意しましょう。",
+      "医薬品の持ち込みルールは成分ごとに異なり、変更されることもあります。持ち込む薬について、必ず事前にTGAの公式案内で確認し、不明点は医師・薬剤師に相談してください。この記事は一般的な整理です。",
+    ],
+    keyFacts: [
+      { label: "基本ルール", value: "個人使用の量＋処方書類＋税関で申告" },
+      { label: "量の目安", value: "個人使用に必要な量（目安3か月分程度まで）" },
+      { label: "申告", value: "Incoming Passenger Cardで正直に申告" },
+      { label: "書類", value: "英文の処方箋・医師の手紙（成分・用量）" },
+      { label: "包装", value: "元のパッケージ・ラベルのまま持参" },
+      { label: "確認先", value: "成分ごとにTGAで事前確認" },
+    ],
+    steps: [
+      { title: "成分を確認", description: "持ち込む薬の成分とTGAのルールを事前に確認します。" },
+      { title: "英文書類を用意", description: "医師に英文の処方箋・手紙を作ってもらいます。" },
+      { title: "元の包装で持参", description: "ラベルが分かる元の包装のまま手荷物に入れます。" },
+      { title: "税関で申告", description: "入国カードで正直に申告します。" },
+    ],
+    tips: [
+      "『疑わしいときは申告する』が原則。申告漏れは没収・トラブルの元です。",
+      "日本の市販薬でも豪州で規制成分を含むことがあります。心配な薬はTGAで事前確認を。",
+    ],
+    faqs: [
+      {
+        question: "処方薬はどれくらい持ち込めますか？",
+        answer:
+          "個人使用に必要な量が目安で、一般に3か月分程度までとされています。それを超える量や特定成分の薬は事前許可が必要な場合があるため、TGAで確認してください。",
+      },
+      {
+        question: "市販の風邪薬も申告が必要ですか？",
+        answer:
+          "成分によっては規制対象になることがあります。心配な場合は申告し、事前にTGAで成分を確認しておくと安心です。申告して問題なければそのまま持ち込めます。",
+      },
+    ],
+    sources: [
+      { label: "TGA｜Travelling with medicines and medical devices", url: "https://www.tga.gov.au/how-we-regulate/personal-importation-scheme" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "TGA｜Entering Australia with medicines and medical devices",
+        url: "https://www.tga.gov.au/how-we-regulate/personal-importation-scheme",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Australian Border Force｜What you can and can't bring",
+        url: "https://www.abf.gov.au/entering-and-leaving-australia/can-you-bring-it-in",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["医薬品の持ち込みルールは成分ごとに異なり変更されます。持ち込む薬は事前にTGAで確認し、医師・薬剤師に相談してください。"],
+    relatedSlugs: ["pre-departure-health-check", "australia-customs-quarantine", "vaccinations-before-australia", "insurance-guide"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a85",
+    title: "オーストラリア渡航前のワクチン・予防接種は必要？",
+    slug: "vaccinations-before-australia",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P2",
+    searchIntent: "オーストラリア ワーホリ ワクチン 予防接種 必要",
+    description:
+      "オーストラリア渡航前のワクチン・予防接種について、義務の有無と検討したい種類を解説。入国要件と個人の健康準備の観点から整理します。",
+    content: [
+      "結論から言うと、日本からオーストラリアへワーホリで渡航する場合、一般的な状況では特定のワクチン接種が入国の義務として一律に求められることは基本的にありません。ただし、渡航前の一定期間に黄熱リスクのある国に滞在した場合など、条件によっては黄熱（Yellow Fever）の予防接種証明が求められることがあります。自分の渡航歴・経由地によって要件が変わるため、最新の入国・検疫要件を確認することが大切です。",
+      "義務とは別に、『健康管理として検討したいワクチン』があります。一般的に旅行者向けに推奨されることがあるものとして、A型・B型肝炎、破傷風、麻しん・風しん（MMR）などが挙げられます。どのワクチンが自分に必要・推奨かは、年齢・過去の接種歴・滞在地域・活動内容（農作業など）によって異なります。トラベルクリニックや医師に相談して判断するのが確実です。",
+      "オーストラリア国内でも、職種によっては特定のワクチンや健康証明が求められる場合があります。たとえば医療・介護・子ども関連の仕事では、雇用の条件として予防接種歴や健康チェックを求められることがあります。そうした職種を検討している場合は、事前に必要な接種を済ませ、英文の接種記録を用意しておくと就労時にスムーズです。",
+      "実務的には、①自分の渡航歴・経由地から黄熱等の証明が必要か確認、②トラベルクリニック/医師に相談して推奨ワクチンを検討、③接種した場合は英文の接種証明（母子手帳の英訳等）を用意、④希望する職種の要件を確認、という流れです。ワクチンは接種から効果が出るまで時間がかかるものもあるため、出国の数か月前から相談を始めると安心です。",
+      "ワクチンの要否・種類は個人の状況と最新の要件によって異なります。必ず医師・トラベルクリニックに相談し、入国・検疫要件は公式情報で確認してください。この記事は一般的な整理です。",
+    ],
+    keyFacts: [
+      { label: "入国義務", value: "一般に特定ワクチンの一律義務はなし" },
+      { label: "黄熱", value: "リスク国滞在歴があると証明を求められることがある" },
+      { label: "検討したい種類", value: "A/B型肝炎・破傷風・MMRなど（要相談）" },
+      { label: "職種要件", value: "医療・介護・子ども関連は接種歴を求められることがある" },
+      { label: "相談先", value: "トラベルクリニック・医師" },
+    ],
+    steps: [
+      { title: "渡航歴を確認", description: "経由地・過去の滞在から黄熱等の証明要否を確認します。" },
+      { title: "医師に相談", description: "トラベルクリニック等で推奨ワクチンを相談します。" },
+      { title: "早めに接種", description: "効果が出るまで時間がかかるものは早めに接種します。" },
+      { title: "英文記録を用意", description: "接種した場合は英文の接種証明を用意します。" },
+    ],
+    tips: [
+      "ワクチンは効果が出るまで時間がかかるものも。出国数か月前から相談を。",
+      "医療・介護・子ども関連の仕事は接種歴が条件になることがあります。",
+    ],
+    faqs: [
+      {
+        question: "ワーホリでオーストラリアに入るのにワクチンは必須ですか？",
+        answer:
+          "一般的な状況では特定ワクチンの一律義務は基本的にありません。ただし黄熱リスク国の滞在歴があると証明を求められることがあります。渡航歴に応じて最新要件を確認しましょう。",
+      },
+      {
+        question: "どのワクチンを打てばいいか分かりません。",
+        answer:
+          "年齢・接種歴・滞在地域・仕事内容で変わります。トラベルクリニックや医師に相談して、自分に必要・推奨のものを判断してください。",
+      },
+    ],
+    sources: [
+      { label: "Australian Government Department of Health｜Immunisation", url: "https://www.health.gov.au/topics/immunisation" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Australian Government Department of Health and Aged Care｜Immunisation",
+        url: "https://www.health.gov.au/topics/immunisation",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["ワクチンの要否・種類は個人の状況・最新要件で異なります。必ず医師に相談し、入国・検疫要件は公式情報で確認してください。"],
+    relatedSlugs: ["pre-departure-health-check", "medication-customs", "insurance-guide", "farm-work-packing"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a86",
+    title: "ワーホリの航空券の選び方｜片道・往復・時期",
+    slug: "flight-booking-guide",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P1",
+    searchIntent: "ワーホリ 航空券 片道 往復 安い時期",
+    description:
+      "ワーホリの航空券の選び方を解説。片道と往復の考え方、予約のタイミング、就航都市の選び方など、渡航前に押さえたいポイントをまとめました。",
+    content: [
+      "ワーホリの航空券は『片道にするか、往復にするか』が最初の悩みどころです。ワーホリビザは最長1年（延長で最大3年）滞在でき、帰国時期が未定なことも多いため、片道航空券を選ぶ人が多いです。一方で、一部の国では入国時に『帰りの航空券（または出国できる資力）』の提示を求められることがあります。オーストラリアのワーホリでは、ビザ申請時に十分な資金の証明が関係しますが、実務上は片道で入国する人も多く、心配な場合は復路や資金証明を用意しておくと安心です。",
+      "予約のタイミングは費用に大きく影響します。一般に、①出発の2〜3か月前までに予約する、②年末年始・夏休みなどの繁忙期を避ける、③平日発着を選ぶ、と費用を抑えやすくなります。逆に直前予約や繁忙期は高くなりがちです。価格比較サイトで相場を把握し、狙った時期の変動を見ながら予約するとよいでしょう。",
+      "就航都市（到着空港）の選び方も重要です。オーストラリアの主要な玄関口はシドニー、メルボルン、ブリスベン、パース、ケアンズなどです。到着後に住む都市・働く地域を見据えて、①最初の滞在先に近い空港を選ぶ、②直行便の有無や乗り継ぎ回数を比較する、③LCCと大手の料金・預け荷物条件を比較する、という観点で選びます（→ 到着空港の選び方の記事参照）。",
+      "実務的には、①片道/往復と入国要件を確認、②2〜3か月前・繁忙期回避で予約、③到着都市と乗り継ぎ・預け荷物を比較、④キャンセル・変更条件を確認して予約、という流れです。LCCは基本運賃が安い一方、預け荷物・座席指定・変更が有料なことが多いので、総額で比較しましょう。海外旅行保険の開始日と渡航日を合わせることも忘れずに。",
+      "航空券の価格・就航状況・入国時の提示要件は時期によって変わります。予約前に各航空会社と最新の入国要件を確認してください。この記事は一般的な選び方の目安です。",
+    ],
+    keyFacts: [
+      { label: "片道/往復", value: "片道が多い。国により復路提示を求められることも" },
+      { label: "予約時期", value: "出発2〜3か月前・繁忙期回避が安い傾向" },
+      { label: "主要空港", value: "シドニー・メルボルン・ブリスベン・パース等" },
+      { label: "LCC", value: "基本運賃は安いが預け荷物等が有料。総額で比較" },
+      { label: "保険", value: "海外保険の開始日と渡航日を合わせる" },
+    ],
+    steps: [
+      { title: "片道/往復を決定", description: "滞在計画と入国要件を踏まえて決めます。" },
+      { title: "時期を選ぶ", description: "2〜3か月前・繁忙期回避で予約します。" },
+      { title: "到着都市を比較", description: "住む都市・乗り継ぎ・預け荷物を比較します。" },
+      { title: "条件を確認して予約", description: "変更・キャンセル条件と総額を確認して予約します。" },
+    ],
+    tips: [
+      "LCCは総額（預け荷物・座席・変更料）で大手と比較しましょう。",
+      "保険の開始日と渡航日を合わせるのを忘れずに。",
+    ],
+    faqs: [
+      {
+        question: "片道航空券で入国できますか？",
+        answer:
+          "片道で入国する人は多いですが、国・状況により復路や出国資力の提示を求められることがあります。心配なら復路や資金証明を用意しておくと安心です。",
+      },
+      {
+        question: "いつ予約すると安いですか？",
+        answer:
+          "一般に出発2〜3か月前、繁忙期（年末年始・夏休み）を避け、平日発着を選ぶと安くなりやすいです。価格の変動を見ながら予約しましょう。",
+      },
+    ],
+    sources: [
+      { label: "Home Affairs｜Working Holiday visa (subclass 417)", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Working Holiday visa (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["航空券の価格・就航状況・入国時の提示要件は時期で変わります。予約前に各航空会社と最新の入国要件を確認してください。"],
+    relatedSlugs: ["arrival-airport-guide", "visa-proof-of-funds", "preparation-checklist", "temporary-accommodation-before-arrival"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a87",
+    title: "オーストラリアの到着空港の選び方｜主要都市の比較",
+    slug: "arrival-airport-guide",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P2",
+    searchIntent: "オーストラリア 到着 空港 シドニー メルボルン ブリスベン 比較",
+    description:
+      "オーストラリアの主要な到着空港（シドニー・メルボルン・ブリスベン・パース・ケアンズ）の特徴を比較し、ワーホリの最初の滞在先に合わせた選び方を解説します。",
+    content: [
+      "オーストラリアの到着空港は、最初に住む都市・働く地域を見据えて選ぶのが基本です。主要な国際空港はシドニー（NSW）、メルボルン（VIC）、ブリスベン（QLD）、パース（WA）、ケアンズ（QLD北部）などがあります。どこに到着するかで、その後の生活の立ち上げやすさ・気候・仕事の探しやすさが変わります。",
+      "都市ごとの特徴を大まかに見ると、①シドニー：最大都市で求人・語学学校・日本人コミュニティが多いが物価・家賃が高め、②メルボルン：文化・カフェ文化が盛んで求人も多い、四季がはっきりしている、③ブリスベン：温暖で物価がシドニーよりやや抑えめ、ファーム地帯へのアクセスも、④パース：西海岸で時差が日本に近く、鉱業関連や特定の仕事がある、⑤ケアンズ：熱帯でリゾート・観光の仕事やファームワークの拠点になりやすい、といった傾向があります。",
+      "選び方の観点は、①最初に住みたい都市に直接入れるか、②直行便の有無と乗り継ぎ回数・総額、③到着後の空港から市内へのアクセス（電車・バス）、④気候（到着時期の季節）、⑤仕事やファームの計画との相性、です。ファームワークやセカンドビザを見据えて地方に近い都市を選ぶ人もいれば、まず大都市で生活を立ち上げてから移動する人もいます。",
+      "実務的には、①ワーホリ全体の計画（最初の滞在先・仕事・ファーム）を決める、②その計画に合う都市を選ぶ、③直行便/乗り継ぎと航空券の総額を比較（→ 航空券の選び方の記事参照）、④到着後の空港→滞在先の移動手段を事前に調べる、という流れです。最初の1〜2週間の滞在先（→ 到着前の一時滞在先の記事参照）も、到着空港からアクセスしやすい場所にすると移動が楽になります。",
+      "各空港の路線・アクセス・所要時間は時期や交通事情で変わります。予約前に各航空会社・現地交通機関の最新情報を確認してください。この記事は一般的な比較の目安です。",
+    ],
+    keyFacts: [
+      { label: "主要空港", value: "シドニー・メルボルン・ブリスベン・パース・ケアンズ" },
+      { label: "シドニー", value: "求人・語学学校・コミュニティ多め、物価高め" },
+      { label: "ブリスベン", value: "温暖・物価やや抑えめ・ファーム地帯にアクセス" },
+      { label: "ケアンズ", value: "熱帯・観光/ファームの拠点" },
+      { label: "選ぶ基準", value: "最初の滞在先・仕事・気候・空港アクセス" },
+    ],
+    steps: [
+      { title: "計画を決める", description: "最初の滞在先・仕事・ファーム計画を整理します。" },
+      { title: "都市を選ぶ", description: "計画に合う都市とその空港を選びます。" },
+      { title: "便を比較", description: "直行/乗り継ぎと航空券の総額を比較します。" },
+      { title: "移動を調べる", description: "空港→滞在先のアクセスを事前に調べます。" },
+    ],
+    tips: [
+      "最初の滞在先は到着空港からアクセスしやすい場所にすると移動が楽です。",
+      "大都市で立ち上げてから地方へ移る人も。計画に合わせて選びましょう。",
+    ],
+    faqs: [
+      {
+        question: "ワーホリ最初はどの都市がいいですか？",
+        answer:
+          "正解は一つではありません。求人・語学学校・コミュニティを重視するならシドニー/メルボルン、物価やファームアクセスならブリスベン/ケアンズなど、自分の計画に合わせて選びましょう。",
+      },
+      {
+        question: "地方の空港に直接入れますか？",
+        answer:
+          "ケアンズなど一部は国際線がありますが、乗り継ぎが必要な都市もあります。直行便の有無と総額、空港からのアクセスを比較して決めましょう。",
+      },
+    ],
+    sources: [
+      { label: "Tourism Australia｜Getting around", url: "https://www.australia.com/en" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Australian Trade and Investment Commission (Austrade)｜Australia's cities",
+        url: "https://www.australia.gov.au/",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["各空港の路線・アクセス・所要時間は時期・交通事情で変わります。予約前に各社・現地交通機関で確認してください。"],
+    relatedSlugs: ["flight-booking-guide", "temporary-accommodation-before-arrival", "area-sydney", "arrival-checklist"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a88",
+    title: "到着前に押さえる一時滞在先の探し方｜最初の1〜2週間",
+    slug: "temporary-accommodation-before-arrival",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P0",
+    searchIntent: "オーストラリア 到着 最初 宿 一時滞在 予約",
+    description:
+      "オーストラリア到着直後の一時滞在先（最初の1〜2週間の宿）の探し方を解説。バックパッカー・ホステル・短期滞在の選び方と、到着前に予約すべき理由をまとめました。",
+    content: [
+      "オーストラリア到着直後は、まず『最初の1〜2週間の滞在先』を到着前に予約しておくのが鉄則です。シェアハウスや長期の家は、現地で実際に内見してから決めるのが安全なため、いきなり長期契約はせず、まずは短期の宿を拠点にして家探し・仕事探し・銀行口座開設などの手続きを進めるのが一般的な流れです。",
+      "一時滞在先の主な選択肢は、①バックパッカー/ホステル（安価でコミュニティがあり情報交換しやすい）、②短期のシェアルーム/民泊（Airbnb等で1〜2週間）、③ホテル（割高だが快適・確実）です。到着直後で土地勘がないうちは、駅や中心部に近く、スーパーや役所へのアクセスがよい立地を選ぶと、その後の手続きがスムーズです。",
+      "到着前に予約すべき理由は、①入国審査で滞在先を聞かれることがある、②時差・疲労のある到着直後に宿を探すのは大変、③需要期は直前だと満室になりやすい、ためです。少なくとも最初の数泊〜1週間分は予約しておき、現地の様子を見てから延長・移動を判断すると失敗が減ります。",
+      "実務的には、①到着空港・最初に活動する都市を決める（→ 到着空港の選び方の記事参照）、②中心部/駅近でアクセスのよい宿を選ぶ、③最初の数泊〜1週間を予約、④現地でシェアハウス等を内見して長期滞在先を決める、という流れです。貴重品管理ができるロッカー付きの宿や、日本語/英語での口コミが多い宿を選ぶと安心です。",
+      "宿の料金・空室状況・立地の治安は時期や場所で変わります。予約前に各予約サイトの口コミや現地情報で最新の状況を確認してください。この記事は一般的な探し方の目安です。",
+    ],
+    keyFacts: [
+      { label: "基本方針", value: "まず短期の宿を拠点に。長期契約は現地で内見後" },
+      { label: "選択肢", value: "ホステル/短期シェア/ホテル" },
+      { label: "立地", value: "駅近・中心部・スーパーや役所に近い場所" },
+      { label: "予約範囲", value: "最初の数泊〜1週間分を到着前に予約" },
+      { label: "理由", value: "入国審査・到着直後の負担・繁忙期の満室対策" },
+    ],
+    steps: [
+      { title: "拠点都市を決める", description: "到着空港と最初に活動する都市を決めます。" },
+      { title: "宿を選ぶ", description: "駅近・中心部でアクセスのよい宿を選びます。" },
+      { title: "短期を予約", description: "最初の数泊〜1週間を到着前に予約します。" },
+      { title: "長期を内見", description: "現地でシェアハウス等を内見して長期先を決めます。" },
+    ],
+    tips: [
+      "いきなり長期契約はNG。まず短期の宿を拠点に、内見してから決めましょう。",
+      "入国審査で滞在先を聞かれることがあります。予約確認を手元に用意しておきましょう。",
+    ],
+    faqs: [
+      {
+        question: "最初からシェアハウスを契約してもいいですか？",
+        answer:
+          "内見せずに長期契約するのはトラブルの元です。まず短期の宿を拠点にして、実際に部屋を見てから長期のシェアハウスを決めるのがおすすめです。",
+      },
+      {
+        question: "何泊くらい予約すればいいですか？",
+        answer:
+          "最初の数泊〜1週間を目安に予約し、現地の様子を見て延長・移動を判断すると柔軟に動けます。繁忙期は少し長めに確保すると安心です。",
+      },
+    ],
+    sources: [
+      { label: "Australian Government｜Living in Australia", url: "https://www.australia.gov.au/" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Australian Government｜moving to and living in Australia",
+        url: "https://www.australia.gov.au/",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["宿の料金・空室・治安は時期・場所で変わります。予約前に口コミ・現地情報で確認してください。"],
+    relatedSlugs: ["arrival-airport-guide", "share-house-finding", "housing-guide", "arrival-checklist"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a89",
+    title: "出国前のお金の準備｜現金・カード・海外送金の使い分け",
+    slug: "cards-and-cash-before-departure",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P0",
+    searchIntent: "ワーホリ 出国前 現金 カード 海外 使い分け",
+    description:
+      "ワーホリ出国前に準備したいお金の手段（現金・クレジット/デビットカード・海外送金）の使い分けを解説。到着直後に困らないための準備をまとめました。",
+    content: [
+      "出国前のお金の準備は、『現金』『カード（クレジット/デビット/プリペイド）』『海外送金の手段』を組み合わせて用意するのが基本です。オーストラリアはキャッシュレスが非常に進んでおり、日常の支払いはカードやタッチ決済が中心ですが、到着直後で現地口座がまだない時期をつなぐために、複数の手段を持っておくと安心です。",
+      "現金については、到着直後の交通費・食費・宿泊費などをまかなえる程度（数百AUD程度）を用意しておくと、現地口座ができるまでの間、安心して動けます。ただし多額の現金を持ち歩くのは盗難リスクがあるため、必要最小限にとどめ、残りはカードや送金で管理します。なお、一定額（AUD 10,000相当）以上の現金を持ち込む場合は税関で申告が必要です。",
+      "カードは、①クレジットカード（本人確認・デポジット・緊急時に有用、海外事務手数料に注意）、②デビット/プリペイドカード（使い過ぎ防止、為替レートの良いサービスも）、を複数ブランド（VISA/Mastercard等）で分散して持つと、1枚が使えないときの保険になります。到着後に現地銀行口座を開設（→ 銀行口座の記事参照）し、給与受け取りや生活費はそちらに移していきます。",
+      "海外送金は、日本の口座から現地口座へ生活資金を移す手段です。銀行送金のほか、為替手数料の安いオンライン送金サービスもあります。到着後に現地口座ができてから送金するのが一般的なので、出国前は『送金サービスのアカウント登録・本人確認を済ませておく』とスムーズです。実務的には、①現金を少額用意、②カードを複数分散、③送金サービスを事前登録、④到着後に現地口座を開設して資金を移す、という流れが安心です。",
+      "為替レート・手数料・持ち込み申告の基準は変動・改定されることがあります。利用前に各カード会社・送金サービス・税関の最新情報を確認してください。この記事は一般的な準備の目安です。",
+    ],
+    keyFacts: [
+      { label: "基本", value: "現金・カード・送金を組み合わせて準備" },
+      { label: "現金", value: "到着直後をつなぐ数百AUD程度。持ち過ぎ注意" },
+      { label: "申告", value: "AUD 10,000相当以上の現金は税関申告が必要" },
+      { label: "カード", value: "複数ブランドを分散して携帯" },
+      { label: "送金", value: "出国前にサービス登録・本人確認を済ませる" },
+    ],
+    steps: [
+      { title: "現金を用意", description: "到着直後をつなぐ数百AUD程度を用意します。" },
+      { title: "カードを分散", description: "クレジット/デビットを複数ブランドで用意します。" },
+      { title: "送金を事前登録", description: "オンライン送金サービスの登録・本人確認を済ませます。" },
+      { title: "現地口座へ移す", description: "到着後に口座を開設し生活資金を移します。" },
+    ],
+    tips: [
+      "カードは1枚に頼らず複数ブランドを分散。1枚が使えないときの保険になります。",
+      "AUD 10,000相当以上の現金持ち込みは申告が必要です。持ち過ぎに注意しましょう。",
+    ],
+    faqs: [
+      {
+        question: "現金はいくら持っていけばいいですか？",
+        answer:
+          "到着直後の交通・食事・宿をまかなえる数百AUD程度が目安です。多額は盗難リスクがあるため、残りはカードや送金で管理しましょう。AUD 10,000相当以上は税関申告が必要です。",
+      },
+      {
+        question: "日本のカードはそのまま使えますか？",
+        answer:
+          "VISA/Mastercard等の国際ブランドなら多くの店で使えます。ただし海外事務手数料がかかることが多いので、現地口座ができたら生活費はそちらに移すのが経済的です。",
+      },
+    ],
+    sources: [
+      { label: "Australian Border Force｜Cross-border movement of physical currency", url: "https://www.abf.gov.au/entering-and-leaving-australia/crossing-the-border/at-the-border/cross-border-movement-of-physical-currency" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Australian Border Force｜Travelling with money",
+        url: "https://www.abf.gov.au/entering-and-leaving-australia/crossing-the-border/at-the-border/cross-border-movement-of-physical-currency",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["為替レート・手数料・申告基準は変動・改定されます。利用前に各社・税関の最新情報を確認してください。"],
+    relatedSlugs: ["bank-account-guide", "money-transfer-wise", "australia-customs-quarantine", "working-holiday-budget"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a90",
+    title: "日本の電話番号を残す方法｜番号保管・休止サービス",
+    slug: "keep-japanese-phone-number",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P1",
+    searchIntent: "ワーホリ 日本 電話番号 残す 休止 保管",
+    description:
+      "ワーホリ中に日本の電話番号を残す方法を解説。番号保管・休止サービス、解約との違い、SMS認証への影響まで、渡航前に判断すべきポイントをまとめました。",
+    content: [
+      "ワーホリで長期渡航する際、『日本の電話番号をどうするか』は意外と重要です。日本の携帯番号は、銀行・クレジットカード・各種サービスのSMS認証（二段階認証）に使われていることが多く、解約すると帰国後や滞在中にログインできなくなるなどの不便が生じることがあります。そのため、番号を残す方法を検討する価値があります。",
+      "主な選択肢は、①各キャリアの『番号保管・休止サービス』を使って番号を維持する（月額数百円程度で回線を休止し番号を保持）、②MVNO（格安SIM）の最安プランに乗り換えて最低限の維持費で番号を残す、③解約する（維持費はゼロだが番号は失われSMS認証も使えなくなる）、です。番号保管サービスの有無・料金・SMS受信可否はキャリアやプランで異なります。",
+      "判断のポイントは、①その番号がSMS認証に使われているか、②帰国後も同じ番号を使いたいか、③維持費と手間のバランス、です。SMS認証で困りそうなサービスが多い人は、番号を残すか、認証方法を認証アプリ（アプリベースのワンタイムパスワード）やメール認証に事前に切り替えておくと安心です。海外でもSMSを受け取れるサービス・ローミングの可否は事前に確認しましょう。",
+      "実務的には、①出国前に日本の番号がどのサービスの認証に使われているか棚卸し、②可能なものは認証アプリ/メール認証へ切り替え、③残したい番号は番号保管/休止または格安SIMへ移行、④現地では現地SIM（→ SIMの記事参照）を使う、という流れです。オーストラリア到着後は現地の電話番号を取得し、日本の番号は認証・緊急連絡用として最小コストで維持するのが一つの形です。",
+      "各キャリアの番号保管・休止サービスの内容や料金は変更されることがあります。手続き前に契約中のキャリアの公式案内で最新の条件を確認してください。この記事は一般的な整理です。",
+    ],
+    keyFacts: [
+      { label: "なぜ重要", value: "日本番号がSMS認証に使われていることが多い" },
+      { label: "選択肢", value: "番号保管/休止・格安SIM移行・解約" },
+      { label: "維持費", value: "番号保管は月数百円程度が目安（キャリアで異なる）" },
+      { label: "認証対策", value: "認証アプリ/メール認証へ事前に切り替え" },
+      { label: "現地", value: "到着後は現地SIMを取得" },
+    ],
+    steps: [
+      { title: "認証を棚卸し", description: "日本番号がどのサービスの認証に使われているか確認します。" },
+      { title: "認証を切替", description: "可能なものを認証アプリ/メール認証に変更します。" },
+      { title: "番号を維持/解約", description: "残す番号は番号保管/格安SIMへ、不要なら解約します。" },
+      { title: "現地SIMを取得", description: "到着後に現地の電話番号を取得します。" },
+    ],
+    tips: [
+      "SMS認証で困りそうなら、認証アプリやメール認証に事前に切り替えておきましょう。",
+      "番号保管の可否・料金・SMS受信可否はキャリアで異なります。契約先で確認を。",
+    ],
+    faqs: [
+      {
+        question: "日本の番号は解約してもいいですか？",
+        answer:
+          "SMS認証に使っていないなら解約でも問題は少ないです。ただし銀行・カード等の認証に使っている場合は、認証方法を切り替えるか番号を残すことを検討しましょう。",
+      },
+      {
+        question: "海外でも日本のSMSを受け取れますか？",
+        answer:
+          "ローミングやサービスにより受け取れる場合と受け取れない場合があります。事前にキャリアの条件を確認し、重要な認証はアプリ認証に切り替えておくと安心です。",
+      },
+    ],
+    sources: [
+      { label: "総務省｜携帯電話・通信サービス", url: "https://www.soumu.go.jp/menu_seisaku/ictseisaku/" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "総務省｜電気通信サービスの案内",
+        url: "https://www.soumu.go.jp/menu_seisaku/ictseisaku/",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["番号保管・休止サービスの内容や料金は変更されます。手続き前に契約中キャリアの公式案内で確認してください。"],
+    relatedSlugs: ["sim-guide", "document-backup", "mail-forwarding-and-address", "preparation-checklist"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a91",
+    title: "渡航中の郵便物・日本の住所はどうする？転送と実家活用",
+    slug: "mail-forwarding-and-address",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P2",
+    searchIntent: "ワーホリ 郵便物 転送 日本 住所 どうする",
+    description:
+      "ワーホリで長期不在にする間の郵便物と日本の住所の扱いを解説。郵便の転送サービス、実家への住所変更、重要書類の受け取り方法をまとめました。",
+    content: [
+      "長期で日本を離れる間、『郵便物と日本の住所をどうするか』を整理しておくと、重要書類の見落としを防げます。海外へ郵便物を個別に転送し続けるのは現実的でないため、多くの人は①各種サービスの登録住所を実家等に変更する、②郵便局の転送サービスを使って実家等へ届くようにする、という方法を組み合わせます。",
+      "郵便局の『転送サービス（転居・転送サービス）』は、旧住所宛ての郵便物を新しい国内住所（実家など）へ一定期間転送してくれる仕組みです。海外転出により住民票を除票する場合でも、国内の受け取り先（実家など）を指定して郵便を集約できます。銀行・カード・保険・行政からの重要書類が届く先を一本化しておくと、家族に確認を頼みやすくなります。",
+      "住所変更のポイントは、①銀行・クレジットカード・証券・保険などの金融関連、②各種サブスク・通販・公共サービス、③行政からの通知、を棚卸しして、受け取り先を実家等に変更することです。オンラインで完結するものはメール/アプリ通知に切り替えると、紙の郵便自体を減らせます。マイナンバー関連や重要書類は、家族が対応できるよう事前に共有しておきます。",
+      "実務的には、①受け取り先（実家等）を決める、②郵便局の転送サービスを申し込む、③主要サービスの登録住所を変更、④紙の郵便は可能な範囲で電子通知に切替、⑤家族に重要書類の対応を依頼、という流れです。帰国後に住所を戻す手続きも忘れないようにします。",
+      "郵便の転送サービスの期間・条件や、各サービスの住所変更手続きは変更されることがあります。手続き前に日本郵便および各サービスの公式案内で確認してください。この記事は一般的な整理です。",
+    ],
+    keyFacts: [
+      { label: "基本方針", value: "受け取り先を実家等に一本化＋転送サービス" },
+      { label: "転送サービス", value: "旧住所宛て郵便を国内の新住所へ一定期間転送" },
+      { label: "住所変更", value: "金融・通販・行政の登録住所を実家等へ" },
+      { label: "電子化", value: "可能なものはメール/アプリ通知に切替" },
+      { label: "家族連携", value: "重要書類の対応を事前に依頼" },
+    ],
+    steps: [
+      { title: "受け取り先を決定", description: "実家など国内の受け取り先を決めます。" },
+      { title: "転送を申込", description: "郵便局の転送サービスを申し込みます。" },
+      { title: "住所を変更", description: "金融・通販・行政の登録住所を変更します。" },
+      { title: "電子化・共有", description: "電子通知に切替え、家族に対応を依頼します。" },
+    ],
+    tips: [
+      "重要書類の受け取り先を一本化しておくと、家族に確認を頼みやすくなります。",
+      "紙の郵便は電子通知に切り替えて、そもそも届く量を減らすのが楽です。",
+    ],
+    faqs: [
+      {
+        question: "海外に直接郵便を転送できますか？",
+        answer:
+          "個別の国際転送は現実的でないことが多いです。国内の実家等に集約し、必要なものだけ家族に確認・スキャンしてもらう方法が一般的です。",
+      },
+      {
+        question: "住民票を抜くと郵便はどうなりますか？",
+        answer:
+          "住民票の除票と郵便の受け取りは別です。郵便局の転送サービスで国内の受け取り先を指定し、各サービスの登録住所も変更しておきましょう。",
+      },
+    ],
+    sources: [
+      { label: "日本郵便｜転居・転送サービス", url: "https://www.post.japanpost.jp/service/tenkyo/" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "日本郵便｜転居・転送サービス",
+        url: "https://www.post.japanpost.jp/service/tenkyo/",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["転送サービスの期間・条件や各社の住所変更手続きは変更されます。手続き前に日本郵便・各社の公式案内で確認してください。"],
+    relatedSlugs: ["japan-moving-out-procedures", "keep-japanese-phone-number", "document-backup", "preparation-checklist"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a92",
+    title: "重要書類のバックアップとデジタル保管のコツ",
+    slug: "document-backup",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P0",
+    searchIntent: "ワーホリ 書類 バックアップ パスポート コピー 保管",
+    description:
+      "ワーホリで持っていく重要書類のバックアップ方法を解説。パスポート・ビザ・保険・証明書のコピーとデジタル保管、紛失・盗難に備えた分散管理のコツをまとめました。",
+    content: [
+      "海外では書類の紛失・盗難のリスクが高まるため、重要書類のバックアップは渡航準備の必須項目です。パスポート、ビザのグラント通知、海外旅行保険の証券、航空券、各種証明書（英文の卒業証明・資格・運転免許・処方箋など）は、原本を安全に管理しつつ、コピーとデジタルデータの両方を用意しておきます。",
+      "バックアップの基本は『分散』です。①原本はパスポートケースなど安全な場所に、②紙のコピーは原本と別の場所（スーツケースと手荷物など）に分けて携帯、③デジタルデータはクラウドストレージや自分宛てメールに保存、④信頼できる家族にもコピーを共有、という多重化で、どれか一つを失っても再発行や証明ができるようにします。",
+      "デジタル保管では、①パスポート・ビザ・保険証券・航空券などをスキャン/撮影してクラウドに保存、②パスワード管理アプリで各種アカウント情報を安全に管理、③重要な連絡先（大使館、保険会社の緊急連絡先、家族）をオフラインでも見られるよう控える、のがポイントです。クラウドは二段階認証を設定し、公共Wi-Fiでの取り扱いに注意します。",
+      "実務的には、①持っていく重要書類をリスト化、②原本・紙コピー・デジタルの3系統を用意、③クラウド/メールに保存し二段階認証を設定、④家族と共有、⑤緊急連絡先をオフラインでも参照可能に、という流れです。パスポートを紛失した際は在外公館（大使館・総領事館）での手続きが必要になるため、コピーとパスポート番号の控えがあると再発行がスムーズです。",
+      "書類の必要性や再発行手続きは状況によって異なります。パスポート紛失時の対応などは、渡航先を管轄する在外公館の案内で最新情報を確認してください。この記事は一般的な備えの目安です。",
+    ],
+    keyFacts: [
+      { label: "対象書類", value: "パスポート・ビザ・保険・航空券・各種証明書" },
+      { label: "基本", value: "原本・紙コピー・デジタルの3系統で分散" },
+      { label: "デジタル", value: "クラウド/メールに保存＋二段階認証" },
+      { label: "共有", value: "信頼できる家族にもコピーを共有" },
+      { label: "緊急連絡先", value: "大使館・保険会社をオフラインでも参照可能に" },
+    ],
+    steps: [
+      { title: "書類をリスト化", description: "持っていく重要書類を洗い出します。" },
+      { title: "3系統で用意", description: "原本・紙コピー・デジタルを用意します。" },
+      { title: "クラウド保存", description: "スキャンしてクラウド/メールに保存し二段階認証を設定します。" },
+      { title: "家族と共有", description: "家族にコピーを共有し緊急連絡先を控えます。" },
+    ],
+    tips: [
+      "紙コピーは原本と別の場所（手荷物と預け荷物）に分けて携帯しましょう。",
+      "クラウドは必ず二段階認証を設定。公共Wi-Fiでの取り扱いに注意を。",
+    ],
+    faqs: [
+      {
+        question: "パスポートのコピーは必要ですか？",
+        answer:
+          "はい。紛失時の再発行や本人確認でコピーとパスポート番号の控えが役立ちます。紙とデジタルの両方で、原本とは別に保管しましょう。",
+      },
+      {
+        question: "パスポートを紛失したらどうすればいいですか？",
+        answer:
+          "現地の警察に届け出たうえで、渡航先を管轄する在外公館（大使館・総領事館）で再発行等の手続きを行います。コピーや番号の控えがあると手続きがスムーズです。",
+      },
+    ],
+    sources: [
+      { label: "外務省｜海外安全ホームページ", url: "https://www.anzen.mofa.go.jp/" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "外務省｜パスポートを紛失した場合",
+        url: "https://www.mofa.go.jp/mofaj/toko/passport/pass_5.html",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["書類の必要性や再発行手続きは状況で異なります。紛失時の対応は在外公館の案内で確認してください。"],
+    relatedSlugs: ["visa-grant-letter", "keep-japanese-phone-number", "mail-forwarding-and-address", "insurance-guide"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a93",
+    title: "オーストラリアの税関・検疫（バイオセキュリティ）申告ガイド",
+    slug: "australia-customs-quarantine",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P0",
+    searchIntent: "オーストラリア 税関 検疫 申告 持ち込み 食べ物",
+    description:
+      "オーストラリア入国時の税関・検疫（バイオセキュリティ）の申告ルールを解説。持ち込みが制限される食品・植物・動物製品と、Incoming Passenger Cardでの申告方法をまとめました。",
+    content: [
+      "オーストラリアは世界でも特に厳しいバイオセキュリティ（検疫）制度を持つ国です。入国時には、税関（Australian Border Force）と検疫（農業・水産・林業省＝DAFFのバイオセキュリティ）に関する申告が求められ、食品・植物・動物由来の製品などを持ち込む場合は、Incoming Passenger Card（入国旅客カード）で正直に申告する必要があります。申告を怠ると、高額な罰金やビザへの影響につながることがあります。",
+      "特に注意が必要なのは、①食品全般（肉製品・乳製品・卵・種子・果物・野菜など）、②植物・木製品・種、③動物製品、④医薬品（→ 薬の持ち込みの記事参照）です。生鮮食品や肉・乳製品は持ち込みが厳しく制限・禁止されていることが多く、日本のお菓子や加工食品でも成分によっては申告・検査の対象になります。『少しだから大丈夫』と自己判断せず、該当しそうなものはすべて申告するのが鉄則です。",
+      "Incoming Passenger Cardには、食品・植物・動物製品・医薬品・多額の現金などを持っているかを尋ねる質問があります。該当する場合は『Yes』にチェックし、検査を受けます。申告したうえで持ち込みが認められないものは、その場で処分すれば罰則は科されないのが一般的です。逆に、申告せずに見つかった場合は罰金の対象になります。つまり『申告して損はない』仕組みです。",
+      "実務的には、①持ち込む食品・植物・動物製品を事前に確認し、不要なものは持ち込まない、②該当しそうなものはIncoming Passenger Cardで申告、③検査で処分を求められたら従う、④多額の現金（AUD 10,000相当以上）も申告、という流れです。機内で配られる/入国前に記入する入国カードを、到着前に落ち着いて記入しておくとスムーズです。",
+      "持ち込み可否の品目・基準や申告のルールは変更されることがあります。渡航前にAustralian Border ForceおよびDAFF（農業・水産・林業省）の公式案内で最新情報を確認してください。この記事は一般的な整理です。",
+    ],
+    keyFacts: [
+      { label: "厳しい検疫", value: "世界有数の厳格なバイオセキュリティ制度" },
+      { label: "要注意品", value: "食品・肉/乳製品・植物・種・動物製品・薬" },
+      { label: "申告", value: "Incoming Passenger Cardで正直に申告" },
+      { label: "原則", value: "申告して処分なら罰則なし。無申告は罰金対象" },
+      { label: "現金", value: "AUD 10,000相当以上は申告が必要" },
+      { label: "確認先", value: "Australian Border Force・DAFF" },
+    ],
+    steps: [
+      { title: "持ち込み品を確認", description: "食品・植物・動物製品を事前に確認し不要品は持たない。" },
+      { title: "入国カード記入", description: "該当品はIncoming Passenger Cardで申告します。" },
+      { title: "検査を受ける", description: "検査で処分を求められたら従います。" },
+      { title: "現金も申告", description: "AUD 10,000相当以上の現金も申告します。" },
+    ],
+    tips: [
+      "『少しだから』と自己判断せず、該当しそうなものは全部申告しましょう。",
+      "申告して処分なら罰則なし、無申告で見つかると罰金。『申告して損はない』です。",
+    ],
+    faqs: [
+      {
+        question: "日本のお菓子やカップ麺は持ち込めますか？",
+        answer:
+          "成分（肉・乳製品・種子など）によっては申告・検査の対象になります。持ち込む場合はIncoming Passenger Cardで申告してください。申告すれば、仮に持ち込めなくても処分で済み罰則はありません。",
+      },
+      {
+        question: "申告を忘れるとどうなりますか？",
+        answer:
+          "無申告で規制品が見つかると、高額な罰金やビザへの影響につながることがあります。少しでも該当しそうなら必ず申告しましょう。",
+      },
+    ],
+    sources: [
+      { label: "Australian Border Force｜Bringing goods into Australia", url: "https://www.abf.gov.au/entering-and-leaving-australia/can-you-bring-it-in" },
+      { label: "DAFF｜Bringing or mailing goods to Australia", url: "https://www.agriculture.gov.au/biosecurity-trade/travelling/bringing-mailing-goods" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Australian Border Force｜What you can and can't bring into Australia",
+        url: "https://www.abf.gov.au/entering-and-leaving-australia/can-you-bring-it-in",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Agriculture, Fisheries and Forestry｜Bringing goods into Australia",
+        url: "https://www.agriculture.gov.au/biosecurity-trade/travelling/bringing-mailing-goods",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["持ち込み可否・申告ルールは変更されます。渡航前にABF・DAFFの公式案内で確認してください。"],
+    relatedSlugs: ["medication-customs", "cards-and-cash-before-departure", "baggage-packing-strategy", "arrival-checklist"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a94",
+    title: "ワーホリの荷造り戦略｜スーツケース・機内持ち込みの分け方",
+    slug: "baggage-packing-strategy",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P2",
+    searchIntent: "ワーホリ 荷造り スーツケース 機内持ち込み 分け方",
+    description:
+      "ワーホリの荷造り戦略を解説。預け荷物と機内持ち込みの分け方、重量制限への対応、現地調達との使い分けなど、賢いパッキングのコツをまとめました。",
+    content: [
+      "ワーホリの荷造りは『何を持っていくか』以上に『どう分けて詰めるか』が重要です。長期滞在で移動も多いため、預け荷物（受託手荷物）と機内持ち込み手荷物を戦略的に分け、重量制限に収まるように調整します。現地で安く手に入るものは持っていかず、日本から持っていくべきものに絞るのが基本方針です（→ 持ち物リストの記事参照）。",
+      "預け荷物と機内持ち込みの分け方の原則は、①貴重品・重要書類・現金・カード・電子機器・常用薬は必ず機内持ち込みに、②衣類や日用品など、万一届かなくても致命的でないものは預け荷物に、③到着直後に必要なもの（数日分の着替え・洗面具・充電器）は機内持ち込みに、です。預け荷物が万一ロストバゲージになっても、数日しのげる状態にしておくと安心です。",
+      "重量・個数制限は航空会社・運賃クラスで異なります。LCCは預け荷物が有料・少なめのことが多く、超過料金が高額になりがちです。予約時に無料手荷物許容量（個数・重量）を確認し、必要なら事前に追加購入します。詰めるときは、①重いものはスーツケースの下（車輪側）に、②割れ物は衣類で包む、③液体・スプレーは機内持ち込み制限に注意、を意識します。",
+      "実務的には、①持ち物リストを現地調達と持参で仕分け、②貴重品・書類・薬・電子機器は機内持ち込み、③到着直後に必要な数日分も機内へ、④残りを預け荷物に、⑤航空会社の重量・個数制限を確認して調整、という流れです。ファームワークを予定している人は作業着など（→ ファーム持ち物の記事参照）も計画に入れます。検疫対象になりうる食品は税関申告（→ 税関・検疫の記事参照）を忘れずに。",
+      "各航空会社の手荷物規定や機内持ち込み制限は変更されることがあります。荷造り前に利用する航空会社の公式案内で最新の規定を確認してください。この記事は一般的なコツの目安です。",
+    ],
+    keyFacts: [
+      { label: "基本方針", value: "現地調達できるものは持たず、持参品を絞る" },
+      { label: "機内持ち込み", value: "貴重品・書類・現金・薬・電子機器・到着直後の数日分" },
+      { label: "預け荷物", value: "衣類・日用品など届かなくても致命的でないもの" },
+      { label: "重量制限", value: "航空会社・運賃で異なる。LCCは特に注意" },
+      { label: "詰め方", value: "重い物は下、割れ物は衣類で保護、液体は制限に注意" },
+    ],
+    steps: [
+      { title: "持ち物を仕分け", description: "現地調達と持参に分け、持参品を絞ります。" },
+      { title: "貴重品は機内へ", description: "書類・現金・薬・電子機器は機内持ち込みにします。" },
+      { title: "数日分も機内へ", description: "到着直後に必要な着替え・洗面具を機内に入れます。" },
+      { title: "制限を確認", description: "航空会社の重量・個数制限に合わせて調整します。" },
+    ],
+    tips: [
+      "ロストバゲージに備え、数日しのげる分は機内持ち込みに入れましょう。",
+      "LCCは預け荷物の超過料金が高額。予約時に許容量を確認し必要なら事前購入を。",
+    ],
+    faqs: [
+      {
+        question: "何を機内持ち込みにすべきですか？",
+        answer:
+          "パスポート・ビザ書類・現金・カード・常用薬・電子機器などの貴重品と、到着直後に必要な数日分の着替え・洗面具・充電器です。預け荷物が届かなくても数日しのげる状態にしましょう。",
+      },
+      {
+        question: "何でも持っていったほうがいいですか？",
+        answer:
+          "いいえ。現地で安く買えるものは持っていかず、持参品を絞るのが賢いです。重量制限や移動の負担を考え、本当に必要なものに絞りましょう。",
+      },
+    ],
+    sources: [
+      { label: "Australian Border Force｜Entering Australia", url: "https://www.abf.gov.au/entering-and-leaving-australia" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Australian Border Force｜Entering and leaving Australia",
+        url: "https://www.abf.gov.au/entering-and-leaving-australia",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["各航空会社の手荷物規定・機内持ち込み制限は変更されます。荷造り前に利用航空会社の公式案内で確認してください。"],
+    relatedSlugs: ["packing-list", "farm-work-packing", "australia-customs-quarantine", "send-luggage-to-australia"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a95",
+    title: "オーストラリアの電源プラグ・電圧｜変換プラグは必要？",
+    slug: "power-plug-voltage",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P1",
+    searchIntent: "オーストラリア 電源 プラグ 電圧 変換 必要",
+    description:
+      "オーストラリアの電源プラグ（Type I）と電圧（230V/50Hz）を解説。日本の電化製品を使うための変換プラグ・変圧器の必要性を、機器別にまとめました。",
+    content: [
+      "結論から言うと、オーストラリアで日本の電化製品を使うには『変換プラグ』が必要で、機器によっては『変圧器』も必要です。オーストラリアの電圧は230V・周波数50Hz、コンセント形状は『Type I』（八の字型に3本または2本のピンが斜めに配置されたタイプ）で、日本（100V・Type A）とは異なります。そのため、日本のプラグをそのまま挿すことはできません。",
+      "変換プラグ（プラグアダプター）は、日本のType AプラグをオーストラリアのType I差込口に物理的に挿せるようにする器具です。これは形状を変えるだけで、電圧は変換しません。オーストラリア向けのType I対応の変換プラグを、人数・機器数に合わせて用意します。複数口のものや、USBポート付きのものがあると便利です。",
+      "電圧については、機器が『100-240V』対応（マルチボルテージ）かどうかが分かれ目です。スマホの充電器、ノートPCのACアダプター、多くのカメラ充電器などは『INPUT 100-240V』と表記されており、変換プラグだけでそのまま使えます。一方、日本専用（100Vのみ対応）のヘアドライヤー・ヘアアイロン・電気シェーバー・炊飯器などを230Vのコンセントに直接つなぐと故障・発火の恐れがあるため、変圧器が必要か、現地対応品を購入するのが安全です。",
+      "実務的には、①持っていく機器のACアダプター/本体に書かれた対応電圧（INPUT）を確認、②100-240V対応なら変換プラグのみでOK、③100V専用の機器は変圧器を使うか現地で230V対応品を買う、④Type I対応の変換プラグを必要数用意、という流れです。ヘアドライヤーなどの熱を出す機器は消費電力が大きく変圧器が大型・高価になりがちなので、現地調達が現実的なことも多いです。",
+      "電圧・プラグ形状は基本的に安定していますが、機器ごとの対応は製品によって異なります。使用前に各機器の対応電圧表示を必ず確認してください。この記事は一般的な整理です。",
+    ],
+    keyFacts: [
+      { label: "電圧/周波数", value: "230V・50Hz（日本は100V・50/60Hz）" },
+      { label: "プラグ形状", value: "Type I（日本はType A）" },
+      { label: "変換プラグ", value: "形状を変えるだけ。電圧は変えない" },
+      { label: "100-240V機器", value: "スマホ/PC充電器などは変換プラグのみでOK" },
+      { label: "100V専用機器", value: "ドライヤー等は変圧器か現地対応品が必要" },
+    ],
+    steps: [
+      { title: "対応電圧を確認", description: "各機器のINPUT表示（100-240Vか等）を確認します。" },
+      { title: "変換プラグを用意", description: "Type I対応の変換プラグを必要数用意します。" },
+      { title: "100V専用を判断", description: "100V専用機器は変圧器か現地購入を検討します。" },
+      { title: "現地調達も検討", description: "ドライヤー等は現地の230V対応品が現実的です。" },
+    ],
+    tips: [
+      "スマホ・PCの充電器はほぼ100-240V対応。変換プラグだけでそのまま使えます。",
+      "ドライヤー・ヘアアイロンは現地の230V対応品を買うのが手軽で安全です。",
+    ],
+    faqs: [
+      {
+        question: "変換プラグと変圧器は違うのですか？",
+        answer:
+          "はい。変換プラグはプラグの形状を合わせるだけで電圧は変えません。変圧器は電圧そのものを変換します。100-240V対応機器なら変換プラグのみ、100V専用機器は変圧器か現地対応品が必要です。",
+      },
+      {
+        question: "日本のヘアドライヤーは使えますか？",
+        answer:
+          "100V専用のものを230Vにそのままつなぐと故障・発火の恐れがあります。変圧器が必要ですが大型・高価になりがちなので、現地で230V対応品を買うのが手軽です。",
+      },
+    ],
+    sources: [
+      { label: "Australian Government｜Living in Australia", url: "https://www.australia.gov.au/" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Australian Government｜About Australia (electricity)",
+        url: "https://www.australia.gov.au/",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["機器ごとの対応電圧は製品で異なります。使用前に各機器のINPUT表示を必ず確認してください。"],
+    relatedSlugs: ["packing-list", "baggage-packing-strategy", "sim-guide", "preparation-checklist"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a96",
+    title: "ファームワークの持ち物ガイド｜作業着・靴・日焼け対策",
+    slug: "farm-work-packing",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P0",
+    searchIntent: "ファーム 持ち物 作業着 靴 日焼け 準備",
+    description:
+      "セカンドビザに向けたファームワークの持ち物を解説。作業着・安全靴・日焼け/虫よけ対策など、現地で必要になる装備と、日本から持参すべきものをまとめました。",
+    content: [
+      "ファームワーク（農作業）は、セカンド/サードビザの条件となる『特定の仕事』の代表格で、屋外での肉体労働が中心です。そのため、街での生活とは違った装備が必要になります。日本から持っていくべきものと、現地で買ったほうがよいものを分けて準備すると、荷物を無駄に増やさずに済みます（→ 荷造り戦略の記事参照）。",
+      "特に重要なのが『日焼け・暑さ対策』です。オーストラリアの紫外線は非常に強く、屋外作業では日焼け止め（高SPF）、つばの広い帽子、サングラス、長袖・長ズボンでの肌の保護が欠かせません。加えて、水分補給用の大きめの水筒、汗をかくため替えの衣類も必要です。夏場のファームは高温になるため、熱中症対策を軽視しないことが安全につながります。",
+      "服装・装備では、①動きやすく汚れてよい作業着（長袖・長ズボン）、②丈夫な靴（現場によっては安全靴＝スティールキャップブーツが必須）、③軍手・作業用手袋、④虫よけ、⑤雨具、が基本です。安全靴は現場の指定がある場合があり、現地の作業用品店（Bunnings等）で買えますが、サイズが合うものを日本で用意しておく人もいます。作業内容(収穫・パッキング等)によって必要な装備が変わるため、就労先の指示も確認します。",
+      "実務的には、①日焼け止め・帽子・サングラスなど紫外線対策を最優先で用意、②作業着・手袋・丈夫な靴を準備（安全靴の要否は就労先に確認）、③水筒・虫よけ・雨具を用意、④重くかさばるものや現地で安いものは現地調達、という流れです。宿（ワーカーズホステル等）や移動手段、給与・労働条件（→ ファーム関連の記事参照）も事前に調べておくと安心です。",
+      "必要な装備は作業内容・地域・季節・就労先によって異なります。渡航前・就労前に就労先やファームの指示、現地の安全基準を確認してください。この記事は一般的な目安です。",
+    ],
+    keyFacts: [
+      { label: "紫外線対策", value: "高SPF日焼け止め・帽子・サングラス・長袖長ズボン" },
+      { label: "作業着", value: "汚れてよい動きやすい長袖・長ズボン" },
+      { label: "靴", value: "丈夫な靴。現場により安全靴が必須" },
+      { label: "小物", value: "軍手・虫よけ・雨具・大きめの水筒" },
+      { label: "調達", value: "重い/かさばる/現地で安い物は現地調達" },
+    ],
+    steps: [
+      { title: "紫外線対策を用意", description: "日焼け止め・帽子・サングラスを最優先で準備します。" },
+      { title: "作業着・靴を準備", description: "作業着・手袋・丈夫な靴を用意します（安全靴要否を確認）。" },
+      { title: "小物を準備", description: "水筒・虫よけ・雨具を揃えます。" },
+      { title: "現地調達を判断", description: "重い/安い物は現地で購入します。" },
+    ],
+    tips: [
+      "オーストラリアの紫外線は非常に強力。日焼け・熱中症対策を最優先で。",
+      "安全靴が必須の現場もあります。就労先に指定を確認しましょう。",
+    ],
+    faqs: [
+      {
+        question: "作業着は日本で買うべきですか？",
+        answer:
+          "動きやすく汚れてよい服なら日本のもので十分です。ただし安全靴など指定装備は就労先に確認を。重くかさばるものや現地で安いものは現地調達が効率的です。",
+      },
+      {
+        question: "日焼け対策はどれくらい必要ですか？",
+        answer:
+          "オーストラリアの紫外線は日本より格段に強いです。高SPFの日焼け止め、帽子、サングラス、長袖・長ズボンでしっかり肌を守り、こまめな水分補給で熱中症も防ぎましょう。",
+      },
+    ],
+    sources: [
+      { label: "Home Affairs｜Specified work", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Specified work (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["必要な装備は作業内容・地域・季節・就労先で異なります。就労前に就労先・現地の安全基準を確認してください。"],
+    relatedSlugs: ["packing-list", "baggage-packing-strategy", "specified-work-industries", "second-visa-guide"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
+  {
+    id: "a97",
+    title: "オーストラリアへ荷物を送る方法｜国際郵便・EMS・別送品",
+    slug: "send-luggage-to-australia",
+    category: "preparation",
+    hub: "preparation",
+    priority: "P2",
+    searchIntent: "オーストラリア 荷物 送る 国際郵便 EMS 別送品",
+    description:
+      "オーストラリアへ荷物を送る方法（国際郵便・EMS・別送品）を比較。費用・日数・検疫の注意点と、持参と郵送の使い分けをまとめました。",
+    content: [
+      "スーツケースに入りきらない荷物は、オーストラリアへ郵送する方法があります。主な手段は、①国際郵便（EMS・国際小包・SAL/船便など）、②国際宅配便（クーリエ）、です。費用・日数・重量制限・追跡の有無が異なるため、送るものの量・急ぎ度・予算に合わせて選びます。急ぎで確実に送りたいならEMS/クーリエ、時間に余裕があり安く送りたいなら船便、という使い分けが基本です。",
+      "費用と日数の目安として、EMSは比較的速く（数日〜）追跡もありますが料金は高め、船便は安価な一方で到着まで数週間〜かかることがあります。重量・サイズの上限や、送れないもの（危険物・液体・食品など）は郵便サービスごとに決まっているため、日本郵便等の公式案内で確認します。到着後の受け取り先（現地の滞在先住所）が必要になるので、送るタイミングは現地の住居が決まってからが安心です。",
+      "検疫（バイオセキュリティ）の注意も重要です。オーストラリアへ郵送する荷物も、入国時の手荷物と同様に厳しい検疫の対象です。食品・植物・種子・木製品・動物製品などは、郵送でも制限・禁止されていることが多く、内容によっては検査・処分・返送の対象になります。送る中身は、検疫に引っかからないもの（衣類・書籍・日用品など）に絞るのが安全です（→ 税関・検疫の記事参照）。",
+      "実務的には、①持参と郵送を仕分け（貴重品・すぐ使う物は持参、重い/かさばる物は郵送を検討）、②急ぎ度と予算でEMS/船便を選択、③検疫対象になりうるものは送らない、④現地の受け取り住所が決まってから発送、⑤追跡番号を控える、という流れです。到着直後に必要なものは手荷物・預け荷物で持参し、後から使うものを郵送すると、到着直後の負担を減らせます。",
+      "国際郵便の料金・日数・送れる品目や検疫ルールは変更されることがあります。発送前に日本郵便（または利用する配送業者）とオーストラリアの検疫（DAFF）の公式案内で確認してください。この記事は一般的な整理です。",
+    ],
+    keyFacts: [
+      { label: "主な手段", value: "国際郵便（EMS/船便等）・国際宅配便" },
+      { label: "EMS", value: "速く追跡ありだが料金は高め" },
+      { label: "船便", value: "安価だが到着まで数週間〜" },
+      { label: "検疫", value: "郵送も厳格な検疫対象。食品・植物・種等は制限" },
+      { label: "受け取り", value: "現地の住居が決まってから発送" },
+    ],
+    steps: [
+      { title: "持参と郵送を仕分け", description: "すぐ使う物は持参、重い/かさばる物は郵送を検討します。" },
+      { title: "手段を選ぶ", description: "急ぎ度と予算でEMS/船便等を選びます。" },
+      { title: "中身を確認", description: "検疫対象になりうるものは送りません。" },
+      { title: "住所確定後に発送", description: "現地の受け取り住所が決まってから発送し追跡を控えます。" },
+    ],
+    tips: [
+      "到着直後に必要な物は持参、後から使う物を郵送すると到着直後が楽です。",
+      "食品・植物・種などは郵送でも検疫対象。中身は衣類・日用品などに絞りましょう。",
+    ],
+    faqs: [
+      {
+        question: "郵送と持参どちらがいいですか？",
+        answer:
+          "貴重品やすぐ使う物は持参、重くかさばる物や後から使う物は郵送を検討するとバランスが取れます。郵送は費用・日数・検疫を踏まえて手段を選びましょう。",
+      },
+      {
+        question: "食品を郵送で送れますか？",
+        answer:
+          "オーストラリアは郵送物も厳しい検疫対象です。食品・植物・種などは制限・禁止が多く、検査・処分・返送になることがあります。送る中身は検疫に引っかからないものに絞りましょう。",
+      },
+    ],
+    sources: [
+      { label: "日本郵便｜国際郵便", url: "https://www.post.japanpost.jp/int/index.html" },
+      { label: "DAFF｜Mailing goods to Australia", url: "https://www.agriculture.gov.au/biosecurity-trade/travelling/bringing-mailing-goods" },
+    ],
+    verifiedAt: "2026-07-17",
+    officialSources: [
+      {
+        label: "日本郵便｜国際郵便（EMS・国際小包）",
+        url: "https://www.post.japanpost.jp/int/index.html",
+        accessedAt: "2026-07-17",
+      },
+      {
+        label: "Department of Agriculture, Fisheries and Forestry｜Mailing goods to Australia",
+        url: "https://www.agriculture.gov.au/biosecurity-trade/travelling/bringing-mailing-goods",
+        accessedAt: "2026-07-17",
+      },
+    ],
+    warnings: ["国際郵便の料金・日数・品目や検疫ルールは変更されます。発送前に日本郵便・DAFFの公式案内で確認してください。"],
+    relatedSlugs: ["baggage-packing-strategy", "australia-customs-quarantine", "packing-list", "mail-forwarding-and-address"],
+    updatedAt: "2026-07-17",
+    published: true,
+  },
 ];
 
 

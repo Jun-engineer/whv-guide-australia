@@ -1,7 +1,7 @@
 # SOURCE_VERIFICATION_REPORT
 
 生成日: 2026-07-16
-照合日（verifiedAt）: 2026-07-16
+照合日（verifiedAt）: 2026-07-16（バッチ2/3 追記: 2026-07-17）
 
 本サイクルで公開・強化した YMYL 記事について、タイトルの主要な問いに関わる数値・料金・
 要件・期限・規則を、公式一次情報に照合した記録です。各記事は画面上に「✅ 公式情報と照合した
@@ -60,6 +60,60 @@
 | `second-visa-guide` | Second WHV + Third WHV ページ |
 | `visa-options` | 全ビザ一覧 + WHV ページ |
 | `tax-return-guide` | ATO WHM税率 + ATO 確定申告ページ |
+
+### バッチ2: visa ハブ（16件、すべて verifiedAt: 2026-07-17）
+
+各記事は immi.homeaffairs.gov.au（Work and Holiday / Working Holiday 417）を主要出典とし、
+タイトルの問いに関わる要件・料金・期限・条件を公式一次情報に照合。確定公式値は本文/keyFacts に、
+可変・個別事項は「目安」「州・状況で異なる」と明示し `warnings` を付与。
+
+| slug | 照合した主要公式値・要件 | 主な出典（accessedAt 2026-07-17） |
+| --- | --- | --- |
+| `working-holiday-eligibility` | 年齢18–30歳（一部国35歳）、扶養児童なし、国外から申請、初回12か月滞在 | immi WHV 417 |
+| `visa-417-vs-462` | 417（Working Holiday）と462（Work and Holiday）の対象国・要件の違い | immi 417 / 462 |
+| `visa-cost-processing-time` | First 417 申請料 AUD 840、処理時間は変動・書面許可まで渡航予約しない | immi WHV 417 |
+| `visa-proof-of-funds` | 十分な資金の証明（英文残高証明）、金額目安は公式ガイド参照 | immi WHV 417 |
+| `visa-health-examination` | HAP ID・指定医療機関での健診が求められる場合の流れ | immi Health examinations |
+| `visa-police-certificate` | Character要件・犯罪経歴証明の取得ルート | immi Character requirements |
+| `visa-after-passport-renewal` | 新旧パスポート情報の更新（Form 929等）・VEVOで確認 | immi Update details |
+| `visa-grant-letter` | Grant Notification の主要項目（入国期限・条件・保存） | immi WHV 417 |
+| `visa-first-entry-deadline` | First Entry Date までに初回入国、滞在開始日との違い | immi WHV 417 |
+| `visa-six-month-work-limitation` | Condition 8547（同一雇用主6か月制限）と例外・許可申請 | immi Visa conditions 8547 |
+| `visa-study-limit` | 就学は最大4か月まで | immi WHV 417 |
+| `visa-travel-reentry` | ビザ有効期間内は複数回出入国可、期限・パスポート確認 | immi WHV 417 |
+| `bridging-visa-basics` | ブリッジングビザの役割・渡航制限の一般説明 | immi Bridging visas |
+| `visa-refusal-cancellation` | 虚偽申告・条件違反による却下/取消しの回避 | immi WHV 417 |
+| `vevo-check` | VEVOでの就労権・ビザ条件の確認・雇用主への共有 | immi VEVO |
+| `registered-migration-agent` | 登録移民エージェント（OMARA登録）の確認方法 | OMARA / immi |
+
+### バッチ3: preparation ハブ（20件、すべて verifiedAt: 2026-07-17）
+
+渡航前準備。日本側手続きは日本の公式機関（外務省・国税庁・日本年金機構・日本郵便・警察庁）、
+豪州側の持込・検疫・電圧等は豪州公式（ABF・DAFF・TGA・health.gov.au）を出典に照合。
+可変・個別事項（費用・州別ルール・個人の健康/税務）は断定せず `warnings` で公式確認を促す。
+
+| slug | 照合した主要公式値・要件 | 主な出典（accessedAt 2026-07-17） |
+| --- | --- | --- |
+| `passport-validity-renewal` | パスポート申請・更新の手続き | 外務省 パスポート |
+| `japan-moving-out-procedures` | 海外転出届・国保脱退・国民年金の任意加入 | 日本年金機構 / 総務省 |
+| `japan-tax-residency-before-departure` | 住民税・納税管理人の届出・非居住者課税 | 国税庁 |
+| `international-driving-permit` | IDP（1949ジュネーブ条約）・免許証原本と携帯・州別ルール | 警察庁 / Transport for NSW |
+| `naati-licence-translation` | NAATI認定翻訳の位置づけと州別の扱い | NAATI / Transport for NSW |
+| `pre-departure-health-check` | 歯科はMedicare対象外・渡航前健診 | Services Australia Medicare |
+| `medication-customs` | 個人使用の量（目安3か月分）・入国カードで申告・成分規制 | TGA / ABF |
+| `vaccinations-before-australia` | 特定ワクチンの一律義務なし・黄熱等は渡航歴次第 | Dept of Health |
+| `flight-booking-guide` | 片道/往復と入国要件・十分な資金の証明 | immi WHV 417 |
+| `arrival-airport-guide` | 主要到着空港と都市選択の考え方 | Australian Government |
+| `temporary-accommodation-before-arrival` | 到着直後の短期滞在先・入国審査で滞在先を確認 | Australian Government |
+| `cards-and-cash-before-departure` | AUD 10,000相当以上の現金は税関申告 | ABF Travelling with money |
+| `keep-japanese-phone-number` | 番号保管/休止・SMS認証対策 | 総務省 |
+| `mail-forwarding-and-address` | 郵便の転居・転送サービス | 日本郵便 |
+| `document-backup` | 重要書類の分散管理・パスポート紛失時は在外公館 | 外務省 海外安全 |
+| `australia-customs-quarantine` | バイオセキュリティ・Incoming Passenger Card 申告・食品/植物/動物製品規制 | ABF / DAFF |
+| `baggage-packing-strategy` | 受託/機内持込の分け方・航空会社規定 | ABF Entering Australia |
+| `power-plug-voltage` | 230V・50Hz・Type I、100-240V対応機器の判定 | Australian Government |
+| `farm-work-packing` | 特定就労の装備・強い紫外線対策・安全靴の要否 | immi Specified work |
+| `send-luggage-to-australia` | 国際郵便/EMS/船便・郵送物も検疫対象 | 日本郵便 / DAFF |
 
 ## 3. 未解決・要注意の記述（限定事項）
 
