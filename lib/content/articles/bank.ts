@@ -39,7 +39,7 @@ export const bankArticles: Article[] = [
     sources: [
       { label: "Commonwealth Bank（移住者向け口座）", url: "https://www.commbank.com.au/banking/moving-to-australia.html" },
     ],
-    relatedSlugs: ["money-transfer-wise", "tfn-guide", "arrival-checklist"],
+    relatedSlugs: ["money-transfer-wise", "tfn-guide", "arrival-checklist", "proof-of-address", "bank-scam-security"],
     updatedAt: "2026-06-10",
     published: true,
   },

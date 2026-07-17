@@ -1,6 +1,6 @@
 # BULK_PUBLISH_REMAINING
 
-生成日: 2026-07-16（更新: 2026-07-17）
+生成日: 2026-07-16（更新: 2026-07-18）
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
@@ -21,14 +21,14 @@
 
 **次のコンテンツバッチ: arrival（到着後セットアップ）ハブ 10 件**（下記「ハブ別の残タスク一覧」参照）。
 
-## 進捗（2026-07-17 時点）
+## 進捗（2026-07-18 時点）
 
 325件の計画記事を、ハブ単位のバッチで公式照合しながら順次公開しています。
 
-- **公開済み合計: 43 件**（残り 282 件）
-- **現在のカテゴリ: visa（完了）・preparation（完了）**
-- **次のカテゴリ: arrival（未着手）**
-- **最終検証: `validate:content` 0 error / 66 warning（cannibalization の想定内警告のみ）、`tsc --noEmit` クリーン、`eslint` クリーン、`test:content` 5/5 pass、`next build` 成功（151静的ページ）**
+- **公開済み合計: 63 件**（残り 262 件）
+- **現在のカテゴリ: visa（完了）・preparation（完了）・arrival（完了）・money（完了）**
+- **次のカテゴリ: tax（未着手）**
+- **最終検証: `validate:content` 0 error / 66 warning（cannibalization の想定内警告のみ）、`tsc --noEmit` クリーン、`eslint` クリーン、`test:content` 5/5 pass、`next build` 成功（171静的ページ）**
 
 ### 完了済み slug（バッチ1: start-here ハブ / commit 78a5e61）
 
@@ -82,6 +82,32 @@
 - `farm-work-packing`
 - `send-luggage-to-australia`
 
+### 完了済み slug（バッチ4: arrival ハブ / 10件）
+
+- `australia-airport-arrival-flow`
+- `airport-to-city`
+- `mygov-account-guide`
+- `digital-id-guide`
+- `proof-of-address`
+- `address-change-checklist`
+- `australian-id-points`
+- `essential-australia-apps`
+- `consular-registration`
+- `first-week-shopping`
+
+### 完了済み slug（バッチ5: money ハブ / 10件）
+
+- `australia-living-cost`
+- `weekly-budget-template`
+- `debit-credit-cards`
+- `australia-atm-fees`
+- `wise-vs-bank-transfer`
+- `send-money-to-japan`
+- `joint-account-couples`
+- `emergency-fund`
+- `bank-scam-security`
+- `close-bank-account-before-leaving`
+
 ### 統合（merged）済み slug（→ 統合先）
 
 - `sim-esim-guide` → `sim-guide`
@@ -93,44 +119,18 @@
 
 ### 未完了（部分作成中）の slug
 
-- なし（作業中の記事・カテゴリはありません。start-here / visa / preparation は完全に公開済み）
+- なし（作業中の記事・カテゴリはありません。start-here / visa / preparation / arrival / money は完全に公開済み）
 
 ## 未公開の理由（残り全項目共通）
 
 各記事は YMYL（お金・ビザ・税・健康・法）領域を含み、**タイトルの問いに答える主要な数値・料金・要件・期限・法規則を、記事単位で最新の公式一次情報に照合して確認する作業**が必要です。この照合はコンテンツ1件ずつ公式サイト（immi.homeaffairs.gov.au / ato.gov.au / fairwork.gov.au / servicesaustralia.gov.au / 各州政府等）にあたる必要があり、一度に全件を責任を持って完了できません。マスタープランの方針「maximum valid publication, not forced publication」「検証不能なコンテンツは review のままにする」に従い、未照合のものは公開せず計画（planned）状態で保持します。
 
-- 残り合計: 282 件（status: planned）
+- 残り合計: 262 件（status: planned）
 - 公開条件: 記事単位の公式一次情報照合 + verifiedAt 付与 + 内部リンク整備 + 品質チェック通過
 
 ## ハブ別の残タスク一覧
 
-### arrival — 到着後セットアップ (10件) ← 次のカテゴリ
-
-- `australia-airport-arrival-flow` — オーストラリア入国審査から税関通過までの流れ _(優先度 P0、意図: how-to)_
-- `airport-to-city` — 主要空港から市内への移動方法と料金の考え方 _(優先度 P1、意図: comparison)_
-- `mygov-account-guide` — myGovアカウントの作成方法と使える行政サービス _(優先度 P0、意図: how-to)_
-- `digital-id-guide` — myID（Digital ID）の作成・本人確認レベルの上げ方 _(優先度 P1、意図: how-to)_
-- `proof-of-address` — オーストラリアで住所証明を作る方法｜銀行明細・契約書・公的郵便 _(優先度 P0、意図: problem-solving)_
-- `address-change-checklist` — 引っ越したときの住所変更先一覧｜ATO・銀行・免許・保険 _(優先度 P1、意図: checklist)_
-- `australian-id-points` — 100ポイントIDチェックとは？本人確認書類の揃え方 _(優先度 P1、意図: guide)_
-- `essential-australia-apps` — ワーホリ生活で入れておきたいアプリ一覧 _(優先度 P1、意図: list)_
-- `consular-registration` — 在留届・たびレジ・日本領事館の使い方 _(優先度 P1、意図: how-to)_
-- `first-week-shopping` — 到着初日に買うもの｜寝具・日用品・食品の買い物リスト _(優先度 P2、意図: checklist)_
-
-### money — お金・銀行・送金 (10件)
-
-- `australia-living-cost` — オーストラリアの生活費はいくら？家賃・食費・交通費の目安 _(優先度 P0、意図: cost)_
-- `weekly-budget-template` — ワーホリ向け週間予算テンプレート｜収入と支出の管理方法 _(優先度 P1、意図: template)_
-- `debit-credit-cards` — デビットカードとクレジットカードの使い分け _(優先度 P1、意図: finance)_
-- `australia-atm-fees` — ATM手数料を抑える方法と現金が必要な場面 _(優先度 P2、意図: finance)_
-- `wise-vs-bank-transfer` — Wiseと銀行海外送金の比較｜手数料・レート・着金時間 _(優先度 P1、意図: comparison)_
-- `send-money-to-japan` — オーストラリアから日本へ送金する方法 _(優先度 P1、意図: how-to)_
-- `joint-account-couples` — カップルの共同口座・生活費管理の考え方 _(優先度 P2、意図: guide)_
-- `emergency-fund` — ワーホリの緊急予備費はいくら必要？失業・病気・車故障への備え _(優先度 P1、意図: finance)_
-- `bank-scam-security` — 銀行・送金・Marketplace詐欺からお金を守る方法 _(優先度 P0、意図: security)_
-- `close-bank-account-before-leaving` — 帰国前に銀行口座を閉じる？残す？判断と手続き _(優先度 P1、意図: decision)_
-
-### tax — 税金・ABN・Super (17件)
+### tax — 税金・ABN・Super (17件) ← 次のカテゴリ
 
 - `tax-residency-australia` — ワーホリはオーストラリアの税務上の居住者？判定の考え方 _(優先度 P1、意図: tax)_
 - `tfn-declaration-form` — TFN Declarationの書き方｜入社時に迷いやすい項目 _(優先度 P0、意図: how-to)_

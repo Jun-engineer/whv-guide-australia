@@ -1,7 +1,7 @@
 # SOURCE_VERIFICATION_REPORT
 
 生成日: 2026-07-16
-照合日（verifiedAt）: 2026-07-16（バッチ2/3 追記: 2026-07-17）
+照合日（verifiedAt）: 2026-07-16（バッチ2/3 追記: 2026-07-17、バッチ4/5 追記: 2026-07-18）
 
 本サイクルで公開・強化した YMYL 記事について、タイトルの主要な問いに関わる数値・料金・
 要件・期限・規則を、公式一次情報に照合した記録です。各記事は画面上に「✅ 公式情報と照合した
@@ -114,6 +114,43 @@
 | `power-plug-voltage` | 230V・50Hz・Type I、100-240V対応機器の判定 | Australian Government |
 | `farm-work-packing` | 特定就労の装備・強い紫外線対策・安全靴の要否 | immi Specified work |
 | `send-luggage-to-australia` | 国際郵便/EMS/船便・郵送物も検疫対象 | 日本郵便 / DAFF |
+
+### バッチ4: arrival ハブ（10件、すべて verifiedAt: 2026-07-18）
+
+到着後セットアップ。入国・行政手続は豪州公式（ABF SmartGate・Services Australia myGov・ATO myID）と
+日本公式（外務省：在留届・たびレジ）を出典に照合。本人確認（100ポイント）は州/機関で基準が
+異なるため、代表例を示しつつ `warnings` で各機関の公式確認を促す。
+
+| slug | 照合した主要公式値・要件 | 主な出典（accessedAt 2026-07-18） |
+| --- | --- | --- |
+| `australia-airport-arrival-flow` | SmartGate（顔認証+ePassport・日本対象・16歳以上）・Incoming Passenger Card 申告 | ABF SmartGate / DAFF |
+| `airport-to-city` | 主要空港→市内の移動手段と料金の考え方（値段は可変のため断定せず） | 各空港・州交通当局 |
+| `mygov-account-guide` | myGov アカウント作成・連携可能な行政サービス（ATO/Medicare/Centrelink） | Services Australia myGov |
+| `digital-id-guide` | myID の識別レベル（Basic/Standard/Strong）・Standard=豪州書類2点で検証・15歳以上 | ATO / myID |
+| `proof-of-address` | 住所証明に使える書類（銀行明細・賃貸契約・公的郵便） | 銀行・各発行元 |
+| `address-change-checklist` | 住所変更先（ATO・銀行・免許・保険等） | ATO / 州交通当局 |
+| `australian-id-points` | 100ポイントIDチェックの考え方（主要/副書類の配点は機関で違い得る） | 豪州政府 / 各機関 |
+| `essential-australia-apps` | 生活に役立つ公式/主要アプリの用途整理 | 各公式アプリ |
+| `consular-registration` | 在留届（3か月以上=旅券法16条義務・ORRnet）・たびレジ（短期） | 外務省 ORRnet/たびレジ |
+| `first-week-shopping` | 到着直後の寝具・日用品・食品の買い物リスト（一般情報） | 一般・各小売 |
+
+### バッチ5: money ハブ（10件、すべて verifiedAt: 2026-07-18）
+
+お金・銀行・送金。可変な料金・レート・値段は断定せず目安として提示し、公的な数値（最低賃金・
+現金申告額・詐欺通報窓口）は公式一次情報に照合。`warnings` で手数料・レートの最新確認を促す。
+
+| slug | 照合した主要公式値・要件 | 主な出典（accessedAt 2026-07-18） |
+| --- | --- | --- |
+| `australia-living-cost` | 生活費の目安（家賃・食費・交通）・最低賃金 $26.44/h・$1,004.90/週（2026-07-01） | Fair Work National Minimum Wage |
+| `weekly-budget-template` | 週単位の収支管理テンプレート（可変値は目安） | 一般 / Fair Work |
+| `debit-credit-cards` | デビット/クレジットの使い分け・手数料構造 | 各銀行 / ASIC Moneysmart |
+| `australia-atm-fees` | ATM手数料の仕組みと回避方法（額は可変） | 各銀行 / ASIC Moneysmart |
+| `wise-vs-bank-transfer` | Wiseと銀行送金の手数料/レート/着金時間の比較視点（値は可変） | Wise / 各銀行 |
+| `send-money-to-japan` | AUD→JPY 送金の方法と確認点（帰国前想定） | 送金事業者各社 |
+| `joint-account-couples` | カップルの共同口座・生活費管理の考え方 | ASIC Moneysmart |
+| `emergency-fund` | 緊急予備費の目安と備え方（個別額は断定せず） | ASIC Moneysmart |
+| `bank-scam-security` | 詐欺通報（Scamwatch）・即時危険000・銀行へ送金停止依頼・IDCARE・ReportCyber | Scamwatch / ReportCyber / IDCARE |
+| `close-bank-account-before-leaving` | 帰国前の口座閉鎖/保持の判断（Super/税還付の着金口座に注意） | ASIC Moneysmart / ATO |
 
 ## 3. 未解決・要注意の記述（限定事項）
 

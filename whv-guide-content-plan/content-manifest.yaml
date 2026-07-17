@@ -944,7 +944,7 @@ planned_content:
 - slug: australia-airport-arrival-flow
   title: オーストラリア入国審査から税関通過までの流れ
   hub: arrival
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -954,7 +954,7 @@ planned_content:
 - slug: airport-to-city
   title: 主要空港から市内への移動方法と料金の考え方
   hub: arrival
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: comparison
@@ -986,7 +986,7 @@ planned_content:
 - slug: mygov-account-guide
   title: myGovアカウントの作成方法と使える行政サービス
   hub: arrival
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -996,7 +996,7 @@ planned_content:
 - slug: digital-id-guide
   title: myID（Digital ID）の作成・本人確認レベルの上げ方
   hub: arrival
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -1006,7 +1006,7 @@ planned_content:
 - slug: proof-of-address
   title: オーストラリアで住所証明を作る方法｜銀行明細・契約書・公的郵便
   hub: arrival
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: problem-solving
@@ -1016,7 +1016,7 @@ planned_content:
 - slug: address-change-checklist
   title: 引っ越したときの住所変更先一覧｜ATO・銀行・免許・保険
   hub: arrival
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: checklist
@@ -1026,7 +1026,7 @@ planned_content:
 - slug: australian-id-points
   title: 100ポイントIDチェックとは？本人確認書類の揃え方
   hub: arrival
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: guide
@@ -1036,7 +1036,7 @@ planned_content:
 - slug: essential-australia-apps
   title: ワーホリ生活で入れておきたいアプリ一覧
   hub: arrival
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: list
@@ -1046,7 +1046,7 @@ planned_content:
 - slug: consular-registration
   title: 在留届・たびレジ・日本領事館の使い方
   hub: arrival
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -1056,7 +1056,7 @@ planned_content:
 - slug: first-week-shopping
   title: 到着初日に買うもの｜寝具・日用品・食品の買い物リスト
   hub: arrival
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: checklist
@@ -1066,7 +1066,7 @@ planned_content:
 - slug: australia-living-cost
   title: オーストラリアの生活費はいくら？家賃・食費・交通費の目安
   hub: money
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: cost
@@ -1076,7 +1076,7 @@ planned_content:
 - slug: weekly-budget-template
   title: ワーホリ向け週間予算テンプレート｜収入と支出の管理方法
   hub: money
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: template
@@ -1086,7 +1086,7 @@ planned_content:
 - slug: debit-credit-cards
   title: デビットカードとクレジットカードの使い分け
   hub: money
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: finance
@@ -1096,7 +1096,7 @@ planned_content:
 - slug: australia-atm-fees
   title: ATM手数料を抑える方法と現金が必要な場面
   hub: money
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: finance
@@ -1106,7 +1106,7 @@ planned_content:
 - slug: wise-vs-bank-transfer
   title: Wiseと銀行海外送金の比較｜手数料・レート・着金時間
   hub: money
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: comparison
@@ -1116,7 +1116,7 @@ planned_content:
 - slug: send-money-to-japan
   title: オーストラリアから日本へ送金する方法
   hub: money
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -1126,7 +1126,7 @@ planned_content:
 - slug: joint-account-couples
   title: カップルの共同口座・生活費管理の考え方
   hub: money
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: guide
@@ -1136,7 +1136,7 @@ planned_content:
 - slug: emergency-fund
   title: ワーホリの緊急予備費はいくら必要？失業・病気・車故障への備え
   hub: money
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: finance
@@ -1146,7 +1146,7 @@ planned_content:
 - slug: bank-scam-security
   title: 銀行・送金・Marketplace詐欺からお金を守る方法
   hub: money
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: security
@@ -1156,7 +1156,7 @@ planned_content:
 - slug: close-bank-account-before-leaving
   title: 帰国前に銀行口座を閉じる？残す？判断と手続き
   hub: money
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: decision

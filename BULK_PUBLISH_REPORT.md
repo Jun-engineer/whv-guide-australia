@@ -80,6 +80,29 @@
   health.gov.au（予防接種）、外務省・国税庁・日本年金機構・日本郵便・警察庁・NAATI 等。
   詳細は `SOURCE_VERIFICATION_REPORT.md` の「バッチ2/3」。
 
+### 追加バッチ 4/5: arrival + money（2026-07-18、20件）
+
+`arrival` ハブ10件と `money` ハブ10件を、記事単位で公式一次情報に照合して新規公開。
+すべて `verifiedAt: 2026-07-18`、`officialSources`（`accessedAt: 2026-07-18`）付き、
+冒頭でタイトルの問いに回答、`keyFacts`/`steps`/`tips`/`warnings`/`faqs`/`sources`/`relatedSlugs` を完備。
+
+- **arrival（10件）:** `australia-airport-arrival-flow`, `airport-to-city`, `mygov-account-guide`,
+  `digital-id-guide`, `proof-of-address`, `address-change-checklist`, `australian-id-points`,
+  `essential-australia-apps`, `consular-registration`, `first-week-shopping`
+- **money（10件）:** `australia-living-cost`, `weekly-budget-template`, `debit-credit-cards`,
+  `australia-atm-fees`, `wise-vs-bank-transfer`, `send-money-to-japan`, `joint-account-couples`,
+  `emergency-fund`, `bank-scam-security`, `close-bank-account-before-leaving`
+- **統合/リダイレクト:** このバッチでは新規の全面重複がなく、統合・リダイレクトは発生せず。
+  `wise-vs-bank-transfer`（比較意図）は既存 `money-transfer-wise`（Wise 送金の手順）と
+  意図が異なるため統合せず相互リンクで接続。`content-manifest.yaml` の該当20件を
+  `status: planned` → `status: published` に更新。既存記事（`arrival-checklist`,
+  `first-30-days-roadmap`, `opening-hours-holidays`, `money-transfer-wise`, `bank-account-guide`）に
+  新記事への内部リンクを追加し孤立を防止。
+- **照合出典:** ABF SmartGate、Services Australia（myGov）、ATO/myID（Digital ID）、
+  Fair Work（最低賃金 2026-07-01: $26.44/h・$1,004.90/週）、Home Affairs（WHV 417 費用 AUD 840）、
+  Scamwatch/ReportCyber/IDCARE（詐欺対策）、外務省（在留届・たびレジ）等。
+  詳細は `SOURCE_VERIFICATION_REPORT.md` の「バッチ4/5」。
+
 ## 2. 統合とリダイレクト
 
 計画（未公開）の重複トピック6件を既存公開記事へ統合し、308恒久リダイレクトを登録
@@ -115,15 +138,15 @@
 | 型チェック（`npx tsc --noEmit`） | エラー0 |
 | コンテンツテスト（`npm run test:content`, node:test） | 5/5 パス |
 | Lint（`npm run lint`） | エラー0 / 警告0 |
-| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（151静的ページ生成、バッチ2/3公開後） |
+| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（171静的ページ生成、バッチ4/5公開後） |
 
 警告66の大半は、粒度の粗い検索意図クラスタの共食い候補（過検出）と、コードに存在するが
 マニフェスト `existing_articles` 未登録である旨の情報提供です（`CONTENT_AUDIT.md` 参照）。
 
 ## 5. 非公開（review/planned のまま）
 
-- 残り **282件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
-  （start-here 7件 + visa 16件 + preparation 20件を公開済み。次バッチは arrival ハブ。）
+- 残り **262件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
+  （start-here 7件 + visa 16件 + preparation 20件 + arrival 10件 + money 10件を公開済み。次バッチは tax ハブ。）
 - 非公開コンテンツは公開一覧・サイトマップ・構造化データ・内部リンクに露出していません
   （`isPublishedArticle` により自動除外）。
 
