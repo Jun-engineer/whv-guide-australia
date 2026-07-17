@@ -19,18 +19,18 @@
 - 状態: `validate:content` 0 error / 66 warning、`tsc --noEmit` クリーン、`eslint`
   クリーン、`test:content` 5/5 pass、`next build` 成功（151静的ページ）— 移行前と同一
 
-**次のコンテンツバッチ: jobs（仕事探し・労働条件）ハブ 26 件**（下記「ハブ別の残タスク一覧」参照）。
+**次のコンテンツバッチ: farm（ファーム・Specified Work）ハブ 36 件**（下記「ハブ別の残タスク一覧」参照）。
 
 ## 進捗（2026-07-18 時点）
 
 325件の計画記事を、ハブ単位のバッチで公式照合しながら順次公開しています。
 
-- **公開済み合計: 80 件**（残り 245 件）
-- **現在のカテゴリ: visa（完了）・preparation（完了）・arrival（完了）・money（完了）・tax（完了）**
-- **次のカテゴリ: jobs（未着手・26件）**
-- **最終検証: `validate:articles` OK（ユニーク slug 134・重複 0）、`validate:content` 0 error / 66 warning（cannibalization の想定内警告のみ）、`tsc --noEmit` クリーン、`eslint` クリーン、`test:content` 5/5 pass、`next build` 成功**
-- **最終ビルド: `next build` 成功（tax バッチ 17 件を含む全 134 記事を prerender）**
-- **変更ファイル: `lib/content/articles/{tfn,super,abn,tax-return}.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`**
+- **公開済み合計: 115 件**（残り 210 件）
+- **現在のカテゴリ: visa（完了）・preparation（完了）・arrival（完了）・money（完了）・tax（完了）・jobs（完了）・qualifications（完了）**
+- **次のカテゴリ: farm（未着手・36件）**
+- **最終検証: `validate:articles` OK（ユニーク slug 169・重複 0）、`validate:content` 0 error / 66 warning（cannibalization の想定内警告のみ）、`tsc --noEmit` クリーン、`eslint` クリーン、`test:content` 5/5 pass、`next build` 成功**
+- **最終ビルド: `next build` 成功（jobs+qualifications バッチ 35 件を含む全 169 記事を prerender）**
+- **変更ファイル: `lib/content/articles/jobs.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`**
 
 ### 完了済み slug（バッチ1: start-here ハブ / commit 78a5e61）
 
@@ -132,6 +132,51 @@
 
 **tax バッチ 統合（merged）: なし。** 既存の公開記事（`tfn-guide` / `tax-return-guide` / `tax-return-howto` / `whm-tax-rates` / `abn-guide` / `super-guide` / `dasp-refund`）と 17 件はいずれも検索意図が明確に異なるため、統合せず個別公開し `relatedSlugs` で相互リンクしました（`abn-application`→`abn-guide`、`find-lost-super`→`super-guide`、`dasp-guide`→`dasp-refund` は過去バッチで統合済み）。
 
+### 完了済み slug（バッチ7: jobs + qualifications ハブ / 35件 / commit `feat: publish jobs-qualifications content batch`）
+
+jobs（26件）:
+
+- `job-search-websites`
+- `facebook-job-groups`
+- `walk-in-resume`
+- `cover-letter-guide`
+- `job-reference-guide`
+- `job-application-follow-up`
+- `employment-contract-checklist`
+- `employment-types`
+- `award-rates-penalty-rates`
+- `unpaid-trial-rules`
+- `underpayment-unpaid-wages`
+- `cash-in-hand-jobs`
+- `workplace-injury-workers-comp`
+- `workplace-bullying-harassment`
+- `resignation-notice`
+- `termination-final-pay`
+- `hospitality-jobs-guide`
+- `barista-job-guide`
+- `hotel-housekeeping-jobs`
+- `cleaning-jobs-guide`
+- `retail-jobs-guide`
+- `warehouse-jobs-guide`
+- `construction-jobs-guide`
+- `office-admin-jobs-guide`
+- `it-jobs-working-holiday`
+- `recruitment-agency-guide`
+
+qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
+
+- `rsa-state-guide`
+- `white-card-guide`
+- `food-safety-certificate`
+- `rcg-rsa-gaming`
+- `forklift-licence-guide`
+- `first-aid-cpr-guide`
+- `police-check-guide`
+- `working-with-children-check`
+- `barista-course-guide`
+
+**jobs+qualifications バッチ 統合（merged）: なし。** 既存の公開記事（`jobs-guide` / `resume-guide` / `interview-guide` / `certifications` / `working-rights`）はいずれも概要・総論であり、35 件は個別の職種ガイド・具体的な労働問題の手順・資格別の取得方法であって検索意図が明確に異なるため、統合せず個別公開し `relatedSlugs` で相互リンクしました。ファーム固有の就労記事は本バッチの対象外とし、支援リンク（`farm-*`）としてのみ参照しています。
+
 ### 統合（merged）済み slug（→ 統合先）
 
 - `sim-esim-guide` → `sim-guide`
@@ -154,48 +199,7 @@
 
 ## ハブ別の残タスク一覧
 
-### jobs — 仕事探し・労働条件 (26件) ← 次のカテゴリ
-
-- `job-search-websites` — SEEK・Indeed・Jora・Gumtreeの使い分け _(優先度 P0、意図: comparison)_
-- `facebook-job-groups` — Facebookで仕事を探す方法｜求人グループと怪しい投稿の見分け方 _(優先度 P1、意図: how-to)_
-- `walk-in-resume` — レジュメを直接配る方法｜時間帯・服装・英語フレーズ _(優先度 P0、意図: how-to)_
-- `cover-letter-guide` — 英文カバーレターの書き方｜職種別テンプレート _(優先度 P1、意図: template)_
-- `job-reference-guide` — Referenceの頼み方と書き方｜推薦者がいない場合 _(優先度 P1、意図: how-to)_
-- `job-application-follow-up` — 応募後のFollow-upメッセージ例文 _(優先度 P1、意図: template)_
-- `employment-contract-checklist` — 雇用契約書で確認する項目｜時給・雇用形態・勤務条件 _(優先度 P0、意図: checklist)_
-- `employment-types` — Casual・Part-time・Full-timeの違い _(優先度 P0、意図: comparison)_
-- `award-rates-penalty-rates` — Award RateとPenalty Rateの調べ方｜土日・祝日・夜間 _(優先度 P0、意図: legal)_
-- `unpaid-trial-rules` — 無給トライアルは合法？Fair Workの考え方 _(優先度 P0、意図: legal)_
-- `underpayment-unpaid-wages` — 給料未払い・最低賃金違反への対応手順 _(優先度 P0、意図: problem-solving)_
-- `cash-in-hand-jobs` — Cash in Handの仕事は違法？税金と労働リスク _(優先度 P0、意図: risk)_
-- `workplace-injury-workers-comp` — 仕事中に怪我をした場合｜報告・治療・Workers Compensation _(優先度 P0、意図: safety)_
-- `workplace-bullying-harassment` — 職場のいじめ・差別・ハラスメントへの対処 _(優先度 P1、意図: safety)_
-- `resignation-notice` — 仕事を辞める英語とNotice Period｜退職メッセージ例 _(優先度 P0、意図: template)_
-- `termination-final-pay` — 解雇されたときの確認事項｜Final Payと権利 _(優先度 P1、意図: legal)_
-- `hospitality-jobs-guide` — レストラン・カフェの仕事ガイド｜職種・英語・時給の見方 _(優先度 P1、意図: career)_
-- `barista-job-guide` — バリスタの仕事を取る方法｜必要スキルとトライアル _(優先度 P2、意図: career)_
-- `hotel-housekeeping-jobs` — ホテル・ハウスキーピングの仕事ガイド _(優先度 P1、意図: career)_
-- `cleaning-jobs-guide` — クリーニングの仕事ガイド｜住宅・ホテル・商業施設 _(優先度 P2、意図: career)_
-- `retail-jobs-guide` — リテール・販売の仕事ガイド｜接客英語と応募方法 _(優先度 P2、意図: career)_
-- `warehouse-jobs-guide` — 倉庫・ピッキング・フォークリフトの仕事ガイド _(優先度 P1、意図: career)_
-- `construction-jobs-guide` — 建設現場の仕事ガイド｜White Card・PPE・求人 _(優先度 P1、意図: career)_
-- `office-admin-jobs-guide` — オフィス・事務職を探す方法｜英語・PCスキル・派遣会社 _(優先度 P2、意図: career)_
-- `it-jobs-working-holiday` — ワーホリでIT職を探す方法｜英文職務経歴・LinkedIn・契約形態 _(優先度 P1、意図: career)_
-- `recruitment-agency-guide` — 人材紹介・派遣会社の使い方｜登録からシフトまで _(優先度 P1、意図: how-to)_
-
-### qualifications — 資格・ライセンス (9件)
-
-- `rsa-state-guide` — RSAは州ごとに違う｜取得方法・相互承認・更新 _(優先度 P0、意図: qualification)_
-- `white-card-guide` — White Cardの取得方法｜オンライン可否と州ごとの注意 _(優先度 P0、意図: qualification)_
-- `food-safety-certificate` — Food Safety Certificateは必要？飲食店の資格ガイド _(優先度 P2、意図: qualification)_
-- `rcg-rsa-gaming` — RCG/RSGとは？バー・クラブ・カジノで必要な資格 _(優先度 P2、意図: qualification)_
-- `forklift-licence-guide` — フォークリフト免許の取得方法と倉庫求人 _(優先度 P2、意図: qualification)_
-- `first-aid-cpr-guide` — First Aid・CPR資格の選び方と有効期限 _(優先度 P2、意図: qualification)_
-- `police-check-guide` — National Police Checkの取り方｜仕事応募で必要な場合 _(優先度 P1、意図: qualification)_
-- `working-with-children-check` — WWCC/Blue Cardなど子ども関連チェックの州別概要 _(優先度 P2、意図: qualification)_
-- `barista-course-guide` — バリスタコースは受けるべき？費用と選び方 _(優先度 P3、意図: qualification)_
-
-### farm — ファーム・Specified Work (36件)
+### farm — ファーム・Specified Work (36件) ← 次のカテゴリ
 
 - `farm-season-calendar` — オーストラリア農作物シーズンカレンダー｜州・月・作物別 _(優先度 P0、意図: database)_
 - `harvest-trail-guide` — Harvest Trailでファーム求人を探す方法 _(優先度 P0、意図: how-to)_

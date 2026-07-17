@@ -1,7 +1,7 @@
 # SOURCE_VERIFICATION_REPORT
 
 生成日: 2026-07-16
-照合日（verifiedAt）: 2026-07-16（バッチ2/3 追記: 2026-07-17、バッチ4/5 追記: 2026-07-18）
+照合日（verifiedAt）: 2026-07-16（バッチ2/3 追記: 2026-07-17、バッチ4/5/6/7 追記: 2026-07-18）
 
 本サイクルで公開・強化した YMYL 記事について、タイトルの主要な問いに関わる数値・料金・
 要件・期限・規則を、公式一次情報に照合した記録です。各記事は画面上に「✅ 公式情報と照合した
@@ -191,6 +191,42 @@ tpb.gov.au）を明示した。
 - 出典: ATO「TFN declaration」「How to get your income statement」「Link the ATO to
   your myGov account」「Deductions you can claim」「Your tax residency」、Fair Work
   「Pay slips」、Tax Practitioners Board「Register」
+
+### バッチ7（jobs・qualifications）で公開した記事の公式照合（2026-07-18）
+
+jobs ハブ26件・qualifications ハブ9件（計35件）を公開。各記事は `verifiedAt: 2026-07-18` を
+付与し、`officialSources` に以下の公式一次情報（fairwork.gov.au / safeworkaustralia.gov.au /
+各州WHS・酒類規制当局 / acic.gov.au / 各州子ども保護当局 / training.gov.au）を明示した。
+
+#### 労働条件・権利（fairwork.gov.au）
+- **全国最低賃金（2026年7月1日から）: $26.44/時、$1,004.90/週（週38時間ベース）**。
+  賞与的手当を含まない基本額。多くの労働者には職種別の Award 最低額（+4.75%）が適用される。
+- **Casual loading: 標準25%**（NES/多くのAward）。カジュアルは有給休暇・解雇予告の権利がない代わりに割増。
+- **解雇予告期間（NES）:** 勤続1年以下=1週、1〜3年=2週、3〜5年=3週、5年超=4週。
+  45歳以上かつ勤続2年超は+1週。重大な非行（serious misconduct）は予告なし解雇可だが既発生賃金は支払義務。
+- **無給トライアル:** スキル実演に必要な時間（1時間〜1シフト程度）を直接監督下で行う場合のみ合法。
+  それを超える実務は最低賃金以上の支払い義務。
+- **Final pay:** 未払賃金＋未消化の年次有給の支払い。Awardにより7日以内等の定めがある場合あり。
+- **不当解雇の申立ては解雇から21日以内**（Fair Work Commission）。
+- Fair Work Ombudsman は無料・TIS通訳あり・ビザ状態に関わらずビザ保有者を保護。
+- 出典: Fair Work「Minimum wages」「Pay Calculator」「Casual employees」「Notice and final pay」
+  「Unpaid trials」「Independent contractors」「Labour hire and supply chains」等
+
+#### 資格・ライセンス（州当局中心・全国制度は連邦当局）
+- **RSA（責任あるアルコール提供）:** 州別制度（NSW: Liquor & Gaming NSW、QLD: OLGR 等）。
+  発行様式・有効期限・相互承認は州で異なる。
+- **White Card（一般安全教育修了証 / CPCWHS1001）:** 認定RTOで取得、原則全国通用。
+  受講形式（オンライン可否）は州で異なる（NSW等は対面要素）。
+- **Food Safety Supervisor:** 州・業態・役割依存（例: NSW Food Authority）。一般スタッフに全国一律必須はなし。
+- **RCG（責任あるギャンブル提供）:** ギャンブル設備を扱う業務向け。州別名称・制度（NSWはRCG）。
+- **フォークリフト:** High Risk Work Licence クラス LF。認定RTOで訓練・評価→州WHS当局へ申請。全国相互承認。
+- **First Aid / CPR:** HLTAID011（Provide First Aid）／HLTAID009（Provide CPR）。CPRは約1年、First Aidは約3年で更新が目安。
+- **National Police Check:** ACIC 認定機関・州警察・Australia Post 経由。日本の証明とは別制度。
+- **WWCC:** 州別制度（NSW: Office of the Children's Guardian、QLD: Blue Card）。Police Checkとは別で子ども関連職に必須。数年単位の有効期限。
+- 出典: Fair Work、Safe Work Australia「High risk work licences」、SafeWork NSW、
+  Liquor & Gaming NSW、Business Queensland (OLGR)、NSW Food Authority、Food Standards Australia
+  New Zealand、ACIC「National Police Checking Service」、NSW Office of the Children's Guardian、
+  Blue Card Services (QLD)、training.gov.au（HLTAID009/011）
 
 ## 3. 未解決・要注意の記述（限定事項）
 

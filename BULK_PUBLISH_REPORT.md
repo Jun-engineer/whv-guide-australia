@@ -128,6 +128,38 @@
   abr.gov.au（ABN無料申請）、tpb.gov.au（Tax Agent登録）。
   詳細は `SOURCE_VERIFICATION_REPORT.md` の「バッチ6」。
 
+### 追加バッチ 7: jobs + qualifications（2026-07-18、35件）
+
+`jobs` ハブ26件と `qualifications` ハブ9件（`category: "jobs"` + `hub: "qualifications"`）の
+計35件を、記事単位で公式一次情報に照合して新規公開。すべて `verifiedAt: 2026-07-18`、
+`officialSources`（`accessedAt: 2026-07-18`）付き、冒頭でタイトルの問いに回答、
+`keyFacts`/`steps`/`tips`/`warnings`/`faqs`/`sources`/`relatedSlugs` を完備。記事は
+カテゴリモジュール（`lib/content/articles/jobs.ts`）にのみ追加（`mockData.ts` へは追加せず）。
+
+- **仕事探し・応募（6件）:** `job-search-websites`, `facebook-job-groups`, `walk-in-resume`,
+  `cover-letter-guide`, `job-reference-guide`, `job-application-follow-up`
+- **労働条件・権利・問題解決（10件）:** `employment-contract-checklist`, `employment-types`,
+  `award-rates-penalty-rates`, `unpaid-trial-rules`, `underpayment-unpaid-wages`, `cash-in-hand-jobs`,
+  `workplace-injury-workers-comp`, `workplace-bullying-harassment`, `resignation-notice`, `termination-final-pay`
+- **職種別ガイド（10件）:** `hospitality-jobs-guide`, `barista-job-guide`, `hotel-housekeeping-jobs`,
+  `cleaning-jobs-guide`, `retail-jobs-guide`, `warehouse-jobs-guide`, `construction-jobs-guide`,
+  `office-admin-jobs-guide`, `it-jobs-working-holiday`, `recruitment-agency-guide`
+- **資格・ライセンス（9件、hub: qualifications）:** `rsa-state-guide`, `white-card-guide`,
+  `food-safety-certificate`, `rcg-rsa-gaming`, `forklift-licence-guide`, `first-aid-cpr-guide`,
+  `police-check-guide`, `working-with-children-check`, `barista-course-guide`
+- **統合/リダイレクト:** このバッチでは新規の全面重複がなく、統合・リダイレクトは発生せず。
+  既存公開記事（`jobs-guide`, `resume-guide`, `interview-guide`, `certifications`, `working-rights`）は
+  概要・総論であり、35件は個別の探し方・労働問題の手順・資格別取得方法で意図が明確に異なるため
+  統合せず `relatedSlugs` で相互接続。`content-manifest.yaml` の該当35件を
+  `status: planned` → `status: published` に更新。**ファーム固有の就労記事（`farm-*`）は対象外**とし、
+  支援的な内部リンクとしてのみ参照。
+- **照合出典:** fairwork.gov.au（全国最低賃金 2026-07-01: $26.44/h・$1,004.90/週、Casual loading 25%、
+  NES解雇予告、無給トライアル、Final pay、不当解雇21日、Pay Calculator、Independent contractors、
+  Labour hire）、safeworkaustralia.gov.au / SafeWork NSW（High Risk Work Licence LF、White Card）、
+  Liquor & Gaming NSW / OLGR（RSA・RCG）、NSW Food Authority / FSANZ（Food Safety）、
+  acic.gov.au（National Police Check）、NSW OCG / Blue Card Services（WWCC）、training.gov.au（HLTAID009/011）。
+  詳細は `SOURCE_VERIFICATION_REPORT.md` の「バッチ7」。
+
 ## 2. 統合とリダイレクト
 
 計画（未公開）の重複トピック6件を既存公開記事へ統合し、308恒久リダイレクトを登録
@@ -163,15 +195,15 @@
 | 型チェック（`npx tsc --noEmit`） | エラー0 |
 | コンテンツテスト（`npm run test:content`, node:test） | 5/5 パス |
 | Lint（`npm run lint`） | エラー0 / 警告0 |
-| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（tax バッチ 17 件を含む全 134 記事を prerender、バッチ6公開後） |
+| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（jobs+qualifications バッチ 35 件を含む全 169 記事を prerender、バッチ7公開後） |
 
 警告66の大半は、粒度の粗い検索意図クラスタの共食い候補（過検出）と、コードに存在するが
 マニフェスト `existing_articles` 未登録である旨の情報提供です（`CONTENT_AUDIT.md` 参照）。
 
 ## 5. 非公開（review/planned のまま）
 
-- 残り **245件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
-  （start-here 7件 + visa 16件 + preparation 20件 + arrival 10件 + money 10件 + tax 17件を公開済み。次バッチは jobs ハブ。）
+- 残り **210件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
+  （start-here 7件 + visa 16件 + preparation 20件 + arrival 10件 + money 10件 + tax 17件 + jobs 26件 + qualifications 9件を公開済み。次バッチは farm ハブ。）
 - 非公開コンテンツは公開一覧・サイトマップ・構造化データ・内部リンクに露出していません
   （`isPublishedArticle` により自動除外）。
 

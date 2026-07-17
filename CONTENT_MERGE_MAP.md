@@ -95,6 +95,32 @@ tax ハブ17件（税・ABN/Sole Trader・Super）を公開。既存の公開記
 - 既存 `abn-application`→`abn-guide`、`find-lost-super`→`super-guide`、
   `dasp-guide`→`dasp-refund` は過去バッチで統合済み（本バッチで変更なし）。
 
+### バッチ7（jobs・qualifications）の統合判断（2026-07-18）
+
+jobs ハブ26件・qualifications ハブ9件（`category: "jobs"` + `hub: "qualifications"`）の
+計35件を公開。既存の公開記事（`jobs-guide` / `resume-guide` / `interview-guide` /
+`certifications` / `working-rights`）およびバッチ内35件は、いずれも
+**検索意図が明確に異なり全面重複はないため、新規の統合・リダイレクトは発生せず**。
+近接トピックは別記事として保持し、内部リンク（`relatedSlugs`）で相互接続した。
+
+- 既存 `jobs-guide`（仕事探しの総論）と新規 `job-search-websites`（求人サイト比較）/
+  `facebook-job-groups` / `walk-in-resume` / `recruitment-agency-guide` などは、
+  総論 vs 具体的な探し方・手段で意図が分離。統合せず双方向リンクで接続。
+- 既存 `working-rights`（労働者の権利の総論）と新規 `award-rates-penalty-rates` /
+  `unpaid-trial-rules` / `underpayment-unpaid-wages` / `cash-in-hand-jobs` /
+  `workplace-injury-workers-comp` / `resignation-notice` / `termination-final-pay` は、
+  総論 vs 個別の権利・問題解決手順で意図が分離。統合せず内部リンクで接続。
+- 既存 `certifications`（資格の概観）と新規 qualifications 9件（`rsa-state-guide` /
+  `white-card-guide` / `food-safety-certificate` / `rcg-rsa-gaming` /
+  `forklift-licence-guide` / `first-aid-cpr-guide` / `police-check-guide` /
+  `working-with-children-check` / `barista-course-guide`）は、概観 vs 資格別の
+  取得方法・州別要件で意図が分離。統合せず内部リンクで接続。
+- 既存 `resume-guide` / `interview-guide` と新規 `cover-letter-guide` /
+  `job-reference-guide` / `job-application-follow-up` は、応募書類・面接の各論点で
+  意図が分離。統合せず相互リンク。
+- **ファーム固有の就労記事（`farm-*`）は本バッチの対象外**とし、支援的な内部リンク
+  （例: 建設のSpecified Work参照）としてのみ言及した。ファームは次バッチで扱う。
+
 ## 4. リダイレクト運用ルール
 
 - `to`（転送先）は必ず公開中（`published`）の実記事 slug。

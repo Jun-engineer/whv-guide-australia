@@ -1379,7 +1379,7 @@ planned_content:
 - slug: job-search-websites
   title: SEEK・Indeed・Jora・Gumtreeの使い分け
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: comparison
@@ -1389,7 +1389,7 @@ planned_content:
 - slug: facebook-job-groups
   title: Facebookで仕事を探す方法｜求人グループと怪しい投稿の見分け方
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -1399,7 +1399,7 @@ planned_content:
 - slug: walk-in-resume
   title: レジュメを直接配る方法｜時間帯・服装・英語フレーズ
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -1409,7 +1409,7 @@ planned_content:
 - slug: cover-letter-guide
   title: 英文カバーレターの書き方｜職種別テンプレート
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: template
@@ -1419,7 +1419,7 @@ planned_content:
 - slug: job-reference-guide
   title: Referenceの頼み方と書き方｜推薦者がいない場合
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -1429,7 +1429,7 @@ planned_content:
 - slug: job-application-follow-up
   title: 応募後のFollow-upメッセージ例文
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: template
@@ -1439,7 +1439,7 @@ planned_content:
 - slug: employment-contract-checklist
   title: 雇用契約書で確認する項目｜時給・雇用形態・勤務条件
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: checklist
@@ -1449,7 +1449,7 @@ planned_content:
 - slug: employment-types
   title: Casual・Part-time・Full-timeの違い
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: comparison
@@ -1459,7 +1459,7 @@ planned_content:
 - slug: award-rates-penalty-rates
   title: Award RateとPenalty Rateの調べ方｜土日・祝日・夜間
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: legal
@@ -1469,7 +1469,7 @@ planned_content:
 - slug: unpaid-trial-rules
   title: 無給トライアルは合法？Fair Workの考え方
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: legal
@@ -1479,7 +1479,7 @@ planned_content:
 - slug: underpayment-unpaid-wages
   title: 給料未払い・最低賃金違反への対応手順
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: problem-solving
@@ -1489,7 +1489,7 @@ planned_content:
 - slug: cash-in-hand-jobs
   title: Cash in Handの仕事は違法？税金と労働リスク
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: risk
@@ -1499,7 +1499,7 @@ planned_content:
 - slug: workplace-injury-workers-comp
   title: 仕事中に怪我をした場合｜報告・治療・Workers Compensation
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: safety
@@ -1509,7 +1509,7 @@ planned_content:
 - slug: workplace-bullying-harassment
   title: 職場のいじめ・差別・ハラスメントへの対処
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: safety
@@ -1519,7 +1519,7 @@ planned_content:
 - slug: resignation-notice
   title: 仕事を辞める英語とNotice Period｜退職メッセージ例
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: template
@@ -1529,7 +1529,7 @@ planned_content:
 - slug: termination-final-pay
   title: 解雇されたときの確認事項｜Final Payと権利
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: legal
@@ -1539,7 +1539,7 @@ planned_content:
 - slug: hospitality-jobs-guide
   title: レストラン・カフェの仕事ガイド｜職種・英語・時給の見方
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: career
@@ -1549,7 +1549,7 @@ planned_content:
 - slug: barista-job-guide
   title: バリスタの仕事を取る方法｜必要スキルとトライアル
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: career
@@ -1559,7 +1559,7 @@ planned_content:
 - slug: hotel-housekeeping-jobs
   title: ホテル・ハウスキーピングの仕事ガイド
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: career
@@ -1569,7 +1569,7 @@ planned_content:
 - slug: cleaning-jobs-guide
   title: クリーニングの仕事ガイド｜住宅・ホテル・商業施設
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: career
@@ -1579,7 +1579,7 @@ planned_content:
 - slug: retail-jobs-guide
   title: リテール・販売の仕事ガイド｜接客英語と応募方法
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: career
@@ -1589,7 +1589,7 @@ planned_content:
 - slug: warehouse-jobs-guide
   title: 倉庫・ピッキング・フォークリフトの仕事ガイド
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: career
@@ -1599,7 +1599,7 @@ planned_content:
 - slug: construction-jobs-guide
   title: 建設現場の仕事ガイド｜White Card・PPE・求人
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: career
@@ -1609,7 +1609,7 @@ planned_content:
 - slug: office-admin-jobs-guide
   title: オフィス・事務職を探す方法｜英語・PCスキル・派遣会社
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: career
@@ -1619,7 +1619,7 @@ planned_content:
 - slug: it-jobs-working-holiday
   title: ワーホリでIT職を探す方法｜英文職務経歴・LinkedIn・契約形態
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: career
@@ -1629,7 +1629,7 @@ planned_content:
 - slug: recruitment-agency-guide
   title: 人材紹介・派遣会社の使い方｜登録からシフトまで
   hub: jobs
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -1639,7 +1639,7 @@ planned_content:
 - slug: rsa-state-guide
   title: RSAは州ごとに違う｜取得方法・相互承認・更新
   hub: qualifications
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: qualification
@@ -1649,7 +1649,7 @@ planned_content:
 - slug: white-card-guide
   title: White Cardの取得方法｜オンライン可否と州ごとの注意
   hub: qualifications
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: qualification
@@ -1659,7 +1659,7 @@ planned_content:
 - slug: food-safety-certificate
   title: Food Safety Certificateは必要？飲食店の資格ガイド
   hub: qualifications
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: qualification
@@ -1669,7 +1669,7 @@ planned_content:
 - slug: rcg-rsa-gaming
   title: RCG/RSGとは？バー・クラブ・カジノで必要な資格
   hub: qualifications
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: qualification
@@ -1679,7 +1679,7 @@ planned_content:
 - slug: forklift-licence-guide
   title: フォークリフト免許の取得方法と倉庫求人
   hub: qualifications
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: qualification
@@ -1689,7 +1689,7 @@ planned_content:
 - slug: first-aid-cpr-guide
   title: First Aid・CPR資格の選び方と有効期限
   hub: qualifications
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: qualification
@@ -1699,7 +1699,7 @@ planned_content:
 - slug: police-check-guide
   title: National Police Checkの取り方｜仕事応募で必要な場合
   hub: qualifications
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: qualification
@@ -1709,7 +1709,7 @@ planned_content:
 - slug: working-with-children-check
   title: WWCC/Blue Cardなど子ども関連チェックの州別概要
   hub: qualifications
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: qualification
@@ -1719,7 +1719,7 @@ planned_content:
 - slug: barista-course-guide
   title: バリスタコースは受けるべき？費用と選び方
   hub: qualifications
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: qualification
