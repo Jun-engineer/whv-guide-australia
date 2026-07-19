@@ -44,6 +44,7 @@ export const carsArticles: Article[] = [
       "vehicle-transfer-by-state",
       "car-insurance-comparison",
       "roadside-assistance",
+      "sell-car-before-leaving",
     ],
     updatedAt: "2026-07-19",
     published: true,

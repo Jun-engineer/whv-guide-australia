@@ -4,6 +4,46 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-19）: transport サブバッチ #2（残り14件を公開/統合・transport ハブ完了）
+
+transport（車・免許・公共交通）バッチの**残り14件を処理し、transport ハブを完了**しました。
+サブバッチ #1（8件）に続き、免許・有料道路・駐車・事故・レンタカー・売却・地方運転などを公開し、
+公共交通比較の重複1件を既存記事へ統合しました。以下が確定状態です。
+
+- **transport ハブ最終状態: 全24件が最終ステータス確定。** 内訳＝既存公開2件（`transport-payment-guide` /
+  `intercity-transport`、manifest `existing`）＋新規公開21件（サブバッチ #1 の8件 ＋ 本サブバッチ13件）
+  ＋ 統合1件（`buy-used-car-guide` は既存で cars-guide へ merged）。**planned は 0件**。
+- **本サブバッチで公開した13件（すべて `verifiedAt: 2026-07-19`・該当記事に `officialSources` 付き・完全公開）:**
+  transport カテゴリ9件＝`mechanic-tyre-shop-english`（language）, `fuel-saving-apps`（finance）,
+  `tolls-linkt-guide`（how-to）, `parking-fines-guide`（legal）, `car-accident-guide`（safety）,
+  `rent-a-car-guide`（checklist）, `sell-car-before-leaving`（how-to）, `e-bike-e-scooter-rules`（legal）,
+  `remote-driving-safety`（safety）。license カテゴリ4件＝`japanese-licence-state-rules`（legal）,
+  `convert-japanese-licence`（how-to）, `motorcycle-licence-australia`（how-to）,
+  `digital-driver-licence`（how-to）。
+- **統合（merged）1件: `city-public-transport-comparison` → `transport-payment-guide`。**
+  既存公開の公共交通・決済ガイドが Sydney(Opal)/Melbourne(myki)/Brisbane(go card)/Perth(SmartRider) の
+  タッチ決済を既にカバーし、都市別の運賃・キャップ比較という検索意図が約70%重複（同一の次アクション）。
+  `transport-payment-guide` を運賃制度・デイキャップ比較の段落＋keyFact で補強し、`redirectFrom` を付与。
+  308恒久リダイレクトを `lib/content/redirects.ts` に追加（`from: city-public-transport-comparison`）。
+- **既存記事の内部リンク:** `cars-guide` の `relatedSlugs` に `sell-car-before-leaving` を追加。
+  `license-guide` の `relatedSlugs` を新規免許4件＋`international-driving-permit` へ接続。
+  `transport-payment-guide` の `relatedSlugs` に `intercity-transport` を追加。孤立記事なし。
+- **公式照合（記事反映済み）:** FuelCheck(NSW政府)・FuelWatch(WA政府)・Linkt(Transurban)・
+  QLD Transport(overseas licence)・Service NSW(digital licence) を照合。可変な州別ルール（免許切替要件・
+  RWC要否・駐車罰金・e-scooter規制）は断定せず各州交通当局へ誘導。詳細は `SOURCE_VERIFICATION_REPORT.md`。
+- **content-manifest.yaml:** 本サブバッチ13件を `status: planned` → `status: published`、
+  `city-public-transport-comparison` を `status: merged` ＋ `merged_into: transport-payment-guide` に更新。
+- **検証（本サブバッチ）:** `validate:articles`（`OK: no article data errors`・ARTICLE_ORDER omission は既存仕様の
+  warn のみ）、`tsc --noEmit` クリーン、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ）、
+  `test:content` 5/5 pass、`eslint` クリーン、`next build` 成功（299静的ページを prerender・新規13件含む）。
+- **残り transport slug: 0件（ハブ完了）。**
+- **次のバッチ: health（`gp-urgent-care-emergency` から・未着手）。** ※本セッションは transport のみ処理し、次カテゴリには着手しない。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/transport.ts`、`lib/content/articles/license.ts`、
+  `lib/content/articles/cars.ts`、`lib/content/redirects.ts`、`lib/content/manifest.generated.ts`（再生成）、
+  `whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、
+  `BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **最後に成功した検証: 上記すべて（2026-07-19）。最後に成功したビルド: `next build` 成功（299静的ページ・新規13件を prerender）。**
+
 ## チェックポイント（2026-07-19）: transport サブバッチ #1（車の所有・購入・故障 8件公開）
 
 transport（車・免許・公共交通）バッチの最初の8件（中古車の購入〜所有〜故障対応）を公開しました。

@@ -2429,7 +2429,8 @@ planned_content:
 - slug: city-public-transport-comparison
   title: 主要都市の公共交通比較｜カード・タッチ決済・運賃
   hub: transport
-  status: planned
+  status: merged
+  merged_into: transport-payment-guide
   type: article
   priority: P1
   intent: comparison
@@ -2530,7 +2531,7 @@ planned_content:
 - slug: mechanic-tyre-shop-english
   title: 整備工場・タイヤショップで使う英語フレーズ
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: language
@@ -2540,7 +2541,7 @@ planned_content:
 - slug: fuel-saving-apps
   title: ガソリン価格を比較して節約する方法
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: finance
@@ -2550,7 +2551,7 @@ planned_content:
 - slug: tolls-linkt-guide
   title: 有料道路・Toll・Linktの支払いと未払い対策
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -2560,7 +2561,7 @@ planned_content:
 - slug: parking-fines-guide
   title: 駐車ルールと罰金｜標識の読み方・異議申立て
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: legal
@@ -2570,7 +2571,7 @@ planned_content:
 - slug: car-accident-guide
   title: 交通事故に遭ったときの対応｜情報交換・警察・保険
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: safety
@@ -2580,7 +2581,7 @@ planned_content:
 - slug: rent-a-car-guide
   title: レンタカー・長期レンタカーの契約チェックリスト
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: checklist
@@ -2590,7 +2591,7 @@ planned_content:
 - slug: sell-car-before-leaving
   title: 帰国前に車を売る方法｜広告・RWC・名義変更
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -2600,7 +2601,7 @@ planned_content:
 - slug: japanese-licence-state-rules
   title: 日本の免許で運転できる期間｜州別ルールの確認方法
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: legal
@@ -2610,7 +2611,7 @@ planned_content:
 - slug: convert-japanese-licence
   title: 日本の免許から豪州免許へ切り替える方法｜州別入口
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -2620,7 +2621,7 @@ planned_content:
 - slug: motorcycle-licence-australia
   title: 日本のバイク免許をオーストラリアで使う・切り替える方法
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: how-to
@@ -2630,7 +2631,7 @@ planned_content:
 - slug: digital-driver-licence
   title: デジタル運転免許証の登録と本人確認エラー対策
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: how-to
@@ -2640,7 +2641,7 @@ planned_content:
 - slug: e-bike-e-scooter-rules
   title: E-bike・電動キックボードの交通ルールとヘルメット
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: legal
@@ -2650,7 +2651,7 @@ planned_content:
 - slug: remote-driving-safety
   title: アウトバック・地方を運転する前の安全準備
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: safety

@@ -50,6 +50,11 @@ export const contentRedirects: ContentRedirect[] = [
     to: "cars-guide",
     reason: "中古車購入は既存の車・交通ガイドが網羅。",
   },
+  {
+    from: "city-public-transport-comparison",
+    to: "transport-payment-guide",
+    reason: "都市別の公共交通・運賃・決済比較は既存の公共交通・決済ガイドと同一の検索意図。",
+  },
 ];
 
 /** next.config 用のリダイレクト定義を生成（308 恒久）。 */

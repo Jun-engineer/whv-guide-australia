@@ -253,6 +253,20 @@
 > 検証: `validate:articles`（ユニーク slug 232・重複0・transport 10件）、`tsc --noEmit` クリーン、
 > `validate:content` 0 error / 66 warning、`test:content` 5/5 pass、`eslint` クリーン、`next build` 成功（新規8件を prerender）。
 
+> **追記（2026-07-19）transport サブバッチ #2（残り14件を処理・transport ハブ完了）:**
+> 公開13件＝transport 9件（`mechanic-tyre-shop-english` / `fuel-saving-apps` / `tolls-linkt-guide` /
+> `parking-fines-guide` / `car-accident-guide` / `rent-a-car-guide` / `sell-car-before-leaving` /
+> `e-bike-e-scooter-rules` / `remote-driving-safety`）＋ license 4件（`japanese-licence-state-rules` /
+> `convert-japanese-licence` / `motorcycle-licence-australia` / `digital-driver-licence`）。
+> 統合1件＝`city-public-transport-comparison` → `transport-payment-guide`（約70%重複・308恒久リダイレクト登録・
+> `redirectFrom` 付与・運賃/キャップ比較段落で補強）。すべて `verifiedAt: 2026-07-19`・該当記事に `officialSources`。
+> 内部リンク整合: `cars-guide` に `sell-car-before-leaving`、`license-guide` に免許4件＋`international-driving-permit`、
+> `transport-payment-guide` に `intercity-transport` を追加。孤立記事なし。
+> 公式照合: FuelCheck(NSW)・FuelWatch(WA)・Linkt(Transurban)・QLD Transport(overseas licence)・Service NSW(digital licence)。
+> 検証: `validate:articles`（`OK: no article data errors`）、`tsc --noEmit` クリーン、
+> `validate:content` 0 error / 66 warning、`test:content` 5/5 pass、`eslint` クリーン、`next build` 成功（299静的ページ・新規13件を prerender）。
+> これで transport ハブは全24件が最終確定（planned 0件）。次バッチは health（`gp-urgent-care-emergency` から・未着手）。
+
 警告66の大半は、粒度の粗い検索意図クラスタの共食い候補（過検出）と、コードに存在するが
 マニフェスト `existing_articles` 未登録である旨の情報提供です（`CONTENT_AUDIT.md` 参照）。
 
