@@ -1729,7 +1729,7 @@ planned_content:
 - slug: farm-season-calendar
   title: オーストラリア農作物シーズンカレンダー｜州・月・作物別
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: database
@@ -1739,7 +1739,7 @@ planned_content:
 - slug: harvest-trail-guide
   title: Harvest Trailでファーム求人を探す方法
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -1749,7 +1749,7 @@ planned_content:
 - slug: piecework-vs-hourly
   title: 歩合制と時給制の違い｜Pieceworkの最低保証と確認事項
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: legal
@@ -1759,7 +1759,7 @@ planned_content:
 - slug: farm-payslip-evidence
   title: セカンドビザ用の証拠書類｜Payslip・銀行明細・日数記録
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: checklist
@@ -1799,7 +1799,7 @@ planned_content:
 - slug: specified-work-postcodes
   title: セカンドビザ対象地域・郵便番号の確認方法
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -1809,7 +1809,7 @@ planned_content:
 - slug: farm-employer-verification
   title: ファーム・雇用主がセカンド対象か確認する方法
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: risk
@@ -1819,7 +1819,7 @@ planned_content:
 - slug: farm-labour-hire-contractors
   title: コントラクター・Labour Hire経由で働く注意点
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: risk
@@ -1829,7 +1829,7 @@ planned_content:
 - slug: farm-accommodation-guide
   title: ファームの宿・ワーカーズアコモデーションの確認事項
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: housing
@@ -1839,7 +1839,7 @@ planned_content:
 - slug: farm-transport-car
   title: ファームに車は必要？送迎・相乗り・車なしの探し方
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: transport
@@ -1849,7 +1849,7 @@ planned_content:
 - slug: farm-work-clothing
   title: ファームの服装完全ガイド｜暑さ・寒さ・雨・薬品対策
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: safety
@@ -1859,7 +1859,7 @@ planned_content:
 - slug: farm-heat-sun-safety
   title: ファームの熱中症・紫外線対策
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: safety
@@ -1869,7 +1869,7 @@ planned_content:
 - slug: farm-chemical-safety
   title: 農薬・薬品を扱う作業の安全確認
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: safety
@@ -1879,7 +1879,7 @@ planned_content:
 - slug: farm-weather-no-work
   title: 雨・天候で仕事が休みになる場合の収入対策
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: finance
@@ -1889,7 +1889,7 @@ planned_content:
 - slug: farm-job-english
   title: ファームで使う英語フレーズ｜作業指示・体調・給与確認
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: language
@@ -1899,7 +1899,7 @@ planned_content:
 - slug: crop-blueberry
   title: ブルーベリーファームの仕事内容・シーズン・稼ぎ方
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: crop-guide
@@ -1909,7 +1909,7 @@ planned_content:
 - slug: crop-strawberry
   title: いちごファームの仕事内容・シーズン・服装
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: crop-guide
@@ -1919,7 +1919,7 @@ planned_content:
 - slug: crop-grape
   title: ぶどう・ワイナリーの仕事｜Picking・Pruning・Cellar
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: crop-guide
@@ -1929,7 +1929,7 @@ planned_content:
 - slug: crop-apple-cherry
   title: りんご・チェリーの仕事｜シーズンと梯子作業
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: crop-guide
@@ -1939,7 +1939,7 @@ planned_content:
 - slug: crop-citrus
   title: オレンジ・マンダリンなど柑橘ファームの仕事
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: crop-guide
@@ -1949,7 +1949,7 @@ planned_content:
 - slug: crop-mango-banana
   title: マンゴー・バナナファームの仕事と注意点
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: crop-guide
@@ -1959,7 +1959,7 @@ planned_content:
 - slug: crop-avocado
   title: アボカドファームの仕事内容とシーズン
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: crop-guide
@@ -1969,7 +1969,7 @@ planned_content:
 - slug: crop-tomato-capsicum
   title: トマト・カプシカムの仕事｜温室・屋外・Packing
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: crop-guide
@@ -1979,7 +1979,7 @@ planned_content:
 - slug: crop-broccoli-broccolini
   title: ブロッコリー・ブロッコリーニの仕事｜Picking・Bunching・Packing
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: crop-guide
@@ -1989,7 +1989,7 @@ planned_content:
 - slug: farm-packing-shed
   title: Packing Shedの仕事｜選別・包装・品質管理
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: role-guide
@@ -1999,7 +1999,7 @@ planned_content:
 - slug: meat-processing-specified-work
   title: 食肉加工の仕事とSpecified Workの確認ポイント
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: role-guide
@@ -2009,7 +2009,7 @@ planned_content:
 - slug: construction-specified-work
   title: 建設業でセカンドビザを狙う場合の条件
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: legal
@@ -2019,7 +2019,7 @@ planned_content:
 - slug: disaster-recovery-specified-work
   title: 災害復旧作業でSpecified Workになる条件
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: legal
@@ -2029,7 +2029,7 @@ planned_content:
 - slug: region-gatton-lockyer
   title: ガトン・ロッキヤーバレーのファーム仕事・生活ガイド
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: area-farm
@@ -2039,7 +2039,7 @@ planned_content:
 - slug: region-bundaberg-farm
   title: バンダバーグのファーム仕事・生活ガイド
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: area-farm
@@ -2049,7 +2049,7 @@ planned_content:
 - slug: region-stanthorpe-farm
   title: スタンソープのファーム仕事・生活ガイド
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: area-farm
@@ -2059,7 +2059,7 @@ planned_content:
 - slug: region-bowen-ayr-farm
   title: ボーエン・エアのファーム仕事ガイド
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-farm
@@ -2069,7 +2069,7 @@ planned_content:
 - slug: region-mareeba-atherton-farm
   title: マリーバ・アサートン高原のファームガイド
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-farm
@@ -2079,7 +2079,7 @@ planned_content:
 - slug: region-mildura-farm
   title: ミルデューラのファーム仕事・生活ガイド
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-farm
@@ -2089,7 +2089,7 @@ planned_content:
 - slug: region-shepparton-farm
   title: シェパートンのファーム仕事ガイド
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-farm
@@ -2099,7 +2099,7 @@ planned_content:
 - slug: region-griffith-farm
   title: グリフィスのファーム仕事ガイド
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-farm
@@ -2109,7 +2109,7 @@ planned_content:
 - slug: region-tasmania-farm
   title: タスマニアのファーム仕事・シーズンガイド
   hub: farm
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-farm

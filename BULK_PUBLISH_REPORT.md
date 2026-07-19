@@ -195,15 +195,15 @@
 | 型チェック（`npx tsc --noEmit`） | エラー0 |
 | コンテンツテスト（`npm run test:content`, node:test） | 5/5 パス |
 | Lint（`npm run lint`） | エラー0 / 警告0 |
-| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（jobs+qualifications バッチ 35 件を含む全 169 記事を prerender、バッチ7公開後） |
+| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（farm バッチ 36 件を含む全 205 記事を prerender、バッチ8公開後） |
 
 警告66の大半は、粒度の粗い検索意図クラスタの共食い候補（過検出）と、コードに存在するが
 マニフェスト `existing_articles` 未登録である旨の情報提供です（`CONTENT_AUDIT.md` 参照）。
 
 ## 5. 非公開（review/planned のまま）
 
-- 残り **210件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
-  （start-here 7件 + visa 16件 + preparation 20件 + arrival 10件 + money 10件 + tax 17件 + jobs 26件 + qualifications 9件を公開済み。次バッチは farm ハブ。）
+- 残り **174件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
+  （start-here 7件 + visa 16件 + preparation 20件 + arrival 10件 + money 10件 + tax 17件 + jobs 26件 + qualifications 9件 + farm 36件を公開済み。次バッチは gig-work ハブ。）
 - 非公開コンテンツは公開一覧・サイトマップ・構造化データ・内部リンクに露出していません
   （`isPublishedArticle` により自動除外）。
 

@@ -19,18 +19,20 @@
 - 状態: `validate:content` 0 error / 66 warning、`tsc --noEmit` クリーン、`eslint`
   クリーン、`test:content` 5/5 pass、`next build` 成功（151静的ページ）— 移行前と同一
 
-**次のコンテンツバッチ: farm（ファーム・Specified Work）ハブ 36 件**（下記「ハブ別の残タスク一覧」参照）。
+**次のコンテンツバッチ: gig-work（ギグワーク・副業）ハブ 12 件**（下記「ハブ別の残タスク一覧」参照）。
 
-## 進捗（2026-07-18 時点）
+## 進捗（2026-07-19 時点）
 
 325件の計画記事を、ハブ単位のバッチで公式照合しながら順次公開しています。
 
-- **公開済み合計: 115 件**（残り 210 件）
-- **現在のカテゴリ: visa（完了）・preparation（完了）・arrival（完了）・money（完了）・tax（完了）・jobs（完了）・qualifications（完了）**
-- **次のカテゴリ: farm（未着手・36件）**
-- **最終検証: `validate:articles` OK（ユニーク slug 169・重複 0）、`validate:content` 0 error / 66 warning（cannibalization の想定内警告のみ）、`tsc --noEmit` クリーン、`eslint` クリーン、`test:content` 5/5 pass、`next build` 成功**
-- **最終ビルド: `next build` 成功（jobs+qualifications バッチ 35 件を含む全 169 記事を prerender）**
-- **変更ファイル: `lib/content/articles/jobs.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`**
+- **公開済み合計: 151 件**（残り 174 件）
+- **現在のカテゴリ: visa（完了）・preparation（完了）・arrival（完了）・money（完了）・tax（完了）・jobs（完了）・qualifications（完了）・farm（完了・36件）**
+- **次のカテゴリ: gig-work（未着手・12件）**
+- **統合（merged）: なし**（farm バッチの 36 件はすべて新規スラッグで、既存記事との統合・リダイレクトは不要）
+- **レビュー/除外（deferred）: `tool-specified-work-region-checker`・`tool-farm-season-calendar`**（hub: tools / type: interactive-tool のため farm バッチ対象外。planned のまま据え置き）
+- **最終検証: `validate:articles` OK（ユニーク slug 205・重複 0）、`validate:content` 0 error / 66 warning（cannibalization の想定内警告のみ）、`tsc --noEmit` クリーン、`eslint` クリーン、`test:content` 5/5 pass、`next build` 成功**
+- **最終ビルド: `next build` 成功（farm バッチ 36 件を含む全 205 記事を prerender）**
+- **変更ファイル: `lib/content/articles/farm.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`**
 
 ### 完了済み slug（バッチ1: start-here ハブ / commit 78a5e61）
 
@@ -199,7 +201,9 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 
 ## ハブ別の残タスク一覧
 
-### farm — ファーム・Specified Work (36件) ← 次のカテゴリ
+### farm — ファーム・Specified Work (36件) ← ✅ 完了（2026-07-19 / commit: feat: publish farm content batch）
+
+**全 36 件を公開済み**（`published: true`・`verifiedAt: 2026-07-19`・`officialSources` 付き）。既存記事 `farm-finding` / `farm-second-visa` と second-visa ハブ（`second-visa-guide` / `88-day-calculation` / `six-month-specified-work` / `specified-work-industries`）へ `relatedSlugs` で相互リンク済み。統合・リダイレクトなし。以下は公開した slug 一覧です。
 
 - `farm-season-calendar` — オーストラリア農作物シーズンカレンダー｜州・月・作物別 _(優先度 P0、意図: database)_
 - `harvest-trail-guide` — Harvest Trailでファーム求人を探す方法 _(優先度 P0、意図: how-to)_
@@ -238,7 +242,7 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - `region-griffith-farm` — グリフィスのファーム仕事ガイド _(優先度 P2、意図: area-farm)_
 - `region-tasmania-farm` — タスマニアのファーム仕事・シーズンガイド _(優先度 P2、意図: area-farm)_
 
-### gig-work — ギグワーク・副業 (12件)
+### gig-work — ギグワーク・副業 (12件) ← 次のカテゴリ
 
 - `gig-work-comparison` — オーストラリアのギグワーク比較｜配達・清掃・便利屋・フリーランス _(優先度 P0、意図: comparison)_
 - `delivery-abn-tax` — Uber Eats・DoorDashのABN・税金・Superの扱い _(優先度 P0、意図: tax)_

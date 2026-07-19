@@ -121,6 +121,24 @@ jobs ハブ26件・qualifications ハブ9件（`category: "jobs"` + `hub: "quali
 - **ファーム固有の就労記事（`farm-*`）は本バッチの対象外**とし、支援的な内部リンク
   （例: 建設のSpecified Work参照）としてのみ言及した。ファームは次バッチで扱う。
 
+### farm バッチ（2026-07-19 / 36件）
+
+**統合（merged）: なし。リダイレクト: なし。** farm ハブ 36 件（`category: "farm"` / `hub: "farm"`）は
+すべて**新規スラッグ**で、既存の公開記事（`farm-finding` 総論・`farm-second-visa` 総論、
+および second-visa ハブの `second-visa-guide` / `88-day-calculation` / `six-month-specified-work` /
+`specified-work-industries`）とは**検索意図が明確に異なり（作物別・地域別・手続き別・業種別）、
+全面重複はないため、新規の統合・リダイレクトは発生せず**、`relatedSlugs` で相互接続した。
+
+- 既存 `farm-finding`（仕事の探し方総論）の `relatedSlugs` を拡張し、`harvest-trail-guide` /
+  `farm-season-calendar` / `piecework-vs-hourly` / `farm-employer-verification` などの具体ガイドへ接続。
+- 既存 `farm-second-visa` ・ second-visa ハブの各記事から `specified-work-postcodes` /
+  `farm-payslip-evidence` / `farm-employer-verification` / `construction-specified-work` /
+  `meat-processing-specified-work` / `disaster-recovery-specified-work` など新規記事へ相互リンク。
+- 作物ガイド（`crop-*`）・地域ガイド（`region-*`）は共食い候補として `validate:content` の
+  warning に現れるが、各々異なる作物・地域・シーズンを対象とする固有の検索意図のため統合しない。
+- 備考: ツール系（`tool-specified-work-region-checker` / `tool-farm-season-calendar`）は
+  hub: tools / type: interactive-tool のため本バッチ対象外。planned のまま据え置き。
+
 ## 4. リダイレクト運用ルール
 
 - `to`（転送先）は必ず公開中（`published`）の実記事 slug。
