@@ -139,6 +139,19 @@ jobs ハブ26件・qualifications ハブ9件（`category: "jobs"` + `hub: "quali
 - 備考: ツール系（`tool-specified-work-region-checker` / `tool-farm-season-calendar`）は
   hub: tools / type: interactive-tool のため本バッチ対象外。planned のまま据え置き。
 
+### housing バッチ チェックポイント（2026-07-19 / 中断）
+
+housing（家探し・賃貸）バッチは公開作業を開始したものの、リクエストのタイムアウトが
+繰り返し発生したため中断し、記事は未公開のままチェックポイントを作成した。
+
+- **統合（merged）: なし。リダイレクト: なし。** 記事本文を公開していないため、統合・
+  リダイレクトの実施もない。作業ツリーに残っていた不完全な `relatedSlugs` 編集は破棄した。
+- **次回の統合方針（未実施）:** 既存の公開記事 `housing-guide`（総論）/ `share-house-finding`
+  （探し方＋内見概要）と計画中の 19件は、比較・テンプレート・チェックリスト・法規・
+  問題解決といった個別の検索意図で分離するため、**統合せず個別公開**して `relatedSlugs`
+  で相互リンクする（farm/jobs と同方針）。公開×公開の全面統合は行わない。
+- 最初の未完了 slug: `housing-platforms-comparison`。詳細は `BULK_PUBLISH_REMAINING.md`。
+
 ## 4. リダイレクト運用ルール
 
 - `to`（転送先）は必ず公開中（`published`）の実記事 slug。

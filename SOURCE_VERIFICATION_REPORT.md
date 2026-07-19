@@ -272,6 +272,36 @@ farm ハブ36件（`category: "farm"` / `hub: "farm"`）を公開。各記事は
   対象の州/準州を必ず明示する方針（`StateSpecificNotice` コンポーネント）。本サイクルの
   公開記事は全国共通事項が中心で、州別断定は含めていない。
 
+## 3b. housing バッチ チェックポイント（2026-07-19 / 中断・記事未公開）
+
+housing（家探し・賃貸）バッチの公式照合を実施したが、リクエストのタイムアウトにより
+記事本文の生成を打ち切ったため、**以下の照合結果はまだ記事に反映・公開していない**。
+次回 housing バッチ再開時（`housing-platforms-comparison` から）に本文へ反映する。
+
+### 賃貸・Bond（州の賃貸当局）
+- **QLD（rta.qld.gov.au — Rent increases / Bonds、アクセス 2026-07-19）:** 一般賃貸の
+  Bond 上限は **家賃4週間分**（2024年9月30日以降、週家賃の額にかかわらず）。Bond は RTA に
+  預託（Bond Lodgement Web Service / Form 2）。家賃値上げは**前回から最低12か月**、一般賃貸は
+  **2か月前**の書面通知が必要。紛争は RTA 紛争解決／QCAT。
+- **NSW（nsw.gov.au — Renting a place to live、アクセス 2026-07-19）:** 家賃値上げは
+  **2024年10月31日以降、12か月に1回まで**。Bond は Rental Bonds Online（NSW Fair Trading）で管理。
+  Condition report・Rental Bonds Online・紛争は NCAT。
+- **VIC（consumer.vic.gov.au — Renting、アクセス 2026-07-19）:** **2025年11月25日から新しい
+  賃貸法**が施行。Bond は RTBA（rentalbonds.vic.gov.au、Consumer Affairs Victoria がホスト）へ
+  預託。紛争は VCAT。
+- **重要な留保点:** シェアハウスのサブテナント／同居人（lodger）は、州の賃貸法の保護対象外に
+  なる場合が多い。書面合意を取り、支払いは記録の残る銀行振込で行う旨を記事で明示する予定。
+
+### 家探し詐欺（scamwatch.gov.au — ACCC、アクセス 2026-07-19）
+- 賃貸・宿泊の詐欺は「buying and selling scams」等に分類。**内見前の送金要求・相場より
+  極端に安い物件・海外在住オーナー・身分証の事前要求**が代表的な危険サイン。被害・情報は
+  Scamwatch へ報告。
+
+### 照合の限定事項
+- Bond 上限の具体額は州により異なり（QLD は家賃4週間分を確認済み、VIC/NSW/他州は各当局へ
+  誘導する方針）、記事では**断定を避けて各州の当局リンクへ誘導**する。verifiedAt は
+  記事公開時に付与する（本チェックポイントでは記事未公開のため未付与）。
+
 ## 4. 免責の表示
 
 すべての公開記事で `OfficialSourceBox` に以下を明記:

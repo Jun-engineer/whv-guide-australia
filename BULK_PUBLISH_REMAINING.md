@@ -1,8 +1,45 @@
 # BULK_PUBLISH_REMAINING
 
-生成日: 2026-07-16（更新: 2026-07-18）
+生成日: 2026-07-16（更新: 2026-07-19）
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
+
+## チェックポイント（2026-07-19）: housing バッチ中断
+
+housing（家探し・賃貸）バッチの公開作業を開始しましたが、リクエストのタイムアウトが
+繰り返し発生したため、**記事本文の生成を打ち切り、クリーンなチェックポイントを作成**
+しました。以下が確定した状態です。
+
+- **完了した housing slug: なし（0 / 19）** — 本文を書き上げて公開できた記事はありません。
+- **公開した housing slug: なし。**
+- **統合した housing slug: なし。**
+- **部分作成・重複挿入: 削除済み。** 中断時、既存の公開記事 `housing-guide` /
+  `share-house-finding` の `relatedSlugs` を未公開の計画 slug へ書き換える不完全な編集が
+  作業ツリーに残っていましたが、対象記事が存在せず既存の有効リンク（`whv-complete-guide`）を
+  失う内容だったため、`git checkout` で破棄しました。**既存の 2 記事は元の公開状態のまま保持。**
+- **最初の未完了 housing slug: `housing-platforms-comparison`**（次回はここから再開）。
+- **残り housing slug（19件・すべて planned のまま）:** `housing-platforms-comparison`,
+  `housing-message-templates`, `inspection-checklist`, `bond-rules-overview`,
+  `condition-report-guide`, `rental-agreement-share-house`, `rent-and-bills`,
+  `rent-increase-rules`, `bond-refund-dispute`, `ending-tenancy-notice`,
+  `find-replacement-tenant`, `share-house-rules`, `share-house-conflict`,
+  `short-term-accommodation`, `hostel-guide`, `homestay-guide`, `couple-room-housing`,
+  `regional-farm-housing`, `rental-scam-examples`。
+- **統合方針（未実施・次回適用予定）:** 既存の公開記事 `housing-guide`（総論）/
+  `share-house-finding`（探し方＋内見概要）とは検索意図が異なり、19件はいずれも個別の
+  比較・テンプレート・チェックリスト・法規・問題解決記事のため、**統合せず個別公開**して
+  `relatedSlugs` で相互リンクする方針（farm/jobs バッチと同様）。公開×公開の統合は行わない。
+- **公式照合（実施済み・記事未反映）:** 本セッションで RTA(QLD)・NSW Fair Trading・
+  Consumer Affairs Victoria(RTBA)・Scamwatch(ACCC) の最新情報を照合済み。詳細は
+  `SOURCE_VERIFICATION_REPORT.md` の housing チェックポイント節を参照。
+- **content-manifest.yaml: 変更なし**（housing 19件はすべて `status: planned` のままで正しい）。
+- **最後に成功した検証: `validate:articles`（重複 slug 0）、`tsc --noEmit` クリーン**
+  （本チェックポイントで再実行）。
+- **最後に成功したビルド: farm バッチ時の `next build` 成功（205記事）。**
+  本チェックポイントはコード変更を含まない（ドキュメント更新のみ）ため、ビルドは再実行不要。
+- **変更ファイル（本チェックポイント）:** `BULK_PUBLISH_REMAINING.md`、
+  `CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`。
+- **次のバッチ: housing（`housing-platforms-comparison` から再開）。** 続けて transport。
 
 ## アーキテクチャ移行（2026-07-18 完了）
 
