@@ -4,6 +4,39 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-19）: housing マイクロバッチ #1（3件公開）
+
+housing（家探し・賃貸）バッチの最初の3件を公開しました（マイクロバッチ運用）。以下が確定状態です。
+
+- **完了した housing slug: 3 / 19** — `housing-platforms-comparison`, `housing-message-templates`,
+  `inspection-checklist`（すべて `verifiedAt: 2026-07-19`・`officialSources` 付き・完全公開）。
+- **公開した housing slug: 上記3件。**
+- **統合した housing slug: なし。リダイレクト: なし。**（3件とも新規スラッグで既存公開記事と
+  検索意図が分離。詳細は `CONTENT_MERGE_MAP.md`）。
+- **既存記事の内部リンク更新:** `housing-guide` / `share-house-finding` の `relatedSlugs` に
+  新規3件を追記（本文・slug・URL は不変）。
+- **最初の未完了 housing slug: `bond-rules-overview`**（次回はここから再開）。
+- **残り housing slug（16件・すべて planned のまま）:** `bond-rules-overview`,
+  `condition-report-guide`, `rental-agreement-share-house`, `rent-and-bills`,
+  `rent-increase-rules`, `bond-refund-dispute`, `ending-tenancy-notice`,
+  `find-replacement-tenant`, `share-house-rules`, `share-house-conflict`,
+  `short-term-accommodation`, `hostel-guide`, `homestay-guide`, `couple-room-housing`,
+  `regional-farm-housing`, `rental-scam-examples`。
+- **統合方針（継続）:** 既存の公開記事 `housing-guide`（総論）/ `share-house-finding`
+  （探し方＋内見概要）とは検索意図が異なるため、残り16件も原則**統合せず個別公開**して
+  `relatedSlugs` で相互リンクする。60–70% 以上の重複かつ独立意図が乏しい項目が出た場合のみ統合を検討。
+- **公式照合（本マイクロバッチ・記事反映済み）:** Scamwatch(ACCC)・NSW Government Renting・
+  Consumer Affairs Victoria Renting を照合。詳細は `SOURCE_VERIFICATION_REPORT.md`「housing
+  マイクロバッチ」節。
+- **content-manifest.yaml:** 該当3件を `status: planned` → `status: published` に更新済み。
+- **検証（マイクロバッチ範囲）:** `validate:articles`（ユニーク slug 208・重複0・重複パス0）、
+  `tsc --noEmit` クリーン。変更 housing 記事の `relatedSlugs` は全て実在 slug に解決。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/housing.ts`、
+  `lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、
+  `CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、
+  `BULK_PUBLISH_REMAINING.md`。
+- **次のバッチ: housing（`bond-rules-overview` から再開）。**
+
 ## チェックポイント（2026-07-19）: housing バッチ中断
 
 housing（家探し・賃貸）バッチの公開作業を開始しましたが、リクエストのタイムアウトが

@@ -160,6 +160,28 @@
   acic.gov.au（National Police Check）、NSW OCG / Blue Card Services（WWCC）、training.gov.au（HLTAID009/011）。
   詳細は `SOURCE_VERIFICATION_REPORT.md` の「バッチ7」。
 
+### 追加バッチ 8: housing マイクロバッチ（2026-07-19、3件）
+
+`housing` ハブ3件を、記事単位で公式一次情報に照合して新規公開（マイクロバッチ運用）。
+すべて `verifiedAt: 2026-07-19`、`officialSources`（`accessedAt: 2026-07-19`）付き、
+冒頭でタイトルの問いに回答、`keyFacts`/`steps`/`tips`/`warnings`/`faqs`/`phrases`/`sources`/
+`relatedSlugs` を完備。記事はカテゴリモジュール（`lib/content/articles/housing.ts`）にのみ
+追加（`mockData.ts` へは追加せず）。
+
+- **公開（3件）:** `housing-platforms-comparison`（家探しサービス比較）,
+  `housing-message-templates`（英語応募テンプレート）, `inspection-checklist`（内見チェックリスト）
+- **統合/リダイレクト:** なし。既存公開記事 `housing-guide`（総論）/ `share-house-finding`
+  （探し方＋内見概要）とは検索意図が明確に異なる（比較・テンプレート・チェックリスト）ため
+  統合せず、`relatedSlugs` で相互接続。既存2記事の `relatedSlugs` に新規3件を追記
+  （内部リンク更新のみ）。`content-manifest.yaml` の該当3件を `status: planned` →
+  `status: published` に更新。
+- **照合出典:** Scamwatch（ACCC / National Anti-Scam Centre）、NSW Government「Renting a
+  place to live」、Consumer Affairs Victoria「Renting」。詳細は `SOURCE_VERIFICATION_REPORT.md`
+  の「housing マイクロバッチ」。
+- **検証（マイクロバッチ範囲）:** `validate:articles`（ユニーク slug 208・重複0）、
+  `tsc --noEmit` クリーン。変更 housing 記事の `relatedSlugs` は全て実在 slug に解決。
+- **次の未完了 housing slug:** `bond-rules-overview`。
+
 ## 2. 統合とリダイレクト
 
 計画（未公開）の重複トピック6件を既存公開記事へ統合し、308恒久リダイレクトを登録

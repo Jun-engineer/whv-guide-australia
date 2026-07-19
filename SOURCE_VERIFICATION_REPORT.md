@@ -259,6 +259,28 @@ farm ハブ36件（`category: "farm"` / `hub: "farm"`）を公開。各記事は
   機械・梯子作業などのリスクは Safe Work Australia / 州WHS当局のガイダンスに基づき一般的注意として記載。
 - 出典: Fair Work「Horticulture Award」「Piece rates」「Labour hire」、Safe Work Australia、各州WHS当局。
 
+### housing マイクロバッチ（2026-07-19、3件）
+
+housing ハブの3件（`housing-platforms-comparison` / `housing-message-templates` /
+`inspection-checklist`）を公開。各記事は `verifiedAt: 2026-07-19` を付与し、`officialSources`
+（`accessedAt: 2026-07-19`）に以下の公式一次情報を明示した。3件はいずれも比較・テンプレート・
+チェックリストの実務系記事で、YMYL の中核は**賃貸詐欺の回避と契約条件の確認**であるため、
+可変な家賃・料金は断定せず「目安」「週いくら表記」とし、詐欺回避と正規手続きの導線を公式に照合した。
+
+| slug | 照合した主要ポイント | 主な出典（accessedAt 2026-07-19） |
+| --- | --- | --- |
+| `housing-platforms-comparison` | 内見前送金の禁止・海外オーナー詐称・急かしは賃貸詐欺の典型。プラットフォームの安全性に関わらず内見後に銀行振込で支払う | Scamwatch（ACCC）/ NSW Government Renting |
+| `housing-message-templates` | 応募文で個人情報（パスポート・口座）を確定前に渡さない・内見前送金の要求は詐欺 | Scamwatch（ACCC） |
+| `inspection-checklist` | 内見時に確認する項目（家賃/bills/Bond/最低滞在/退去通知）と既存傷の写真記録・Bondの正規預託 | Consumer Affairs Victoria Renting / NSW Government Renting |
+
+- **共通の照合事実:** ①内見せず前払いを求める手口は賃貸詐欺の典型（Scamwatch）。②家賃は週
+  （per week）表記が基本で、bills（電気・ガス・水道・ネット）の込み/別は物件ごとに要確認。
+  ③Bond（敷金）の金額・預け方・返金ルールと最低滞在・退去通知は州の制度と契約で異なるため、
+  記録に残る形で確認する（NSW Government / Consumer Affairs Victoria の Renting 情報）。
+- **統合・リダイレクト:** なし（新規スラッグ、既存公開記事と検索意図が分離）。詳細は
+  `CONTENT_MERGE_MAP.md`「housing マイクロバッチ」。
+- **次の未完了 housing slug:** `bond-rules-overview`。
+
 ## 3. 未解決・要注意の記述（限定事項）
 - **「88日」対「3 months」（解決済み）:** immi の Specified work ページ（更新 2025-09-11）を実照合し、
   公式に「3か月 = 1年で最も短い3か月分に相当 = 最低88暦日（週末・休息日を含む）」と明記されていることを確認。
