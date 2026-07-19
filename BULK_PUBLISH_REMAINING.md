@@ -4,6 +4,45 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-19）: transport サブバッチ #1（車の所有・購入・故障 8件公開）
+
+transport（車・免許・公共交通）バッチの最初の8件（中古車の購入〜所有〜故障対応）を公開しました。
+**前セッションでマニフェスト上 `published` にマークされ cars.ts から参照されていたが本文が
+未作成だった8件を書き上げ、状態を整合**させました（中断からの継続）。以下が確定状態です。
+
+- **本サブバッチで公開した8件（すべて `verifiedAt: 2026-07-19`・`officialSources` 付き・完全公開）:**
+  `used-car-inspection-checklist`（checklist）, `ppsr-check-guide`（how-to）, `rego-ctp-rwc`（guide）,
+  `vehicle-transfer-by-state`（how-to）, `car-insurance-comparison`（comparison）,
+  `roadside-assistance`（comparison）, `car-breakdown-guide`（problem-solving）, `flat-tyre-guide`（problem-solving）。
+- **完了した transport slug: 8 / 22。**
+- **統合（merged）: なし。リダイレクト: なし。** 8件はいずれも新規スラッグで、既存公開記事
+  `cars-guide`（車購入とRego総論）/ `license-guide`（免許総論）/ `transport-payment-guide` /
+  `intercity-transport` とは検索意図が明確に異なる（現車確認・PPSR照会・Rego/CTP/車検の違い・
+  州別名義変更・保険の種類・ロードサービス・故障/パンク対応）。個別公開し `relatedSlugs` で相互リンク。
+- **既存記事の内部リンク:** `cars-guide` の `relatedSlugs` を新規6件（used-car-inspection-checklist /
+  ppsr-check-guide / rego-ctp-rwc / vehicle-transfer-by-state / car-insurance-comparison /
+  roadside-assistance）へ接続。孤立記事なし。※前セッションが残した `sell-car-before-leaving`（未公開・
+  planned）への dangling 参照は削除して整合。
+- **公式照合（記事反映済み）:** PPSR（ppsr.gov.au／AFSA — $2 VIN照会で残債・盗難・全損を確認）を
+  直接照合。州別の名義変更・Rego/CTP/車検・保険・ロードサービスは可変のため断定せず州当局・
+  自動車クラブ・moneysmart(ASIC)・Triple Zero(000)へ誘導。詳細は `SOURCE_VERIFICATION_REPORT.md`。
+- **content-manifest.yaml:** 該当8件は `status: published`（前セッションで更新済み・本文公開により整合）。
+- **検証（本サブバッチ）:** `validate:articles`（ユニーク slug 232・重複0・重複パス0・transport 10件）、
+  `tsc --noEmit` クリーン、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ）、
+  `test:content` 5/5 pass、`eslint` クリーン、`next build` 成功（全静的ページを prerender・新規8件含む）。
+- **残り transport planned（14件・すべて planned のまま／次サブバッチ）:** `city-public-transport-comparison`,
+  `mechanic-tyre-shop-english`, `fuel-saving-apps`, `tolls-linkt-guide`, `parking-fines-guide`,
+  `car-accident-guide`, `rent-a-car-guide`, `sell-car-before-leaving`, `japanese-licence-state-rules`,
+  `convert-japanese-licence`, `motorcycle-licence-australia`, `digital-driver-licence`,
+  `e-bike-e-scooter-rules`, `remote-driving-safety`。
+- **最初の未完了 transport slug: `city-public-transport-comparison`**（次回はここから再開）。
+- **次のバッチ: transport（`city-public-transport-comparison` から継続）。** ※本セッションは transport の
+  先頭8件のみ処理し、次サブバッチには着手しない。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/transport.ts`、`lib/content/articles/cars.ts`、
+  `lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、
+  `CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **最後に成功した検証: 上記すべて（2026-07-19）。最後に成功したビルド: `next build` 成功（新規8件を prerender）。**
+
 ## チェックポイント（2026-07-19）: housing バッチ完了（残り16件を公開・ハブ全21件完了）
 
 housing（家探し・賃貸）ハブの**残り16件を公開し、housing バッチを完了**しました。以下が確定状態です。

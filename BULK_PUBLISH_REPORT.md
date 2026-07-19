@@ -244,6 +244,15 @@
 | Lint（`npm run lint`） | エラー0 / 警告0 |
 | ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（housing バッチ完了後、全 278 静的ページを prerender） |
 
+> **追記（2026-07-19）transport サブバッチ #1（車の所有・購入・故障 8件公開）:**
+> `used-car-inspection-checklist` / `ppsr-check-guide` / `rego-ctp-rwc` / `vehicle-transfer-by-state` /
+> `car-insurance-comparison` / `roadside-assistance` / `car-breakdown-guide` / `flat-tyre-guide` を8件を
+> 公開（前セッションでマニフェスト `published` 化済みだが本文未作成だった中断分を書き上げ、状態を整合）。
+> すべて `verifiedAt: 2026-07-19` ・ `officialSources` 付き。統合・リダイレクトなし。
+> 公式照合: PPSR（$2 VIN照会）・州の運輸当局・自動車クラブ（NRMA/RACV/RACQ等）・moneysmart(ASIC)・Triple Zero(000)。
+> 検証: `validate:articles`（ユニーク slug 232・重複0・transport 10件）、`tsc --noEmit` クリーン、
+> `validate:content` 0 error / 66 warning、`test:content` 5/5 pass、`eslint` クリーン、`next build` 成功（新規8件を prerender）。
+
 警告66の大半は、粒度の粗い検索意図クラスタの共食い候補（過検出）と、コードに存在するが
 マニフェスト `existing_articles` 未登録である旨の情報提供です（`CONTENT_AUDIT.md` 参照）。
 

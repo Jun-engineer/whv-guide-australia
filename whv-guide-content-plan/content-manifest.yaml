@@ -2450,7 +2450,7 @@ planned_content:
 - slug: used-car-inspection-checklist
   title: 中古車の現車確認チェックリスト｜試乗・整備記録・故障
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: checklist
@@ -2460,7 +2460,7 @@ planned_content:
 - slug: ppsr-check-guide
   title: PPSRチェックの方法｜盗難車・ローン残債を確認
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -2470,7 +2470,7 @@ planned_content:
 - slug: rego-ctp-rwc
   title: Rego・CTP・Roadworthy/Safety Certificateの違い
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: guide
@@ -2480,7 +2480,7 @@ planned_content:
 - slug: vehicle-transfer-by-state
   title: 中古車の名義変更｜州別の手続きと期限
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -2490,7 +2490,7 @@ planned_content:
 - slug: car-insurance-comparison
   title: CTP・Third Party・Comprehensive保険の違い
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: comparison
@@ -2500,7 +2500,7 @@ planned_content:
 - slug: roadside-assistance
   title: ロードサービス比較と呼び方｜故障・バッテリー・パンク
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: comparison
@@ -2510,7 +2510,7 @@ planned_content:
 - slug: car-breakdown-guide
   title: 車が故障したときの対応｜安全確保・牽引・修理
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: problem-solving
@@ -2520,7 +2520,7 @@ planned_content:
 - slug: flat-tyre-guide
   title: タイヤがパンクしたとき｜スペアタイヤ・修理・交換
   hub: transport
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: problem-solving

@@ -189,6 +189,24 @@ housing ハブの残り16件を公開し、housing バッチを完了した。
   過検出のため統合しない。
 - housing ハブ最終状態: 全21件（既存2＋新規19）が最終ステータス確定。planned/merged/review は 0件。
 
+### transport サブバッチ #1（2026-07-19 / 8件）
+
+**統合（merged）: なし。リダイレクト: なし。** transport ハブの中古車購入〜所有〜故障対応 8件
+（`used-car-inspection-checklist` / `ppsr-check-guide` / `rego-ctp-rwc` / `vehicle-transfer-by-state` /
+`car-insurance-comparison` / `roadside-assistance` / `car-breakdown-guide` / `flat-tyre-guide`）はすべて
+**新規スラッグ**で、既存の公開記事（`cars-guide` 車購入・Rego総論・`license-guide` 免許総論・
+`transport-payment-guide` ・`intercity-transport`）とは**検索意図が明確に異なり（現車確認・PPSR照会・
+Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサービス・故障/パンク対応）、全面重複はないため、
+新規の統合・リダイレクトは発生せず**、`relatedSlugs` で相互接続した。
+
+- 既存 `cars-guide`（車購入の総論）の `relatedSlugs` を拡張し、`used-car-inspection-checklist` /
+  `ppsr-check-guide` / `rego-ctp-rwc` / `vehicle-transfer-by-state` / `car-insurance-comparison` /
+  `roadside-assistance` へ接続。前セッションが残した `sell-car-before-leaving`（planned・未公開）への
+  dangling 参照は削除して整合。
+- `buy-used-car-guide`→`cars-guide` は過去バッチで統合済み（本サブバッチで変更なし）。
+- 備考: transport ハブの残り planned 14件（公共交通比較・免許切替・トール/駐車・事故/売却等）は
+  次サブバッチで扱う。`city-public-transport-comparison` から再開。
+
 ## 4. リダイレクト運用ルール
 
 - `to`（転送先）は必ず公開中（`published`）の実記事 slug。
