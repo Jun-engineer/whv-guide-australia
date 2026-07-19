@@ -182,6 +182,31 @@
   `tsc --noEmit` クリーン。変更 housing 記事の `relatedSlugs` は全て実在 slug に解決。
 - **次の未完了 housing slug:** `bond-rules-overview`。
 
+### 追加バッチ 9: housing（2026-07-19、16件・ハブ完了）
+
+`housing` ハブの残り16件を、記事単位で公式一次情報に照合して新規公開し、**housing バッチを完了**。
+すべて `verifiedAt: 2026-07-19`、`officialSources`（`accessedAt: 2026-07-19`）付き、冒頭でタイトルの
+問いに回答、`keyFacts`/`steps`/`tips`/`warnings`/`faqs`/`phrases`/`sources`/`relatedSlugs` を完備。
+記事はカテゴリモジュール（`lib/content/articles/housing.ts`）にのみ追加（`mockData.ts` へは追加せず）。
+
+- **公開（16件）:** `bond-rules-overview`, `condition-report-guide`, `rental-agreement-share-house`,
+  `rent-and-bills`, `rent-increase-rules`, `bond-refund-dispute`, `ending-tenancy-notice`,
+  `find-replacement-tenant`, `share-house-rules`, `share-house-conflict`, `short-term-accommodation`,
+  `hostel-guide`, `homestay-guide`, `couple-room-housing`, `regional-farm-housing`, `rental-scam-examples`。
+- **統合/リダイレクト:** なし。16件はいずれも新規スラッグで、既存公開記事 `housing-guide`（総論）/
+  `share-house-finding`（探し方＋内見概要）およびマイクロバッチ3件とは検索意図が明確に異なる
+  （Bond法規・入居/退去手続き・契約チェック・光熱費・値上げ・トラブル解決・短期滞在・
+  ホステル/ホームステイ・カップル/地方の家探し・詐欺）ため統合せず、`relatedSlugs` で相互接続。
+  `content-manifest.yaml` の該当16件を `status: planned` → `status: published` に更新。
+- **housing ハブ最終状態:** 全21件が最終ステータス確定（既存公開2件＋新規公開19件、
+  planned/merged/review は 0件）。
+- **照合出典:** RTA(QLD)、NSW Government「Renting a place to live」、Consumer Affairs Victoria
+  「Renting」（RTBA）、Scamwatch（ACCC）。可変な上限額・州別ルール・通知期間は断定せず各州当局へ
+  誘導。詳細は `SOURCE_VERIFICATION_REPORT.md` の「housing バッチ完了」。
+- **検証:** `validate:articles`（ユニーク slug 224・重複0・重複パス0・housing 21件）、
+  `tsc --noEmit` クリーン、`validate:content` 0 error / 66 warning、`test:content` 5/5 pass、
+  `eslint` クリーン、`next build` 成功（278静的ページ・新規16件を prerender 確認）。
+
 ## 2. 統合とリダイレクト
 
 計画（未公開）の重複トピック6件を既存公開記事へ統合し、308恒久リダイレクトを登録
@@ -217,15 +242,15 @@
 | 型チェック（`npx tsc --noEmit`） | エラー0 |
 | コンテンツテスト（`npm run test:content`, node:test） | 5/5 パス |
 | Lint（`npm run lint`） | エラー0 / 警告0 |
-| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（farm バッチ 36 件を含む全 205 記事を prerender、バッチ8公開後） |
+| ビルド（`npm run build`, Next.js 16.2.7 + TS） | 成功（housing バッチ完了後、全 278 静的ページを prerender） |
 
 警告66の大半は、粒度の粗い検索意図クラスタの共食い候補（過検出）と、コードに存在するが
 マニフェスト `existing_articles` 未登録である旨の情報提供です（`CONTENT_AUDIT.md` 参照）。
 
 ## 5. 非公開（review/planned のまま）
 
-- 残り **174件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
-  （start-here 7件 + visa 16件 + preparation 20件 + arrival 10件 + money 10件 + tax 17件 + jobs 26件 + qualifications 9件 + farm 36件を公開済み。次バッチは gig-work ハブ。）
+- 残り **155件** の計画コンテンツは未公開。slug 単位の一覧と理由は `BULK_PUBLISH_REMAINING.md`。
+  （start-here 7件 + visa 16件 + preparation 20件 + arrival 10件 + money 10件 + tax 17件 + jobs 26件 + qualifications 9件 + farm 36件 + housing 19件を公開済み。次バッチは transport ハブ。）
 - 非公開コンテンツは公開一覧・サイトマップ・構造化データ・内部リンクに露出していません
   （`isPublishedArticle` により自動除外）。
 

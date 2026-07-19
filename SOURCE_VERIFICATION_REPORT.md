@@ -281,6 +281,45 @@ housing ハブの3件（`housing-platforms-comparison` / `housing-message-templa
   `CONTENT_MERGE_MAP.md`「housing マイクロバッチ」。
 - **次の未完了 housing slug:** `bond-rules-overview`。
 
+### housing バッチ完了（2026-07-19、残り16件公開）
+
+housing ハブの残り16件を、記事単位で公式一次情報に照合して新規公開し、housing バッチを完了した。
+各記事は `verifiedAt: 2026-07-19` を付与し、`officialSources`（`accessedAt: 2026-07-19`）に該当する
+州の賃貸当局・詐欺通報窓口を明示。YMYL の中核は**賃貸法規（Bond・値上げ・退去）・契約条件の確認・
+トラブル解決・賃貸詐欺の回避**であり、州で異なる可変値（Bond上限・値上げ頻度・通知期間）は断定せず
+「目安」＋各州当局への誘導とした（`StateSpecificNotice` の方針）。
+
+| slug | 照合した主要ポイント | 主な出典（accessedAt 2026-07-19） |
+| --- | --- | --- |
+| `bond-rules-overview` | Bondは州の公式機関へ預託（NSW Rental Bonds Online / VIC RTBA / QLD RTA）・上限の目安は家賃4週間分・個人口座への払込リスク・又貸し/間借りは保護外の場合 | RTA(QLD) / NSW Government Renting / Consumer Affairs Victoria |
+| `condition-report-guide` | 入居時の状態記録と写真で退去時のBondを守る・fair wear and tearは負担外 | NSW Government Renting / Consumer Affairs Victoria |
+| `rental-agreement-share-house` | 家賃/Bond/最低滞在/退去通知/光熱費/契約形態（正式契約 vs sub-let/lodger）の確認 | Consumer Affairs Victoria / NSW Government Renting |
+| `rent-and-bills` | 家賃は週表記・billsの込み/別と上限(cap)・割り勘の精算 | Consumer Affairs Victoria / NSW Government Renting |
+| `rent-increase-rules` | 値上げは頻度制限（NSW: 2024-10-31以降12か月に1回）・書面事前通知（QLD一般賃貸2か月前）・VIC 2025-11-25新法・NCAT/QCAT/VCAT | NSW Government Renting / RTA(QLD) / Consumer Affairs Victoria |
+| `bond-refund-dispute` | 証拠→交渉→州機関/トリブナル（NCAT/QCAT/VCAT）・fair wear and tearは負担外・又貸しは少額訴訟等 | NSW Government Renting / RTA(QLD) / Consumer Affairs Victoria |
+| `ending-tenancy-notice` | 通知期間を守る・書面で残す・鍵返却/Bond精算・途中退去の後任負担 | Consumer Affairs Victoria / NSW Government Renting |
+| `find-replacement-tenant` | 無断転貸（unauthorised sub-let）を避け家主/借主の許可を得る・Bond名義変更 | Consumer Affairs Victoria / NSW Government Renting |
+| `share-house-rules` | 掃除/騒音/ゲスト/共有物の合意・退去は通知期間を守る | Consumer Affairs Victoria / NSW Government Renting |
+| `share-house-conflict` | 記録→冷静に伝える→州の賃貸当局/トリブナル・身の危険は000 | NSW Government Renting / Consumer Affairs Victoria |
+| `short-term-accommodation` | ホステル/Airbnb/ホテル/サブレット比較・内見前送金しない | Scamwatch（ACCC） |
+| `hostel-guide` | 立地/治安・鍵付きロッカー・長期割引・仕事紹介の前払い勧誘に注意 | Scamwatch（ACCC） |
+| `homestay-guide` | 費用に含まれるもの・家庭ルール・個人手配の前払い注意 | Scamwatch（ACCC） |
+| `couple-room-housing` | 家賃が部屋/一人単位か・二人分の総額・内見前送金しない | Scamwatch（ACCC） |
+| `regional-farm-housing` | 雇用連動（辞めたら退去/給料天引き）のリスク・車/送迎・搾取時の相談先 | Consumer Affairs Victoria / Scamwatch（ACCC） |
+| `rental-scam-examples` | 内見前送金・激安・海外オーナー・偽契約・身分証悪用・急かし／被害時は銀行→Scamwatch→ReportCyber→IDCARE | Scamwatch（ACCC） / NSW Government Renting |
+
+- **照合した公式一次情報（accessedAt 2026-07-19）:** RTA(QLD, rta.qld.gov.au)、NSW Government
+  「Renting a place to live」(nsw.gov.au)、Consumer Affairs Victoria「Renting」(consumer.vic.gov.au)、
+  Scamwatch（ACCC / National Anti-Scam Centre, scamwatch.gov.au）。3b 節で照合済みの内容
+  （Bond上限・値上げ頻度・預託機関・詐欺の危険サイン）を各記事本文へ反映した。
+- **統合・リダイレクト:** なし（16件は新規スラッグ、既存公開記事・マイクロバッチと検索意図が分離）。
+- **留保点:** Bond上限の具体額・値上げの通知期間・退去通知期間は州で異なるため断定せず、各州当局
+  （RBO/RTBA/RTA・NCAT/QCAT/VCAT）へ誘導。又貸し/間借り（sub-let/lodger）は州の賃貸法の保護外に
+  なる場合が多い旨を各記事で明示した。
+- **検証:** `validate:articles`（ユニーク slug 224・重複0・housing 21件）、`tsc --noEmit` クリーン、
+  `validate:content` 0 error / 66 warning、`test:content` 5/5 pass、`eslint` クリーン、
+  `next build` 成功（278静的ページ）。
+
 ## 3. 未解決・要注意の記述（限定事項）
 - **「88日」対「3 months」（解決済み）:** immi の Specified work ページ（更新 2025-09-11）を実照合し、
   公式に「3か月 = 1年で最も短い3か月分に相当 = 最低88暦日（週末・休息日を含む）」と明記されていることを確認。

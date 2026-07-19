@@ -2269,7 +2269,7 @@ planned_content:
 - slug: bond-rules-overview
   title: Bondの仕組みと正規の預け方｜州ごとの確認先
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: legal
@@ -2279,7 +2279,7 @@ planned_content:
 - slug: condition-report-guide
   title: 入居時Condition Reportと写真記録の残し方
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -2289,7 +2289,7 @@ planned_content:
 - slug: rental-agreement-share-house
   title: シェアハウス契約書で確認する項目
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: checklist
@@ -2299,7 +2299,7 @@ planned_content:
 - slug: rent-and-bills
   title: 家賃に光熱費込み？電気・ガス・水道・ネットの分担
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: finance
@@ -2309,7 +2309,7 @@ planned_content:
 - slug: rent-increase-rules
   title: 家賃値上げを通知された場合の確認事項
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: legal
@@ -2319,7 +2319,7 @@ planned_content:
 - slug: bond-refund-dispute
   title: Bondが返ってこない場合の対応手順
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: problem-solving
@@ -2329,7 +2329,7 @@ planned_content:
 - slug: ending-tenancy-notice
   title: 退去Noticeの出し方と英語メッセージ
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: template
@@ -2339,7 +2339,7 @@ planned_content:
 - slug: find-replacement-tenant
   title: 後任入居者を探す方法と名義変更の注意
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: how-to
@@ -2349,7 +2349,7 @@ planned_content:
 - slug: share-house-rules
   title: シェアハウスのルール｜掃除・騒音・ゲスト・共有物
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: guide
@@ -2359,7 +2359,7 @@ planned_content:
 - slug: share-house-conflict
   title: シェアメイト・オーナーとのトラブル対処
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: problem-solving
@@ -2369,7 +2369,7 @@ planned_content:
 - slug: short-term-accommodation
   title: 長期の家が決まるまでの短期滞在先比較
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: comparison
@@ -2379,7 +2379,7 @@ planned_content:
 - slug: hostel-guide
   title: バックパッカーホステルの選び方｜安全・荷物・長期割引
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: guide
@@ -2389,7 +2389,7 @@ planned_content:
 - slug: homestay-guide
   title: ホームステイのメリット・費用・ルール
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: guide
@@ -2399,7 +2399,7 @@ planned_content:
 - slug: couple-room-housing
   title: カップル部屋の探し方｜家賃・応募文・注意点
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -2409,7 +2409,7 @@ planned_content:
 - slug: regional-farm-housing
   title: 地方・ファーム地域の家探し｜車・送迎・仕事とのセット契約
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: housing
@@ -2419,7 +2419,7 @@ planned_content:
 - slug: rental-scam-examples
   title: 家探し詐欺の典型例｜内見前送金・偽契約・身分証悪用
   hub: housing
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: security

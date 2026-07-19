@@ -4,6 +4,32 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-19）: housing バッチ完了（残り16件を公開・ハブ全21件完了）
+
+housing（家探し・賃貸）ハブの**残り16件を公開し、housing バッチを完了**しました。以下が確定状態です。
+
+- **housing ハブ最終状態: 全21件が最終ステータス確定。** 内訳＝既存公開2件（`housing-guide` /
+  `share-house-finding`、manifest `existing`）＋新規公開19件（manifest `published`）。**planned・merged・review は 0件**。
+- **本バッチで公開した16件（すべて `verifiedAt: 2026-07-19`・`officialSources` 付き・完全公開）:**
+  `bond-rules-overview`, `condition-report-guide`, `rental-agreement-share-house`, `rent-and-bills`,
+  `rent-increase-rules`, `bond-refund-dispute`, `ending-tenancy-notice`, `find-replacement-tenant`,
+  `share-house-rules`, `share-house-conflict`, `short-term-accommodation`, `hostel-guide`,
+  `homestay-guide`, `couple-room-housing`, `regional-farm-housing`, `rental-scam-examples`。
+- **統合（merged）: なし。リダイレクト: なし。** 16件はいずれも新規スラッグで、既存公開記事
+  （`housing-guide` 総論 / `share-house-finding` 探し方＋内見概要）およびマイクロバッチ3件とは
+  検索意図が明確に異なるため、統合せず個別公開し `relatedSlugs` で相互リンクした（farm/jobs と同方針）。
+- **既存記事の内部リンク:** 変更なし（既存2記事の本文・slug・URL は不変）。新規16件どうしと
+  マイクロバッチ3件・既存2記事へ `relatedSlugs` で接続。孤立記事なし。
+- **公式照合（記事反映済み）:** RTA(QLD)・NSW Government Renting・Consumer Affairs Victoria(RTBA)・
+  Scamwatch(ACCC) を照合。Bond上限・値上げ頻度・預託機関・紛争解決（NCAT/QCAT/VCAT）・賃貸詐欺の
+  典型手口。可変な上限額・州別ルールは断定せず各州当局へ誘導。詳細は `SOURCE_VERIFICATION_REPORT.md`。
+- **content-manifest.yaml:** 該当16件を `status: planned` → `status: published` に更新済み。
+- **検証（本バッチ）:** `validate:articles`（ユニーク slug 224・重複0・重複パス0・housing 21件）、
+  `tsc --noEmit` クリーン、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ）、
+  `test:content` 5/5 pass、`eslint` クリーン、`next build` 成功（278静的ページ・新規16件を prerender）。
+- **残り housing slug: 0件（ハブ完了）。**
+- **次のバッチ: transport（22件・未着手）。** ※本セッションでは housing のみ処理し、次カテゴリは着手しない。
+
 ## チェックポイント（2026-07-19）: housing マイクロバッチ #1（3件公開）
 
 housing（家探し・賃貸）バッチの最初の3件を公開しました（マイクロバッチ運用）。以下が確定状態です。
@@ -327,7 +353,12 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - `japan-remote-work-tax` — 日本のリモート副業を豪州から行う場合の税金と契約 _(優先度 P1、意図: tax)_
 - `public-liability-insurance` — Sole TraderのPublic Liability Insurance基礎 _(優先度 P2、意図: insurance)_
 
-### housing — 家探し・賃貸 (19件)
+### housing — 家探し・賃貸 (19件) ← ✅ 完了（2026-07-19 / commit: feat: complete housing content batch）
+
+**全19件を公開済み**（既存公開2件を含め housing ハブ全21件が最終ステータス確定）。マイクロバッチ3件
+（`housing-platforms-comparison` / `housing-message-templates` / `inspection-checklist`）＋本バッチ16件を
+すべて `published: true`・`verifiedAt: 2026-07-19`・`officialSources` 付きで公開。統合・リダイレクトなし。
+以下は公開した19 slug 一覧です。
 
 - `housing-platforms-comparison` — Flatmates・Facebook・Gumtreeなど家探しサービス比較 _(優先度 P0、意図: comparison)_
 - `housing-message-templates` — シェアハウス応募メッセージの英語テンプレート _(優先度 P0、意図: template)_
