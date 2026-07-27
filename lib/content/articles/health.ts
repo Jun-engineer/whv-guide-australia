@@ -1057,4 +1057,451 @@ export const healthArticles: Article[] = [
     updatedAt: "2026-07-27",
     published: true,
   },
+
+  {
+    id: "a256",
+    title: "熱中症の症状と応急対応｜仕事・旅行・ファーム",
+    slug: "heatstroke-guide",
+    category: "health",
+    hub: "health",
+    priority: "P0",
+    searchIntent: "熱中症の症状の見分け方と応急処置・000を呼ぶ判断",
+    description:
+      "オーストラリアの暑さで起こる熱中症について、軽い『熱疲労（heat exhaustion）』と命に関わる『熱射病（heat stroke）』の見分け方、その場でできる応急対応、そして000を呼ぶべきサインを解説します。ファーム・建設・屋外観光など暑い環境で働くワーホリ向けの予防策もまとめます。",
+    content: [
+      "結論から言うと、熱中症には軽度の『熱疲労（heat exhaustion）』と、命に関わる緊急事態『熱射病（heat stroke）』があり、意識がおかしい・ぐったりして反応が鈍い・体が異常に熱いといったサインがあれば、迷わず000に電話してください。熱射病は放置すると命に関わります。オーストラリアの夏は非常に暑く、特にファーム・建設・屋外の仕事では熱中症のリスクが高いため、見分け方と対応を知っておくことが大切です。",
+      "熱疲労（heat exhaustion）のサインは、大量の汗、強い疲労感、頭痛、めまい、吐き気、筋肉のけいれん（こむら返り）、皮膚が青白く冷たい、脈が速いなどです。この段階では、涼しい日陰やエアコンのある場所に移動し、余分な衣類をゆるめ、水分（できれば少しずつ）を取り、体を濡らして風を送って冷やせば、多くの場合は回復します。無理をせず休むことが重要です。",
+      "熱射病（heat stroke）は緊急事態です。混乱・意識のもうろう・言動がおかしい、反応が鈍い・意識を失う、けいれん（発作）、体が非常に熱い、汗が出なくなり皮膚が熱く乾く（または逆に大量発汗）などのサインが出ます。これらがあれば、すぐに000へ。救急車を待つ間も、涼しい場所へ移し、衣類をゆるめ、水や濡れタオル・うちわ・扇風機で積極的に体を冷やし続けます。意識がない人に無理に水を飲ませないでください。",
+      "応急対応の基本は『冷やす・休ませる・水分・観察』です。日陰や室内へ移動、衣類をゆるめる、首・脇・足の付け根など太い血管を冷やす、意識があれば水分を少しずつ取らせる、症状が改善しない・悪化するなら受診（軽症でもGPやUrgent Care、重症は000/ED）。アルコールやカフェインは脱水を進めるので避けます。",
+      "予防が何より大切です。こまめに水を飲む（のどが渇く前に）、日中の最も暑い時間帯（正午前後）の激しい作業を避ける、日陰や休憩をこまめに取る、通気性のよい服と帽子、日焼け対策を併用する、体調が悪い日は無理をしない。屋外の仕事では、雇用主に暑さ対策（水・日陰・休憩）を確認しましょう。熱波の予報はオーストラリア気象局（BOM）で確認できます。",
+    ],
+    keyFacts: [
+      { label: "2種類", value: "熱疲労（回復し得る）と熱射病（命に関わる緊急）" },
+      { label: "000を呼ぶサイン", value: "意識障害・反応が鈍い・体が異常に熱い・けいれん" },
+      { label: "応急対応", value: "涼しい場所・衣類ゆるめる・積極的に冷やす・水分" },
+      { label: "熱疲労のサイン", value: "大量の汗・めまい・頭痛・吐き気・筋けいれん" },
+      { label: "避けるもの", value: "アルコール・カフェイン（脱水を進める）" },
+      { label: "予防", value: "こまめな水分・暑い時間帯を避ける・日陰と休憩" },
+    ],
+    steps: [
+      { title: "涼しい場所へ移す", description: "日陰やエアコンのある場所へ移動し、余分な衣類をゆるめます。" },
+      { title: "積極的に冷やす", description: "水・濡れタオル・うちわ・扇風機で体を冷やし、首・脇・足の付け根を重点的に。" },
+      { title: "水分を取らせる", description: "意識があれば水を少しずつ。意識がない人には飲ませないでください。" },
+      { title: "重症サインを判断", description: "意識障害・反応が鈍い・けいれん・体が異常に熱いなら、すぐ000へ。" },
+      { title: "回復しなければ受診", description: "改善しない・繰り返す場合はGPやUrgent Care、重症は救急外来（ED）へ。" },
+    ],
+    tips: [
+      "『のどが渇く前に』こまめに水を飲むのが基本。屋外作業では水を切らさないようにしましょう。",
+      "スポーツドリンクや経口補水液は、大量に汗をかいたときの塩分・水分補給に役立ちます。",
+      "同僚同士で声をかけ合い、様子がおかしい人がいたら早めに休ませ、無理に働かせないことが大切です。",
+    ],
+    phrases: [
+      { en: "I think he has heat stroke. He's confused and very hot.", ja: "彼は熱射病だと思います。混乱していて体がとても熱いです。", note: "000にかけたとき" },
+      { en: "I feel dizzy and sick from the heat. I need to rest in the shade.", ja: "暑さでめまいと吐き気がします。日陰で休む必要があります。" },
+      { en: "Can I take a break? I'm not feeling well in this heat.", ja: "休憩してもいいですか？この暑さで具合が悪いです。" },
+    ],
+    faqs: [
+      {
+        question: "熱疲労と熱射病はどう見分けますか？",
+        answer:
+          "熱疲労は大量の汗・めまい・頭痛・吐き気などで、涼しい場所で休み水分を取れば回復することが多いです。一方、熱射病は意識の混乱・反応の鈍さ・意識消失・けいれん・体が異常に熱いなどの重いサインが出て、命に関わる緊急事態です。重いサインがあれば迷わず000へ。",
+      },
+      {
+        question: "屋外で働くとき、暑さ対策はどう頼めばいいですか？",
+        answer:
+          "雇用主には安全に働ける環境を整える責任があります。水・日陰・休憩の確保を確認し、体調が悪いときは無理せず休憩を申し出ましょう。『Can I take a break? I'm not feeling well in this heat.』などと伝えられます。熱波の日はBOMの予報も確認してください。",
+      },
+    ],
+    warnings: [
+      "熱射病（意識障害・反応が鈍い・体が異常に熱い・けいれん）は命に関わる緊急事態です。ためらわず000に電話してください。",
+      "意識がない人に無理に水を飲ませないでください。誤嚥の危険があります。救急車を待つ間は体を冷やし続けます。",
+    ],
+    sources: [
+      { label: "healthdirect｜Heat-related illness", url: "https://www.healthdirect.gov.au/heat-related-illness" },
+      { label: "Bureau of Meteorology｜Heatwave warnings", url: "https://www.bom.gov.au/australia/heatwave/" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "healthdirect｜Heat-related illness（熱疲労と熱射病の症状・応急処置・受診の目安）",
+        url: "https://www.healthdirect.gov.au/heat-related-illness",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Bureau of Meteorology｜Heatwave service（熱波予報・警報）",
+        url: "https://www.bom.gov.au/australia/heatwave/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Triple Zero｜Call 000 in an emergency（重症は000）",
+        url: "https://www.triplezero.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "gp-urgent-care-emergency",
+      "sunburn-skin-cancer-prevention",
+      "farm-heat-sun-safety",
+      "safety-emergency",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a257",
+    title: "虫・クラゲ・ヘビ・クモに刺された／噛まれた場合",
+    slug: "bites-stings-wildlife",
+    category: "health",
+    hub: "health",
+    priority: "P1",
+    searchIntent: "豪州でヘビ・クモ・クラゲ・虫に噛まれた/刺されたときの対応",
+    description:
+      "オーストラリアでヘビ・クモ・クラゲ・虫などに噛まれたり刺されたときの基本的な対応を、公式の応急処置情報に沿って解説します。命に関わる可能性があるものは迷わず000へ。ヘビ咬傷の圧迫固定法、クラゲ対応、アレルギー（アナフィラキシー）のサインまで、やってはいけないことも含めてまとめます。",
+    content: [
+      "結論から言うと、ヘビに噛まれた・危険なクモ（ファンネルウェブ）に噛まれた・熱帯の海でクラゲに刺されて重い症状が出た・全身のアレルギー反応（アナフィラキシー）が出た——このような場合は、命に関わる可能性があるため迷わず000に電話してください。オーストラリアには毒を持つ生き物がいますが、正しい応急処置と早い受診で重症化を防げます。自己判断で危険な処置をしないことが重要です。",
+      "ヘビに噛まれたとき（snake bite）の基本は『動かず・圧迫固定・000』です。噛まれた手足を心臓より下げず安静にし、傷口の上から包帯で圧迫し、手足全体を副木などで固定して動かさないようにして、すぐ000へ。やってはいけないこと——傷口を洗う（毒の判定に使う）・切る・吸い出す・きつく縛って血流を止める（tourniquet）・毒を絞り出そうとする、はいずれもNGです。どのヘビか分からなくても、すべて危険とみなして対応します。",
+      "クモや海の生き物も種類で対応が異なります。ファンネルウェブ（funnel-web）などの危険なクモはヘビと同じ圧迫固定＋000、レッドバック（redback）は圧迫固定はせず冷やして受診します。クラゲは、熱帯北部のボックスジェリーフィッシュ／イルカンジは命に関わり得るため000＋酢（vinegar）をかける（こすらない）、温帯のカツオノエボシ（bluebottle）は海水で洗い温水につけるなど、地域と種類で対応が違います。迷ったら無理な処置をせず、healthdirectや000に相談してください。",
+      "虫刺され・ダニ（tick）にも注意します。多くの虫刺されは冷やして様子を見れば治まりますが、東部のマダニはアレルギーの原因になることがあり、掻き出さず凍結スプレー等で対処するのが推奨されます。刺された後に、じんましんが全身に広がる・唇や顔の腫れ・息苦しさ・声のかすれ・ふらつきなどの『アナフィラキシー』のサインが出たら、命に関わる緊急事態です。アドレナリン自己注射器（EpiPen）があれば使い、すぐ000へ。",
+      "受診の目安を知っておきましょう。命に関わるサイン（意識障害、呼吸困難、全身のアレルギー反応、ヘビ・危険なクモの咬傷）は000。腫れ・痛み・発赤が強い、感染が疑われる（熱を持つ・膿）、症状が長引く場合はGPやUrgent Careへ。応急処置は必ず公式の最新情報（healthdirect、St John Ambulance など）に従い、この記事は一般的な目安として、実際の手順は公式で確認してください。",
+    ],
+    keyFacts: [
+      { label: "000を呼ぶ", value: "ヘビ・危険なクモの咬傷・重いクラゲ被害・アナフィラキシー" },
+      { label: "ヘビ咬傷", value: "動かさず圧迫固定（pressure immobilisation）＋000" },
+      { label: "やってはいけない", value: "洗う・切る・吸う・きつく縛る（tourniquet）" },
+      { label: "クモ", value: "ファンネルウェブ=圧迫固定＋000／レッドバック=冷やして受診" },
+      { label: "クラゲ", value: "熱帯=000＋酢／温帯bluebottle=海水・温水（種類で違う）" },
+      { label: "アナフィラキシー", value: "全身じんましん・顔の腫れ・息苦しさ→EpiPen＋000" },
+    ],
+    steps: [
+      { title: "危険度を判断", description: "ヘビ・危険なクモ・重いクラゲ被害・全身のアレルギー反応なら、すぐ000へ。" },
+      { title: "ヘビ咬傷は圧迫固定", description: "手足を安静にし包帯で圧迫、副木で固定して動かさず000を待ちます。" },
+      { title: "種類に応じた対応", description: "クモ・クラゲは種類で対応が違うため、公式情報や000の指示に従います。" },
+      { title: "アレルギーに注意", description: "全身症状（息苦しさ・顔の腫れ）が出たらEpiPenを使い000へ。" },
+      { title: "軽症でも受診を検討", description: "腫れ・痛み・感染の兆候が強い、長引く場合はGP/UCCを受診します。" },
+    ],
+    tips: [
+      "ファームやブッシュ、キャンプでは、長ズボン・靴・手袋で肌の露出を減らすと咬傷・刺傷のリスクが下がります。",
+      "ヘビを見ても近づかず、追い払おうとしないこと。多くの咬傷は捕まえよう・殺そうとして起きています。",
+      "熱帯の海（北部QLD/NT/WA北部）はシーズンに危険なクラゲが出ます。看板の指示とライフガードの案内に従いましょう。",
+    ],
+    phrases: [
+      { en: "A snake has bitten my leg. We need an ambulance now.", ja: "ヘビに足を噛まれました。今すぐ救急車が必要です。", note: "000にかけたとき" },
+      { en: "She's been stung and can't breathe properly. It might be an allergic reaction.", ja: "彼女は刺されてうまく呼吸できません。アレルギー反応かもしれません。" },
+      { en: "I was stung by a jellyfish. What should I do?", ja: "クラゲに刺されました。どうすればいいですか？", note: "ライフガードに" },
+    ],
+    faqs: [
+      {
+        question: "ヘビに噛まれたら傷口を洗ってはいけないのですか？",
+        answer:
+          "はい。オーストラリアの公式応急処置では、ヘビの咬傷で傷口を洗わないよう案内されています。皮膚に残った毒がどのヘビかの判定（治療の選択）に使われるためです。傷口を切る・吸い出す・きつく縛るのもNG。手足を動かさず包帯で圧迫固定し、すぐ000へ。",
+      },
+      {
+        question: "毒があるか分からないときはどうすればいいですか？",
+        answer:
+          "種類が分からなくても、危険なものとみなして安全側で対応してください。ヘビ・危険なクモの咬傷や、全身のアレルギー反応（アナフィラキシー）は迷わず000へ。判断に迷う軽症なら、healthdirectの無料電話で相談するか、GP・Urgent Careを受診しましょう。",
+      },
+    ],
+    warnings: [
+      "全身のじんましん・顔や唇の腫れ・息苦しさ・声のかすれ・ふらつきは、命に関わるアナフィラキシーのサインです。EpiPenを使いすぐ000へ。",
+      "応急処置は種類によって正解が異なります。誤った処置はかえって危険です。必ず公式情報（healthdirect・州の救急/消防）や000の指示に従ってください。",
+    ],
+    sources: [
+      { label: "healthdirect｜Bites and stings", url: "https://www.healthdirect.gov.au/bites-and-stings" },
+      { label: "healthdirect｜Snake bites", url: "https://www.healthdirect.gov.au/snake-bites" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "healthdirect｜Bites and stings（虫・クラゲ・ヘビ・クモの応急処置の考え方）",
+        url: "https://www.healthdirect.gov.au/bites-and-stings",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "healthdirect｜Snake bites（圧迫固定・やってはいけないこと・000）",
+        url: "https://www.healthdirect.gov.au/snake-bites",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Triple Zero｜Call 000 in an emergency（重症・毒性の高い咬傷は000）",
+        url: "https://www.triplezero.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "gp-urgent-care-emergency",
+      "safety-emergency",
+      "pharmacy-guide",
+      "medicare-oshc",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a258",
+    title: "食物アレルギーを英語で伝える方法",
+    slug: "food-allergy-eating-out",
+    category: "health",
+    hub: "health",
+    priority: "P1",
+    searchIntent: "外食やシェアハウスで食物アレルギーを英語で安全に伝える方法",
+    description:
+      "オーストラリアで食物アレルギーを英語で安全に伝える方法を解説します。レストランでの言い方、食品表示（アレルゲン表示）の見方、シェアハウスでの注意、そしてアナフィラキシーが起きたときのアドレナリン自己注射器（EpiPen）と000の対応まで、実用フレーズ付きでまとめます。",
+    content: [
+      "結論から言うと、食物アレルギーは外食時に『I have a food allergy（食物アレルギーがあります）』とはっきり伝え、具体的なアレルゲン名（例: nuts＝ナッツ、peanuts＝ピーナッツ、eggs＝卵、shellfish＝甲殻類など）を明確に言うことが大切です。そして万一、全身のアレルギー反応（アナフィラキシー）が出たら、アドレナリン自己注射器（EpiPen）を使い、すぐ000に電話してください。命に関わるため、伝え方と緊急対応の両方を準備しておきましょう。",
+      "レストランでの伝え方にはコツがあります。注文前にスタッフへ『I have a severe allergy to ◯◯. Does this dish contain it?（◯◯に重いアレルギーがあります。この料理に入っていますか？）』と確認し、少量でも危険な場合は『Even a small amount can make me very sick.（少量でも重い症状が出ます）』と重症度を伝えます。調理器具や揚げ油の共有による混入（cross-contamination）も起こり得るため、心配なときはその点も確認しましょう。",
+      "食品表示（ラベル）の見方も知っておくと安心です。オーストラリアでは、包装食品に主要なアレルゲン（ピーナッツ、木の実、卵、乳、魚、甲殻類、大豆、小麦・グルテン、ごま、ルピナスなど）の表示が法律で義務づけられており、分かりやすい書き方（Plain English Allergen Labelling）で『Contains: ...』などと記載されます。スーパーで買うときはラベルの『Contains』『May contain traces of...』を確認しましょう。",
+      "シェアハウスでも配慮が必要です。共有のキッチンでは、調理器具・まな板・トースター・油などからアレルゲンが混入することがあります。ハウスメイトに自分のアレルギーを伝え、食材を分けて保管する、器具を分ける、使用後に洗うなどをお願いしておくと安全です。緊急時に備えて、ハウスメイトにEpiPenの場所と使い方、000への連絡を共有しておくと安心です。",
+      "アナフィラキシーは命に関わる緊急事態です。全身のじんましん、唇・顔・のどの腫れ、息苦しさ・ゼーゼー、声のかすれ、飲み込みにくさ、ふらつき・意識がもうろう——これらのサインが出たら、処方されているアドレナリン自己注射器（EpiPen）を太ももの外側に注射し、すぐ000へ。症状が軽くても油断せず、救急に連絡してください。EpiPenを持つ人は、常に携帯し、使用期限を確認しておきましょう。",
+    ],
+    keyFacts: [
+      { label: "基本の伝え方", value: "I have a food allergy to ◯◯（具体名を明確に）" },
+      { label: "重症度を伝える", value: "Even a small amount can make me very sick." },
+      { label: "混入に注意", value: "調理器具・油の共有（cross-contamination）" },
+      { label: "食品表示", value: "義務表示。Contains: / May contain traces of...を確認" },
+      { label: "アナフィラキシー", value: "全身症状→EpiPenを太もも外側＋000" },
+      { label: "EpiPen", value: "常に携帯・使用期限を確認・場所を周囲に共有" },
+    ],
+    steps: [
+      { title: "アレルゲン名を覚える", description: "自分のアレルゲンの英語名（nuts/eggs/shellfishなど）を正確に言えるようにします。" },
+      { title: "注文前に伝える", description: "スタッフに重症度を含めて伝え、料理に含まれるか・混入の可能性を確認します。" },
+      { title: "ラベルを確認", description: "包装食品はContains表示・微量混入の注意書きを確認して選びます。" },
+      { title: "共有環境に配慮", description: "シェアハウスでは器具・保管を分け、ハウスメイトに伝えておきます。" },
+      { title: "緊急対応を準備", description: "EpiPenを携帯し、使い方と000への連絡を周囲と共有しておきます。" },
+    ],
+    tips: [
+      "アレルゲン名を書いた『アレルギーカード（英語）』を用意し、注文時にスタッフに見せると確実に伝わります。",
+      "『anaphylaxis（アナフィラキシー）』という単語を覚えておくと、緊急時に状況を的確に伝えられます。",
+      "外食が不安なときは、事前に店に電話して対応可能か確認したり、アレルギー対応をうたう店を選ぶと安心です。",
+    ],
+    phrases: [
+      { en: "I have a severe allergy to nuts. Does this dish contain any nuts?", ja: "ナッツに重いアレルギーがあります。この料理にナッツは入っていますか？" },
+      { en: "Even a small amount can make me very sick. Please be careful with cross-contamination.", ja: "少量でも重い症状が出ます。混入に気をつけてください。" },
+      { en: "She's having an allergic reaction and can't breathe. We've used an EpiPen.", ja: "彼女はアレルギー反応で呼吸できません。EpiPenを使いました。", note: "000にかけたとき" },
+    ],
+    faqs: [
+      {
+        question: "レストランでどう伝えれば安全ですか？",
+        answer:
+          "注文前にスタッフへ『I have a severe allergy to ◯◯（◯◯に重いアレルギーがあります）』と伝え、その料理に含まれるか、調理器具や油の共有による混入がないかを確認しましょう。少量でも危険なら重症度も伝えます。英語のアレルギーカードを見せると確実です。",
+      },
+      {
+        question: "アナフィラキシーが起きたらどうすればいいですか？",
+        answer:
+          "全身のじんましん・顔やのどの腫れ・息苦しさ・声のかすれ・ふらつきなどが出たら、処方されているアドレナリン自己注射器（EpiPen）を太ももの外側に注射し、すぐ000に電話してください。症状が軽く見えても油断せず救急に連絡します。EpiPenは常に携帯しましょう。",
+      },
+    ],
+    warnings: [
+      "アナフィラキシー（全身症状・息苦しさ・のどの腫れ）は命に関わります。EpiPenを使い、ためらわず000に電話してください。",
+      "『大丈夫だろう』という自己判断は危険です。少量でも重症化し得るため、外食・共有キッチンでは必ずアレルゲンの有無を確認しましょう。",
+    ],
+    sources: [
+      { label: "healthdirect｜Food allergies", url: "https://www.healthdirect.gov.au/food-allergies" },
+      { label: "healthdirect｜Anaphylaxis", url: "https://www.healthdirect.gov.au/anaphylaxis" },
+      { label: "Food Standards Australia New Zealand｜Allergen labelling", url: "https://www.foodstandards.gov.au/consumer/labelling/allergen-labelling" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "healthdirect｜Food allergies（食物アレルギーの基礎・受診）",
+        url: "https://www.healthdirect.gov.au/food-allergies",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "healthdirect｜Anaphylaxis（アナフィラキシーのサイン・EpiPen・000）",
+        url: "https://www.healthdirect.gov.au/anaphylaxis",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Food Standards Australia New Zealand｜Allergen labelling（主要アレルゲンの義務表示・Plain English Allergen Labelling）",
+        url: "https://www.foodstandards.gov.au/consumer/labelling/allergen-labelling",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "pharmacy-guide",
+      "gp-urgent-care-emergency",
+      "safety-emergency",
+      "medicare-oshc",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a259",
+    title: "仕事中の怪我で病院へ行く流れと書類",
+    slug: "work-injury-medical",
+    category: "health",
+    hub: "health",
+    priority: "P1",
+    searchIntent: "仕事中に怪我をしたときの受診の流れと労災・必要書類",
+    description:
+      "オーストラリアで仕事中に怪我をしたときの、受診の流れと必要な書類を解説します。まず雇用主へ報告すること、労災補償（workers' compensation）は各州の制度で医療費・休業補償の対象になり得ること、医師の診断書（Certificate of Capacity）や記録の重要性、そしてワーホリも労働者として対象になり得る点をまとめます。",
+    content: [
+      "結論から言うと、仕事中に怪我をしたら、①命に関わる緊急なら000／救急外来（ED）、②そうでなければ早めにGPやUrgent Careを受診し、③できるだけ早く雇用主に怪我を報告することが基本の流れです。オーストラリアには各州・準州ごとに『労災補償（workers' compensation）』の制度があり、仕事に関連する怪我は医療費や休業中の収入の補償対象になり得ます。ワーキングホリデーで働く人も『労働者（worker）』であれば対象になり得ます。",
+      "最初のステップは受診と報告です。重傷（大出血、骨折、頭部の強打、意識障害など）は迷わず000／ED。それ以外は早めにGPやUrgent Careを受診し、怪我の内容と『仕事中に起きたこと』を医師に伝えます。並行して、できるだけ早く雇用主（またはスーパーバイザー）に怪我を報告します。報告が遅れると労災の手続きで不利になることがあるため、その日のうちに知らせるのが理想です。",
+      "書類と記録がとても重要です。労災補償を受けるには、通常、医師が発行する診断書（Certificate of Capacity／医療証明）が必要になります。加えて、いつ・どこで・どのように怪我をしたか、目撃者、雇用主に報告した日時、治療内容や領収書などを記録・保管しておきましょう。写真やメモも役立ちます。雇用主は職場の事故を記録する義務があり、労災の申請手続きについて案内する立場にあります。",
+      "労災補償の仕組みは州で異なります。制度や窓口は州・準州ごとに分かれており（例: NSWはicare/State Insurance Regulatory Authority、VICはWorkSafe Victoria、QLDはWorkCover Queensland、SAはReturnToWorkSA、WAはWorkCover WAなど）、補償の範囲や申請方法に違いがあります。重要なのは、労災は原則としてMedicareやビザの種類に関わらず『仕事に関連する怪我』を対象にする制度だという点です。詳しい仕組みと申請は、労災の解説記事や各州の窓口で確認してください。",
+      "泣き寝入りしないことが大切です。『ワーホリだから』『英語が不安だから』と補償を諦める必要はありません。雇用主が報告や労災申請に協力しない、補償を拒む、報告を理由に不当な扱いをする——such caseでは、州の労災当局やFair Work、労働組合などの公的窓口に相談できます。まずは怪我の治療を最優先にし、記録を残し、必要なら公的窓口に助けを求めましょう。",
+    ],
+    keyFacts: [
+      { label: "流れ", value: "重傷は000/ED→GP/UCC受診→雇用主へ早期報告" },
+      { label: "労災補償", value: "各州のworkers' compensation。医療費・休業補償が対象に" },
+      { label: "対象", value: "『労働者』ならワーホリも対象になり得る（ビザ問わず）" },
+      { label: "必要書類", value: "医師の診断書（Certificate of Capacity）・記録" },
+      { label: "記録すべき事", value: "日時・場所・状況・目撃者・報告日時・領収書" },
+      { label: "困ったら", value: "州の労災当局・Fair Work・労働組合に相談" },
+    ],
+    steps: [
+      { title: "まず治療", description: "重傷は000/ED、それ以外は早めにGPやUrgent Careを受診します。" },
+      { title: "雇用主に報告", description: "できればその日のうちに、怪我の内容と発生状況を雇用主へ報告します。" },
+      { title: "診断書をもらう", description: "労災に必要な医師の診断書（Certificate of Capacity）を取得します。" },
+      { title: "記録を残す", description: "日時・場所・状況・目撃者・治療内容・領収書などを保管します。" },
+      { title: "労災を申請", description: "州の労災制度に申請します。困ったら州当局やFair Workに相談します。" },
+    ],
+    tips: [
+      "怪我をしたら小さく見えてもその日のうちに雇用主へ報告を。後日の申請で『いつ・どう起きたか』が重要になります。",
+      "医師には必ず『仕事中に起きた怪我』であることを伝えましょう。労災用の診断書に反映されます。",
+      "英語が不安なら、無料通訳サービス（TIS National 131 450）に対応する医療機関・窓口を利用できます。",
+    ],
+    phrases: [
+      { en: "I got injured at work today. I need to report it.", ja: "今日、仕事中に怪我をしました。報告する必要があります。", note: "雇用主に" },
+      { en: "This injury happened at work. I may need a workers' compensation certificate.", ja: "この怪我は仕事中に起きました。労災の診断書が必要かもしれません。", note: "医師に" },
+      { en: "Can you give me a Certificate of Capacity for my work injury?", ja: "労災用の診断書（Certificate of Capacity）をもらえますか？" },
+    ],
+    faqs: [
+      {
+        question: "ワーホリでも労災は使えますか？",
+        answer:
+          "労災補償（workers' compensation）は、原則として『労働者（worker）』であればビザの種類に関わらず対象になり得る制度です。仕事に関連する怪我は、医療費や休業中の収入の補償対象になり得ます。まず治療を受け、雇用主に報告し、医師の診断書を取得したうえで、州の労災制度に申請しましょう。",
+      },
+      {
+        question: "雇用主が報告や労災に協力してくれません。",
+        answer:
+          "雇用主には職場の事故を記録し、労災申請を案内する立場があります。協力が得られない・補償を拒む・報告を理由に不当な扱いを受ける場合は、州の労災当局（icare/WorkSafe/WorkCover等）やFair Work、労働組合などの公的窓口に相談できます。記録を残しておくことが大切です。",
+      },
+    ],
+    warnings: [
+      "大出血・骨折・頭部の強打・意識障害など重い怪我は、労災の手続きより先に000／救急外来（ED）で治療を受けてください。",
+      "報告が遅れると労災の手続きで不利になることがあります。小さな怪我でもその日のうちに雇用主へ報告し、記録を残しましょう。",
+    ],
+    sources: [
+      { label: "Safe Work Australia｜Workers' compensation", url: "https://www.safeworkaustralia.gov.au/workers-compensation" },
+      { label: "Fair Work Ombudsman｜Sick & injured workers", url: "https://www.fairwork.gov.au/" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "Safe Work Australia｜Workers' compensation（各州の労災制度・対象の考え方）",
+        url: "https://www.safeworkaustralia.gov.au/workers-compensation",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Fair Work Ombudsman（職場の権利・不当な扱いの相談窓口）",
+        url: "https://www.fairwork.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "workplace-injury-workers-comp",
+      "overseas-insurance-claim",
+      "gp-urgent-care-emergency",
+      "medicare-oshc",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a260",
+    title: "山火事（Bushfire）への備えと警報アプリ",
+    slug: "bushfire-safety",
+    category: "health",
+    hub: "health",
+    priority: "P0",
+    searchIntent: "オーストラリアの山火事への備え・警報レベル・アプリ",
+    description:
+      "オーストラリアの山火事（Bushfire）への備え方を解説します。火災危険度レーティング（Fire Danger Rating）と警報レベル（Advice／Watch and Act／Emergency Warning）の意味、州消防の公式アプリ、避難の考え方、Total Fire Ban（火気全面禁止）まで、ワーホリが夏を安全に過ごすための基本をまとめます。",
+    content: [
+      "結論から言うと、山火事シーズン（主に夏）には、①州の消防当局の公式アプリ・サイトで最新の警報を確認し、②火災危険度が非常に高い日は早めに危険な場所を離れる計画を持ち、③『Emergency Warning（緊急警報）』が出たら指示にすぐ従う——ことが安全の基本です。命に関わる状況では000に電話します。ブッシュや地方で働く・滞在するワーホリは、山火事の情報源と避難の考え方を知っておくことが重要です。",
+      "まず『Fire Danger Rating（火災危険度レーティング）』を理解しましょう。オーストラリアでは全国共通の基準で、Moderate（中）／High（高）／Extreme（極度）／Catastrophic（壊滅的）などの区分で、その日の火災の危険度を示します。特に最高区分の日は、火がついた場合の危険が非常に大きいため、危険な地域からは早めに離れるのが最も安全とされています。道路脇や消防署の表示、アプリで確認できます。",
+      "『警報レベル』は3段階が基本です。Advice（アドバイス＝情報。周囲を確認し備える）、Watch and Act（監視して行動＝危険が高まっている。行動を起こす）、Emergency Warning（緊急警報＝差し迫った危険。すぐ行動）。Emergency Warningが出たら、指示（避難や屋内退避など）に直ちに従ってください。迷って行動が遅れることが最も危険です。",
+      "情報源は州の消防当局の公式アプリ・サイトです。例として、NSWは『Hazards Near Me』（NSW RFS）、VICは『VicEmergency』、QLDはQueensland Fire Department/QFESの情報、SA・WA・TAS・NT・ACTにもそれぞれの消防・緊急サービスがあります。加えて、オーストラリア気象局（BOM）の高温・強風の予報も火災リスクの目安になります。滞在する州のアプリを入れ、通知をオンにしておきましょう。",
+      "日々の備えも大切です。『Total Fire Ban（火気全面禁止）』の日は、屋外での火の使用（焚き火・BBQの一部・機械の使用など）が禁止され、違反は重い罰則の対象です。避難の計画（どのルートで・どこへ・いつ離れるか）を事前に考え、貴重品・書類・水・薬をまとめておくと安心です。煙が多い日は屋内にとどまり窓を閉める、呼吸器に不安がある人は特に注意しましょう。命の危険を感じたら000へ。",
+    ],
+    keyFacts: [
+      { label: "基本", value: "州消防アプリで警報確認・危険な日は早めに離れる" },
+      { label: "火災危険度", value: "Moderate/High/Extreme/Catastrophic（最高区分は特に危険）" },
+      { label: "警報レベル", value: "Advice→Watch and Act→Emergency Warning（すぐ行動）" },
+      { label: "公式アプリ例", value: "Hazards Near Me(NSW)・VicEmergency(VIC)等・州で異なる" },
+      { label: "Total Fire Ban", value: "火気全面禁止の日。違反は重い罰則" },
+      { label: "緊急", value: "命の危険を感じたら000。指示に直ちに従う" },
+    ],
+    steps: [
+      { title: "州のアプリを入れる", description: "滞在する州の消防・緊急アプリを入れ、通知をオンにします。" },
+      { title: "危険度を確認", description: "毎日Fire Danger Ratingを確認し、最高区分の日は特に警戒します。" },
+      { title: "避難計画を持つ", description: "離れるルート・場所・タイミング、持ち出す物を事前に決めておきます。" },
+      { title: "警報に従う", description: "Watch and Act・Emergency Warningが出たら、指示に直ちに従います。" },
+      { title: "火気の規制を守る", description: "Total Fire Banの日は屋外での火の使用を避け、違反しないようにします。" },
+    ],
+    tips: [
+      "地方やファームで働くときは、雇用主に山火事時の避難計画・連絡方法を確認しておきましょう。",
+      "煙が広がる日は屋内にとどまり窓を閉める、外出を控えるなどで健康被害を減らせます。",
+      "『いつ離れるか』を先に決めておくのが鍵。ぎりぎりの避難が最も危険とされています。",
+    ],
+    phrases: [
+      { en: "Is there a bushfire warning for this area today?", ja: "今日この地域に山火事の警報は出ていますか？" },
+      { en: "There's a fire nearby and we're in danger. We need help.", ja: "近くで火事が起きていて危険です。助けが必要です。", note: "000にかけたとき" },
+      { en: "Is today a Total Fire Ban day?", ja: "今日はTotal Fire Ban（火気全面禁止）の日ですか？" },
+    ],
+    faqs: [
+      {
+        question: "山火事の情報はどこで確認できますか？",
+        answer:
+          "滞在する州の消防・緊急サービスの公式アプリ・サイトが最も確実です（例: NSWの『Hazards Near Me』、VICの『VicEmergency』など州ごとに異なります）。アプリを入れて通知をオンにし、火災危険度レーティングと警報レベルを確認しましょう。高温・強風の日はBOMの予報も参考になります。",
+      },
+      {
+        question: "『Emergency Warning』が出たらどうすればいいですか？",
+        answer:
+          "Emergency Warning（緊急警報）は差し迫った危険を意味します。出されている指示（避難や屋内退避など）に直ちに従ってください。判断を迷って行動が遅れることが最も危険です。命の危険を感じたら000に電話します。危険度が最高区分の日は、そもそも早めに危険な場所を離れるのが安全です。",
+      },
+    ],
+    warnings: [
+      "『Emergency Warning（緊急警報）』は差し迫った危険のサインです。指示に直ちに従い、命の危険を感じたら000へ。行動の遅れが最も危険です。",
+      "Total Fire Ban（火気全面禁止）の日に屋外で火を使うと、山火事の原因になり重い罰則の対象になります。必ず規制を守ってください。",
+    ],
+    sources: [
+      { label: "Australian Fire Danger Rating System", url: "https://www.afdrs.com.au/" },
+      { label: "NSW Rural Fire Service", url: "https://www.rfs.nsw.gov.au/" },
+      { label: "CFA Victoria", url: "https://www.cfa.vic.gov.au/" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "Australian Fire Danger Rating System（全国共通の火災危険度レーティング）",
+        url: "https://www.afdrs.com.au/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "NSW Rural Fire Service（警報レベル・Hazards Near Meアプリ・Total Fire Ban）",
+        url: "https://www.rfs.nsw.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Bureau of Meteorology（高温・強風など火災リスクに関わる気象情報）",
+        url: "https://www.bom.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "safety-emergency",
+      "heatstroke-guide",
+      "gp-urgent-care-emergency",
+      "farm-weather-no-work",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
 ];

@@ -3,6 +3,40 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-27）: health マイクロバッチ #3（5件公開 / commit: feat: publish health micro-batch）
+
+health（医療・健康・安全）ハブの次の5件を公開しました（マイクロバッチ #3）。
+
+- **公開した5件（すべて `verifiedAt: 2026-07-27`・`officialSources` 付き・完全公開・分類は全て create）:**
+  `heatstroke-guide`（safety, P0, id a256）, `bites-stings-wildlife`（safety, P1, id a257）,
+  `food-allergy-eating-out`（language, P1, id a258）, `work-injury-medical`（health, P1, id a259）,
+  `bushfire-safety`（disaster, P0, id a260）。
+- **統合（merged）: なし。リダイレクト: なし。** 5件はいずれも新規スラッグで、既存公開記事（`medicare-oshc`／
+  `safety-emergency`／`mental-health` ＋ #1・#2 の10件）とは検索意図が明確に異なる（熱中症の応急対応／咬傷・刺傷の応急処置／
+  食物アレルギーの英語伝達／仕事中の怪我と労災／山火事への備え）。独立意図が強いため個別公開し `relatedSlugs` で相互接続。
+- **既存記事の内部リンク更新: なし。** 新規5件は相互リンク＋既存記事（`workplace-injury-workers-comp`〔jobs〕・
+  `farm-weather-no-work`〔farm〕・`farm-heat-sun-safety`〔farm〕・`sunburn-skin-cancer-prevention`・
+  `gp-urgent-care-emergency`・`safety-emergency`・`pharmacy-guide`・`overseas-insurance-claim`・`medicare-oshc`）へリンク。
+- **孤立記事なし:** health ハブページ（`GuideCategoryPage category="health"`）が公開 health 記事を自動列挙するため、
+  5件はすべてハブから到達可能。
+- **公式照合（記事反映済み）:** healthdirect（Heat-related illness／Bites and stings／Snake bites／Food allergies／
+  Anaphylaxis）、Bureau of Meteorology（Heatwave service）、Food Standards Australia New Zealand（Allergen labelling）、
+  Safe Work Australia（Workers' compensation）、Fair Work Ombudsman、Australian Fire Danger Rating System、
+  NSW Rural Fire Service／CFA Victoria、Triple Zero（000）。
+- **可変事項の断定回避:** 応急処置（咬傷・刺傷は種類で正解が異なる）は公式最新情報へ誘導。労災制度は州で窓口・範囲が異なるため
+  州当局へ誘導。山火事の警報アプリは州別（NSW=Hazards Near Me／VIC=VicEmergency等）と明示。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新済み。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（ユニーク slug 260・重複0・重複パス0・重複エクスポート0・
+  health 18件・`OK: no article data errors`）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning、
+  health の `relatedSlugs` は全て実在 slug に解決（dangling 0）。
+  ※フルビルド/テスト/lint/sitemap/RSS/構造化データ監査は health ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **残り health slug: 2件（`flood-cyclone-safety`／`heatwave-severe-weather`）。次の未完了 health slug: `flood-cyclone-safety`。**
+  残り2件（≤5）のため、次回は残り全件処理＋最終 health ハブ監査を実施予定。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/health.ts`、
+  `lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、
+  `CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: health マイクロバッチ #2（5件公開 / commit: feat: publish health micro-batch）
 
 health（医療・健康・安全）ハブの次の5件を公開しました（マイクロバッチ #2）。

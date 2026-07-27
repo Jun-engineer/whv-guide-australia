@@ -267,6 +267,28 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   後者は「生理用品・婦人科・検診」で次の行動が異なるため別記事として保持し双方向リンク。
 - 次の未完了 health slug: `heatstroke-guide`。
 
+### health マイクロバッチ #3（2026-07-27 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。** health ハブの次の5件
+（`heatstroke-guide` / `bites-stings-wildlife` / `food-allergy-eating-out` /
+`work-injury-medical` / `bushfire-safety`）はすべて**新規スラッグ**で、既存の公開記事
+（`medicare-oshc` / `safety-emergency` / `mental-health` ＋ #1・#2 の10件）とは
+**検索意図が明確に異なり（熱中症の応急対応／咬傷・刺傷の応急処置／食物アレルギーの英語伝達／
+仕事中の怪我と労災の導線／山火事への備えと警報）、全面重複はないため統合・リダイレクトは発生せず**、
+`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 既存記事の内部リンク変更なし。新規5件は相互リンク＋既存記事（`workplace-injury-workers-comp`〔jobs〕・
+  `farm-weather-no-work`〔farm〕・`farm-heat-sun-safety`〔farm〕・`sunburn-skin-cancer-prevention`・
+  `gp-urgent-care-emergency`・`safety-emergency`・`pharmacy-guide`・`overseas-insurance-claim`・`medicare-oshc`）へ接続。
+- 孤立記事なし: health ハブページ（`GuideCategoryPage category="health"`）が公開 health 記事を
+  自動列挙するため、5件はすべてハブから到達可能。
+- `heatstroke-guide`（熱中症の応急対応）と `sunburn-skin-cancer-prevention`（#2・紫外線/皮膚がん予防）は
+  近接するが、前者は「暑さによる急性症状の応急対応・000判断」、後者は「UV・日焼け・皮膚がんの予防」で
+  次の行動が異なるため別記事として保持し双方向リンク。
+- `work-injury-medical`（health・受診と書類の流れ）と `workplace-injury-workers-comp`（jobs・労災制度の詳細）は
+  役割が異なる（前者=医療受診の導線、後者=補償制度の詳細）ため別記事として保持し双方向リンク。
+- 次の未完了 health slug: `flood-cyclone-safety`（残り2件・次回は最終 health ハブ監査を実施）。
+
 ## 4. リダイレクト運用ルール
 
 - `to`（転送先）は必ず公開中（`published`）の実記事 slug。

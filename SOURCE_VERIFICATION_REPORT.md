@@ -440,6 +440,38 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## health マイクロバッチ #3（熱中症・咬傷/刺傷・食物アレルギー・労災・山火事 / 2026-07-27 / 5件公開）
+
+health ハブの次の5件を、記事単位で公式一次情報に照合して新規公開した。各記事は
+`verifiedAt: 2026-07-27` を付与し、`officialSources`（`accessedAt: 2026-07-27`）に該当する公式
+情報源を明示。YMYL の中核は**緊急時の判断（000）・応急処置・労災制度・災害警報**であり、種類・州で異なる事項は断定を避けた。
+
+| slug | 照合した主要ポイント | 主な出典（accessedAt 2026-07-27） |
+| --- | --- | --- |
+| `heatstroke-guide` | 熱疲労（回復し得る）と熱射病（命に関わる緊急）の見分け。意識障害・反応が鈍い・体が異常に熱い・けいれん→000。応急=涼所・衣類ゆるめ・積極冷却・水分。予防=こまめな水分・暑い時間帯回避 | healthdirect（Heat-related illness）/ BOM（Heatwave）/ Triple Zero |
+| `bites-stings-wildlife` | ヘビ咬傷=動かさず圧迫固定＋000、洗う/切る/吸う/きつく縛るはNG。クモ・クラゲは種類で対応が異なる。アナフィラキシー=EpiPen＋000。応急処置は公式情報に限定 | healthdirect（Bites and stings／Snake bites）/ Triple Zero |
+| `food-allergy-eating-out` | 外食は具体的アレルゲン名を明確に伝える・混入(cross-contamination)確認。包装食品は主要アレルゲンの義務表示。アナフィラキシー=EpiPen（太もも外側）＋000 | healthdirect（Food allergies／Anaphylaxis）/ FSANZ（Allergen labelling） |
+| `work-injury-medical` | 重傷は000/ED→GP/UCC受診→雇用主へ早期報告。労災(workers' compensation)は各州制度で医療費・休業補償が対象になり得る。診断書(Certificate of Capacity)・記録が重要。困ったら州当局/Fair Work | Safe Work Australia（Workers' compensation）/ Fair Work Ombudsman |
+| `bushfire-safety` | 州消防アプリで警報確認。Fire Danger Rating（Moderate/High/Extreme/Catastrophic）と警報レベル（Advice→Watch and Act→Emergency Warning）。Total Fire Ban。危険な日は早めに離れる | Australian Fire Danger Rating System / NSW RFS・CFA Victoria / BOM |
+
+- **照合した公式一次情報（accessedAt 2026-07-27）:** healthdirect（healthdirect.gov.au — Heat-related illness／
+  Bites and stings／Snake bites／Food allergies／Anaphylaxis）、Bureau of Meteorology（bom.gov.au — Heatwave service・
+  気象情報）、Food Standards Australia New Zealand（foodstandards.gov.au — Allergen labelling＝主要アレルゲンの義務表示・
+  Plain English Allergen Labelling）、Safe Work Australia（safeworkaustralia.gov.au — Workers' compensation）、
+  Fair Work Ombudsman（fairwork.gov.au）、Australian Fire Danger Rating System（afdrs.com.au）、
+  NSW Rural Fire Service（rfs.nsw.gov.au — 警報レベル・Hazards Near Me・Total Fire Ban）／CFA Victoria（cfa.vic.gov.au）、
+  Triple Zero（triplezero.gov.au — 000）。
+- **可変事項・種類/州依存の断定回避:** ①咬傷・刺傷の応急処置は生き物の種類で正解が異なるため（ヘビ/ファンネルウェブ=圧迫固定、
+  レッドバック=冷却、クラゲ=地域で酢/温水と異なる）、記事は一般的目安とし**実際の手順は公式（healthdirect・州の救急）で確認**する導線とした。
+  ②労災制度は州・準州ごとに窓口・補償範囲が異なる（icare/WorkSafe/WorkCover等）ため州当局へ誘導し、金額は断定せず。
+  ③山火事の警報アプリ・区分運用は州別のため代表例（NSW=Hazards Near Me／VIC=VicEmergency）を示しつつ各州公式へ誘導。
+- **統合・リダイレクト:** なし（5件は新規スラッグ、既存公開記事と検索意図が分離）。既存記事の内部リンク変更なし。
+  孤立記事は health ハブページの自動列挙により発生しない。
+- **検証:** `validate:articles`（ユニーク slug 260・重複0・重複パス0・重複エクスポート0・health 18件・
+  `OK: no article data errors`）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning、
+  health の `relatedSlugs` は全て実在 slug に解決（dangling 0・`workplace-injury-workers-comp`／`farm-weather-no-work` 含め確認）。
+  ※フルビルド/テスト/lint/監査は health ハブ完了後（残り5件以下時）にまとめて実施。
+
 ## health マイクロバッチ #2（眼・性の健康・女性の健康・救急車・紫外線 / 2026-07-27 / 5件公開）
 
 health ハブの次の5件を、記事単位で公式一次情報に照合して新規公開した。各記事は
