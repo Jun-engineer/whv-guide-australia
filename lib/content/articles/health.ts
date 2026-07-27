@@ -1747,4 +1747,69 @@ export const healthArticles: Article[] = [
     updatedAt: "2026-07-27",
     published: true,
   },
+
+  {
+    id: "a278",
+    title: "ジム契約の注意点｜週払い・解約・無料体験",
+    slug: "gym-fitness-guide",
+    category: "health",
+    hub: "daily-life",
+    description:
+      "オーストラリアでジム（gym）に入会するときの契約の落とし穴を解説。週払い・最低契約期間・自動更新・解約条件・無料体験（free trial）の自動課金など、後悔しないためのチェックポイントをまとめました。",
+    content: [
+      "オーストラリアのジムは、Anytime Fitness・Fitness First・Snap Fitness・Plus Fitness など24時間営業のチェーンが多く、料金は「週払い（per week）」で表示されるのが一般的です。表示が安く見えても、最低契約期間（minimum term）・入会金（joining/activation fee）・年会費・解約手数料が別にかかることがあるため、契約前に総額と条件を必ず確認しましょう。ワーホリは滞在期間が限られるので、契約の縛りとの相性が特に重要です。",
+      "特に注意したいのが、①最低契約期間の有無（例: 数か月の縛り）、②契約満了後に自動更新（auto-renewal）で継続課金されるか、③解約時の通知期間（notice period）や解約手数料、④無料体験（free trial）が終了後に自動で有料へ切り替わる条件、⑤引っ越し・帰国時に解約できるかです。オーストラリアではサービスにも消費者保証（consumer guarantees）が適用され、サービスは相応の注意と技能をもって提供される必要がありますが、「途中でやめたい」というだけの解約はできないのが一般的で、契約書の条件に従います。",
+      "契約は必ず書面（契約書・利用規約）で条件を確認し、口頭説明を鵜呑みにしないことが大切です。解約・クーリングオフ（cooling-off）に関するルールは契約内容と州によって異なるため、断定はできません。トラブルになったら、契約書の条項と、住んでいる州の Fair Trading（消費者保護当局）や ACCC の消費者保証の情報で確認してください（本記事の確認日: 2026-07-27）。",
+    ],
+    keyFacts: [
+      { label: "料金表示", value: "週払い（per week）が主流。総額・別料金を要確認" },
+      { label: "別途費用", value: "入会金・年会費・解約手数料など" },
+      { label: "契約の縛り", value: "最低契約期間・自動更新の有無を確認" },
+      { label: "無料体験", value: "終了後に自動で有料化する条件に注意" },
+      { label: "困ったら", value: "契約書＋各州 Fair Trading／ACCC 消費者保証" },
+    ],
+    steps: [
+      { title: "総額と別料金を確認", description: "週払いの金額だけでなく、入会金・年会費・解約手数料など総額を確認します。" },
+      { title: "契約期間と自動更新を確認", description: "最低契約期間の有無、満了後に自動更新で課金が続くかを契約書でチェックします。" },
+      { title: "解約条件を確認", description: "解約の通知期間・手数料、引っ越しや帰国時に解約できるかを事前に確認します。" },
+      { title: "無料体験の条件を確認", description: "free trial が終了後に自動で有料へ切り替わるか、いつまでに止めれば無料かを確認します。" },
+    ],
+    tips: [
+      "滞在が短い人は、縛りのない「no lock-in（月々・週々で解約可）」プランを選ぶと安心です。",
+      "無料体験は開始日と自動課金の切替日をカレンダーに登録し、続けない場合は期限前に手続きします。",
+      "支払いは金額と引き落としサイクルを明細で確認し、退会後も課金が続いていないかチェックしましょう。",
+    ],
+    faqs: [
+      {
+        question: "帰国や引っ越しでジムを途中解約できますか？",
+        answer:
+          "解約できるかどうか、手数料や必要な通知期間は契約内容によって異なります。転居・帰国を理由に解約できる条項がある契約もあれば、最低契約期間中は手数料が発生する契約もあります。契約書の解約条項を確認し、不明点はジムや各州の Fair Trading に確認してください。",
+      },
+      {
+        question: "無料体験だけのつもりが課金されました。どうすればいい？",
+        answer:
+          "free trial は終了後に自動で有料プランへ切り替わる設計が多く、期限前に停止手続きをしないと課金されることがあります。まずは契約・利用規約の条件を確認し、ジムに連絡してください。不当だと感じる場合は、住んでいる州の Fair Trading や ACCC の消費者保証の情報を参照して対応します。",
+      },
+    ],
+    warnings: [
+      "解約・クーリングオフのルールは契約内容と州によって異なり、断定できません。契約書の条項と、各州 Fair Trading／ACCC の消費者保証の情報で最新を確認してください（確認日: 2026-07-27）。",
+      "週払い表示は総額が分かりにくいことがあります。入会金・年会費・解約手数料を含めた総額を必ず確認しましょう。",
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "ACCC｜Consumer rights and guarantees（消費者の権利とサービスの保証）",
+        url: "https://www.accc.gov.au/consumers/buying-products-and-services/consumer-rights-and-guarantees",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "public-toilets-showers",
+      "shopping-surcharges-tipping",
+      "online-scams-cybersecurity",
+      "library-guide",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
 ];

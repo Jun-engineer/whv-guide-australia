@@ -1291,4 +1291,68 @@ export const transportArticles: Article[] = [
     updatedAt: "2026-07-19",
     published: true,
   },
+
+  {
+    id: "a280",
+    title: "無料トイレ・シャワー・給水場所を探す方法",
+    slug: "public-toilets-showers",
+    category: "transport",
+    hub: "daily-life",
+    description:
+      "オーストラリアで無料の公衆トイレ・シャワー・給水（水の補充）場所を探す方法を解説。政府運営の National Public Toilet Map の使い方や、旅行・車生活（バンライフ）で役立つ探し方のコツをまとめました。",
+    content: [
+      "オーストラリアには、政府が運営する「National Public Toilet Map（全国公衆トイレマップ）」があり、全国23,000か所以上の公衆トイレの場所・開館時間・バリアフリー情報・シャワーやおむつ替え台などの設備を無料で検索できます。これはオーストラリア政府の Department of Health, Disability and Ageing（保健・障害・高齢者省）が National Continence Program の一環として運営する公式サービスで、ウェブサイトとアプリで使えます。旅行や車生活（バンライフ）でトイレやシャワーを探すときに特に便利です。",
+      "無料トイレは、ショッピングセンター・図書館・公園（park）・ビーチ・観光案内所（visitor centre）・大きな公共交通ターミナルなどにあることが多いです。ガソリンスタンド（servo）やファストフード店のトイレは利用客向けが基本です。シャワーは、一部のビーチ（水浴び用の簡易シャワー）・公営プール（aquatic centre）・キャンプ場やキャラバンパーク（有料の場合あり）で使えることがあります。水の補充は、公園などの水飲み場（bubbler / water fountain）や給水スポットを利用できます。",
+      "設備の有無・開館時間・料金は場所によって異なり、変更されることもあります。断定せず、National Public Toilet Map（公式サイト・アプリ）や各施設の案内で最新情報を確認してください。夜間は施錠される公衆トイレもあるため、車中泊や早朝・深夜の移動では事前に利用可能な場所を調べておくと安心です（本記事の確認日: 2026-07-27）。",
+    ],
+    keyFacts: [
+      { label: "公式マップ", value: "National Public Toilet Map（政府運営・無料）" },
+      { label: "掲載数", value: "全国23,000か所以上の公衆トイレ" },
+      { label: "検索できる情報", value: "場所・開館時間・バリアフリー・シャワー等の設備" },
+      { label: "無料トイレの例", value: "ショッピングセンター・図書館・公園・観光案内所" },
+      { label: "シャワー", value: "一部のビーチ・公営プール・キャラバンパーク（有料の場合あり）" },
+    ],
+    steps: [
+      { title: "公衆トイレマップを開く", description: "National Public Toilet Map（ウェブ/アプリ）で現在地や目的地を検索します。" },
+      { title: "設備で絞り込む", description: "シャワー・おむつ替え・バリアフリーなど、必要な設備で候補を絞ります。" },
+      { title: "開館時間を確認", description: "夜間施錠される場所もあるため、開館時間と利用可能な時間帯を確認します。" },
+      { title: "給水スポットを探す", description: "公園などの水飲み場（bubbler）や給水スポットで水を補充します。" },
+    ],
+    tips: [
+      "車生活や長距離移動では、次の休憩地の公衆トイレ・シャワーを事前にマップで調べておくと安心です。",
+      "図書館やショッピングセンターは冷暖房もあり、トイレ・休憩・作業に使える便利なスポットです。",
+      "シャワーは公営プールやキャラバンパークで使えることがありますが、有料の場合があるため料金を確認しましょう。",
+    ],
+    faqs: [
+      {
+        question: "無料でシャワーを使える場所はありますか？",
+        answer:
+          "一部のビーチには水浴び用の簡易シャワーがあり、公営プール（aquatic centre）やキャンプ場・キャラバンパークでシャワーを使えることがあります（有料の場合あり）。場所や料金は施設によって異なるため、National Public Toilet Map でシャワー設備を絞り込んで検索し、各施設の案内で確認してください。",
+      },
+      {
+        question: "夜間でも使える公衆トイレはありますか？",
+        answer:
+          "24時間使える公衆トイレもありますが、夜間は施錠される場所も多くあります。開館時間はマップに表示されるので、深夜・早朝に移動する場合は事前に利用可能な場所を確認しておくと安心です。",
+      },
+    ],
+    warnings: [
+      "設備・開館時間・料金は場所によって異なり変更されることがあります。断定せず、National Public Toilet Map（公式）や各施設の案内で最新を確認してください（確認日: 2026-07-27）。",
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "National Public Toilet Map（Australian Government Department of Health, Disability and Ageing / National Continence Program）",
+        url: "https://www.toiletmap.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "tap-water-drinking",
+      "library-guide",
+      "gym-fitness-guide",
+      "arrival-checklist",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
 ];

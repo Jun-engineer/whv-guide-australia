@@ -306,6 +306,24 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   役割が異なる（前者=医療受診の導線、後者=補償制度の詳細）ため別記事として保持し双方向リンク。
 - 次の未完了 health slug: `flood-cyclone-safety`（残り2件・次回は最終 health ハブ監査を実施）。
 
+### daily-life マイクロバッチ #4 = 最終（2026-07-27 / 6件公開・ハブ完了）
+
+**統合（merged）: なし。リダイレクト: なし。** daily-life ハブの残り全6件
+（`gym-fitness-guide` / `haircut-barber-english` / `public-toilets-showers` /
+`home-internet-guide` / `online-scams-cybersecurity` / `phone-lost-stolen`）はすべて**新規スラッグ**
+（`hub: "daily-life"`、`category` は health/english/transport/sim/money に分散）で、既存の公開記事とは
+**検索意図が明確に異なり（ジム契約の注意／美容院・バーバー英語／無料トイレ・シャワー・給水／ホームインターネット／
+オンライン詐欺・セキュリティ／スマホ紛失盗難対応）、全面重複はないため、新規の統合・リダイレクトは発生せず**、
+`relatedSlugs` で相互接続した。分類はいずれも create。既存記事本文への内部リンク追記は無し。
+
+- 新規6件どうしを意図の近い組で双方向リンク（`online-scams-cybersecurity` ↔ `phone-lost-stolen`、
+  `home-internet-guide` ↔ `sim-guide`、`gym-fitness-guide` ↔ `public-toilets-showers` 等）。
+- `online-scams-cybersecurity`（詐欺・アカウント保護）と既存 `buy-furniture-household-items`（個人売買の詐欺対策）は
+  近接するが、対象範囲が異なる（オンライン詐欺全般・MFA vs 中古品売買の取引安全）ため別記事として保持しリンク接続。
+- 孤立記事なし: 各カテゴリページ（`/health`・`/english`・`/transport`・`/sim`・`/money` の `GuideCategoryPage`）が
+  公開記事を自動列挙するため到達可能。
+- **daily-life ハブ 21/21 完了。次の未完了 daily-life slug: なし。**
+
 ### daily-life マイクロバッチ #3（2026-07-27 / 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。** daily-life ハブの次の5件

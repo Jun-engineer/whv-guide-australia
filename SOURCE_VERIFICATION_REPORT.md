@@ -440,6 +440,35 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## daily-life マイクロバッチ #4 = 最終（ジム契約・美容院英語・公衆トイレ/シャワー・ホームネット・オンライン詐欺・スマホ紛失 / 2026-07-27 / 6件公開・ハブ完了）
+
+daily-life ハブの残り全6件を、記事単位で公式一次情報に照合して新規公開し、**ハブを完了**した（`hub: "daily-life"`、`category` は health/english/transport/sim/money に分散）。
+各記事は `verifiedAt: 2026-07-27` を付与し、`officialSources`（`accessedAt: 2026-07-27`）に情報源を明示。
+可変性の高い**契約・料金・制度・詐欺手口**は特定の金額・法規・罰則を断定せず「確認日 2026-07-27」を明記し、公式・各州当局・各機関・店頭確認へ誘導した。
+
+| slug | 照合した主要ポイント | 主な出典（accessedAt 2026-07-27） |
+| --- | --- | --- |
+| `gym-fitness-guide` | 料金は週払い（per week）表示が主流で入会金/年会費/解約手数料が別途。最低契約期間・自動更新・解約通知期間・無料体験の自動有料化に注意。サービスにも消費者保証が適用。解約/クーリングオフは契約・州で異なり断定不可 | ACCC（Consumer rights and guarantees） |
+| `haircut-barber-english` | barber＝短髪中心／salon＝カット全般。予約制と walk-in。希望は写真＋番手/cmで伝える。料金は店・長さ・メニューで変動、施術前に確認。チップは義務でなく一般的に不要。サービスの消費者保証（相応の注意・技能） | ACCC（Consumer rights and guarantees） |
+| `public-toilets-showers` | 政府運営 National Public Toilet Map で全国23,000か所以上の公衆トイレを検索（場所・開館時間・バリアフリー・シャワー等の設備）。無料/アプリ有り。シャワーは一部ビーチ・公営プール・キャラバンパーク（有料の場合あり）。設備/料金は場所で異なる | National Public Toilet Map（Dept of Health, Disability and Ageing / National Continence Program） |
+| `home-internet-guide` | 固定回線は nbn（全国卸売網）＋小売業者と契約。速度別プラン（nbn 50/100 等）。住所の対応確認、最低契約期間・モデム代・名義を確認。短期は no lock-in／ホームワイヤレス(5G)／テザリング。料金・提供状況は業者・住所で異なる | NBN Co（nbn 公式） |
+| `online-scams-cybersecurity` | 偽SMS/メール(フィッシング)、求人詐欺（前払い・money mule）、アカウント乗っ取り。MFA有効化（認証アプリ/パスキーはSMSより安全）、リンクを開かない、求人の前払い拒否。被害時は銀行連絡→パスワード変更→IDCARE 1800 595 160→Scamwatch/cyber.gov.au 報告。ACSC 1300 CYBER1 | Scamwatch（Jobs and employment scams）/ Australian Cyber Security Centre（Multi-factor authentication） |
+| `phone-lost-stolen` | 最優先は通信会社でSIM一時停止（SMS認証悪用防止）。Find My で位置確認・遠隔ロック・データ消去、パスワード変更＋MFA、警察へ届け出てレポート番号（保険用）、銀行連絡、ID漏えいは IDCARE 1800 595 160、cyber.gov.au へ報告。緊急は 000 | Australian Cyber Security Centre（How to secure your devices）/ Scamwatch（What to do if you've been scammed） |
+
+- **照合した公式一次情報（accessedAt 2026-07-27）:** ACCC（accc.gov.au — Consumer rights and guarantees）、
+  National Public Toilet Map（toiletmap.gov.au — Australian Government Department of Health, Disability and Ageing / National Continence Program）、
+  NBN Co（nbnco.com.au — nbn 公式）、Scamwatch（scamwatch.gov.au — Jobs and employment scams / What to do if you've been scammed）、
+  Australian Cyber Security Centre（cyber.gov.au — Multi-factor authentication / How to secure your devices、ACSC 1300 CYBER1）。IDCARE 1800 595 160。
+- **可変事項の断定回避:** ジムの解約・クーリングオフは契約内容と州で異なるため断定せず契約書＋各州 Fair Trading／ACCC へ誘導。
+  美容院の料金・チップは店で異なる旨を明示。トイレ・シャワーの設備/開館時間/料金は場所で異なるため公式マップ確認へ誘導。
+  nbn の料金・速度・提供状況は業者・住所で異なるとして断定回避。詐欺の手口・連絡先・報告先は変わりうるため公式確認へ誘導。特定金額・法規・罰則は断定せず。
+- **統合・リダイレクト:** なし（新規6件は独立検索意図。既存記事本文へのリンク追記なし）。RSS: 本プロジェクトに RSS ルート無し（N/A）。
+- **web fetch の制約:** National Public Toilet Map・Scamwatch・cyber.gov.au（MFA）は本セッションで取得成功。
+  ACCC の gym 専用ページ（404）と NBN の下層ページ（doubleclick へのリダイレクト）はリトライ上限に達したため、
+  低〜中YMYL領域として各機関の安定URL（accc.gov.au の Consumer rights and guarantees、nbnco.com.au トップ）を出典に採用し、
+  具体的な料金・法規は断定せず「契約・業者・州で異なる」と明示。未解決の essential claim は無し。
+- **最終ハブ監査:** `test:content` 5 pass、`eslint` エラーなし、`next build` フルビルド成功（`/guides/[slug]` SSG、`/sitemap.xml`・`/robots.txt` 生成、型エラーなし）。**daily-life ハブ 21/21 完了。**
+
 ## daily-life マイクロバッチ #3（服装の季節・家具生活用品・Op Shop・郵便・図書館 / 2026-07-27 / 5件公開）
 
 daily-life ハブの次の5件を、記事単位で公式一次情報に照合して新規公開した（`hub: "daily-life"`、`category` は clothing/housing/arrival に分散）。

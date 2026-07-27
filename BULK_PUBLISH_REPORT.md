@@ -3,6 +3,27 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-27）: daily-life マイクロバッチ #4 = 最終（6件公開・ハブ完了 / commit: feat: complete daily life content batch）
+
+daily-life（日常生活・食事・買い物）ハブの残り全件を公開し、**ハブを完了**しました。開始時点で残りは6件（≤7）だったため、全6件を処理し、最終ハブ監査（フルビルド／lint／テスト／sitemap）を実施しました。
+
+- **公開した6件（すべて `verifiedAt: 2026-07-27`・`officialSources` 付き・完全公開・分類は全て create）:**
+  `gym-fitness-guide`（health, P2, checklist, id a278）, `haircut-barber-english`（english, P3, language, id a279）,
+  `public-toilets-showers`（transport, P3, guide, id a280）, `home-internet-guide`（sim, P2, guide, id a281）,
+  `online-scams-cybersecurity`（money, P0, security, id a282）, `phone-lost-stolen`（sim, P1, problem-solving, id a283）。
+  `hub` は全て `daily-life`、`category` は health/english/transport/sim/money に分散配置。
+- **作成（created）slug:** 上記6件。**更新（updated）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 6件はいずれも新規スラッグで、既存公開記事とは検索意図が明確に異なる（ジム契約／美容院・バーバー英語／無料トイレ・シャワー／ホームインターネット／オンライン詐欺対策／スマホ紛失盗難対応）。新規6件どうしは意図の近い組を双方向リンク（`online-scams-cybersecurity` ↔ `phone-lost-stolen` 等）。
+- **孤立記事なし:** 各カテゴリページ（`/health`・`/english`・`/transport`・`/sim`・`/money` の `GuideCategoryPage`）が公開記事を自動列挙するため到達可能。
+- **公式照合（記事反映済み・確認日 2026-07-27）:** ACCC（Consumer rights and guarantees）／National Public Toilet Map（Australian Government Dept of Health, Disability and Ageing・National Continence Program・全国23,000か所以上）／NBN Co（nbn 公式）／Scamwatch（Jobs and employment scams）／Australian Cyber Security Centre（Multi-factor authentication・How to secure your devices）。IDCARE 1800 595 160／ACSC 1300 CYBER1（1300 292 371）を記載。
+- **可変事項の断定回避:** ジムの解約・クーリングオフは契約・州で異なるため断定せず契約書＋各州 Fair Trading／ACCC へ誘導。美容院の料金・チップは店で異なる旨を明示（チップは義務でなく一般的に不要）。トイレ・シャワーの設備/開館/料金は場所で異なるため公式マップ確認へ誘導。nbn の料金・速度・提供状況は業者・住所で異なるとして断定回避。詐欺の手口・連絡先は変わりうるため公式確認へ誘導し、前払い要求の求人・偽SMSのリンクを開かない等の行動指針を提示。特定金額・法規・罰則は断定せず。
+- **content-manifest.yaml:** 該当6件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲）:** `validate:articles`（重複0・`OK: no article data errors`）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）。
+- **最終ハブ監査（残り≤7のため実施）:** `test:content` 5 pass / 0 fail、`eslint` エラーなし、`next build` フルビルド成功（`/guides/[slug]` を SSG 生成、`/sitemap.xml`・`/robots.txt` 生成、型エラーなし）。RSS ルートは本プロジェクトに無し（N/A）。
+- **daily-life ハブ: 21/21 件すべて公開完了 ✅。残り daily-life slug: なし。次の未完了 daily-life slug: なし（ハブ完了）。**
+- **変更ファイル:** `lib/content/articles/health.ts`、`lib/content/articles/english.ts`、`lib/content/articles/transport.ts`、`lib/content/articles/sim.ts`、`lib/content/articles/money.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: daily-life マイクロバッチ #3（5件公開 / commit: feat: publish daily life micro-batch）
 
 daily-life（日常生活・食事・買い物）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で daily-life は11件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理しました。以下が確定状態です。

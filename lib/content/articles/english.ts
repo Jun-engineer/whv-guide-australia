@@ -73,4 +73,75 @@ export const englishArticles: Article[] = [
     updatedAt: "2026-06-20",
     published: true,
   },
+
+  {
+    id: "a279",
+    title: "美容院・バーバーで使う英語と料金の見方",
+    slug: "haircut-barber-english",
+    category: "english",
+    hub: "daily-life",
+    description:
+      "オーストラリアの美容院（hair salon）・バーバー（barber）で使える英語フレーズと料金の見方を解説。予約・飛び込み、希望のスタイルの伝え方、長さの指定、会計やチップの習慣まで、失敗しないためのポイントをまとめました。",
+    content: [
+      "オーストラリアで髪を切るときは、バーバー（barber）＝主に男性向け・短髪やフェード、美容院（hair salon / hairdresser）＝カット・カラー・パーマ全般、という使い分けが目安です。予約（appointment/booking）が必要な店と、飛び込み（walk-in）でOKな店があります。料金は店・地域・髪の長さ・メニュー（カットのみ／シャンプー込み／カラー）で大きく変わるため、施術前に料金を確認するのが安心です。",
+      "希望のスタイルは、言葉だけで伝えるのが難しければ、なりたい髪型の写真を見せるのが一番確実です。長さは「a trim（そろえる程度）」「take a bit off（少し切る）」「short back and sides（サイドと後ろを短く）」のような表現や、バリカンの番手（number 2, number 3 など）、センチ（about 2 centimetres）で伝えます。切りすぎを避けたいときは『Not too short（短くしすぎないで）』と最初に伝えておきましょう。",
+      "会計は現地の習慣に沿えば大丈夫です。オーストラリアではチップ（tip）は義務ではなく、美容院でも一般的に不要とされます（渡したい場合は任意）。カード払いでサーチャージ（card surcharge）がかかる店もあるため、支払い方法と料金は事前に確認しましょう。料金や予約方法は店ごとに異なるため、各店の公式・店頭表示で確認してください（本記事の確認日: 2026-07-27）。",
+    ],
+    keyFacts: [
+      { label: "店の種類", value: "barber＝短髪中心／salon・hairdresser＝カット全般" },
+      { label: "予約", value: "appointment が必要な店と walk-in 可の店がある" },
+      { label: "料金", value: "店・長さ・メニューで変動。施術前に確認" },
+      { label: "スタイルの伝え方", value: "写真＋番手（number 2 等）やcmが確実" },
+      { label: "チップ", value: "義務ではなく一般的に不要（任意）" },
+    ],
+    steps: [
+      { title: "店と予約方法を選ぶ", description: "barber か salon を選び、予約が必要か walk-in 可かを確認します。" },
+      { title: "料金を確認", description: "カットのみ／シャンプー込み／カラーなど、メニューと料金を施術前に確認します。" },
+      { title: "希望を伝える", description: "写真を見せるのが確実。長さは番手やcm、『Not too short』などで具体的に伝えます。" },
+      { title: "会計する", description: "支払い方法（現金/カード）とサーチャージの有無を確認。チップは任意で不要が一般的です。" },
+    ],
+    phrases: [
+      { en: "I'd like a haircut, please. Do you take walk-ins?", ja: "カットをお願いします。飛び込みでも大丈夫ですか？", note: "予約なしで入るとき" },
+      { en: "How much is a cut?", ja: "カットはいくらですか？", note: "料金確認" },
+      { en: "Just a trim, please. Not too short.", ja: "そろえる程度でお願いします。短くしすぎないで。" },
+      { en: "Short back and sides, please.", ja: "サイドと後ろを短くしてください。", note: "バーバーで定番" },
+      { en: "A number 2 on the sides, please.", ja: "サイドはバリカンの2番でお願いします。" },
+      { en: "Can you take about two centimetres off?", ja: "2センチくらい切ってもらえますか？" },
+      { en: "Can I show you a photo of the style I want?", ja: "希望のスタイルの写真を見せてもいいですか？" },
+      { en: "Can I pay by card?", ja: "カードで払えますか？", note: "サーチャージの有無も確認" },
+    ],
+    tips: [
+      "言葉で伝わりにくいときは、なりたい髪型と『避けたい仕上がり』の写真を両方見せると失敗が減ります。",
+      "初めての店では『カットのみ』か『シャンプー・ブロー込み』かで料金が変わります。先に確認しましょう。",
+      "混雑時間や週末は待つことがあります。walk-in の店でも電話で空き状況を聞くとスムーズです。",
+    ],
+    faqs: [
+      {
+        question: "オーストラリアの美容院でチップは必要ですか？",
+        answer:
+          "チップ（tip）は義務ではなく、美容院・バーバーでも一般的に不要とされています。とても満足したときに任意で渡す人もいますが、渡さなくても失礼にはなりません。支払い前に、カードのサーチャージがかかるかどうかを確認しておくと安心です。",
+      },
+      {
+        question: "英語でうまく髪型を伝えられるか不安です。",
+        answer:
+          "なりたい髪型の写真を見せるのが最も確実です。長さはバリカンの番手（number 2 など）やセンチで伝え、切りすぎを防ぎたいときは最初に『Not too short』と言いましょう。仕上がりの途中でも『A bit shorter, please（もう少し短く）』などで調整をお願いできます。",
+      },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "ACCC｜Consumer rights and guarantees（サービスの消費者保証：相応の注意・技能）",
+        url: "https://www.accc.gov.au/consumers/buying-products-and-services/consumer-rights-and-guarantees",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "shopping-surcharges-tipping",
+      "gym-fitness-guide",
+      "library-guide",
+      "op-shop-guide",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
 ];

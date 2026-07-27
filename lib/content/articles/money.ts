@@ -654,4 +654,74 @@ export const moneyArticles: Article[] = [
     updatedAt: "2026-07-27",
     published: true,
   },
+
+  {
+    id: "a282",
+    title: "偽SMS・求人詐欺・アカウント乗っ取り対策",
+    slug: "online-scams-cybersecurity",
+    category: "money",
+    hub: "daily-life",
+    description:
+      "オーストラリアでワーホリが狙われやすい偽SMS（フィッシング）・求人詐欺・アカウント乗っ取りの手口と対策を解説。多要素認証（MFA）やURL確認などの予防策、被害にあったときの対応（Scamwatch・IDCARE・銀行連絡）までまとめました。",
+    content: [
+      "オーストラリアでは、ワーホリを狙った詐欺やサイバー犯罪が数多く報告されています。代表的なのは、①偽SMS・偽メール（配送・銀行・政府を装って偽サイトへ誘導するフィッシング／スミッシング）、②求人詐欺（在宅で高収入をうたい、開始前に手数料を要求したり、送金・代理購入をさせる money mule）、③アカウント乗っ取り（パスワード流出やSIM悪用でメール・銀行・SNSに不正ログイン）です。政府の詐欺情報サイト Scamwatch は、前払いを求める求人や、突然の勧誘、うますぎる話は詐欺の可能性が高いと警告しています。",
+      "予防の基本は、①多要素認証（MFA）を有効にする（オーストラリア政府の Australian Cyber Security Centre＝ACSC が推奨。認証アプリやパスキーはSMSより安全）、②SMS・メールのリンクを不用意に開かず、公式アプリや自分でブックマークした正規URLからアクセスする、③仕事の開始前にお金（登録料・研修費・仮想通貨）を払わない、④個人情報や身分証を、相手が本物か確認できるまで送らない、⑤同じパスワードを使い回さない、です。求人詐欺では、面接なしで即採用、WhatsApp/Telegramでの勧誘、自分のお金の立て替えを求める、といったサインに注意します。",
+      "被害にあった、または疑わしいときは、すぐ行動します。①銀行・カード会社に連絡して取引を止める、②銀行・メール・政府・買い物など各アカウントのパスワードを変更する、③本人確認情報が漏れた可能性があれば IDCARE（1800 595 160）に無料で相談する、④詐欺を Scamwatch（scamwatch.gov.au）に、サイバー犯罪を cyber.gov.au に報告する、です。ACSC のサイバーセキュリティ・ホットラインは 1300 CYBER1（1300 292 371）です。手口や連絡先は変わることがあるため、公式情報で最新を確認してください（本記事の確認日: 2026-07-27）。",
+    ],
+    keyFacts: [
+      { label: "主な手口", value: "偽SMS/メール(フィッシング)・求人詐欺・アカウント乗っ取り" },
+      { label: "予防の要", value: "多要素認証(MFA)・リンクを開かない・使い回し禁止" },
+      { label: "求人詐欺の赤信号", value: "前払い要求・即採用・WhatsApp勧誘・立て替え送金" },
+      { label: "被害時", value: "銀行連絡→パスワード変更→IDCARE→Scamwatch報告" },
+      { label: "連絡先", value: "IDCARE 1800 595 160／ACSC 1300 CYBER1(1300 292 371)" },
+    ],
+    steps: [
+      { title: "MFAを有効にする", description: "メール・銀行・SNSで多要素認証を有効化。認証アプリやパスキーはSMSより安全です。" },
+      { title: "リンクを開かない", description: "SMS・メールのリンクは不用意に開かず、公式アプリや自分で保存した正規URLからアクセスします。" },
+      { title: "求人の前払いを断る", description: "開始前の登録料・研修費・仮想通貨の要求、立て替え送金は詐欺のサイン。応じないこと。" },
+      { title: "疑わしければ報告", description: "被害時は銀行連絡→パスワード変更→IDCARE相談→Scamwatch/cyber.gov.au へ報告します。" },
+    ],
+    tips: [
+      "銀行や政府はSMSのリンクからログインや個人情報入力を求めません。公式アプリ・正規サイトから確認しましょう。",
+      "『簡単・高収入・在宅』で前払いや送金を求める求人は、プラットフォーム上の広告でも詐欺のことがあります。",
+      "パスワードは長いパスフレーズにし、サービスごとに変える／パスワードマネージャーを使うと安全です。",
+    ],
+    faqs: [
+      {
+        question: "配送や銀行を名乗る偽SMSが届きました。どうすれば？",
+        answer:
+          "リンクは開かず、記載の番号にもかけ直さないでください。用件は、公式アプリや自分でブックマークした正規サイト、封筒や公式に記載の番号から確認します。個人情報やカード番号を入力してしまった場合は、すぐ銀行に連絡し、パスワードを変更してください。詐欺は Scamwatch に報告できます。",
+      },
+      {
+        question: "求人詐欺かどうか見分けるには？",
+        answer:
+          "開始前に登録料・研修費・仮想通貨を求める、面接なしで即採用、WhatsApp/Telegram での勧誘、他人の代わりに送金・代理購入・荷物受取をさせる、といったサインは危険です。正規の雇用主が働く前にお金を要求することは通常ありません。少しでも怪しければ応じず、Scamwatch で手口を確認してください。",
+      },
+    ],
+    warnings: [
+      "詐欺の手口や連絡先・報告先は変わることがあります。断定せず、Scamwatch（scamwatch.gov.au）・cyber.gov.au など公式で最新を確認してください（確認日: 2026-07-27）。",
+      "身分証やパスポート情報が漏れた疑いがあるときは、放置せず IDCARE（1800 595 160）に無料で相談してください。",
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "Scamwatch｜Jobs and employment scams（求人詐欺の手口・被害時の対応）",
+        url: "https://www.scamwatch.gov.au/types-of-scams/jobs-and-employment-scams",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Australian Cyber Security Centre｜Multi-factor authentication（MFAの推奨）",
+        url: "https://www.cyber.gov.au/protect-yourself/securing-your-accounts/multi-factor-authentication",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "phone-lost-stolen",
+      "buy-furniture-household-items",
+      "shopping-surcharges-tipping",
+      "home-internet-guide",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
 ];

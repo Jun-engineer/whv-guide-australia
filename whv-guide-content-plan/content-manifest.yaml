@@ -2981,7 +2981,7 @@ planned_content:
 - slug: gym-fitness-guide
   title: ジム契約の注意点｜週払い・解約・無料体験
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: checklist
@@ -2991,7 +2991,7 @@ planned_content:
 - slug: haircut-barber-english
   title: 美容院・バーバーで使う英語と料金の見方
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: language
@@ -3001,7 +3001,7 @@ planned_content:
 - slug: public-toilets-showers
   title: 無料トイレ・シャワー・給水場所を探す方法
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: guide
@@ -3011,7 +3011,7 @@ planned_content:
 - slug: home-internet-guide
   title: シェアハウスのWi-Fi・ホームインターネット基礎
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: guide
@@ -3021,7 +3021,7 @@ planned_content:
 - slug: online-scams-cybersecurity
   title: 偽SMS・求人詐欺・アカウント乗っ取り対策
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: security
@@ -3031,7 +3031,7 @@ planned_content:
 - slug: phone-lost-stolen
   title: スマホを紛失・盗難された場合の対応
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: problem-solving
