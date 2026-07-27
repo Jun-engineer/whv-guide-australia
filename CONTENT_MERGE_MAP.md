@@ -267,6 +267,23 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   後者は「生理用品・婦人科・検診」で次の行動が異なるため別記事として保持し双方向リンク。
 - 次の未完了 health slug: `heatstroke-guide`。
 
+### health マイクロバッチ #4＝health ハブ完了（2026-07-27 / 残り2件公開＋最終監査）
+
+**統合（merged）: なし。リダイレクト: なし。** health ハブの残り2件
+（`flood-cyclone-safety` / `heatwave-severe-weather`）はすべて**新規スラッグ**で、既存の公開記事とは
+**検索意図が明確に異なり（洪水・サイクロンへの備えと避難／熱波・激しい悪天候の警報確認）、
+全面重複はないため統合・リダイレクトは発生せず**、`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- **既存3記事の強化（updated）:** `medicare-oshc` / `safety-emergency` / `mental-health` に
+  `hub: "health"`・`verifiedAt: "2026-07-27"`・`officialSources` を追記（最終監査の公式ソース要件のため）。
+  **本文・タイトル・slug・公開状態・URL は不変**のため統合/リダイレクトには該当しない。
+- 孤立記事なし: health ハブページ（`GuideCategoryPage category="health"`）が公開 health 記事を自動列挙。
+- `flood-cyclone-safety` と `heatwave-severe-weather` は近接する災害テーマだが、前者=洪水/サイクロンの避難判断、
+  後者=熱波/雷雨/雹などの悪天候警報の確認方法で次の行動が異なるため別記事として保持し双方向リンク。
+  既存の `bushfire-safety`（#3）とも災害系として相互リンク。
+- **health ハブ完了: 公開20件（計画17＋既存3）。merged/redirect: なし。review/excluded: なし。**
+  次のカテゴリ: gig-work（未着手・12件）、その後 daily-life（21件）。
+
 ### health マイクロバッチ #3（2026-07-27 / 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。** health ハブの次の5件

@@ -3,6 +3,32 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-27）: health マイクロバッチ #4＝**health ハブ完了**（残り2件公開＋最終ハブ監査 / commit: feat: complete health content batch）
+
+health（医療・健康・安全）ハブの**残り2件を公開し、health ハブを完了**しました（マイクロバッチ #4）。残り2件（≤5）だったため全件処理し、続けて**最終 health ハブ監査**を実施しました。
+
+- **公開した2件（すべて `verifiedAt: 2026-07-27`・`officialSources` 付き・完全公開・分類は全て create）:**
+  `flood-cyclone-safety`（health, P0, id a261）, `heatwave-severe-weather`（health, P1, id a262）。
+- **統合（merged）: なし。リダイレクト: なし。** 2件はいずれも新規スラッグで、既存公開記事とは検索意図が明確に異なる（洪水・サイクロンへの備えと避難／熱波・激しい悪天候の警報確認）。独立意図が強いため個別公開し `relatedSlugs` で相互接続。
+- **既存3記事の内部リンク/メタ更新（updated）:** `medicare-oshc`／`safety-emergency`／`mental-health` に `hub: "health"`・`verifiedAt: "2026-07-27"`・`officialSources` を追記（最終監査の「公開記事はすべて公式ソースと `verifiedAt` を持つ」要件のため）。本文・タイトル・slug・公開状態・URL は不変。
+- **孤立記事なし:** health ハブページ（`GuideCategoryPage category="health"`）が公開 health 記事を自動列挙するため到達可能。
+- **公式照合（新規2件・記事反映済み）:** Bureau of Meteorology（洪水・サイクロン・熱波・悪天候の Watch/Warning）、State Emergency Service（132 500）、Triple Zero（000）。「If it's flooded, forget it」・サイクロンシーズン（QLD/NT/WA北部・11〜4月）・雷雨ぜんそくを反映。
+- **可変事項の断定回避:** 警報カテゴリ・避難指示・道路閉鎖は州・時期で変わるため州別公式（BOM／州 SES／VicEmergency 等）へ誘導。
+- **content-manifest.yaml:** 該当2件を `status: planned` → `status: published` に更新済み。`manifest.generated.ts` 再生成。
+
+### 最終 health ハブ監査結果（2026-07-27）
+
+- **公開 health 記事: 20 件**（計画公開 17＋既存 3）。planned/merged/review/excluded: 0。
+- `verifiedAt`・`officialSources`: 公開 20 件すべてに付与（欠落 0）。
+- 内部リンク: health `relatedSlugs` dangling 0・重複タイトル 0・重複 slug 0。
+- 孤立記事: 0（ハブ自動列挙）。ドラフト/レビュー/薄い記事の露出: 0。
+- 統合/リダイレクト: なし。RSS: 本プロジェクトに RSS ルート無し（N/A）。
+- **フル検証（一括）:** `validate:articles`（ユニーク slug 262・重複 0・health 20・`OK: no article data errors`）、`tsc --noEmit`（exit 0）、`validate:content` 0 error / 66 warning、`test:content` 5/5 pass、`eslint` クリーン、`next build` 成功（**316 静的ページ**・`BUILD_EXIT=0`）。sitemap に新規2 slug を確認。JSON-LD Article・canonical はビルドで検証済み。
+- **範囲外（health 由来でない既存事項）:** jobs/tax など非 health 記事に、planned のままの slug を指す 23 件のグローバル dangling リンクが既存として残存（レンダリング時フィルタ・ビルド成功）。本バッチ範囲外。
+- **health ハブ: 完了。次のカテゴリ: gig-work（未着手・12件）、その後 daily-life（21件）。本バッチでは着手しない。**
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/health.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし（health ハブ範囲内）。**
+
 ## チェックポイント（2026-07-27）: health マイクロバッチ #3（5件公開 / commit: feat: publish health micro-batch）
 
 health（医療・健康・安全）ハブの次の5件を公開しました（マイクロバッチ #3）。

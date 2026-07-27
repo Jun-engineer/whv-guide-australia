@@ -6,6 +6,7 @@ export const healthArticles: Article[] = [
     title: "医療・保険・病院のかかり方｜GPからMedicareまで",
     slug: "medicare-oshc",
     category: "health",
+    hub: "health",
     description:
       "オーストラリアの医療は高額。ワーホリが病院にかかる流れ、GP（かかりつけ医）の仕組み、海外保険の使い方を解説します。",
     content: [
@@ -39,6 +40,24 @@ export const healthArticles: Article[] = [
       },
     ],
     warnings: ["医療費は非常に高額です。海外保険なしの渡航は絶対に避けてください。"],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "Services Australia｜Reciprocal Health Care Agreements（日本は対象外＝ワーホリはMedicare非適用）",
+        url: "https://www.servicesaustralia.gov.au/reciprocal-health-care-agreements",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "healthdirect｜Going to a GP（GP受診の流れ）",
+        url: "https://www.healthdirect.gov.au/going-to-a-gp",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "privatehealth.gov.au｜Overseas visitors health cover（海外からの滞在者向け保険の考え方）",
+        url: "https://www.privatehealth.gov.au/health_insurance/overseas/",
+        accessedAt: "2026-07-27",
+      },
+    ],
     relatedSlugs: [
       "gp-urgent-care-emergency",
       "overseas-insurance-claim",
@@ -57,6 +76,7 @@ export const healthArticles: Article[] = [
     title: "緊急時・安全ガイド｜000・盗難・トラブル対応",
     slug: "safety-emergency",
     category: "health",
+    hub: "health",
     description:
       "緊急番号000の使い方、盗難・紛失時の対応、よくある詐欺・トラブルの回避法まで。安心して滞在するための安全ガイド。",
     content: [
@@ -89,6 +109,24 @@ export const healthArticles: Article[] = [
       },
     ],
     warnings: ["お金を前払いで急かす賃貸・求人・投資の話は詐欺を強く疑ってください。"],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "Triple Zero｜Call 000 in an emergency（救急・警察・消防）",
+        url: "https://www.triplezero.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Police Assistance Line｜131 444（命に関わらない警察案件）",
+        url: "https://www.police.nsw.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Smartraveller（海外でのパスポート紛失・緊急時の公式情報）",
+        url: "https://www.smartraveller.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
     relatedSlugs: ["medicare-oshc", "housing-guide", "jobs-guide"],
     updatedAt: "2026-06-20",
     published: true,
@@ -99,6 +137,7 @@ export const healthArticles: Article[] = [
     title: "海外生活のメンタルヘルス｜ホームシックと不安への対処",
     slug: "mental-health",
     category: "health",
+    hub: "health",
     description:
       "慣れない環境・言葉の壁で心が疲れるのは自然なこと。ホームシックや孤独への対処法と、無料で使える相談窓口を紹介します。",
     content: [
@@ -139,6 +178,24 @@ export const healthArticles: Article[] = [
       { label: "Beyond Blue", url: "https://www.beyondblue.org.au/" },
     ],
     warnings: ["命に関わる緊急時は迷わず000に電話してください。我慢や自己判断は禁物です。"],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "healthdirect｜Mental health（相談窓口・受診の目安）",
+        url: "https://www.healthdirect.gov.au/mental-health",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Lifeline Australia｜13 11 14（24時間・無料の危機相談）",
+        url: "https://www.lifeline.org.au/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Beyond Blue（不安・抑うつの無料サポート）",
+        url: "https://www.beyondblue.org.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
     relatedSlugs: ["medicare-oshc", "safety-emergency"],
     updatedAt: "2026-07-16",
     published: true,
@@ -1500,6 +1557,192 @@ export const healthArticles: Article[] = [
       "heatstroke-guide",
       "gp-urgent-care-emergency",
       "farm-weather-no-work",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a261",
+    title: "洪水・サイクロンへの備え｜クイーンズランド・北部",
+    slug: "flood-cyclone-safety",
+    category: "health",
+    hub: "health",
+    priority: "P0",
+    searchIntent: "豪州の洪水・サイクロンへの備えと警報・道路閉鎖・避難",
+    description:
+      "オーストラリア、特にクイーンズランドや北部で起こる洪水・サイクロンへの備え方を解説します。オーストラリア気象局（BOM）とState Emergency Service（SES）の警報の確認方法、『冠水した道は絶対に通らない』という鉄則、道路閉鎖の調べ方、避難の考え方まで、ワーホリが雨季を安全に過ごすための基本をまとめます。",
+    content: [
+      "結論から言うと、洪水・サイクロンのリスクがある地域（主にクイーンズランド〔QLD〕・北部準州〔NT〕・西オーストラリア〔WA〕北部など）では、①オーストラリア気象局（BOM）とState Emergency Service（SES）の警報を確認し、②『冠水した道路や川は絶対に通らない』を徹底し、③避難指示が出たら早めに従う——ことが安全の基本です。命に関わる状況では000へ、洪水・暴風の被害には各州SES（NSW/VICなどは132 500）に連絡します。北部の熱帯地域では、サイクロンシーズン（おおむね11月〜4月）に特に注意が必要です。",
+      "サイクロンの情報はBOMで確認します。BOMは熱帯低気圧（tropical cyclone）について『Watch（監視）』『Warning（警報）』を発表し、強さはカテゴリー1〜5で示されます。接近時は、飛ばされる物を固定・片付け、非常用キット（水・食料・薬・懐中電灯・充電器・書類）を準備し、避難する場合の場所とルートを確認します。暴風の最中は屋内の安全な場所にとどまり、『目（eye）』の通過で一時的に静かになっても、その後に反対側からの暴風が来るため外に出ないことが重要です。",
+      "洪水で最も重要な鉄則は『If it's flooded, forget it（冠水していたら引き返す）』です。冠水した道路・橋・川に、車でも徒歩でも入ってはいけません。水深や流れは見た目で判断できず、浅く見えても車が流されたり、足をすくわれたりして毎年死者が出ています。増水は急に起こることもあります。低地・川沿い・キャンプ場に滞在している場合は、早めに高い場所へ移動する判断が命を守ります。",
+      "道路閉鎖と最新情報の確認方法を知っておきましょう。洪水やサイクロンでは道路が広範囲に閉鎖されます。各州の交通情報サイト（例: QLDのQldTraffic、道路交通当局のサイト）やSESのサイト・アプリ、地元ラジオ（ABC Emergency）で最新の道路状況・避難情報を確認します。移動を予定していても、閉鎖・危険があれば延期する柔軟さが必要です。ガソリン・現金・飲料水は早めに確保しておくと安心です。",
+      "避難と緊急時の連絡先を整理しておきます。避難指示（evacuation warning/order）が出たら、ためらわず早めに従ってください。避難が遅れて冠水路に取り残されるのが最も危険です。緊急時（命の危険）は000、洪水・暴風による建物被害や救助が必要なときはSES（NSW/VIC等は132 500、他州はそれぞれの緊急サービス）に連絡します。滞在先の避難計画を雇用主やホストに確認し、家族・緊急連絡先と連絡手段を決めておきましょう。",
+    ],
+    keyFacts: [
+      { label: "対象地域", value: "主にQLD・NT・WA北部（熱帯・雨季）" },
+      { label: "サイクロン期", value: "おおむね11月〜4月。BOMがWatch/Warning発表" },
+      { label: "洪水の鉄則", value: "If it's flooded, forget it（冠水路は通らない）" },
+      { label: "情報源", value: "BOM・州SES・州の交通情報サイト・ABC Emergency" },
+      { label: "避難", value: "避難指示が出たら早めに従う（遅れが最も危険）" },
+      { label: "連絡先", value: "命の危険=000／洪水・暴風の被害=SES（132 500等）" },
+    ],
+    steps: [
+      { title: "警報を確認", description: "BOMのサイクロン・洪水警報と州SESの情報を確認し、通知をオンにします。" },
+      { title: "非常用キットを準備", description: "水・食料・薬・懐中電灯・充電器・書類をまとめ、避難ルートを確認します。" },
+      { title: "冠水路を避ける", description: "冠水した道路・橋・川には車でも徒歩でも絶対に入らないでください。" },
+      { title: "道路閉鎖を調べる", description: "州の交通情報サイト・SES・地元ラジオで道路状況と避難情報を確認します。" },
+      { title: "避難指示に従う", description: "避難指示が出たら早めに従い、命の危険は000、被害はSESに連絡します。" },
+    ],
+    tips: [
+      "北部・QLDで雨季に働く・滞在するなら、州SESのアプリを入れ、地元ABC Emergency放送の周波数を控えておきましょう。",
+      "サイクロン前はスーパーが混雑し品切れになりがち。水・食料・電池・現金は早めに確保を。",
+      "車で移動中に大雨・冠水に遭ったら無理に進まず、高い場所で安全を確保して情報を確認しましょう。",
+    ],
+    phrases: [
+      { en: "Is this road closed due to flooding?", ja: "この道は洪水で閉鎖されていますか？" },
+      { en: "We're trapped by floodwater and need rescue.", ja: "洪水で取り残されました。救助が必要です。", note: "SES 132 500 / 000" },
+      { en: "Is there a cyclone warning for this area?", ja: "この地域にサイクロン警報は出ていますか？" },
+    ],
+    faqs: [
+      {
+        question: "冠水した道路は少しなら通れますか？",
+        answer:
+          "いいえ。『If it's flooded, forget it』が鉄則です。水深や流れは見た目では分からず、浅く見えても車が流される・足をすくわれる危険があり、毎年死者が出ています。車でも徒歩でも冠水路には絶対に入らず、引き返して別ルートや高い場所へ避難してください。",
+      },
+      {
+        question: "洪水・サイクロンの情報はどこで確認しますか？",
+        answer:
+          "オーストラリア気象局（BOM）のサイクロン・洪水警報、各州のState Emergency Service（SES）のサイト・アプリ、州の交通情報サイト（道路閉鎖）、地元のABC Emergency放送が主な情報源です。避難指示が出たら早めに従い、命の危険は000、洪水・暴風の被害や救助はSES（NSW/VIC等は132 500）へ。",
+      },
+    ],
+    warnings: [
+      "冠水した道路・橋・川には、車でも徒歩でも絶対に入らないでください。浅く見えても命に関わります（If it's flooded, forget it）。",
+      "避難指示（evacuation order）が出たら早めに従ってください。避難の遅れで冠水路に取り残されるのが最も危険です。命の危険は000へ。",
+    ],
+    sources: [
+      { label: "Bureau of Meteorology｜Tropical cyclones", url: "https://www.bom.gov.au/cyclone/" },
+      { label: "Bureau of Meteorology｜Flood warnings", url: "https://www.bom.gov.au/australia/flood/" },
+      { label: "Queensland State Emergency Service (SES)", url: "https://www.ses.qld.gov.au/" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "Bureau of Meteorology｜Tropical cyclones（Watch/Warning・カテゴリー1〜5）",
+        url: "https://www.bom.gov.au/cyclone/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Bureau of Meteorology｜Flood knowledge & warnings（洪水警報）",
+        url: "https://www.bom.gov.au/water/floods/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Queensland State Emergency Service（洪水・暴風の備えと救助要請・州で窓口が異なる）",
+        url: "https://www.ses.qld.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Triple Zero｜Call 000 in an emergency（命の危険は000）",
+        url: "https://www.triplezero.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "safety-emergency",
+      "bushfire-safety",
+      "heatwave-severe-weather",
+      "gp-urgent-care-emergency",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a262",
+    title: "熱波・雷雨・雹など悪天候の情報確認方法",
+    slug: "heatwave-severe-weather",
+    category: "health",
+    hub: "health",
+    priority: "P1",
+    searchIntent: "熱波・激しい雷雨・雹などの悪天候の警報を確認する方法",
+    description:
+      "オーストラリアの熱波・激しい雷雨・雹（ひょう）・強風などの悪天候について、警報の確認方法を解説します。オーストラリア気象局（BOM）の警報とアプリ、State Emergency Service（SES）への連絡、雷雨ぜんそくなどの健康リスク、屋外で働くワーホリが悪天候から身を守るための基本をまとめます。",
+    content: [
+      "結論から言うと、熱波・激しい雷雨・雹・強風などの悪天候は、①オーストラリア気象局（BOM）の警報（Warnings）とアプリで最新情報を確認し、②暴風・雹・落雷が予想されるときは屋内の安全な場所にとどまり、③被害が出たらState Emergency Service（SES）に連絡する——のが基本です。命に関わる状況は000へ。屋外で働く・旅行するワーホリは、天候の急変に備えて情報の確認を習慣にしましょう。",
+      "情報源の中心はBOM（Bureau of Meteorology）です。BOMは、Severe Thunderstorm Warning（激しい雷雨）、Severe Weather Warning（強風・大雨など）、Heatwave（熱波）などの警報を発表します。BOMの公式サイトの『Warnings』ページや公式アプリで、自分の地域の警報・レーダー・予報を確認できます。通知をオンにしておくと、急な悪天候にも早く気づけます。地元のABC Emergency放送も有力な情報源です。",
+      "激しい雷雨（severe thunderstorm）は、雹・突風・落雷・鉄砲水（flash flooding）を伴うことがあります。警報が出たら、屋外での作業や外出を控え、車や頑丈な建物の中に避難します。落雷の危険があるときは高い木や開けた場所、水辺を避けます。雹は車や窓を傷めるため、可能なら車を屋根のある場所へ。鉄砲水のおそれがあるときは、低地や側溝・川から離れてください。",
+      "健康リスクにも注意します。熱波は熱中症のリスクを高めるため、こまめな水分補給と暑い時間帯の作業回避が大切です（詳しくは熱中症の記事へ）。また、激しい雷雨の際に『雷雨ぜんそく（thunderstorm asthma）』が起きることがあり、特に花粉の多い季節に、ぜんそくや花粉症のある人が急に強い呼吸器症状を起こすことがあります。息苦しさが強いときは、処方薬（吸入器）を使い、重ければ000へ。",
+      "屋外で働くときの備えをまとめます。仕事の前日・当日にBOMで天候を確認し、雇用主に悪天候時の対応（作業中止・避難）を確認しておきましょう。急な悪天候で作業が危険なときは、無理をせず安全を優先します。雹・強風・洪水などで家屋や車に被害が出て救助や応急対応が必要なときは、SES（NSW/VIC等は132 500、他州はそれぞれの窓口）に連絡します。命の危険がある緊急時は000です。",
+    ],
+    keyFacts: [
+      { label: "情報の中心", value: "BOMのWarningsページ・公式アプリ・レーダー" },
+      { label: "警報の種類", value: "Severe Thunderstorm／Severe Weather／Heatwave等" },
+      { label: "雷雨の危険", value: "雹・突風・落雷・鉄砲水。屋内や車内へ避難" },
+      { label: "健康リスク", value: "熱波→熱中症／雷雨ぜんそく（呼吸器症状）" },
+      { label: "被害時の連絡", value: "SES（NSW/VIC等は132 500・州で異なる）" },
+      { label: "緊急", value: "命の危険は000。屋外作業は安全を最優先" },
+    ],
+    steps: [
+      { title: "BOMで確認", description: "BOMのWarningsページ・アプリで地域の警報・レーダー・予報を確認します。" },
+      { title: "通知をオンに", description: "BOMアプリの通知や地元ABC Emergencyで急な悪天候に早く気づけるようにします。" },
+      { title: "安全な場所へ", description: "雷雨・雹・強風の警報時は屋内や車内に避難し、屋外作業を控えます。" },
+      { title: "健康に配慮", description: "熱波は水分補給、雷雨ぜんそくの症状が出たら吸入器、重ければ000へ。" },
+      { title: "被害はSESへ", description: "家屋・車の被害や救助が必要なときはSES、命の危険は000に連絡します。" },
+    ],
+    tips: [
+      "BOMの公式アプリを入れて位置情報の警報通知をオンにすると、外出・作業中でも悪天候にすぐ気づけます。",
+      "屋外の仕事では前日にBOMで天候を確認し、雷雨・熱波の日は雇用主と作業可否を相談しましょう。",
+      "ぜんそく・花粉症のある人は、雷雨ぜんそくに備えて処方薬（吸入器）を携帯しておくと安心です。",
+    ],
+    phrases: [
+      { en: "Is there a severe weather warning for today?", ja: "今日、悪天候の警報は出ていますか？" },
+      { en: "Our roof was damaged by the storm. We need SES help.", ja: "嵐で屋根が壊れました。SESの助けが必要です。", note: "SES 132 500" },
+      { en: "I can't breathe well — it might be thunderstorm asthma.", ja: "うまく呼吸できません。雷雨ぜんそくかもしれません。" },
+    ],
+    faqs: [
+      {
+        question: "悪天候の警報はどこで確認できますか？",
+        answer:
+          "オーストラリア気象局（BOM）が中心です。公式サイトの『Warnings』ページや公式アプリで、Severe Thunderstorm Warning（激しい雷雨）・Severe Weather Warning（強風・大雨）・Heatwave（熱波）などの警報と、レーダー・予報を確認できます。通知をオンにし、地元のABC Emergency放送も併用すると確実です。",
+      },
+      {
+        question: "『雷雨ぜんそく』とは何ですか？",
+        answer:
+          "激しい雷雨の際に、花粉などが影響して急に強い呼吸器症状（ぜんそく発作）が起きる現象で、特に花粉の多い季節に、ぜんそくや花粉症のある人に起こることがあります。息苦しさが出たら処方の吸入器を使い、症状が重い・改善しない場合は迷わず000に連絡してください。",
+      },
+    ],
+    warnings: [
+      "激しい雷雨は雹・突風・落雷・鉄砲水を伴います。警報時は屋外作業や外出を控え、屋内や車内など安全な場所に避難してください。",
+      "雷雨ぜんそくや熱中症など、悪天候は健康リスクを伴います。強い呼吸器症状や熱中症の重いサインがあれば000へ。屋外作業は安全を最優先に。",
+    ],
+    sources: [
+      { label: "Bureau of Meteorology｜Warnings", url: "https://www.bom.gov.au/australia/warnings/" },
+      { label: "Bureau of Meteorology｜Heatwave service", url: "https://www.bom.gov.au/australia/heatwave/" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "Bureau of Meteorology｜Warnings（Severe Thunderstorm／Severe Weather／各種警報とレーダー）",
+        url: "https://www.bom.gov.au/australia/warnings/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Bureau of Meteorology｜Heatwave service（熱波の予報・警報）",
+        url: "https://www.bom.gov.au/australia/heatwave/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Triple Zero｜Call 000 in an emergency（命の危険は000／被害はSES）",
+        url: "https://www.triplezero.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "heatstroke-guide",
+      "flood-cyclone-safety",
+      "bushfire-safety",
+      "safety-emergency",
     ],
     updatedAt: "2026-07-27",
     published: true,

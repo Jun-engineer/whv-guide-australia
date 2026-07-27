@@ -4,6 +4,42 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-27）: health マイクロバッチ #4＝**health ハブ完了**（残り2件公開＋最終ハブ監査 / commit: feat: complete health content batch）
+
+health（医療・健康・安全）ハブの**残り2件を公開し、health ハブを完了**しました（マイクロバッチ #4）。残り2件（≤5）だったため全件処理し、続けて**最終 health ハブ監査**を実施しました。
+
+- **公開した2件（すべて `verifiedAt: 2026-07-27`・`officialSources` 付き・完全公開・分類は全て create）:**
+  `flood-cyclone-safety`（health, P0, id a261）, `heatwave-severe-weather`（health, P1, id a262）。
+- **選定 slug:** 上記2件（`BULK_PUBLISH_REMAINING.md` / manifest の記録順の残り全件）。
+- **作成（created）slug:** 上記2件。**統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 2件はいずれも新規スラッグで、既存公開記事とは検索意図が明確に異なる（洪水・サイクロンへの備えと警報・避難／熱波・激しい悪天候の警報確認）。独立意図が強いため個別公開し `relatedSlugs` で相互リンク。
+- **既存3記事（`medicare-oshc`／`safety-emergency`／`mental-health`）の強化（updated）:** 最終監査の要件（公開 health 記事はすべて `verifiedAt` と最新の公式ソースを持つ）を満たすため、3件に `hub: "health"`・`verifiedAt: "2026-07-27"`・`officialSources` を追記。本文・タイトル・slug・公開状態・URL は不変。
+  - `medicare-oshc`: Services Australia（RHCA）／healthdirect（Going to a GP）／privatehealth.gov.au（OVHC）。
+  - `safety-emergency`: Triple Zero（000）／Police Assistance Line（131 444）／Smartraveller。
+  - `mental-health`: healthdirect（Mental health）／Lifeline（13 11 14）／Beyond Blue。
+- **公式照合（新規2件・記事反映済み）:** Bureau of Meteorology（洪水・サイクロン・熱波・悪天候の Watch/Warning）・State Emergency Service（SES 132 500）・Triple Zero（000）。「If it's flooded, forget it」、サイクロンシーズン（QLD/NT/WA北部・11〜4月）、雷雨ぜんそくなどを反映。
+- **可変事項の断定回避:** 警報カテゴリ・避難指示・道路閉鎖は州・時期で変わるため、BOM／州 SES／VicEmergency 等の州別公式へ誘導し断定を避けた。
+- **content-manifest.yaml:** 該当2件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+
+### 最終 health ハブ監査（2026-07-27・全件対象）
+
+- **公開 health 記事: 20 件**（計画公開 17 件＋既存/オリジナル 3 件）。**planned/merged/review/excluded: 0 件。**
+- **manifest 整合:** health は published 17＋existing 3＝20。残 planned 0。
+- **`verifiedAt`・公式ソース:** 公開 20 件すべてに `verifiedAt` と `officialSources` あり（欠落 0）。
+- **内部リンク（canonical）:** health 記事の `relatedSlugs` は全て実在 slug に解決（health dangling 0）。重複タイトル 0・重複 slug 0。
+- **孤立記事なし:** `app/health/page.tsx` の `GuideCategoryPage category="health"` が公開 health 記事を自動列挙。全 20 件がハブから到達可能。
+- **ドラフト/レビュー/薄い記事の露出なし:** 非公開・planned は一覧/検索/sitemap に非出力（`lib/content/registry.ts` の設計どおり）。
+- **州・準州ルールの明示:** 労災・警報アプリ・救急費用など州で異なる事項は州当局へ誘導済み。
+- **統合/リダイレクト: なし（health では統合対象なし）。RSS: 本プロジェクトに RSS フィードのルートは存在しない（N/A）。**
+- **カテゴリ一覧の正確性:** `validate:articles` の health 件数 = 20 で一致。
+- **フル検証（ハブ完了時に一括実施）:** `validate:articles`（ユニーク slug 262・重複 0・重複パス 0・重複エクスポート 0・health 20・`OK: no article data errors`）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning、`test:content` 5/5 pass、`eslint` クリーン、`next build` 成功（**316 静的ページ**・`BUILD_EXIT=0`）。sitemap に `/guides/flood-cyclone-safety`・`/guides/heatwave-severe-weather` を確認。構造化データ（JSON-LD Article）・canonical（`/guides/<slug>`）はビルドで検証済み。
+- **既知の範囲外事項（health 由来ではない）:** jobs/tax など**非 health** 記事に、まだ planned のままの slug（`keep-australian-bank-account`・`workplace-english`・`hospitality-english`・`supermarket-comparison` 等）を指す 23 件のグローバル dangling リンクが**既存**として残存。レンダリング時にフィルタされビルドは成功。health バッチの範囲外・本バッチでは未対応。
+
+- **health ハブ: 完了。残り health slug: 0 件。**
+- **次のカテゴリ: gig-work（ギグワーク・副業ハブ・未着手・12件）**（下記「ハブ別の残タスク一覧」参照）。**その後 daily-life（21件）。本バッチでは着手しない。**
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/health.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし（health ハブ範囲内）。**
+
 ## チェックポイント（2026-07-27）: health マイクロバッチ #3（5件公開 / commit: feat: publish health micro-batch）
 
 health（医療・健康・安全）ハブの次の5件を公開しました（マイクロバッチ #3）。以下が確定状態です。

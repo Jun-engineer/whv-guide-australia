@@ -440,6 +440,39 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## health マイクロバッチ #4＝health ハブ完了（洪水・サイクロン／熱波・悪天候 / 2026-07-27 / 残り2件公開＋既存3件強化）
+
+health ハブの**残り2件を公式一次情報に照合して新規公開**し、health ハブを完了した。あわせて既存3記事に公式ソースを追記。
+各新規記事は `verifiedAt: 2026-07-27` を付与し、`officialSources`（`accessedAt: 2026-07-27`）に公式情報源を明示。
+YMYL の中核は**災害時の警報確認・避難判断（000）**であり、警報カテゴリ・避難指示・道路閉鎖は州/時期で異なるため断定を避けた。
+
+| slug | 照合した主要ポイント | 主な出典（accessedAt 2026-07-27） |
+| --- | --- | --- |
+| `flood-cyclone-safety` | 洪水は「If it's flooded, forget it」＝冠水路は徒歩/車で進入しない。サイクロンシーズン＝QLD/NT/WA北部・11〜4月。BOM の Watch/Warning とサイクロン区分（Category 1〜5）。SES 132 500（救助）・命の危険は 000。避難指示・道路閉鎖は州公式で確認 | Bureau of Meteorology（Flood/Cyclone warnings）/ State Emergency Service（132 500）/ Triple Zero（000） |
+| `heatwave-severe-weather` | BOM の警報種別（Severe Thunderstorm／Severe Weather／Heatwave）。雷雨ぜんそく（thunderstorm asthma）に注意。暴風・雹・倒木などの被害は SES 132 500、命の危険は 000。最新の警報は BOM/州公式で確認 | Bureau of Meteorology（Severe weather/Heatwave warnings）/ State Emergency Service（132 500）/ Triple Zero（000） |
+
+**既存3記事の公式ソース追記（updated・本文/タイトル/slug/公開状態/URL は不変）:**
+
+| slug | 追記した officialSources（accessedAt 2026-07-27） |
+| --- | --- |
+| `medicare-oshc` | Services Australia（RHCA＝相互医療協定）／healthdirect（Going to a GP）／privatehealth.gov.au（OVHC） |
+| `safety-emergency` | Triple Zero（000）／Police Assistance Line（131 444）／Smartraveller |
+| `mental-health` | healthdirect（Mental health）／Lifeline（13 11 14）／Beyond Blue |
+
+- **照合した公式一次情報（accessedAt 2026-07-27）:** Bureau of Meteorology（bom.gov.au — Flood/Cyclone/Severe Weather/
+  Heatwave の Watch・Warning）、State Emergency Service（各州 SES — 132 500）、Triple Zero（triplezero.gov.au — 000）、
+  Services Australia（servicesaustralia.gov.au — RHCA）、healthdirect（healthdirect.gov.au — Going to a GP／Mental health）、
+  privatehealth.gov.au（OVHC）、Lifeline（13 11 14）、Beyond Blue、Police Assistance Line（131 444）、Smartraveller（smartraveller.gov.au）。
+- **可変事項・州依存の断定回避:** 警報カテゴリ・避難指示・道路閉鎖・救助要請番号の運用は州/時期で変わるため、
+  BOM／州 SES／VicEmergency 等の州別公式へ誘導し、具体の避難指示や閉鎖状況は断定しない導線とした。
+- **統合・リダイレクト:** なし（新規2件は独立検索意図）。RSS: 本プロジェクトに RSS フィードのルートは存在しない（N/A）。
+- **最終 health ハブ監査（フル検証・一括実施）:** `validate:articles`（ユニーク slug 262・重複0・重複パス0・重複エクスポート0・
+  health 20件・`OK: no article data errors`）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning、
+  `test:content` 5/5 pass、`eslint` クリーン、`next build` 成功（**316 静的ページ**・`BUILD_EXIT=0`）。
+  sitemap に `/guides/flood-cyclone-safety`・`/guides/heatwave-severe-weather` を確認。公開 health 20件すべてに
+  `verifiedAt`＋`officialSources` あり（欠落0）。health `relatedSlugs` dangling 0。孤立記事0（ハブ自動列挙）。
+  ※非 health 記事の 23 件グローバル dangling リンク（planned 参照）は既存事項・本バッチ範囲外（レンダリング時フィルタ）。
+
 ## health マイクロバッチ #3（熱中症・咬傷/刺傷・食物アレルギー・労災・山火事 / 2026-07-27 / 5件公開）
 
 health ハブの次の5件を、記事単位で公式一次情報に照合して新規公開した。各記事は

@@ -2811,7 +2811,7 @@ planned_content:
 - slug: flood-cyclone-safety
   title: 洪水・サイクロンへの備え｜クイーンズランド・北部
   hub: health
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: disaster
@@ -2821,7 +2821,7 @@ planned_content:
 - slug: heatwave-severe-weather
   title: 熱波・雷雨・雹など悪天候の情報確認方法
   hub: health
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: disaster
