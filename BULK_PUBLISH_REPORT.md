@@ -3,6 +3,47 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-27）: daily-life マイクロバッチ #1（5件公開 / commit: feat: publish daily life micro-batch）
+
+daily-life（日常生活・食事・買い物）ハブの最初の5件を公開しました（マイクロバッチ運用）。開始時点で daily-life は21件（>5）が残っていたため、通常のマイクロバッチとして先頭5件のみを処理しました。以下が確定状態です。
+
+- **公開した5件（すべて `verifiedAt: 2026-07-27`・`officialSources` 付き・完全公開・分類は全て create）:**
+  `supermarket-comparison`（food, P0, comparison, id a263）, `grocery-saving-tips`（food, P0, finance, id a264）,
+  `asian-japanese-groceries`（food, P1, guide, id a265）, `cheap-meal-prep`（food, P1, food, id a266）,
+  `australian-oven-guide`（food, P2, how-to, id a267）。すべて `category: "food"` / `hub: "daily-life"`。
+- **選定 slug:** 上記5件（`BULK_PUBLISH_REMAINING.md` / manifest の記録順の先頭5件）。
+- **作成（created）slug:** 上記5件。**更新（updated）slug:** `food-guide`（内部リンクのみ）。
+  **統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、既存公開の `food-guide`（食費・自炊・スーパー・外食の総論）とは
+  検索意図が明確に異なる（3大スーパー比較／食費節約テク／日本・アジア食材の入手先／作り置きレシピ／オーブン・コンロの使い方）。
+  総論に対する各論の深掘りで有用コンテンツの重複は 60–70% 未満、独立意図が強いため個別公開し `relatedSlugs` で相互リンク。
+- **既存記事の内部リンク:** `food-guide` の `relatedSlugs` に新規4件（`supermarket-comparison` / `grocery-saving-tips` /
+  `cheap-meal-prep` / `asian-japanese-groceries`）を追記（本文・slug・URL・公開状態は不変）。孤立記事なし。
+- **孤立記事なし:** food カテゴリページ（`app/food/page.tsx` の `GuideCategoryPage category="food"`）が公開 food 記事を
+  自動列挙するため、5件はすべて `/food` から到達可能。
+- **公式照合（記事反映済み）:** Everyday Rewards（Woolworths 公式・無料会員）／Flybuys（Coles 公式・無料会員）／
+  ALDI Australia（公式）／Food Standards Australia New Zealand｜Food safety basics（保存・冷却・再加熱）／
+  Moneysmart（ASIC・家計テンプレート）／Department of Agriculture, Fisheries and Forestry（食品の持込・郵送ルール）／
+  Energy Safe Victoria（家庭のガス機器の安全）。
+- **可変事項の断定回避:** スーパーの価格・特売・会員特典は変動するため特定金額を断定せず「確認日 2026-07-27」を明記し
+  各社アプリ・店頭確認へ誘導。ALDI の店舗網（NT 無し・地方は IGA 中心）、食品持込の可否（DAFF）、ガス機器操作（機種差）は
+  地域・機種で異なる旨を明示。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（ユニーク slug 267・重複0・重複パス0・重複エクスポート0・
+  food 6件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、
+  `validate:content` 0 error / 66 warning（想定内の cannibalization のみ）、新規5件の `relatedSlugs` は全て公開 slug に解決（dangling 0）。
+  ※フルビルド/テスト/lint/sitemap/RSS/構造化データ監査は daily-life ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **残り daily-life slug（16件・すべて planned のまま）:** `food-storage-share-house`, `tap-water-drinking`,
+  `shopping-surcharges-tipping`, `alcohol-id-rules`, `laundry-guide`, `australia-clothing-seasons`,
+  `buy-furniture-household-items`, `op-shop-guide`, `post-office-courier`, `library-guide`, `gym-fitness-guide`,
+  `haircut-barber-english`, `public-toilets-showers`, `home-internet-guide`, `online-scams-cybersecurity`, `phone-lost-stolen`。
+- **最初の未完了 daily-life slug: `food-storage-share-house`**（次回はここから再開）。
+- **次のバッチ: daily-life（`food-storage-share-house` から継続）。** ※本セッションは daily-life の先頭5件のみ処理。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/food.ts`、`lib/content/manifest.generated.ts`（再生成）、
+  `whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、
+  `BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: health マイクロバッチ #4＝**health ハブ完了**（残り2件公開＋最終ハブ監査 / commit: feat: complete health content batch）
 
 health（医療・健康・安全）ハブの**残り2件を公開し、health ハブを完了**しました（マイクロバッチ #4）。残り2件（≤5）だったため全件処理し、続けて**最終 health ハブ監査**を実施しました。

@@ -440,6 +440,32 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## daily-life マイクロバッチ #1（スーパー比較・食費節約・アジア食材・作り置き・オーブン / 2026-07-27 / 5件公開）
+
+daily-life ハブの最初の5件を、記事単位で公式一次情報・企業公式に照合して新規公開した（`category: "food"` / `hub: "daily-life"`）。
+各記事は `verifiedAt: 2026-07-27` を付与し、`officialSources`（`accessedAt: 2026-07-27`）に情報源を明示。
+可変性の高い**価格・特売・会員特典**は特定金額を断定せず「確認日 2026-07-27」を明記し、各社アプリ・店頭確認へ誘導した。
+
+| slug | 照合した主要ポイント | 主な出典（accessedAt 2026-07-27） |
+| --- | --- | --- |
+| `supermarket-comparison` | Coles/Woolworths は全国展開・無料会員（Flybuys / Everyday Rewards）でポイント＋会員価格。ALDI は最安傾向だが品目限定・会員制度なし。ALDI は NT に店舗なし・地方は IGA 中心。価格/特売は変動 | Everyday Rewards（Woolworths 公式）/ Flybuys（Coles 公式）/ ALDI Australia（公式・店舗検索） |
+| `grocery-saving-tips` | 特売（Half Price）軸の献立・値引きシール・冷凍まとめ買い。冷蔵は5℃以下・調理後は速やかに冷蔵/冷凍。家計テンプレートで週予算管理 | Moneysmart（ASIC・Simple budget）/ FSANZ（Food safety basics） |
+| `asian-japanese-groceries` | 日本/アジア食材はアジア系スーパー・大手の World Foods 棚・通販で入手。日本からの食品持込は検疫（biosecurity）で品目制限あり・要申告（申告漏れは罰金） | Department of Agriculture, Fisheries and Forestry（Bringing/mailing goods） |
+| `cheap-meal-prep` | 作り置きの安全: 調理後2時間以内を目安に冷蔵（5℃以下）/冷凍・再加熱は中心まで熱く・再加熱1回まで。安い定番食材の献立ローテーション | FSANZ（Food safety basics） |
+| `australian-oven-guide` | 温度は摂氏（℃）・fan-forced は通常式基準より約20℃低め・grill＝上火 broiler。IH は磁性の対応鍋が必要。ガス漏れ時は火気/電気を使わず元栓を閉め換気・緊急時000 | Energy Safe Victoria（Gas safety in the home） |
+
+- **照合した公式一次情報・企業公式（accessedAt 2026-07-27）:** Everyday Rewards（everyday.com.au — Woolworths 公式会員）、
+  Flybuys（flybuys.com.au — Coles 公式会員）、ALDI Australia（aldi.com.au）、Food Standards Australia New Zealand
+  （foodstandards.gov.au — Food safety basics ＝保存/冷却/再加熱、ページ更新 2025-07-29 を確認）、Moneysmart（moneysmart.gov.au —
+  ASIC の Simple budget）、Department of Agriculture, Fisheries and Forestry（agriculture.gov.au — 食品の持込/郵送ルール）、
+  Energy Safe Victoria（esv.vic.gov.au — 家庭のガス機器の安全）。企業公式は当該サービス（会員制度・店舗網）に関する記述のみに使用。
+- **可変事項の断定回避:** スーパーの価格・特売・会員特典は変動するため特定金額を断定せず確認日を明記。ALDI の店舗網（NT 無し・
+  地方は IGA 中心）、食品持込の可否（DAFF）、オーブン/コンロの操作（機種差）は地域・機種で異なる旨を明示した。
+- **統合・リダイレクト:** なし（新規5件は独立検索意図で `food-guide` 総論とは分離）。RSS: 本プロジェクトに RSS ルート無し（N/A）。
+  ※フルビルド/テスト/lint/監査は daily-life ハブ完了後（残り5件以下時）にまとめて実施。
+- **web fetch の制約:** healthdirect の食品保存ページ・betterhealth.vic.gov.au は本セッションで取得エラー（500/抽出不可）だったが、
+  同等の保存/冷却/再加熱の基準は FSANZ「Food safety basics」で確認済み（取得成功）。essential claim の未解決は無し。
+
 ## health マイクロバッチ #4＝health ハブ完了（洪水・サイクロン／熱波・悪天候 / 2026-07-27 / 残り2件公開＋既存3件強化）
 
 health ハブの**残り2件を公式一次情報に照合して新規公開**し、health ハブを完了した。あわせて既存3記事に公式ソースを追記。

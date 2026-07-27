@@ -2831,7 +2831,7 @@ planned_content:
 - slug: supermarket-comparison
   title: Coles・Woolworths・ALDI比較｜安く買うコツ
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: comparison
@@ -2841,7 +2841,7 @@ planned_content:
 - slug: grocery-saving-tips
   title: オーストラリアの食費を節約する方法｜特売・冷凍・自炊
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: finance
@@ -2851,7 +2851,7 @@ planned_content:
 - slug: asian-japanese-groceries
   title: 日本食材・アジア食材を買える場所と代用品
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: guide
@@ -2861,7 +2861,7 @@ planned_content:
 - slug: cheap-meal-prep
   title: ワーホリ向け安い作り置きレシピと1週間献立
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: food
@@ -2871,7 +2871,7 @@ planned_content:
 - slug: australian-oven-guide
   title: オーストラリアのオーブン・コンロの使い方
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: how-to

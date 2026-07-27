@@ -306,6 +306,24 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   役割が異なる（前者=医療受診の導線、後者=補償制度の詳細）ため別記事として保持し双方向リンク。
 - 次の未完了 health slug: `flood-cyclone-safety`（残り2件・次回は最終 health ハブ監査を実施）。
 
+### daily-life マイクロバッチ #1（2026-07-27 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。** daily-life ハブの最初の5件
+（`supermarket-comparison` / `grocery-saving-tips` / `asian-japanese-groceries` /
+`cheap-meal-prep` / `australian-oven-guide`）はすべて**新規スラッグ**（`category: "food"` / `hub: "daily-life"`）で、
+既存の公開記事 `food-guide`（食費・自炊・スーパー・外食の総論）とは**検索意図が明確に異なり
+（3大スーパー比較／食費節約テク／日本・アジア食材の入手先／作り置きレシピ／オーブン・コンロの使い方）、
+全面重複はないため、新規の統合・リダイレクトは発生せず**、`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 既存 `food-guide`（総論）の `relatedSlugs` を拡張し、`supermarket-comparison` / `grocery-saving-tips` /
+  `cheap-meal-prep` / `asian-japanese-groceries` へ接続（本文・slug・URL・公開状態は不変）。
+- 有用コンテンツの重複は 60–70% 未満（`food-guide` は総論でスーパー・自炊・外食を概説、新規5件は各論の比較・
+  節約テク・入手先・レシピ・機器操作）。独立した強い検索意図があるため統合しない。
+- `supermarket-comparison`（どの店で買うか＝価格・会員・店舗網の比較）と `grocery-saving-tips`（どう買えば安いか＝
+  特売・値引き・冷凍・自炊）は近接するが次の行動が異なるため別記事として保持し双方向リンク。
+- 孤立記事なし: food カテゴリページ（`GuideCategoryPage category="food"`）が公開 food 記事を自動列挙するため到達可能。
+- 次の未完了 daily-life slug: `food-storage-share-house`。
+
 ## 4. リダイレクト運用ルール
 
 - `to`（転送先）は必ず公開中（`published`）の実記事 slug。
