@@ -4,6 +4,36 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-27）: daily-life マイクロバッチ #2（5件公開 / commit: feat: publish daily life micro-batch）
+
+daily-life（日常生活・食事・買い物）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で daily-life は16件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理しました。以下が確定状態です。
+
+- **公開した5件（すべて `verifiedAt: 2026-07-27`・`officialSources` 付き・完全公開・分類は全て create）:**
+  `food-storage-share-house`（food, P2, guide, id a268）, `tap-water-drinking`（food, P2, faq, id a269）,
+  `shopping-surcharges-tipping`（money, P0, guide, id a270）, `alcohol-id-rules`（food, P1, legal, id a271）,
+  `laundry-guide`（clothing, P2, how-to, id a272）。`hub` は全て `daily-life`、`category` は food/money/clothing に分散配置。
+- **選定 slug:** 上記5件（`BULK_PUBLISH_REMAINING.md` / manifest の記録順の先頭5件）。
+- **作成（created）slug:** 上記5件。**更新（updated）slug:** `food-guide`・`clothing-guide`（内部リンクのみ）。
+  **統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、既存公開記事とは検索意図が明確に異なる（シェアハウスの食品保存／水道水の可否・災害時確認／カード追加料金・チップ／飲酒の身分証・州法差／洗濯・コインランドリー）。独立意図が強いため個別公開し `relatedSlugs` で相互リンク。
+- **既存記事の内部リンク:** `food-guide` の `relatedSlugs` に新規3件（`food-storage-share-house`／`tap-water-drinking`／`alcohol-id-rules`）、`clothing-guide` の `relatedSlugs` に `laundry-guide` を追記（本文・slug・URL・公開状態は不変）。孤立記事なし。
+- **孤立記事なし:** 各カテゴリページ（`/food`・`/money`・`/clothing` の `GuideCategoryPage`）が公開記事を自動列挙するため、5件はすべて到達可能。
+- **公式照合（記事反映済み・確認日 2026-07-27）:** Food Standards Australia New Zealand（Food safety basics）／healthdirect（Drinking water and your health）＋NHMRC（Australian Drinking Water Guidelines）＋NSW Health（boil water alert）／ACCC（Card surcharges）／NHMRC（Alcohol guidelines）＋NSW Liquor & Gaming／ACCC Product Safety（Care labelling）。
+- **可変事項の断定回避:** ACCC のカードサーチャージ制度は**2026年10月1日から Visa/Mastercard/eftpos がサーチャージ禁止予定**であることを日付付きで明記し「変更されうる制度」と警告。飲酒は法定18歳（全国一律）だが受け入れID・二次供給・営業時間は**州で異なる**として各州当局へ誘導し、具体的な金額・罰則は断定せず。水道水は原則安全だが雨水タンク・井戸水・災害時（boil water alert）の例外と州の管理責任を明示。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成（existing 47 / planned 338）。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複0・重複パス0・重複エクスポート0・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ）、新規5件の `relatedSlugs` は全て公開 slug に解決（dangling 0）。
+  ※フルビルド/テスト/lint/sitemap/RSS/構造化データ監査は daily-life ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **残り daily-life slug（11件・すべて planned のまま）:** `australia-clothing-seasons`, `buy-furniture-household-items`,
+  `op-shop-guide`, `post-office-courier`, `library-guide`, `gym-fitness-guide`, `haircut-barber-english`,
+  `public-toilets-showers`, `home-internet-guide`, `online-scams-cybersecurity`, `phone-lost-stolen`。
+- **最初の未完了 daily-life slug: `australia-clothing-seasons`**（次回はここから再開）。
+- **次のバッチ: daily-life（`australia-clothing-seasons` から継続）。** ※本セッションは daily-life の次の5件のみ処理。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/food.ts`、`lib/content/articles/money.ts`、
+  `lib/content/articles/clothing.ts`、`lib/content/manifest.generated.ts`（再生成）、
+  `whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、
+  `BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: daily-life マイクロバッチ #1（5件公開 / commit: feat: publish daily life micro-batch）
 
 daily-life（日常生活・食事・買い物）ハブの最初の5件を公開しました（マイクロバッチ運用）。開始時点で daily-life は21件（>5）が残っていたため、通常のマイクロバッチとして先頭5件のみを処理しました。以下が確定状態です。
@@ -694,19 +724,19 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - `flood-cyclone-safety` — 洪水・サイクロンへの備え｜クイーンズランド・北部 _(優先度 P0、意図: disaster)_
 - `heatwave-severe-weather` — 熱波・雷雨・雹など悪天候の情報確認方法 _(優先度 P1、意図: disaster)_
 
-### daily-life — 日常生活・食事・買い物 (21件・うち5件公開済み)
+### daily-life — 日常生活・食事・買い物 (21件・うち10件公開済み)
 
 - ✅ `supermarket-comparison` — Coles・Woolworths・ALDI比較｜安く買うコツ _(優先度 P0、意図: comparison)_ **公開済み（2026-07-27）**
 - ✅ `grocery-saving-tips` — オーストラリアの食費を節約する方法｜特売・冷凍・自炊 _(優先度 P0、意図: finance)_ **公開済み（2026-07-27）**
 - ✅ `asian-japanese-groceries` — 日本食材・アジア食材を買える場所と代用品 _(優先度 P1、意図: guide)_ **公開済み（2026-07-27）**
 - ✅ `cheap-meal-prep` — ワーホリ向け安い作り置きレシピと1週間献立 _(優先度 P1、意図: food)_ **公開済み（2026-07-27）**
 - ✅ `australian-oven-guide` — オーストラリアのオーブン・コンロの使い方 _(優先度 P2、意図: how-to)_ **公開済み（2026-07-27）**
-- `food-storage-share-house` — シェアハウスでの食品保存・冷蔵庫ルール _(優先度 P2、意図: guide)_ ← **次はここから**
-- `tap-water-drinking` — オーストラリアの水道水は飲める？地域・災害時の確認 _(優先度 P2、意図: faq)_
-- `shopping-surcharges-tipping` — カード手数料・日祝サーチャージ・チップの習慣 _(優先度 P0、意図: guide)_
-- `alcohol-id-rules` — お酒を買う・飲むときの身分証とルール _(優先度 P1、意図: legal)_
-- `laundry-guide` — シェアハウス・コインランドリーの使い方と洗剤 _(優先度 P2、意図: how-to)_
-- `australia-clothing-seasons` — 都市・季節別の服装ガイド｜暑さ・寒暖差・雨 _(優先度 P0、意図: guide)_
+- ✅ `food-storage-share-house` — シェアハウスでの食品保存・冷蔵庫ルール _(優先度 P2、意図: guide)_ **公開済み（2026-07-27）**
+- ✅ `tap-water-drinking` — オーストラリアの水道水は飲める？地域・災害時の確認 _(優先度 P2、意図: faq)_ **公開済み（2026-07-27）**
+- ✅ `shopping-surcharges-tipping` — カード手数料・日祝サーチャージ・チップの習慣 _(優先度 P0、意図: guide)_ **公開済み（2026-07-27）**
+- ✅ `alcohol-id-rules` — お酒を買う・飲むときの身分証とルール _(優先度 P1、意図: legal)_ **公開済み（2026-07-27）**
+- ✅ `laundry-guide` — シェアハウス・コインランドリーの使い方と洗剤 _(優先度 P2、意図: how-to)_ **公開済み（2026-07-27）**
+- `australia-clothing-seasons` — 都市・季節別の服装ガイド｜暑さ・寒暖差・雨 _(優先度 P0、意図: guide)_ ← **次はここから**
 - `buy-furniture-household-items` — 家具・生活用品を安く揃える方法｜Kmart・Marketplace・Op Shop _(優先度 P1、意図: comparison)_
 - `op-shop-guide` — Op Shopの使い方｜服・家具・寄付 _(優先度 P3、意図: guide)_
 - `post-office-courier` — Australia Postの使い方｜郵便・荷物・Parcel Locker _(優先度 P1、意図: how-to)_

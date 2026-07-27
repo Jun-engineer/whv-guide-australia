@@ -440,6 +440,32 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## daily-life マイクロバッチ #2（食品保存・水道水・カード手数料/チップ・飲酒ルール・洗濯 / 2026-07-27 / 5件公開）
+
+daily-life ハブの次の5件を、記事単位で公式一次情報に照合して新規公開した（`hub: "daily-life"`、`category` は food/money/clothing に分散）。
+各記事は `verifiedAt: 2026-07-27` を付与し、`officialSources`（`accessedAt: 2026-07-27`）に情報源を明示。
+可変性の高い**制度・州法・料金**は特定の金額・罰則を断定せず「確認日 2026-07-27」を明記し、公式・各州当局・店頭確認へ誘導した。
+
+| slug | 照合した主要ポイント | 主な出典（accessedAt 2026-07-27） |
+| --- | --- | --- |
+| `food-storage-share-house` | 冷蔵5℃以下・冷凍−15〜−18℃、調理後は2時間以内を目安に冷蔵/冷凍、生肉/生魚は密閉して最下段。use-by（消費期限）は守る/best before（賞味期限）は目安。シェア対策は名前・日付・個人/共有の区別 | FSANZ（Food safety basics） |
+| `tap-water-drinking` | 都市部の水道水は原則そのまま飲める（ADWG で管理）。水質管理は州・準州＋地域水道事業者の責任。洪水/水質異常時は boil water alert。雨水タンク・井戸水（bore water）は別の安全管理が必要 | healthdirect（Drinking water and your health）/ NHMRC（Australian Drinking Water Guidelines）/ NSW Health（boil water alert） |
+| `shopping-surcharges-tipping` | 現在はカードサーチャージ可（決済コスト上限）。**2026年10月1日から Visa/Mastercard/eftpos はサーチャージ禁止予定**（現金・BPAY・PayPal・Diners・Amex・タクシーは対象外）。日祝割増・予約手数料は別物で事前表示なら可。チップは任意 | ACCC（Card surcharges） |
+| `alcohol-id-rules` | 法定飲酒年齢18歳（全国一律）、18歳未満への販売・提供は違法。確実なIDはパスポート/豪運転免許/州の Proof of Age card。受け入れID・二次供給（secondary supply）・営業時間は**州で異なる**。飲食提供は RSA 資格（州別） | NHMRC（Alcohol guidelines）/ NSW Liquor & Gaming（Alcohol and young people） |
+| `laundry-guide` | シェアハウス共用機・コインランドリー（laundromat）の使い方、粉末/液体/ジェルボール、ドラム式（front loader）対応洗剤。ケアラベル（洗濯表示）は法令で義務。machine wash cold / do not tumble dry 等の読み方 | ACCC Product Safety（Care labelling of clothing & textiles） |
+
+- **照合した公式一次情報（accessedAt 2026-07-27）:** Food Standards Australia New Zealand（foodstandards.gov.au — Food safety basics）、
+  healthdirect（healthdirect.gov.au — Drinking water and your health）、NHMRC（nhmrc.gov.au — Australian Drinking Water Guidelines / Alcohol）、
+  NSW Health（health.nsw.gov.au — What to do during a boil water alert）、ACCC（acccgov.au — Card surcharges、2026-10-01 の禁止予定を確認）、
+  NSW Liquor & Gaming（liquorandgaming.nsw.gov.au — Alcohol and young people、州別ルールの例として使用）、ACCC Product Safety
+  （productsafety.gov.au — Care labelling）。
+- **可変事項の断定回避:** ACCC のカードサーチャージ制度は**2026年10月1日施行予定**である旨を日付付きで明記し「変更されうる制度」と警告。
+  飲酒の受け入れID・二次供給・営業時間、飲酒可能な場所は州/自治体で異なるとして各州当局へ誘導し、具体的な金額・罰則は断定せず。
+  水道水は原則安全だが雨水タンク・井戸水・災害時（boil water alert）の例外と州の管理責任を明示。コインランドリーの料金は店頭確認へ誘導。
+- **統合・リダイレクト:** なし（新規5件は独立検索意図。`food-guide`／`clothing-guide` に内部リンクのみ追記）。RSS: 本プロジェクトに RSS ルート無し（N/A）。
+  ※フルビルド/テスト/lint/監査は daily-life ハブ完了後（残り5件以下時）にまとめて実施。
+- **web fetch の制約:** ACCC・NHMRC・healthdirect・NSW 系の主要ページは本セッションで取得成功。essential claim の未解決は無し（照合済み）。
+
 ## daily-life マイクロバッチ #1（スーパー比較・食費節約・アジア食材・作り置き・オーブン / 2026-07-27 / 5件公開）
 
 daily-life ハブの最初の5件を、記事単位で公式一次情報・企業公式に照合して新規公開した（`category: "food"` / `hub: "daily-life"`）。

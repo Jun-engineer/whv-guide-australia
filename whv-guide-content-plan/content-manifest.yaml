@@ -2881,7 +2881,7 @@ planned_content:
 - slug: food-storage-share-house
   title: シェアハウスでの食品保存・冷蔵庫ルール
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: guide
@@ -2891,7 +2891,7 @@ planned_content:
 - slug: tap-water-drinking
   title: オーストラリアの水道水は飲める？地域・災害時の確認
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: faq
@@ -2901,7 +2901,7 @@ planned_content:
 - slug: shopping-surcharges-tipping
   title: カード手数料・日祝サーチャージ・チップの習慣
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: guide
@@ -2911,7 +2911,7 @@ planned_content:
 - slug: alcohol-id-rules
   title: お酒を買う・飲むときの身分証とルール
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: legal
@@ -2921,7 +2921,7 @@ planned_content:
 - slug: laundry-guide
   title: シェアハウス・コインランドリーの使い方と洗剤
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: how-to

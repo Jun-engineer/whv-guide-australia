@@ -306,6 +306,24 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   役割が異なる（前者=医療受診の導線、後者=補償制度の詳細）ため別記事として保持し双方向リンク。
 - 次の未完了 health slug: `flood-cyclone-safety`（残り2件・次回は最終 health ハブ監査を実施）。
 
+### daily-life マイクロバッチ #2（2026-07-27 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。** daily-life ハブの次の5件
+（`food-storage-share-house` / `tap-water-drinking` / `shopping-surcharges-tipping` /
+`alcohol-id-rules` / `laundry-guide`）はすべて**新規スラッグ**（`hub: "daily-life"`、`category` は
+food/money/clothing に分散）で、既存の公開記事とは**検索意図が明確に異なり
+（シェアハウスの食品保存／水道水の可否・災害時確認／カード追加料金・チップ／飲酒の身分証・州法差／洗濯・コインランドリー）、
+全面重複はないため、新規の統合・リダイレクトは発生せず**、`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 既存 `food-guide` の `relatedSlugs` を拡張し、`food-storage-share-house` / `tap-water-drinking` /
+  `alcohol-id-rules` へ接続。既存 `clothing-guide` の `relatedSlugs` に `laundry-guide` を追加
+  （いずれも本文・slug・URL・公開状態は不変）。
+- `food-storage-share-house`（食品保存の安全＝FSANZ）と `cheap-meal-prep`（作り置きレシピ）は近接するが、
+  次の行動が異なる（保存・衛生 vs 献立・調理）ため別記事として保持し双方向リンク。
+- 孤立記事なし: 各カテゴリページ（`/food`・`/money`・`/clothing` の `GuideCategoryPage`）が公開記事を
+  自動列挙するため到達可能。
+- 次の未完了 daily-life slug: `australia-clothing-seasons`。
+
 ### daily-life マイクロバッチ #1（2026-07-27 / 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。** daily-life ハブの最初の5件

@@ -33,6 +33,9 @@ export const foodArticles: Article[] = [
       "grocery-saving-tips",
       "cheap-meal-prep",
       "asian-japanese-groceries",
+      "food-storage-share-house",
+      "tap-water-drinking",
+      "alcohol-id-rules",
       "arrival-checklist",
       "housing-guide",
     ],
@@ -371,6 +374,214 @@ export const foodArticles: Article[] = [
       "grocery-saving-tips",
       "food-guide",
       "housing-guide",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a268",
+    title: "シェアハウスでの食品保存・冷蔵庫ルール",
+    slug: "food-storage-share-house",
+    category: "food",
+    hub: "daily-life",
+    description:
+      "シェアハウスの共有冷蔵庫で食品を安全に保存し、トラブルを避けるための実践ルール。名前・日付の管理、冷蔵5℃以下・冷凍、食中毒を防ぐ基本をまとめました。",
+    content: [
+      "シェアハウスの共有冷蔵庫は『安全な保存』と『住人同士のルール』の2つを押さえれば快適に使えます。まず食品安全の基本として、冷蔵庫は5℃以下・冷凍庫は−15〜−18℃を保ち、調理後の食品は2時間以内を目安に冷まして冷蔵/冷凍します（高温時はより短く）。生肉・生魚は汁がもれないよう密閉して最下段に置き、他の食品への汚染を防ぎます。",
+      "シェアハウス特有の対策として、自分の食品には名前と日付を書くのが基本マナーです（マスキングテープや保存容器に記入）。取り違え・無断使用のトラブルは名前書きでかなり防げます。共有調味料と個人の食品を分け、冷蔵庫内の自分のスペースを把握しておきましょう。入居時にハウスの冷蔵庫ルール（棚割り・処分日）を確認するのが安心です。",
+      "食品ロスと臭い対策も大切です。use-by（消費期限）を過ぎたものは食べない、best before（賞味期限）は品質の目安、と区別します。定期的に古いものをチェックし、密閉容器で臭い移りを防ぎます。停電や冷蔵庫トラブルの際は、傷みやすい食品の安全に注意してください（本記事の確認日: 2026-07-27）。",
+    ],
+    keyFacts: [
+      { label: "冷蔵温度", value: "5℃以下（冷凍は−15〜−18℃）" },
+      { label: "調理後", value: "2時間以内を目安に冷蔵/冷凍" },
+      { label: "生肉・生魚", value: "密閉して最下段（汁もれ防止）" },
+      { label: "シェア対策", value: "名前・日付を書く／個人と共有を分ける" },
+      { label: "期限", value: "use-by=消費期限（守る）/ best before=賞味期限（目安）" },
+    ],
+    steps: [
+      { title: "入居時にルール確認", description: "共有冷蔵庫の棚割り・処分日・共有調味料の扱いをハウスメイトに確認します。" },
+      { title: "名前と日付を書く", description: "自分の食品・作り置きに名前と日付を記入。取り違えと無断使用を防ぎます。" },
+      { title: "正しく配置", description: "生肉・生魚は密閉して最下段、すぐ食べるものは手前、要冷凍は早めに冷凍します。" },
+      { title: "定期的に整理", description: "週1で古いものをチェックし、期限切れは処分。臭い移りは密閉容器で防ぎます。" },
+    ],
+    tips: [
+      "作り置きは小分け＋密閉容器にすると場所を取らず、取り違えも防げます。",
+      "冷蔵庫が混みすぎると冷気が回らず温度が上がります。詰め込みすぎに注意。",
+      "共有スペースを使いすぎない配慮がトラブル回避につながります。",
+    ],
+    faqs: [
+      {
+        question: "ハウスメイトに食品を勝手に食べられないか心配です。",
+        answer:
+          "名前と日付を書くのが最も効果的です。それでも起きる場合は、まず穏やかに話し合い、共有ルール（名前書き・共有品の線引き）を決めましょう。高価なものや個人用は自分の棚・容器で明確に区別します。",
+      },
+      {
+        question: "use-by と best before の違いは？",
+        answer:
+          "use-by（消費期限）は安全に食べられる期限で、過ぎたものは食べないでください。best before（賞味期限）は品質の目安で、過ぎても直ちに危険ではありませんが、見た目・匂いに異常があれば食べないでください。",
+      },
+    ],
+    warnings: [
+      "調理後の常温放置は食中毒の原因になります。2時間以内（高温時はより短く）に冷蔵/冷凍し、少しでも傷みが疑われるものは廃棄してください。",
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "Food Standards Australia New Zealand｜Food safety basics（冷蔵・冷凍・保存の基本）",
+        url: "https://www.foodstandards.gov.au/consumer/prevention-of-foodborne-illness/food-safety-basics",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "cheap-meal-prep",
+      "grocery-saving-tips",
+      "food-guide",
+      "share-house-finding",
+      "housing-guide",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a269",
+    title: "オーストラリアの水道水は飲める？地域・災害時の確認",
+    slug: "tap-water-drinking",
+    category: "food",
+    hub: "daily-life",
+    description:
+      "オーストラリアの水道水は飲めるのか？結論と、地域差・災害時の煮沸勧告（boil water alert）・タンク水/井戸水の注意点、州別の確認先をまとめました。",
+    content: [
+      "結論として、オーストラリアの都市部の水道水（tap water）は基本的にそのまま飲めます。厳しい『Australian Drinking Water Guidelines（NHMRC）』に基づき、州・準州政府と地域の水道事業者が水質を監視・管理しており、healthdirect も『水分補給には水道水が最適な選択』としています。マイボトルを持てばペットボトル代の節約にもなります。",
+      "ただし例外と注意点があります。①洪水・水道トラブル・水源での細菌検出などがあると、保健当局が『煮沸勧告（boil water alert）』や『ボトル水を飲むように』と案内することがあります。②地方の一部やキャンプ地では、レインウォータータンク（雨水タンク）や井戸水（bore water）を使う家があり、これらは公共水道と別の安全管理が必要で、そのまま飲めるとは限りません。③水質の第一義的な管理は州・準州の責任のため、疑問があれば居住地の州保健当局・水道事業者で確認します。",
+      "実務的には、都市の賃貸・シェアハウスの水道水はそのまま飲んで問題ないことがほとんどです。味が気になる場合は冷やす・浄水ポットを使うと飲みやすくなります。地方で雨水タンク・井戸水の家に住む場合や、災害・断水後は、居住地の公式情報で安全を確認してから飲みましょう（本記事の確認日: 2026-07-27）。",
+    ],
+    keyFacts: [
+      { label: "都市の水道水", value: "基本そのまま飲める（ADWGで管理）" },
+      { label: "管理責任", value: "州・準州政府＋地域の水道事業者" },
+      { label: "煮沸勧告", value: "洪水・水質異常時に保健当局が発令" },
+      { label: "タンク水/井戸水", value: "別の安全管理が必要（要確認）" },
+      { label: "節約", value: "マイボトルでペットボトル代を節約" },
+    ],
+    steps: [
+      { title: "住まいの水源を確認", description: "公共水道か、雨水タンク/井戸水かを確認します。都市の賃貸は通常が公共水道です。" },
+      { title: "州の確認先を知る", description: "疑問があれば居住地の州保健当局・水道事業者（NSW Health / Vic Health / QLD / SA Water / Water Corp WA / NT 等）で水質情報を確認します。" },
+      { title: "災害・断水後は情報確認", description: "洪水・断水後は煮沸勧告の有無を公式で確認してから飲みます。" },
+      { title: "味が気になれば工夫", description: "冷やす・浄水ポットの利用で飲みやすくなります。" },
+    ],
+    tips: [
+      "煮沸勧告が出たら、飲用・歯磨き・製氷・調理用の水は案内に従って煮沸またはボトル水を使います。",
+      "雨水タンクの水は見た目がきれいでも安全とは限りません。飲用可否は管理者・州の情報で確認を。",
+      "マイボトル＋給水（多くの公共施設やモールに給水機）で費用と環境負荷を減らせます。",
+    ],
+    faqs: [
+      {
+        question: "賃貸の水道水はそのまま飲んでいいですか？",
+        answer:
+          "都市部の公共水道につながる賃貸なら、通常そのまま飲めます。味が気になる場合は冷やす・浄水ポットを使うとよいでしょう。雨水タンク・井戸水の物件や災害後は、公式情報で安全を確認してください。",
+      },
+      {
+        question: "boil water alert（煮沸勧告）とは？",
+        answer:
+          "洪水や水質異常などで水道水の安全が一時的に保証できないときに、保健当局が『飲用前に煮沸する／ボトル水を使う』よう呼びかける勧告です。解除されるまで案内に従ってください。最新情報は居住地の州保健当局で確認します。",
+      },
+    ],
+    warnings: [
+      "雨水タンク・井戸水は公共水道と安全基準が異なります。飲用可否が不明なときは飲まず、管理者や州保健当局に確認してください。煮沸勧告中は必ず案内に従ってください。",
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "healthdirect｜Drinking water and your health（水道水と健康・地域の確認先）",
+        url: "https://www.healthdirect.gov.au/drinking-water-and-your-health",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "NHMRC｜Australian Drinking Water Guidelines（飲料水の安全基準）",
+        url: "https://www.nhmrc.gov.au/about-us/publications/australian-drinking-water-guidelines",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "NSW Health｜What to do during a boil water alert（煮沸勧告時の対応・例）",
+        url: "https://www.health.nsw.gov.au/environment/water/Pages/bwa-what-to-do.aspx",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "grocery-saving-tips",
+      "food-guide",
+      "flood-cyclone-safety",
+      "safety-emergency",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a271",
+    title: "お酒を買う・飲むときの身分証とルール",
+    slug: "alcohol-id-rules",
+    category: "food",
+    hub: "daily-life",
+    description:
+      "オーストラリアで飲酒できる年齢は18歳。お酒を買う・バーに入るときに必要な身分証（proof of age）、州で異なるルール、未成年への提供（secondary supply）の注意をまとめました。",
+    content: [
+      "オーストラリアの合法飲酒年齢は全国一律で18歳です。お酒はスーパー内では買えず、専用の酒販店『bottle shop（bottle-o／Liquor店）』やライセンスのあるバー・レストランで購入・飲酒します。若く見える場合は購入時や入店時に年齢確認（ID check）を求められ、有効な身分証（proof of age）が必要です。18歳未満へのお酒の販売・提供は違法です。",
+      "身分証として一般に受け入れられるのは、パスポート、オーストラリアの運転免許証、または州発行の Proof of Age card（例: NSWのPhoto Card）などの公的な写真付き年齢証明です。国際学生証や日本の免許証などは受け付けられないことがあり、確実なのはパスポートです。実務上は『パスポートまたは豪運転免許証を携帯する』のが安全です。",
+      "注意すべき州差があります。身分証として認められるIDの種類、酒販の営業時間、公共の場での飲酒（street drinking／alcohol-free zone）、未成年へお酒を渡す『secondary supply（二次供給）』の規制などは、州・準州や自治体で異なります。飲食・接客でお酒を扱う仕事にはRSA（Responsible Service of Alcohol）資格が必要で、これも州別です。詳細は居住地の州の酒類当局で確認してください（本記事の確認日: 2026-07-27）。",
+    ],
+    keyFacts: [
+      { label: "合法飲酒年齢", value: "18歳（全国一律）" },
+      { label: "購入場所", value: "bottle shop・ライセンス店（スーパー内では不可）" },
+      { label: "確実なID", value: "パスポート／豪運転免許証／州のProof of Age card" },
+      { label: "未成年提供", value: "18歳未満への販売・提供は違法" },
+      { label: "仕事", value: "酒類提供にはRSA資格（州別）" },
+    ],
+    steps: [
+      { title: "有効なIDを携帯", description: "外出時はパスポートまたは豪運転免許証を携帯。若く見える人はID checkに備えます。" },
+      { title: "購入場所を知る", description: "お酒は bottle shop かライセンス店で。スーパー本体では買えない州がほとんどです。" },
+      { title: "州のルールを確認", description: "公共の場での飲酒禁止区域・営業時間・受け入れIDは州/自治体で異なるため確認します。" },
+      { title: "仕事ならRSA", description: "バー・ボトルショップ等で働くなら州のRSA資格を取得します。" },
+    ],
+    tips: [
+      "『No ID, no service』が基本。18歳以上でも見た目が若いとIDを求められます（断られないよう携帯を）。",
+      "未成年（18歳未満）に代わってお酒を買う・渡す行為は州により違法・処罰対象です。",
+      "飲酒運転は厳しく取り締まられます。運転する日は飲まないのが安全です。",
+    ],
+    faqs: [
+      {
+        question: "日本の運転免許証やパスポートは身分証として使えますか？",
+        answer:
+          "最も確実なのはパスポートです。日本の運転免許証は受け付けられないことがあります。豪州の運転免許証や州のProof of Age cardも有効です。若く見える場合に備え、外出時はパスポートか豪運転免許証を携帯しましょう。",
+      },
+      {
+        question: "お酒はどこで買えますか？",
+        answer:
+          "多くの州ではスーパー本体では買えず、隣接や別店舗の bottle shop（酒販店）やライセンスのある店で購入します。飲めるのは18歳以上で、購入・入店時にID checkがあります。",
+      },
+    ],
+    warnings: [
+      "18歳未満への販売・提供（secondary supplyを含む）は違法です。受け入れられるID・飲酒可能な場所・営業時間は州/自治体で異なるため、居住地の酒類当局で最新のルールを確認してください。",
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "NHMRC｜Alcohol guidelines（18歳未満は飲酒しない・標準ドリンク）",
+        url: "https://www.nhmrc.gov.au/health-advice/alcohol",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "NSW Liquor & Gaming｜Alcohol and young people（年齢確認・未成年提供の例。州別ルールは各州当局へ）",
+        url: "https://www.liquorandgaming.nsw.gov.au/community/alcohol-and-young-people",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "supermarket-comparison",
+      "food-guide",
+      "safety-emergency",
+      "rsa-state-guide",
     ],
     updatedAt: "2026-07-27",
     published: true,

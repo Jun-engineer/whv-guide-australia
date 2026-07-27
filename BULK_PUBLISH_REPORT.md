@@ -3,6 +3,30 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-27）: daily-life マイクロバッチ #2（5件公開 / commit: feat: publish daily life micro-batch）
+
+daily-life（日常生活・食事・買い物）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で daily-life は16件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理しました。以下が確定状態です。
+
+- **公開した5件（すべて `verifiedAt: 2026-07-27`・`officialSources` 付き・完全公開・分類は全て create）:**
+  `food-storage-share-house`（food, P2, guide, id a268）, `tap-water-drinking`（food, P2, faq, id a269）,
+  `shopping-surcharges-tipping`（money, P0, guide, id a270）, `alcohol-id-rules`（food, P1, legal, id a271）,
+  `laundry-guide`（clothing, P2, how-to, id a272）。`hub` は全て `daily-life`、`category` は food/money/clothing に分散配置。
+- **選定 slug:** 上記5件（`BULK_PUBLISH_REMAINING.md` / manifest の記録順の先頭5件）。
+- **作成（created）slug:** 上記5件。**更新（updated）slug:** `food-guide`・`clothing-guide`（内部リンクのみ）。
+  **統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、既存公開記事とは検索意図が明確に異なる（シェアハウスの食品保存／水道水の可否・災害時確認／カード追加料金・チップ／飲酒の身分証・州法差／洗濯・コインランドリー）。独立意図が強いため個別公開し `relatedSlugs` で相互リンク。
+- **既存記事の内部リンク:** `food-guide` の `relatedSlugs` に新規3件（`food-storage-share-house` / `tap-water-drinking` / `alcohol-id-rules`）、`clothing-guide` の `relatedSlugs` に `laundry-guide` を追記（本文・slug・URL・公開状態は不変）。孤立記事なし。
+- **孤立記事なし:** 各カテゴリページ（`/food`・`/money`・`/clothing` の `GuideCategoryPage`）が公開記事を自動列挙するため、5件はすべて到達可能。
+- **公式照合（記事反映済み・確認日 2026-07-27）:** Food Standards Australia New Zealand（Food safety basics）／healthdirect（Drinking water and your health）＋NHMRC（Australian Drinking Water Guidelines）＋NSW Health（What to do during a boil water alert）／ACCC（Card surcharges）／NHMRC（Alcohol guidelines）＋NSW Liquor & Gaming（Alcohol and young people）／ACCC Product Safety（Care labelling of clothing & textiles）。
+- **可変事項の断定回避:** ACCC のカードサーチャージ制度は**2026年10月1日から Visa/Mastercard/eftpos がサーチャージ禁止予定**であることを日付付きで明記し「変更されうる制度」と警告（禁止は現金・BPAY・PayPal・Diners・Amex・タクシー料金には非適用、日祝割増・予約手数料は別物と区別）。飲酒は法定18歳（全国一律）だが受け入れID・二次供給（secondary supply）・営業時間は**州で異なる**として各州当局へ誘導し、具体的な金額・罰則は断定せず。水道水は原則安全だが雨水タンク・井戸水・災害時（boil water alert）の例外と、水質管理は州・準州の責任である点を明示。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成（existing 47 / planned 338）。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複0・重複パス0・重複エクスポート0・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ）、新規5件の `relatedSlugs` は全て公開 slug に解決（dangling 0）。
+  ※フルビルド/テスト/lint/sitemap/RSS/構造化データ監査は daily-life ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **残り daily-life slug（11件）:** `australia-clothing-seasons`（次の先頭）, `buy-furniture-household-items`, `op-shop-guide`, `post-office-courier`, `library-guide`, `gym-fitness-guide`, `haircut-barber-english`, `public-toilets-showers`, `home-internet-guide`, `online-scams-cybersecurity`, `phone-lost-stolen`。
+- **最初の未完了 daily-life slug: `australia-clothing-seasons`**（次回はここから再開）。
+- **変更ファイル:** `lib/content/articles/food.ts`、`lib/content/articles/money.ts`、`lib/content/articles/clothing.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: daily-life マイクロバッチ #1（5件公開 / commit: feat: publish daily life micro-batch）
 
 daily-life（日常生活・食事・買い物）ハブの最初の5件を公開しました（マイクロバッチ運用）。開始時点で daily-life は21件（>5）が残っていたため、通常のマイクロバッチとして先頭5件のみを処理しました。以下が確定状態です。
