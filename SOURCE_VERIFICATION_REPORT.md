@@ -440,6 +440,44 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## health マイクロバッチ #2（眼・性の健康・女性の健康・救急車・紫外線 / 2026-07-27 / 5件公開）
+
+health ハブの次の5件を、記事単位で公式一次情報に照合して新規公開した。各記事は
+`verifiedAt: 2026-07-27` を付与し、`officialSources`（`accessedAt: 2026-07-27`）に該当する公式
+情報源を明示。日本のワーホリが Medicare 対象外である点を関連記事で明確化した。
+
+| slug | 照合した主要ポイント | 主な出典（accessedAt 2026-07-27） |
+| --- | --- | --- |
+| `eye-care-optometrist` | 視力検査・眼鏡・コンタクトの窓口はOptometrist（検眼士）。視力検査のbulk billはMedicare保持者向け→ワーホリは自己負担。眼鏡・コンタクト本体はMedicare対象外（自費か保険のoptical特約）。急な視力低下・薬品混入はED/000 | healthdirect（Eye health）/ Services Australia（Medicare） |
+| `sexual-health-clinics` | STI検査・避妊・相談はGP／公的Sexual Health Clinic／Family Planning系。多くは秘密厳守でビザに影響なし。公的クリニックは無料/低額の場合。緊急避妊薬は薬局で薬剤師相談（S3・早いほど有効） | healthdirect（Sexual health / STIs / Emergency contraception） |
+| `womens-health-guide` | 生理用品はスーパー・薬局。婦人科系・避妊・検診はまずGP→必要に応じ専門医紹介。子宮頸がん検診（Cervical Screening）は国のプログラム。ひどい痛み・大量出血はGP/UCC、命に関わるなら000/ED | healthdirect（Women's health）/ Department of Health（National Cervical Screening Program） |
+| `ambulance-costs-insurance` | 救急車は多くの州で有料。QLD・TASは住民の費用を州が負担、NSW/VIC/SA/WA/ACT/NTは原則有料。州制度は基本住民向けでワーホリは対象外になりやすい→海外保険の救急車カバー重要。000通報自体は無料。**特定金額は断定せず州公式へ誘導** | Triple Zero（000）/ Queensland Ambulance Service / NSW Ambulance / Ambulance Victoria / healthdirect |
+| `sunburn-skin-cancer-prevention` | 豪州はUVが非常に強く皮膚がん率が高い。UV指数3以上で対策必須（暑さでなくUVで判断）。Slip/Slop（SPF50+）/Slap/Seek/Slide、日焼け止めは外出20分前・2時間おき塗り直し。UV確認はBOM/SunSmart/ARPANSA。ほくろ/シミの変化はGPへ | ARPANSA（UV Index・**取得確認済み**）/ SunSmart・Cancer Council / Bureau of Meteorology（UV forecast） |
+
+- **照合した公式一次情報（accessedAt 2026-07-27）:** healthdirect（healthdirect.gov.au — Eye health /
+  Sexual health / Sexually transmitted infections / Women's health / Emergency contraception）、
+  Services Australia（Medicare／**Reciprocal Health Care Agreements = 日本は対象外**）、
+  Department of Health and Aged Care「National Cervical Screening Program」（health.gov.au）、
+  各州救急サービス（Queensland Ambulance Service = ambulance.qld.gov.au／NSW Ambulance = ambulance.nsw.gov.au／
+  Ambulance Victoria = ambulance.vic.gov.au）、Triple Zero（triplezero.gov.au — 000通報は無料）、
+  ARPANSA「Ultraviolet radiation index」（arpansa.gov.au — Commonwealth のUV監視網・UV区分 Low/Moderate/High/
+  Very High/Extreme を**取得確認済み**）、SunSmart / Cancer Council（sunsmart.com.au / cancer.org.au — UV3+で対策・
+  Slip Slop Slap Seek Slide）、Bureau of Meteorology「UV Index forecast」（bom.gov.au/uv）。
+- **web fetch の制約と対応:** healthdirect の一部解説ページ・cancer.org.au（CSP でブロック）・sunsmart.com.au
+  （doubleclick へリダイレクト）・NSW救急の料金ページ（404）は自動取得に失敗。ARPANSA の UV Index ページは取得成功。
+  **救急車の州別具体額は各州・改定で大きく変わるため、焦点を絞った2回の取得試行が失敗した時点で数値の断定を取りやめ**、
+  「有料/無料の州別構造」「000通報は無料」「ワーホリは州制度対象外になりやすい」という確立した構造的事実のみを記述し、
+  正確な金額は**各州救急サービス公式サイトで確認**する導線とした（リトライ上限：主要主張ごとに焦点化した取得を最大2回）。
+- **留保点:** ①救急車費用は州・搬送内容・改定で可変のため特定金額を断定せず公式へ誘導。②視力検査・眼鏡・保険の
+  optical 特約の対象範囲は保険会社で異なるため証券確認へ誘導。③検診・受診の可否や費用は Medicare の有無で異なるため
+  「日本のワーホリは対象外になり得る」と明示しつつ公的窓口確認へ誘導。
+- **統合・リダイレクト:** なし（5件は新規スラッグ、既存公開記事と検索意図が分離）。既存記事の内部リンク変更なし
+  （`medicare-oshc` は #1 で更新済み・本バッチでは不変）。孤立記事は health ハブページの自動列挙により発生しない。
+- **検証:** `validate:articles`（ユニーク slug 255・重複0・重複パス0・重複エクスポート0・health 13件・
+  `OK: no article data errors`）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning、
+  health の `relatedSlugs` は全て実在 slug に解決（dangling 0・`farm-heat-sun-safety` 含め確認）。
+  ※フルビルド/テスト/lint/監査は health ハブ完了後（残り5件以下時）にまとめて実施。
+
 ## health マイクロバッチ #1（医療・薬・歯科 / 2026-07-27 / 5件公開）
 
 health ハブの最初の5件を、記事単位で公式一次情報に照合して新規公開した。各記事は

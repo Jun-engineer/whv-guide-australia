@@ -2711,7 +2711,7 @@ planned_content:
 - slug: eye-care-optometrist
   title: 眼鏡・コンタクト・Optometristの利用方法
   hub: health
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: health
@@ -2721,7 +2721,7 @@ planned_content:
 - slug: sexual-health-clinics
   title: 性の健康・検査・避妊の相談先
   hub: health
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: health
@@ -2731,7 +2731,7 @@ planned_content:
 - slug: womens-health-guide
   title: 女性の健康ガイド｜生理用品・GP・検査・相談
   hub: health
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: health
@@ -2741,7 +2741,7 @@ planned_content:
 - slug: ambulance-costs-insurance
   title: 救急車は有料？州別の費用と保険確認
   hub: health
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: current-info
@@ -2751,7 +2751,7 @@ planned_content:
 - slug: sunburn-skin-cancer-prevention
   title: 紫外線・日焼け・皮膚がん対策｜豪州のSun Safety
   hub: health
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: safety

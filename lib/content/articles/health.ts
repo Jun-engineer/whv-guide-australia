@@ -598,4 +598,463 @@ export const healthArticles: Article[] = [
     updatedAt: "2026-07-27",
     published: true,
   },
+
+  {
+    id: "a251",
+    title: "眼鏡・コンタクト・Optometristの利用方法",
+    slug: "eye-care-optometrist",
+    category: "health",
+    hub: "health",
+    priority: "P2",
+    searchIntent: "豪州で視力検査・眼鏡・コンタクトを作る方法と費用・保険",
+    description:
+      "オーストラリアで視力検査を受けたり、眼鏡・コンタクトレンズを作る方法を解説します。窓口となるOptometrist（検眼士）の役割、Medicareを持たないワーホリの費用、眼鏡・コンタクト本体は原則保険外という点、目の緊急時にどこへ行くかまでまとめます。",
+    content: [
+      "結論から言うと、視力検査や眼鏡・コンタクトレンズの処方は『Optometrist（検眼士）』が窓口です。オーストラリアでは眼鏡店（OPSM、Specsaversなど）に検眼士が併設されていることが多く、予約して視力検査（eye test）を受け、その場で眼鏡やコンタクトを注文できます。目の病気やケガなど医療的な問題は、Optometristの紹介でOphthalmologist（眼科専門医）やGPにかかります。",
+      "費用については注意が必要です。視力検査（eye test）自体は、Medicareを持つ人であれば一定期間ごとにbulk bill（自己負担なし）になることが多いのですが、日本のワーキングホリデー参加者は原則Medicare対象外のため、検査料も自己負担になります。予約時に『Medicareがないが検査料はいくらか』を必ず確認しましょう。",
+      "眼鏡・コンタクトレンズ本体の代金は、Medicareの対象外です。これは現地の人でも同じで、フレーム・レンズ・コンタクトは自費か、加入している保険の『optical（眼鏡）』特約でカバーされる場合に限られます。ワーホリの海外保険にoptical特約が付いているかは証券で確認し、対象なら明細付き領収書をもらって請求します。度数が分かる処方箋（prescription）をもらえば、他店やオンラインで比較して安く作ることもできます。",
+      "コンタクトレンズを使う人は、度数だけでなくレンズのカーブ等を含むコンタクト用の処方が必要です。使い捨てレンズは薬局や眼鏡店、オンラインで購入できます。ケア用品（洗浄液）も薬局で手に入ります。目の乾き・充血・違和感が続くときは無理せず検眼士やGPに相談してください。",
+      "目の緊急事態——急な視力低下、強い痛み、光が見えにくい、異物が入って取れない、薬品が目に入った、外傷——は、放置すると視力に関わります。まず薬品が入った場合はすぐ大量の水で洗い流し、強い症状はGP・Urgent Care、重症は救急外来（ED）や000へ。『いつもと違う見え方』は早めに専門家に診てもらうのが安全です。",
+    ],
+    keyFacts: [
+      { label: "窓口", value: "Optometrist（検眼士）。眼鏡店に併設が多い" },
+      { label: "視力検査", value: "Medicare保持者はbulk bill可／ワーホリは自己負担" },
+      { label: "眼鏡・コンタクト本体", value: "Medicare対象外（自費か保険のoptical特約）" },
+      { label: "処方箋", value: "度数の処方をもらえば他店・オンラインで比較可" },
+      { label: "医療的な目の問題", value: "紹介で眼科専門医（Ophthalmologist）・GPへ" },
+      { label: "緊急", value: "急な視力低下・強い痛み・薬品混入はGP/ED/000" },
+    ],
+    steps: [
+      { title: "保険のopticalを確認", description: "海外保険に眼鏡・視力検査の特約があるか、範囲を証券で確認します。" },
+      { title: "検眼士を予約", description: "眼鏡店併設のOptometristに予約し、費用（Medicareなし）を確認します。" },
+      { title: "視力検査を受ける", description: "eye testを受け、必要な度数と目の状態を確認してもらいます。" },
+      { title: "処方箋をもらう", description: "眼鏡・コンタクトの処方箋を受け取れば、他店やオンラインで比較できます。" },
+      { title: "対象なら保険請求", description: "opticalが対象なら明細付き領収書で保険会社に請求します。" },
+    ],
+    tips: [
+      "眼鏡は日本で作って予備を持参すると、現地での費用と手間を減らせます。度数の控えもあると安心です。",
+      "Specsaversなどでは眼鏡2本セットの割引があることも。処方箋があれば価格を比較しやすくなります。",
+      "コンタクトの洗浄液・使い捨てレンズは薬局やオンラインで購入できます。ケアを怠ると眼感染のリスク。",
+    ],
+    phrases: [
+      { en: "I'd like to book an eye test. I don't have Medicare — how much is it?", ja: "視力検査を予約したいです。Medicareがないのですが、いくらですか？" },
+      { en: "Can I get a copy of my prescription?", ja: "処方箋の控えをもらえますか？", note: "他店で作るとき" },
+      { en: "My eye is really sore and red. Can someone see me today?", ja: "目がとても痛くて赤いです。今日診てもらえますか？" },
+    ],
+    faqs: [
+      {
+        question: "ワーホリでも視力検査は無料ですか？",
+        answer:
+          "視力検査のbulk bill（自己負担なし）はMedicareを持つ人向けです。日本のワーホリは原則Medicare対象外のため、検査料は自己負担になります。予約時に費用を確認し、保険にoptical特約があれば領収書で請求してください。",
+      },
+      {
+        question: "眼鏡やコンタクトは保険でカバーされますか？",
+        answer:
+          "眼鏡・コンタクト本体はMedicareの対象外です。カバーされるとすれば、加入している保険にoptical（眼鏡）特約が付いている場合に限られます。証券で対象・上限額を確認しましょう。度数の処方箋があれば、オンライン等で安く作る選択肢もあります。",
+      },
+    ],
+    warnings: [
+      "急な視力低下・強い目の痛み・薬品が目に入った・異物が取れない・外傷は視力に関わります。すぐ洗浄し、重い症状はED/000を受診してください。",
+      "コンタクトの使い回しや洗浄不足は角膜感染など重い眼トラブルの原因になります。使用期限とケアを守りましょう。",
+    ],
+    sources: [
+      { label: "healthdirect｜Eye health", url: "https://www.healthdirect.gov.au/eye-health" },
+      { label: "Services Australia｜Medicare", url: "https://www.servicesaustralia.gov.au/medicare" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "healthdirect｜Eye health and eye tests（検眼士の役割・目のトラブルの受診目安）",
+        url: "https://www.healthdirect.gov.au/eye-health",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Services Australia｜Medicare（視力検査のbulk billは加入者向け・眼鏡は対象外）",
+        url: "https://www.servicesaustralia.gov.au/optometrist",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Services Australia｜Reciprocal Health Care Agreements（日本は対象外＝Medicare非適用）",
+        url: "https://www.servicesaustralia.gov.au/reciprocal-health-care-agreements",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "medicare-oshc",
+      "gp-urgent-care-emergency",
+      "overseas-insurance-claim",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a252",
+    title: "性の健康・検査・避妊の相談先",
+    slug: "sexual-health-clinics",
+    category: "health",
+    hub: "health",
+    priority: "P1",
+    searchIntent: "性感染症検査・避妊・性の健康の相談をどこで受けるか",
+    description:
+      "オーストラリアで性感染症（STI）の検査、避妊、性の健康の相談をどこで受けられるかを解説します。GP・専門のSexual Health Clinic・Family Planning系サービスの使い分け、多くが秘密厳守（confidential）であること、緊急避妊薬を薬局で相談できること、ワーホリの費用の考え方までまとめます。",
+    content: [
+      "結論から言うと、性感染症（STI）の検査、避妊の相談、性の健康に関する悩みは、①GP（かかりつけ医）、②専門の『Sexual Health Clinic（性健康クリニック）』、③Family Planning系のサービス、のいずれかで相談できます。多くの窓口は秘密厳守（confidential）で、プライバシーに配慮して対応してくれます。公的なSexual Health Clinicには無料や低額で検査を受けられるところもあります。",
+      "検査・相談の内容は幅広くあります。STI検査（クラミジア・淋病・梅毒・HIVなど）、避妊方法の相談（ピル・コンドーム・IUDなど）、妊娠の心配、ワクチン（HPVなど）といったテーマを扱います。どこに行けばよいか分からないときは、まずGPに相談すれば必要に応じて専門クリニックを紹介してもらえます。",
+      "費用について。日本のワーキングホリデー参加者は原則Medicare対象外のため、GPや検査は自己負担になり得ます。一方、州が運営する公的Sexual Health Clinicには、Medicareの有無にかかわらず無料または低額で利用できるところもあります。予約時に『Medicareがないが費用はどうなるか』を確認し、海外保険の対象になるかも証券で調べましょう。",
+      "緊急避妊が必要なときは、薬局（Pharmacy）で薬剤師に相談できます。緊急避妊薬は薬剤師の確認が必要な分類（S3）で、処方箋なしで購入できる場合があります。早いほど効果が高いため、必要なときは早めに薬局へ。避妊や検査について不安があれば、我慢せず専門の窓口に相談してください。",
+      "受診をためらう必要はありません。性の健康の相談はプライベートな内容ですが、クリニックのスタッフは日常的に対応しており、内容が第三者やビザに共有されることはありません。心配な症状（かゆみ・痛み・おりものの変化・発疹など）があるときや、心当たりがあるときは、早めの検査が自分とパートナーを守ります。",
+    ],
+    keyFacts: [
+      { label: "相談先", value: "GP／Sexual Health Clinic／Family Planning系" },
+      { label: "秘密厳守", value: "多くはconfidential。ビザに影響しない" },
+      { label: "費用", value: "公的クリニックは無料/低額の場合。ワーホリはGP自己負担も" },
+      { label: "扱う内容", value: "STI検査・避妊相談・妊娠の心配・ワクチン" },
+      { label: "緊急避妊", value: "薬局で薬剤師に相談（S3。早いほど有効）" },
+      { label: "迷ったら", value: "まずGPに相談→専門クリニックを紹介" },
+    ],
+    steps: [
+      { title: "窓口を選ぶ", description: "GP、公的Sexual Health Clinic、Family Planning系から相談先を選びます。" },
+      { title: "費用を確認", description: "予約時にMedicareなしの費用や、無料/低額で受けられるかを確認します。" },
+      { title: "検査・相談を受ける", description: "STI検査や避妊の相談を受け、必要なら治療・処方を受けます。" },
+      { title: "緊急時は薬局へ", description: "緊急避妊が必要なときは早めに薬局で薬剤師に相談します。" },
+      { title: "結果とフォロー", description: "検査結果の受け取り方・再検査の要否を確認し、パートナーとも共有します。" },
+    ],
+    tips: [
+      "『sexual health clinic + 都市名』で公的クリニックを検索できます。無料・匿名で検査できるところもあります。",
+      "緊急避妊は時間との勝負。必要なときは迷わず薬局で『emergency contraception』と伝えましょう。",
+      "コンドームはスーパー・薬局で購入可。STI予防と避妊の両方に有効です。",
+    ],
+    phrases: [
+      { en: "I'd like to get an STI test. Is it confidential?", ja: "STI検査を受けたいです。秘密は守られますか？" },
+      { en: "I don't have Medicare. Is there a free sexual health clinic?", ja: "Medicareがありません。無料の性健康クリニックはありますか？" },
+      { en: "I need emergency contraception, please.", ja: "緊急避妊薬をお願いします。", note: "薬局で" },
+    ],
+    faqs: [
+      {
+        question: "検査したことがビザに影響しますか？",
+        answer:
+          "いいえ。性の健康の検査・相談がビザに不利に働くことはありません。多くの窓口は秘密厳守で、内容が移民局や第三者に共有されることはありません。安心して利用してください。",
+      },
+      {
+        question: "お金がなくても検査できますか？",
+        answer:
+          "州が運営する公的なSexual Health Clinicには、Medicareの有無にかかわらず無料または低額で検査できるところがあります。『sexual health clinic』を地域名で検索し、費用を電話で確認しましょう。GP経由だと自己負担になる場合があります。",
+      },
+    ],
+    warnings: [
+      "気になる症状や心当たりがあるときは、早めの検査が重症化とパートナーへの感染を防ぎます。放置しないでください。",
+      "緊急避妊薬は服用が早いほど効果が高くなります。必要なときは時間を空けず薬局へ相談してください。",
+    ],
+    sources: [
+      { label: "healthdirect｜Sexual health", url: "https://www.healthdirect.gov.au/sexual-health" },
+      { label: "healthdirect｜Sexually transmitted infections (STIs)", url: "https://www.healthdirect.gov.au/sexually-transmitted-infections-stis" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "healthdirect｜Sexual health（相談先・検査・秘密厳守の考え方）",
+        url: "https://www.healthdirect.gov.au/sexual-health",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "healthdirect｜Sexually transmitted infections (STIs)（検査と治療）",
+        url: "https://www.healthdirect.gov.au/sexually-transmitted-infections-stis",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "healthdirect｜Emergency contraception（薬局での相談・早期服用）",
+        url: "https://www.healthdirect.gov.au/emergency-contraception",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "womens-health-guide",
+      "gp-urgent-care-emergency",
+      "pharmacy-guide",
+      "medicare-oshc",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a253",
+    title: "女性の健康ガイド｜生理用品・GP・検査・相談",
+    slug: "womens-health-guide",
+    category: "health",
+    hub: "health",
+    priority: "P1",
+    searchIntent: "豪州での生理用品・婦人科の受診・検診・避妊の一般情報",
+    description:
+      "オーストラリアでの女性の健康について、生理用品の買い方、婦人科系の悩みの相談先（GP）、子宮頸がん検診などの検査、避妊の相談まで一般的な情報をまとめます。日本のワーホリはMedicare対象外で費用がかかる点や、ひどい痛み・出血など受診すべき目安も解説します。",
+    content: [
+      "結論から言うと、生理用品はスーパー（Coles・Woolworthsなど）や薬局で普通に買え、婦人科系の悩み・避妊・検診はまず『GP（かかりつけ医）』に相談するのが基本です。必要に応じてGPが専門医（婦人科）を紹介します。日本のワーホリは原則Medicare対象外のため、GP受診や検査は自己負担になり得る点に注意し、海外保険の対象範囲も確認しておきましょう。",
+      "生理用品は、ナプキン（pads）、タンポン（tampons）、月経カップ（menstrual cup）、吸水ショーツなどがスーパーや薬局、Chemist Warehouseで手に入ります。ブランドや種類が日本と違うため、パッケージの表示（regular/super など吸収量）を見て選びます。鎮痛薬（paracetamol/ibuprofen）も薬局で購入でき、生理痛がつらいときに使えます。",
+      "婦人科系の相談は、月経不順・ひどい生理痛（PMS/月経困難症）・不正出血・おりものの変化・膀胱炎・避妊などが対象です。まずGPに相談し、必要なら検査や専門医の紹介、ピルなどの処方を受けます。避妊やピルの相談も含め、GPは日常的に対応しているので遠慮なく相談してください。言葉が不安なら、通訳サービス（TIS）を使えるクリニックもあります。",
+      "検診（スクリーニング）も大切です。オーストラリアには子宮頸がん検診の国のプログラム（Cervical Screening）があり、対象年齢の人が定期的に受けることが推奨されています。Medicareを持たない場合は費用の扱いが異なるため、GPや公的な女性健康サービスで受け方と費用を確認しましょう。乳房のしこりなど気になる症状があるときも、早めにGPへ。",
+      "受診すべき目安を知っておきましょう。いつもと違うひどい下腹部痛、大量・長引く出血、高熱を伴う痛み、妊娠の可能性がある腹痛などは、我慢せずGPやUrgent Careを受診してください。急に強い腹痛・大量出血・意識がもうろうとするなど命に関わるサインがあれば、迷わず000か救急外来（ED）へ向かいます。",
+    ],
+    keyFacts: [
+      { label: "生理用品", value: "スーパー・薬局で購入（pads/tampons/cup等）" },
+      { label: "相談先", value: "まずGP→必要に応じ婦人科専門医を紹介" },
+      { label: "費用", value: "ワーホリはMedicare対象外→GP・検査は自己負担も" },
+      { label: "検診", value: "子宮頸がん検診（Cervical Screening）の国プログラム" },
+      { label: "避妊・ピル", value: "GPで相談・処方。緊急避妊は薬局（S3）" },
+      { label: "受診の目安", value: "ひどい痛み・大量/長引く出血・高熱はGP/UCC" },
+    ],
+    steps: [
+      { title: "生理用品を用意", description: "スーパー・薬局でナプキン・タンポン・カップ等を吸収量表示を見て選びます。" },
+      { title: "GPに相談", description: "月経・避妊・検診などの悩みは、まずGPに相談し必要なら紹介を受けます。" },
+      { title: "費用を確認", description: "Medicareなしの受診料・検査料、保険の対象範囲を事前に確認します。" },
+      { title: "検診を受ける", description: "対象年齢なら子宮頸がん検診の受け方・費用をGPや公的サービスで確認します。" },
+      { title: "強い症状は受診", description: "ひどい痛み・大量出血・高熱は我慢せずGP/UCC、命に関わるなら000/EDへ。" },
+    ],
+    tips: [
+      "月経カップや吸水ショーツは繰り返し使えて経済的。旅行やファーム生活でも便利です。",
+      "ピルを日本から継続したい人は、英文の処方内容を用意しGPに相談すると切り替えがスムーズです。",
+      "言葉が不安なときは、無料通訳サービス（TIS National 131 450）に対応するクリニックを選びましょう。",
+    ],
+    phrases: [
+      { en: "I'd like to see a doctor about period pain / contraception.", ja: "生理痛／避妊についてGPに相談したいです。" },
+      { en: "I don't have Medicare. How much is the appointment?", ja: "Medicareがありません。診察料はいくらですか？" },
+      { en: "I've had heavy bleeding for several days. Is that okay?", ja: "数日間、出血が多いのですが大丈夫でしょうか？" },
+    ],
+    faqs: [
+      {
+        question: "生理用品はどこで買えますか？",
+        answer:
+          "Coles・WoolworthsなどのスーパーやChemist Warehouseなどの薬局で、ナプキン・タンポン・月経カップ・吸水ショーツが買えます。吸収量の表示（regular/superなど）を見て選びましょう。生理痛の鎮痛薬も薬局で購入できます。",
+      },
+      {
+        question: "婦人科に直接行けますか？",
+        answer:
+          "オーストラリアでは、まずGP（かかりつけ医）を受診し、必要に応じて婦人科などの専門医を紹介してもらうのが基本です。避妊・月経・検診の相談もGPで対応してもらえます。ワーホリはMedicare対象外で自己負担になり得るため、費用を確認しましょう。",
+      },
+    ],
+    warnings: [
+      "いつもと違うひどい下腹部痛・大量や長引く出血・高熱を伴う痛みは、我慢せずGPやUrgent Careを受診してください。",
+      "急な激しい腹痛・大量出血・意識がもうろうとするなど命に関わるサインは、迷わず000か救急外来（ED）へ。",
+    ],
+    sources: [
+      { label: "healthdirect｜Women's health", url: "https://www.healthdirect.gov.au/womens-health" },
+      { label: "National Cervical Screening Program（Department of Health）", url: "https://www.health.gov.au/our-work/national-cervical-screening-program" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "healthdirect｜Women's health（相談先・受診の目安）",
+        url: "https://www.healthdirect.gov.au/womens-health",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Department of Health and Aged Care｜National Cervical Screening Program（子宮頸がん検診）",
+        url: "https://www.health.gov.au/our-work/national-cervical-screening-program",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Services Australia｜Reciprocal Health Care Agreements（日本は対象外＝Medicare非適用）",
+        url: "https://www.servicesaustralia.gov.au/reciprocal-health-care-agreements",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "sexual-health-clinics",
+      "gp-urgent-care-emergency",
+      "pharmacy-guide",
+      "medicare-oshc",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a254",
+    title: "救急車は有料？州別の費用と保険確認",
+    slug: "ambulance-costs-insurance",
+    category: "health",
+    hub: "health",
+    priority: "P0",
+    searchIntent: "オーストラリアで救急車を呼ぶと有料か・州別の費用・保険",
+    description:
+      "オーストラリアで救急車（ambulance）を呼ぶと有料かを解説します。多くの州で有料になり得ること、QLD・TASは住民の費用を州が負担する一方で他州は原則有料であること、日本のワーホリは州の制度対象外になりやすく海外保険の救急車カバーが重要であること、そして000への通報自体は無料であることをまとめます。",
+    content: [
+      "結論から言うと、オーストラリアの救急車は『無料ではない』州が多く、費用は州・準州によって大きく異なります。クイーンズランド（QLD）とタスマニア（TAS）は住民の救急車費用を州が負担しますが、ニューサウスウェールズ（NSW）・ビクトリア（VIC）・南オーストラリア（SA）・西オーストラリア（WA）・首都特別地域（ACT）・北部準州（NT）などでは、原則として利用者が費用を負担します（救急車の会員制度や保険でカバーされている場合を除く）。搬送は高額になり得ます。",
+      "重要なのは、これらの州の制度は基本的に『その州の住民（resident）』向けだという点です。日本のワーキングホリデー参加者のような一時滞在者は、州の救急車制度の対象外になりやすく、QLD・TASであっても住民でなければ請求される可能性があります。つまり、ワーホリにとって救急車費用は『どの州でも自己負担になり得る』前提で考えるのが安全です。",
+      "だからこそ、海外保険（旅行保険・OVHC）に救急車搬送（ambulance transport）のカバーが含まれているかを、渡航前・加入時に必ず確認してください。多くの医療系海外保険は救急車をカバーしますが、上限額や条件があることもあります。証券の補償内容を確認し、いざというときに慌てないよう緊急連絡先をスマホに保存しておきましょう。",
+      "具体的な料金は州・搬送距離・内容で変わり、頻繁に改定されます。このため本記事では特定の金額は断定しません。正確で最新の費用は、各州の救急サービス（例: NSW Ambulance、Ambulance Victoria、Queensland Ambulance Service など）の公式サイトで確認してください。救急車の『会員制度（membership/subscription）』に加入する方法もありますが、対象や条件は州で異なります。",
+      "費用が心配でも、緊急時の判断をためらわないでください。『000』への通報自体は無料で、命に関わる状況（強い胸痛、呼吸困難、大出血、意識障害、重度のアレルギー、脳卒中のサインなど）では、費用より救命を優先すべきです。救急車が必要なほどでない場合は、Urgent Care Clinicや自力・タクシーでの受診も選択肢になります。判断に迷うときはhealthdirectの無料電話で相談できます。",
+    ],
+    keyFacts: [
+      { label: "結論", value: "多くの州で有料。費用は州で大きく異なる" },
+      { label: "州が負担", value: "QLD・TASは『住民』の救急車費用を州が負担" },
+      { label: "原則有料", value: "NSW・VIC・SA・WA・ACT・NT（会員/保険を除く）" },
+      { label: "ワーホリ", value: "州制度の対象外になりやすい→自己負担前提で" },
+      { label: "対策", value: "海外保険の救急車カバーを証券で確認" },
+      { label: "000の通報", value: "電話自体は無料。緊急時は費用より救命を優先" },
+    ],
+    steps: [
+      { title: "保険の救急車カバーを確認", description: "海外保険に救急車搬送のカバーがあるか、上限・条件を証券で確認します。" },
+      { title: "滞在する州の制度を把握", description: "滞在州の救急サービス公式サイトで、費用や会員制度の有無を確認します。" },
+      { title: "緊急連絡先を保存", description: "000・保険の緊急連絡先・かかりつけ情報をスマホに保存しておきます。" },
+      { title: "緊急度を判断", description: "命に関わるなら費用より000。軽症ならUCCや自力受診も検討します。" },
+      { title: "利用後は請求に備える", description: "救急車を使ったら請求書・領収書を保管し、保険対象なら請求します。" },
+    ],
+    tips: [
+      "『どの州でも救急車は自己負担になり得る』と考え、救急車をカバーする海外保険を選ぶのが安心です。",
+      "命に関わらない受診なら、予約不要のMedicare Urgent Care Clinicが救急外来より早い場合があります。",
+      "迷ったらhealthdirectの無料健康相談電話で、救急車が必要かどうかを相談できます。",
+    ],
+    phrases: [
+      { en: "I need an ambulance. Someone is having chest pain / can't breathe.", ja: "救急車が必要です。胸の痛み／呼吸困難の人がいます。", note: "000にかけたとき" },
+      { en: "Does my insurance cover ambulance transport?", ja: "私の保険は救急車の搬送をカバーしていますか？" },
+      { en: "How much does an ambulance cost in this state?", ja: "この州では救急車はいくらかかりますか？" },
+    ],
+    faqs: [
+      {
+        question: "救急車は無料ですか？",
+        answer:
+          "州によります。QLDとTASは住民の救急車費用を州が負担しますが、NSW・VIC・SA・WA・ACT・NTなどでは原則有料で高額になり得ます。しかもこれらの制度は基本的にその州の住民向けで、一時滞在のワーホリは対象外になりやすいため、どの州でも自己負担になり得る前提で海外保険の救急車カバーを確認しましょう。",
+      },
+      {
+        question: "費用が心配で呼ぶのをためらってしまいます。",
+        answer:
+          "命に関わる状況では、費用より救命を優先してください。000への通報自体は無料です。強い胸痛・呼吸困難・大出血・意識障害などがあれば迷わず000へ。緊急とまで言えない場合は、Urgent Care Clinicや自力・タクシーでの受診も選択肢で、迷えばhealthdirectに相談できます。",
+      },
+    ],
+    warnings: [
+      "救急車費用は州で大きく異なり、頻繁に改定されます。正確な金額は各州の救急サービス公式サイトで確認してください（本記事は特定額を断定しません）。",
+      "命に関わるサイン（胸痛・呼吸困難・大出血・意識障害・重度アレルギー・脳卒中サイン）があれば、費用より先に000へ。通報は無料です。",
+    ],
+    sources: [
+      { label: "Triple Zero（000）", url: "https://www.triplezero.gov.au/" },
+      { label: "healthdirect（オーストラリア政府）", url: "https://www.healthdirect.gov.au/" },
+      { label: "Queensland Ambulance Service", url: "https://www.ambulance.qld.gov.au/" },
+      { label: "NSW Ambulance", url: "https://www.ambulance.nsw.gov.au/" },
+      { label: "Ambulance Victoria", url: "https://www.ambulance.vic.gov.au/" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "Triple Zero｜Call 000 for an ambulance（通報は無料・緊急時の優先）",
+        url: "https://www.triplezero.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Queensland Ambulance Service（QLDは住民の費用を州が負担・最新費用は公式で確認）",
+        url: "https://www.ambulance.qld.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "NSW Ambulance（原則有料・費用と会員制度は公式で確認）",
+        url: "https://www.ambulance.nsw.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Ambulance Victoria（原則有料・membershipの案内は公式で確認）",
+        url: "https://www.ambulance.vic.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "gp-urgent-care-emergency",
+      "overseas-insurance-claim",
+      "safety-emergency",
+      "medicare-oshc",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a255",
+    title: "紫外線・日焼け・皮膚がん対策｜豪州のSun Safety",
+    slug: "sunburn-skin-cancer-prevention",
+    category: "health",
+    hub: "health",
+    priority: "P0",
+    searchIntent: "オーストラリアの強い紫外線・日焼け・皮膚がんを防ぐ方法",
+    description:
+      "オーストラリアは世界でも紫外線（UV）が非常に強く、皮膚がんの発生率が高い国です。UV指数3以上で必要になる日焼け対策、Slip・Slop・Slap・Seek・Slideの5つの習慣、SPF50+日焼け止めの使い方、UV指数の確認方法、日焼けやシミ・ほくろの変化への対処まで解説します。",
+    content: [
+      "結論から言うと、オーストラリアの紫外線対策は『UV指数（UV Index）が3以上のときに、日焼け対策を必ず行う』のが基本です。オーストラリアはオゾン層や地理的条件からUVが非常に強く、皮膚がんの発生率が世界でも高い国です。曇りの日や涼しい日でもUVは強いことがあり、『暑さ』ではなく『UV指数』で判断するのが重要です。対策の合言葉は Slip・Slop・Slap・Seek・Slide の5つです。",
+      "5つの習慣は次の通りです。Slip（襟付きシャツなど肌を覆う服を着る）、Slop（SPF50または50+の日焼け止めを塗る）、Slap（つばの広い帽子をかぶる）、Seek（日陰を選ぶ）、Slide（UVカットのサングラスをかける）。特に屋外で働くファームや建設、ビーチや旅行では、この5つを組み合わせて肌と目を守ります。日焼け止めは1つの対策にすぎず、服・帽子・日陰と併用するのが効果的です。",
+      "日焼け止めの使い方にはコツがあります。外出の20分ほど前に、露出する肌にたっぷり塗ります（塗る量が少ないと表示のSPFほど効きません）。そして2時間おきに塗り直し、汗をかいたり泳いだり、タオルで拭いたりした後は必ず塗り直します。SPF50/50+で『broad spectrum（UVA・UVB両方）』『water resistant』の表示があるものを選びましょう。日焼け止めは薬局・スーパーで手に入ります。",
+      "UV指数は毎日変わるので、確認する習慣をつけましょう。オーストラリア気象局（Bureau of Meteorology）やSunSmart（Cancer Council）のアプリ・サイト、政府機関ARPANSAのリアルタイムUVデータで、その日・その時間のUV指数と『日焼け対策が必要な時間帯（sun protection times）』を確認できます。UV指数が3以上になる時間帯は対策を行い、正午前後のUVが最も強い時間は日陰を活用します。",
+      "それでも日焼けしてしまったら、涼しい場所で肌を冷やし、水分を多めに取り、保湿します。水ぶくれができるほどの重いやけど、広範囲の日焼け、発熱・吐き気・強い痛みを伴う場合は受診してください。また、ほくろやシミの『大きさ・形・色が変わる』『出血する』『治らない傷』は皮膚がんのサインのことがあります。気になる変化があれば早めにGPに相談しましょう。早期発見が何より大切です。",
+    ],
+    keyFacts: [
+      { label: "判断基準", value: "UV指数3以上で日焼け対策を必ず行う（暑さでなくUV）" },
+      { label: "5つの習慣", value: "Slip（服）Slop（SPF50+）Slap（帽子）Seek（日陰）Slide（サングラス）" },
+      { label: "日焼け止め", value: "外出20分前・たっぷり・2時間おきに塗り直し" },
+      { label: "選び方", value: "SPF50/50+・broad spectrum・water resistant" },
+      { label: "UV確認", value: "BOM／SunSmart／ARPANSAでUV指数と対策時間帯" },
+      { label: "受診サイン", value: "ほくろ/シミの変化・治らない傷・重い日焼け" },
+    ],
+    steps: [
+      { title: "UV指数を確認", description: "BOMやSunSmartアプリで、その日のUV指数と日焼け対策が必要な時間帯を確認します。" },
+      { title: "服・帽子・サングラス", description: "肌を覆う服・つばの広い帽子・UVカットのサングラスを身につけます。" },
+      { title: "日焼け止めを塗る", description: "外出20分前にSPF50+をたっぷり塗り、2時間おき・汗や水の後に塗り直します。" },
+      { title: "日陰と時間を工夫", description: "UVが強い正午前後は日陰を選び、屋外作業は時間帯を工夫します。" },
+      { title: "肌の変化を観察", description: "ほくろ・シミの変化や治らない傷に気づいたら、早めにGPに相談します。" },
+    ],
+    tips: [
+      "『暑くない＝安全』ではありません。曇りや涼しい日でもUVは強いことがあります。UV指数で判断を。",
+      "ファームや建設など屋外の仕事では、長袖・帽子・日焼け止め・こまめな水分補給をセットで習慣に。",
+      "サングラスはUV400/UVカット表示のものを。強い日差しは目にもダメージを与えます。",
+    ],
+    phrases: [
+      { en: "What's the UV index today?", ja: "今日のUV指数はどれくらいですか？" },
+      { en: "I'm looking for SPF 50 sunscreen, broad spectrum.", ja: "SPF50でbroad spectrumの日焼け止めを探しています。" },
+      { en: "This mole has changed shape and colour. Should I see a doctor?", ja: "このほくろの形と色が変わりました。医者に診てもらうべきですか？" },
+    ],
+    faqs: [
+      {
+        question: "曇りの日でも日焼け止めは必要ですか？",
+        answer:
+          "はい。UV（紫外線）は雲を通り抜けるため、曇りや涼しい日でもUV指数が高いことがあります。判断は『暑さ』ではなく『UV指数』で行い、UV指数が3以上のときは曇りでも日焼け対策を行ってください。",
+      },
+      {
+        question: "皮膚がんのサインはどんなものですか？",
+        answer:
+          "ほくろやシミの大きさ・形・色が変わる、左右非対称になる、ふちがギザギザ、出血する、なかなか治らない傷などは注意すべきサインです。気になる変化があれば早めにGPに相談してください。皮膚がんは早期発見・早期治療が重要です。",
+      },
+    ],
+    warnings: [
+      "オーストラリアのUVは非常に強く、短時間でも日焼け・将来の皮膚がんリスクにつながります。UV指数3以上では必ず対策を。",
+      "ほくろ・シミの変化や治らない傷は皮膚がんのサインのことがあります。自己判断で放置せず、早めにGPを受診してください。",
+    ],
+    sources: [
+      { label: "SunSmart（Cancer Council Victoria）", url: "https://www.sunsmart.com.au/" },
+      { label: "Cancer Council｜Preventing skin cancer", url: "https://www.cancer.org.au/cancer-information/causes-and-prevention/sun-safety" },
+      { label: "ARPANSA｜Ultraviolet radiation index", url: "https://www.arpansa.gov.au/our-services/monitoring/ultraviolet-radiation-monitoring/ultraviolet-radiation-index" },
+      { label: "Bureau of Meteorology｜UV Index forecast", url: "https://www.bom.gov.au/uv/" },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "ARPANSA｜Ultraviolet radiation index（政府のUV監視・UV指数の区分）",
+        url: "https://www.arpansa.gov.au/our-services/monitoring/ultraviolet-radiation-monitoring/ultraviolet-radiation-index",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "SunSmart（Cancer Council）｜UV 3以上で対策・Slip Slop Slap Seek Slide",
+        url: "https://www.sunsmart.com.au/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Bureau of Meteorology｜UV Index forecast（日別・地域別のUV予報と対策時間帯）",
+        url: "https://www.bom.gov.au/uv/",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "gp-urgent-care-emergency",
+      "farm-heat-sun-safety",
+      "safety-emergency",
+      "medicare-oshc",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
 ];

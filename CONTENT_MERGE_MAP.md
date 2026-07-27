@@ -248,6 +248,25 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   次の行動が異なるため別記事として保持し双方向リンク。
 - 次の未完了 health slug: `eye-care-optometrist`。
 
+### health マイクロバッチ #2（2026-07-27 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。** health ハブの次の5件
+（`eye-care-optometrist` / `sexual-health-clinics` / `womens-health-guide` /
+`ambulance-costs-insurance` / `sunburn-skin-cancer-prevention`）はすべて**新規スラッグ**で、既存の公開記事
+（`medicare-oshc` / `safety-emergency` / `mental-health` ＋ マイクロバッチ #1 の5件）とは
+**検索意図が明確に異なり（眼鏡・検眼／性の健康・STI検査・避妊／女性の健康・生理用品・検診／
+救急車の費用と保険／紫外線・日焼け・皮膚がん対策）、全面重複はないため統合・リダイレクトは発生せず**、
+`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 既存記事の内部リンク変更なし（`medicare-oshc` は #1 で更新済み・本バッチでは不変）。
+  新規5件は相互リンク＋既存 health 記事（`gp-urgent-care-emergency` / `pharmacy-guide` /
+  `overseas-insurance-claim` / `safety-emergency` / `medicare-oshc`）と `farm-heat-sun-safety` へ接続。
+- 孤立記事なし: health ハブページ（`GuideCategoryPage category="health"`）が公開 health 記事を
+  自動列挙するため、5件はすべてハブから到達可能。
+- `sexual-health-clinics` と `womens-health-guide` は近接するが、前者は「STI検査・避妊・相談先」、
+  後者は「生理用品・婦人科・検診」で次の行動が異なるため別記事として保持し双方向リンク。
+- 次の未完了 health slug: `heatstroke-guide`。
+
 ## 4. リダイレクト運用ルール
 
 - `to`（転送先）は必ず公開中（`published`）の実記事 slug。

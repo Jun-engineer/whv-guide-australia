@@ -4,6 +4,45 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-27）: health マイクロバッチ #2（5件公開 / commit: feat: publish health micro-batch）
+
+health（医療・健康・安全）ハブの次の5件を公開しました（マイクロバッチ #2）。以下が確定状態です。
+
+- **公開した5件（すべて `verifiedAt: 2026-07-27`・`officialSources` 付き・完全公開・分類は全て create）:**
+  `eye-care-optometrist`（health, P2, id a251）, `sexual-health-clinics`（health, P1, id a252）,
+  `womens-health-guide`（health, P1, id a253）, `ambulance-costs-insurance`（current-info, P0, id a254）,
+  `sunburn-skin-cancer-prevention`（safety, P0, id a255）。
+- **選定 slug:** 上記5件（`BULK_PUBLISH_REMAINING.md` / manifest の記録順の先頭5件＝残り12件のうち先頭5件）。
+- **作成（created）slug:** 上記5件。**更新（updated）slug: なし**（既存記事は本バッチでは変更せず。
+  `medicare-oshc` はマイクロバッチ #1 で更新済み・本バッチでは不変）。
+  **統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、既存公開記事（`medicare-oshc`／`safety-emergency`／`mental-health`
+  ＋ #1 の5件）とは検索意図が明確に異なる（眼鏡・検眼／性の健康・STI検査／女性の健康・検診／救急車費用と保険／
+  紫外線・皮膚がん対策）。重複は独立意図が強いため個別公開し `relatedSlugs` で相互リンク。
+- **孤立記事なし:** health ハブページ（`app/health/page.tsx` の `GuideCategoryPage category="health"`）が
+  公開 health 記事を自動列挙するため、5件はすべてハブから到達可能。新規5件は相互リンク＋既存 health 記事へリンク。
+- **公式照合（記事反映済み）:** healthdirect（Eye health / Sexual health / STIs / Women's health / Emergency contraception）・
+  Services Australia（Medicare／Reciprocal Health Care Agreements＝**日本は対象外でワーホリはMedicare非適用**）・
+  Department of Health（National Cervical Screening Program）・各州救急サービス（QAS/NSW Ambulance/Ambulance Victoria）・
+  Triple Zero（000）・ARPANSA（UV Index・**取得確認済み**）・SunSmart（Cancer Council）・Bureau of Meteorology（UV forecast）。
+- **可変事項の断定回避:** 救急車費用は州・搬送内容・改定で大きく変わるため**特定金額を断定せず**、州の救急サービス公式へ誘導
+  （QLD・TAS は住民負担・他州は原則有料・ワーホリは州制度対象外になりやすい・000通報は無料、という構造事実のみ確定記述）。
+  詳細と web fetch の制約は `SOURCE_VERIFICATION_REPORT.md` に記載。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（ユニーク slug 255・重複0・重複パス0・重複エクスポート0・
+  health 13件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、
+  `tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning、
+  health の `relatedSlugs` は全て実在 slug に解決（dangling 0・`farm-heat-sun-safety` 含め確認済み）。
+  ※フルビルド/テスト/lint/sitemap/RSS/構造化データ監査は health ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **残り health slug（7件・すべて planned のまま）:** `heatstroke-guide`, `bites-stings-wildlife`,
+  `food-allergy-eating-out`, `work-injury-medical`, `bushfire-safety`, `flood-cyclone-safety`, `heatwave-severe-weather`。
+- **最初の未完了 health slug: `heatstroke-guide`**（次回はここから再開）。
+- **次のバッチ: health（`heatstroke-guide` から継続）。** ※本セッションは health の次の5件のみ処理。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/health.ts`、`lib/content/manifest.generated.ts`（再生成）、
+  `whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、
+  `BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: health マイクロバッチ #1（5件公開 / commit: feat: publish health micro-batch 1）
 
 health（医療・健康・安全）ハブの最初の5件を公開しました（マイクロバッチ運用）。以下が確定状態です。
