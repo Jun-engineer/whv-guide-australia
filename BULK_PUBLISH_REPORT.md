@@ -3,6 +3,41 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-27）: health マイクロバッチ #1（5件公開 / commit: feat: publish health micro-batch 1）
+
+health（医療・健康・安全）ハブの最初の5件を公開しました（マイクロバッチ運用）。
+
+- **公開した5件（すべて `verifiedAt: 2026-07-27`・`officialSources` 付き・完全公開・分類は全て create）:**
+  `gp-urgent-care-emergency`（comparison, P0）, `overseas-insurance-claim`（how-to, P0）,
+  `pharmacy-guide`（how-to, P0）, `common-medicines-australia`（health, P1）,
+  `dental-care-australia`（health, P1）。
+- **統合（merged）: なし。リダイレクト: なし。** 5件はいずれも新規スラッグで、既存の公開記事
+  `medicare-oshc`（医療総論）/ `safety-emergency`（緊急・安全総論）/ `mental-health`（メンタル）とは
+  検索意図が明確に異なる（受診先の使い分け・保険請求手順・薬局の使い方・成分別の一般薬・歯科の費用）。
+  有用コンテンツの重複は 60–70% 未満で独立した強い意図があるため、統合せず個別公開し
+  `relatedSlugs` で相互接続した。
+- **既存記事の内部リンク更新:** `medicare-oshc` の `relatedSlugs` に新規4件
+  （`gp-urgent-care-emergency` / `overseas-insurance-claim` / `pharmacy-guide` / `dental-care-australia`）を
+  追記（本文・slug・URL は不変、`updatedAt` を 2026-07-27 に更新）。孤立記事なし。
+- **公式照合（記事反映済み）:** Medicare Urgent Care Clinics（health.gov.au — bulk billed・walk-in・
+  対象症状／命に関わる場合は000・ED）、healthdirect（無料健康相談・受診先の目安）、Services Australia
+  （Reciprocal Health Care Agreements = **日本は対象外でワーホリはMedicare非適用**／PBS）、TGA
+  （医薬品のScheduling: S2/S3/S4）、Triple Zero（000）を照合。可変・個別事項（保険の補償範囲・歯科費用・
+  州別窓口）は断定せず公式・証券確認へ誘導。詳細は `SOURCE_VERIFICATION_REPORT.md`。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新済み。
+  `manifest.generated.ts` を再生成（planned 338、health 記事はコード側で 8 件）。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（ユニーク slug 250・重複0・重複パス0・
+  重複エクスポート0・health 8件）、`tsc --noEmit` クリーン（exit 0）、health の `relatedSlugs` 11件は
+  全て実在 slug に解決（dangling 0）。※フルビルド/テスト/lint/sitemap/RSS/構造化データ監査は
+  health ハブ完了後にまとめて実施予定。
+- **残り health slug: 12件。次の未完了 health slug: `eye-care-optometrist`。**
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/health.ts`、
+  `lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、
+  `CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、
+  `BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし**（healthdirect の解説ページは自動取得に失敗したが、Medicare UCC・
+  RHCA・Scheduling 等の主要事実は公式で照合済み。healthdirect は無料相談窓口として公式サイトへ誘導）。
+
 ## 0. 重要な方針判断（透明性のための明記）
 
 マスタープランは「できる限り多くの計画コンテンツを1サイクルで公開する」ことを求めています。

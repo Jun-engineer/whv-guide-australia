@@ -4,6 +4,43 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-27）: health マイクロバッチ #1（5件公開 / commit: feat: publish health micro-batch 1）
+
+health（医療・健康・安全）ハブの最初の5件を公開しました（マイクロバッチ運用）。以下が確定状態です。
+
+- **公開した5件（すべて `verifiedAt: 2026-07-27`・`officialSources` 付き・完全公開・分類は全て create）:**
+  `gp-urgent-care-emergency`（comparison, P0）, `overseas-insurance-claim`（how-to, P0）,
+  `pharmacy-guide`（how-to, P0）, `common-medicines-australia`（health, P1）,
+  `dental-care-australia`（health, P1）。
+- **選定 slug:** 上記5件（`BULK_PUBLISH_REMAINING.md` / manifest の記録順の先頭5件）。
+- **作成（created）slug:** 上記5件。**更新（updated）slug:** `medicare-oshc`（内部リンクのみ）。
+  **統合（merged）slug: なし。レビュー/除外 slug: なし。**
+- **統合（merged）: なし。リダイレクト: なし。** 5件はいずれも新規スラッグで、既存の公開記事
+  `medicare-oshc`（医療総論）/ `safety-emergency`（緊急・安全総論）/ `mental-health`（メンタル）とは
+  検索意図が明確に異なる（受診先の使い分け・保険請求手順・薬局の使い方・成分別の一般薬・歯科の費用）。
+  重複は 60–70% 未満で独立意図が強いため統合せず個別公開し `relatedSlugs` で相互リンクした。
+- **既存記事の内部リンク:** `medicare-oshc` の `relatedSlugs` に新規4件（`gp-urgent-care-emergency` /
+  `overseas-insurance-claim` / `pharmacy-guide` / `dental-care-australia`）を追記（本文・slug・URL は不変）。孤立記事なし。
+- **公式照合（記事反映済み）:** Medicare Urgent Care Clinics（health.gov.au）・healthdirect・
+  Services Australia（Reciprocal Health Care Agreements＝**日本は対象外でワーホリはMedicare非適用**・PBS）・
+  TGA（Scheduling: S2/S3/S4）・Triple Zero（000）。可変事項（保険補償範囲・歯科費用・州別相談窓口）は
+  断定せず公式・証券確認へ誘導。詳細は `SOURCE_VERIFICATION_REPORT.md`。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（ユニーク slug 250・重複0・重複パス0・
+  重複エクスポート0・health 8件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、
+  `tsc --noEmit` クリーン（exit 0）、health の `relatedSlugs` 11件は全て実在 slug に解決（dangling 0）。
+  ※フルビルド/テスト/lint/sitemap/RSS/構造化データ監査は health ハブ完了後にまとめて実施予定。
+- **残り health slug（12件・すべて planned のまま）:** `eye-care-optometrist`, `sexual-health-clinics`,
+  `womens-health-guide`, `ambulance-costs-insurance`, `sunburn-skin-cancer-prevention`, `heatstroke-guide`,
+  `bites-stings-wildlife`, `food-allergy-eating-out`, `work-injury-medical`, `bushfire-safety`,
+  `flood-cyclone-safety`, `heatwave-severe-weather`。
+- **最初の未完了 health slug: `eye-care-optometrist`**（次回はここから再開）。
+- **次のバッチ: health（`eye-care-optometrist` から継続）。** ※本セッションは health の先頭5件のみ処理。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/health.ts`、`lib/content/manifest.generated.ts`（再生成）、
+  `whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、
+  `BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-19）: transport サブバッチ #2（残り14件を公開/統合・transport ハブ完了）
 
 transport（車・免許・公共交通）バッチの**残り14件を処理し、transport ハブを完了**しました。

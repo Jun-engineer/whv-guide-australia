@@ -229,6 +229,25 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   `international-driving-permit` へ接続、`transport-payment-guide` に `intercity-transport` を追加。孤立記事なし。
 - 備考: これで transport ハブは全24件が最終ステータス確定（planned 0件・ハブ完了）。
 
+### health マイクロバッチ #1（2026-07-27 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。** health ハブの最初の5件
+（`gp-urgent-care-emergency` / `overseas-insurance-claim` / `pharmacy-guide` /
+`common-medicines-australia` / `dental-care-australia`）はすべて**新規スラッグ**で、既存の公開記事
+`medicare-oshc`（医療・保険・病院のかかり方の総論）/ `safety-emergency`（緊急・安全の総論）/
+`mental-health`（メンタルヘルス）とは**検索意図が明確に異なり（受診先の使い分け・海外保険の請求手順・
+薬局の使い方・成分別の一般薬探し・歯科の費用と保険）、全面重複はないため、新規の統合・リダイレクトは
+発生せず**、`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 既存 `medicare-oshc`（医療総論）の `relatedSlugs` を拡張し、`gp-urgent-care-emergency` /
+  `overseas-insurance-claim` / `pharmacy-guide` / `dental-care-australia` へ接続（本文・slug・URL は不変）。
+- 有用コンテンツの重複は 60–70% 未満（`medicare-oshc` は総論で受診の流れ・GP・Medicare非対象・薬を概説、
+  新規5件は各論の手順・比較）。独立した強い検索意図があるため統合しない。
+- `pharmacy-guide`（薬局の使い方・制度）と `common-medicines-australia`（成分別の一般薬の探し方）は
+  近接するが、前者は「どこで・どう買うか（S2/S3/S4・PBS）」、後者は「何を選ぶか（成分名・用量）」で
+  次の行動が異なるため別記事として保持し双方向リンク。
+- 次の未完了 health slug: `eye-care-optometrist`。
+
 ## 4. リダイレクト運用ルール
 
 - `to`（転送先）は必ず公開中（`published`）の実記事 slug。

@@ -440,6 +440,37 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## health マイクロバッチ #1（医療・薬・歯科 / 2026-07-27 / 5件公開）
+
+health ハブの最初の5件を、記事単位で公式一次情報に照合して新規公開した。各記事は
+`verifiedAt: 2026-07-27` を付与し、`officialSources`（`accessedAt: 2026-07-27`）に該当する公式
+情報源を明示。YMYL の中核は**受診先の緊急度判断・海外保険の請求・薬の分類と入手・歯科費用**であり、
+日本のワーホリが Medicare 対象外である点（相互医療協定なし）を各記事で明確化した。
+
+| slug | 照合した主要ポイント | 主な出典（accessedAt 2026-07-27） |
+| --- | --- | --- |
+| `gp-urgent-care-emergency` | 命に関わる緊急=000/ED、命に別状ない緊急=Medicare UCC（walk-in・bulk billed・minor骨折/ねんざ・UTI・STI・切り傷・胃腸炎・軽いやけど等）またはGP、通常=GP。UCCのbulk billはMedicareカード保持者向け→日本のワーホリは対象外で自己負担し得る | health.gov.au（Medicare UCC）/ healthdirect / Services Australia（RHCA）/ Triple Zero |
+| `overseas-insurance-claim` | ワーホリはMedicare非適用→海外保険。基本は立替→明細付き領収書（tax invoice）＋診断書で請求、高額入院は24hアシスタンスでキャッシュレス。既往症・歯科・妊娠等は対象外が多い | Services Australia（Medicare / RHCA）/ healthdirect |
+| `pharmacy-guide` | 薬剤師相談は無料、S2（棚）・S3（薬剤師確認）・S4（処方箋）。PBSはMedicare加入者向け→ワーホリは処方薬が全額になりやすい | TGA（Scheduling）/ Services Australia（PBS）/ healthdirect |
+| `common-medicines-australia` | 商品名でなく有効成分で探す（paracetamol/ibuprofen/抗ヒスタミン）。paracetamolの重複・過量による肝障害に注意、持病・妊娠は薬剤師へ | healthdirect（Medicines / Paracetamol）/ TGA |
+| `dental-care-australia` | 成人歯科は原則Medicare対象外、ワーホリは自己負担が基本。治療前にquote、保険の歯科は制限が多い、顔/首の腫れ・呼吸困難は000/ED | healthdirect（Dental care）/ Services Australia |
+
+- **照合した公式一次情報（accessedAt 2026-07-27）:** Department of Health and Aged Care
+  「Medicare Urgent Care Clinics」（health.gov.au — bulk billed・walk-in・対象症状一覧、命に関わる場合は
+  000/ED を明記）、healthdirect（healthdirect.gov.au — 無料健康相談・受診先の目安・Medicines・Dental care）、
+  Services Australia「Reciprocal Health Care Agreements」（**日本は協定国に含まれず、ワーホリはMedicare
+  非適用**）「Medicare」「Pharmaceutical Benefits Scheme」、Therapeutic Goods Administration
+  「Scheduling basics」（S2 Pharmacy Medicine / S3 Pharmacist Only / S4 Prescription Only）、
+  Triple Zero（triplezero.gov.au — 000）。
+- **留保点:** ①healthdirect の無料相談電話の番号・対応窓口は州で異なる（VIC=NURSE-ON-CALL、QLD=13 HEALTH 等）
+  ため、記事では代表番号（1800 022 222）を示しつつ **healthdirect 公式サイトで最新窓口を確認**する導線とした。
+  ②海外保険の補償範囲・請求手順は保険会社ごとに異なるため断定せず**証券・保険会社確認**へ誘導。
+  ③歯科費用・救急車費用（別記事）・州別窓口は可変のため断定を避けた。
+- **統合・リダイレクト:** なし（5件は新規スラッグ、既存公開記事と検索意図が分離）。
+- **検証:** `validate:articles`（ユニーク slug 250・重複0・重複パス0・重複エクスポート0・health 8件）、
+  `tsc --noEmit` クリーン（exit 0）、health の `relatedSlugs` は全て実在 slug に解決（dangling 0）。
+  ※フルビルド/テスト/lint/監査は health ハブ完了後に実施。
+
 ## 4. 免責の表示
 
 すべての公開記事で `OfficialSourceBox` に以下を明記:
