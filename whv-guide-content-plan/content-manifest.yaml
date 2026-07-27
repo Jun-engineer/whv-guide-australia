@@ -3141,7 +3141,7 @@ planned_content:
 - slug: listening-resources
   title: ワーホリ準備におすすめのリスニング教材と使い方
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: learning
@@ -3151,7 +3151,7 @@ planned_content:
 - slug: language-exchange-meetup
   title: Language Exchange・Meetupで友達と英語環境を作る方法
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: social
@@ -3161,7 +3161,7 @@ planned_content:
 - slug: ielts-pte-after-wh
   title: IELTS・PTEは必要？学生・就労・永住を考える人の試験選び
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: comparison

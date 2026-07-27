@@ -229,6 +229,26 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   `international-driving-permit` へ接続、`transport-payment-guide` に `intercity-transport` を追加。孤立記事なし。
 - 備考: これで transport ハブは全24件が最終ステータス確定（planned 0件・ハブ完了）。
 
+### english マイクロバッチ #3＝english ハブ完了（2026-07-27 / 3件公開・ハブ完了）
+
+**統合（merged）: なし。リダイレクト: なし。** english ハブの残り全3件
+（`listening-resources` / `language-exchange-meetup` / `ielts-pte-after-wh`）はすべて**新規スラッグ**（`hub: "english"`・`category: "english"`）で、
+既存の公開記事（マイクロバッチ #1・#2 の10件・`english-prep`・`language-school`）とは
+**検索意図が明確に異なり（リスニング教材の選び方・使い方／言語交換・Meetupで英語環境を作る方法／
+IELTS・PTEの試験選び）、全面重複はないため、新規の統合・リダイレクトは発生せず**、
+`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 新規3件と既存記事を意図の近い組で双方向リンク（`listening-resources` ↔ `australian-english-accent`・`english-prep`・`phone-call-english`、
+  `language-exchange-meetup` ↔ `australian-slang`・`workplace-english`・`english-prep`、
+  `ielts-pte-after-wh` ↔ `english-prep`・`language-school`・`second-visa-guide`・`listening-resources`）。
+- 既存記事本文への更新（統合・リダイレクトなし・slug/URL/公開状態は不変）: なし（本バッチは新規追加のみ）。
+- `ielts-pte-after-wh`（IELTS・PTEの試験選び）と既存のビザ・進路記事は役割が異なる（前者＝試験の選び方・比較、
+  後者＝ビザ制度の解説）ため別記事として保持し双方向リンク。未公開（planned）の `make-friends-australia` 等は
+  `relatedSlugs` に含めず、公開/既存 slug のみ参照（dangling 回避）。
+- 孤立記事なし: english ハブページ（`GuideCategoryPage category="english"`）が公開 english 記事を
+  自動列挙するため、3件はすべてハブから到達可能。
+- **english ハブ 13/13 完了。次の未完了 english slug: なし。area/travel には着手しない。**
+
 ### english マイクロバッチ #2（2026-07-27 / 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。** english ハブの次の5件

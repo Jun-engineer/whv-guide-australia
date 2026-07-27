@@ -4,6 +4,31 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-27）: english マイクロバッチ #3＝english ハブ完了（3件公開＋最終監査 / commit: feat: complete english content batch）
+
+english（英語学習・会話）ハブの残り全3件を公開し、**ハブを完了**しました。開始時点で残りは3件（≤5）だったため、全3件を処理し、最終ハブ監査（フルビルド／lint／テスト／sitemap）を実施しました。以下が確定状態です。
+
+- **未完了 english 件数（開始時）:** 3件（すべて planned）。既に公開済みは既存2件（`english-prep`・`language-school`）＋マイクロバッチ #1・#2 の10件。
+- **処理した3件（残り全件）:** `listening-resources`, `language-exchange-meetup`, `ielts-pte-after-wh`。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded ではないことを確認済み。
+- **分類:** 3件すべて **create**（新規スラッグ）。統合（merge）・レビュー（review）・除外（exclude）・更新（update）は該当なし。
+- **公開した3件（すべて `hub: english`・`category: english`・完全公開・分類は全て create）:**
+  `listening-resources`（P2, learning, id a294）, `language-exchange-meetup`（P2, social, id a295）,
+  `ielts-pte-after-wh`（P2, comparison, id a296）。
+- **作成（created）slug:** 上記3件。**更新（updated）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 3件はいずれも新規スラッグで、既存の公開記事とは検索意図が明確に異なる（リスニング教材の選び方・使い方／言語交換・Meetupで英語環境を作る方法／IELTS・PTEの試験選び）。各記事は独立した検索意図が強いため個別公開し、`relatedSlugs` で相互リンク。
+- **目的地モジュール:** `lib/content/articles/english.ts`（全て `category: "english"` / `hub: "english"`）。`mockData.ts` へは追加していない。
+- **孤立記事なし:** english カテゴリページ（`app/english/page.tsx` の `GuideCategoryPage category="english"`）が公開 english 記事を自動列挙するため、3件はすべて `/english` から到達可能。各記事は一意のモジュールにのみ存在。`make-friends-australia` 等は未公開（planned）のため `relatedSlugs` に含めず、公開/既存 slug のみ参照（dangling 回避）。
+- **客観的事実と個人的推奨の区別:** 教材選び・学習法・言語交換の参加は「人により合う/合わない」「客観的な正解はない」と明示し推奨として提示。ビザの英語要件・受入試験・必要スコアなど変わりうる/公式判断が要る事項は断定せず公式へ誘導。
+- **公式照合（記事反映済み・確認日 2026-07-27）:** `ielts-pte-after-wh`＝Department of Home Affairs「English language visa requirements」（2025年8月7日から受入試験が変更、オンライン自宅受験はビザ目的で不可、必要スコアはビザ subclass で異なる。最終更新 2026-02-02）＋IELTS 公式＋PTE Academic 公式。`listening-resources`・`language-exchange-meetup` は変わりうる数値・料金・法規の主張を含まないため公式ソースは付さず、`verifiedAt: 2026-07-27` のみ付与。
+- **可変事項の断定回避:** ビザの必要英語スコア・受入試験は年度・subclass・目的で異なるとして移民局・各ビザ案内・登録移民代理人へ誘導。具体的なバンドスコアは記載せず。言語交換・Meetup参加時の安全（公共の場で会う・個人情報や金銭のやり取りに注意）を明示。
+- **content-manifest.yaml:** 該当3件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **最終ハブ監査（english ハブ完了に伴い実施）:** `validate:articles`（重複 slug 0・重複パス 0・重複エクスポート 0・english 16件・`OK: no article data errors`）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）、`test:content` 5 pass / 0 fail、`eslint` エラーなし、`next build` フルビルド成功（`/guides/[slug]` SSGで3件を静的HTML生成、`/sitemap.xml`・`/robots.txt` 生成、型エラーなし）。
+- **修正1回（リトライ枠内）:** 新規記事の本文に半角ダブルクオート（`"…"`）を混入させ tsc/パーサが構文エラー。該当箇所を和文引用符「…」に、英語フレーズは `\"…\"` にエスケープして解消（1回の修正で完了）。
+- **english ハブ 13/13 完了。次の未完了 english slug: なし。**
+- **次のバッチ: なし（english 完了）。** ※本セッションは english の残り全件のみ処理し、area/travel には着手しない。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/english.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: english マイクロバッチ #2（5件公開 / commit: feat: publish english micro-batch）
 
 english（英語学習・会話）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で english は8件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理しました。以下が確定状態です。
@@ -861,7 +886,7 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `online-scams-cybersecurity` — 偽SMS・求人詐欺・アカウント乗っ取り対策 _(優先度 P0、意図: security)_ **公開済み（2026-07-27）**
 - ✅ `phone-lost-stolen` — スマホを紛失・盗難された場合の対応 _(優先度 P1、意図: problem-solving)_ **公開済み（2026-07-27）**
 
-### english — 英語学習・会話 (13件・10件公開済み / 残り3件)
+### english — 英語学習・会話 (13件・**全13件公開済み / ハブ完了**)
 
 - ✅ `australian-english-accent` — オーストラリア英語の発音・アクセントに慣れる方法 _(優先度 P1、意図: learning)_ **公開済み（2026-07-27）**
 - ✅ `australian-slang` — ワーホリでよく聞くオーストラリア英語・スラング _(優先度 P1、意図: reference)_ **公開済み（2026-07-27）**
@@ -873,9 +898,9 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `car-trouble-english` — 車の故障・事故・修理で使う英語フレーズ _(優先度 P1、意図: language)_ **公開済み（2026-07-27）**
 - ✅ `phone-call-english` — 英語の電話が怖い人向け｜聞き返し・保留・予約 _(優先度 P1、意図: learning)_ **公開済み（2026-07-27）**
 - ✅ `email-message-templates` — ワーホリ生活の英文メール・SMSテンプレート集 _(優先度 P0、意図: template)_ **公開済み（2026-07-27）**
-- `listening-resources` — ワーホリ準備におすすめのリスニング教材と使い方 _(優先度 P2、意図: learning)_ ← 次の先頭
-- `language-exchange-meetup` — Language Exchange・Meetupで友達と英語環境を作る方法 _(優先度 P2、意図: social)_
-- `ielts-pte-after-wh` — IELTS・PTEは必要？学生・就労・永住を考える人の試験選び _(優先度 P2、意図: comparison)_
+- ✅ `listening-resources` — ワーホリ準備におすすめのリスニング教材と使い方 _(優先度 P2、意図: learning)_ **公開済み（2026-07-27）**
+- ✅ `language-exchange-meetup` — Language Exchange・Meetupで友達と英語環境を作る方法 _(優先度 P2、意図: social)_ **公開済み（2026-07-27）**
+- ✅ `ielts-pte-after-wh` — IELTS・PTEは必要？学生・就労・永住を考える人の試験選び _(優先度 P2、意図: comparison)_ **公開済み（2026-07-27）**
 
 ### area — 都市・州・地域ガイド (23件)
 

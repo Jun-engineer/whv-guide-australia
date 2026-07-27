@@ -3,6 +3,26 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-27）: english マイクロバッチ #3＝english ハブ完了（3件公開＋最終監査 / commit: feat: complete english content batch）
+
+english（英語学習・会話）ハブの残り全3件を公開し、**ハブを完了**しました。開始時点で残りは3件（≤5）だったため、全3件を処理し、最終ハブ監査（フルビルド／lint／テスト／sitemap）を実施しました。
+
+- **公開した3件（すべて `hub: english`・`category: english`・`verifiedAt: 2026-07-27`・完全公開・分類は全て create）:**
+  `listening-resources`（P2, learning, id a294）, `language-exchange-meetup`（P2, social, id a295）,
+  `ielts-pte-after-wh`（P2, comparison, id a296）。
+- **作成（created）slug:** 上記3件。**更新（updated）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 3件はいずれも新規スラッグで、既存の公開記事とは検索意図が明確に異なる（リスニング教材の選び方・使い方／言語交換・Meetupで英語環境を作る方法／IELTS・PTEの試験選び）。各記事は独立した検索意図が強いため個別公開し、`relatedSlugs` で相互リンク。
+- **孤立記事なし:** english カテゴリページ（`/english` の `GuideCategoryPage category="english"`）が公開 english 記事を自動列挙するため、3件はすべて到達可能。各記事は一意のモジュール（`lib/content/articles/english.ts`）にのみ存在。`mockData.ts` へは追加していない。未公開（planned）の `make-friends-australia` 等は `relatedSlugs` に含めず公開/既存 slug のみ参照（dangling 回避）。
+- **公式照合（記事反映済み・確認日 2026-07-27）:** `ielts-pte-after-wh`＝Department of Home Affairs「English language visa requirements」（2025年8月7日から受入試験が変更、オンライン自宅受験はビザ目的で不可、必要スコアはビザ subclass で異なる。https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/english-language ／最終更新 2026-02-02）＋IELTS 公式（https://ielts.org/ ）＋PTE Academic 公式（https://www.pearsonpte.com/pte-academic ）。`listening-resources`・`language-exchange-meetup` は変わりうる数値・料金・法規の主張を含まないため公式ソースは付さず、`verifiedAt: 2026-07-27` のみ付与。
+- **客観的事実と個人的推奨の区別:** 教材選び・学習法・言語交換の参加は「人により合う/合わない」「客観的な正解はない」と明示。ビザの英語要件・受入試験・必要スコアなど変わりうる/公式判断が要る事項は断定せず公式・専門家へ誘導。
+- **可変事項の断定回避:** ビザの必要英語スコア・受入試験は年度・subclass・目的で異なるとして移民局・各ビザ案内・登録移民代理人へ誘導（具体的バンドスコアは記載せず）。言語交換・Meetup参加時の安全（公共の場で会う・個人情報や金銭のやり取りに注意）を明示。
+- **content-manifest.yaml:** 該当3件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **最終ハブ監査:** `validate:articles`（重複 slug 0・english 16件・`OK: no article data errors`）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）、`test:content` 5 pass / 0 fail、`eslint` エラーなし、`next build` フルビルド成功（`/guides/[slug]` SSGで3件を静的HTML生成、`/sitemap.xml`・`/robots.txt` 生成、型エラーなし）。**english ハブ 13/13 完了。**
+- **修正1回（リトライ枠内）:** 新規記事本文に半角ダブルクオートを混入させ tsc/パーサが構文エラー → 該当箇所を和文引用符「…」に、英語フレーズは `\"…\"` にエスケープして解消（1回で完了）。
+- **残り english: なし（ハブ完了）。**
+- **変更ファイル:** `lib/content/articles/english.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: english マイクロバッチ #2（5件公開 / commit: feat: publish english micro-batch）
 
 english（英語学習・会話）ハブの次の5件を公開しました。開始時点で english は8件（>5）が残っていたため、**通常のマイクロバッチ**として記録順の先頭5件のみを処理し、最終ハブ監査（フルビルド／lint／テスト／sitemap）は実施していません（残り3件のため次回に実施）。

@@ -440,6 +440,15 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## english マイクロバッチ #3＝english ハブ完了（リスニング教材 / 言語交換・Meetup / IELTS・PTE試験選び / 2026-07-27 / 3件公開・ハブ完了）
+
+english ハブの残り全3件を新規公開し、**ハブを完了**した（すべて `hub: "english"`・`category: "english"`）。タイトルの主要な問いに変わりうる事実（ビザの英語要件・受入試験・必要スコア）を含む1件は公式一次情報に照合し、記事内 `OfficialSourceBox` に出典と免責を明示した。残る2件は変わりうる数値・料金・法規の主張を含まないため、公式ソースは付さず `verifiedAt: 2026-07-27` のみ付与した。
+
+- `ielts-pte-after-wh`（P2, id a296, comparison）— **Department of Home Affairs｜English language requirements**（https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/english-language ／アクセス 2026-07-27・当該ページ最終更新 2026-02-02）。**2025年8月7日から受入試験が変更**、ビザ目的では**オンライン／自宅受験は不可**（secure test centre での受験が必要）、受入試験は IELTS・PTE Academic・TOEFL iBT・OET・Cambridge C1 Advanced 等、**必要スコアはビザ subclass・目的で異なる**ことを確認。＋**IELTS 公式**（https://ielts.org/ ）＋**PTE Academic 公式**（https://www.pearsonpte.com/pte-academic ）。**具体的なバンドスコアは記載せず**、要件は年度・subclass・目的で変わるとして移民局・各ビザ案内・**登録移民代理人（registered migration agent）**へ誘導。
+- `listening-resources`（P2, id a294, learning）・`language-exchange-meetup`（P2, id a295, social）— 変わりうる数値・料金・法規の主張なし。教材選び・学習法・言語交換の参加は「人により合う/合わない・客観的な正解はない」推奨として提示。`verifiedAt: 2026-07-27` のみ付与、`officialSources` なし。`language-exchange-meetup` は安全（公共の場で会う・個人情報や金銭のやり取りに注意・投資/送金の勧誘は詐欺の可能性）を明示。
+- **統合・リダイレクト:** なし（3件は新規スラッグ、既存公開記事・マイクロバッチ #1/#2 と検索意図が分離）。未公開（planned）slug は `relatedSlugs` に含めず公開/既存 slug のみ参照（dangling 回避）。
+- **english ハブ 13/13 完了。次の未完了 english slug: なし。area/travel には着手しない。**
+
 ## english マイクロバッチ #2（銀行・税・年金英語 / 医療英語 / 車トラブル英語 / 電話英語 / 英文テンプレート / 2026-07-27 / 5件公開）
 
 english ハブの次の5件を新規公開した（すべて `hub: "english"`・`category: "english"`）。タイトルの主要な問いに関わる変わりうる事実（税・年金の手続き、医療・緊急、事故対応）は公式一次情報に照合し、記事内 `OfficialSourceBox` に出典と免責を明示した。電話英語・英文テンプレートの2件は変わりうる数値・料金・法規の主張を含まないため、公式ソースは付さず `verifiedAt: 2026-07-27` のみ付与した。
