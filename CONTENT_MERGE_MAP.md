@@ -229,6 +229,21 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   `international-driving-permit` へ接続、`transport-payment-guide` に `intercity-transport` を追加。孤立記事なし。
 - 備考: これで transport ハブは全24件が最終ステータス確定（planned 0件・ハブ完了）。
 
+### area マイクロバッチ #1（2026-07-27 / 5件公開・既存結合記事2件を分割）
+
+**統合（merged）: なし。リダイレクト: なし。** area ハブの先頭5件
+（`area-gold-coast` / `area-perth` / `area-cairns` / `area-canberra` / `area-hobart`）はすべて**新規スラッグ**（`hub: "area"`・`category: "area"`）で、
+地名クエリごとに検索意図が独立するため個別公開し、`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- **既存の結合記事2件を「分割（split）」として扱い、公開URLは保持（リダイレクトなし）:**
+  - `area-brisbane`（旧「ブリスベン・ゴールドコースト」）→ **ブリスベン中心に再構成**。Gold Coast の内容は新規 `area-brisbane` から独立させ、本文で `area-gold-coast` に相互リンク。**親URLは存続（split）。**
+  - `area-perth-cairns`（旧「パース・ケアンズ」結合）→ **「パース vs ケアンズ」の比較・選択ガイドに再構成**（検索意図＝2都市の比較・選び方に分離）。詳細は新規 `area-perth`・`area-cairns` に独立させ双方向リンク。**URLは保持し、公開中URLの自動統合・リダイレクトは行わない**（本ファイル §3「提案のみ（公開→公開）」・`lib/content/redirects.ts` の方針＝生きているURLを潰さない、に準拠）。WHV_CONTENT_MASTERPLAN が「既存URLを比較記事にする」選択肢を明示していることに沿う。
+- 新規5件と既存/公開記事を意図の近い組で双方向リンク（`area-gold-coast` ↔ `area-brisbane`、`area-perth`/`area-cairns` ↔ `area-perth-cairns`（比較）、`area-cairns` ↔ `region-mareeba-atherton-farm`・`farm-second-visa`、`area-hobart` ↔ `region-tasmania-farm`・`area-melbourne`、`area-canberra` ↔ `area-sydney`）。
+- トップページ（`app/page.tsx`）のエリアタイル「Perth / Cairns」→「Perth（`area-perth`）」に更新。`area-perth-cairns` は `/area` 一覧・相互リンクから到達可能で孤立なし。
+- `relatedSlugs` は公開/既存 slug と公開済み farm 地域ガイドのみ参照。未公開（planned）の `state-*-guide`・`area-darwin` 等は含めず dangling 回避。
+- 孤立記事なし: area ハブページ（`GuideCategoryPage category="area"`）が公開 area 記事を自動列挙するため、5件はすべてハブから到達可能。
+- **area 11/23 が最終ステータス確定（既存6件＋本バッチ5件）。次の未完了 area slug: `area-darwin`。travel には着手しない。**
+
 ### english マイクロバッチ #3＝english ハブ完了（2026-07-27 / 3件公開・ハブ完了）
 
 **統合（merged）: なし。リダイレクト: なし。** english ハブの残り全3件

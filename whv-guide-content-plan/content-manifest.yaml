@@ -193,7 +193,7 @@ existing_articles:
   update: review_6_months
   path: /guides/area-melbourne
 - slug: area-brisbane
-  title: ブリスベン・ゴールドコースト エリアガイド｜温暖で暮らしやすいクイーンズランド
+  title: ブリスベン エリアガイド｜温暖で暮らしやすいクイーンズランドの州都
   hub: area
   status: existing
   type: article
@@ -201,7 +201,7 @@ existing_articles:
   update: review_6_months
   path: /guides/area-brisbane
 - slug: area-perth-cairns
-  title: パース・ケアンズ エリアガイド｜西海岸と熱帯リゾート
+  title: パース vs ケアンズ｜西海岸と熱帯北部、どっちを拠点にする？
   hub: area
   status: existing
   type: article
@@ -3171,7 +3171,7 @@ planned_content:
 - slug: area-gold-coast
   title: ゴールドコースト エリアガイド｜仕事・家賃・交通・ビーチ生活
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: area-guide
@@ -3181,7 +3181,7 @@ planned_content:
 - slug: area-perth
   title: パース エリアガイド｜仕事・家賃・車・西海岸生活
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: area-guide
@@ -3191,7 +3191,7 @@ planned_content:
 - slug: area-cairns
   title: ケアンズ エリアガイド｜観光業・気候・ファームへの移動
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: area-guide
@@ -3201,7 +3201,7 @@ planned_content:
 - slug: area-canberra
   title: キャンベラ エリアガイド｜仕事・家賃・交通
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-guide
@@ -3211,7 +3211,7 @@ planned_content:
 - slug: area-hobart
   title: ホバート エリアガイド｜タスマニアの仕事と暮らし
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-guide

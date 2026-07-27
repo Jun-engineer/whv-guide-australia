@@ -206,7 +206,7 @@ export default async function Home() {
               { label: "Sydney", slug: "area-sydney" },
               { label: "Melbourne", slug: "area-melbourne" },
               { label: "Brisbane", slug: "area-brisbane" },
-              { label: "Perth / Cairns", slug: "area-perth-cairns" },
+              { label: "Perth", slug: "area-perth" },
               { label: "都市の選び方", slug: "area-overview" },
             ].map((area) => (
               <Link

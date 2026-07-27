@@ -3,6 +3,25 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-27）: area マイクロバッチ #1（5件公開 / commit: feat: publish area micro-batch）
+
+area（都市・州・地域ガイド）ハブの先頭5件を公開しました（マイクロバッチ運用）。開始時点で area は23件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り18件のため継続）。
+
+- **公開した5件（すべて `hub: area`・`category: area`・`verifiedAt: 2026-07-27`・完全公開・分類は全て create）:**
+  `area-gold-coast`（P0, area-guide, id a297）, `area-perth`（P0, area-guide, id a298）,
+  `area-cairns`（P0, area-guide, id a299）, `area-canberra`（P2, area-guide, id a300）,
+  `area-hobart`（P2, area-guide, id a301）。
+- **既存の結合記事2件を分割（split・公開URL保持・リダイレクトなし）:**
+  `area-brisbane`（旧「ブリスベン・ゴールドコースト」→ ブリスベン中心に再構成、新規 `area-gold-coast` に相互リンク）、
+  `area-perth-cairns`（旧「パース・ケアンズ」結合 → 「パース vs ケアンズ」比較ガイドに再構成、新規 `area-perth`・`area-cairns` に相互リンク）。**公開中URLの自動統合・リダイレクトは行わない**方針に準拠。
+- **作成（created）slug:** 上記5件。**更新/分割（updated/split）slug:** `area-brisbane`・`area-perth-cairns`。**統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、地名クエリごとに検索意図が独立（ゴールドコースト＝観光・ビーチ／ブリスベン＝都市生活、パース＝西海岸の都市生活／ケアンズ＝熱帯観光・ファーム拠点）。個別公開し `relatedSlugs` で相互リンク。
+- **トップページ:** `app/page.tsx` のエリアタイル「Perth / Cairns」→「Perth（`area-perth`）」に更新。`area-perth-cairns` は `/area` 一覧・相互リンクから到達可能で孤立なし。
+- **公式照合（確認日 2026-07-27）:** Translink（QLD go card）／Transperth（WA SmartRider・CAT）／Transport Canberra（ACT MyWay・Light Rail）／Metro Tasmania（Greencard）／Bureau of Meteorology（気候・警報）／Department of Home Affairs（417 Specified work）／各空港公式（Gold Coast/Perth/Cairns/Hobart）。可変事項（家賃・時給・鉱業賃金・運賃・シーズン需要）は断定せず、Flatmates・realestate.com.au・求人/公式で最新確認を誘導。
+- **manifest:** 該当5件を `status: planned` → `status: published`。`area-brisbane`・`area-perth-cairns` は `existing` のままタイトルのみ更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug/パス/エクスポート 0・area 11件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）。※フルビルド/テスト/lint はハブ完了時の最終監査に回す。
+- **残り area 18件。次の未完了 area slug: `area-darwin`。** 本セッションは area 先頭5件のみ処理し、travel には着手しない。
+
 ## チェックポイント（2026-07-27）: english マイクロバッチ #3＝english ハブ完了（3件公開＋最終監査 / commit: feat: complete english content batch）
 
 english（英語学習・会話）ハブの残り全3件を公開し、**ハブを完了**しました。開始時点で残りは3件（≤5）だったため、全3件を処理し、最終ハブ監査（フルビルド／lint／テスト／sitemap）を実施しました。

@@ -4,6 +4,37 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-27）: area マイクロバッチ #1（5件公開 / commit: feat: publish area micro-batch）
+
+area（都市・州・地域ガイド）ハブの最初の5件を公開しました（マイクロバッチ運用）。開始時点で area は23件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り18件のため次回以降に継続）。以下が確定状態です。
+
+- **未完了 area 件数（開始時）:** 23件（すべて planned）。既に公開済みは既存6件（`area-overview`・`area-sydney`・`area-melbourne`・`area-brisbane`・`area-perth-cairns`・`area-adelaide`、manifest `existing`）。
+- **選定した5件（記録順の先頭5件）:** `area-gold-coast`, `area-perth`, `area-cairns`, `area-canberra`, `area-hobart`。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded ではないことを確認済み。
+- **分類:** 5件すべて **create**（新規スラッグ）。既存の結合記事2件は **split**（下記）。統合（merge）・リダイレクト・レビュー・除外は該当なし。
+- **公開した5件（すべて `hub: area`・`category: area`・`verifiedAt: 2026-07-27`・完全公開・分類は全て create）:**
+  `area-gold-coast`（P0, area-guide, id a297）, `area-perth`（P0, area-guide, id a298）,
+  `area-cairns`（P0, area-guide, id a299）, `area-canberra`（P2, area-guide, id a300）,
+  `area-hobart`（P2, area-guide, id a301）。
+- **既存の結合記事の分割（split・公開URLは保持）:**
+  - `area-brisbane`（旧「ブリスベン・ゴールドコースト」）→ **ブリスベン中心に再構成**。Gold Coast 部分を新規 `area-gold-coast` に独立させ、本文から相互リンク。URL は不変。`verifiedAt`・`officialSources` を追記。
+  - `area-perth-cairns`（旧「パース・ケアンズ」結合）→ **「パース vs ケアンズ」比較・選択ガイドに再構成**（検索意図＝2都市の比較・選び方に分離）。Perth/Cairns の詳細は新規 `area-perth`・`area-cairns` に独立させ、双方向リンク。URL は保持し**リダイレクトは作成しない**（公開中URLの自動統合は行わない方針＝リポジトリの `redirects.ts`/`CONTENT_MERGE_MAP` 方針に準拠）。
+- **トップページ:** `app/page.tsx` のエリアタイル「Perth / Cairns」→「Perth（`area-perth`）」に更新（結合ページを比較用に残したまま、P0 の新規専用ページを露出）。`area-perth-cairns` は `/area` 一覧・相互リンクから到達可能で孤立なし。
+- **作成（created）slug:** 上記5件。**更新/分割（updated/split）slug:** `area-brisbane`・`area-perth-cairns`。**統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、直接関連する地名どうしでも検索意図が分離（ゴールドコースト＝観光・ビーチ生活／ブリスベン＝都市生活、パース＝西海岸の都市生活／ケアンズ＝熱帯観光・ファーム拠点）。地名クエリごとに独立意図が強いため個別公開し、`relatedSlugs` で相互リンク。
+- **目的地モジュール:** `lib/content/articles/area.ts`（全て `category: "area"` / `hub: "area"`）。`mockData.ts` へは追加していない。
+- **孤立記事なし:** area カテゴリページ（`app/area/page.tsx` の `GuideCategoryPage category="area"`）が公開 area 記事を自動列挙するため、5件はすべて `/area` から到達可能。各記事は一意のモジュールにのみ存在。`relatedSlugs` は公開/既存 slug と公開済み farm 地域ガイド（`region-mareeba-atherton-farm`・`region-tasmania-farm`）のみ参照（planned の `state-*-guide`・`area-darwin` 等は含めず dangling 回避）。
+- **州ルールと現地条件の区別:** 免許・飲酒・賃貸法などは州単位、気候・交通・仕事は都市単位として記述。可変事項（家賃・時給・求人数・運賃・シーズン需要）は断定せず、最新は各公式・求人/物件サイトで確認するよう誘導。
+- **公式照合（記事反映済み・確認日 2026-07-27）:** Translink（QLD go card）／Transperth（WA SmartRider）／Transport Canberra（ACT MyWay・Light Rail）／Metro Tasmania（Greencard）／Bureau of Meteorology（気候平年値・警報）／Department of Home Affairs（417 Specified work）／各空港公式（Gold Coast/Perth/Cairns/Hobart Airport）。ケアンズの雨季・サイクロン、パースの時差（AWST）、内陸/冷涼地の防寒を明示。
+- **可変事項の断定回避:** 家賃・時給・鉱業関連の賃金・運賃・求人数・収穫シーズンの需要は具体数値を断定せず、Flatmates・realestate.com.au・求人サイト・各公式で最新確認を促す。ファームは悪質農園・セカンドビザ対象確認を強調。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`area-brisbane`・`area-perth-cairns` は `existing` のままタイトルのみ更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug 0・重複パス 0・重複エクスポート 0・area 11件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）、新規5件の `relatedSlugs` は全て公開/既存 slug に解決。
+  ※フルビルド/テスト/lint/sitemap/構造化データ監査は area ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **残り area slug（18件・すべて planned のまま）:** `area-darwin`, `area-sunshine-coast`, `area-toowoomba-gatton`, `area-bundaberg`, `area-stanthorpe`, `area-townsville`, `area-newcastle`, `area-wollongong`, `area-mildura`, `area-shepparton`, `area-griffith`, `state-nsw-guide`, `state-vic-guide`, `state-qld-guide`, `state-wa-guide`, `state-sa-guide`, `state-tas-guide`, `state-nt-guide`。
+- **最初の未完了 area slug: `area-darwin`**（次回はここから再開）。
+- **次のバッチ: area（`area-darwin` から継続）。** ※本セッションは area の先頭5件のみ処理し、english/travel・その他カテゴリには着手しない。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/area.ts`、`app/page.tsx`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: english マイクロバッチ #3＝english ハブ完了（3件公開＋最終監査 / commit: feat: complete english content batch）
 
 english（英語学習・会話）ハブの残り全3件を公開し、**ハブを完了**しました。開始時点で残りは3件（≤5）だったため、全3件を処理し、最終ハブ監査（フルビルド／lint／テスト／sitemap）を実施しました。以下が確定状態です。
@@ -902,14 +933,14 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `language-exchange-meetup` — Language Exchange・Meetupで友達と英語環境を作る方法 _(優先度 P2、意図: social)_ **公開済み（2026-07-27）**
 - ✅ `ielts-pte-after-wh` — IELTS・PTEは必要？学生・就労・永住を考える人の試験選び _(優先度 P2、意図: comparison)_ **公開済み（2026-07-27）**
 
-### area — 都市・州・地域ガイド (23件)
+### area — 都市・州・地域ガイド (23件、残り18件)
 
-- `area-gold-coast` — ゴールドコースト エリアガイド｜仕事・家賃・交通・ビーチ生活 _(優先度 P0、意図: area-guide)_
-- `area-perth` — パース エリアガイド｜仕事・家賃・車・西海岸生活 _(優先度 P0、意図: area-guide)_
-- `area-cairns` — ケアンズ エリアガイド｜観光業・気候・ファームへの移動 _(優先度 P0、意図: area-guide)_
-- `area-canberra` — キャンベラ エリアガイド｜仕事・家賃・交通 _(優先度 P2、意図: area-guide)_
-- `area-hobart` — ホバート エリアガイド｜タスマニアの仕事と暮らし _(優先度 P2、意図: area-guide)_
-- `area-darwin` — ダーウィン エリアガイド｜乾季・雨季・仕事・北部条件 _(優先度 P1、意図: area-guide)_
+- ✅ `area-gold-coast` — ゴールドコースト エリアガイド｜仕事・家賃・交通・ビーチ生活 _(優先度 P0、意図: area-guide)_ **[公開済 2026-07-27]**
+- ✅ `area-perth` — パース エリアガイド｜仕事・家賃・車・西海岸生活 _(優先度 P0、意図: area-guide)_ **[公開済 2026-07-27]**
+- ✅ `area-cairns` — ケアンズ エリアガイド｜観光業・気候・ファームへの移動 _(優先度 P0、意図: area-guide)_ **[公開済 2026-07-27]**
+- ✅ `area-canberra` — キャンベラ エリアガイド｜仕事・家賃・交通 _(優先度 P2、意図: area-guide)_ **[公開済 2026-07-27]**
+- ✅ `area-hobart` — ホバート エリアガイド｜タスマニアの仕事と暮らし _(優先度 P2、意図: area-guide)_ **[公開済 2026-07-27]**
+- `area-darwin` — ダーウィン エリアガイド｜乾季・雨季・仕事・北部条件 _(優先度 P1、意図: area-guide)_ ← **次回開始**
 - `area-sunshine-coast` — サンシャインコースト エリアガイド _(優先度 P2、意図: area-guide)_
 - `area-toowoomba-gatton` — トゥーンバ・ガトン エリアガイド｜地方生活・ファーム・車 _(優先度 P0、意図: area-guide)_
 - `area-bundaberg` — バンダバーグ エリアガイド｜ファーム・家・交通 _(優先度 P1、意図: area-guide)_

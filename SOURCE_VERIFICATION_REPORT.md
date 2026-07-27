@@ -440,6 +440,19 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## area マイクロバッチ #1（ゴールドコースト / パース / ケアンズ / キャンベラ / ホバート / 2026-07-27 / 5件公開・既存結合記事2件を分割）
+
+area ハブの先頭5件を新規公開し、既存の結合記事2件（`area-brisbane`・`area-perth-cairns`）を分割・再構成した（すべて `hub: "area"`・`category: "area"`）。都市ガイドは可変事項（家賃・時給・求人数・運賃・シーズン需要）を断定せず、交通・気候・空港など**制度/公式に紐づく事実**を公式一次情報に照合し、各記事の `OfficialSourceBox` に出典と免責（制度・運賃・シーズンは変わりうる旨）を明示した。全5件に `verifiedAt: 2026-07-27` を付与。
+
+- `area-gold-coast`（P0, id a297, area-guide）— **Translink（QLD公共交通・go card・G:link 運賃）**（https://translink.com.au/ ）＋**Gold Coast Airport（OOL）**（https://www.goldcoastairport.com.au/ ）＋**Bureau of Meteorology｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。いずれもアクセス 2026-07-27。家賃は断定せず Flatmates・realestate.com.au での確認へ誘導。UV/熱中症は ARPANSA・BOM に言及。
+- `area-perth`（P0, id a298, area-guide）— **Transperth（WA公共交通・SmartRider・無料 CAT バス）**（https://www.transperth.wa.gov.au/ ）＋**Perth Airport（PER）**（https://www.perthairport.com.au/ ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-27。**時差（AWST・東海岸との差）**を明示。鉱業関連の賃金は断定せず募集ごとの確認へ誘導。
+- `area-cairns`（P0, id a299, area-guide）— **BOM｜Climate averages・気象警報（雨季・サイクロン）**（http://www.bom.gov.au/climate/averages/ ）＋**Department of Home Affairs｜Specified work（417 セカンドビザ対象作業）**（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work ）＋**Cairns Airport（CNS）**（https://www.cairnsairport.com.au/ ）。アクセス 2026-07-27。**雨季（11〜4月頃）・サイクロン**注意、悪質農園・セカンドビザ対象確認を強調。市内バス（Sunbus）の運賃・路線は変わりうるとして Translink/Queensland Government での確認へ誘導。
+- `area-canberra`（P2, id a300, area-guide）— **Transport Canberra（ACT公共交通・Light Rail・MyWay）**（https://www.transport.act.gov.au/ ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-27。**内陸で冬は冷え込み霜**の可能性を明示、求人数が少なめとして複数の探し方を推奨。
+- `area-hobart`（P2, id a301, area-guide）— **Metro Tasmania（TAS公共交通・Greencard）**（https://www.metrotas.com.au/ ）＋**Hobart Airport（HBA）**（https://www.hobartairport.com.au/ ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-27。**冷涼・冬は本土より寒い**を明示、季節労働（チェリー/ベリー/りんご/養殖）はシーズン確認へ誘導。
+- **既存結合記事の分割（公開URL保持・リダイレクトなし）:** `area-brisbane`（ブリスベン中心に再構成、Translink・BOM を照合、家賃の断定を撤廃し `verifiedAt` 付与）、`area-perth-cairns`（「パース vs ケアンズ」比較ガイドに再構成、家賃の断定を撤廃、詳細は新規 `area-perth`・`area-cairns` へ誘導）。**公開中URLの自動統合・リダイレクトは行わない**（リポジトリ方針に準拠）。
+- **統合・リダイレクト:** なし（5件は新規スラッグ、既存公開記事と検索意図が分離。既存結合記事はURL保持のまま分割・再構成）。未公開（planned）slug（`state-*-guide`・`area-darwin` 等）は `relatedSlugs` に含めず公開/既存 slug のみ参照（dangling 回避）。
+- **area 11/23 が最終ステータス確定（既存6件＋本バッチ5件）。次の未完了 area slug: `area-darwin`。travel には着手しない。**
+
 ## english マイクロバッチ #3＝english ハブ完了（リスニング教材 / 言語交換・Meetup / IELTS・PTE試験選び / 2026-07-27 / 3件公開・ハブ完了）
 
 english ハブの残り全3件を新規公開し、**ハブを完了**した（すべて `hub: "english"`・`category: "english"`）。タイトルの主要な問いに変わりうる事実（ビザの英語要件・受入試験・必要スコア）を含む1件は公式一次情報に照合し、記事内 `OfficialSourceBox` に出典と免責を明示した。残る2件は変わりうる数値・料金・法規の主張を含まないため、公式ソースは付さず `verifiedAt: 2026-07-27` のみ付与した。
