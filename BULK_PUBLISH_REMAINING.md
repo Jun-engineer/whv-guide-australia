@@ -4,6 +4,35 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-27）: english マイクロバッチ #2（5件公開 / commit: feat: publish english micro-batch）
+
+english（英語学習・会話）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で english は8件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理しました。以下が確定状態です。
+
+- **未完了 english 件数（開始時）:** 8件（すべて planned）。既に公開済みは既存2件（`english-prep`・`language-school`）＋マイクロバッチ #1 の5件。
+- **選定した5件（記録順の先頭5件）:** `bank-tax-english`, `medical-english`, `car-trouble-english`, `phone-call-english`, `email-message-templates`。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded ではないことを確認済み。
+- **分類:** 5件すべて **create**（新規スラッグ）。統合（merge）・レビュー（review）・除外（exclude）・更新（update, 内部リンクを除く）は該当なし。
+- **公開した5件（すべて `hub: english`・`category: english`・完全公開・分類は全て create）:**
+  `bank-tax-english`（P1, language, id a289）, `medical-english`（P0, language, id a290）,
+  `car-trouble-english`（P1, language, id a291）, `phone-call-english`（P1, learning, id a292）,
+  `email-message-templates`（P0, template, id a293）。
+- **作成（created）slug:** 上記5件。**更新（updated）slug:** `workplace-english`（内部リンクのみ）。
+  **統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、既存の公開記事とは検索意図が明確に異なる（銀行・税・年金の問い合わせ英語／医療の症状伝達英語／車トラブル英語／電話英語の練習法／英文メール・SMSテンプレート集）。各記事は場面特化のフレーズ集・実務テンプレで独立意図が強いため個別公開し、`relatedSlugs` で相互リンク。
+- **目的地モジュール:** `lib/content/articles/english.ts`（全て `category: "english"` / `hub: "english"`）。`mockData.ts` へは追加していない。
+- **既存記事の内部リンク:** `workplace-english` の `relatedSlugs` に `bank-tax-english`・`phone-call-english` を追記（本文・slug・URL・公開状態は不変）。孤立記事なし。
+- **孤立記事なし:** english カテゴリページ（`app/english/page.tsx` の `GuideCategoryPage category="english"`）が公開 english 記事を自動列挙するため、5件はすべて `/english` から到達可能。各記事は一意のモジュールにのみ存在。
+- **客観的事実と個人的推奨の区別:** 学習法・電話練習・テンプレは「人により合う/合わない」「例であり調整前提」と明示し推奨として提示。税率・手数料・医療判断・事故の届出義務など変わりうる/専門判断が要る事項は断定せず公式・専門家へ誘導。
+- **公式照合（記事反映済み・確認日 2026-07-27）:** `bank-tax-english`＝ATO Tax file number（TFNの申請は無料）。`medical-english`＝healthdirect（政府運営の無料健康相談・症状チェッカー／電話 1800 022 222）＋Triple Zero (000)。`car-trouble-english`＝Triple Zero (000)。`phone-call-english`・`email-message-templates` は変わりうる数値・料金・法規の主張を含まないため公式ソースは付さず、`verifiedAt: 2026-07-27` のみ付与。
+- **可変事項の断定回避:** 税率・控除・申告可否は年度・個人差が大きいとして ATO・登録税理士へ。医療の診断・治療は医療者へ、緊急時は000、緊急でない相談は healthdirect へ誘導。事故の警察届出義務は州で異なるとして各州交通当局・警察へ。修理は事前見積もり（quote）を推奨。欠勤の診断書要否は雇用形態・職場・Award で異なるとして契約＋Fair Work へ誘導。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug 0・重複パス 0・重複エクスポート 0・english 13件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）、新規5件の `relatedSlugs` は全て公開 slug に解決。
+  ※フルビルド/テスト/lint/sitemap/RSS/構造化データ監査は english ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **残り english slug（3件・すべて planned のまま）:** `listening-resources`, `language-exchange-meetup`, `ielts-pte-after-wh`。
+- **最初の未完了 english slug: `listening-resources`**（次回はここから再開。残り3件＝次回は english ハブ最終監査を実施）。
+- **次のバッチ: english（`listening-resources` から継続・残り3件で最終監査）。** ※本セッションは english の先頭5件のみ処理し、area/travel には着手しない。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/english.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: english マイクロバッチ #1（5件公開 / commit: feat: publish english micro-batch）
 
 english（英語学習・会話）ハブの最初の5件を公開しました（マイクロバッチ運用）。開始時点で english は13件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理しました。以下が確定状態です。
@@ -832,19 +861,19 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `online-scams-cybersecurity` — 偽SMS・求人詐欺・アカウント乗っ取り対策 _(優先度 P0、意図: security)_ **公開済み（2026-07-27）**
 - ✅ `phone-lost-stolen` — スマホを紛失・盗難された場合の対応 _(優先度 P1、意図: problem-solving)_ **公開済み（2026-07-27）**
 
-### english — 英語学習・会話 (13件・5件公開済み / 残り8件)
+### english — 英語学習・会話 (13件・10件公開済み / 残り3件)
 
 - ✅ `australian-english-accent` — オーストラリア英語の発音・アクセントに慣れる方法 _(優先度 P1、意図: learning)_ **公開済み（2026-07-27）**
 - ✅ `australian-slang` — ワーホリでよく聞くオーストラリア英語・スラング _(優先度 P1、意図: reference)_ **公開済み（2026-07-27）**
 - ✅ `workplace-english` — 職場で使う英語フレーズ｜確認・報告・欠勤・シフト _(優先度 P0、意図: language)_ **公開済み（2026-07-27）**
 - ✅ `hospitality-english` — レストラン・カフェ接客英語フレーズ _(優先度 P1、意図: language)_ **公開済み（2026-07-27）**
 - ✅ `housing-english` — 家探し・内見・退去で使う英語フレーズ _(優先度 P0、意図: language)_ **公開済み（2026-07-27）**
-- `bank-tax-english` — 銀行・ATO・Superの問い合わせ英語 _(優先度 P1、意図: language)_ ← 次の先頭
-- `medical-english` — 病院・薬局で症状を伝える英語フレーズ _(優先度 P0、意図: language)_
-- `car-trouble-english` — 車の故障・事故・修理で使う英語フレーズ _(優先度 P1、意図: language)_
-- `phone-call-english` — 英語の電話が怖い人向け｜聞き返し・保留・予約 _(優先度 P1、意図: learning)_
-- `email-message-templates` — ワーホリ生活の英文メール・SMSテンプレート集 _(優先度 P0、意図: template)_
-- `listening-resources` — ワーホリ準備におすすめのリスニング教材と使い方 _(優先度 P2、意図: learning)_
+- ✅ `bank-tax-english` — 銀行・ATO・Superの問い合わせ英語 _(優先度 P1、意図: language)_ **公開済み（2026-07-27）**
+- ✅ `medical-english` — 病院・薬局で症状を伝える英語フレーズ _(優先度 P0、意図: language)_ **公開済み（2026-07-27）**
+- ✅ `car-trouble-english` — 車の故障・事故・修理で使う英語フレーズ _(優先度 P1、意図: language)_ **公開済み（2026-07-27）**
+- ✅ `phone-call-english` — 英語の電話が怖い人向け｜聞き返し・保留・予約 _(優先度 P1、意図: learning)_ **公開済み（2026-07-27）**
+- ✅ `email-message-templates` — ワーホリ生活の英文メール・SMSテンプレート集 _(優先度 P0、意図: template)_ **公開済み（2026-07-27）**
+- `listening-resources` — ワーホリ準備におすすめのリスニング教材と使い方 _(優先度 P2、意図: learning)_ ← 次の先頭
 - `language-exchange-meetup` — Language Exchange・Meetupで友達と英語環境を作る方法 _(優先度 P2、意図: social)_
 - `ielts-pte-after-wh` — IELTS・PTEは必要？学生・就労・永住を考える人の試験選び _(優先度 P2、意図: comparison)_
 

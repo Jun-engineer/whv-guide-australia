@@ -387,9 +387,9 @@ export const englishArticles: Article[] = [
     ],
     relatedSlugs: [
       "hospitality-english",
-      "housing-english",
+      "bank-tax-english",
+      "phone-call-english",
       "jobs-guide",
-      "interview-guide",
       "english-prep",
     ],
     updatedAt: "2026-07-27",
@@ -582,6 +582,432 @@ export const englishArticles: Article[] = [
       "housing-guide",
       "share-house-finding",
       "inspection-checklist",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a289",
+    title: "銀行・ATO・Superの問い合わせ英語｜口座・税・年金の伝え方",
+    slug: "bank-tax-english",
+    category: "english",
+    hub: "english",
+    priority: "P1",
+    description:
+      "銀行での口座開設やカードのトラブル、ATO（税務署）やSuper（年金）への問い合わせで使う英語フレーズを場面別にまとめました。TFNや税・年金の具体的な制度・金額は変わるため、確実な内容は必ず公式（ATO・myGov）で確認しましょう。",
+    content: [
+      "銀行・税（ATO）・年金（Super）の手続きは、日本語でも用語が難しいぶん英語だと不安になりがちです。ただ、使うフレーズは意外と決まっているので、場面ごとの定型表現を用意しておけば電話でも窓口でも落ち着いて対応できます。この記事は『伝え方（英語フレーズ）』の解説であり、税率・手数料・申請要件などの制度そのものは扱いません。金額や要件は変わるため、確実な内容は必ず公式（ATO・myGov・各銀行）で確認してください（本記事の確認日: 2026-07-27）。",
+      "銀行では、口座開設（I'd like to open a bank account）、カードの紛失・停止（I've lost my card / Can you block my card?）、送金や海外送金（I'd like to make a transfer）、手数料の確認（Is there a fee for this?）などが頻出です。到着直後は口座開設のために本人確認書類（パスポート等）が必要になるため、\"What documents do I need to open an account?\" と先に聞いておくとスムーズです。",
+      "税に関する問い合わせは主に ATO（Australian Taxation Office）と myGov 経由になります。よく使うのは、TFN（税務番号）の申請状況（I've applied for a Tax File Number and I'd like to check the status）、TFNを雇用主に伝える（Here is my Tax File Number）、確定申告（tax return）の質問など。TFNの申請は公式サイトから無料でできます。税率・控除・申告方法は年度や個人の状況で変わるため、金額や可否の断定は避け、ATO や登録税理士（registered tax agent）に確認するのが安全です。",
+      "Super（退職年金）については、雇用主に『どのファンドに払われているか（Which super fund do you pay into?）』を確認したり、Superファンドに口座情報や連絡先の更新を依頼したりする場面があります。帰国時の払い戻し（DASP）や積立の仕組みは制度で決まっており変わりうるため、この記事のフレーズは『問い合わせの言い方』にとどめ、具体的な手続き・金額は ATO と各Superファンドの公式情報で確認してください。",
+    ],
+    keyFacts: [
+      { label: "この記事の範囲", value: "英語フレーズ（伝え方）のみ。税率・手数料・要件は扱わない" },
+      { label: "銀行で頻出", value: "口座開設 / カード停止 / 送金 / 手数料確認" },
+      { label: "税（ATO）", value: "TFNの申請・確認、確定申告の問い合わせ。金額・要件は公式で確認" },
+      { label: "TFN申請", value: "ATO公式から無料で申請できる" },
+      { label: "確実な情報源", value: "ATO・myGov・各銀行・登録税理士（registered tax agent）" },
+    ],
+    steps: [
+      {
+        title: "用件を一文で言えるようにする",
+        description:
+          "\"I'd like to open an account / block my card / check my TFN status\" のように、最初に用件を短く伝えると案内がスムーズです。",
+      },
+      {
+        title: "必要書類・番号を先に確認",
+        description:
+          "\"What do I need to bring?\" や \"Do you need my TFN?\" で、手続きに必要なものを事前に把握します。",
+      },
+      {
+        title: "分からない語はその場で聞く",
+        description:
+          "\"Sorry, what does that mean?\" や \"Could you explain that in simple English?\" で確認。専門用語は遠慮なく聞きましょう。",
+      },
+      {
+        title: "金額・要件は公式で裏取り",
+        description:
+          "税率・手数料・申請可否など変わりうる情報は、窓口の説明に加えて ATO・myGov・銀行公式でも確認します。",
+      },
+    ],
+    tips: [
+      "電話が不安なときは、用件と必要フレーズを紙に書き出してから掛けると落ち着いて話せます。",
+      "TFNやカード番号などの重要情報は、相手が正規の窓口か確認してから伝えましょう（詐欺SMS・偽の電話に注意）。",
+      "税・年金の『金額や可否』は年度・個人差が大きい分野です。断定情報はうのみにせず公式で確認を。",
+    ],
+    phrases: [
+      { en: "I'd like to open a bank account, please. What documents do I need?", ja: "口座を開設したいです。何の書類が必要ですか？", note: "口座開設" },
+      { en: "I've lost my card. Can you block it, please?", ja: "カードをなくしました。止めてもらえますか？", note: "カード紛失・停止" },
+      { en: "Is there a fee for an international transfer?", ja: "海外送金に手数料はかかりますか？", note: "手数料確認" },
+      { en: "I've applied for a Tax File Number. Can I check the status?", ja: "TFNを申請しました。状況を確認できますか？", note: "ATOへの問い合わせ" },
+      { en: "Which super fund do you pay my super into?", ja: "私のSuperはどのファンドに払われていますか？", note: "雇用主へ確認" },
+      { en: "Could you explain that in simple English, please?", ja: "簡単な英語で説明してもらえますか？", note: "用語が難しいとき" },
+    ],
+    faqs: [
+      {
+        question: "税金や年金のことを英語でうまく説明できるか不安です。",
+        answer:
+          "多くの手続きは定型的なので、用件を一文で伝えられれば大丈夫です。難しい専門用語が出てきたら \"Could you explain that in simple English?\" と頼めます。ATO には通訳サービス（TIS）を利用できる案内もあり、日本語対応の情報ページも用意されています。金額や要件など確実性が必要な内容は、口頭の説明だけで判断せず公式サイトで確認しましょう。",
+      },
+      {
+        question: "TFNやカード番号を電話で聞かれたら答えていい？",
+        answer:
+          "自分から正規の窓口に掛けた場合を除き、先方から突然電話やSMSで番号を求められたときは注意が必要です。ATOや銀行を名乗る詐欺も多いため、番号を伝える前に公式の連絡先に自分から掛け直して確認しましょう。TFN・口座情報は不用意に共有しないのが基本です。",
+      },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "ATO｜Tax file number（TFNの申請・確認。申請は無料）",
+        url: "https://www.ato.gov.au/individuals-and-families/tax-file-number",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "bank-account-guide",
+      "mygov-ato-linking",
+      "superannuation-basics",
+      "workplace-english",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a290",
+    title: "病院・薬局で症状を伝える英語フレーズ｜GP・薬局・緊急",
+    slug: "medical-english",
+    category: "english",
+    hub: "english",
+    priority: "P0",
+    description:
+      "GP（かかりつけ医）の予約、症状の伝え方、薬局での相談、緊急時の英語フレーズを場面別にまとめました。緊急時は迷わず000。症状や治療の判断は必ず医療者に相談し、健康情報はhealthdirectなど公式で確認してください。",
+    content: [
+      "体調を崩したとき、英語で症状を伝えられるか不安になる人は多いです。でも医療の現場で使う表現はパターン化されているので、『予約する』『症状を伝える』『薬をもらう』の3場面の定型を用意しておけば落ち着いて対応できます。この記事は英語フレーズの解説であり、診断や治療方針を示すものではありません。症状の判断や治療は必ず医師・薬剤師などの医療者に相談してください（本記事の確認日: 2026-07-27）。",
+      "まず緊急時の原則を押さえましょう。命に関わる・重いけが・意識がない・呼吸が苦しいなどのときは、迷わず 000（Triple Zero）に電話し、\"I need an ambulance\" と伝えます。緊急でない健康相談は、政府が運営する healthdirect の電話相談（1800 022 222）やオンラインの症状チェッカーも利用できます。判断に迷うときの心強い入り口です。",
+      "一般的な受診は GP（General Practitioner＝かかりつけ医）の予約から始まります。電話や予約サイトで \"I'd like to make an appointment to see a doctor\" と伝え、症状を簡単に説明します。診察では、\"I have a sore throat / a fever / a headache\"（喉が痛い／熱がある／頭が痛い）、\"It started three days ago\"（3日前から）、\"It hurts here\"（ここが痛い）など、症状・部位・いつからを伝えると診察がスムーズです。痛みの強さを 1〜10 で聞かれることもあります。",
+      "薬局（pharmacy／chemist）では、処方箋（prescription）を出して薬を受け取るほか、市販薬について薬剤師（pharmacist）に相談できます。\"Can you recommend something for a cold / hay fever?\"（風邪／花粉症の薬を薦めてもらえますか）や、アレルギー・妊娠・服用中の薬を伝える \"I'm allergic to penicillin\" / \"I'm taking other medication\" は安全のため重要です。薬の使い方・量は必ず薬剤師の指示とラベルに従ってください。",
+    ],
+    keyFacts: [
+      { label: "緊急時", value: "命に関わる・重症は迷わず000（\"I need an ambulance\"）" },
+      { label: "緊急でない健康相談", value: "healthdirect 電話相談 1800 022 222 / 症状チェッカー" },
+      { label: "一般の受診", value: "GP（かかりつけ医）を予約 → 症状・部位・いつからを伝える" },
+      { label: "薬局", value: "処方箋の受け取り／市販薬は薬剤師に相談" },
+      { label: "この記事の範囲", value: "英語フレーズのみ。診断・治療の判断は医療者へ" },
+    ],
+    steps: [
+      {
+        title: "緊急かどうかを判断",
+        description:
+          "命に関わる・重いけが・呼吸困難などは000。緊急でなければ GP 予約や healthdirect（1800 022 222）を使います。",
+      },
+      {
+        title: "GPを予約する",
+        description:
+          "\"I'd like to make an appointment to see a doctor.\" と伝え、症状を一言添えます。空き状況と料金（bulk billingか）も確認を。",
+      },
+      {
+        title: "症状を『部位・いつから・強さ』で伝える",
+        description:
+          "\"I have a fever. It started two days ago. It hurts here.\" のように、順番に伝えると診察が早く進みます。",
+      },
+      {
+        title: "薬局でアレルギー・服用薬を伝える",
+        description:
+          "市販薬を買うときも \"I'm allergic to... / I'm taking...\" を伝え、使い方は薬剤師の指示に従います。",
+      },
+    ],
+    tips: [
+      "症状の英単語（fever/cough/rash/dizzy など）をメモしておくと、診察で言葉に詰まりません。",
+      "通訳が必要なときは、医療機関で通訳サービス（TIS）を頼める場合があります。遠慮なく相談を。",
+      "海外旅行保険・OSHCなどの保険がある人は、受診前に補償範囲とキャッシュレス対応を確認しておくと安心です。",
+    ],
+    phrases: [
+      { en: "I'd like to make an appointment to see a doctor.", ja: "医師の診察を予約したいです。", note: "GP予約" },
+      { en: "I have a fever and a sore throat.", ja: "熱と喉の痛みがあります。", note: "症状を伝える" },
+      { en: "It started three days ago.", ja: "3日前から始まりました。", note: "いつからかを伝える" },
+      { en: "It hurts here. The pain is about a seven out of ten.", ja: "ここが痛いです。痛みは10段階で7くらいです。", note: "部位と強さ" },
+      { en: "I'm allergic to penicillin.", ja: "ペニシリンにアレルギーがあります。", note: "薬局・診察で重要" },
+      { en: "I need an ambulance.", ja: "救急車をお願いします。", note: "緊急時に000で" },
+    ],
+    faqs: [
+      {
+        question: "英語で症状をうまく説明できるか心配です。",
+        answer:
+          "『どこが・いつから・どんなふうに』の順で単語をつなげれば十分伝わります。例えば \"My stomach hurts. It started last night.\" のように短い文で大丈夫です。言葉に詰まったら体を指して \"here\" と示したり、症状の単語をメモして見せたりする方法もあります。医療機関では通訳サービスを利用できる場合もあるので、正確に伝えたいときは相談しましょう。",
+      },
+      {
+        question: "救急車を呼ぶべきか、GPで良いか分かりません。",
+        answer:
+          "意識がない・呼吸が苦しい・激しい胸の痛み・大量の出血・重いけがなど命に関わる可能性があるときは、迷わず000に電話してください。緊急ではないが不安、というときは、政府運営の healthdirect（1800 022 222）に電話して看護師に相談したり、オンラインの症状チェッカーで受診の目安を確認できます。最終的な医療判断は必ず医療者に委ねてください。",
+      },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "healthdirect（政府運営の無料健康相談・症状チェッカー／電話 1800 022 222）",
+        url: "https://www.healthdirect.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+      {
+        label: "Triple Zero (000)（緊急通報の公式案内）",
+        url: "https://www.triplezero.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "gp-urgent-care-emergency",
+      "pharmacy-guide",
+      "common-medicines-australia",
+      "overseas-insurance-claim",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a291",
+    title: "車の故障・事故・修理で使う英語フレーズ｜ロードサービス・整備",
+    slug: "car-trouble-english",
+    category: "english",
+    hub: "english",
+    priority: "P1",
+    description:
+      "車の故障やパンク、事故、整備工場でのやり取りで使う英語フレーズを場面別にまとめました。けが人がいる・危険なときは000。事故の届出義務など具体的なルールは州で異なるため、各州の交通当局・警察で確認してください。",
+    content: [
+      "オーストラリアは車社会で、ワーホリ中に車のトラブルに遭う人も少なくありません。故障・パンク・事故・整備といった場面は、使う英語がだいたい決まっているので、定型フレーズを知っておくと緊急時でも落ち着いて対応できます。この記事は英語の『伝え方』の解説です。事故の届出義務や保険の扱いなど具体的なルールは州・状況で異なるため、正確な内容は各州の交通当局・警察・保険会社で確認してください（本記事の確認日: 2026-07-27）。",
+      "まず安全が最優先です。事故でけが人がいる・車が燃えている・道路をふさいで危険といった緊急時は、迷わず 000 に電話し、\"There's been a car accident. Someone is injured.\"（事故です。けが人がいます）と場所を伝えます。緊急でない故障や動けなくなったとき（breakdown）は、加入していればロードサイドアシスタンス（roadside assistance）に電話します。",
+      "ロードサービスや整備工場では、症状を具体的に伝えると対応が早くなります。\"My car won't start\"（エンジンがかからない）、\"I have a flat tyre\"（パンクした）、\"The battery is flat\"（バッテリー上がり）、\"There's a strange noise from the engine\"（変な音がする）など。現在地を伝える \"I'm on the Bruce Highway, near ...\" も重要です。見積もりは \"How much will it cost to fix?\" / \"Can you give me a quote first?\" と、修理前に確認しましょう。",
+      "事故に遭ったときは、相手と情報交換をします。\"Can I get your name, phone number and rego?\"（名前・電話番号・ナンバーを教えてください）、\"Are you okay? Is anyone hurt?\"（大丈夫ですか、けが人は？）、保険のために写真を撮り、状況をメモします。警察への届出が必要かどうか（けが人がいる、金額が大きい等）は州のルールで異なるため、判断に迷うときは警察の非緊急窓口や各州交通当局に確認してください。",
+    ],
+    keyFacts: [
+      { label: "緊急時", value: "けが人・火災・危険は000（\"Someone is injured\"）" },
+      { label: "動けない故障", value: "加入していれば roadside assistance に電話" },
+      { label: "整備工場", value: "症状を具体的に＋修理前に見積もり（quote）を確認" },
+      { label: "事故時", value: "相手の名前・電話・rego（ナンバー）を交換し写真を撮る" },
+      { label: "届出義務", value: "警察届出の要否は州・状況で異なる → 各州当局・警察で確認" },
+    ],
+    steps: [
+      {
+        title: "安全確保と緊急判断",
+        description:
+          "けが人・火災・交通の危険があれば000。安全な場所に移動し、ハザードを点けます。",
+      },
+      {
+        title: "ロードサービスに状況を伝える",
+        description:
+          "\"My car has broken down. I'm on ... near ...\" と症状と現在地を伝えます。会員番号があれば準備を。",
+      },
+      {
+        title: "整備工場で症状＋見積もり",
+        description:
+          "\"There's a noise from the engine. Can you give me a quote before you fix it?\" と修理前に金額を確認します。",
+      },
+      {
+        title: "事故は情報交換と記録",
+        description:
+          "相手の名前・電話・rego を控え、写真とメモを残します。届出の要否は各州のルールに従います。",
+      },
+    ],
+    tips: [
+      "現在地が説明しにくいときは、地図アプリの現在地共有や近くの店名・道路名を伝えると早く来てもらえます。",
+      "修理は『先に見積もり（quote）』が鉄則。作業後に高額請求されないよう、金額と内容を事前に確認しましょう。",
+      "事故時は感情的に非を認める発言をせず、事実（場所・時刻・状況）を淡々と記録。詳しい対応は保険会社に相談を。",
+    ],
+    phrases: [
+      { en: "My car won't start.", ja: "エンジンがかかりません。", note: "故障の症状" },
+      { en: "I have a flat tyre.", ja: "パンクしました。", note: "tyre = タイヤ（英豪表記）" },
+      { en: "My car has broken down. I'm on the highway near the servo.", ja: "車が動かなくなりました。ガソリンスタンド近くの幹線道路にいます。", note: "ロードサービスへ" },
+      { en: "Can you give me a quote before you start?", ja: "作業前に見積もりをもらえますか？", note: "整備工場で必須" },
+      { en: "Can I get your name, phone number and rego?", ja: "名前・電話番号・ナンバーを教えてください。", note: "事故の情報交換" },
+      { en: "There's been an accident. Someone is injured.", ja: "事故です。けが人がいます。", note: "000へ" },
+    ],
+    faqs: [
+      {
+        question: "事故を起こしたら必ず警察に連絡しないといけませんか？",
+        answer:
+          "警察へ届け出る義務があるかどうかは、けが人の有無・損害の大きさ・当て逃げかどうかなどによって決まり、州ごとにルールが異なります。けが人がいる・危険がある場合は000。それ以外でも判断に迷うときは、各州の交通当局や警察の非緊急窓口で確認してください。多くの場合、保険手続きのために相手情報の交換と記録は必要です。",
+      },
+      {
+        question: "整備工場でぼったくられないか心配です。",
+        answer:
+          "作業を始める前に必ず見積もり（quote）をもらい、内容と金額に納得してから依頼しましょう。\"Can you give me a quote first?\" と伝えれば普通のことです。高額な修理は複数の工場で見積もりを取る（get a second quote）と安心です。請求に納得できないときは、各州の消費者保護（Fair Trading／Consumer Affairs）に相談できます。",
+      },
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "Triple Zero (000)（緊急通報の公式案内）",
+        url: "https://www.triplezero.gov.au/",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "car-breakdown-guide",
+      "flat-tyre-guide",
+      "mechanic-tyre-shop-english",
+      "car-accident-guide",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a292",
+    title: "英語の電話が怖い人向け｜聞き返し・保留・予約の英語",
+    slug: "phone-call-english",
+    category: "english",
+    hub: "english",
+    priority: "P1",
+    description:
+      "相手の顔が見えない英語の電話が苦手な人向けに、名乗り方・聞き返し・保留のお願い・予約・スペルの伝え方など、電話で使える定番フレーズと不安をやわらげるコツをまとめました。",
+    content: [
+      "英語の電話が怖いのは当たり前です。相手の口元も表情も見えず、聞き返しづらいと感じるからです。でも電話で使う英語はパターンが決まっているので、『名乗る』『用件を言う』『聞き返す』『保留・折り返しをお願いする』の型を用意しておけば、かなり落ち着いて話せます。この記事は電話英語の練習法とフレーズ集で、変わりうる制度や数値は扱いません（本記事の確認日: 2026-07-27）。",
+      "最初の型はシンプルです。\"Hi, my name is ... I'm calling about ...\"（〜の件で電話しました）と名乗って用件を一言。相手の名前や用件が聞き取れなくても大丈夫、\"Sorry, could you say that again, please?\"（もう一度お願いします）や \"Could you speak a little more slowly?\"（もう少しゆっくり話してもらえますか）で何度でも聞き返せます。聞き返すのは失礼ではなく、むしろ正確なやり取りのために歓迎されます。",
+      "電話ならではの場面も定型で乗り切れます。少し待ってほしいときは \"Could you hold on a moment, please?\"、あとで掛け直したいときは \"Can I call you back in five minutes?\"。名前・メールアドレス・住所などを正確に伝えるには、\"Let me spell that for you\" と言ってアルファベットを一文字ずつ。聞き取りにくい文字は \"A for Apple, B for Boy\" のように単語で補うと確実です。番号は一桁ずつゆっくり読み上げます。",
+      "上達のコツは『台本を用意して声に出す』ことです。かける前に、名乗り・用件・想定される質問への答えを紙に書いておくと安心して話せます。留守番電話（voicemail）につながったときのために、\"Hi, this is ... Please call me back on ...\" の一言も準備を。最初は緊張しても、数回こなせば型が体に入り、電話への苦手意識は必ずやわらいでいきます。",
+    ],
+    keyFacts: [
+      { label: "電話の基本の型", value: "名乗る → 用件 → 聞き返す → 保留・折り返しをお願い" },
+      { label: "最強の聞き返し", value: "\"Sorry, could you say that again, please?\"" },
+      { label: "ゆっくり頼む", value: "\"Could you speak a little more slowly?\"" },
+      { label: "スペルを伝える", value: "\"A for Apple\" のように単語で一文字ずつ" },
+      { label: "上達のコツ", value: "かける前に台本を書いて声に出して練習する" },
+    ],
+    steps: [
+      {
+        title: "かける前に台本を書く",
+        description:
+          "名乗り・用件・想定質問への答えをメモ。数字や固有名詞は読み方も書いておくと安心です。",
+      },
+      {
+        title: "名乗って用件を一言で",
+        description:
+          "\"Hi, my name is ... I'm calling about ...\" で始めれば、あとは相手が案内してくれます。",
+      },
+      {
+        title: "遠慮なく聞き返す",
+        description:
+          "\"Sorry, could you say that again?\" や \"Could you speak more slowly?\" は何度使ってもOKです。",
+      },
+      {
+        title: "スペル・番号はゆっくり確認",
+        description:
+          "\"Let me spell that\" で一文字ずつ、番号は一桁ずつ。最後に \"Let me repeat that back\" で復唱すると確実です。",
+      },
+    ],
+    tips: [
+      "緊張するのは自然なこと。完璧に話すより『用件が伝わればOK』と割り切ると気が楽になります。",
+      "静かな場所から掛けると聞き取りやすさが段違いです。電波の良い場所を選びましょう。",
+      "どうしても不安な用件は、電話より問い合わせフォームやメールで済ませられないか確認するのも手です。",
+    ],
+    phrases: [
+      { en: "Hi, my name is Yuki. I'm calling about the job ad.", ja: "こんにちは、ユキと申します。求人の件で電話しました。", note: "名乗り＋用件" },
+      { en: "Sorry, could you say that again, please?", ja: "すみません、もう一度言ってもらえますか？", note: "聞き返しの定番" },
+      { en: "Could you speak a little more slowly, please?", ja: "もう少しゆっくり話してもらえますか？" },
+      { en: "Could you hold on a moment, please?", ja: "少しお待ちいただけますか？", note: "保留をお願い" },
+      { en: "Let me spell that for you: A for Apple, B for Boy.", ja: "スペルを伝えます、AはApple、BはBoyの…", note: "名前・住所を正確に" },
+      { en: "Can I call you back in five minutes?", ja: "5分後に掛け直してもいいですか？", note: "折り返し" },
+    ],
+    faqs: [
+      {
+        question: "聞き返してばかりだと失礼になりませんか？",
+        answer:
+          "なりません。正確に用件を進めるために聞き返すのはごく普通で、相手もむしろ助かります。\"Sorry, could you say that again?\" や \"Just to confirm, ...\"（確認ですが…）と丁寧に言えば、何度聞き返しても問題ありません。曖昧なまま進めて間違えるより、その場で確認するほうがずっと良い対応です。",
+      },
+      {
+        question: "電話の英語を練習する良い方法はありますか？",
+        answer:
+          "かける前に台本を書いて声に出す練習が効果的です。名乗り・用件・想定される質問への答えを準備し、実際に口に出してリハーサルします。友人と電話でロールプレイしたり、留守番電話に自分のメッセージを吹き込んで聞き返したりするのもおすすめです。数をこなすほど型が身につき、苦手意識は薄れていきます。",
+      },
+    ],
+    verifiedAt: "2026-07-27",
+    relatedSlugs: [
+      "workplace-english",
+      "bank-tax-english",
+      "medical-english",
+      "australian-english-accent",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
+
+  {
+    id: "a293",
+    title: "ワーホリ生活の英文メール・SMSテンプレート集｜仕事・家・予約",
+    slug: "email-message-templates",
+    category: "english",
+    hub: "english",
+    priority: "P0",
+    description:
+      "求人への応募、家探しの問い合わせ、予約やキャンセル、欠勤連絡など、ワーホリ生活でよく使う英文メール・SMSのテンプレートを場面別にまとめました。コピーして名前や日付を入れ替えるだけで使えます。",
+    content: [
+      "英語のメールやSMSは、型（テンプレート）さえあれば怖くありません。ワーホリ生活で送るメッセージは『応募』『問い合わせ』『予約・変更』『お礼・連絡』などパターンが決まっているので、雛形を用意しておけば毎回ゼロから考えずに済みます。以下のテンプレートはあくまで例です。自分の状況に合わせて名前・日付・詳細を差し替え、相手や場面に応じて丁寧さを調整して使ってください（本記事の確認日: 2026-07-27）。",
+      "求人への応募メールは、件名・用件・自己PR・添付の案内をコンパクトにまとめます。例：件名 \"Application for Kitchen Hand position\"、本文 \"Hi, my name is Yuki. I'm interested in the kitchen hand role advertised on ... I have experience in ... and I'm available to start immediately. My resume is attached. Kind regards, Yuki.\" 短くても、経験と『いつから働けるか（availability）』を必ず入れると返信が来やすくなります。",
+      "家探しの問い合わせは、内見の希望と自分の情報を簡潔に。例：\"Hi, I saw your listing for the room in ... Is it still available? I'm a working holiday maker, a non-smoker, and I'm looking to move in from ... Could I arrange an inspection? Thanks, Yuki.\" 空室確認・入居希望日・内見依頼の3点を押さえると話が早く進みます。",
+      "予約やキャンセル、欠勤連絡もテンプレ化できます。予約変更なら \"Hi, I have a booking on ... under the name ... Could I change it to ...?\"、体調不良の欠勤連絡なら \"Hi, I'm not feeling well and won't be able to come in today. I'm sorry for the short notice.\" 欠勤・遅刻はできるだけ早く、簡潔に理由と謝意を伝えるのがマナーです。診断書の要否など職場のルールは雇用契約や上司の指示に従ってください。",
+    ],
+    keyFacts: [
+      { label: "この記事の中身", value: "応募・家探し・予約変更・欠勤連絡などの英文テンプレート" },
+      { label: "使い方", value: "名前・日付・詳細を差し替え、丁寧さを場面で調整" },
+      { label: "応募で必須", value: "経験＋availability（いつから働けるか）" },
+      { label: "家探しで必須", value: "空室確認・入居希望日・内見依頼の3点" },
+      { label: "欠勤連絡", value: "できるだけ早く・簡潔に・理由と謝意。職場ルールに従う" },
+    ],
+    steps: [
+      {
+        title: "場面に合うテンプレを選ぶ",
+        description:
+          "応募・家探し・予約・欠勤など、目的に合った雛形を選びます。件名は用件がひと目で分かるものに。",
+      },
+      {
+        title: "自分の情報に差し替える",
+        description:
+          "名前・日付・物件名・求人名などを入れ替えます。availabilityや入居希望日など『相手が知りたい情報』を忘れずに。",
+      },
+      {
+        title: "丁寧さを調整する",
+        description:
+          "初対面や雇用主には Hi/Kind regards など少し丁寧に、友人には砕けた表現でOK。相手に合わせます。",
+      },
+      {
+        title: "送信前に見直す",
+        description:
+          "宛先・添付（resume等）・日付・連絡先の間違いがないか確認。SMSは短く要点だけにまとめます。",
+      },
+    ],
+    tips: [
+      "テンプレはスマホのメモに保存しておくと、外出先でもすぐコピーして使えます。",
+      "返信が来ないときは、数日空けて一度だけ丁寧にフォローアップ（\"Just following up on my message...\"）してもOKです。",
+      "欠勤・キャンセルは早いほど印象が良いです。ギリギリより、分かった時点で早めに連絡を。",
+    ],
+    phrases: [
+      { en: "Application for Kitchen Hand position", ja: "キッチンハンド応募の件（メール件名の例）", note: "件名は用件を明確に" },
+      { en: "I'm available to start immediately.", ja: "すぐに働き始められます。", note: "応募で好印象" },
+      { en: "Is the room still available? Could I arrange an inspection?", ja: "部屋はまだ空いていますか？内見をお願いできますか？", note: "家探しの問い合わせ" },
+      { en: "Could I change my booking to Friday at 6pm?", ja: "予約を金曜18時に変更できますか？", note: "予約変更" },
+      { en: "I'm not feeling well and won't be able to come in today. Sorry for the short notice.", ja: "体調不良で今日は出勤できません。急な連絡ですみません。", note: "欠勤連絡" },
+      { en: "Just following up on my message from last week.", ja: "先週のメッセージの件、確認のご連絡です。", note: "フォローアップ" },
+    ],
+    faqs: [
+      {
+        question: "メールとSMS（テキスト）で書き方は変えるべきですか？",
+        answer:
+          "はい、少し変えると自然です。メールは件名を付け、\"Hi ...,\" で始めて \"Kind regards, 名前\" で締めるなど、ある程度きちんとした形にします。SMSはもっと短く、用件だけを簡潔に。ただしどちらでも、初対面の相手や雇用主には最低限の丁寧さ（Hi/Thanks）を保つと印象が良くなります。相手や関係性に合わせて調整しましょう。",
+      },
+      {
+        question: "欠勤の連絡は詳しい理由まで書くべき？",
+        answer:
+          "長々と説明する必要はありません。\"I'm not feeling well and won't be able to come in today.\" のように、来られないことと簡単な理由、急な連絡への謝意を伝えれば十分です。診断書（medical certificate）が必要かどうかは雇用形態・職場・該当するAwardで異なるため、雇用契約や上司の指示、Fair Workの案内に従ってください。",
+      },
+    ],
+    verifiedAt: "2026-07-27",
+    relatedSlugs: [
+      "housing-english",
+      "workplace-english",
+      "bank-tax-english",
+      "cover-letter-guide",
     ],
     updatedAt: "2026-07-27",
     published: true,

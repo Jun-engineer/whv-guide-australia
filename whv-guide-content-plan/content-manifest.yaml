@@ -3091,7 +3091,7 @@ planned_content:
 - slug: bank-tax-english
   title: 銀行・ATO・Superの問い合わせ英語
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: language
@@ -3101,7 +3101,7 @@ planned_content:
 - slug: medical-english
   title: 病院・薬局で症状を伝える英語フレーズ
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: language
@@ -3111,7 +3111,7 @@ planned_content:
 - slug: car-trouble-english
   title: 車の故障・事故・修理で使う英語フレーズ
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: language
@@ -3121,7 +3121,7 @@ planned_content:
 - slug: phone-call-english
   title: 英語の電話が怖い人向け｜聞き返し・保留・予約
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: learning
@@ -3131,7 +3131,7 @@ planned_content:
 - slug: email-message-templates
   title: ワーホリ生活の英文メール・SMSテンプレート集
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: template

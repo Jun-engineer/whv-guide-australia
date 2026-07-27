@@ -229,6 +229,28 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   `international-driving-permit` へ接続、`transport-payment-guide` に `intercity-transport` を追加。孤立記事なし。
 - 備考: これで transport ハブは全24件が最終ステータス確定（planned 0件・ハブ完了）。
 
+### english マイクロバッチ #2（2026-07-27 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。** english ハブの次の5件
+（`bank-tax-english` / `medical-english` / `car-trouble-english` /
+`phone-call-english` / `email-message-templates`）はすべて**新規スラッグ**（`hub: "english"`・`category: "english"`）で、
+既存の公開記事（マイクロバッチ #1 の5件・`english-prep`・`language-school`）とは
+**検索意図が明確に異なり（銀行・税・年金の問い合わせ英語／医療の症状伝達英語／車トラブル英語／
+電話英語の練習法／英文メール・SMSテンプレート集）、全面重複はないため、新規の統合・リダイレクトは発生せず**、
+`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 新規5件どうしを意図の近い組で双方向リンク（`phone-call-english` ↔ `bank-tax-english`・`medical-english`、
+  `email-message-templates` ↔ `bank-tax-english`・`workplace-english` 等）。
+- 既存記事本文への内部リンク追記（更新）: `workplace-english` に `bank-tax-english`・`phone-call-english` を追加
+  （本文・slug・URL・公開状態は不変）。
+- `bank-tax-english`（銀行・税・年金の問い合わせ英語）と既存の金融・税カテゴリ記事（`bank-account-guide` /
+  `mygov-ato-linking` / `superannuation-basics`）は役割が異なる（前者＝英語フレーズの伝え方、後者＝制度・手続きの解説）
+  ため別記事として保持し双方向リンク。同様に `medical-english`／`car-trouble-english` も既存の医療・車ガイドとは
+  「英語の伝え方」と「制度・手続き」で意図が分離。
+- 孤立記事なし: english ハブページ（`GuideCategoryPage category="english"`）が公開 english 記事を
+  自動列挙するため、5件はすべてハブから到達可能。
+- 次の未完了 english slug: `listening-resources`（残り3件・次回は english ハブ最終監査を実施）。
+
 ### english マイクロバッチ #1（2026-07-27 / 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。** english ハブの最初の5件

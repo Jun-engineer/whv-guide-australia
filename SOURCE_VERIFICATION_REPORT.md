@@ -440,6 +440,16 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## english マイクロバッチ #2（銀行・税・年金英語 / 医療英語 / 車トラブル英語 / 電話英語 / 英文テンプレート / 2026-07-27 / 5件公開）
+
+english ハブの次の5件を新規公開した（すべて `hub: "english"`・`category: "english"`）。タイトルの主要な問いに関わる変わりうる事実（税・年金の手続き、医療・緊急、事故対応）は公式一次情報に照合し、記事内 `OfficialSourceBox` に出典と免責を明示した。電話英語・英文テンプレートの2件は変わりうる数値・料金・法規の主張を含まないため、公式ソースは付さず `verifiedAt: 2026-07-27` のみ付与した。
+
+- `bank-tax-english`（P1, id a289）— **ATO｜Tax file number**（https://www.ato.gov.au/individuals-and-families/tax-file-number ／アクセス 2026-07-27）。「TFNの申請は無料（It is free to apply）」を確認。税率・控除・申告可否は年度・個人の状況で変わるため断定せず、ATO・myGov・登録税理士（registered tax agent）へ誘導。記事は「英語フレーズ（伝え方）」に限定し制度・金額は扱わない旨を明記。
+- `medical-english`（P0, id a290）— **healthdirect**（政府運営の無料健康相談・症状チェッカー／24時間電話 **1800 022 222**。https://www.healthdirect.gov.au/ ／アクセス 2026-07-27）＋**Triple Zero (000)**（緊急通報。https://www.triplezero.gov.au/ ）。診断・治療の判断は必ず医療者に委ねる旨を明示し、緊急時は000、緊急でない相談は healthdirect へ誘導。
+- `car-trouble-english`（P1, id a291）— **Triple Zero (000)**（けが人・火災・危険時の緊急通報。https://www.triplezero.gov.au/ ／アクセス 2026-07-27）。事故の警察届出義務・保険の扱いは**州・状況で異なる**ため断定せず、各州交通当局・警察・保険会社へ誘導。整備は事前見積もり（quote）取得を推奨。
+- `phone-call-english`（P1, id a292）・`email-message-templates`（P0, id a293）— 変わりうる数値・料金・法規の主張なし。電話の練習法・英文テンプレートは「例であり、名前・日付・詳細を差し替え、相手・場面で丁寧さを調整する」前提を明示。`verifiedAt: 2026-07-27` のみ付与、`officialSources` なし。欠勤連絡テンプレでは診断書要否が雇用形態・職場・Award で異なるとして契約＋Fair Work へ誘導。
+- **統合・リダイレクト:** なし（5件は新規スラッグ、既存公開記事・マイクロバッチ #1 と検索意図が分離）。既存 `workplace-english` へは内部リンクのみ追記。
+
 ## english マイクロバッチ #1（職場英語・接客英語・家探し英語・豪州アクセント・スラング / 2026-07-27 / 5件公開）
 
 english ハブの最初の5件を新規公開した（すべて `hub: "english"`・`category: "english"`）。タイトルの主要な問いに関わる変わりうる事実（労働条件・アレルギー表示・賃貸ルール）は公式一次情報に照合し、記事内 `OfficialSourceBox` に出典と免責を明示した。学習法・アクセント・スラングの2件は変わりうる数値・料金・法規の主張を含まないため、公式ソースは付さず `verifiedAt: 2026-07-27` のみ付与した。

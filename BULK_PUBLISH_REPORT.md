@@ -3,6 +3,27 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-27）: english マイクロバッチ #2（5件公開 / commit: feat: publish english micro-batch）
+
+english（英語学習・会話）ハブの次の5件を公開しました。開始時点で english は8件（>5）が残っていたため、**通常のマイクロバッチ**として記録順の先頭5件のみを処理し、最終ハブ監査（フルビルド／lint／テスト／sitemap）は実施していません（残り3件のため次回に実施）。
+
+- **公開した5件（すべて `hub: english`・`category: english`・`verifiedAt: 2026-07-27`・完全公開・分類は全て create）:**
+  `bank-tax-english`（P1, language, id a289）, `medical-english`（P0, language, id a290）,
+  `car-trouble-english`（P1, language, id a291）, `phone-call-english`（P1, learning, id a292）,
+  `email-message-templates`（P0, template, id a293）。
+- **作成（created）slug:** 上記5件。**更新（updated）slug:** `workplace-english`（内部リンクのみ）。**統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、既存の公開記事とは検索意図が明確に異なる（銀行・税・年金の問い合わせ英語／医療の症状伝達英語／車トラブル英語／電話英語の練習法／英文メール・SMSテンプレート集）。各記事は場面特化のフレーズ集・実務テンプレで独立意図が強いため個別公開し、`relatedSlugs` で相互リンク。
+- **既存記事の内部リンク:** `workplace-english` に `bank-tax-english`・`phone-call-english` を追記（本文・slug・URL・公開状態は不変）。
+- **孤立記事なし:** english カテゴリページ（`/english` の `GuideCategoryPage category="english"`）が公開 english 記事を自動列挙するため、5件はすべて到達可能。各記事は一意のモジュール（`lib/content/articles/english.ts`）にのみ存在。`mockData.ts` へは追加していない。
+- **公式照合（記事反映済み・確認日 2026-07-27）:** `bank-tax-english`＝ATO「Tax file number」（TFNの申請は無料。https://www.ato.gov.au/individuals-and-families/tax-file-number ）。`medical-english`＝healthdirect（政府運営の無料健康相談・症状チェッカー／電話 1800 022 222。https://www.healthdirect.gov.au/ ）＋Triple Zero (000)（https://www.triplezero.gov.au/ ）。`car-trouble-english`＝Triple Zero (000)。`phone-call-english`・`email-message-templates` は変わりうる数値・料金・法規の主張を含まないため公式ソースは付さず、`verifiedAt: 2026-07-27` のみ付与。
+- **客観的事実と個人的推奨の区別:** 学習法・電話練習・テンプレは「人により合う/合わない」「例であり調整前提」と明示。税率・手数料・医療判断・事故の届出義務など変わりうる/専門判断が要る事項は断定せず公式・専門家へ誘導。
+- **可変事項の断定回避:** 税率・控除・申告可否は年度・個人差が大きいとして ATO・登録税理士へ。医療の診断・治療は医療者へ、緊急時は000、緊急でない相談は healthdirect（1800 022 222）へ。事故の警察届出義務は州で異なるとして各州交通当局・警察へ。修理は事前見積もり（quote）を推奨。欠勤の診断書要否は雇用形態・職場・Award で異なるとして契約＋Fair Work へ誘導。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug 0・重複パス 0・重複エクスポート 0・english 13件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）、新規5件の `relatedSlugs` は全て公開 slug に解決。
+- **残り english（3件・planned）:** `listening-resources`, `language-exchange-meetup`, `ielts-pte-after-wh`。次の先頭 = `listening-resources`（残り3件のため次回は english ハブ最終監査を実施）。
+- **変更ファイル:** `lib/content/articles/english.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: english マイクロバッチ #1（5件公開 / commit: feat: publish english micro-batch）
 
 english（英語学習・会話）ハブの最初の5件を公開しました。開始時点で english は13件（>5）が残っていたため、**通常のマイクロバッチ**として記録順の先頭5件のみを処理し、最終ハブ監査（フルビルド／lint／テスト／sitemap）は実施していません（残り8件のため）。
