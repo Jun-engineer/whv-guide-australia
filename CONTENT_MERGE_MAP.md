@@ -306,6 +306,25 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   役割が異なる（前者=医療受診の導線、後者=補償制度の詳細）ため別記事として保持し双方向リンク。
 - 次の未完了 health slug: `flood-cyclone-safety`（残り2件・次回は最終 health ハブ監査を実施）。
 
+### daily-life マイクロバッチ #3（2026-07-27 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。** daily-life ハブの次の5件
+（`australia-clothing-seasons` / `buy-furniture-household-items` / `op-shop-guide` /
+`post-office-courier` / `library-guide`）はすべて**新規スラッグ**（`hub: "daily-life"`、`category` は
+clothing/housing/arrival に分散）で、既存の公開記事とは**検索意図が明確に異なり
+（都市・季節別の服装／家具・生活用品の新品中古比較と詐欺対策／Op Shopの使い方・寄付／Australia Postの使い方／図書館の活用）、
+全面重複はないため、新規の統合・リダイレクトは発生せず**、`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 既存 `clothing-guide` の `relatedSlugs` に `australia-clothing-seasons` を追加（本文・slug・URL・公開状態は不変）。
+- `australia-clothing-seasons`（季節・地域別の服装＝雨季・寒暖差・UV・重ね着）と既存 `clothing-guide`
+  （服装・気候の総論＋持ち物）は近接するが、次の行動が異なる（各論の着こなし判断 vs 総論・持ち物準備）ため
+  別記事として保持し双方向リンク。
+- 新規5件どうしは意図の近い組を双方向リンク（`op-shop-guide` ↔ `buy-furniture-household-items`、
+  `post-office-courier` ↔ `library-guide`）。
+- 孤立記事なし: 各カテゴリページ（`/clothing`・`/housing`・`/arrival` の `GuideCategoryPage`）が公開記事を
+  自動列挙するため到達可能。
+- 次の未完了 daily-life slug: `gym-fitness-guide`。
+
 ### daily-life マイクロバッチ #2（2026-07-27 / 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。** daily-life ハブの次の5件

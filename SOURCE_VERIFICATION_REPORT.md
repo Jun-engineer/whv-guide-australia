@@ -440,6 +440,34 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## daily-life マイクロバッチ #3（服装の季節・家具生活用品・Op Shop・郵便・図書館 / 2026-07-27 / 5件公開）
+
+daily-life ハブの次の5件を、記事単位で公式一次情報に照合して新規公開した（`hub: "daily-life"`、`category` は clothing/housing/arrival に分散）。
+各記事は `verifiedAt: 2026-07-27` を付与し、`officialSources`（`accessedAt: 2026-07-27`）に情報源を明示。
+可変性の高い**気候・料金・詐欺手口・機関別ルール**は特定の金額・数値を断定せず「確認日 2026-07-27」を明記し、公式・各機関・店頭確認へ誘導した。
+
+| slug | 照合した主要ポイント | 主な出典（accessedAt 2026-07-27） |
+| --- | --- | --- |
+| `australia-clothing-seasons` | 南半球で季節が逆転。北部（Cairns/Darwin）は熱帯で乾季/雨季（雨季おおむね11〜4月）、南部（Melbourne/Tasmania）は四季で冬は寒い、内陸は日中と夜の寒暖差が大きい。UVが非常に強く UV指数3以上で日焼け・皮膚がん対策（帽子・日焼け止め・サングラス）。衣類は現地（Kmart/Target/Big W）で調達可 | ARPANSA（Ultraviolet radiation index）/ Bureau of Meteorology（Climate averages） |
+| `buy-furniture-household-items` | 新品（Kmart/Target/Big W/IKEA）と中古（Facebook Marketplace/Gumtree/Op Shop）の使い分け。大型品は現物確認、PayID/振込先の名義一致を確認、安全な決済（PayPal/クレカ）を使用。詐欺被害時は銀行連絡＋IDCARE（1800 595 160）＋Scamwatch通報。furnished（家具付き）か事前確認 | ACCC Scamwatch（Buying and selling scams、IDCARE 1800 595 160） |
+| `op-shop-guide` | Op Shop＝チャリティのリサイクルショップ（Vinnies/Salvos 等）。服は洗濯・電化製品は動作確認・中古マットレスは避ける。不要品は洗って使える状態で受付時間内に寄付し、営業時間外の店先放置はしない | St Vincent de Paul Society（Vinnies） |
+| `post-office-courier` | Australia Post。MyPost 無料アカウントで追跡・転送・通知。Parcel Locker、PO Box（年会費）、mail redirection/hold。配達目安はおおむね5営業日、受取に写真付きID提示の場合あり。偽AusPost SMS/メール（フィッシング）に注意 | Australia Post（Receiving） |
+| `library-guide` | 公共図書館は自治体/州が運営、会員登録は多くが無料。無料Wi-Fi・PC・学習スペース、書籍/電子書籍の貸出、英語学習プログラム。印刷は有料の場合あり、貸出ルール・開館時間は図書館ごとに異なる | State Library of NSW（Public library services） |
+
+- **照合した公式一次情報（accessedAt 2026-07-27）:** ARPANSA（arpansa.gov.au — Ultraviolet radiation index）、
+  Bureau of Meteorology（bom.gov.au — Climate averages）、ACCC Scamwatch（scamwatch.gov.au — Buying and selling scams）、
+  Australia Post（auspost.com.au — Receiving）、St Vincent de Paul Society / Vinnies（vinnies.org.au）、
+  State Library of NSW（sl.nsw.gov.au — Public library services）。
+- **可変事項の断定回避:** 服装は都市・季節・UVで変わるため断定せず BOM・ARPANSA の確認へ誘導（UV指数3以上で対策）。
+  個人売買の詐欺対策は Scamwatch に準拠（実物確認・名義一致・安全な決済、被害時は銀行＋IDCARE＋Scamwatch通報）。
+  郵便の配達目安・PO Box年会費、図書館の印刷料金・貸出ルール・開館時間は地域/機関で異なる旨を明示し、特定金額は断定せず公式確認へ誘導。
+- **統合・リダイレクト:** なし（新規5件は独立検索意図。`clothing-guide` に内部リンクのみ追記）。RSS: 本プロジェクトに RSS ルート無し（N/A）。
+  ※フルビルド/テスト/lint/監査は daily-life ハブ完了後（残り5件以下時）にまとめて実施。
+- **web fetch の制約:** ARPANSA・Scamwatch・Australia Post は本セッションで取得成功。BOM climate averages は 403 を返したが標準の公式ページのため出典として引用。
+  Op Shop・図書館の詳細ページ（Vinnies の店舗検索、各州図書館の登録ページ）は 404/リダイレクトが多発（リトライ上限到達）したため、
+  低YMYL領域として各機関のトップ/概要レベルの安定URL（vinnies.org.au、sl.nsw.gov.au/public-library-services）を出典に採用し、
+  具体的な料金・時間は断定せず「機関ごとに異なる」と明示。未解決の essential claim は無し。
+
 ## daily-life マイクロバッチ #2（食品保存・水道水・カード手数料/チップ・飲酒ルール・洗濯 / 2026-07-27 / 5件公開）
 
 daily-life ハブの次の5件を、記事単位で公式一次情報に照合して新規公開した（`hub: "daily-life"`、`category` は food/money/clothing に分散）。

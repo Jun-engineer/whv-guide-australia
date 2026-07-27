@@ -4,6 +4,35 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-27）: daily-life マイクロバッチ #3（5件公開 / commit: feat: publish daily life micro-batch）
+
+daily-life（日常生活・食事・買い物）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で daily-life は11件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理しました。以下が確定状態です。
+
+- **公開した5件（すべて `verifiedAt: 2026-07-27`・`officialSources` 付き・完全公開・分類は全て create）:**
+  `australia-clothing-seasons`（clothing, P0, guide, id a273）, `buy-furniture-household-items`（housing, P1, comparison, id a274）,
+  `op-shop-guide`（clothing, P3, guide, id a275）, `post-office-courier`（arrival, P1, how-to, id a276）,
+  `library-guide`（arrival, P1, guide, id a277）。`hub` は全て `daily-life`、`category` は clothing/housing/arrival に分散配置。
+- **選定 slug:** 上記5件（`BULK_PUBLISH_REMAINING.md` / manifest の記録順の先頭5件）。
+- **作成（created）slug:** 上記5件。**更新（updated）slug:** `clothing-guide`（内部リンクのみ）。
+  **統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、既存公開記事とは検索意図が明確に異なる（都市・季節別の服装／家具・生活用品の新品中古比較と詐欺対策／Op Shopの使い方・寄付／Australia Postの使い方／図書館の活用）。`australia-clothing-seasons` は既存 `clothing-guide`（服装・気候の総論＋持ち物）に対し、季節・地域別の詳細（雨季・寒暖差・UV・重ね着）に深掘りする各論のため統合せず、双方向リンクで接続。
+- **既存記事の内部リンク:** `clothing-guide` の `relatedSlugs` に `australia-clothing-seasons` を追記（本文・slug・URL・公開状態は不変）。孤立記事なし。
+- **孤立記事なし:** 各カテゴリページ（`/clothing`・`/housing`・`/arrival` の `GuideCategoryPage`）が公開記事を自動列挙するため、5件はすべて到達可能。
+- **公式照合（記事反映済み・確認日 2026-07-27）:** ARPANSA（Ultraviolet radiation index）＋Bureau of Meteorology（Climate averages）／ACCC Scamwatch（Buying and selling scams、IDCARE 1800 595 160）／Australia Post（Receiving＝追跡・PO Box・MyPost・Parcel Locker）／St Vincent de Paul Society（Vinnies）／State Library of NSW（Public library services）。
+- **可変事項の断定回避:** 服装は都市・季節・UVで変わるため断定せず BOM・ARPANSA の確認へ誘導（UV3以上で日焼け対策）。家具・生活用品は新品/中古の使い分けを示し、個人売買の詐欺対策は Scamwatch に準拠（実物確認・名義一致・安全な決済）。郵便の配達目安（おおむね5営業日）・PO Box年会費・図書館の印刷料金/貸出ルール/開館時間は地域・機関で異なる旨を明示し、特定金額は断定せず公式確認へ誘導。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複0・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ）、新規5件の `relatedSlugs` は全て公開 slug に解決（dangling 0）。
+  ※フルビルド/テスト/lint/sitemap/RSS/構造化データ監査は daily-life ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **残り daily-life slug（6件・すべて planned のまま）:** `gym-fitness-guide`, `haircut-barber-english`, `public-toilets-showers`,
+  `home-internet-guide`, `online-scams-cybersecurity`, `phone-lost-stolen`。
+- **最初の未完了 daily-life slug: `gym-fitness-guide`**（次回はここから再開）。
+- **次のバッチ: daily-life（`gym-fitness-guide` から継続）。** ※本セッションは daily-life の次の5件のみ処理。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/clothing.ts`、`lib/content/articles/housing.ts`、
+  `lib/content/articles/arrival.ts`、`lib/content/manifest.generated.ts`（再生成）、
+  `whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、
+  `BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: daily-life マイクロバッチ #2（5件公開 / commit: feat: publish daily life micro-batch）
 
 daily-life（日常生活・食事・買い物）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で daily-life は16件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理しました。以下が確定状態です。
@@ -724,7 +753,7 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - `flood-cyclone-safety` — 洪水・サイクロンへの備え｜クイーンズランド・北部 _(優先度 P0、意図: disaster)_
 - `heatwave-severe-weather` — 熱波・雷雨・雹など悪天候の情報確認方法 _(優先度 P1、意図: disaster)_
 
-### daily-life — 日常生活・食事・買い物 (21件・うち10件公開済み)
+### daily-life — 日常生活・食事・買い物 (21件・うち15件公開済み)
 
 - ✅ `supermarket-comparison` — Coles・Woolworths・ALDI比較｜安く買うコツ _(優先度 P0、意図: comparison)_ **公開済み（2026-07-27）**
 - ✅ `grocery-saving-tips` — オーストラリアの食費を節約する方法｜特売・冷凍・自炊 _(優先度 P0、意図: finance)_ **公開済み（2026-07-27）**
@@ -736,11 +765,12 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `shopping-surcharges-tipping` — カード手数料・日祝サーチャージ・チップの習慣 _(優先度 P0、意図: guide)_ **公開済み（2026-07-27）**
 - ✅ `alcohol-id-rules` — お酒を買う・飲むときの身分証とルール _(優先度 P1、意図: legal)_ **公開済み（2026-07-27）**
 - ✅ `laundry-guide` — シェアハウス・コインランドリーの使い方と洗剤 _(優先度 P2、意図: how-to)_ **公開済み（2026-07-27）**
-- `australia-clothing-seasons` — 都市・季節別の服装ガイド｜暑さ・寒暖差・雨 _(優先度 P0、意図: guide)_ ← **次はここから**
-- `buy-furniture-household-items` — 家具・生活用品を安く揃える方法｜Kmart・Marketplace・Op Shop _(優先度 P1、意図: comparison)_
-- `op-shop-guide` — Op Shopの使い方｜服・家具・寄付 _(優先度 P3、意図: guide)_
-- `post-office-courier` — Australia Postの使い方｜郵便・荷物・Parcel Locker _(優先度 P1、意図: how-to)_
-- `library-guide` — 図書館を活用する方法｜無料Wi-Fi・印刷・英語学習 _(優先度 P1、意図: guide)_
+- ✅ `australia-clothing-seasons` — 都市・季節別の服装ガイド｜暑さ・寒暖差・雨 _(優先度 P0、意図: guide)_ **公開済み（2026-07-27）**
+- ✅ `buy-furniture-household-items` — 家具・生活用品を安く揃える方法｜Kmart・Marketplace・Op Shop _(優先度 P1、意図: comparison)_ **公開済み（2026-07-27）**
+- ✅ `op-shop-guide` — Op Shopの使い方｜服・家具・寄付 _(優先度 P3、意図: guide)_ **公開済み（2026-07-27）**
+- ✅ `post-office-courier` — Australia Postの使い方｜郵便・荷物・Parcel Locker _(優先度 P1、意図: how-to)_ **公開済み（2026-07-27）**
+- ✅ `library-guide` — 図書館を活用する方法｜無料Wi-Fi・印刷・英語学習 _(優先度 P1、意図: guide)_ **公開済み（2026-07-27）**
+- `gym-fitness-guide` — ジム契約の注意点｜週払い・解約・無料体験 _(優先度 P2、意図: checklist)_ ← **次はここから**
 - `gym-fitness-guide` — ジム契約の注意点｜週払い・解約・無料体験 _(優先度 P2、意図: checklist)_
 - `haircut-barber-english` — 美容院・バーバーで使う英語と料金の見方 _(優先度 P3、意図: language)_
 - `public-toilets-showers` — 無料トイレ・シャワー・給水場所を探す方法 _(優先度 P3、意図: guide)_

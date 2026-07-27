@@ -2931,7 +2931,7 @@ planned_content:
 - slug: australia-clothing-seasons
   title: 都市・季節別の服装ガイド｜暑さ・寒暖差・雨
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: guide
@@ -2941,7 +2941,7 @@ planned_content:
 - slug: buy-furniture-household-items
   title: 家具・生活用品を安く揃える方法｜Kmart・Marketplace・Op Shop
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: comparison
@@ -2951,7 +2951,7 @@ planned_content:
 - slug: op-shop-guide
   title: Op Shopの使い方｜服・家具・寄付
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: guide
@@ -2961,7 +2961,7 @@ planned_content:
 - slug: post-office-courier
   title: Australia Postの使い方｜郵便・荷物・Parcel Locker
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: how-to
@@ -2971,7 +2971,7 @@ planned_content:
 - slug: library-guide
   title: 図書館を活用する方法｜無料Wi-Fi・印刷・英語学習
   hub: daily-life
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: guide

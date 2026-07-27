@@ -1660,4 +1660,68 @@ export const housingArticles: Article[] = [
     updatedAt: "2026-07-19",
     published: true,
   },
+
+  {
+    id: "a274",
+    title: "家具・生活用品を安く揃える方法｜Kmart・Marketplace・Op Shop",
+    slug: "buy-furniture-household-items",
+    category: "housing",
+    hub: "daily-life",
+    description:
+      "シェアハウスや部屋の家具・生活用品を安く揃える方法を比較。新品（Kmart・IKEA）と中古（Facebook Marketplace・Gumtree・Op Shop）の使い分けと、個人売買の詐欺対策（Scamwatch）をまとめました。",
+    content: [
+      "ワーホリの住まいでは、家具・生活用品を安く揃えることが節約の鍵です。大きく分けて『新品』と『中古』の2ルートがあります。新品は Kmart・Target・Big W（安価な生活雑貨）や IKEA（家具）が定番で、状態が確実・保証がある一方で費用はかかります。中古は Facebook Marketplace・Gumtree（個人売買）や Op Shop（チャリティー中古店）が安く、短期滞在なら中古で十分なことが多いです。帰国時に売って回収しやすいのも中古の利点です。",
+      "使い分けの目安は、①毎日肌に触れる寝具・キッチン用品は新品または状態の良い中古、②机・椅子・収納などの家具は中古で安く、③退去時に処分する前提のものは中古、です。シェアハウスによっては家具付き（furnished）のこともあるため、入居前に何が備え付けかを確認し、足りないものだけ買い足すと無駄がありません。",
+      "個人売買（Marketplace・Gumtree）では詐欺対策が重要です。ACCC の Scamwatch は、②現物を見ずに高額品を買わない（大きな買い物は必ず実物を確認）、③支払いは相手（PayID・銀行振込）の名義が一致するか確認し、安全な決済（PayPal・クレジットカード）を使う、④相場より極端に安い・前払いを急かす出品は警戒、といった対策を挙げています。もし詐欺に遭ったら、まず銀行に連絡し、IDCARE（1800 595 160）に相談、Scamwatch に通報します（本記事の確認日: 2026-07-27）。",
+    ],
+    keyFacts: [
+      { label: "新品ルート", value: "Kmart・Target・Big W・IKEA（確実だが費用大）" },
+      { label: "中古ルート", value: "Facebook Marketplace・Gumtree・Op Shop（安い）" },
+      { label: "短期滞在", value: "中古で十分なことが多い（帰国時に売却可）" },
+      { label: "家具付き", value: "入居前に備え付けを確認し不足分だけ購入" },
+      { label: "詐欺対策", value: "実物確認・名義一致・安全な決済（Scamwatch）" },
+    ],
+    steps: [
+      { title: "必要なものを洗い出す", description: "家具付きの有無を確認し、寝具・キッチン用品・机椅子など不足分だけをリスト化します。" },
+      { title: "新品と中古を比較", description: "毎日使う寝具等は新品/良品、処分前提の家具は中古、と使い分けます。" },
+      { title: "個人売買は安全に", description: "大きな買い物は実物を確認。支払いは相手の名義一致を確認し、安全な決済を使います。" },
+      { title: "怪しい取引は避ける", description: "相場より極端に安い・前払いを急かす出品は警戒。おかしいと感じたら取引しません。" },
+    ],
+    tips: [
+      "Marketplace では受け渡し場所を人目のある公共の場所にすると安心です。",
+      "退去日が近い人が家具一式を安く手放すことがあり、まとめ買いで安くなる場合があります。",
+      "Op Shop は食器・小型家具・本が特に安く、生活の立ち上げに便利です。",
+    ],
+    faqs: [
+      {
+        question: "個人売買の詐欺を避けるには？",
+        answer:
+          "ACCC の Scamwatch は、現物を見ずに高額品を買わない、支払い時に相手（PayID・振込先）の名義が一致するか確認する、安全な決済（PayPal・クレジットカード）を使う、相場より極端に安い・前払いを急かす出品を警戒する、を勧めています。受け渡しは公共の場所で行いましょう。",
+      },
+      {
+        question: "短期滞在でも家具を買うべき？",
+        answer:
+          "多くのシェアハウスは家具付き（furnished）です。入居前に備え付けを確認し、足りないものだけを中古中心で買い足すのが無駄がありません。帰国時に Marketplace や Op Shop で手放せば回収もしやすいです。",
+      },
+    ],
+    warnings: [
+      "個人売買で前払いを求められ商品が届かない・出品者と連絡が取れなくなる詐欺があります。大きな買い物は実物確認を徹底し、詐欺に遭ったらすぐ銀行に連絡、IDCARE（1800 595 160）に相談し Scamwatch に通報してください。",
+    ],
+    verifiedAt: "2026-07-27",
+    officialSources: [
+      {
+        label: "ACCC Scamwatch｜Buying and selling scams（個人売買の詐欺対策・IDCARE 1800 595 160）",
+        url: "https://www.scamwatch.gov.au/types-of-scams/buying-or-selling",
+        accessedAt: "2026-07-27",
+      },
+    ],
+    relatedSlugs: [
+      "op-shop-guide",
+      "housing-guide",
+      "share-house-finding",
+      "grocery-saving-tips",
+    ],
+    updatedAt: "2026-07-27",
+    published: true,
+  },
 ];
