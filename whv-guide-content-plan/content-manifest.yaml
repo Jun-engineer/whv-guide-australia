@@ -3041,7 +3041,7 @@ planned_content:
 - slug: australian-english-accent
   title: オーストラリア英語の発音・アクセントに慣れる方法
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: learning
@@ -3051,7 +3051,7 @@ planned_content:
 - slug: australian-slang
   title: ワーホリでよく聞くオーストラリア英語・スラング
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: reference
@@ -3061,7 +3061,7 @@ planned_content:
 - slug: workplace-english
   title: 職場で使う英語フレーズ｜確認・報告・欠勤・シフト
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: language
@@ -3071,7 +3071,7 @@ planned_content:
 - slug: hospitality-english
   title: レストラン・カフェ接客英語フレーズ
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: language
@@ -3081,7 +3081,7 @@ planned_content:
 - slug: housing-english
   title: 家探し・内見・退去で使う英語フレーズ
   hub: english
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: language

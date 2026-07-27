@@ -4,6 +4,35 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-27）: english マイクロバッチ #1（5件公開 / commit: feat: publish english micro-batch）
+
+english（英語学習・会話）ハブの最初の5件を公開しました（マイクロバッチ運用）。開始時点で english は13件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理しました。以下が確定状態です。
+
+- **未完了 english 件数（開始時）:** 13件（すべて planned）。既存公開は `english-prep`・`language-school` の2件（manifest `existing`）。
+- **選定した5件（記録順の先頭5件）:** `australian-english-accent`, `australian-slang`, `workplace-english`, `hospitality-english`, `housing-english`。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded ではないことを確認済み。
+- **分類:** 5件すべて **create**（新規スラッグ）。統合（merge）・レビュー（review）・除外（exclude）・更新（update, 内部リンクを除く）は該当なし。
+- **公開した5件（すべて `hub: english`・`category: english`・完全公開・分類は全て create）:**
+  `australian-english-accent`（P1, learning, id a284）, `australian-slang`（P1, reference, id a285）,
+  `workplace-english`（P0, language, id a286）, `hospitality-english`（P1, language, id a287）,
+  `housing-english`（P0, language, id a288）。
+- **作成（created）slug:** 上記5件。**更新（updated）slug:** `english-prep`・`language-school`（内部リンクのみ）。
+  **統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、既存公開記事（`english-prep`＝渡航前準備の総論／`language-school`＝語学学校の選び方）とは検索意図が明確に異なる（豪州アクセントの聞き取り練習／スラングのリファレンス／職場英語フレーズ／接客英語フレーズ／家探し英語フレーズ）。各記事は場面特化のフレーズ集・学習法で独立意図が強いため個別公開し、`relatedSlugs` で相互リンク。
+- **目的地モジュール:** `lib/content/articles/english.ts`（全て `category: "english"` / `hub: "english"`）。`mockData.ts` へは追加していない。
+- **既存記事の内部リンク:** `english-prep` の `relatedSlugs` に `workplace-english`・`australian-english-accent`、`language-school` の `relatedSlugs` に `australian-english-accent`・`australian-slang` を追記（本文・slug・URL・公開状態は不変）。孤立記事なし。
+- **孤立記事なし:** english カテゴリページ（`app/english/page.tsx` の `GuideCategoryPage category="english"`）が公開 english 記事を自動列挙するため、5件はすべて `/english` から到達可能。各記事は一意のモジュールにのみ存在。
+- **客観的事実と個人的推奨の区別:** 学習法・教材選び・スラング使用は「人により合う/合わない」「客観的な正解はない」と明示し推奨として提示。労働条件・Bond・アレルギー表示など変わりうる制度事項は断定せず公式へ誘導。
+- **公式照合（記事反映済み・確認日 2026-07-27）:** `workplace-english`＝Fair Work Ombudsman（労働条件・休暇・シフト／Visa holders and migrants）。`hospitality-english`＝Food Standards Australia New Zealand（Allergen labelling）＋Fair Work Ombudsman（Fast food, restaurants and cafés）。`housing-english`＝NSW Government Renting／Consumer Affairs Victoria／RTA (QLD)。`australian-english-accent`・`australian-slang` は変わりうる数値・料金・法規の主張を含まないため公式ソースは付さず、`verifiedAt: 2026-07-27` のみ付与。
+- **可変事項の断定回避:** 病欠の診断書要否・有給病気休暇は雇用形態・職場・Award で異なるとして契約＋Fair Work へ誘導。祝日サーチャージ・チップは店・時期で異なるとして勤務先ルールへ。Bond の上限・預け先・通知期間は州で異なるとして各州当局（NSW/VIC/QLD 等）へ誘導。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug 0・重複パス 0・重複エクスポート 0・english 8件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）、新規5件の `relatedSlugs` は全て公開 slug に解決。
+  ※フルビルド/テスト/lint/sitemap/RSS/構造化データ監査は english ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **残り english slug（8件・すべて planned のまま）:** `bank-tax-english`, `medical-english`, `car-trouble-english`, `phone-call-english`, `email-message-templates`, `listening-resources`, `language-exchange-meetup`, `ielts-pte-after-wh`。
+- **最初の未完了 english slug: `bank-tax-english`**（次回はここから再開）。
+- **次のバッチ: english（`bank-tax-english` から継続）。** ※本セッションは english の先頭5件のみ処理し、area/travel には着手しない。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/english.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-27）: daily-life マイクロバッチ #4 = 最終（6件公開・ハブ完了 / commit: feat: complete daily life content batch）
 
 daily-life（日常生活・食事・買い物）ハブの残り全件を公開し、**ハブを完了**しました。開始時点で残りは6件（≤7）だったため、全6件を処理し、最終ハブ監査（フルビルド／lint／テスト／sitemap）を実施しました。以下が確定状態です。
@@ -803,14 +832,14 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `online-scams-cybersecurity` — 偽SMS・求人詐欺・アカウント乗っ取り対策 _(優先度 P0、意図: security)_ **公開済み（2026-07-27）**
 - ✅ `phone-lost-stolen` — スマホを紛失・盗難された場合の対応 _(優先度 P1、意図: problem-solving)_ **公開済み（2026-07-27）**
 
-### english — 英語学習・会話 (13件)
+### english — 英語学習・会話 (13件・5件公開済み / 残り8件)
 
-- `australian-english-accent` — オーストラリア英語の発音・アクセントに慣れる方法 _(優先度 P1、意図: learning)_
-- `australian-slang` — ワーホリでよく聞くオーストラリア英語・スラング _(優先度 P1、意図: reference)_
-- `workplace-english` — 職場で使う英語フレーズ｜確認・報告・欠勤・シフト _(優先度 P0、意図: language)_
-- `hospitality-english` — レストラン・カフェ接客英語フレーズ _(優先度 P1、意図: language)_
-- `housing-english` — 家探し・内見・退去で使う英語フレーズ _(優先度 P0、意図: language)_
-- `bank-tax-english` — 銀行・ATO・Superの問い合わせ英語 _(優先度 P1、意図: language)_
+- ✅ `australian-english-accent` — オーストラリア英語の発音・アクセントに慣れる方法 _(優先度 P1、意図: learning)_ **公開済み（2026-07-27）**
+- ✅ `australian-slang` — ワーホリでよく聞くオーストラリア英語・スラング _(優先度 P1、意図: reference)_ **公開済み（2026-07-27）**
+- ✅ `workplace-english` — 職場で使う英語フレーズ｜確認・報告・欠勤・シフト _(優先度 P0、意図: language)_ **公開済み（2026-07-27）**
+- ✅ `hospitality-english` — レストラン・カフェ接客英語フレーズ _(優先度 P1、意図: language)_ **公開済み（2026-07-27）**
+- ✅ `housing-english` — 家探し・内見・退去で使う英語フレーズ _(優先度 P0、意図: language)_ **公開済み（2026-07-27）**
+- `bank-tax-english` — 銀行・ATO・Superの問い合わせ英語 _(優先度 P1、意図: language)_ ← 次の先頭
 - `medical-english` — 病院・薬局で症状を伝える英語フレーズ _(優先度 P0、意図: language)_
 - `car-trouble-english` — 車の故障・事故・修理で使う英語フレーズ _(優先度 P1、意図: language)_
 - `phone-call-english` — 英語の電話が怖い人向け｜聞き返し・保留・予約 _(優先度 P1、意図: learning)_

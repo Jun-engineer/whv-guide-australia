@@ -229,6 +229,27 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   `international-driving-permit` へ接続、`transport-payment-guide` に `intercity-transport` を追加。孤立記事なし。
 - 備考: これで transport ハブは全24件が最終ステータス確定（planned 0件・ハブ完了）。
 
+### english マイクロバッチ #1（2026-07-27 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。** english ハブの最初の5件
+（`australian-english-accent` / `australian-slang` / `workplace-english` /
+`hospitality-english` / `housing-english`）はすべて**新規スラッグ**（`hub: "english"`・`category: "english"`）で、
+既存の公開記事（`english-prep`＝渡航前の英語準備の総論／`language-school`＝語学学校の選び方）とは
+**検索意図が明確に異なり（豪州アクセントの聞き取り練習／スラング・リファレンス／職場英語フレーズ／
+接客英語フレーズ／家探し英語フレーズ）、全面重複はないため、新規の統合・リダイレクトは発生せず**、
+`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 新規5件どうしを意図の近い組で双方向リンク（`workplace-english` ↔ `hospitality-english`、
+  `australian-english-accent` ↔ `australian-slang` 等）。
+- 既存記事本文への内部リンク追記（更新）: `english-prep` に `workplace-english`・`australian-english-accent`、
+  `language-school` に `australian-english-accent`・`australian-slang` を追加（本文・slug・URL・公開状態は不変）。
+- `workplace-english`（職場英語フレーズ）と `hospitality-english`（接客英語フレーズ）は近接するが、前者は
+  「確認・報告・欠勤・シフト等の一般的な職場コミュニケーション」、後者は「レストラン・カフェ接客の定型」で
+  場面が異なるため別記事として保持し双方向リンク。
+- 孤立記事なし: english ハブページ（`GuideCategoryPage category="english"`）が公開 english 記事を
+  自動列挙するため、5件はすべてハブから到達可能。
+- 次の未完了 english slug: `bank-tax-english`（残り8件・english ハブは継続）。
+
 ### health マイクロバッチ #1（2026-07-27 / 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。** health ハブの最初の5件

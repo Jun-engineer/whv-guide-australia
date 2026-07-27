@@ -440,6 +440,16 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## english マイクロバッチ #1（職場英語・接客英語・家探し英語・豪州アクセント・スラング / 2026-07-27 / 5件公開）
+
+english ハブの最初の5件を新規公開した（すべて `hub: "english"`・`category: "english"`）。タイトルの主要な問いに関わる変わりうる事実（労働条件・アレルギー表示・賃貸ルール）は公式一次情報に照合し、記事内 `OfficialSourceBox` に出典と免責を明示した。学習法・アクセント・スラングの2件は変わりうる数値・料金・法規の主張を含まないため、公式ソースは付さず `verifiedAt: 2026-07-27` のみ付与した。
+
+- `workplace-english`（P0, id a286）— **Fair Work Ombudsman**（https://www.fairwork.gov.au/ ／ Visa holders and migrants: https://www.fairwork.gov.au/find-help-for/visa-holders-and-migrants ）。病欠の連絡・診断書要否・有給病気休暇・シフト変更は**雇用形態（casual/part-time/full-time）・職場・該当 Award で異なる**ため断定せず、雇用契約＋Fair Work（TIS通訳あり・ビザ状態に関わらず保護）へ誘導。
+- `hospitality-english`（P1, id a287）— **Food Standards Australia New Zealand**（Allergen labelling: https://www.foodstandards.gov.au/consumer/labelling/allergen-labelling ）＋**Fair Work Ombudsman**（Fast food, restaurants and cafés: https://www.fairwork.gov.au/find-help-for/fast-food-restaurants-cafes ）。アレルゲン対応は店の手順に従い、確実なことは言い切らず確認する旨を明示。チップ・サーチャージは店・時期で異なるとして勤務先ルールへ誘導。
+- `housing-english`（P0, id a288）— **NSW Government**（Renting a place to live: https://www.nsw.gov.au/housing-and-construction/renting-a-place-to-live ）／**Consumer Affairs Victoria**（Renting: https://www.consumer.vic.gov.au/housing/renting ）／**Residential Tenancies Authority (QLD)**（https://www.rta.qld.gov.au/ ）。Bond の上限・預け先（RTA/RTBA 等）・退去通知期間・修繕義務は**州で異なる**ため断定せず各州当局へ誘導。
+- `australian-english-accent`（P1, id a284）・`australian-slang`（P1, id a285）— 変わりうる数値・料金・法規の主張なし。聞き取り練習法・スラングの用法は「人により合う/合わない」「文脈・相手で使い分け」と明示し推奨として提示。`verifiedAt: 2026-07-27` のみ付与、`officialSources` なし。
+- **統合・リダイレクト:** なし（5件は新規スラッグ、既存 `english-prep`・`language-school` と検索意図が分離）。既存2件へは内部リンクのみ追記。
+
 ## daily-life マイクロバッチ #4 = 最終（ジム契約・美容院英語・公衆トイレ/シャワー・ホームネット・オンライン詐欺・スマホ紛失 / 2026-07-27 / 6件公開・ハブ完了）
 
 daily-life ハブの残り全6件を、記事単位で公式一次情報に照合して新規公開し、**ハブを完了**した（`hub: "daily-life"`、`category` は health/english/transport/sim/money に分散）。
