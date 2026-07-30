@@ -229,6 +229,19 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   `international-driving-permit` へ接続、`transport-payment-guide` に `intercity-transport` を追加。孤立記事なし。
 - 備考: これで transport ハブは全24件が最終ステータス確定（planned 0件・ハブ完了）。
 
+### area マイクロバッチ #4（2026-07-30 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし（本バッチは新規追加のみ）。** area ハブの次の5件
+（`area-griffith`〔市/ファーム地域〕 ＋ 州ガイド4件 `state-nsw-guide` / `state-vic-guide` / `state-qld-guide` / `state-wa-guide`）はすべて**新規スラッグ**（`hub: "area"`・`category: "area"`）で、
+地名・州名クエリごとに検索意図が独立するため個別公開し、`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 州ガイド（`intent: state-guide`）は「州の制度（免許・登録／賃貸・ボンド／公共交通カード）＋都市の選び方」の州ハブとして構成し、州内の**公開済み都市記事**へ双方向リンク（`state-nsw-guide` → `area-sydney`・`area-newcastle`・`area-wollongong`、`state-vic-guide` → `area-melbourne`・`area-mildura`・`area-shepparton`、`state-qld-guide` → `area-brisbane`・`area-gold-coast`・`area-cairns`、`state-wa-guide` → `area-perth`）。各都市記事（`intent: area-guide`＝都市の生活/仕事の詳細）と州ガイド（州制度の俯瞰）は次の行動が異なるため統合せず別記事として保持。
+- `area-griffith`（NSW内陸リベリーナ）↔ `region-griffith-farm`・`area-mildura`・`farm-second-visa`。
+- 州の制度は公式一次情報に限定（免許・登録＝Service NSW / VicRoads / Queensland Government (Transport and motoring) / Department of Transport WA、公共交通＝Transport for NSW / PTV / Translink / Transperth、賃貸・ボンド＝NSW Fair Trading / Consumer Affairs Victoria / RTA / Consumer Protection WA）。免許切替・賃貸条件などの具体値は州で変わるため断定せず「各公式で最新確認」に誘導し、数値の創作はしない。
+- `relatedSlugs` は公開/既存 slug と公開済み farm 地域ガイドのみ参照。未公開（planned）の `state-sa-guide`・`state-tas-guide`・`state-nt-guide` 等は含めず dangling 回避。
+- 孤立記事なし: area ハブページ（`GuideCategoryPage category="area"`）が公開 area 記事を自動列挙するため、5件はすべてハブから到達可能。
+- **area 26/29 が最終ステータス確定（既存6件＋バッチ #1〜#3 の15件＋本バッチ5件）。残り3件（`state-sa-guide`・`state-tas-guide`・`state-nt-guide`）。次回は ≤5 のため全件処理＋最終 area ハブ監査。travel には着手しない。**
+
 ### area マイクロバッチ #3（2026-07-30 / 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし（本バッチは新規追加のみ）。** area ハブの次の5件

@@ -3321,7 +3321,7 @@ planned_content:
 - slug: area-griffith
   title: グリフィス エリアガイド｜農業・食品加工・生活
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-guide
@@ -3331,7 +3331,7 @@ planned_content:
 - slug: state-nsw-guide
   title: ニューサウスウェールズ州ガイド｜制度・都市・仕事
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: state-guide
@@ -3341,7 +3341,7 @@ planned_content:
 - slug: state-vic-guide
   title: ビクトリア州ガイド｜制度・都市・仕事
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: state-guide
@@ -3351,7 +3351,7 @@ planned_content:
 - slug: state-qld-guide
   title: クイーンズランド州ガイド｜制度・都市・ファーム
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: state-guide
@@ -3361,7 +3361,7 @@ planned_content:
 - slug: state-wa-guide
   title: 西オーストラリア州ガイド｜制度・都市・地方移動
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: state-guide

@@ -4,6 +4,23 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-30）: area マイクロバッチ #4（5件公開 / commit: feat: publish area micro-batch）
+
+area（都市・州・地域ガイド）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で area は8件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り3件のため次回以降に継続）。以下が確定状態です。
+
+- **未完了 area 件数（開始時）:** 8件（1件 `area-*` ＋ 7件 `state-*`、すべて planned）。既に公開済みは既存6件＋マイクロバッチ #1・#2・#3 の15件＝21件。
+- **選定した5件（記録順の先頭5件）:** `area-griffith`, `state-nsw-guide`, `state-vic-guide`, `state-qld-guide`, `state-wa-guide`。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded ではないことを確認済み。
+- **分類:** 5件すべて **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・既存記事の分割は該当なし（本バッチは新規追加のみ）。
+- **公開した5件（すべて `hub: area`・`category: area`・`verifiedAt: 2026-07-30`・完全公開・分類は全て create）:**
+  - `area-griffith`（a312）— NSW内陸リベリーナのファーム・食品加工・セカンドビザ拠点。公式ソース: Transport for NSW / Home Affairs specified work / BOM。
+  - `state-nsw-guide`（a313）— NSW 州ガイド（制度＝Opal/Service NSW/NSW Fair Trading、都市＝シドニー/ニューカッスル/ウーロンゴン/グリフィス）。公式ソース: Service NSW / Transport for NSW / NSW Fair Trading。
+  - `state-vic-guide`（a314）— VIC 州ガイド（制度＝myki/VicRoads/Consumer Affairs Victoria、地域＝メルボルン/ミルデューラ/シェパートン）。公式ソース: VicRoads / Public Transport Victoria / Consumer Affairs Victoria。
+  - `state-qld-guide`（a315）— QLD 州ガイド（制度＝go card/Transport and motoring/RTA、地域＝ブリスベン/ゴールドコースト/ケアンズ 他）。公式ソース: Queensland Government (Transport and motoring) / Translink / RTA。
+  - `state-wa-guide`（a316）— WA 州ガイド（制度＝SmartRider/Department of Transport WA/Consumer Protection WA、拠点＝パース、地方移動・AWST）。公式ソース: Department of Transport WA / Transperth / Consumer Protection WA。
+- **検証:** `npm run generate:content` 再生成後、`validate:articles`（area 26件・重複0・OK）／`tsc --noEmit`（exit 0）／`validate:content`（0 error / 66 warning・記録済みの共食い warning のみ・dangling なし）。
+- **内部リンク:** `relatedSlugs` は公開/既存 slug と公開済み farm 地域ガイドのみ参照（州ガイドは州内の公開都市記事・`housing-guide`/`license-guide`/`jobs-guide`/`farm-second-visa`/`second-visa-guide` 等へ接続）。未公開（planned）slug は含めず dangling 回避。
+- **残り area:** 3件（`state-sa-guide` P3・`state-tas-guide` P2・`state-nt-guide` P2）。次回は ≤5 のため全件処理＋最終 area ハブ監査を実施。**次回開始: `state-sa-guide`。travel には着手しない。**
+
 ## チェックポイント（2026-07-30）: area マイクロバッチ #3（5件公開 / commit: feat: publish area micro-batch）
 
 area（都市・州・地域ガイド）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で area は13件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り8件のため次回以降に継続）。以下が確定状態です。
@@ -987,7 +1004,7 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `language-exchange-meetup` — Language Exchange・Meetupで友達と英語環境を作る方法 _(優先度 P2、意図: social)_ **公開済み（2026-07-27）**
 - ✅ `ielts-pte-after-wh` — IELTS・PTEは必要？学生・就労・永住を考える人の試験選び _(優先度 P2、意図: comparison)_ **公開済み（2026-07-27）**
 
-### area — 都市・州・地域ガイド (23件、残り8件)
+### area — 都市・州・地域ガイド (23件、残り3件)
 
 - ✅ `area-gold-coast` — ゴールドコースト エリアガイド｜仕事・家賃・交通・ビーチ生活 _(優先度 P0、意図: area-guide)_ **[公開済 2026-07-27]**
 - ✅ `area-perth` — パース エリアガイド｜仕事・家賃・車・西海岸生活 _(優先度 P0、意図: area-guide)_ **[公開済 2026-07-27]**
@@ -1004,12 +1021,12 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `area-wollongong` — ウーロンゴン エリアガイド｜大学・ビーチ・通勤 _(優先度 P3、意図: area-guide)_ **[公開済 2026-07-30]**
 - ✅ `area-mildura` — ミルデューラ エリアガイド｜ファームと地方生活 _(優先度 P2、意図: area-guide)_ **[公開済 2026-07-30]**
 - ✅ `area-shepparton` — シェパートン エリアガイド｜農業地域での生活 _(優先度 P2、意図: area-guide)_ **[公開済 2026-07-30]**
-- `area-griffith` — グリフィス エリアガイド｜農業・食品加工・生活 _(優先度 P2、意図: area-guide)_ ← **次回開始**
-- `state-nsw-guide` — ニューサウスウェールズ州ガイド｜制度・都市・仕事 _(優先度 P2、意図: state-guide)_
-- `state-vic-guide` — ビクトリア州ガイド｜制度・都市・仕事 _(優先度 P2、意図: state-guide)_
-- `state-qld-guide` — クイーンズランド州ガイド｜制度・都市・ファーム _(優先度 P1、意図: state-guide)_
-- `state-wa-guide` — 西オーストラリア州ガイド｜制度・都市・地方移動 _(優先度 P2、意図: state-guide)_
-- `state-sa-guide` — 南オーストラリア州ガイド｜制度・都市・農業 _(優先度 P3、意図: state-guide)_
+- ✅ `area-griffith` — グリフィス エリアガイド｜農業・食品加工・生活 _(優先度 P2、意図: area-guide)_ **[公開済 2026-07-30]**
+- ✅ `state-nsw-guide` — ニューサウスウェールズ州ガイド｜制度・都市・仕事 _(優先度 P2、意図: state-guide)_ **[公開済 2026-07-30]**
+- ✅ `state-vic-guide` — ビクトリア州ガイド｜制度・都市・仕事 _(優先度 P2、意図: state-guide)_ **[公開済 2026-07-30]**
+- ✅ `state-qld-guide` — クイーンズランド州ガイド｜制度・都市・ファーム _(優先度 P1、意図: state-guide)_ **[公開済 2026-07-30]**
+- ✅ `state-wa-guide` — 西オーストラリア州ガイド｜制度・都市・地方移動 _(優先度 P2、意図: state-guide)_ **[公開済 2026-07-30]**
+- `state-sa-guide` — 南オーストラリア州ガイド｜制度・都市・農業 _(優先度 P3、意図: state-guide)_ ← **次回開始**
 - `state-tas-guide` — タスマニア州ガイド｜制度・都市・ファーム _(優先度 P2、意図: state-guide)_
 - `state-nt-guide` — ノーザンテリトリーガイド｜気候・仕事・安全 _(優先度 P2、意図: state-guide)_
 

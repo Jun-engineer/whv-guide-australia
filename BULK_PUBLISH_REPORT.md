@@ -3,6 +3,19 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-30）: area マイクロバッチ #4（5件公開 / commit: feat: publish area micro-batch）
+
+area（都市・州・地域ガイド）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で area は8件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り3件のため継続）。
+
+- **公開した5件（すべて `hub: area`・`category: area`・`verifiedAt: 2026-07-30`・完全公開・分類は全て create）:**
+  `area-griffith`（P2, area-guide, id a312）, `state-nsw-guide`（P2, state-guide, id a313）,
+  `state-vic-guide`（P2, state-guide, id a314）, `state-qld-guide`（P1, state-guide, id a315）,
+  `state-wa-guide`（P2, state-guide, id a316）。
+- **作成（created）slug:** 上記5件。**更新/分割（updated/split）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **公式ソース:** Transport for NSW / Service NSW / NSW Fair Trading（NSW）、VicRoads / Public Transport Victoria / Consumer Affairs Victoria（VIC）、Queensland Government (Transport and motoring) / Translink / RTA（QLD）、Department of Transport WA / Transperth / Consumer Protection WA（WA）、Home Affairs specified work・BOM（griffith）。
+- **検証:** `validate:articles`（area 26・重複0・OK）／`tsc --noEmit`（exit 0）／`validate:content`（0 error / 66 warning・記録済み共食い warning のみ・dangling なし）。
+- **残り area:** 3件（`state-sa-guide`・`state-tas-guide`・`state-nt-guide`）。次回は ≤5 のため全件処理＋最終 area ハブ監査を実施。次回開始: `state-sa-guide`。travel には着手しない。
+
 ## チェックポイント（2026-07-30）: area マイクロバッチ #3（5件公開 / commit: feat: publish area micro-batch）
 
 area（都市・州・地域ガイド）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で area は13件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り8件のため継続）。

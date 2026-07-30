@@ -440,6 +440,18 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## area マイクロバッチ #4（グリフィス / NSW・VIC・QLD・WA 州ガイド / 2026-07-30 / 5件公開）
+
+area ハブの次の5件を新規公開した（すべて `hub: "area"`・`category: "area"`・分類は全て create）。市/ファーム地域ガイド（`area-griffith`）と州ガイド4件（`intent: state-guide`）は、可変事項（家賃・時給・求人数・運賃・収穫シーズンの需要／州ごとに変わる免許切替・賃貸条件）を断定せず、州の**制度/公式に紐づく事実**（免許・登録の所管、公共交通カード、賃貸・ボンドの所管、セカンドビザ対象性、気候）を公式一次情報に照合し、各記事の `OfficialSourceBox` に出典と免責（制度・運賃・シーズンは変わりうる旨、最新は各公式で確認）を明示した。全5件に `verifiedAt: 2026-07-30` を付与。
+
+- `area-griffith`（P2, id a312, area-guide）— **Transport for NSW（NSW TrainLink 含む）**（https://transportnsw.info/ ）＋**Home Affairs｜Specified work**（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-30。NSW内陸リベリーナのファーム・食品加工・セカンドビザ拠点性、乾燥内陸の暑さ/冷え込み、悪質農園への注意を明示。
+- `state-nsw-guide`（P2, id a313, state-guide）— **Service NSW（免許・車の登録）**（https://www.service.nsw.gov.au/ ）＋**Transport for NSW（Opal）**（https://transportnsw.info/ ）＋**NSW Fair Trading（賃貸・ボンド）**（https://www.fairtrading.nsw.gov.au/ ）。アクセス 2026-07-30。免許切替・賃貸条件は変わりうるため各公式で最新確認へ誘導。都市はシドニー/ニューカッスル/ウーロンゴン/グリフィスの公開記事へリンク。
+- `state-vic-guide`（P2, id a314, state-guide）— **VicRoads（免許・登録）**（https://www.vicroads.vic.gov.au/ ）＋**Public Transport Victoria（myki）**（https://www.ptv.vic.gov.au/ ）＋**Consumer Affairs Victoria（賃貸・ボンド）**（https://www.consumer.vic.gov.au/ ）。アクセス 2026-07-30。北部（ミルデューラ・シェパートン）のファーム・セカンドビザ、公開都市記事へリンク。
+- `state-qld-guide`（P1, id a315, state-guide）— **Queensland Government｜Transport and motoring（免許・登録）**（https://www.qld.gov.au/transport ）＋**Translink（go card）**（https://translink.com.au/ ）＋**Residential Tenancies Authority（RTA・賃貸・ボンド）**（https://www.rta.qld.gov.au/ ）。アクセス 2026-07-30。熱帯・亜熱帯の雨季/サイクロン注意、ファーム地域のセカンドビザ対象確認、公開都市記事へリンク。
+- `state-wa-guide`（P2, id a316, state-guide）— **Department of Transport（WA・免許・登録）**（https://www.transport.wa.gov.au/ ）＋**Transperth（SmartRider）**（https://www.transperth.wa.gov.au/ ）＋**Consumer Protection（WA・賃貸・ボンド）**（https://www.commerce.wa.gov.au/consumer-protection ）。アクセス 2026-07-30。広大で都市間距離が長い点・地方移動計画・東海岸との時差（AWST）、公開記事（`area-perth`）へリンク。
+- **統合・リダイレクト・分割:** なし（5件は新規スラッグ、既存公開記事・マイクロバッチ #1〜#3 と検索意図が分離）。都市記事（area-guide）と州ガイド（state-guide）は役割が異なるため別記事として保持。未公開（planned）slug（`state-sa-guide`・`state-tas-guide`・`state-nt-guide` 等）は `relatedSlugs` に含めず公開/既存 slug のみ参照（dangling 回避）。
+- **area 26/29 が最終ステータス確定（既存6件＋バッチ #1〜#3 の15件＋本バッチ5件）。残り3件（`state-sa-guide`・`state-tas-guide`・`state-nt-guide`）。次回は ≤5 のため全件処理＋最終 area ハブ監査。travel には着手しない。**
+
 ## area マイクロバッチ #3（タウンズビル / ニューカッスル / ウーロンゴン / ミルデューラ / シェパートン / 2026-07-30 / 5件公開）
 
 area ハブの次の5件を新規公開した（すべて `hub: "area"`・`category: "area"`・分類は全て create）。都市/地域ガイドは可変事項（家賃・時給・求人数・運賃・収穫シーズンの需要）を断定せず、交通・気候・空港・セカンドビザ対象性など**制度/公式に紐づく事実**を公式一次情報に照合し、各記事の `OfficialSourceBox` に出典と免責（制度・運賃・シーズンは変わりうる旨）を明示した。全5件に `verifiedAt: 2026-07-30` を付与。
