@@ -229,6 +229,19 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   `international-driving-permit` へ接続、`transport-payment-guide` に `intercity-transport` を追加。孤立記事なし。
 - 備考: これで transport ハブは全24件が最終ステータス確定（planned 0件・ハブ完了）。
 
+### area マイクロバッチ #5 = area ハブ完了（2026-07-30 / 残り3件公開＋最終監査）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし（本バッチは新規追加のみ）。** area ハブの残り全3件
+（州ガイド `state-sa-guide` / `state-tas-guide` / `state-nt-guide`）はすべて**新規スラッグ**（`hub: "area"`・`category: "area"`・`intent: state-guide`）で、
+州名クエリごとに検索意図が独立するため個別公開し、`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 州ガイドは「州の制度（免許・登録／賃貸・ボンド／公共交通カード）＋都市/農業の選び方」の州ハブとして構成し、州内の**公開済み記事**へ双方向リンク（`state-sa-guide` → `area-adelaide`、`state-tas-guide` → `area-hobart`・`region-tasmania-farm`、`state-nt-guide` → `area-darwin`・`safety-emergency`）。各都市/地域記事（`intent: area-guide`）と州ガイド（州制度の俯瞰）は次の行動が異なるため統合せず別記事として保持。
+- 州の制度は公式一次情報に限定（免許・登録＝Service SA / Service Tasmania / NT Government MVR、公共交通＝Adelaide Metro / Metro Tasmania / NT Public transport、賃貸・ボンド＝CBS / CBOS / NT Consumer Affairs、気候・警報＝BOM）。免許切替・賃貸条件などの具体値は州で変わるため断定せず「各公式で最新確認」に誘導し、数値の創作はしない。
+- `relatedSlugs` は公開/既存 slug と公開済み farm 地域ガイドのみ参照。dangling なし。
+- 孤立記事なし: area ハブページ（`GuideCategoryPage category="area"`）が公開 area 記事を自動列挙するため、3件はすべてハブから到達可能。
+- **最終 area ハブ監査（≤5 のため実施）:** `npm run build`（exit 0・`/sitemap.xml` 生成）／`npm run lint`（exit 0）／`npm run test:content`（5/5 pass）／`validate:articles`（area 29・重複0）／`validate:content`（0 error）。
+- **area ハブ完了: 公開29件（既存6＋バッチ #1〜#4 の20件＋本バッチ3件）。planned/merged/review/excluded: 0件。travel には着手しない。**
+
 ### area マイクロバッチ #4（2026-07-30 / 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし（本バッチは新規追加のみ）。** area ハブの次の5件

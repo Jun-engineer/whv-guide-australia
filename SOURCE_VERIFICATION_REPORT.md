@@ -440,6 +440,17 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## area マイクロバッチ #5 = area ハブ完了（SA / TAS / NT 州ガイド / 2026-07-30 / 残り3件公開＋最終監査）
+
+area ハブの残り全3件を新規公開し、**area ハブを完了**した（すべて `hub: "area"`・`category: "area"`・`intent: state-guide`・分類は全て create）。州ガイドは可変事項（家賃・時給・求人数・運賃／州ごとに変わる免許切替・賃貸条件）を断定せず、州の**制度/公式に紐づく事実**（免許・登録の所管、公共交通カード、賃貸・ボンドの所管、セカンドビザ対象性、気候・警報）を公式一次情報に照合し、各記事の `OfficialSourceBox` に出典と免責（制度・運賃・シーズンは変わりうる旨、最新は各公式で確認）を明示した。全3件に `verifiedAt: 2026-07-30` を付与。
+
+- `state-sa-guide`（P3, id a317, state-guide）— **Service SA / mySA GOV（免許・登録）**（https://www.sa.gov.au/topics/driving-and-transport ）＋**Adelaide Metro（metroCARD）**（https://www.adelaidemetro.com.au/ ）＋**Consumer and Business Services（CBS・賃貸・ボンド）**（https://www.cbs.sa.gov.au/ ）。アクセス 2026-07-30。物価が落ち着いた傾向・ワイン/農業のセカンドビザ、公開記事（`area-adelaide`）へリンク。
+- `state-tas-guide`（P2, id a318, state-guide）— **Transport Tasmania / Service Tasmania（免許・登録）**（https://www.transport.tas.gov.au/ ）＋**Metro Tasmania（greencard）**（https://www.metrotas.com.au/ ）＋**CBOS（賃貸・ボンド）**（https://www.cbos.tas.gov.au/ ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-30。他州より涼しい・冬の冷え込み、ベリー/果樹のセカンドビザ、公開記事（`area-hobart`・`region-tasmania-farm`）へリンク。
+- `state-nt-guide`（P2, id a319, state-guide）— **NT Government｜MVR（免許・登録）**（https://nt.gov.au/driving ）＋**NT Government｜Public transport**（https://nt.gov.au/driving/public-transport-cycling ）＋**NT Consumer Affairs（賃貸・ボンド）**（https://consumeraffairs.nt.gov.au/ ）＋**BOM｜Climate averages・気象警報**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-30。**乾季（5〜10月頃）・雨季（11〜4月頃）・サイクロン/洪水**、都市間の遠さ・安全対策、公開記事（`area-darwin`）へリンク。
+- **統合・リダイレクト・分割:** なし（3件は新規スラッグ、既存公開記事・マイクロバッチ #1〜#4 と検索意図が分離）。都市/地域記事（area-guide）と州ガイド（state-guide）は役割が異なるため別記事として保持。`relatedSlugs` は公開/既存 slug のみ参照（dangling 回避）。
+- **最終 area ハブ監査:** `npm run build`（exit 0・`/sitemap.xml` 生成）／`npm run lint`（exit 0）／`npm run test:content`（5/5 pass）／`validate:articles`（area 29・重複0・OK）／`tsc --noEmit`（exit 0）／`validate:content`（0 error / 66 warning・dangling なし）。
+- **area ハブ完了: 公開29件（既存6＋計画23）。planned/merged/review/excluded: 0件。次のカテゴリ（travel 等）には着手しない。**
+
 ## area マイクロバッチ #4（グリフィス / NSW・VIC・QLD・WA 州ガイド / 2026-07-30 / 5件公開）
 
 area ハブの次の5件を新規公開した（すべて `hub: "area"`・`category: "area"`・分類は全て create）。市/ファーム地域ガイド（`area-griffith`）と州ガイド4件（`intent: state-guide`）は、可変事項（家賃・時給・求人数・運賃・収穫シーズンの需要／州ごとに変わる免許切替・賃貸条件）を断定せず、州の**制度/公式に紐づく事実**（免許・登録の所管、公共交通カード、賃貸・ボンドの所管、セカンドビザ対象性、気候）を公式一次情報に照合し、各記事の `OfficialSourceBox` に出典と免責（制度・運賃・シーズンは変わりうる旨、最新は各公式で確認）を明示した。全5件に `verifiedAt: 2026-07-30` を付与。

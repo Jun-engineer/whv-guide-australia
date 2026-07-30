@@ -3371,7 +3371,7 @@ planned_content:
 - slug: state-sa-guide
   title: 南オーストラリア州ガイド｜制度・都市・農業
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: state-guide
@@ -3381,7 +3381,7 @@ planned_content:
 - slug: state-tas-guide
   title: タスマニア州ガイド｜制度・都市・ファーム
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: state-guide
@@ -3391,7 +3391,7 @@ planned_content:
 - slug: state-nt-guide
   title: ノーザンテリトリーガイド｜気候・仕事・安全
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: state-guide

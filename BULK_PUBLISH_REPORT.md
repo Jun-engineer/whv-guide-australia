@@ -3,6 +3,19 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-30）: area マイクロバッチ #5 = area ハブ完了（3件公開＋最終監査 / commit: feat: publish area micro-batch）
+
+area（都市・州・地域ガイド）ハブの残り全3件を公開し、**area ハブを完了**しました。開始時点で area は3件（≤5）残っていたため、全件を処理し、最終ハブ監査まで実施しました。
+
+- **公開した3件（すべて `hub: area`・`category: area`・`intent: state-guide`・`verifiedAt: 2026-07-30`・完全公開・分類は全て create）:**
+  `state-sa-guide`（P3, state-guide, id a317）, `state-tas-guide`（P2, state-guide, id a318）,
+  `state-nt-guide`（P2, state-guide, id a319）。
+- **作成（created）slug:** 上記3件。**更新/分割（updated/split）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **公式ソース:** Service SA (mySA GOV) / Adelaide Metro / Consumer and Business Services（SA）、Transport Tasmania / Metro Tasmania / CBOS / BOM（TAS）、NT Government (MVR) / NT Public transport / NT Consumer Affairs / BOM（NT）。
+- **マイクロバッチ検証:** `validate:articles`（area 29・重複0・OK）／`tsc --noEmit`（exit 0）／`validate:content`（0 error / 66 warning・記録済み共食い warning のみ・dangling なし）。
+- **最終 area ハブ監査:** `npm run build`（exit 0・全ルート prerender・`/sitemap.xml` 生成）／`npm run lint`（exit 0）／`npm run test:content`（5/5 pass）。
+- **area ハブ完了: 公開29件（既存6＋計画23）。planned/merged/review/excluded: 0件。travel には着手しない。**
+
 ## チェックポイント（2026-07-30）: area マイクロバッチ #4（5件公開 / commit: feat: publish area micro-batch）
 
 area（都市・州・地域ガイド）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で area は8件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り3件のため継続）。

@@ -4,6 +4,22 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-30）: area マイクロバッチ #5 = area ハブ完了（3件公開＋最終監査 / commit: feat: publish area micro-batch）
+
+area（都市・州・地域ガイド）ハブの残り全3件を公開し、**area ハブを完了**しました。開始時点で area は3件（≤5）が残っていたため、全件を処理し、最終ハブ監査（フルビルド・lint・test:content・sitemap/構造化データ）まで実施しました。以下が確定状態です。
+
+- **未完了 area 件数（開始時）:** 3件（すべて `state-*`・すべて planned）。既に公開済みは既存6件＋マイクロバッチ #1〜#4 の20件＝26件。
+- **処理した3件（残り全件）:** `state-sa-guide`, `state-tas-guide`, `state-nt-guide`。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded ではないことを確認済み。
+- **分類:** 3件すべて **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・既存記事の分割は該当なし（本バッチは新規追加のみ）。
+- **公開した3件（すべて `hub: area`・`category: area`・`intent: state-guide`・`verifiedAt: 2026-07-30`・完全公開・分類は全て create）:**
+  - `state-sa-guide`（a317）— SA 州ガイド（制度＝metroCARD/Service SA/CBS、拠点＝アデレード、農業・ワイン）。公式ソース: Service SA (mySA GOV) / Adelaide Metro / Consumer and Business Services。
+  - `state-tas-guide`（a318）— TAS 州ガイド（制度＝greencard/Service Tasmania/CBOS、拠点＝ホバート、ファーム・寒さ）。公式ソース: Transport Tasmania / Metro Tasmania / CBOS / BOM。
+  - `state-nt-guide`（a319）— NT 準州ガイド（制度＝MVR/NT Consumer Affairs、拠点＝ダーウィン、乾季/雨季・サイクロン・安全）。公式ソース: NT Government (MVR) / NT Public transport / NT Consumer Affairs / BOM。
+- **マイクロバッチ検証:** `validate:articles`（area 29件・重複0・OK）／`tsc --noEmit`（exit 0）／`validate:content`（0 error / 66 warning・記録済み共食い warning のみ・dangling なし）。
+- **最終 area ハブ監査（≤5 のため実施）:** `npm run build`（exit 0・`/guides/[slug]` を含む全ルートを prerender・`/sitemap.xml` 生成）／`npm run lint`（exit 0）／`npm run test:content`（5/5 pass）。エラーなし。
+- **内部リンク:** `relatedSlugs` は公開/既存 slug と公開済み farm 地域ガイドのみ参照（`area-adelaide`/`area-hobart`/`area-darwin`/`region-tasmania-farm`/`safety-emergency`/`housing-guide`/`license-guide`/`farm-second-visa`/`second-visa-guide` 等）。dangling なし。
+- **area ハブ完了: 公開29件（既存6＋計画23）。planned/merged/review/excluded: 0件。次のカテゴリ（travel 等）には着手しない。**
+
 ## チェックポイント（2026-07-30）: area マイクロバッチ #4（5件公開 / commit: feat: publish area micro-batch）
 
 area（都市・州・地域ガイド）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で area は8件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り3件のため次回以降に継続）。以下が確定状態です。
@@ -1004,7 +1020,7 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `language-exchange-meetup` — Language Exchange・Meetupで友達と英語環境を作る方法 _(優先度 P2、意図: social)_ **公開済み（2026-07-27）**
 - ✅ `ielts-pte-after-wh` — IELTS・PTEは必要？学生・就労・永住を考える人の試験選び _(優先度 P2、意図: comparison)_ **公開済み（2026-07-27）**
 
-### area — 都市・州・地域ガイド (23件、残り3件)
+### area — 都市・州・地域ガイド (23件、残り0件—ハブ完了)
 
 - ✅ `area-gold-coast` — ゴールドコースト エリアガイド｜仕事・家賃・交通・ビーチ生活 _(優先度 P0、意図: area-guide)_ **[公開済 2026-07-27]**
 - ✅ `area-perth` — パース エリアガイド｜仕事・家賃・車・西海岸生活 _(優先度 P0、意図: area-guide)_ **[公開済 2026-07-27]**
@@ -1026,9 +1042,9 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `state-vic-guide` — ビクトリア州ガイド｜制度・都市・仕事 _(優先度 P2、意図: state-guide)_ **[公開済 2026-07-30]**
 - ✅ `state-qld-guide` — クイーンズランド州ガイド｜制度・都市・ファーム _(優先度 P1、意図: state-guide)_ **[公開済 2026-07-30]**
 - ✅ `state-wa-guide` — 西オーストラリア州ガイド｜制度・都市・地方移動 _(優先度 P2、意図: state-guide)_ **[公開済 2026-07-30]**
-- `state-sa-guide` — 南オーストラリア州ガイド｜制度・都市・農業 _(優先度 P3、意図: state-guide)_ ← **次回開始**
-- `state-tas-guide` — タスマニア州ガイド｜制度・都市・ファーム _(優先度 P2、意図: state-guide)_
-- `state-nt-guide` — ノーザンテリトリーガイド｜気候・仕事・安全 _(優先度 P2、意図: state-guide)_
+- ✅ `state-sa-guide` — 南オーストラリア州ガイド｜制度・都市・農業 _(優先度 P3、意図: state-guide)_ **[公開済 2026-07-30]**
+- ✅ `state-tas-guide` — タスマニア州ガイド｜制度・都市・ファーム _(優先度 P2、意図: state-guide)_ **[公開済 2026-07-30]**
+- ✅ `state-nt-guide` — ノーザンテリトリーガイド｜気候・仕事・安全 _(優先度 P2、意図: state-guide)_ **[公開済 2026-07-30]**
 
 ### travel — 旅行・ロードトリップ (9件)
 
