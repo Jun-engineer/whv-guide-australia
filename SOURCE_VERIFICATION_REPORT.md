@@ -440,6 +440,18 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## area マイクロバッチ #2（ダーウィン / サンシャインコースト / トゥーンバ・ガトン / バンダバーグ / スタンソープ / 2026-07-30 / 5件公開）
+
+area ハブの次の5件を新規公開した（すべて `hub: "area"`・`category: "area"`・分類は全て create）。都市/地域ガイドは可変事項（家賃・時給・求人数・運賃・収穫シーズンの需要）を断定せず、交通・気候・空港・セカンドビザ対象性など**制度/公式に紐づく事実**を公式一次情報に照合し、各記事の `OfficialSourceBox` に出典と免責（制度・運賃・シーズンは変わりうる旨）を明示した。全5件に `verifiedAt: 2026-07-30` を付与。
+
+- `area-darwin`（P1, id a302, area-guide）— **Northern Territory Government｜Public transport**（https://nt.gov.au/driving/public-transport-cycling ）＋**Department of Home Affairs｜Specified work**（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work ）＋**Darwin International Airport（DRW）**（https://www.darwinairport.com.au/ ）＋**BOM｜Climate averages・気象警報**（http://www.bom.gov.au/climate/averages/ ）。いずれもアクセス 2026-07-30。**乾季（5〜10月頃）・雨季（11〜4月頃）・サイクロン**、建設/季節労働の対象確認を明示。
+- `area-sunshine-coast`（P2, id a303, area-guide）— **Translink（QLD go card）**（https://translink.com.au/ ）＋**Sunshine Coast Airport（MCY）**（https://www.sunshinecoastairport.com.au/ ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-30。家賃は断定せず Flatmates・realestate.com.au での確認へ誘導。UV は ARPANSA・BOM に言及。
+- `area-toowoomba-gatton`（P0, id a304, area-guide）— **Translink（QLD 公共交通）**（https://translink.com.au/ ）＋**Home Affairs｜Specified work**（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-30。**内陸の冷え込み・霜**、ファーム地域は車が必須級である点、セカンドビザ対象確認を明示。
+- `area-bundaberg`（P1, id a305, area-guide）— **Translink（QLD 公共交通）**（https://translink.com.au/ ）＋**Home Affairs｜Specified work**（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-30。セカンドビザ拠点性・悪質農園への注意・屋外作業の暑さ/UV を明示。
+- `area-stanthorpe`（P2, id a306, area-guide）— **Translink（QLD 公共交通）**（https://translink.com.au/ ）＋**Home Affairs｜Specified work**（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work ）＋**BOM｜Climate averages（低温/霜）**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-30。**グラニットベルトの寒さ（霜・まれに雪）**、公共交通が限られ車が便利な点、セカンドビザ対象確認を明示。
+- **統合・リダイレクト・分割:** なし（5件は新規スラッグ、既存公開記事・マイクロバッチ #1 と検索意図が分離）。未公開（planned）slug（`state-*-guide`・未公開 area slug 等）は `relatedSlugs` に含めず公開/既存 slug のみ参照（dangling 回避）。
+- **area 16/23 が最終ステータス確定（既存6件＋バッチ #1 5件＋本バッチ5件）。次の未完了 area slug: `area-townsville`。travel には着手しない。**
+
 ## area マイクロバッチ #1（ゴールドコースト / パース / ケアンズ / キャンベラ / ホバート / 2026-07-27 / 5件公開・既存結合記事2件を分割）
 
 area ハブの先頭5件を新規公開し、既存の結合記事2件（`area-brisbane`・`area-perth-cairns`）を分割・再構成した（すべて `hub: "area"`・`category: "area"`）。都市ガイドは可変事項（家賃・時給・求人数・運賃・シーズン需要）を断定せず、交通・気候・空港など**制度/公式に紐づく事実**を公式一次情報に照合し、各記事の `OfficialSourceBox` に出典と免責（制度・運賃・シーズンは変わりうる旨）を明示した。全5件に `verifiedAt: 2026-07-27` を付与。

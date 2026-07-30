@@ -3221,7 +3221,7 @@ planned_content:
 - slug: area-darwin
   title: ダーウィン エリアガイド｜乾季・雨季・仕事・北部条件
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: area-guide
@@ -3231,7 +3231,7 @@ planned_content:
 - slug: area-sunshine-coast
   title: サンシャインコースト エリアガイド
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-guide
@@ -3241,7 +3241,7 @@ planned_content:
 - slug: area-toowoomba-gatton
   title: トゥーンバ・ガトン エリアガイド｜地方生活・ファーム・車
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: area-guide
@@ -3251,7 +3251,7 @@ planned_content:
 - slug: area-bundaberg
   title: バンダバーグ エリアガイド｜ファーム・家・交通
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: area-guide
@@ -3259,9 +3259,9 @@ planned_content:
   update: quarterly
   path: /guides/area-bundaberg
 - slug: area-stanthorpe
-  title: スタンソープ エリアガイド｜寒さ・果樹・生活
+  title: スタンソープ エリアガイド｜寒さ・果樹・季節労働
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-guide

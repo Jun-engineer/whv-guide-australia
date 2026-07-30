@@ -3,6 +3,21 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-30）: area マイクロバッチ #2（5件公開 / commit: feat: publish area micro-batch）
+
+area（都市・州・地域ガイド）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で area は18件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り13件のため継続）。
+
+- **公開した5件（すべて `hub: area`・`category: area`・`verifiedAt: 2026-07-30`・完全公開・分類は全て create）:**
+  `area-darwin`（P1, area-guide, id a302）, `area-sunshine-coast`（P2, area-guide, id a303）,
+  `area-toowoomba-gatton`（P0, area-guide, id a304）, `area-bundaberg`（P1, area-guide, id a305）,
+  `area-stanthorpe`（P2, area-guide, id a306）。
+- **作成（created）slug:** 上記5件。**更新/分割（updated/split）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、地名クエリごとに検索意図が独立（ダーウィン＝熱帯北部／サンシャインコースト＝観光・ビーチ／トゥーンバ・ガトン＝内陸の野菜ファーム／バンダバーグ＝ワイドベイの農業・セカンドビザ拠点／スタンソープ＝グラニットベルトの寒冷な果樹地帯）。個別公開し `relatedSlugs` で相互リンク。
+- **公式照合（確認日 2026-07-30）:** Translink（QLD go card）／Northern Territory Government（NT 公共交通）／Bureau of Meteorology（気候・乾季/雨季・低温/霜・警報）／Department of Home Affairs（417 Specified work）／各空港公式（Darwin/Sunshine Coast）。可変事項（家賃・時給・求人数・運賃・収穫シーズンの需要）は断定せず、Flatmates・realestate.com.au・求人/公式で最新確認を誘導。ファームはセカンドビザ対象確認・悪質農園への注意を明示。
+- **manifest:** 該当5件を `status: planned` → `status: published`（`area-stanthorpe` はタイトルを記事に統一）。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug 0・area 16件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）。※フルビルド/テスト/lint はハブ完了時の最終監査に回す。
+- **残り area 13件。次の未完了 area slug: `area-townsville`。** 本セッションは area の次の5件のみ処理し、travel には着手しない。
+
 ## チェックポイント（2026-07-27）: area マイクロバッチ #1（5件公開 / commit: feat: publish area micro-batch）
 
 area（都市・州・地域ガイド）ハブの先頭5件を公開しました（マイクロバッチ運用）。開始時点で area は23件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り18件のため継続）。

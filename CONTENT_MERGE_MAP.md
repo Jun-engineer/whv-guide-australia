@@ -229,6 +229,18 @@ Rego/CTP/車検の違い・州別名義変更・保険の種類・ロードサ�
   `international-driving-permit` へ接続、`transport-payment-guide` に `intercity-transport` を追加。孤立記事なし。
 - 備考: これで transport ハブは全24件が最終ステータス確定（planned 0件・ハブ完了）。
 
+### area マイクロバッチ #2（2026-07-30 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし（本バッチは新規追加のみ）。** area ハブの次の5件
+（`area-darwin` / `area-sunshine-coast` / `area-toowoomba-gatton` / `area-bundaberg` / `area-stanthorpe`）はすべて**新規スラッグ**（`hub: "area"`・`category: "area"`）で、
+地名クエリごとに検索意図が独立するため個別公開し、`relatedSlugs` で相互接続した。分類はいずれも create。
+
+- 5件と既存/公開記事を意図の近い組で双方向リンク（`area-darwin` ↔ `area-cairns`・`specified-work-postcodes`・`farm-second-visa`、`area-sunshine-coast` ↔ `area-brisbane`・`area-gold-coast`、`area-toowoomba-gatton` ↔ `region-gatton-lockyer`・`farm-finding`、`area-bundaberg` ↔ `region-bundaberg-farm`・`farm-second-visa`、`area-stanthorpe` ↔ `region-stanthorpe-farm`・`area-toowoomba-gatton`・`farm-work-clothing`）。
+- 既存記事本文への更新（統合・リダイレクトなし・slug/URL/公開状態は不変）: なし。
+- `relatedSlugs` は公開/既存 slug と公開済み farm 地域ガイドのみ参照。未公開（planned）の `state-*-guide`・未公開 area slug 等は含めず dangling 回避。
+- 孤立記事なし: area ハブページ（`GuideCategoryPage category="area"`）が公開 area 記事を自動列挙するため、5件はすべてハブから到達可能。
+- **area 16/23 が最終ステータス確定（既存6件＋バッチ #1 5件＋本バッチ5件）。次の未完了 area slug: `area-townsville`。travel には着手しない。**
+
 ### area マイクロバッチ #1（2026-07-27 / 5件公開・既存結合記事2件を分割）
 
 **統合（merged）: なし。リダイレクト: なし。** area ハブの先頭5件
