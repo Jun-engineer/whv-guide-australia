@@ -29,7 +29,8 @@ export type ArticleCategory =
   | "clothing"
   | "area"
   | "english"
-  | "health";
+  | "health"
+  | "travel";
 
 export type ArticleImage = {
   /** /public 配下の画像パス（例: /guides/visa/immiaccount.png） */

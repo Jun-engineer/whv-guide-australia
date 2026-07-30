@@ -8,6 +8,27 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## travel マイクロバッチ #1（2026-07-30 / 5件公開）
+
+travel（旅行）ハブの最初の5件を公開。旅行記事はライブ価格・空席・時刻・許可・入場条件・催行状況を発明せず、
+公的観光・交通・空港・国立公園・気象・政府ソースで可変事項を裏付け、費用は例・レンジのみとし、確認日（2026-07-30）を明記した。
+
+| slug | タイトルの主要な問いと確定記述 | 照合した公式一次情報（accessedAt 2026-07-30） |
+| --- | --- | --- |
+| `australia-travel-seasons` | 全国共通のベストシーズンは無く地域差が大きい（北部＝乾季/雨季・南部＝四季・内陸＝寒暖差・タスマニア＝冷涼、南半球で日本と季節が逆）。実際の天気・警報は可変として断定せず公式へ | Bureau of Meteorology（Climate averages / Warnings）、ARPANSA（UV index）、Tourism Australia |
+| `domestic-flight-guide` | 最安運賃は座席のみが多く、荷物込み総額＋変更/返金条件で比較。荷物は機内持込と預けで別制限・超過は割高。運賃/時刻/空席は断定せず各社公式へ | Jetstar / Qantas / Virgin Australia（各 Baggage）、Rex（Regional Express）公式 |
+| `australia-road-trip-guide` | 都市間は長大・無人/無電波区間あり、満タン運用・疲労休憩・夜間の動物衝突注意・冠水路は進入禁止（If it's flooded, forget it）・緊急は000。速度/ルール/免許は州で異なると誘導 | BOM（Warnings）、Triple Zero（000）、Transport for NSW（Road safety）、Parks Australia |
+| `camping-free-camps` | 国立/州立公園（多く要予約・有料）・自治体サイト・民間パークの違い、許可のない野営は罰則対象、Leave No Trace、fire ban、防犯。料金/予約/滞在日数は可変として公式へ | Parks Australia、NSW National Parks（Camping）、Queensland Government（Camping）、Triple Zero（000） |
+| `east-coast-route` | シドニー→ケアンズの北上モデルルート（約2,500〜3,000km・要点1〜2週間）、車/長距離バス/国内線の組合せ、予算は宿/移動/食費/アクティビティの4分類。具体額・ツアー催行・海況は断定せず公式へ | Tourism Australia、BOM（サイクロン警報）、Great Barrier Reef Marine Park Authority |
+
+- **可変事項の断定回避:** 運賃・時刻・空席・荷物ルール・変更条件（航空会社公式）、天気・サイクロン・洪水・道路状況（BOM/州防災）、
+  キャンプの料金・予約・滞在日数・fire ban（各公園当局・自治体）、ツアー催行・海況・入場料（GBRMPA/各運営）を具体値で断定せず、
+  確認日を明記し各公式へ誘導。予算・距離・日数は「例・レンジ・目安」としてのみ提示。
+- **統合・リダイレクト:** なし（5件は新規スラッグ、travel ハブ初回で既存公開 travel 記事なし）。
+- **検証:** `validate:articles`（重複0・travel 5件・`OK: no article data errors`）、`tsc --noEmit` クリーン（exit 0）、
+  `validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）。
+  ※フルビルド/テスト/lint/監査は travel ハブ完了後（残り≤5）に実施。
+
 ## 1. 照合した公式一次情報
 
 ### ビザ（immi.homeaffairs.gov.au — Work and Holiday / Working Holiday 417）

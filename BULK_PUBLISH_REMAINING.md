@@ -4,6 +4,35 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-30）: travel マイクロバッチ #1（5件公開 / commit: feat: publish travel micro-batch）
+
+travel（旅行）ハブの最初の5件を公開しました（マイクロバッチ運用）。開始時点で travel は9件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り4件のため次回以降に継続）。以下が確定状態です。
+
+- **未完了 travel 件数（開始時）:** 9件（すべて planned・すべて `hub: travel`）。既存公開の travel 記事は0件（本バッチが travel ハブの初回）。
+- **選定した5件（記録順の先頭5件）:** `australia-travel-seasons`, `domestic-flight-guide`, `australia-road-trip-guide`, `camping-free-camps`, `east-coast-route`。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded ではないことを確認済み。
+- **分類:** 5件すべて **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・既存記事の分割は該当なし（本バッチは新規追加のみ）。
+- **公開した5件（すべて `category: travel`・`hub: travel`・`intent: travel`・`verifiedAt: 2026-07-30`・完全公開・分類は全て create）:**
+  - `australia-travel-seasons`（P1, travel, id a320）— 目的地＝豪州全域／対象＝これから旅程を組むワーホリ。地域別の気候（熱帯の乾季/雨季・南部の四季・内陸の寒暖差・タスマニアの冷涼）で「いつ・どこへ」を決める旅行計画（プランニング）。可変の天気・警報・料金は断定せず公式へ誘導。公式: BOM（気候平年値・警報）／ARPANSA（UV）／Tourism Australia。
+  - `domestic-flight-guide`（P1, travel, id a321）— 目的地＝国内都市間／対象＝国内線を安く予約したいワーホリ。予約の考え方（荷物込み総額・変更条件で比較）と当日空港・IDを整理。運賃・時刻・空席・荷物ルールは変わるため断定せず各社公式へ。公式: Jetstar/Qantas/Virgin Australia の Baggage・Rex 公式。
+  - `australia-road-trip-guide`（P1, travel, id a322）— 目的地＝豪州のロードトリップ全般／対象＝車で長距離を走る人。距離感・車と保険・宿・通信・緊急時（水/燃料/000・冠水回避）を安全重視で整理。速度/ルール/免許は州で異なるとして各州公式へ。公式: BOM（警報）／Triple Zero（000）／Transport for NSW（道路安全）／Parks Australia。
+  - `camping-free-camps`（P2, travel, id a323）— 目的地＝キャンプ地全般／対象＝Free Camp/キャンプで節約したい人。国立/州立公園・自治体サイト・民間パークの違い、設備差、Leave No Trace、fire ban、防犯を整理。許可のない野営は罰則対象と警告し公式へ。公式: Parks Australia／NSW National Parks／Queensland Government（Camping）／Triple Zero（000）。
+  - `east-coast-route`（P2, travel, id a324）— 目的地＝東海岸（シドニー→ケアンズ）／対象＝東海岸周遊を計画する人。日数・移動手段（車/長距離バス/国内線）・ルート順・主要スポット・予算4分類（宿/移動/食費/アクティビティ）のモデルルート（itinerary）。料金・催行・海況は断定せず公式へ。公式: Tourism Australia／BOM（サイクロン警報）／GBRMPA（リーフ）。
+- **旅程ガイダンスと可変情報の区別:** 各記事で「モデルルート・季節傾向・予約の考え方（itinerary/プランニング）」と「実際の運賃・時刻・空席・天気・警報・ツアー催行・料金（changeable）」を明確に分離。changeable は具体額・便・時刻を断定せず、確認日 2026-07-30 を明記し各公式（航空会社・空港・BOM・国立公園・GBRMPA・Tourism Australia）へ誘導。予算は「例・カテゴリ・レンジ」としてのみ提示。
+- **旅行記事の要件充足:** 目的地と対象読者の明示／主要な問いへの冒頭回答／推奨日数・移動手段・ルート順・主要スポット・予算カテゴリ・宿泊・季節・予約リスク・運転距離・安全の該当項目を記載／ライブ価格・空席・時刻・許可・入場条件は不記載（公式へ）。
+- **目的地モジュール:** 新規 `lib/content/articles/travel.ts`（全て `category: "travel"` / `hub: "travel"`）。`mockData.ts` へ記事は追加していない（カテゴリラベル `travel: 旅行` のみ `articleCategories` に追記＝新カテゴリの必須整備）。
+- **新カテゴリ整備（area の前例に準拠）:** `types/article.ts` の `ArticleCategory` に `"travel"` 追加、`lib/content/articles/index.ts` に import と配列追加、`lib/content/hubs.ts` の `CATEGORY_TO_HUB` に `travel: "travel"` 追加、`lib/mockData.ts` の `articleCategories` にラベル追加、`app/travel/page.tsx`（`GuideCategoryPage category="travel"`）新設、`app/sitemap.ts` staticRoutes に `/travel` 追加、`components/layout/Footer.tsx` に旅行リンク追加。
+- **孤立記事なし:** travel カテゴリページ（`app/travel/page.tsx`）が公開 travel 記事を自動列挙し、Footer からも到達可能。各記事は一意のモジュールにのみ存在。`relatedSlugs` は公開/既存 slug と本バッチの新規5件のみ参照（未公開 planned の `great-barrier-reef-guide`/`uluru-guide`/`tasmania-trip-guide`/`public-holiday-travel` は含めず dangling 回避）。既存 `visa.ts` の `domestic-flight-guide` 参照が本公開で解決（グローバル dangling が1件減）。
+- **内部リンク:** area（`area-sydney`/`area-gold-coast`/`area-brisbane`/`area-cairns`/`area-hobart`）・交通（`intercity-transport`/`transport-payment-guide`は未使用、`flight-booking-guide`/`arrival-airport-guide`）・車（`cars-guide`）・免許（`license-guide`）・安全（`safety-emergency`）・通信（`sim-guide`）・服装（`clothing-guide`）へ接続。すべて公開/既存 slug に解決。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug/パス/エクスポート 0・travel 5件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）、新規5件の `relatedSlugs` は全て公開/既存 slug に解決。
+  ※フルビルド/テスト/lint/sitemap/構造化データ監査は travel ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **修正1回（リトライ枠内）:** 新カテゴリ追加に伴い `lib/content/hubs.ts` の `CATEGORY_TO_HUB` に `travel` が不足し tsc が TS2741。`travel: "travel"` を追記して解消（1回で完了）。
+- **残り travel slug（4件・すべて planned のまま）:** `great-barrier-reef-guide`（P3）, `uluru-guide`（P3）, `tasmania-trip-guide`（P3）, `public-holiday-travel`（P2）。
+- **最初の未完了 travel slug: `great-barrier-reef-guide`**（次回はここから再開。残り4件＝次回は travel ハブ最終監査を実施）。
+- **次のバッチ: travel（`great-barrier-reef-guide` から継続・残り4件で最終監査）。** ※本セッションは travel の先頭5件のみ処理し、english/area・その他カテゴリには着手しない。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/travel.ts`（新規）、`lib/content/articles/index.ts`、`lib/content/hubs.ts`、`types/article.ts`、`lib/mockData.ts`、`app/travel/page.tsx`（新規）、`app/sitemap.ts`、`components/layout/Footer.tsx`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-30）: area マイクロバッチ #5 = area ハブ完了（3件公開＋最終監査 / commit: feat: publish area micro-batch）
 
 area（都市・州・地域ガイド）ハブの残り全3件を公開し、**area ハブを完了**しました。開始時点で area は3件（≤5）が残っていたため、全件を処理し、最終ハブ監査（フルビルド・lint・test:content・sitemap/構造化データ）まで実施しました。以下が確定状態です。

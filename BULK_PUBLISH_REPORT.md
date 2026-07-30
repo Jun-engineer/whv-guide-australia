@@ -3,6 +3,24 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-30）: travel マイクロバッチ #1（5件公開 / commit: feat: publish travel micro-batch）
+
+travel（旅行）ハブの最初の5件を公開しました（マイクロバッチ運用）。開始時点で travel は9件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り4件のため継続）。本バッチは travel ハブの初回で、新カテゴリの基盤整備を伴います。
+
+- **公開した5件（すべて `category: travel`・`hub: travel`・`intent: travel`・`verifiedAt: 2026-07-30`・完全公開・分類は全て create）:**
+  `australia-travel-seasons`（P1, travel, id a320）, `domestic-flight-guide`（P1, travel, id a321）,
+  `australia-road-trip-guide`（P1, travel, id a322）, `camping-free-camps`（P2, travel, id a323）,
+  `east-coast-route`（P2, travel, id a324）。
+- **作成（created）slug:** 上記5件。**更新/分割（updated/split）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **目的地と対象読者の明示・旅程/可変情報の区別:** 各記事で目的地（豪州全域の季節／国内都市間／ロードトリップ全般／キャンプ地／東海岸シドニー→ケアンズ）と対象読者を明示。モデルルート・季節傾向・予約の考え方（itinerary/プランニング）と、実運賃・時刻・空席・天気・警報・ツアー催行・料金（changeable）を分離し、changeable は具体額・便・時刻を断定せず確認日を明記して公式へ誘導。予算は例・カテゴリ・レンジのみ。
+- **公式ソース:** BOM（気候平年値・気象/サイクロン/洪水警報）／ARPANSA（UV）／Tourism Australia／Jetstar・Qantas・Virgin Australia の Baggage・Rex 公式／Triple Zero（000）／Transport for NSW（道路安全）／Parks Australia・NSW National Parks・Queensland Government（Camping）／Great Barrier Reef Marine Park Authority。
+- **新カテゴリ整備（area 前例に準拠）:** `ArticleCategory` に `travel` 追加、`travel.ts` 新規モジュール、`index.ts` 配線、`hubs.ts` の `CATEGORY_TO_HUB` に `travel`、`mockData.ts` にカテゴリラベル（記事は追加せず）、`app/travel/page.tsx` 新設、`sitemap.ts`・Footer に `/travel` 追加。
+- **孤立記事なし:** `/travel`（`GuideCategoryPage category="travel"`）が公開 travel 記事を自動列挙・Footer からも到達可能。`relatedSlugs` は公開/既存 slug と本バッチ新規5件のみ参照（未公開 planned は含めず dangling 回避）。既存 `visa.ts` の `domestic-flight-guide` 参照が本公開で解決。
+- **manifest:** 該当5件を `status: planned` → `status: published`。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug/パス/エクスポート 0・travel 5件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）。※フルビルド/テスト/lint はハブ完了時（残り≤5）の最終監査に回す。
+- **修正1回（リトライ枠内）:** `hubs.ts` の `CATEGORY_TO_HUB` に `travel` が不足し tsc TS2741 → `travel: "travel"` 追記で解消（1回）。
+- **残り travel 4件。次の未完了 travel slug: `great-barrier-reef-guide`（次回は ≤5 のため全件処理＋最終 travel ハブ監査）。** 本セッションは travel 先頭5件のみ処理し、他カテゴリには着手しない。
+
 ## チェックポイント（2026-07-30）: area マイクロバッチ #5 = area ハブ完了（3件公開＋最終監査 / commit: feat: publish area micro-batch）
 
 area（都市・州・地域ガイド）ハブの残り全3件を公開し、**area ハブを完了**しました。開始時点で area は3件（≤5）残っていたため、全件を処理し、最終ハブ監査まで実施しました。

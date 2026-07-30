@@ -9,6 +9,7 @@ const guideLinks = [
   { href: "/area", label: "エリアガイド" },
   { href: "/english", label: "英語学習" },
   { href: "/health", label: "健康・安全" },
+  { href: "/travel", label: "旅行" },
 ];
 
 const workLinks = [

@@ -10,6 +10,23 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### travel マイクロバッチ #1（2026-07-30 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** travel（旅行）ハブの最初の5件
+（`australia-travel-seasons` / `domestic-flight-guide` / `australia-road-trip-guide` /
+`camping-free-camps` / `east-coast-route`）はすべて**新規スラッグ**（`category: "travel"` / `hub: "travel"`）で、
+本バッチが travel ハブの初回のため既存の公開 travel 記事は存在せず、統合・リダイレクトは発生しない。分類はいずれも create。
+
+- 5件は検索意図が独立（季節・気候の選び方／国内線の安い予約／ロードトリップの計画と安全／キャンプ・Free Campのルール／
+  東海岸のモデルルート）。旅程ガイダンス（itinerary/プランニング）と可変情報（運賃・時刻・天気・料金）を各記事内で分離し、
+  可変情報は断定せず公式へ誘導。相互に `relatedSlugs` で接続。
+- 新カテゴリ整備（area 前例に準拠）: `ArticleCategory` に `travel` 追加・`travel.ts` 新規・`index.ts`/`hubs.ts` 配線・
+  `mockData.ts` にカテゴリラベル（記事は非追加）・`app/travel/page.tsx` 新設・`sitemap.ts`/Footer に `/travel`。
+- 孤立記事なし: `/travel`（`GuideCategoryPage category="travel"`）が公開 travel 記事を自動列挙。`relatedSlugs` は公開/既存slug＋
+  本バッチ新規のみ参照（未公開 planned の `great-barrier-reef-guide`/`uluru-guide`/`tasmania-trip-guide`/`public-holiday-travel`
+  は含めず dangling 回避）。既存 `visa.ts` の `domestic-flight-guide` 参照が本公開で解決。
+- 次の未完了 travel slug: `great-barrier-reef-guide`（残り4件＝次回は最終 travel ハブ監査）。
+
 ## 1. 実施済み統合（計画 → 既存公開記事）
 
 リダイレクトは `lib/content/redirects.ts` を単一の情報源とし、`next.config.ts` の

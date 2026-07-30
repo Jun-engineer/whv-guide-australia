@@ -3401,7 +3401,7 @@ planned_content:
 - slug: australia-travel-seasons
   title: オーストラリア旅行のベストシーズン｜地域別の気候
   hub: travel
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: travel
@@ -3411,7 +3411,7 @@ planned_content:
 - slug: domestic-flight-guide
   title: 国内線を安く予約する方法｜荷物・空港・変更条件
   hub: travel
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: travel
@@ -3421,7 +3421,7 @@ planned_content:
 - slug: australia-road-trip-guide
   title: オーストラリアロードトリップの計画と安全
   hub: travel
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: travel
@@ -3431,7 +3431,7 @@ planned_content:
 - slug: camping-free-camps
   title: キャンプ・Free Campの探し方とルール
   hub: travel
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: travel
@@ -3441,7 +3441,7 @@ planned_content:
 - slug: east-coast-route
   title: 東海岸周遊モデルルート｜シドニーからケアンズ
   hub: travel
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: travel

@@ -23,6 +23,7 @@ import { clothingArticles } from "./clothing";
 import { areaArticles } from "./area";
 import { englishArticles } from "./english";
 import { healthArticles } from "./health";
+import { travelArticles } from "./travel";
 
 export type { Article } from "./types";
 
@@ -56,6 +57,7 @@ const categoryArticleGroups: Article[][] = [
   areaArticles,
   englishArticles,
   healthArticles,
+  travelArticles,
 ];
 
 /**
