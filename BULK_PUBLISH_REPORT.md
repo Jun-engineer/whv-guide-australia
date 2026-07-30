@@ -3,6 +3,21 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-07-30）: area マイクロバッチ #3（5件公開 / commit: feat: publish area micro-batch）
+
+area（都市・州・地域ガイド）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で area は13件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り8件のため継続）。
+
+- **公開した5件（すべて `hub: area`・`category: area`・`verifiedAt: 2026-07-30`・完全公開・分類は全て create）:**
+  `area-townsville`（P2, area-guide, id a307）, `area-newcastle`（P2, area-guide, id a308）,
+  `area-wollongong`（P3, area-guide, id a309）, `area-mildura`（P2, area-guide, id a310）,
+  `area-shepparton`（P2, area-guide, id a311）。
+- **作成（created）slug:** 上記5件。**更新/分割（updated/split）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、地名クエリごとに検索意図が独立（タウンズビル＝北QLDの都市＋周辺ファーム／ニューカッスル＝シドニー外NSWの都市・家賃控えめ／ウーロンゴン＝シドニー南の大学・通勤圏／ミルデューラ＝VIC北西のファーム・セカンドビザ拠点／シェパートン＝VIC北部の果物・食品加工）。個別公開し `relatedSlugs` で相互リンク。
+- **公式照合（確認日 2026-07-30）:** Translink（QLD go card）／Transport for NSW（NSW Opal）／Public Transport Victoria（VIC V/Line・地域バス）／Bureau of Meteorology（気候・雨季/サイクロン・低温）／Department of Home Affairs（417 Specified work）／各空港公式（Townsville/Newcastle）。可変事項（家賃・時給・求人数・運賃・収穫シーズンの需要）は断定せず、Flatmates・realestate.com.au・求人/公式で最新確認を誘導。ファームはセカンドビザ対象確認・悪質農園への注意を明示。
+- **manifest:** 該当5件を `status: planned` → `status: published`。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug 0・area 21件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）。※フルビルド/テスト/lint はハブ完了時の最終監査に回す。
+- **残り area 8件。次の未完了 area slug: `area-griffith`。** 本セッションは area の次の5件のみ処理し、travel には着手しない。
+
 ## チェックポイント（2026-07-30）: area マイクロバッチ #2（5件公開 / commit: feat: publish area micro-batch）
 
 area（都市・州・地域ガイド）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で area は18件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り13件のため継続）。

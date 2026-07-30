@@ -4,6 +4,33 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-07-30）: area マイクロバッチ #3（5件公開 / commit: feat: publish area micro-batch）
+
+area（都市・州・地域ガイド）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で area は13件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り8件のため次回以降に継続）。以下が確定状態です。
+
+- **未完了 area 件数（開始時）:** 13件（6件 `area-*` ＋ 7件 `state-*`、すべて planned）。既に公開済みは既存6件＋マイクロバッチ #1・#2 の10件＝16件。
+- **選定した5件（記録順の先頭5件）:** `area-townsville`, `area-newcastle`, `area-wollongong`, `area-mildura`, `area-shepparton`。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded ではないことを確認済み。
+- **分類:** 5件すべて **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・既存記事の分割は該当なし（本バッチは新規追加のみ）。
+- **公開した5件（すべて `hub: area`・`category: area`・`verifiedAt: 2026-07-30`・完全公開・分類は全て create）:**
+  `area-townsville`（P2, area-guide, id a307）, `area-newcastle`（P2, area-guide, id a308）,
+  `area-wollongong`（P3, area-guide, id a309）, `area-mildura`（P2, area-guide, id a310）,
+  `area-shepparton`（P2, area-guide, id a311）。
+- **作成（created）slug:** 上記5件。**更新/分割（updated/split）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **統合しない理由:** 5件はいずれも新規スラッグで、地名クエリごとに検索意図が独立（タウンズビル＝北QLDの都市＋周辺ファーム拠点／ニューカッスル＝シドニー外NSWの都市・家賃控えめ／ウーロンゴン＝シドニー南の大学・通勤圏／ミルデューラ＝VIC北西のぶどう/柑橘ファーム・セカンドビザ拠点／シェパートン＝VIC北部の果物・食品加工地帯）。個別公開し `relatedSlugs` で相互リンク。
+- **目的地モジュール:** `lib/content/articles/area.ts`（全て `category: "area"` / `hub: "area"`）。`mockData.ts` へは追加していない。
+- **孤立記事なし:** area カテゴリページ（`app/area/page.tsx` の `GuideCategoryPage category="area"`）が公開 area 記事を自動列挙するため、5件はすべて `/area` から到達可能。各記事は一意のモジュールにのみ存在。`relatedSlugs` は公開/既存 slug と公開済み farm 地域ガイド（`region-bowen-ayr-farm`・`region-mildura-farm`・`region-shepparton-farm`）のみ参照（planned の `state-*-guide`・未公開 area slug 等は含めず dangling 回避）。
+- **州ルールと現地条件の区別:** 免許・飲酒・賃貸法などは州単位、気候・交通・仕事・シーズンは都市/地域単位として記述。可変事項（家賃・時給・求人数・運賃・収穫シーズンの需要）は断定せず、最新は各公式・求人/物件サイトで確認するよう誘導。ファーム記事はセカンドビザ対象作業・地域の確認と悪質農園への注意を明示。
+- **公式照合（記事反映済み・確認日 2026-07-30）:** Translink（QLD go card）／Transport for NSW（NSW Opal）／Public Transport Victoria（VIC V/Line・地域バス）／Bureau of Meteorology（気候平年値・雨季/サイクロン・低温）／Department of Home Affairs（417 Specified work）／各空港公式（Townsville/Newcastle Airport）。タウンズビルの雨季・サイクロン、NSW都市のシドニー通勤・家賃比較、VIC農業地域のセカンドビザ拠点性と夏の高温/冬の冷え込みを明示。
+- **可変事項の断定回避:** 家賃・時給・求人数・運賃・収穫シーズンの需要は具体数値を断定せず、Flatmates・realestate.com.au・求人サイト・各公式で最新確認を促す。ファームは悪質農園・セカンドビザ対象確認を強調。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug 0・area 21件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）、新規5件の `relatedSlugs` は全て公開/既存 slug に解決。
+  ※フルビルド/テスト/lint/sitemap/構造化データ監査は area ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **残り area slug（8件・すべて planned のまま）:** `area-griffith`, `state-nsw-guide`, `state-vic-guide`, `state-qld-guide`, `state-wa-guide`, `state-sa-guide`, `state-tas-guide`, `state-nt-guide`。
+- **最初の未完了 area slug: `area-griffith`**（次回はここから再開）。
+- **次のバッチ: area（`area-griffith` から継続）。** ※本セッションは area の次の5件のみ処理し、travel・その他カテゴリには着手しない。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/area.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。**
+
 ## チェックポイント（2026-07-30）: area マイクロバッチ #2（5件公開 / commit: feat: publish area micro-batch）
 
 area（都市・州・地域ガイド）ハブの次の5件を公開しました（マイクロバッチ運用）。開始時点で area は18件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り13件のため次回以降に継続）。以下が確定状態です。
@@ -960,7 +987,7 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `language-exchange-meetup` — Language Exchange・Meetupで友達と英語環境を作る方法 _(優先度 P2、意図: social)_ **公開済み（2026-07-27）**
 - ✅ `ielts-pte-after-wh` — IELTS・PTEは必要？学生・就労・永住を考える人の試験選び _(優先度 P2、意図: comparison)_ **公開済み（2026-07-27）**
 
-### area — 都市・州・地域ガイド (23件、残り13件)
+### area — 都市・州・地域ガイド (23件、残り8件)
 
 - ✅ `area-gold-coast` — ゴールドコースト エリアガイド｜仕事・家賃・交通・ビーチ生活 _(優先度 P0、意図: area-guide)_ **[公開済 2026-07-27]**
 - ✅ `area-perth` — パース エリアガイド｜仕事・家賃・車・西海岸生活 _(優先度 P0、意図: area-guide)_ **[公開済 2026-07-27]**
@@ -972,12 +999,12 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ✅ `area-toowoomba-gatton` — トゥーンバ・ガトン エリアガイド｜地方生活・ファーム・車 _(優先度 P0、意図: area-guide)_ **[公開済 2026-07-30]**
 - ✅ `area-bundaberg` — バンダバーグ エリアガイド｜ファーム・家・交通 _(優先度 P1、意図: area-guide)_ **[公開済 2026-07-30]**
 - ✅ `area-stanthorpe` — スタンソープ エリアガイド｜寒さ・果樹・生活 _(優先度 P2、意図: area-guide)_ **[公開済 2026-07-30]**
-- `area-townsville` — タウンズビル エリアガイド｜北QLDの仕事と暮らし _(優先度 P2、意図: area-guide)_ ← **次回開始**
-- `area-newcastle` — ニューカッスル エリアガイド｜シドニー外の仕事と家賃 _(優先度 P2、意図: area-guide)_
-- `area-wollongong` — ウーロンゴン エリアガイド｜大学・ビーチ・通勤 _(優先度 P3、意図: area-guide)_
-- `area-mildura` — ミルデューラ エリアガイド｜ファームと地方生活 _(優先度 P2、意図: area-guide)_
-- `area-shepparton` — シェパートン エリアガイド｜農業地域での生活 _(優先度 P2、意図: area-guide)_
-- `area-griffith` — グリフィス エリアガイド｜農業・食品加工・生活 _(優先度 P2、意図: area-guide)_
+- ✅ `area-townsville` — タウンズビル エリアガイド｜北QLDの仕事と暮らし _(優先度 P2、意図: area-guide)_ **[公開済 2026-07-30]**
+- ✅ `area-newcastle` — ニューカッスル エリアガイド｜シドニー外の仕事と家賃 _(優先度 P2、意図: area-guide)_ **[公開済 2026-07-30]**
+- ✅ `area-wollongong` — ウーロンゴン エリアガイド｜大学・ビーチ・通勤 _(優先度 P3、意図: area-guide)_ **[公開済 2026-07-30]**
+- ✅ `area-mildura` — ミルデューラ エリアガイド｜ファームと地方生活 _(優先度 P2、意図: area-guide)_ **[公開済 2026-07-30]**
+- ✅ `area-shepparton` — シェパートン エリアガイド｜農業地域での生活 _(優先度 P2、意図: area-guide)_ **[公開済 2026-07-30]**
+- `area-griffith` — グリフィス エリアガイド｜農業・食品加工・生活 _(優先度 P2、意図: area-guide)_ ← **次回開始**
 - `state-nsw-guide` — ニューサウスウェールズ州ガイド｜制度・都市・仕事 _(優先度 P2、意図: state-guide)_
 - `state-vic-guide` — ビクトリア州ガイド｜制度・都市・仕事 _(優先度 P2、意図: state-guide)_
 - `state-qld-guide` — クイーンズランド州ガイド｜制度・都市・ファーム _(優先度 P1、意図: state-guide)_

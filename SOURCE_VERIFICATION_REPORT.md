@@ -440,6 +440,18 @@ transport ハブの残り13件（transport 9件＋license 4件）の公式照合
 - 免許切替・駐車罰金・事故届出・e-scooter 規制などの**具体的な条件は州/自治体で可変**のため断定を避け、
   各州交通当局・council・警察へ誘導。verifiedAt は記事公開時（2026-07-19）に付与済み。
 
+## area マイクロバッチ #3（タウンズビル / ニューカッスル / ウーロンゴン / ミルデューラ / シェパートン / 2026-07-30 / 5件公開）
+
+area ハブの次の5件を新規公開した（すべて `hub: "area"`・`category: "area"`・分類は全て create）。都市/地域ガイドは可変事項（家賃・時給・求人数・運賃・収穫シーズンの需要）を断定せず、交通・気候・空港・セカンドビザ対象性など**制度/公式に紐づく事実**を公式一次情報に照合し、各記事の `OfficialSourceBox` に出典と免責（制度・運賃・シーズンは変わりうる旨）を明示した。全5件に `verifiedAt: 2026-07-30` を付与。
+
+- `area-townsville`（P2, id a307, area-guide）— **Translink（QLD go card）**（https://translink.com.au/ ）＋**Townsville Airport（TSV）**（https://www.townsvilleairport.com.au/ ）＋**BOM｜Climate averages・気象警報**（http://www.bom.gov.au/climate/averages/ ）。いずれもアクセス 2026-07-30。**雨季（11〜4月頃）・サイクロン**、周辺ファーム（Bowen/Ayr）のセカンドビザ対象確認を明示。
+- `area-newcastle`（P2, id a308, area-guide）— **Transport for NSW（Opal）**（https://transportnsw.info/ ）＋**Newcastle Airport（NTL）**（https://www.newcastleairport.com.au/ ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-30。家賃は断定せず「シドニーより抑えやすい傾向」とし Flatmates・realestate.com.au での確認へ誘導。
+- `area-wollongong`（P3, id a309, area-guide）— **Transport for NSW（Opal）**（https://transportnsw.info/ ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-30。シドニーへの電車通勤圏、家賃はエリア・時期で変動と明示。
+- `area-mildura`（P2, id a310, area-guide）— **Public Transport Victoria（V/Line・地域バス）**（https://www.ptv.vic.gov.au/ ）＋**Home Affairs｜Specified work**（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-30。**乾燥内陸・夏は高温/冬は冷え込み**、セカンドビザ拠点性・悪質農園への注意を明示。
+- `area-shepparton`（P2, id a311, area-guide）— **Public Transport Victoria（V/Line・地域バス）**（https://www.ptv.vic.gov.au/ ）＋**Home Affairs｜Specified work**（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work ）＋**BOM｜Climate averages**（http://www.bom.gov.au/climate/averages/ ）。アクセス 2026-07-30。果物・食品加工のセカンドビザ拠点性、内陸の寒暖差を明示。
+- **統合・リダイレクト・分割:** なし（5件は新規スラッグ、既存公開記事・マイクロバッチ #1/#2 と検索意図が分離）。未公開（planned）slug（`state-*-guide`・`area-griffith` 等）は `relatedSlugs` に含めず公開/既存 slug のみ参照（dangling 回避）。
+- **area 21/23 が最終ステータス確定（既存6件＋バッチ #1 5件＋#2 5件＋本バッチ5件）。次の未完了 area slug: `area-griffith`。travel には着手しない。**
+
 ## area マイクロバッチ #2（ダーウィン / サンシャインコースト / トゥーンバ・ガトン / バンダバーグ / スタンソープ / 2026-07-30 / 5件公開）
 
 area ハブの次の5件を新規公開した（すべて `hub: "area"`・`category: "area"`・分類は全て create）。都市/地域ガイドは可変事項（家賃・時給・求人数・運賃・収穫シーズンの需要）を断定せず、交通・気候・空港・セカンドビザ対象性など**制度/公式に紐づく事実**を公式一次情報に照合し、各記事の `OfficialSourceBox` に出典と免責（制度・運賃・シーズンは変わりうる旨）を明示した。全5件に `verifiedAt: 2026-07-30` を付与。

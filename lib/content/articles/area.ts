@@ -611,4 +611,213 @@ export const areaArticles: Article[] = [
     updatedAt: "2026-07-30",
     published: true,
   },
+
+  {
+    id: "a307",
+    title: "タウンズビル エリアガイド｜北QLDの仕事と暮らし",
+    slug: "area-townsville",
+    category: "area",
+    hub: "area",
+    description:
+      "熱帯クイーンズランド北部の都市タウンズビル。観光・医療・建設などの仕事があり、周辺のファーム地域への拠点にもなります。交通・気候・空港をワーホリ目線でまとめました。",
+    content: [
+      "タウンズビルはクイーンズランド州北部（North QLD）にある都市で、ケアンズより南の熱帯エリア。観光・ホスピタリティに加え、医療・建設など都市機能があり、周辺の農業地域（ボウエン・エアーなど）への拠点にもなります。熱帯の都市で働きたい・暮らしたいワーホリに向いています。",
+      "仕事は観光・飲食・小売のほか、都市規模がある分、清掃・建設などもあります。周辺のファーム地域はセカンドビザ対象の収穫作業があり、時期により需要が動きます。セカンドビザを狙う場合は、雇用主が対象作業・対象地域かを事前に確認しましょう。",
+      "公共交通は路線バス（Sunbus）が中心で、Translink の go card（タッチ決済対応）で乗車します。鉄道・トラムはありません。周辺地域やファームへは車があると便利です。空港はタウンズビル空港（TSV）。",
+      "熱帯乾燥気候で、1年を通じて暖かく晴天が多め。雨季（おおむね11〜4月）は蒸し暑く、サイクロンの可能性もあります。BOM の気象・警報を確認しましょう。UV も強いので日焼け対策を。",
+    ],
+    keyFacts: [
+      { label: "州", value: "クイーンズランド州（QLD）北部（North QLD）" },
+      { label: "特徴", value: "熱帯の都市・観光/医療/建設・周辺ファーム拠点" },
+      { label: "交通", value: "路線バス（Sunbus）／Translink go card。周辺は車が便利" },
+      { label: "空港", value: "Townsville Airport（TSV）" },
+      { label: "気候", value: "熱帯乾燥・雨季（11〜4月頃）・サイクロン注意" },
+      { label: "向いている人", value: "熱帯の都市で働きたい・周辺ファームの拠点にしたい" },
+    ],
+    steps: [
+      { title: "go card を用意", description: "QLD の公共交通は Translink の go card（対応クレカ/スマホのタッチも可）で利用します。" },
+      { title: "仕事を探す", description: "都市の観光・飲食・清掃・建設に加え、周辺ファームの収穫も視野に入れます。セカンドビザ狙いは対象作業・地域を確認します。" },
+      { title: "移動手段を確保", description: "周辺地域やファームへは車があると仕事・生活の幅が広がります。" },
+    ],
+    tips: [
+      "雨季（11〜4月頃）は蒸し暑く、サイクロンの可能性もあります。BOM の気象・警報を確認しましょう。",
+      "セカンドビザ狙いは、雇用主が対象作業・対象地域かを事前に確認し、悪質な求人には注意しましょう。",
+    ],
+    verifiedAt: "2026-07-30",
+    officialSources: [
+      { label: "Translink（QLD 公共交通・go card・運賃）", url: "https://translink.com.au/", accessedAt: "2026-07-30" },
+      { label: "Townsville Airport（TSV・空港アクセス）", url: "https://www.townsvilleairport.com.au/", accessedAt: "2026-07-30" },
+      { label: "Bureau of Meteorology｜Climate averages・気象警報", url: "http://www.bom.gov.au/climate/averages/", accessedAt: "2026-07-30" },
+    ],
+    relatedSlugs: ["area-cairns", "area-overview", "region-bowen-ayr-farm", "farm-second-visa", "jobs-guide", "housing-guide"],
+    updatedAt: "2026-07-30",
+    published: true,
+  },
+
+  {
+    id: "a308",
+    title: "ニューカッスル エリアガイド｜シドニー外の仕事と家賃",
+    slug: "area-newcastle",
+    category: "area",
+    hub: "area",
+    description:
+      "ニューサウスウェールズ州の沿岸都市ニューカッスル。シドニーの北にあり、シドニーより家賃を抑えつつ都市生活を送れます。仕事・交通・気候・空港をまとめました。",
+    content: [
+      "ニューカッスルはニューサウスウェールズ州（NSW）の沿岸都市で、シドニーの北。NSW 有数の都市圏として都市機能がありながら、シドニーより家賃を抑えやすいのが魅力です。ビーチも近く、シドニー以外の NSW の拠点を探すワーホリに向いています。",
+      "仕事は飲食・小売・ホスピタリティ・清掃などがあります。港湾・産業都市としての側面もあります。求人はシドニーより少なめのため、求人サイト・店頭応募など複数の探し方を併用しましょう。",
+      "公共交通は Transport for NSW の電車・バス・ライトレール・フェリーが使え、Opal カード（タッチ決済対応）で乗車します。シドニーとは電車でつながっています。空港はニューカッスル空港（NTL）。",
+      "温暖な気候で四季の変化は穏やか。夏は UV が強いので日焼け対策を（BOM で確認）。家賃はシドニーより抑えやすい傾向ですが、エリア・時期で変動するため、最新は Flatmates・realestate.com.au で確認しましょう。",
+    ],
+    keyFacts: [
+      { label: "州", value: "ニューサウスウェールズ州（NSW）沿岸（シドニーの北）" },
+      { label: "特徴", value: "都市機能＋シドニーより家賃控えめ・ビーチが近い" },
+      { label: "交通", value: "Transport for NSW（電車/バス/ライトレール/フェリー）／Opal" },
+      { label: "空港", value: "Newcastle Airport（NTL）" },
+      { label: "家賃", value: "変動。最新は Flatmates・realestate.com.au で確認" },
+      { label: "向いている人", value: "シドニー以外の NSW 拠点・都市生活" },
+    ],
+    steps: [
+      { title: "Opal を用意", description: "NSW の公共交通は Opal カード（対応クレカ/スマホのタッチも可）で利用します。" },
+      { title: "エリアを選ぶ", description: "電車・バス沿線でシェアハウスを探すと通勤しやすくなります。" },
+      { title: "仕事を複数の方法で探す", description: "求人がシドニーより少なめのため、求人サイトと店頭応募を併用します。" },
+    ],
+    tips: [
+      "シドニーへは電車で移動できるため、都市部の求人も視野に入れられます。",
+      "求人が大都市より少なめなので、探し方を複数持つと安心です。",
+    ],
+    verifiedAt: "2026-07-30",
+    officialSources: [
+      { label: "Transport for NSW（NSW 公共交通・Opal・運賃）", url: "https://transportnsw.info/", accessedAt: "2026-07-30" },
+      { label: "Newcastle Airport（NTL・空港アクセス）", url: "https://www.newcastleairport.com.au/", accessedAt: "2026-07-30" },
+      { label: "Bureau of Meteorology｜Climate averages（気候平年値）", url: "http://www.bom.gov.au/climate/averages/", accessedAt: "2026-07-30" },
+    ],
+    relatedSlugs: ["area-sydney", "area-overview", "jobs-guide", "housing-guide", "transport-payment-guide", "clothing-guide"],
+    updatedAt: "2026-07-30",
+    published: true,
+  },
+
+  {
+    id: "a309",
+    title: "ウーロンゴン エリアガイド｜大学・ビーチ・通勤",
+    slug: "area-wollongong",
+    category: "area",
+    hub: "area",
+    description:
+      "ニューサウスウェールズ州の沿岸都市ウーロンゴン。シドニーの南にある大学とビーチの街で、シドニーへの通勤圏でもあります。仕事・交通・気候をまとめました。",
+    content: [
+      "ウーロンゴンはニューサウスウェールズ州（NSW）の沿岸都市で、シドニーの南。大学のある街でビーチが近く、シドニーへ電車で通える距離にあります。落ち着いた沿岸都市で暮らしたいワーホリや、シドニー圏で家賃を抑えたい人に向いています。",
+      "仕事は飲食・小売・ホスピタリティ・清掃などがあります。学生の街のためカフェ・飲食の需要がありますが、求人はシドニーより少なめのため、複数の探し方を併用しましょう。",
+      "公共交通は Transport for NSW の電車・バスが中心で、Opal カード（タッチ決済対応）で乗車します。シドニーとは電車でつながっています。海沿いに広がるため、エリアによっては車があると便利です。",
+      "温暖な気候で、夏は UV が強いので日焼け対策を（BOM で確認）。家賃はエリア・時期で変動するため、最新は Flatmates・realestate.com.au で確認しましょう。",
+    ],
+    keyFacts: [
+      { label: "州", value: "ニューサウスウェールズ州（NSW）沿岸（シドニーの南）" },
+      { label: "特徴", value: "大学・ビーチ・シドニー通勤圏" },
+      { label: "交通", value: "Transport for NSW（電車/バス）／Opal。エリアにより車が便利" },
+      { label: "空港", value: "最寄りはシドニー空港" },
+      { label: "家賃", value: "変動。最新は Flatmates・realestate.com.au で確認" },
+      { label: "向いている人", value: "沿岸都市の生活・シドニー圏で家賃控えめ" },
+    ],
+    steps: [
+      { title: "Opal を用意", description: "NSW の公共交通は Opal カード（対応クレカ/スマホのタッチも可）で利用します。" },
+      { title: "エリアを選ぶ", description: "電車沿線や海沿いなど、通勤とライフスタイルに合わせてエリアを絞ります。" },
+      { title: "飲食・接客求人を探す", description: "学生の街でカフェ・飲食の需要があります。求人サイトと店頭応募を併用します。" },
+    ],
+    tips: [
+      "シドニーへ電車で通勤でき、都市部の求人も視野に入れられます。",
+      "学生の街のためカフェ・飲食の需要がありますが、求人数は大都市より少なめです。",
+    ],
+    verifiedAt: "2026-07-30",
+    officialSources: [
+      { label: "Transport for NSW（NSW 公共交通・Opal・運賃）", url: "https://transportnsw.info/", accessedAt: "2026-07-30" },
+      { label: "Bureau of Meteorology｜Climate averages（気候平年値）", url: "http://www.bom.gov.au/climate/averages/", accessedAt: "2026-07-30" },
+    ],
+    relatedSlugs: ["area-sydney", "area-newcastle", "area-overview", "jobs-guide", "housing-guide", "clothing-guide"],
+    updatedAt: "2026-07-30",
+    published: true,
+  },
+
+  {
+    id: "a310",
+    title: "ミルデューラ エリアガイド｜ファームと地方生活",
+    slug: "area-mildura",
+    category: "area",
+    hub: "area",
+    description:
+      "ビクトリア州北西部、マレー川沿いのミルデューラ。ぶどう・柑橘・アーモンドなどのファーム地域で、セカンドビザ（88日）の拠点になります。仕事・交通・気候・生活をまとめました。",
+    content: [
+      "ミルデューラはビクトリア州（VIC）北西部、マレー川（Murray River）沿いにある地方都市。ぶどう（ドライフルーツ）・柑橘・アーモンドなどのファームが広がり、セカンドビザ（88日）を目指すワーホリの定番拠点のひとつです。乾燥した内陸で日照が多く、収穫の仕事が季節で動きます。",
+      "仕事は収穫やパッキングが中心で、作物のシーズンにより需要が変わります。セカンドビザを狙う場合は、雇用主が対象作業・対象地域かを事前に確認しましょう。悪質な農園・求人もあるため、条件・支払い方法・評判を確認します。",
+      "地方都市のため公共交通は限られ、V/Line の鉄道・コーチ（長距離バス）や地域バスが使えます（運行は Public Transport Victoria で確認）。ファーム地域へ通うには車があると便利です。空港はミルデューラ空港（MQL）。",
+      "乾燥した内陸気候で、夏は高温になり屋外作業は暑さ対策が重要です。冬は朝晩冷え込みます。日焼け・熱中症対策と防寒の両方を用意しましょう（気候は BOM で確認）。",
+    ],
+    keyFacts: [
+      { label: "州", value: "ビクトリア州（VIC）北西部（マレー川沿い）" },
+      { label: "特徴", value: "ぶどう/柑橘/アーモンドのファーム・セカンドビザ拠点" },
+      { label: "交通", value: "V/Line・地域バス（PTV）／ファームは車が便利" },
+      { label: "空港", value: "Mildura Airport（MQL）" },
+      { label: "気候", value: "乾燥内陸・夏は高温／冬は朝晩冷え込み" },
+      { label: "向いている人", value: "ファームでセカンドビザ・地方生活" },
+    ],
+    steps: [
+      { title: "車を確保", description: "ファーム地域は公共交通が限られるため、車があると仕事・生活の幅が広がります。" },
+      { title: "ファーム求人を探す", description: "収穫・パッキングを求人や地域の情報で探し、雇用主が対象作業・対象地域かを確認します。" },
+      { title: "住まいを確保", description: "ワーホリ向けの宿やシェアハウスを探します。求人と住まいがセットの案内は条件をよく確認します。" },
+    ],
+    tips: [
+      "悪質農園を避けるため、応募前に条件・支払い方法・評判と、セカンドビザ対象作業かを確認しましょう。",
+      "夏は高温で屋外作業がきびしく、冬は冷え込みます。暑さ・UV 対策と防寒の両方を用意しましょう（気候は BOM で確認）。",
+    ],
+    verifiedAt: "2026-07-30",
+    officialSources: [
+      { label: "Public Transport Victoria（VIC 公共交通・V/Line・運賃）", url: "https://www.ptv.vic.gov.au/", accessedAt: "2026-07-30" },
+      { label: "Department of Home Affairs｜Specified work（417 セカンドビザ対象作業）", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work", accessedAt: "2026-07-30" },
+      { label: "Bureau of Meteorology｜Climate averages（気候平年値）", url: "http://www.bom.gov.au/climate/averages/", accessedAt: "2026-07-30" },
+    ],
+    relatedSlugs: ["region-mildura-farm", "area-overview", "farm-second-visa", "farm-finding", "second-visa-guide", "housing-guide"],
+    updatedAt: "2026-07-30",
+    published: true,
+  },
+
+  {
+    id: "a311",
+    title: "シェパートン エリアガイド｜農業地域での生活",
+    slug: "area-shepparton",
+    category: "area",
+    hub: "area",
+    description:
+      "ビクトリア州北部、ゴールバーンバレーのシェパートン。果物や野菜のファームと食品加工で知られる農業地域で、セカンドビザ（88日）の拠点になります。仕事・交通・気候をまとめました。",
+    content: [
+      "シェパートンはビクトリア州（VIC）北部、ゴールバーンバレー（Goulburn Valley）にある地方都市。梨・りんご・トマトなどの果物・野菜のファームと食品加工（フルーツ缶詰など）で知られる農業地域で、セカンドビザ（88日）を目指すワーホリの拠点になります。",
+      "仕事は収穫やパッキング、食品加工などが季節で動きます。セカンドビザを狙う場合は、雇用主が対象作業・対象地域かを事前に確認しましょう。悪質な農園・求人もあるため、条件・支払い方法・評判を確認します。",
+      "公共交通は V/Line の鉄道と地域バスが使えます（運行は Public Transport Victoria で確認）。メルボルンとは鉄道でつながっています。ファーム地域へ通うには車があると便利です。",
+      "内陸で寒暖差があり、夏は高温、冬は朝晩冷え込みます。屋外作業が多いため、暑さ・UV 対策と防寒の両方を用意しましょう（気候は BOM で確認）。",
+    ],
+    keyFacts: [
+      { label: "州", value: "ビクトリア州（VIC）北部（ゴールバーンバレー）" },
+      { label: "特徴", value: "果物/野菜のファーム・食品加工・セカンドビザ拠点" },
+      { label: "交通", value: "V/Line（鉄道）・地域バス（PTV）／ファームは車が便利" },
+      { label: "空港", value: "最寄りはメルボルン" },
+      { label: "気候", value: "内陸・夏は高温／冬は朝晩冷え込み" },
+      { label: "向いている人", value: "ファーム・食品加工でセカンドビザ" },
+    ],
+    steps: [
+      { title: "ファーム・加工求人を探す", description: "収穫・パッキング・食品加工を求人や地域の情報で探し、雇用主が対象作業・対象地域かを確認します。" },
+      { title: "住まいを確保", description: "ワーホリ向けの宿やシェアハウスを探します。求人と住まいがセットの案内は条件をよく確認します。" },
+      { title: "移動手段を確認", description: "ファーム地域へ通うには車や送迎の有無を確認しておくと安心です。" },
+    ],
+    tips: [
+      "悪質農園を避けるため、応募前に条件・支払い方法・評判と、セカンドビザ対象作業かを確認しましょう。",
+      "夏は高温、冬は冷え込みます。暑さ・UV 対策と防寒の両方を用意しましょう（気候は BOM で確認）。",
+    ],
+    verifiedAt: "2026-07-30",
+    officialSources: [
+      { label: "Public Transport Victoria（VIC 公共交通・V/Line・運賃）", url: "https://www.ptv.vic.gov.au/", accessedAt: "2026-07-30" },
+      { label: "Department of Home Affairs｜Specified work（417 セカンドビザ対象作業）", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work", accessedAt: "2026-07-30" },
+      { label: "Bureau of Meteorology｜Climate averages（気候平年値）", url: "http://www.bom.gov.au/climate/averages/", accessedAt: "2026-07-30" },
+    ],
+    relatedSlugs: ["region-shepparton-farm", "area-mildura", "area-overview", "farm-second-visa", "farm-finding", "second-visa-guide"],
+    updatedAt: "2026-07-30",
+    published: true,
+  },
 ];

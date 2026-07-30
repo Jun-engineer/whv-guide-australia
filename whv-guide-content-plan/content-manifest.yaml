@@ -3271,7 +3271,7 @@ planned_content:
 - slug: area-townsville
   title: タウンズビル エリアガイド｜北QLDの仕事と暮らし
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-guide
@@ -3281,7 +3281,7 @@ planned_content:
 - slug: area-newcastle
   title: ニューカッスル エリアガイド｜シドニー外の仕事と家賃
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-guide
@@ -3291,7 +3291,7 @@ planned_content:
 - slug: area-wollongong
   title: ウーロンゴン エリアガイド｜大学・ビーチ・通勤
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: area-guide
@@ -3301,7 +3301,7 @@ planned_content:
 - slug: area-mildura
   title: ミルデューラ エリアガイド｜ファームと地方生活
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-guide
@@ -3311,7 +3311,7 @@ planned_content:
 - slug: area-shepparton
   title: シェパートン エリアガイド｜農業地域での生活
   hub: area
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: area-guide
