@@ -10,6 +10,18 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### return-home マイクロバッチ #1（2026-08-02 / 5件公開・新カテゴリ初回）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** return-home（帰国準備）ハブの最初の5件
+（`leaving-australia-checklist` / `final-pay-before-leaving` / `early-tax-return-departing` /
+`dasp-before-after-leaving` / `close-services-before-leaving`）はすべて**新規スラッグ**（`category: "return-home"` / `hub: "return-home"`）で、
+本バッチが return-home ハブの初回のため既存の公開 return-home 記事は存在せず、統合・URL潰しは発生しない。分類はいずれも create。
+
+- 5件は検索意図が独立（帰国前チェックリスト全体像／Final Pay・未払い給与／年度途中帰国のタックスリターン／DASP申請のタイミング／解約サービス一覧）。
+  出国前アクションと出国後アクションを各記事内で分離し、可変情報（処理期間・還付額・DASP税率・手数料）は断定せず ATO/Fair Work/ACCC へ誘導。
+- 孤立記事なし: `/return-home` が公開 return-home 記事5件を自動列挙。`relatedSlugs` は公開/既存 slug のみ参照（dangling 0）。
+- **return-home ハブ継続中:** 5/12 published・残り7件。次回開始 = `bond-refund-before-leaving`。最終ハブ監査は残り5件以下時に実施。他カテゴリは未着手。
+
 ### travel マイクロバッチ #2（2026-08-02 / 4件公開・travel ハブ完了）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** travel ハブの残り4件

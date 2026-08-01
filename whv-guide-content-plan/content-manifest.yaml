@@ -3551,7 +3551,7 @@ planned_content:
 - slug: leaving-australia-checklist
   title: 帰国前チェックリスト｜仕事・家・車・税金・Super
   hub: return-home
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: checklist
@@ -3561,7 +3561,7 @@ planned_content:
 - slug: final-pay-before-leaving
   title: 帰国前に確認するFinal Pay・未払い給与・有給
   hub: return-home
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: finance
@@ -3571,7 +3571,7 @@ planned_content:
 - slug: early-tax-return-departing
   title: 年度途中で帰国する場合のタックスリターン
   hub: return-home
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: tax
@@ -3581,7 +3581,7 @@ planned_content:
 - slug: dasp-before-after-leaving
   title: DASP申請はいつする？出国・ビザ失効・必要書類
   hub: return-home
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: how-to
@@ -3591,7 +3591,7 @@ planned_content:
 - slug: close-services-before-leaving
   title: 帰国前に解約・変更するサービス一覧
   hub: return-home
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: checklist

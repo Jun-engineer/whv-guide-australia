@@ -4,6 +4,32 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: return-home マイクロバッチ #1（5件公開 / commit: feat: publish return home micro-batch）
+
+return-home（帰国準備）ハブの最初の5件を公開しました（新規カテゴリの初回・マイクロバッチ運用）。開始時点で return-home は12件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り7件のため次回以降に継続）。以下が確定状態です。
+
+- **未完了 return-home 件数（開始時）:** 12件（すべて planned・すべて `hub: return-home`）。既存公開の return-home 記事は0件（本バッチが return-home ハブの初回）。
+- **選定した5件（記録順の先頭5件）:** `leaving-australia-checklist`, `final-pay-before-leaving`, `early-tax-return-departing`, `dasp-before-after-leaving`, `close-services-before-leaving`。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded ではないことを確認済み。
+- **分類:** 5件すべて **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・既存記事の分割は該当なし（本バッチは新規追加のみ）。
+- **公開した5件（すべて `category: return-home`・`hub: return-home`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  - `leaving-australia-checklist`（P0, checklist, id a329）— 意図＝帰国前後にやること全体の俯瞰／対象＝帰国が決まったワーホリ。仕事・住居・車・税金・Super・銀行・通信・郵便を**出国前 / 出国後**に分けて時系列で整理。口座やSIMの早すぎる解約を警告（税金還付・DASPの受取に必要）。処理期間・還付額・税額は断定せず各公式へ。公式: ATO（税・DASP・Leaving Australia）／Fair Work（Final Pay）／Australia Post（郵便転送）。
+  - `final-pay-before-leaving`（P0, finance, id a330）— 意図＝退職時の最終給与の確認（**出国前**アクション）／対象＝帰国前に退職する人。Final Pay に含まれるもの（未払賃金・未消化の年次有給＋leave loading・解雇予告手当）と含まれないもの（病気/介護休暇は買取なし）、支払時期（多くのアワードで最終日から7日以内・規定なき場合は Fair Work Act で最低月1回）。未払いは Fair Work へ。金額は断定せず公式へ。公式: Fair Work（Final pay／Visa holders and migrants）。
+  - `early-tax-return-departing`（P1, tax, id a331）— 意図＝年度途中帰国のタックスリターンの選択肢／対象＝6/30を待たず帰国する人。原則は翌7/1以降に通常申告（帰国後も可）、ATO の条件を満たす場合のみ早期申告が可能という2経路を提示。myGov/ATO 連携・Income statement の Tax Ready・還付受取用の豪州口座維持が必要。口座を早く閉じない旨を警告。金額・処理期間は断定せず ATO へ。公式: ATO（Leaving Australia／Lodging before you leave）。
+  - `dasp-before-after-leaving`（P0, how-to, id a332）— 意図＝DASP申請のタイミング／対象＝Super を払い戻したい人。DASP は**出国後かつビザ失効後**にのみ申請可能（＝出国後アクション）と明確化。出国前は Super の把握・記録保管・口座解約回避を、出国後は ATO の DASP オンラインで申請（必要書類：パスポート・ビザ・TFN・ファンド情報）。WHM への高い源泉税率は具体%を断定せず ATO へ誘導。公式: ATO（DASP）。
+  - `close-services-before-leaving`（P1, checklist, id a333）— 意図＝解約・変更するサービスの一覧（**出国前**中心）／対象＝帰国準備中の人。SIM/携帯・ジム・サブスク・保険（OSHC/OVHC・自動車）・光熱費/インターネットの契約条件（通知期間・解約金・ロックイン）を確認。銀行2FAやATOに必要な電話番号・還付受取用口座は早すぎる解約を警告。金額・違約金は各社公式へ。公式: ACCC（消費者保証）／各プロバイダー。
+- **出国前/出国後アクションの区別:** 各記事で「出国前にやること（Final Pay確認・税務準備・解約手配・記録保管）」と「出国後にやること（DASP申請・場合により帰国後のタックスリターン・口座/SIMの最終解約）」を明確に分離。早すぎる口座/SIM/Super口座の解約が還付・DASP受取を妨げる点を warnings で注意喚起。
+- **可変情報の非断定:** 処理期間・還付額・DASP税率・各種手数料・税務上の結果は断定せず、確認日 2026-08-02 を明記し ATO/Fair Work/ACCC 等の各公式へ誘導。Fair Work の Final pay（含まれる/含まれない項目・支払時期）はライブ取得で確認済みの構造的事実として記載。
+- **孤立記事なし / 内部リンク:** `relatedSlugs` は公開/既存 slug と本バッチの新規5件のみ参照（未公開 planned の `bond-refund-before-leaving`/`sell-car-timeline`/`keep-australian-bank-account` 等は含めず dangling 回避）。参照先（`tax-return-guide`/`dasp-refund`/`sim-guide`/`super-guide`/`termination-final-pay`/`underpayment-unpaid-wages`/`working-rights`/`payslip-guide`/`whm-tax-rates`/`income-statement-tax-ready`/`mygov-ato-linking`/`superannuation-basics`/`send-money-to-japan`/`bank-account-guide`/`opening-hours-holidays` など）は全て公開/既存で解決。`/return-home` カテゴリページが公開5件を自動列挙し Footer からも到達可能。
+- **新カテゴリ整備（travel の前例に準拠）:** `types/article.ts` の `ArticleCategory` に `"return-home"` 追加、`lib/content/articles/index.ts` に import と配列追加、`lib/content/hubs.ts` の `CATEGORY_TO_HUB` に `"return-home": "return-home"` 追加、`lib/mockData.ts` の `articleCategories` にラベル `帰国準備` 追加、`app/return-home/page.tsx`（`GuideCategoryPage category="return-home"`）新設、`app/sitemap.ts` staticRoutes に `/return-home` 追加、`components/layout/Footer.tsx` に「帰国準備・次のキャリア」リンク追加。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug/パス/エクスポート 0・return-home 5件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）。修正リトライは発生せず（0回）。
+  ※フルビルド/テスト/lint/sitemap/構造化データ監査は return-home ハブ完了後（残り5件以下時の最終監査）にまとめて実施予定。
+- **残り return-home slug（7件・すべて planned のまま）:** `bond-refund-before-leaving`（P1）, `sell-car-timeline`（P1）, `send-luggage-to-japan`（P2）, `keep-australian-bank-account`（P1）, `use-wh-experience-in-resume`（P1）, `reverse-culture-shock`（P2）, `australian-police-check-after-return`（P3）。
+- **最初の未完了 return-home slug: `bond-refund-before-leaving`**（次回はここから再開）。
+- **次のバッチ: return-home（`bond-refund-before-leaving` から継続・残り7件）。** ※本セッションは return-home の先頭5件のみ処理し、他カテゴリには着手しない。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/return-home.ts`（新規）、`lib/content/articles/index.ts`、`lib/content/hubs.ts`、`types/article.ts`、`lib/mockData.ts`、`app/return-home/page.tsx`（新規）、`app/sitemap.ts`、`components/layout/Footer.tsx`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。** （ATO の DASP/Leaving Australia 各ページは JS レンダリングで本文抽出不可だったが 404 ではなく 200・URL は有効。可変情報は断定せずリポジトリの既存検証済み事実に基づき記載し、変動値は ATO へ誘導。）
+
 ## チェックポイント（2026-08-02）: travel マイクロバッチ #2 = travel ハブ完了（残り4件を全公開＋最終ハブ監査 / commit: feat: complete travel content batch）
 
 travel（旅行）ハブの残り全4件を公開し、**travel ハブを完了**しました（9/9 published・残り0件）。開始時点で未完了の travel は4件（≤5）だったため、通常のマイクロバッチではなく残り全件を処理し、**最終ハブ監査**を実施しました。以下が確定状態です。
@@ -1122,14 +1148,14 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - `dating-safety-australia` — 海外での出会い・デーティングアプリの安全対策 _(優先度 P2、意図: safety)_
 - `volunteering-guide` — ボランティアの探し方｜英語・友達・地域参加 _(優先度 P3、意図: social)_
 
-### return-home — 帰国準備・次のキャリア (12件)
+### return-home — 帰国準備・次のキャリア (残り7件 / 5件公開済み)
 
-- `leaving-australia-checklist` — 帰国前チェックリスト｜仕事・家・車・税金・Super _(優先度 P0、意図: checklist)_
-- `final-pay-before-leaving` — 帰国前に確認するFinal Pay・未払い給与・有給 _(優先度 P0、意図: finance)_
-- `early-tax-return-departing` — 年度途中で帰国する場合のタックスリターン _(優先度 P1、意図: tax)_
-- `dasp-before-after-leaving` — DASP申請はいつする？出国・ビザ失効・必要書類 _(優先度 P0、意図: how-to)_
-- `close-services-before-leaving` — 帰国前に解約・変更するサービス一覧 _(優先度 P1、意図: checklist)_
-- `bond-refund-before-leaving` — 帰国前の退去・Bond返金を間に合わせる方法 _(優先度 P1、意図: housing)_
+- ~~`leaving-australia-checklist` — 帰国前チェックリスト｜仕事・家・車・税金・Super _(優先度 P0、意図: checklist)_~~ ✅ 公開済み（2026-08-02 バッチ#1）
+- ~~`final-pay-before-leaving` — 帰国前に確認するFinal Pay・未払い給与・有給 _(優先度 P0、意図: finance)_~~ ✅ 公開済み（2026-08-02 バッチ#1）
+- ~~`early-tax-return-departing` — 年度途中で帰国する場合のタックスリターン _(優先度 P1、意図: tax)_~~ ✅ 公開済み（2026-08-02 バッチ#1）
+- ~~`dasp-before-after-leaving` — DASP申請はいつする？出国・ビザ失効・必要書類 _(優先度 P0、意図: how-to)_~~ ✅ 公開済み（2026-08-02 バッチ#1）
+- ~~`close-services-before-leaving` — 帰国前に解約・変更するサービス一覧 _(優先度 P1、意図: checklist)_~~ ✅ 公開済み（2026-08-02 バッチ#1）
+- `bond-refund-before-leaving` — 帰国前の退去・Bond返金を間に合わせる方法 _(優先度 P1、意図: housing)_ ← **次回開始**
 - `sell-car-timeline` — 帰国前の車売却スケジュール｜いつ出品する？ _(優先度 P1、意図: transport)_
 - `send-luggage-to-japan` — オーストラリアから日本へ荷物を送る方法 _(優先度 P2、意図: comparison)_
 - `keep-australian-bank-account` — 帰国後も豪州銀行口座を残す場合の注意点 _(優先度 P1、意図: finance)_

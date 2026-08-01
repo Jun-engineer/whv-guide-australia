@@ -3,6 +3,24 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: return-home マイクロバッチ #1（5件公開 / commit: feat: publish return home micro-batch）
+
+return-home（帰国準備）ハブの最初の5件を公開しました（新規カテゴリの初回・マイクロバッチ運用）。開始時点で return-home は12件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り7件のため継続）。本バッチは return-home ハブの初回で、新カテゴリの基盤整備を伴います。
+
+- **公開した5件（すべて `category: return-home`・`hub: return-home`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  `leaving-australia-checklist`（P0, checklist, id a329）, `final-pay-before-leaving`（P0, finance, id a330）,
+  `early-tax-return-departing`（P1, tax, id a331）, `dasp-before-after-leaving`（P0, how-to, id a332）,
+  `close-services-before-leaving`（P1, checklist, id a333）。
+- **作成（created）slug:** 上記5件。**更新/分割（updated/split）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **出国前/出国後アクションの区別:** 各記事で出国前（Final Pay確認・税務準備・解約手配・記録保管）と出国後（DASP申請・場合により帰国後のタックスリターン・口座/SIMの最終解約）を明確に分離。口座・SIM・Super口座の早すぎる解約が還付・DASP受取を妨げる点を warnings で注意喚起。
+- **可変情報の非断定:** 処理期間・還付額・DASP税率・各種手数料・税務上の結果は断定せず、確認日 2026-08-02 を明記し ATO/Fair Work/ACCC 等の各公式へ誘導。DASP の WHM 源泉税率は具体%を出さず ATO へ。
+- **公式ソース:** ATO（Departing Australia Superannuation Payment／Leaving Australia／Lodging your tax return before you leave）／Fair Work Ombudsman（Final pay／Visa holders and migrants）／ACCC（Consumer rights and guarantees）／Australia Post（Redirect/Hold mail）。Fair Work の Final pay ページはライブ取得で確認済み（含まれる/含まれない項目・支払時期）。
+- **新カテゴリ整備（travel 前例に準拠）:** `ArticleCategory` に `return-home` 追加、`return-home.ts` 新規モジュール、`index.ts` 配線、`hubs.ts` の `CATEGORY_TO_HUB` に `"return-home": "return-home"`、`mockData.ts` にカテゴリラベル `帰国準備`（記事は追加せず）、`app/return-home/page.tsx` 新設、`sitemap.ts`・Footer に `/return-home` 追加。
+- **content-manifest.yaml:** 5件を `planned` → `published`。`manifest.generated.ts` 再生成。
+- **孤立記事なし:** `/return-home` カテゴリページが公開5件を自動列挙。`relatedSlugs` は公開/既存 slug のみ参照（dangling 0）。
+- **検証（マイクロバッチ範囲・各1回・リトライ0回）:** `validate:articles`（return-home 5・重複0・エラー0）、`tsc --noEmit`（exit 0）、`validate:content`（0 error / 66 warning・dangling 0）。フルビルド/テスト/lint/構造化データ監査はハブ完了時（残り5件以下）にまとめて実施予定。
+- **残り return-home:** 7件（次回開始 = `bond-refund-before-leaving`）。**他カテゴリは未着手**（"Do not begin another category"）。
+
 ## チェックポイント（2026-08-02）: travel マイクロバッチ #2 = travel ハブ完了（残り4件を全公開＋最終ハブ監査 / commit: feat: complete travel content batch）
 
 travel（旅行）ハブの残り全4件を公開し、**travel ハブを完了**しました（9/9 published・残り0件）。開始時の未完了 travel は4件（≤5）だったため、残り全件を処理して**最終ハブ監査**を実施しました。

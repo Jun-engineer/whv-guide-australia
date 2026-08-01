@@ -8,6 +8,20 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## return-home マイクロバッチ #1（2026-08-02 / 5件公開・新カテゴリ初回）
+
+return-home（帰国準備）ハブの最初の5件を公開。各記事のタイトルの主要な問いに関わる規則・要件・タイミングを公式一次情報に照合しました。changeable（処理期間・還付額・DASP税率・各種手数料・税務上の結果）は断定せず、確認日 2026-08-02 を明記し各公式へ誘導しています。出国前アクションと出国後アクションを明確に区別し、口座・SIM・Super口座の早すぎる解約への警告を記載。
+
+- `leaving-australia-checklist`（a329）— 帰国前後にやること全体像（出国前/出国後の区別・早すぎる口座解約の警告）。照合: ATO（Leaving Australia, https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/leaving-australia／DASP）／Fair Work（Final pay）／Australia Post（Redirect/Hold mail, https://auspost.com.au/receiving/manage-your-mail/redirect-hold-mail）。
+- `final-pay-before-leaving`（a330）— Final Pay に含まれるもの（未払賃金・未消化年次有給＋leave loading・解雇予告手当）／含まれないもの（病気/介護休暇は買取なし）・支払時期（多くのアワードで最終日から7日以内・規定なき場合は Fair Work Act で最低月1回）。照合: Fair Work Ombudsman（Final pay, https://www.fairwork.gov.au/ending-employment/final-pay ＝ライブ取得で確認／Visa holders and migrants, https://www.fairwork.gov.au/find-help-for/visa-holders-migrants）。
+- `early-tax-return-departing`（a331）— 原則は翌7/1以降の通常申告（帰国後も可）、ATO の条件を満たす場合のみ早期申告可の2経路。myGov/ATO 連携・Income statement の Tax Ready・還付受取用口座の維持。処理期間・還付額は断定せず ATO へ。照合: ATO（Leaving Australia／Lodging your tax return before you leave, https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/leaving-australia/lodging-your-tax-return-before-you-leave）。
+- `dasp-before-after-leaving`（a332）— DASP は出国後かつビザ失効後にのみ申請可能・必要書類（パスポート/ビザ/TFN/ファンド情報）・WHM への高い源泉税率（具体%は断定せず ATO へ）。照合: ATO（Departing Australia Superannuation Payment, https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/withdrawing-and-using-your-super/departing-australia-superannuation-payment-dasp）。
+- `close-services-before-leaving`（a333）— SIM/携帯・ジム・サブスク・保険・光熱費/ネットの契約条件（通知期間・解約金・ロックイン）の確認、2FA/還付に必要な電話番号・口座の早すぎる解約回避。金額・違約金は各社公式へ。照合: ACCC（Consumer rights and guarantees, https://www.accc.gov.au/consumers/buying-products-and-services/consumer-rights-and-guarantees）／各プロバイダー。
+
+すべて `verifiedAt: 2026-08-02`・officialSources の `accessedAt: 2026-08-02`。各記事は画面上に確認日と `OfficialSourceBox`（出典・免責）を表示。
+
+**ソース取得の注記:** ATO の DASP／Leaving Australia／Lodging before you leave 各ページは JavaScript レンダリングのため本文の自動抽出は不可だったが、404 ではなく 200・URL は有効。可変値（DASP税率・処理期間・還付額）は断定せず、リポジトリ内の既存検証済み記事（`dasp-refund`／`superannuation-basics`／`whm-tax-rates`／`tax-return-guide` 等）が過去に照合した構造的事実に基づき記載し、変動しうる具体値は ATO 公式へ誘導した。Fair Work の Final pay ページのみライブ取得で確認済み。
+
 ## travel マイクロバッチ #2（2026-08-02 / 4件公開・travel ハブ完了）
 
 travel ハブの残り4件を公開（9/9 完了）。各記事のタイトルの主要な問いに関わる規則・要件・季節・安全情報を公式一次情報に照合しました。changeable（料金・時刻・空席・海況・入園料・祝日日程）は断定せず、確認日 2026-08-02 を明記し各公式へ誘導しています。
