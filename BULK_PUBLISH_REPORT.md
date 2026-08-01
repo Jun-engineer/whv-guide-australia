@@ -3,6 +3,19 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: travel マイクロバッチ #2 = travel ハブ完了（残り4件を全公開＋最終ハブ監査 / commit: feat: complete travel content batch）
+
+travel（旅行）ハブの残り全4件を公開し、**travel ハブを完了**しました（9/9 published・残り0件）。開始時の未完了 travel は4件（≤5）だったため、残り全件を処理して**最終ハブ監査**を実施しました。
+
+- **公開した4件（すべて `category: travel`・`hub: travel`・`intent: travel`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  `great-barrier-reef-guide`（P3, id a325）, `uluru-guide`（P3, id a326）, `tasmania-trip-guide`（P3, id a327）, `public-holiday-travel`（P2, id a328）。
+- **内容:** GBR＝ケアンズ拠点のツアー選びと季節・海の安全・海洋公園ルール。ウルル＝アクセス/入園パス/文化的配慮（登山2019年恒久禁止）。タスマニア＝レンタカー周遊・日数・国立公園・冷涼気候。祝日旅行＝州別祝日/スクールホリデーの調べ方と混雑・料金対策。いずれも料金・時刻・空席・海況・入園料・祝日日程などの changeable は断定せず、確認日 2026-08-02 を明記し各公式（GBRMPA/Parks Australia/Tasmania PWS/Fair Work/BOM/Tourism Australia 等）へ誘導。
+- **基盤変更なし:** travel カテゴリ基盤はバッチ#1で整備済み。本バッチは記事追加とマニフェスト status 更新のみ。`mockData.ts` への記事追加なし。
+- **content-manifest.yaml:** 4件を `planned` → `published`。`manifest.generated.ts` 再生成。
+- **最終 travel ハブ監査:** `hub: travel` 集計＝9 published・0 planned/その他。9件は目的地/意図が一意でカニバリなし。`/travel` が9件を列挙、sitemap に4新規 slug 含む。薄い/下書きの公開ページなし。
+- **検証（全スイート各1回・リトライ0回）:** `validate:articles`（travel 9・エラー0）、`tsc --noEmit`（exit 0）、`validate:content`（0 error / 66 warning・dangling 0）、`test:content`（5/5 pass）、`lint`（クリーン）、`build`（exit 0・新規4 slug プリレンダー・sitemap 生成）。
+- **残り travel:** 0件。**次カテゴリは未着手**（"Do not begin another category"）。
+
 ## チェックポイント（2026-07-30）: travel マイクロバッチ #1（5件公開 / commit: feat: publish travel micro-batch）
 
 travel（旅行）ハブの最初の5件を公開しました（マイクロバッチ運用）。開始時点で travel は9件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り4件のため継続）。本バッチは travel ハブの初回で、新カテゴリの基盤整備を伴います。

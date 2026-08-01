@@ -8,6 +8,17 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## travel マイクロバッチ #2（2026-08-02 / 4件公開・travel ハブ完了）
+
+travel ハブの残り4件を公開（9/9 完了）。各記事のタイトルの主要な問いに関わる規則・要件・季節・安全情報を公式一次情報に照合しました。changeable（料金・時刻・空席・海況・入園料・祝日日程）は断定せず、確認日 2026-08-02 を明記し各公式へ誘導しています。
+
+- `great-barrier-reef-guide`（a325）— 海洋公園の保護ルール・環境管理料・有毒クラゲの季節リスク。照合: GBRMPA（https://www2.gbrmpa.gov.au/）／Tourism Australia／BOM Warnings／healthdirect（marine stings）。
+- `uluru-guide`（a326）— 入園パス・登山の恒久禁止（2019年10月26日〜）・撮影禁止/聖地の配慮・砂漠の気候。照合: Parks Australia（Uluṟu-Kata Tjuṯa NP, https://parksaustralia.gov.au/uluru/）／NT Government（driving）／BOM（climate averages）／Tourism Australia。
+- `tasmania-trip-guide`（a327）— 国立公園の入園パス・本土フェリー・冷涼気候と山の天候急変。照合: Tasmania Parks and Wildlife Service（https://parks.tas.gov.au/）／Spirit of Tasmania／BOM（Tas）／Discover Tasmania。
+- `public-holiday-travel`（a328）— 州別の祝日・スクールホリデー日程（年/州で変動）・祝日の営業/労働（penalty rates）。照合: australia.gov.au（Public holidays）／Fair Work Ombudsman（Public holidays）／Tourism Australia。
+
+すべて `verifiedAt: 2026-08-02`・officialSources の `accessedAt: 2026-08-02`。各記事は画面上に確認日と `OfficialSourceBox`（出典・免責）を表示。
+
 ## travel マイクロバッチ #1（2026-07-30 / 5件公開）
 
 travel（旅行）ハブの最初の5件を公開。旅行記事はライブ価格・空席・時刻・許可・入場条件・催行状況を発明せず、

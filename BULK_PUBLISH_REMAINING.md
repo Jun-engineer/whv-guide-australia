@@ -4,6 +4,32 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: travel マイクロバッチ #2 = travel ハブ完了（残り4件を全公開＋最終ハブ監査 / commit: feat: complete travel content batch）
+
+travel（旅行）ハブの残り全4件を公開し、**travel ハブを完了**しました（9/9 published・残り0件）。開始時点で未完了の travel は4件（≤5）だったため、通常のマイクロバッチではなく残り全件を処理し、**最終ハブ監査**を実施しました。以下が確定状態です。
+
+- **未完了 travel 件数（開始時）:** 4件（すべて planned・すべて `hub: travel`）。既存公開 travel 記事は5件（バッチ#1）。
+- **処理した4件（残り全件）:** `great-barrier-reef-guide`（P3）, `uluru-guide`（P3）, `tasmania-trip-guide`（P3）, `public-holiday-travel`（P2）。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded でないことを確認済み。
+- **分類:** 4件すべて **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・既存記事の分割は該当なし（新規追加のみ）。
+- **公開した4件（すべて `category: travel`・`hub: travel`・`intent: travel`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  - `great-barrier-reef-guide`（P3, travel, id a325）— 目的地＝グレートバリアリーフ（ケアンズ拠点）／対象＝リーフ旅行を計画する人。玄関口・日帰りツアーの選び方・ベストシーズン（乾季）・海の安全（有毒クラゲ/サイクロン）・海洋公園の保護ルール。料金・催行・海況は断定せず公式へ。公式: GBRMPA／Tourism Australia／BOM（警報）／healthdirect（marine stings）。
+  - `uluru-guide`（P3, travel, id a326）— 目的地＝ウルル・カタジュタ国立公園（NT）／対象＝ウルルへ行く人。空路/車のアクセス・入園パス・砂漠の季節と安全・文化的配慮（登山は2019年恒久禁止・撮影禁止エリア）。料金・開園は断定せず国立公園公式へ。公式: Parks Australia（Uluṟu）／NT Government（運転）／BOM（気候）／Tourism Australia。
+  - `tasmania-trip-guide`（P3, travel, id a327）— 目的地＝タスマニア周遊／対象＝島を車で周遊する人。玄関口（ホバート/ローンセストン）・レンタカー中心・周遊日数・国立公園パス・冷涼な気候と山の天候急変。料金・空席・道路状況は断定せず公式へ。公式: Tasmania Parks and Wildlife Service／Spirit of Tasmania／BOM（Tas）／Discover Tasmania。
+  - `public-holiday-travel`（P2, travel, id a328）— 意図＝州別の祝日・スクールホリデーの調べ方／対象＝混雑期を避けたい/備えたい人。州でバラバラの日程・混雑期（夏休み/連休/学期間）・宿/航空券/レンタカーの高騰・祝日の営業短縮・対策（時期を外す/早期予約）。日付は年/州で変動と明記し公式へ。公式: australia.gov.au（Public holidays）／Fair Work Ombudsman／Tourism Australia。
+- **旅程ガイダンスと可変情報の区別:** 各記事で「モデルルート・季節傾向・予約や計画の考え方（itinerary/プランニング）」と「実際の料金・時刻・空席・海況・天気・警報・ツアー催行・入園料・祝日日程（changeable）」を明確に分離。changeable は具体額・便・時刻・許可・入場条件を断定せず、確認日 2026-08-02 を明記し各公式へ誘導。費用は「例・レンジ」としてのみ提示。
+- **旅行記事の要件充足:** 目的地と対象読者の明示／主要な問いへの冒頭回答／推奨日数・移動手段・ルート順・主要スポット・季節・予約リスク・運転距離・安全の該当項目を記載／ライブ価格・空席・時刻・許可・入場条件は不記載（公式へ）。
+- **孤立記事なし / 内部リンク:** `relatedSlugs` は公開/既存 slug のみ参照（`area-cairns`/`east-coast-route`/`australia-travel-seasons`/`safety-emergency`/`state-nt-guide`/`australia-road-trip-guide`/`camping-free-camps`/`state-tas-guide`/`area-hobart`/`cars-guide`/`opening-hours-holidays`/`domestic-flight-guide`/`working-holiday-budget`）。dangling 0。travel カテゴリページ（`app/travel/page.tsx`）が公開 travel 記事9件を自動列挙し、Footer からも到達可能。
+- **content-manifest.yaml:** 該当4件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成（planned 338）。
+- **最終 travel ハブ監査（残り≤5のため実施）:**
+  - **全 travel 項目が最終状態:** マニフェストの `hub: travel` 集計＝**9 published・0 planned/merged/review/excluded**。
+  - **一意の目的地/旅程インテント:** 9件は季節・国内線・ロードトリップ・キャンプ・東海岸・GBR・ウルル・タスマニア・祝日混雑と、それぞれ異なる目的地/意図でカニバリなし（`travel::travel` の warn は同一ハブ集約であり許容）。
+  - **可変情報の限定と確認日:** 全記事で changeable を断定せず公式へ誘導し `verifiedAt` を明記。
+  - **内部リンク/カテゴリ列挙:** `/travel` が9件を列挙。sitemap に4新規 slug を含む（`grep -c` = 4）。
+  - **薄い/下書きの公開ページなし:** 全9件が完全公開（content/steps/keyFacts/tips/warnings/officialSources 揃い）。
+- **検証（全スイート各1回）:** `validate:articles`（travel 9・重複0・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）、`test:content` 5/5 pass、`lint` クリーン、`build` exit 0（`/guides/[slug]` に新規4 slug をプリレンダー・`/sitemap.xml` 生成）。修正リトライは発生せず（0回）。
+- **残り travel slug:** **0件**（travel ハブ完了）。
+- **次カテゴリは未着手:** 指示どおり別カテゴリには着手していない（"Do not begin another category"）。
+
 ## チェックポイント（2026-07-30）: travel マイクロバッチ #1（5件公開 / commit: feat: publish travel micro-batch）
 
 travel（旅行）ハブの最初の5件を公開しました（マイクロバッチ運用）。開始時点で travel は9件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り4件のため次回以降に継続）。以下が確定状態です。
