@@ -8,6 +8,15 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## 🏁 最終 whole-site 監査（2026-08-02 / YMYL ソース健全性の確認・新規照合なし）
+
+サイト全体最終監査として YMYL コンテンツのソース健全性を確認。**本監査での新規記事公開・新規ソース照合はなし**（残 planned 0 件）。確定状態は以下のとおり。
+
+- **YMYL 記事のソース表示:** ビザ・税・労働法・医療・賃貸・運転免許・金銭・安全に関わる公開記事は、画面上に `verifiedAt`（最終確認日）を表示し、`OfficialSourceBox` で公式一次情報の出典と免責（制度改定の可能性・専門的助言ではない旨）を明示。数値・料金・要件・期限・規則は断定せず各公式・専門家へ誘導する設計を維持。
+- **公式ソースの分野別誘導:** ビザ/申請料＝Department of Home Affairs、賃金/労働条件＝Fair Work Ombudsman/Commission、税/Super/DASP＝ATO、医療＝healthdirect/Triple Zero (000)、災害＝Bureau of Meteorology、詐欺/サイバー＝Scamwatch/ACSC、消費者＝ACCC、州別制度（免許・登録・賃貸/ボンド・公共交通）＝各州当局。
+- **ツール／ダウンロードの YMYL 配慮:** 88日計算・証拠トラッカー・地域チェッカーは「記録/参照のみ・ビザ可否は移民局が判断」を強い免責で明示。緊急カードは代表的な公的番号を掲示しつつ「番号・制度は変わりうる」を明記し `verifiedAt`＋`officialSources` を付与。配布物（Blob 生成 `.txt`）に個人情報は含まれず、個人情報はブラウザ localStorage のみでサーバー送信なし。
+- **検証:** `validate:content` の dangling 0・production build 成功により、公式ソース表示を含む全ページのレンダリング健全性を確認。**未解決のソース問題なし。**
+
 ## news-template マイクロバッチ #2・最終（2026-08-02 / 1件公開・news-template グループ完了）
 
 news ハブ `type: news-template` の最後の1件（`news-scam-alert-template`）を公開し、全 planned コンテンツが完了。詳細ページは画面上に `verifiedAt: 2026-08-02` を表示し共通 `OfficialSourceBox` で出典と免責を明示。詐欺・悪質求人のテンプレートとして、特定の企業・個人を名指しで断定せず一般的な手口・危険サイン・通報先を提示する構造。キャッシュバックやビザ・スポンサー費用の請求が違法である旨は Fair Work の情報に基づき、法的判断・金額は断定しない。照合した公式一次情報（2026-08-02 ライブ確認）: **Scamwatch（ACCC・National Anti-Scam Centre）**（https://www.scamwatch.gov.au/ ― Report a scam / Types of scams / I've been scammed をライブ確認）／**Fair Work Ombudsman｜Visa holders and migrants**（https://www.fairwork.gov.au/find-help-for/visa-holders-migrants ― キャッシュバック/ビザ・スポンサー費用の違法性・相談でビザは取り消されない保護をライブ確認）／**Australian Cyber Security Centre｜Report (ReportCyber)**（https://www.cyber.gov.au/report-and-recover/report ― サイバー犯罪の通報窓口をライブ確認）。緊急時は Triple Zero（000）を案内。

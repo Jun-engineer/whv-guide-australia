@@ -1,5 +1,9 @@
 manifest_version: 1
 generated_at: '2026-07-16'
+# 最終 whole-site 監査: 2026-08-02。全項目が最終ステータス確定。
+# 集計: published 331（article 311 / interactive-tool 10 / download 4 / news-template 6）,
+#       existing 47, merged 7（308 恒久リダイレクト）, planned/draft/review/archived/excluded 0。
+# 管理対象 385 件。全検証スイート合格・production build 成功。未解決の問題なし。
 site:
   name: WH Guide Australia
   base_url: https://whv-guide-australia.com

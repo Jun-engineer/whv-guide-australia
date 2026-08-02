@@ -3,6 +3,68 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## 🏁 最終 whole-site 監査（2026-08-02・commit: `feat: complete working holiday content library audit`）
+
+バルク公開プロジェクトのサイト全体最終監査を実施。リポジトリ・マニフェスト・進捗ファイル・git 履歴を突き合わせ、公開・技術・情報アーキテクチャ・検索の各観点を確認し、利用可能な検証スイートを1回ずつ完走した。**新規記事の生成は行っていない**（残 planned は既に 0 件で、修復を要する欠落ジャーニー・未処理マニフェスト項目は検出されなかった）。
+
+### 最終集計（マニフェストが真実の情報源）
+
+| 区分 | 件数 |
+| --- | --- |
+| 既存記事（`status: existing`・保持／内部リンク更新済み） | 47 |
+| 新規公開（`status: published`・本サイクル） | 331 |
+| ├ 記事（`type: article`） | 311 |
+| ├ インタラクティブツール（`type: interactive-tool`） | 10 |
+| ├ ダウンロード（`type: download`） | 4 |
+| └ ニューステンプレート（`type: news-template`） | 6 |
+| 統合（`status: merged`・308 恒久リダイレクト） | 7 |
+| リダイレクト総数（`lib/content/redirects.ts`） | 7 |
+| レビュー／除外／下書き／アーカイブ／planned | 0 |
+| ツール公開総数（interactive 10＋download 4） | 14 |
+| ダウンロード公開総数 | 4 |
+| 管理対象総数（47＋331＋7） | 385 |
+| 公開中の実 URL（merged はリダイレクトのため除外） | 378 |
+
+### 監査結果（合格）
+
+- **マニフェスト／公開:** 全項目が最終ステータス確定（planned/draft/review/archived/excluded = 0）。7件の merged は記事オブジェクトとして存在せず（`/guides/*` を生成しない）、`redirects.ts`→`next.config.ts` で 308 転送され公開露出なし。公開記事は各カテゴリ一覧・ハブ・relatedSlugs・sitemap から到達可能で孤立なし。YMYL 記事は `verifiedAt`＋`OfficialSourceBox`（公式一次情報・免責）を保持。薄い/プレースホルダー/空ページの公開なし。既存の経験ベース記事は保持。
+- **URL／技術:** 重複 slug/path/export 0（`validate:articles`）。dangling 内部リンク 0（`validate:content`）。リダイレクトのチェーン/ループなし・`to` は全て公開記事（validate 済み）。sitemap/構造化データは公開フィルタ（`getAllArticles`／`getPublishedTools`／`getPublishedNewsTemplates`）駆動で未公開を露出しない。ダウンロードはブラウザ内 Blob（`.txt`）で実動作、ツールは単体テスト 36/36 で機能確認。**RSS ルートは本プロジェクトに存在しない（N/A）。**
+- **情報アーキテクチャ:** 21 ハブ構成で、準備→ビザ→到着→SIM/銀行/TFN/myGov→税/ABN/Super→仕事/権利→ファーム/セカンドビザ→住居→交通/車→医療/保険/安全→日常生活→英語→都市/地域→旅行→帰国準備→コミュニティ→ツール→ダウンロードの全ジャーニーをカバー。Footer/Header・カテゴリ一覧・relatedSlugs・パンくずで回遊可能。
+- **検索・発見性:** 公開記事の発見はカテゴリ/ハブページ（公開フィルタ済み）・関連記事・sitemap による。全文サイト内検索インデックスは未実装のため未公開コンテンツの漏洩経路なし（フォーラム検索は forum 投稿のみ対象）。merged ページは記事一覧・sitemap に現れない。
+
+### フル検証スイート結果（各1回・修復1回）
+
+| 検証 | 結果 |
+| --- | --- |
+| `validate:content`（dangling/重複/カニバリ） | **0 error / 66 warning**（warning は粗い intent ラベルの過検出・dangling 0） |
+| `validate:articles`（重複 slug/path/export） | **OK: no article data errors**（ARTICLE_ORDER omission は既存仕様の warn） |
+| `test:content`（node --test） | **5/5 pass** |
+| `test:tools`（node --test） | **36/36 pass** |
+| `tsc --noEmit`（型チェック） | **exit 0** |
+| `lint`（eslint） | **0 problems**（下記の修復1回で unused-import warning を解消） |
+| **production build**（`next build`・prebuild で validate:content） | **✓ Compiled successfully・438 静的ページ生成・prebuild 0 error** |
+| accessibility | 自動 a11y スイートは本プロジェクトに無し（ツールは `<label>`/`role`/`aria-*`/フォーカスリングで実装） |
+
+**修復1回（許可枠内）:** `lint` の唯一の warning（`components/tools/EightyEightDayCalculator.tsx` の未使用 import `SECOND_VISA_TARGET_DAYS`）を該当 import 除去で解消 → 再 lint で **0 problems**。リトライループなし。
+
+### 未解決の問題
+
+**なし。** すべての検証が合格し、production build も成功。
+
+### デプロイ状況・次のステップ
+
+最終チェックポイントコミット `feat: complete working holiday content library audit` をローカル `main` に作成。**`main` へは直接 push していない**（指示に従い CI・ブランチ保護・確立済みデプロイワークフローを迂回しない）。**次のデプロイ手順:** 確立済みワークフロー（コミット→push で CI/デプロイ）に沿って、利用者が `git push origin main`（またはブランチを切って Pull Request を作成）を実行することで CI とデプロイがトリガーされる。監査エージェントは push を行わずコミットで停止。
+
+### 推奨する将来の改善
+
+- `validate-content.mjs` の意図クラスタをサブ intent 粒度に細分化し、66件の過検出カニバリ警告を削減。
+- `ARTICLE_ORDER` に末尾追記される 261 slug を明示登録し表示順を制御。
+- 全文サイト内検索インデックス（記事）の導入（現状はハブ/カテゴリ/sitemap による発見）。
+- 自動アクセシビリティテスト（axe / Playwright）を CI に追加。
+- YMYL 記事の `verifiedAt` を定期再照合するカデンスの確立。
+
+---
+
 ## ✅ コンテンツ生成 完了（2026-08-02）: 全 planned アイテム公開済み
 
 **本サイクルのコンテンツ生成は完了。** マニフェストの `status: planned` は 0 件。以下は最終バッチ（news-template #2）の記録。プロジェクトは全体最終監査の準備完了（本実行では最終監査は未実施）。

@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import {
   isValidIsoDate,
   summarizeWorkDays,
-  SECOND_VISA_TARGET_DAYS,
 } from "@/lib/tools/logic/second-visa.mjs";
 import { useLocalStorageState } from "@/components/tools/useLocalStorageState";
 

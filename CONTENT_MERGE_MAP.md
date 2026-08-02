@@ -10,6 +10,16 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### 🏁 最終 whole-site 監査（2026-08-02 / 統合・リダイレクト変更なし）
+
+サイト全体最終監査時点の統合状態を確定。**本監査での新規統合・分割・リダイレクト追加はなし。** 累計は以下のとおり。
+
+- **統合（merged）総数: 7件**（すべて計画→既存公開記事・308 恒久リダイレクト）: `sim-esim-guide`→`sim-guide`／`mobile-carrier-comparison`→`sim-guide`／`abn-application`→`abn-guide`／`dasp-guide`→`dasp-refund`／`find-lost-super`→`super-guide`／`buy-used-car-guide`→`cars-guide`／`city-public-transport-comparison`→`transport-payment-guide`。
+- **リダイレクト総数: 7**（単一の情報源 `lib/content/redirects.ts`→`next.config.ts` の 308）。
+- **検証:** 7件の merged slug は記事オブジェクトとして存在せず（`lib/content/articles/` に 0 件）`/guides/*` ページを生成しないため、リダイレクトが公開ページを覆い隠すことはない。リダイレクトのチェーン/ループなし・`to` は全て公開中の実記事（`validate:content` で確認）。
+- **分割（split）:** 累計で `area-brisbane`／`area-perth-cairns`（area #1・公開 URL 保持・リダイレクトなし）のみ。本監査での追加なし。
+- **公開→公開の全面統合:** 検出されず（従前どおり実行しない方針）。
+
 ### news-template マイクロバッチ #2・最終（2026-08-02 / 1件公開・news-template グループ完了）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** news ハブ `type: news-template` の最後の1件（`news-scam-alert-template`）は**新規スラッグの create**で、#1 で構築済の news-template サブシステム（`/news/templates/*`）にデータ1件を追加したのみ。既存公開URLの統合・置換・分割・リダイレクトは一切発生しない。sitemap・一覧・詳細はレジストリ（`getPublishedNewsTemplates()`）駆動で自動反映。関連ガイドは公開/既存 slug（`online-scams-cybersecurity`／`bank-scam-security`／`rental-scam-examples`／`working-rights`／`underpayment-unpaid-wages`）のみ `/guides/{slug}` へリンクし dangling 0。これで news-template グループ（全６件）と全 planned コンテンツが完了。
