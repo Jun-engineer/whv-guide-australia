@@ -4,6 +4,27 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: tools マイクロバッチ #3（4件公開 / commit: feat: publish tools micro-batch 3）
+
+tools（ツール・テンプレート）ハブの**次の4件**を公開しました（マイクロバッチ運用）。開始時点で tools の未完了は7件（>4）だったため、**通常のマイクロバッチ**として記録順の先頭4件のみを処理し、**最終ハブ監査（フルビルド）は実施していません**（残り3件のため次回に継続）。以下が確定状態です。
+
+- **未完了 tools 件数（開始時）:** 7件（すべて planned・すべて `hub: tools`）。既存公開は7件（バッチ#1の3件＋#2の4件）。7 > 4 のため記録順の先頭4件のみ処理。
+- **選定した4件（記録順の先頭4件）:** `tool-job-application-tracker`, `tool-farm-evidence-tracker`, `tool-return-home-checklist`, `download-resume-template`。いずれも開始時 `status: planned` をマニフェストで確認済み。
+- **実装方針（前バッチと同一）:** 計算・集計・並び替えロジックを描画から分離し純粋ロジックを `.mjs`（`lib/tools/logic/`）で実装。`node --test` と TSX 双方から import。単体テストを付与。DRY のため日付検証を `date.mjs` に単一化し `second-visa.mjs` から再輸出（既存テスト/コンポーネント互換）。推計を公式判定（ビザ可否・税/法的助言）として提示しない旨を各免責に明記。モバイル対応・キーボード操作可能（`<label>`/`role="tab"`/`role="progressbar"`/`aria-live`/フォーカスリング）。結果は平易な日本語で説明。入力・記録はブラウザにのみ保存・サーバー送信なし。
+- **公開した4件（すべて `hub: tools`・完全実装・プレースホルダーではない）:**
+  - `tool-job-application-tracker`（P2, tracker）— 応募先（会社・職種・応募日・進捗・メモ）を記録し、ステータス別（応募済/連絡あり/面接/採用/不採用）に集計・並び替え。ロジック `summarizeApplications`/`sortApplications`（`lib/tools/logic/applications.mjs`）＋日付検証 `isValidIsoDate`（`date.mjs`）。localStorage 保存。求人紹介・採用の保証はしない旨を明記（外部データなし）。関連記事 `job-search-websites`/`facebook-job-groups`/`walk-in-resume`/`job-application-follow-up`。
+  - `tool-farm-evidence-tracker`（P0, tracker）— セカンドビザ指定業務の証拠書類（給与明細・銀行入金・契約・写真等）の保有状況を種類別に記録＋任意メモ。既存 `computeProgress`/`countCompleted`（`checklist.mjs`）を再利用し揃い具合を集計。データ `lib/tools/data/farm-evidence.ts`。`verifiedAt: 2026-08-02`、`officialSources`=Home Affairs（Specified work／Second WHV 417）2件。**ビザ可否・証拠の十分性は保証せず移民局が判断**する旨を強い免責で明示（%は記録割合のみ）。関連記事 `farm-payslip-evidence`/`farm-employer-verification`/`88-day-calculation`/`second-visa-guide`/`specified-work-industries`/`farm-second-visa`。
+  - `tool-return-home-checklist`（P1, checklist）— 退職・退去・車売却・税金・スーパー（DASP）などを時系列（2〜3ヶ月前／1ヶ月前／出発直前／帰国後）で整理。既存 `ChecklistBoard` を再利用。データ `lib/tools/data/return-home-checklist.ts`。`verifiedAt: 2026-08-02`。**自動通知は行わない**・期限は各公式/契約で確認する旨を明記。関連記事 `leaving-australia-checklist`/`close-services-before-leaving`/`final-pay-before-leaving`/`dasp-before-after-leaving`/`sell-car-timeline`/`keep-australian-bank-account`。
+  - `download-resume-template`（P0, download）— 接客/ファーム/倉庫/IT の職種別に英文レジュメのひな型をタブ切替でプレビューし、クリップボードコピー＋`.txt` ダウンロード（ブラウザ内 Blob 生成・サーバー送信なし）。データ `lib/tools/data/resume-templates.ts`。ひな型（記入例）でありそのまま提出用ではない旨を明記。パス接頭辞は `/downloads/`。関連記事 `resume-guide`/`cover-letter-guide`/`walk-in-resume`/`hospitality-jobs-guide`。
+- **YMYL/推計の扱い:** 証拠トラッカーは「記録割合のみ」「ビザ可否・証拠の十分性は保証しない」「移民局が判断」を明示。帰国前は目安・自動通知なし・期限は公式/契約で確認と明記。応募管理は求人紹介/採用の保証なし。レジュメはひな型で職種/企業により最適形は異なると明記。
+- **単体テスト:** `scripts/tools.test.mjs` に applications/date のテストを追加し **計32ケース**（前26＋新6）全pass。
+- **発見性・内部リンク:** 4件は登録レジストリ（`lib/tools/registry.ts`）に追加され、`/tools` ハブ・`RelatedToolsBox`（記事詳細）・`app/sitemap.ts` の `toolRoutes`（`getPublishedTools()` から生成）に**自動反映**（ナビ/サイトマップの追加編集は不要）。`ToolCategory` に `"tracker"`・`"download"` を追加。
+- **content-manifest.yaml:** 4件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成（existing 47・planned 338）。
+- **検証（通常バッチ・各1回）:** `node --test scripts/tools.test.mjs`（32/32 pass）／`validate:content`（0 error / 66 warning・dangling 0・重複 slug/path なし）／`tsc --noEmit`（exit 0）／`validate:articles`（no article data errors）。**フルビルドと最終ハブ監査は通常バッチのため未実施。** 既存の cannibalization 警告（`tools::interactive-tool`／`tools::download` 等の同一ハブ内グルーピング）は許容。
+- **未解決の問題:** なし。
+- **次カテゴリ/次項目:** tools 継続。**残り3件**（すべて `type: download`）: `download-cover-letter-template`(P1), `download-housing-inspection-checklist`(P1), `download-emergency-card`(P1)。次バッチは残り≤4のため**全件処理＋最終 tools ハブ監査（フルビルド）**を実施する。
+- **変更ファイル（本チェックポイント）:** `lib/tools/logic/{date,applications}.mjs`（新設）、`lib/tools/logic/second-visa.mjs`（date.mjs へ委譲・再輸出）、`lib/tools/data/{farm-evidence,return-home-checklist,resume-templates}.ts`（新設）、`components/tools/{JobApplicationTracker,FarmEvidenceTracker,ResumeTemplateDownload}.tsx`（新設）、`app/tools/{job-application-tracker,farm-evidence-tracker,return-home-checklist}/page.tsx`＋`app/downloads/resume-template/page.tsx`（新設）、`lib/tools/{types.ts,registry.ts}`、`scripts/tools.test.mjs`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+
 ## チェックポイント（2026-08-02）: tools マイクロバッチ #2（4件公開 / commit: feat: publish tools micro-batch 2）
 
 tools（ツール・テンプレート）ハブの**次の4件**を公開しました（マイクロバッチ運用）。開始時点で tools の未完了は11件（>4）だったため、**通常のマイクロバッチ**として記録順の先頭4件のみを処理し、**最終ハブ監査（フルビルド）は実施していません**（残り7件のため次回に継続）。以下が確定状態です。

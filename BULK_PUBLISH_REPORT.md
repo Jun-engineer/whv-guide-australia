@@ -3,6 +3,19 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: tools マイクロバッチ #3（4件公開 / commit: feat: publish tools micro-batch 3）
+
+tools（ツール・テンプレート）ハブの**次の4件**を公開しました（マイクロバッチ運用）。開始時の未完了 tools は7件（>4）だったため、**通常のマイクロバッチ**として記録順の先頭4件のみ処理し、**最終ハブ監査（フルビルド）は未実施**（残り3件・次回継続）。
+
+- **選定・公開した4件（すべて `hub: tools`・完全実装）:** `tool-job-application-tracker`（P2, tracker）／`tool-farm-evidence-tracker`（P0, tracker）／`tool-return-home-checklist`（P1, checklist）／`download-resume-template`（P0, download）。いずれも開始時 planned をマニフェストで確認。
+  - `tool-job-application-tracker` ― 応募先を記録しステータス別（応募済/連絡あり/面接/採用/不採用）に集計・並び替え（`summarizeApplications`/`sortApplications`）。求人紹介/採用の保証はなし。
+  - `tool-farm-evidence-tracker` ― セカンドビザ指定業務の証拠書類の保有状況を種類別に記録。`verifiedAt`＋`officialSources`（Home Affairs 2件）。**ビザ可否・証拠の十分性は保証せず移民局が判断**（%は記録割合のみ）。
+  - `tool-return-home-checklist` ― 退職・退去・車売却・税金・スーパー（DASP）を時系列で整理（`ChecklistBoard` 再利用）。自動通知は行わない。
+  - `download-resume-template` ― 接客/ファーム/倉庫/IT の職種別英文レジュメのひな型をコピー＋`.txt` ダウンロード（ブラウザ内 Blob）。パス接頭辞 `/downloads/`。
+- **実装:** 計算/集計ロジックは `lib/tools/logic/{date,applications}.mjs`（新設）。DRY のため日付検証を `date.mjs` に単一化し `second-visa.mjs` から再輸出（既存テスト/コンポーネント互換）。`ToolCategory` に `"tracker"`・`"download"` を追加。
+- **検証（各1回）:** `node --test scripts/tools.test.mjs`（32/32 pass）／`validate:content`（0 error / 66 warning）／`tsc --noEmit`（exit 0）／`validate:articles`（no article data errors）。フルビルド・最終ハブ監査は通常バッチのため未実施。
+- **次:** tools 継続。**残り3件**（すべて `type: download`）: `download-cover-letter-template`(P1), `download-housing-inspection-checklist`(P1), `download-emergency-card`(P1)。次バッチは残り≤4のため**全件処理＋最終 tools ハブ監査（フルビルド）**を実施する。
+
 ## チェックポイント（2026-08-02）: tools マイクロバッチ #2（4件公開 / commit: feat: publish tools micro-batch 2）
 
 tools（ツール・テンプレート）ハブの**次の4件**を公開しました（マイクロバッチ運用）。開始時の未完了 tools は11件（>4）だったため、**通常のマイクロバッチ**として記録順の先頭4件のみ処理し、**最終ハブ監査（フルビルド）は未実施**（残り7件・次回継続）。

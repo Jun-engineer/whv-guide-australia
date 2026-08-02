@@ -10,6 +10,10 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### tools マイクロバッチ #3（2026-08-02 / 4件公開）
+
+`tool-job-application-tracker`・`tool-farm-evidence-tracker`・`tool-return-home-checklist`・`download-resume-template` を新規公開（ツール・テンプレート）。いずれも新規 URL（`/tools/*`・`/downloads/*`）で既存公開ページとの URL 衝突はなく、リダイレクト不要。レジストリ経由で `/tools` ハブ・`RelatedToolsBox`（関連記事）・サイトマップに自動連携。`validate:content` の cannibalization 警告（`tools::interactive-tool`／`tools::download` の同一ハブ内グルーピング）は設計上の想定内で許容。
+
 ### tools マイクロバッチ #2（2026-08-02 / 4件公開）
 
 - 統合・リダイレクトは**該当なし**。4件（`tool-specified-work-region-checker`, `tool-farm-season-calendar`, `tool-weekly-budget-calculator`, `tool-resume-checklist`）はすべて新規スラッグの新規追加（create）で、既存公開URLの統合・置換・分割は発生しない。

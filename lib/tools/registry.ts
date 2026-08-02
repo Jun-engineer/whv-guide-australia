@@ -154,6 +154,91 @@ export const tools: ToolMeta[] = [
     status: "published",
     relatedArticleSlugs: ["resume-guide", "cover-letter-guide", "walk-in-resume", "job-search-websites"],
   },
+  {
+    slug: "tool-job-application-tracker",
+    path: "/tools/job-application-tracker",
+    title: "仕事応募管理表｜応募日・連絡・面接・結果",
+    navLabel: "応募管理表",
+    description:
+      "応募した会社・職種・応募日・進捗（連絡・面接・結果）を記録して管理できるツール。記録は端末に保存され、応募状況を一覧・集計できます。",
+    category: "tracker",
+    categoryLabel: "管理・記録",
+    icon: "🗂️",
+    status: "published",
+    relatedArticleSlugs: [
+      "job-search-websites",
+      "facebook-job-groups",
+      "walk-in-resume",
+      "job-application-follow-up",
+    ],
+  },
+  {
+    slug: "tool-farm-evidence-tracker",
+    path: "/tools/farm-evidence-tracker",
+    title: "セカンドビザ証拠書類トラッカー",
+    navLabel: "証拠書類トラッカー",
+    description:
+      "セカンドビザの指定業務を裏づける書類（給与明細・銀行入金・契約・写真など）の保有状況を種類別に記録できるツール。ビザの可否や正式な証拠は保証しません。",
+    category: "tracker",
+    categoryLabel: "管理・記録",
+    icon: "📁",
+    status: "published",
+    verifiedAt: "2026-08-02",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Specified work (417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work",
+        accessedAt: "2026-08-02",
+      },
+      {
+        label: "Department of Home Affairs｜Second Working Holiday visa (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/second-work-holiday-417",
+        accessedAt: "2026-08-02",
+      },
+    ],
+    relatedArticleSlugs: [
+      "farm-payslip-evidence",
+      "farm-employer-verification",
+      "88-day-calculation",
+      "second-visa-guide",
+      "specified-work-industries",
+      "farm-second-visa",
+    ],
+  },
+  {
+    slug: "tool-return-home-checklist",
+    path: "/tools/return-home-checklist",
+    title: "帰国前チェックリスト（時系列）",
+    navLabel: "帰国前チェックリスト",
+    description:
+      "退職・退去・車の売却・税金・スーパー（DASP）などを時系列で整理できる帰国前チェックリスト。完了状態は端末に保存できます。",
+    category: "checklist",
+    categoryLabel: "チェックリスト",
+    icon: "🧳",
+    status: "published",
+    verifiedAt: "2026-08-02",
+    relatedArticleSlugs: [
+      "leaving-australia-checklist",
+      "close-services-before-leaving",
+      "final-pay-before-leaving",
+      "dasp-before-after-leaving",
+      "sell-car-timeline",
+      "keep-australian-bank-account",
+    ],
+  },
+  {
+    slug: "download-resume-template",
+    path: "/downloads/resume-template",
+    title: "英文レジュメテンプレート（職種別）",
+    navLabel: "レジュメテンプレート",
+    description:
+      "接客・ファーム・倉庫・IT の職種別に、英文レジュメのひな型をコピー・ダウンロードできます。自分の経歴に合わせて書き換えて使ってください。",
+    category: "download",
+    categoryLabel: "テンプレート",
+    icon: "📝",
+    status: "published",
+    relatedArticleSlugs: ["resume-guide", "cover-letter-guide", "walk-in-resume", "hospitality-jobs-guide"],
+  },
 ];
 
 /** 公開済みツールを返す（宣言順）。 */

@@ -24,6 +24,12 @@ import {
 } from "../lib/tools/logic/postcode.mjs";
 import { monthInSeason, normalizeQuery, filterSeasons } from "../lib/tools/logic/season.mjs";
 import { toAmount, toWholeNumber, computeBudget } from "../lib/tools/logic/budget.mjs";
+import { isValidIsoDate as isValidIsoDateStandalone } from "../lib/tools/logic/date.mjs";
+import {
+  APPLICATION_STATUSES,
+  summarizeApplications,
+  sortApplications,
+} from "../lib/tools/logic/applications.mjs";
 
 // ---- checklist.mjs -------------------------------------------------------
 
@@ -274,4 +280,71 @@ test("computeBudget: ignores invalid/negative inputs safely", () => {
   const r = computeBudget({ rent: "abc", food: -50, noIncomeWeeks: "x", upfront: "" });
   assert.equal(r.weekly, 0);
   assert.equal(r.requiredSavings, 0);
+});
+
+// ---- date.mjs ------------------------------------------------------------
+
+test("date.mjs isValidIsoDate: same single source of truth as second-visa re-export", () => {
+  assert.equal(isValidIsoDateStandalone("2026-08-02"), true);
+  assert.equal(isValidIsoDateStandalone("2026-02-29"), false);
+  assert.equal(isValidIsoDateStandalone("2024-02-29"), true);
+  assert.equal(isValidIsoDateStandalone("bad"), false);
+  // both entry points resolve to the same function
+  assert.equal(isValidIsoDateStandalone, isValidIsoDate);
+});
+
+// ---- applications.mjs ----------------------------------------------------
+
+test("APPLICATION_STATUSES: has the expected ordered values", () => {
+  assert.deepEqual(
+    APPLICATION_STATUSES.map((s) => s.value),
+    ["applied", "contacted", "interview", "offer", "rejected"],
+  );
+});
+
+test("summarizeApplications: counts total, active, offers and rejected", () => {
+  const records = [
+    { status: "applied" },
+    { status: "contacted" },
+    { status: "interview" },
+    { status: "offer" },
+    { status: "rejected" },
+  ];
+  const s = summarizeApplications(records);
+  assert.equal(s.total, 5);
+  assert.equal(s.active, 3); // applied + contacted + interview
+  assert.equal(s.offers, 1);
+  assert.equal(s.rejected, 1);
+});
+
+test("summarizeApplications: unknown/missing status defaults to applied", () => {
+  const s = summarizeApplications([{ status: "weird" }, {}]);
+  assert.equal(s.total, 2);
+  assert.equal(s.byStatus.applied, 2);
+  assert.equal(s.active, 2);
+});
+
+test("summarizeApplications: empty input is safe", () => {
+  const s = summarizeApplications([]);
+  assert.equal(s.total, 0);
+  assert.equal(s.active, 0);
+  assert.equal(s.offers, 0);
+  assert.equal(s.rejected, 0);
+});
+
+test("sortApplications: newest appliedDate first, missing dates last, non-mutating", () => {
+  const input = [
+    { id: "a", appliedDate: "2026-08-01" },
+    { id: "b", appliedDate: "" },
+    { id: "c", appliedDate: "2026-08-10" },
+    { id: "d" },
+  ];
+  const snapshot = JSON.stringify(input);
+  const result = sortApplications(input);
+  assert.deepEqual(
+    result.map((r) => r.id),
+    ["c", "a", "b", "d"],
+  );
+  // input not mutated
+  assert.equal(JSON.stringify(input), snapshot);
 });

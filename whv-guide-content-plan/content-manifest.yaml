@@ -3801,7 +3801,7 @@ planned_content:
 - slug: tool-job-application-tracker
   title: 仕事応募管理表｜応募日・連絡・面接・結果
   hub: tools
-  status: planned
+  status: published
   type: interactive-tool
   priority: P2
   intent: interactive-tool
@@ -3811,7 +3811,7 @@ planned_content:
 - slug: tool-farm-evidence-tracker
   title: セカンドビザ証拠書類トラッカー
   hub: tools
-  status: planned
+  status: published
   type: interactive-tool
   priority: P0
   intent: interactive-tool
@@ -3821,7 +3821,7 @@ planned_content:
 - slug: tool-return-home-checklist
   title: 帰国前チェックリスト（期限通知つき）
   hub: tools
-  status: planned
+  status: published
   type: interactive-tool
   priority: P1
   intent: interactive-tool
@@ -3831,7 +3831,7 @@ planned_content:
 - slug: download-resume-template
   title: 英文レジュメテンプレート（職種別）
   hub: tools
-  status: planned
+  status: published
   type: download
   priority: P0
   intent: download
