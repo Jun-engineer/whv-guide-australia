@@ -239,6 +239,77 @@ export const tools: ToolMeta[] = [
     status: "published",
     relatedArticleSlugs: ["resume-guide", "cover-letter-guide", "walk-in-resume", "hospitality-jobs-guide"],
   },
+  {
+    slug: "download-cover-letter-template",
+    path: "/downloads/cover-letter-template",
+    title: "英文カバーレターテンプレート集（職種・チャネル別）",
+    navLabel: "カバーレターテンプレート",
+    description:
+      "接客・ファーム・倉庫・汎用の英文カバーレターのひな型と、メール・店頭・SNS・応募フォーム用の短文をコピー／ダウンロードできます。自分の応募先に合わせて書き換えて使ってください。",
+    category: "download",
+    categoryLabel: "テンプレート",
+    icon: "✉️",
+    status: "published",
+    relatedArticleSlugs: [
+      "cover-letter-guide",
+      "resume-guide",
+      "walk-in-resume",
+      "job-application-follow-up",
+      "job-search-websites",
+    ],
+  },
+  {
+    slug: "download-housing-inspection-checklist",
+    path: "/downloads/housing-inspection-checklist",
+    title: "シェアハウス内見チェックリスト（印刷・保存）",
+    navLabel: "内見チェックリスト",
+    description:
+      "シェアハウスの内見で確認したい項目（費用・部屋・設備・安全・周辺環境）を種類別にまとめたチェックリスト。現地でチェックでき、印刷・.txt ダウンロードにも対応します。",
+    category: "download",
+    categoryLabel: "テンプレート",
+    icon: "🔑",
+    status: "published",
+    relatedArticleSlugs: [
+      "inspection-checklist",
+      "condition-report-guide",
+      "bond-rules-overview",
+      "housing-message-templates",
+      "share-house-rules",
+      "rental-scam-examples",
+    ],
+  },
+  {
+    slug: "download-emergency-card",
+    path: "/downloads/emergency-card",
+    title: "緊急連絡先カード（000・保険・領事館・本人情報）",
+    navLabel: "緊急連絡先カード",
+    description:
+      "オーストラリアの主な緊急・相談窓口（000 ほか）と、自分の緊急情報（保険・連絡先・アレルギー等）をまとめて保存・印刷できるカード。スマホ保存・印刷用に .txt ダウンロードもできます。",
+    category: "download",
+    categoryLabel: "テンプレート",
+    icon: "🆘",
+    status: "published",
+    verifiedAt: "2026-08-02",
+    officialSources: [
+      {
+        label: "Australian Government｜Triple Zero (000)",
+        url: "https://www.triplezero.gov.au/",
+        accessedAt: "2026-08-02",
+      },
+      {
+        label: "healthdirect Australia",
+        url: "https://www.healthdirect.gov.au/",
+        accessedAt: "2026-08-02",
+      },
+    ],
+    relatedArticleSlugs: [
+      "gp-urgent-care-emergency",
+      "ambulance-costs-insurance",
+      "overseas-insurance-claim",
+      "consular-registration",
+      "bites-stings-wildlife",
+    ],
+  },
 ];
 
 /** 公開済みツールを返す（宣言順）。 */

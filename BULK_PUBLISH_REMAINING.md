@@ -4,6 +4,26 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: tools マイクロバッチ #4・最終（3件公開＋ハブ監査完了 / commit: feat: publish tools micro-batch 4 (final)）
+
+tools（ツール・テンプレート）ハブの**残り3件**を公開し、**tools ハブを完了**しました。開始時点で tools の未完了は3件（≤4）だったため、**全件処理＋最終ハブ監査（フルビルド）**を実施しました。以下が確定状態です。
+
+- **未完了 tools 件数（開始時）:** 3件（すべて planned・すべて `hub: tools`・すべて `type: download`）。既存公開は11件（バッチ#1〜#3）。3 ≤ 4 のため**全件処理**。
+- **処理した3件（残り全件）:** `download-cover-letter-template`(P1), `download-housing-inspection-checklist`(P1), `download-emergency-card`(P1)。いずれも開始時 `status: planned` をマニフェストで確認済み。
+- **実装方針（前バッチと同一）:** テキスト生成（ダウンロード/コピー/印刷用の直列化）を描画から分離し純粋ロジック `lib/tools/logic/download.mjs` に実装。`node --test` と TSX 双方から import。単体テストを付与。推計・記入例を公式判定として提示しない旨を各免責に明記。モバイル対応・キーボード操作可能（`<label>`/`role="tab"`/`role="progressbar"`/`aria-live`/フォーカスリング）。ダウンロードはブラウザ内 Blob 生成（サーバー送信なし）。個人情報は localStorage のみ。
+- **公開した3件（すべて `hub: tools`・`category: download`・完全実装・プレースホルダーではない）:**
+  - `download-cover-letter-template`（P1, download）— 接客/ファーム/倉庫/汎用の英文カバーレターのひな型（タブ切替・コピー・`.txt` DL）＋応募チャネル別（メール/店頭/SNS/応募フォーム）の短文（各コピー）。データ `lib/tools/data/cover-letter-templates.ts`。ひな型でありそのまま送信用ではない旨を明記（外部データなし）。関連記事 `cover-letter-guide`/`resume-guide`/`walk-in-resume`/`job-application-follow-up`/`job-search-websites`。
+  - `download-housing-inspection-checklist`（P1, download）— シェアハウス内見の確認項目（費用/部屋/設備/安全/周辺）を種類別に。現地でチェック可（localStorage）＋印刷（`window.print()`）＋`.txt` DL/コピー。テキスト生成 `buildChecklistText`（`download.mjs`）、進捗は既存 `computeProgress`/`countCompleted`（`checklist.mjs`）を再利用。データ `lib/tools/data/housing-inspection-checklist.ts`。契約/ボンド/費用は契約書・各州テナント情報で確認する旨を明記。関連記事 `inspection-checklist`/`condition-report-guide`/`bond-rules-overview`/`housing-message-templates`/`share-house-rules`/`rental-scam-examples`。
+  - `download-emergency-card`（P1, download）— オーストラリアの主な緊急・相談窓口（000・112・106・132 500・13 11 26・1800 022 222・13 11 14・131 444）を固定表示し、本人情報（保険・連絡先・アレルギー等）を入力・保存（localStorage）。印刷＋`.txt` DL/コピー。テキスト生成 `buildEmergencyCardText`（`download.mjs`）。データ `lib/tools/data/emergency-card.ts`。`verifiedAt: 2026-08-02`、`officialSources`=Triple Zero (000)／healthdirect（accessedAt 2026-08-02）。番号・制度は変わりうる旨、大使館/領事館は国籍により異なるため各自記入する旨を明記。関連記事 `gp-urgent-care-emergency`/`ambulance-costs-insurance`/`overseas-insurance-claim`/`consular-registration`/`bites-stings-wildlife`。
+- **YMYL/推計の扱い:** 緊急カードは公式の代表番号を提示しつつ「番号・制度は変わりうる／緊急時は最新案内に従う」を明記し `verifiedAt`＋`officialSources` を付与。内見チェックリストは一般的な目安・契約/各州情報で確認と明記。カバーレターはひな型で職種/企業により最適形は異なると明記。ダウンロード・入力はブラウザ内のみ・サーバー送信なし。
+- **単体テスト:** `scripts/tools.test.mjs` に `buildChecklistText`/`buildEmergencyCardText` のテストを追加し **計36ケース**（前32＋新4）全pass。
+- **発見性・内部リンク:** 3件は登録レジストリ（`lib/tools/registry.ts`）に追加され、`/tools` ハブ・`RelatedToolsBox`（記事詳細）・`app/sitemap.ts` の `toolRoutes`（`getPublishedTools()` から生成）に**自動反映**（ナビ/サイトマップの追加編集は不要）。`ToolCategory` は既存の `"download"` を使用（型変更なし）。
+- **content-manifest.yaml:** 3件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **最終 tools ハブ監査（本バッチで実施）:** レジストリ公開 **14件**／ページ **14件**（`app/tools/*` 10・`app/downloads/*` 4）／マニフェスト tools **14件すべて published**（tools 範囲に planned 残りなし）。**`npm run build` 成功**（`✓ Compiled successfully`・全ツール/ダウンロードルートが `○ (Static)` としてプリレンダー: `/tools` ハブ＋`/tools/*` 10＋`/downloads/*` 4）。`validate:content`（0 error / 66 warning・dangling 0・重複 slug/path なし）／`tsc --noEmit`（exit 0）／`validate:articles`（no article data errors）／`node --test`（36/36 pass）。既存の cannibalization 警告（`tools::download`／`tools::interactive-tool` の同一ハブ内グルーピング）は設計上の想定内で許容。
+- **未解決の問題:** なし。
+- **次カテゴリ/次項目:** **tools ハブは全14件公開で完了。** 本指示の範囲（tools）を完了したため、ここで停止（別カテゴリには着手しない）。
+- **変更ファイル（本チェックポイント）:** `lib/tools/logic/download.mjs`（新設）、`lib/tools/data/{cover-letter-templates,housing-inspection-checklist,emergency-card}.ts`（新設）、`components/tools/{CoverLetterTemplateDownload,HousingInspectionChecklist,EmergencyCard}.tsx`（新設）、`app/downloads/{cover-letter-template,housing-inspection-checklist,emergency-card}/page.tsx`（新設）、`lib/tools/registry.ts`、`scripts/tools.test.mjs`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+
 ## チェックポイント（2026-08-02）: tools マイクロバッチ #3（4件公開 / commit: feat: publish tools micro-batch 3）
 
 tools（ツール・テンプレート）ハブの**次の4件**を公開しました（マイクロバッチ運用）。開始時点で tools の未完了は7件（>4）だったため、**通常のマイクロバッチ**として記録順の先頭4件のみを処理し、**最終ハブ監査（フルビルド）は実施していません**（残り3件のため次回に継続）。以下が確定状態です。

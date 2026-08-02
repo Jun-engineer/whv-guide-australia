@@ -8,6 +8,10 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## tools マイクロバッチ #4・最終（2026-08-02 / 3件公開）
+
+tools ハブの残り3件（`download-cover-letter-template`・`download-housing-inspection-checklist`・`download-emergency-card`）を公開し tools ハブを完了。緊急番号を扱う `download-emergency-card` は YMYL 重要度が高いため `verifiedAt: 2026-08-02` と `officialSources`（Australian Government ― Triple Zero (000) / healthdirect Australia、accessedAt 2026-08-02）を付与。掲載の代表番号（000・112・106・132 500・13 11 26・1800 022 222・13 11 14・131 444）は安定した公的連絡先だが、「番号・制度は変わりうる・緊急時は最新の案内に従う」を免責に明記。大使館/領事館は国籍により異なるためハードコードせず利用者が記入する設計（誤値を防止）。`download-cover-letter-template`（カバーレターのひな型）・`download-housing-inspection-checklist`（一般的な内見項目）は外部ライブデータに依存しないため officialSources なし（ひな型/目安であり契約/各州情報で確認する旨を明記）。
+
 ## tools マイクロバッチ #3（2026-08-02 / 4件公開）
 
 tools ハブの次の4件（`tool-job-application-tracker`・`tool-farm-evidence-tracker`・`tool-return-home-checklist`・`download-resume-template`）を公開。セカンドビザの証拠を扱う `tool-farm-evidence-tracker` に `verifiedAt: 2026-08-02` と `officialSources`（Department of Home Affairs ― Specified work (417) / Second Working Holiday visa (subclass 417)、accessedAt 2026-08-02）を付与。`tool-return-home-checklist` は一般的な時系列ガイドのため `verifiedAt: 2026-08-02`（個別の金額/期限は ATO 等公式へ誘導）。`tool-job-application-tracker` と `download-resume-template` はユーザー入力/一般慣行で外部ライブデータに依存しないため officialSources なし。いずれも「ビザ可否は移民局が判断」「推計/記録を公式判定として提示しない」を免責に明記。

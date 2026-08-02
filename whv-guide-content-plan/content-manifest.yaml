@@ -3841,7 +3841,7 @@ planned_content:
 - slug: download-cover-letter-template
   title: カバーレターテンプレート集
   hub: tools
-  status: planned
+  status: published
   type: download
   priority: P1
   intent: download
@@ -3851,7 +3851,7 @@ planned_content:
 - slug: download-housing-inspection-checklist
   title: シェアハウス内見チェックリストPDF/印刷版
   hub: tools
-  status: planned
+  status: published
   type: download
   priority: P1
   intent: download
@@ -3861,7 +3861,7 @@ planned_content:
 - slug: download-emergency-card
   title: 緊急連絡先カード｜000・保険・領事館・本人情報
   hub: tools
-  status: planned
+  status: published
   type: download
   priority: P1
   intent: download

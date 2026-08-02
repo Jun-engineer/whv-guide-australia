@@ -30,6 +30,7 @@ import {
   summarizeApplications,
   sortApplications,
 } from "../lib/tools/logic/applications.mjs";
+import { buildChecklistText, buildEmergencyCardText } from "../lib/tools/logic/download.mjs";
 
 // ---- checklist.mjs -------------------------------------------------------
 
@@ -347,4 +348,55 @@ test("sortApplications: newest appliedDate first, missing dates last, non-mutati
   );
   // input not mutated
   assert.equal(JSON.stringify(input), snapshot);
+});
+
+// ---- download.mjs --------------------------------------------------------
+
+const DL_GROUPS = [
+  { id: "g1", title: "費用", items: [{ id: "rent", label: "家賃" }, { id: "bond", label: "ボンド", note: "返還条件" }] },
+  { id: "g2", title: "設備", items: [{ id: "water", label: "水回り" }] },
+];
+
+test("buildChecklistText: marks checked items and includes title/notes", () => {
+  const text = buildChecklistText(DL_GROUPS, new Set(["rent"]), { title: "内見" });
+  assert.ok(text.startsWith("内見\n"));
+  assert.ok(text.includes("■ 費用"));
+  assert.ok(text.includes("[x] 家賃"));
+  assert.ok(text.includes("[ ] ボンド"));
+  assert.ok(text.includes("- 返還条件"));
+  assert.ok(text.includes("[ ] 水回り"));
+  assert.ok(text.endsWith("\n"));
+});
+
+test("buildChecklistText: accepts array of ids and is safe on empty input", () => {
+  assert.ok(buildChecklistText(DL_GROUPS, ["water"]).includes("[x] 水回り"));
+  assert.equal(buildChecklistText([], []), "\n");
+});
+
+const EC_FIELDS = [
+  { id: "fullName", label: "氏名" },
+  { id: "bloodType", label: "血液型" },
+];
+const EC_CONTACTS = [
+  { id: "z", label: "緊急", number: "000", note: "命に関わるとき" },
+  { id: "p", label: "中毒", number: "13 11 26" },
+];
+
+test("buildEmergencyCardText: fills values, shows '-' for blanks, lists contacts", () => {
+  const text = buildEmergencyCardText(EC_FIELDS, { fullName: " Taro " }, EC_CONTACTS, {
+    title: "緊急カード",
+  });
+  assert.ok(text.startsWith("緊急カード\n"));
+  assert.ok(text.includes("氏名: Taro")); // trimmed
+  assert.ok(text.includes("血液型: -")); // blank → dash
+  assert.ok(text.includes("緊急: 000"));
+  assert.ok(text.includes("(命に関わるとき)"));
+  assert.ok(text.includes("中毒: 13 11 26"));
+  assert.ok(text.endsWith("\n"));
+});
+
+test("buildEmergencyCardText: safe with missing values object", () => {
+  const text = buildEmergencyCardText(EC_FIELDS, undefined, EC_CONTACTS);
+  assert.ok(text.includes("氏名: -"));
+  assert.ok(text.includes("血液型: -"));
 });

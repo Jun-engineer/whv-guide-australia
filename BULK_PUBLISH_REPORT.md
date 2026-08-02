@@ -3,6 +3,19 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: tools マイクロバッチ #4・最終（3件公開＋ハブ監査完了 / commit: feat: publish tools micro-batch 4 (final)）
+
+tools（ツール・テンプレート）ハブの**残り3件**を公開し、**tools ハブを完了**しました。開始時の未完了 tools は3件（≤4）だったため、**全件処理＋最終ハブ監査（フルビルド）**を実施。
+
+- **選定・公開した3件（すべて `hub: tools`・`category: download`・完全実装）:** `download-cover-letter-template`（P1）／`download-housing-inspection-checklist`（P1）／`download-emergency-card`（P1）。いずれも開始時 planned をマニフェストで確認。
+  - `download-cover-letter-template` ― 職種別の英文カバーレターひな型（コピー/`.txt` DL）＋応募チャネル別の短文。ひな型でそのまま送信用ではない旨を明記。
+  - `download-housing-inspection-checklist` ― シェアハウス内見の確認項目。現地でチェック可（localStorage）＋印刷＋`.txt` DL。契約/ボンド/費用は契約書・各州情報で確認する旨を明記。
+  - `download-emergency-card` ― 主な緊急番号（000 ほか）を固定表示＋本人情報を入力/保存（localStorage）。印刷＋`.txt` DL。`verifiedAt`＋`officialSources`（Triple Zero / healthdirect）。番号・制度は変わりうる旨を明記。
+- **実装:** テキスト直列化（DL/コピー/印刷用）を `lib/tools/logic/download.mjs`（新設）に分離しテスト付与。ダウンロードはブラウザ内 Blob、個人情報は localStorage のみ（サーバー送信なし）。`ToolCategory` は既存 `"download"` を使用（型変更なし）。
+- **最終 tools ハブ監査:** レジストリ公開 **14件**／ページ **14件**（`/tools/*` 10・`/downloads/*` 4）／マニフェスト tools **14件すべて published**。**`npm run build` 成功**（全ツール/ダウンロードルートが `○ (Static)` でプリレンダー）。
+- **検証（各1回）:** `node --test scripts/tools.test.mjs`（36/36 pass）／`validate:content`（0 error / 66 warning）／`tsc --noEmit`（exit 0）／`validate:articles`（no article data errors）／`build`（成功）。
+- **次:** **tools ハブは全14件公開で完了。** 本指示の範囲（tools）を完了したため停止（別カテゴリには着手しない）。
+
 ## チェックポイント（2026-08-02）: tools マイクロバッチ #3（4件公開 / commit: feat: publish tools micro-batch 3）
 
 tools（ツール・テンプレート）ハブの**次の4件**を公開しました（マイクロバッチ運用）。開始時の未完了 tools は7件（>4）だったため、**通常のマイクロバッチ**として記録順の先頭4件のみ処理し、**最終ハブ監査（フルビルド）は未実施**（残り3件・次回継続）。
