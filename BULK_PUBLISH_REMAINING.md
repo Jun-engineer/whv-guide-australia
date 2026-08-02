@@ -4,6 +4,44 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: gig-work マイクロバッチ #3（2件公開・gig-work ハブ完了 / commit: feat: publish final remaining content micro-batch）
+
+### 残項目インベントリ（本バッチ開始時 planned = 8件）
+
+前回 gig-work #2 で5件を公開したため、開始時点の残 planned は **8件**（gig-work 2＋news-template 6）。ステータス集計＝published 323・existing 47・merged 7・review 0・excluded 0・draft 0・archived 0。8件の内訳：
+
+**グループA — gig-work ハブ（残2件・`type: article`・記録順）**
+1. `japan-remote-work-tax`（P1, tax）
+2. `public-liability-insurance`（P2, insurance）
+
+**グループB — news ハブ（6件・`type: news-template`・`/news/templates/*`・別実装タイプ・別グループ）**
+`news-visa-changes-template`／`news-minimum-wage-template`／`news-tax-super-template`／`news-visa-fee-template`／`news-disaster-alert-template`／`news-scam-alert-template`。
+
+### 本バッチで選定した一貫グループ（≤5・同一ハブ gig-work・記録順の残り全2件）
+gig-work ハブに残っていた記録順の最後の2件。フリーランス/個人事業主の「税務」と「賠償責任保険」という近接した検索意図で結束し、これで gig-work ハブは全12件 published となり完了：
+- `japan-remote-work-tax`（P1, tax, id a357）
+- `public-liability-insurance`（P2, insurance, id a358）
+
+### 実装結果（gig-work マイクロバッチ #3）
+- **公開した2件（すべて `category: gig-work`・`hub: gig-work`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  - `japan-remote-work-tax`（P1, tax, id a357）— 豪州滞在中に日本のリモート副業を続ける場合の税務上の居住性（tax residency）・全世界所得・二重課税（日豪租税条約・外国税額控除）・契約・送金の論点整理。日豪双方の専門家確認前提で断定を回避。
+  - `public-liability-insurance`（P2, insurance, id a358）— 個人事業主（sole trader）の賠償責任保険の基礎。第三者へのケガ・物損への備え、補償額/範囲/免責/除外の見方、義務性（一律必須でないが契約先が求めることが多い）を整理。自分のケガは別の保険である点も明記。
+- **分類:** 2件すべて **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・分割は該当なし。
+- **YMYL/可変情報の非断定:** 税務上の居住性・二重課税・源泉徴収・保険の要否/補償額/除外は断定せず、確認日 2026-08-02 を明記し ATO／国税庁／business.gov.au／登録税理士・保険会社・両国の専門家へ誘導。
+- **公式ソース（2026-08-02 ライブ確認）:** ATO｜Work out your tax residency（ライブ確認）／ATO｜Gig economy and tax／国税庁｜個人の方（ライブ確認）／business.gov.au｜Types of business insurance（ライブ確認）／business.gov.au｜Sharing economy。※当初引用した nta.go.jp のタックスアンサー個別URLと business.gov.au の insurance-for-your-business は 404 を確認したため、ライブ確認済みの安定ページ（国税庁 個人の方・business.gov.au Types of business insurance）へ1回で差し替え（許可されたリペア1回以内）。
+- **孤立記事なし / 内部リンク:** すべて公開中 `/gig-work` から自動列挙・到達可能。`relatedSlugs` は公開/既存 slug のみ参照（`gig-work-comparison`／`freelance-it-australia`／`delivery-abn-tax`／`tax-return-guide`／`super-guide`／`airtasker-guide`／`delivery-insurance`／`abn-guide`／`delivery-safety`）で dangling 0。
+- **mockData への記事追加なし:** gig-work モジュールにのみ追記。
+- **content-manifest.yaml:** 2件を `status: planned` → `status: published`。`manifest.generated.ts` 再生成。
+- **検証（各1回・許可された項目のみ）:**
+  - `validate:articles`（重複 slug/path/export・影響リンク）: **errors なし**（gig-work: 12・duplicate slugs 0・`OK: no article data errors`）。
+  - `validate:content`（dangling/重複）: **0 error / 66 warning**（dangling 0・ベースライン据え置き）。
+  - `tsc --noEmit`: **exit 0**。ソースURLの 404 差し替え（1回）以外にリペア・リトライなし。
+- **変更ファイル:** `lib/content/articles/gig-work.ts`（2記事追記・計12件）／`whv-guide-content-plan/content-manifest.yaml`（2件 published）／`lib/content/manifest.generated.ts`（再生成）／各進捗・検証レポート。型/配線/ページ/sitemap/Footer は #1 で整備済みのため変更なし。
+- **範囲順守:** gig-work 記録順の残り全2件のみ処理。news は別実装タイプのため未着手。全体最終監査・build/lint/test スイートは未実施（通常マイクロバッチ）。commit は `feat: publish final remaining content micro-batch` 1回のみ。
+- **gig-work ハブ完了:** 全12件が published。残りは news ハブ `type: news-template` 6件のみ。
+- **残りグループ（本バッチ後）:** news ハブ `type: news-template` 6件（`/news/templates/*`・別実装タイプ）。**次グループ: news-template（`news-visa-changes-template` から）。**
+- **未解決の問題:** なし。
+
 ## チェックポイント（2026-08-02）: gig-work マイクロバッチ #2（5件公開 / commit: feat: publish final remaining content micro-batch）
 
 ### 残項目インベントリ（本バッチ開始時 planned = 13件）

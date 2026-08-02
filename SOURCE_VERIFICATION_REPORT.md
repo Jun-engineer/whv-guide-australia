@@ -8,6 +8,10 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## gig-work マイクロバッチ #3（2026-08-02 / 2件公開・gig-work ハブ完了）
+
+gig-work ハブの残2件（`japan-remote-work-tax`／`public-liability-insurance`）を公開し、gig-work ハブ（全12件）が完了。各記事は画面上に `verifiedAt: 2026-08-02` を表示し `OfficialSourceBox` で出典と免責を明示。可変・YMYL情報（税務上の居住性・全世界所得・二重課税・源泉徴収・保険の要否/補償額/除外）は断定せず、確認日と公式一次情報・日豪双方の専門家への誘導で対応。照合した公式一次情報（2026-08-02 ライブ確認）: **ATO｜Work out your tax residency**（https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency ― resides/domicile/183-day テストをライブ確認）／**ATO｜Gig economy and tax**／**国税庁｜個人の方**（https://www.nta.go.jp/users/kojin/index.htm ― 日本側の確認先・ライブ確認）／**business.gov.au｜Types of business insurance**（https://business.gov.au/risk-management/insurance/types-of-business-insurance ― 賠償責任保険を含む事業保険・ライブ確認）／**business.gov.au｜Sharing economy**。※当初引用した nta.go.jp のタックスアンサー個別URL（shotoku/1885）と business.gov.au の insurance-for-your-business は 404 を確認したため、ライブ確認済みの安定ページへ1回で差し替え（許可されたリペア1回以内）。日本のリモート副業は日豪双方の専門家確認を大前提とし、賠償責任保険は「自分のケガは別の保険」「除外事項の確認」を明記して断定を回避。
+
 ## gig-work マイクロバッチ #2（2026-08-02 / 5件公開）
 
 gig-work ハブの5件（`delivery-peak-hours`／`delivery-safety`／`delivery-account-deactivation`／`airtasker-guide`／`freelance-it-australia`）を公開。各記事は画面上に `verifiedAt: 2026-08-02` を表示し `OfficialSourceBox` で出典と免責を明示。可変・YMYL情報（収入・手数料・GST登録閾値・保険補償範囲/除外・税務上の居住性・二重課税・交通ルール・アカウント停止基準）は数値・基準を断定せず、確認日と公式一次情報・各社規約への誘導で対応。照合した公式一次情報（2026-08-02 ライブ確認）: **ATO｜Gig economy and tax**／**ATO｜Applying for an ABN**／**Fair Work Ombudsman｜Independent contractors**（regulated workers 含む）／**business.gov.au｜Sharing economy・Payments and invoicing**（https://business.gov.au/finance/payments-and-invoicing ― 請求・支払の公式案内をライブ確認）／**Australian Government｜Triple Zero (000)**（https://www.infrastructure.gov.au/triple-zero ― 旧 triplezero.gov.au のリダイレクト先・ライブ確認）。フードデリバリーは配車と異なりGST登録閉値未満なら原則登録不要、個人事業主は自分のSuper拠出義務なし、を引き続き正確に反映。契約者/従業員の区分は Fair Work が「個別判断はできず一般情報のみ」とする立場を尊重し、アカウント停止の具体的基準は非公開部分があるため各社規約で確認する旨を明記。

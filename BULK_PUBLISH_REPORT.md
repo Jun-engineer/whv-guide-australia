@@ -3,6 +3,16 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: gig-work マイクロバッチ #3（2件公開・gig-work ハブ完了 / commit: feat: publish final remaining content micro-batch）
+
+**gig-work ハブの残り全2件**を公開し、gig-work ハブ（全12件）が published となり**完了**。開始時の残 planned は8件（gig-work 2＋news-template 6）で、同一ハブの近接検索意図の2件を処理（≤5）。
+
+- **公開2件（すべて `category: gig-work`・`hub: gig-work`・`verifiedAt: 2026-08-02`・分類 create）:** `japan-remote-work-tax`（P1, tax, a357）／`public-liability-insurance`（P2, insurance, a358）。統合/リダイレクト/レビュー/除外/分割は該当なし。
+- **YMYL 非断定:** 税務上の居住性（tax residency）・全世界所得・二重課税（日豪租税条約・外国税額控除）・保険の要否/補償額/除外は断定せず ATO／国税庁／business.gov.au／登録税理士・保険会社・日豪双方の専門家へ誘導。
+- **アーキテクチャ:** 型/配線/ページ/sitemap/Footer は #1 で整備済のため変更なし。`lib/content/articles/gig-work.ts` に2記事追記（計12件）し、`/gig-work` が自動列挙。
+- **検証（許可項目のみ・各1回）:** `validate:articles`（errors なし・gig-work 12・duplicate slugs 0）／`validate:content`（0 error / 66 warning・dangling 0）／`tsc --noEmit`（exit 0）。引用URLの 404 差し替え（1回）以外のリトライなし。build/lint/test は本バッチ対象外（通常マイクロバッチ）。
+- **残り:** news ハブ `type: news-template` 6件のみ。
+
 ## チェックポイント（2026-08-02）: gig-work マイクロバッチ #2（5件公開 / commit: feat: publish final remaining content micro-batch）
 
 **gig-work ハブの記録順先頭5件**を公開（#1 に続く同一ハブの次グループ）。開始時の残 planned は13件（gig-work 7＋news-template 6）で、同一ハブの近接検索意図の先頭5件のみ処理（≤5）。

@@ -10,6 +10,10 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### gig-work マイクロバッチ #3（2026-08-02 / 2件公開・gig-work ハブ完了）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** gig-work ハブの2件（`japan-remote-work-tax`／`public-liability-insurance`）はいずれも**新規スラッグの create**で、既存公開URLの統合・置換・分割・リダイレクトは一切発生しない。`relatedSlugs` は公開/既存 slug（`gig-work-comparison`／`freelance-it-australia`／`delivery-abn-tax`／`tax-return-guide`／`super-guide`／`airtasker-guide`／`delivery-insurance`／`abn-guide`／`delivery-safety`）のみ参照し dangling 0。これで gig-work ハブは全12件 published となり完了。
+
 ### gig-work マイクロバッチ #2（2026-08-02 / 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** gig-work ハブの5件（`delivery-peak-hours`／`delivery-safety`／`delivery-account-deactivation`／`airtasker-guide`／`freelance-it-australia`）はいずれも**新規スラッグの create**で、既存公開URLの統合・置換・分割・リダイレクトは一切発生しない。`relatedSlugs` は公開/既存 slug（`gig-work-comparison`／`delivery-abn-tax`／`delivery-insurance`／`delivery-vehicle-comparison`／`uber-eats-guide`／`doordash-guide`／`abn-guide`／`tax-return-guide`／`super-guide`／`license-guide`）のみ参照し dangling 0。未公開 plannedへのリンクは張らない。

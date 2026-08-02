@@ -2219,7 +2219,7 @@ planned_content:
 - slug: japan-remote-work-tax
   title: 日本のリモート副業を豪州から行う場合の税金と契約
   hub: gig-work
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: tax
@@ -2229,7 +2229,7 @@ planned_content:
 - slug: public-liability-insurance
   title: Sole TraderのPublic Liability Insurance基礎
   hub: gig-work
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: insurance
