@@ -4,6 +4,32 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: return-home マイクロバッチ #2（5件公開 / commit: feat: publish return home micro-batch 2）
+
+return-home（帰国準備）ハブの続き5件を公開しました（マイクロバッチ運用）。開始時点で return-home の未完了は7件（>5）だったため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り2件のため次回に継続）。以下が確定状態です。
+
+- **未完了 return-home 件数（開始時）:** 7件（すべて planned・すべて `hub: return-home`）。既存公開の return-home 記事は5件（バッチ#1）。
+- **選定した5件（記録順の先頭5件）:** `bond-refund-before-leaving`, `sell-car-timeline`, `send-luggage-to-japan`, `keep-australian-bank-account`, `use-wh-experience-in-resume`。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded ではないことをマニフェストで確認済み。
+- **分類:** 5件すべて **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・既存記事の分割は該当なし（新規追加のみ）。
+- **公開した5件（すべて `category: return-home`・`hub: return-home`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  - `bond-refund-before-leaving`（P1, housing, id a334）— 意図＝退去とBond返金を出国に間に合わせる段取り（出国前中心）／対象＝帰国前に賃貸を退去する人。退去通知の逆算・原状回復と最終Inspection・州の預託機関（RBO/RTBA/RTA）への返金申請・間に合わない場合に海外から手続きする備えを整理。通知日数・上限・差引の可否は断定せず州当局へ。公式: NSW Government（Renting）／Consumer Affairs Victoria／RTA QLD。
+  - `sell-car-timeline`（P1, transport, id a335）— 意図＝車を売り切る出品時期の逆算（出国前）／対象＝帰国前に車を手放す人。出品開始の目安（3〜4週間前）・RWC/名義変更/着金の所要時間・保険/登録の解約と返金の順番（引き渡し完了→解約）・売れ残り時の買取/下取りへの切替締切。RWC要否・返金額は断定せず州当局へ。売り方の手順は既存 `sell-car-before-leaving` に接続（カニバリ回避＝本記事はスケジュールに限定）。公式: Transport for NSW／VicRoads／Queensland Government。
+  - `send-luggage-to-japan`（P2, comparison, id a336）— 意図＝荷物を日本へ送る方法の比較／対象＝帰国時に荷物を送る人。預け荷物/国際郵便/クーリエ/船便・別送品の使い分け、禁制品（豪州側＝ABF・日本側＝税関）、日本到着時の関税・別送品申告を整理。送料・日数・関税・免税範囲は断定せず各社/ABF/日本税関へ。公式: Australia Post（Sending overseas）／Australian Border Force（Leaving Australia）／Japan Customs。
+  - `keep-australian-bank-account`（P1, finance, id a337）— 意図＝帰国後に口座を『残す』場合の注意点／対象＝再渡航・受取待ちで口座を維持する人。維持費・休眠口座（ASIC未請求金への移管）・外国居住者としての利子課税/源泉徴収・海外住所とSMS認証手段の維持を整理。手数料/税率は断定せず銀行/ATO/MoneySmartへ。既存 `close-bank-account-before-leaving`（閉じる/残すの判断）と差別化＝本記事は『残すなら』の注意点に限定。公式: ASIC MoneySmart（Unclaimed money）／ATO（Leaving Australia）。
+  - `use-wh-experience-in-resume`（P1, career, id a338）— 意図＝ワーホリ経験を帰国後の就活で活かす／対象＝帰国後に就職・転職する人。英語での就労・具体スキル・数字の実績・適応力の見せ方、在職中のReferee/推薦状/在職証明の確保（出国前アクション）、Payslip等の記録保存、面接での『課題→行動→結果』化。採用を保証しない旨を明記（YMYL外の一般的助言）。公式: Fair Work Ombudsman（Pay slips and record-keeping＝在職の証明）。
+- **出国前/出国後アクションの区別:** 退去通知・清掃・車の引き渡し・解約手配・Referee確保・記録保存は出国前、Bond返金や紛争処理・車の保険/登録の返金・荷物の到着通関・口座の維持管理は出国後（または海外から）と明確に分離。受取口座・電話番号・証拠・連絡先を残す重要性を warnings で注意喚起。
+- **可変情報の非断定:** 通知日数・Bond上限/差引・RWC要否・登録/保険の返金・送料/日数/関税・口座維持費/利子課税は断定せず、確認日 2026-08-02 を明記し州当局/ABF/日本税関/銀行/ATO/MoneySmart/Fair Work へ誘導。構造的事実（休眠口座→ASIC移管、名義変更完了後に保険解約 等）はリポジトリの既存検証済み記事（`bond-rules-overview`/`sell-car-before-leaving`/`close-bank-account-before-leaving`/`rego-ctp-rwc`）と整合。
+- **孤立記事なし / 内部リンク:** `relatedSlugs` は公開/既存 slug と本バッチ・バッチ#1の公開 slug のみ参照（未公開 planned の `reverse-culture-shock`/`australian-police-check-after-return` は含めず dangling 回避）。参照先（`bond-rules-overview`/`bond-refund-dispute`/`condition-report-guide`/`ending-tenancy-notice`/`housing-guide`/`sell-car-before-leaving`/`vehicle-transfer-by-state`/`rego-ctp-rwc`/`car-insurance-comparison`/`cars-guide`/`post-office-courier`/`send-money-to-japan`/`close-bank-account-before-leaving`/`bank-account-guide`/`job-reference-guide`/`cover-letter-guide`/`workplace-english`/`ielts-pte-after-wh` など）は全て公開/既存で解決。`/return-home` カテゴリページが公開10件を自動列挙し Footer からも到達可能。
+- **基盤変更なし:** return-home カテゴリ基盤はバッチ#1で整備済み。本バッチは記事追加とマニフェスト status 更新のみ（`mockData.ts` への記事追加なし）。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回）:** `validate:articles`（重複 slug/パス/エクスポート 0・return-home 10件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）。修正リトライは発生せず（0回）。
+  ※フルビルド/テスト/lint/構造化データ監査は return-home ハブ完了時（残り5件以下の最終監査）にまとめて実施予定。
+- **残り return-home slug（2件・すべて planned のまま）:** `reverse-culture-shock`（P2, wellbeing）, `australian-police-check-after-return`（P3, how-to）。
+- **最初の未完了 return-home slug: `reverse-culture-shock`**（次回はここから再開。残り2件＝次回は return-home ハブ最終監査を実施）。
+- **次のバッチ: return-home（`reverse-culture-shock` から継続・残り2件で最終監査）。** ※本セッションは return-home の続き5件のみ処理し、他カテゴリには着手しない。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/return-home.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+- **未解決の問題: なし。** （ATO の DASP/Leaving Australia、ABF、Australia Post、日本税関の各ページは可変情報の一次情報として引用。具体額・日数・税率・要否は断定せず各公式へ誘導。構造的事実はリポジトリの既存検証済み記事と整合させて記載。）
+
 ## チェックポイント（2026-08-02）: return-home マイクロバッチ #1（5件公開 / commit: feat: publish return home micro-batch）
 
 return-home（帰国準備）ハブの最初の5件を公開しました（新規カテゴリの初回・マイクロバッチ運用）。開始時点で return-home は12件（>5）が残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り7件のため次回以降に継続）。以下が確定状態です。
@@ -1148,19 +1174,19 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - `dating-safety-australia` — 海外での出会い・デーティングアプリの安全対策 _(優先度 P2、意図: safety)_
 - `volunteering-guide` — ボランティアの探し方｜英語・友達・地域参加 _(優先度 P3、意図: social)_
 
-### return-home — 帰国準備・次のキャリア (残り7件 / 5件公開済み)
+### return-home — 帰国準備・次のキャリア (残り2件 / 10件公開済み)
 
 - ~~`leaving-australia-checklist` — 帰国前チェックリスト｜仕事・家・車・税金・Super _(優先度 P0、意図: checklist)_~~ ✅ 公開済み（2026-08-02 バッチ#1）
 - ~~`final-pay-before-leaving` — 帰国前に確認するFinal Pay・未払い給与・有給 _(優先度 P0、意図: finance)_~~ ✅ 公開済み（2026-08-02 バッチ#1）
 - ~~`early-tax-return-departing` — 年度途中で帰国する場合のタックスリターン _(優先度 P1、意図: tax)_~~ ✅ 公開済み（2026-08-02 バッチ#1）
 - ~~`dasp-before-after-leaving` — DASP申請はいつする？出国・ビザ失効・必要書類 _(優先度 P0、意図: how-to)_~~ ✅ 公開済み（2026-08-02 バッチ#1）
 - ~~`close-services-before-leaving` — 帰国前に解約・変更するサービス一覧 _(優先度 P1、意図: checklist)_~~ ✅ 公開済み（2026-08-02 バッチ#1）
-- `bond-refund-before-leaving` — 帰国前の退去・Bond返金を間に合わせる方法 _(優先度 P1、意図: housing)_ ← **次回開始**
-- `sell-car-timeline` — 帰国前の車売却スケジュール｜いつ出品する？ _(優先度 P1、意図: transport)_
-- `send-luggage-to-japan` — オーストラリアから日本へ荷物を送る方法 _(優先度 P2、意図: comparison)_
-- `keep-australian-bank-account` — 帰国後も豪州銀行口座を残す場合の注意点 _(優先度 P1、意図: finance)_
-- `use-wh-experience-in-resume` — ワーホリ経験を帰国後の履歴書・面接で伝える方法 _(優先度 P1、意図: career)_
-- `reverse-culture-shock` — 帰国後の逆カルチャーショックとキャリア再始動 _(優先度 P2、意図: wellbeing)_
+- ~~`bond-refund-before-leaving` — 帰国前の退去・Bond返金を間に合わせる方法 _(優先度 P1、意図: housing)_~~ ✅ 公開済み（2026-08-02 バッチ#2）
+- ~~`sell-car-timeline` — 帰国前の車売却スケジュール｜いつ出品する？ _(優先度 P1、意図: transport)_~~ ✅ 公開済み（2026-08-02 バッチ#2）
+- ~~`send-luggage-to-japan` — オーストラリアから日本へ荷物を送る方法 _(優先度 P2、意図: comparison)_~~ ✅ 公開済み（2026-08-02 バッチ#2）
+- ~~`keep-australian-bank-account` — 帰国後も豪州銀行口座を残す場合の注意点 _(優先度 P1、意図: finance)_~~ ✅ 公開済み（2026-08-02 バッチ#2）
+- ~~`use-wh-experience-in-resume` — ワーホリ経験を帰国後の履歴書・面接で伝える方法 _(優先度 P1、意図: career)_~~ ✅ 公開済み（2026-08-02 バッチ#2）
+- `reverse-culture-shock` — 帰国後の逆カルチャーショックとキャリア再始動 _(優先度 P2、意図: wellbeing)_ ← **次回開始**
 - `australian-police-check-after-return` — 帰国後に豪州の無犯罪証明が必要になった場合 _(優先度 P3、意図: how-to)_
 
 ### news — ニュース・制度更新 (6件)

@@ -10,6 +10,17 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### return-home マイクロバッチ #2（2026-08-02 / 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** return-home ハブの続き5件
+（`bond-refund-before-leaving` / `sell-car-timeline` / `send-luggage-to-japan` /
+`keep-australian-bank-account` / `use-wh-experience-in-resume`）はすべて**新規スラッグ**（`category: "return-home"` / `hub: "return-home"`）で、既存公開記事との統合・URL潰しは発生しない。分類はいずれも create。
+
+- 5件は検索意図が独立（Bond返金の段取り／車売却の出品時期／荷物送付の比較／口座維持の注意／履歴書での見せ方）。
+- **既存記事との差別化（公開→公開のカニバリ回避）:** `sell-car-timeline` は `sell-car-before-leaving`（transport／売り方の手順）と役割を分け、本記事は「いつ出品するか」のスケジュールに限定（手順は既存記事へリンク）。`keep-australian-bank-account` は `close-bank-account-before-leaving`（money／閉じる/残すの判断）と役割を分け、本記事は「残す場合の注意点」に限定。いずれも既存のURLは保持し、相互に `relatedSlugs` で接続。
+- 孤立記事なし: `/return-home` が公開 return-home 記事10件を自動列挙。`relatedSlugs` は公開/既存 slug のみ参照（dangling 0）。
+- **return-home ハブ継続中:** 10/12 published・残り2件。次回開始 = `reverse-culture-shock`。次回は残り2件（≤5）のため最終ハブ監査を実施。他カテゴリは未着手。
+
 ### return-home マイクロバッチ #1（2026-08-02 / 5件公開・新カテゴリ初回）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** return-home（帰国準備）ハブの最初の5件

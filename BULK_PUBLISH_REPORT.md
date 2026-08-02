@@ -3,6 +3,21 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: return-home マイクロバッチ #2（5件公開 / commit: feat: publish return home micro-batch 2）
+
+return-home（帰国準備）ハブの続き5件を公開しました（マイクロバッチ運用）。開始時の未完了 return-home は7件（>5）だったため、記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り2件のため継続）。
+
+- **公開した5件（すべて `category: return-home`・`hub: return-home`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  `bond-refund-before-leaving`（P1, housing, id a334）, `sell-car-timeline`（P1, transport, id a335）,
+  `send-luggage-to-japan`（P2, comparison, id a336）, `keep-australian-bank-account`（P1, finance, id a337）,
+  `use-wh-experience-in-resume`（P1, career, id a338）。
+- **内容:** Bond返金＝退去通知の逆算・最終Inspection・州の預託機関への返金・間に合わない場合の備え。車売却＝出品時期の逆算・RWC/名義変更/着金の所要時間・保険/登録の解約順・売れ残り対策。荷物送付＝郵便/クーリエ/船便・別送品の使い分けと禁制品・日本の関税/別送品申告。口座維持＝維持費/休眠口座（ASIC）/外国居住者の利子課税/SMS認証の維持。履歴書＝英語就労・具体スキル・数字実績化・Referee確保。いずれも changeable（通知日数・Bond上限・RWC要否・登録/保険返金・送料/日数/関税・維持費/税率）は断定せず確認日 2026-08-02 を明記し各公式（州当局/ABF/日本税関/銀行/ATO/MoneySmart/Fair Work）へ誘導。
+- **基盤変更なし:** return-home カテゴリ基盤はバッチ#1で整備済み。本バッチは記事追加とマニフェスト status 更新のみ。`mockData.ts` への記事追加なし。
+- **カニバリ回避:** `sell-car-timeline` は既存 `sell-car-before-leaving`（売り方の手順）と差別化しスケジュールに限定。`keep-australian-bank-account` は既存 `close-bank-account-before-leaving`（閉じる/残すの判断）と差別化し「残すなら」の注意点に限定。
+- **content-manifest.yaml:** 5件を `planned` → `published`。`manifest.generated.ts` 再生成。
+- **検証（マイクロバッチ範囲・各1回・リトライ0回）:** `validate:articles`（return-home 10・重複0・エラー0）、`tsc --noEmit`（exit 0）、`validate:content`（0 error / 66 warning・dangling 0）。フルビルド/テスト/lint/構造化データ監査はハブ完了時（残り5件以下）にまとめて実施予定。
+- **残り return-home:** 2件（次回開始 = `reverse-culture-shock`・次回は最終ハブ監査）。**他カテゴリは未着手**（"Do not begin another category"）。
+
 ## チェックポイント（2026-08-02）: return-home マイクロバッチ #1（5件公開 / commit: feat: publish return home micro-batch）
 
 return-home（帰国準備）ハブの最初の5件を公開しました（新規カテゴリの初回・マイクロバッチ運用）。開始時点で return-home は12件（>5）残っていたため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り7件のため継続）。本バッチは return-home ハブの初回で、新カテゴリの基盤整備を伴います。

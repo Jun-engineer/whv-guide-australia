@@ -8,6 +8,18 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## return-home マイクロバッチ #2（2026-08-02 / 5件公開）
+
+return-home ハブの続き5件を公開。各記事のタイトルの主要な問いに関わる規則・手続き・タイミングを公式一次情報に照合しました。changeable（通知日数・Bond上限/差引・RWC要否・登録/保険の返金・送料/日数/関税/免税範囲・口座維持費/利子課税）は断定せず、確認日 2026-08-02 を明記し各公式へ誘導しています。出国前アクションと出国後（海外から）のアクションを明確に区別し、受取口座・電話番号・証拠の保持への警告を記載。
+
+- `bond-refund-before-leaving`（a334）— 退去通知の最低期間・州の預託機関へのBond返金・原状回復と経年劣化（fair wear and tear）の原則。通知日数・上限・差引の可否は断定せず州当局へ。照合: NSW Government（Renting a place to live, https://www.nsw.gov.au/housing-and-construction/renting-a-place-to-live）／Consumer Affairs Victoria（Renting, https://www.consumer.vic.gov.au/housing/renting）／Residential Tenancies Authority QLD（https://www.rta.qld.gov.au/）。既存 bond-rules-overview／bond-refund-dispute と整合。
+- `sell-car-timeline`（a335）— RWC（Roadworthy/Safety Certificate）の州別要否・名義変更・登録/CTP/任意保険の未経過分返金と解約順序（引き渡し完了→解約）。要否・返金額は断定せず州当局へ。照合: Transport for NSW（https://www.transport.nsw.gov.au/）／VicRoads（https://www.vicroads.vic.gov.au/）／Queensland Government Transport（https://www.qld.gov.au/transport）。既存 sell-car-before-leaving／rego-ctp-rwc／vehicle-transfer-by-state と整合。
+- `send-luggage-to-japan`（a336）— 国際郵便/クーリエ/船便・別送品の使い分け・禁制品（豪州側の輸出・日本側の輸入）・日本到着時の関税・別送品申告。送料・日数・関税・免税範囲は断定せず各社/ABF/日本税関へ。照合: Australia Post（Sending overseas, https://auspost.com.au/sending/send-overseas）／Australian Border Force（Leaving Australia, https://www.abf.gov.au/entering-and-leaving-australia/leaving-australia）／Japan Customs（https://www.customs.go.jp/english/）。
+- `keep-australian-bank-account`（a337）— 口座維持費・休眠口座（長期無取引→ASIC未請求金へ移管）・外国居住者の利子課税/源泉徴収の可能性・SMS認証の維持。手数料/税率は断定せず銀行/ATO/MoneySmartへ。照合: ASIC MoneySmart（Unclaimed money, https://moneysmart.gov.au/banking/unclaimed-money）／ATO（Leaving Australia, https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/leaving-australia）。既存 close-bank-account-before-leaving と整合。
+- `use-wh-experience-in-resume`（a338）— YMYL外の一般的な就活助言。採用を保証しない旨を明記し、在職中のReferee/推薦状/在職証明の確保とPayslip等の記録保存を推奨。照合: Fair Work Ombudsman（Pay slips and record-keeping＝在職の証明, https://www.fairwork.gov.au/pay-and-wages/pay-slips-and-record-keeping）。
+
+すべて `verifiedAt: 2026-08-02`・officialSources の `accessedAt: 2026-08-02`。各記事は画面上に確認日と `OfficialSourceBox`（出典・免責）を表示。可変値はすべて各公式へ誘導し、構造的事実はリポジトリの既存検証済み記事（bond-rules-overview／sell-car-before-leaving／close-bank-account-before-leaving／rego-ctp-rwc）と整合させて記載。
+
 ## return-home マイクロバッチ #1（2026-08-02 / 5件公開・新カテゴリ初回）
 
 return-home（帰国準備）ハブの最初の5件を公開。各記事のタイトルの主要な問いに関わる規則・要件・タイミングを公式一次情報に照合しました。changeable（処理期間・還付額・DASP税率・各種手数料・税務上の結果）は断定せず、確認日 2026-08-02 を明記し各公式へ誘導しています。出国前アクションと出国後アクションを明確に区別し、口座・SIM・Super口座の早すぎる解約への警告を記載。
