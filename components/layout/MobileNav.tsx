@@ -8,10 +8,14 @@ import type { NavGroup } from "@/lib/navigation";
 
 type MobileNavProps = {
   groups: NavGroup[];
+  /** メニューが開いているか（ヘッダーのオーバーレイ調停用）。 */
+  isOpen: boolean;
+  /** 開閉状態の変更を親へ通知する。 */
+  onOpenChange: (open: boolean) => void;
 };
 
-export function MobileNav({ groups }: MobileNavProps) {
-  const [open, setOpen] = useState(false);
+export function MobileNav({ groups, isOpen, onOpenChange }: MobileNavProps) {
+  const open = isOpen;
   const [expanded, setExpanded] = useState<string | null>(null);
   const router = useRouter();
   const baseId = useId();
@@ -32,14 +36,14 @@ export function MobileNav({ groups }: MobileNavProps) {
   useEffect(() => {
     if (!open) return;
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") onOpenChange(false);
     }
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+  }, [open, onOpenChange]);
 
   function closeMenu() {
-    setOpen(false);
+    onOpenChange(false);
     setExpanded(null);
   }
 
@@ -47,7 +51,7 @@ export function MobileNav({ groups }: MobileNavProps) {
     <div className="md:hidden">
       <button
         type="button"
-        onClick={() => setOpen((prev) => !prev)}
+        onClick={() => onOpenChange(!open)}
         aria-label={open ? "メニューを閉じる" : "メニューを開く"}
         aria-haspopup="true"
         aria-expanded={open}
