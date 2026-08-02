@@ -211,3 +211,97 @@
 - `public/guides/housing/share-house-room-inspection.webp` — シェアハウス内見
 - `public/guides/tfn/ato-apply-screen.webp` — ATO の TFN 申請画面（個人情報を伏せる）
 - `public/guides/super/mygov-super-screen.webp` — myGov のスーパー画面（同上）
+
+---
+
+## 11. カテゴリ・ナビゲーション改善（発見性の3層化）
+
+フッター頼みだったカテゴリ導線を、ヘッダー／トップページ／フッターの3層で
+再設計し、重要ハブ（健康・安全 / 英語学習 / エリア / 旅行 / 帰国準備 / ツール
+/ コミュニティ）をフッターに到達しなくても発見できるようにした。
+
+### 11.1 以前の制限
+- デスクトップヘッダーは10個のフラットなリンクで、健康・英語・旅行・帰国準備・
+  ツール・ダウンロードなどが欠落。これらは実質フッターからしか辿れなかった。
+- モバイルメニューはヘッダーと同じフラットリストで、グループ化なし。
+- トップページにカテゴリ一覧の面がなく、検索語を知らないと目的のハブに届かない。
+- フッターは `/news` が本文カラムから漏れ、`/transport` `/cars` `/license`
+  `/sim` `/food` `/clothing` `/arrival` などのハブが未掲載だった。
+
+### 11.2 特定した公開ハブ（canonical URL）
+検証: `app/<hub>/page.tsx` が存在し、かつ各カテゴリに公開記事が1件以上あること
+を確認。
+`/visa` `/preparation` `/arrival` `/jobs` `/farm` `/second-visa` `/gig-work`
+`/uber-eats` `/doordash` `/bank` `/money` `/tfn` `/abn` `/super` `/tax-return`
+`/housing` `/health` `/english` `/sim` `/food` `/clothing` `/area` `/travel`
+`/cars` `/license` `/transport` `/return-home` `/tools` `/community`
+`/community-guide` `/news`
+
+除外（索引ページが未実装のため導線を張らない）:
+`/tax` `/start-here` `/qualifications` `/daily-life`（manifest 上のみ）、
+`/downloads` 索引（ダウンロードは `/tools` から到達）。
+
+### 11.3 デスクトップ・グローバルナビ（コンパクトなグループ化）
+トップレベル5項目のドロップダウン（`components/layout/PrimaryNav.tsx`）:
+- はじめる: ビザ / 渡航前準備 / 到着後の手続き
+- 仕事・ビザ: 仕事探し / ファーム・88日 / セカンド・サードビザ / ギグワーク・配達
+- 生活・お金: 銀行・送金 / 税金・TFN・ABN / 家探し / 健康・安全 / 英語学習 / SIM・通信
+- エリア・旅行: 都市・地域ガイド / 国内旅行 / 交通・決済 / 車・免許
+- その他のガイド: 帰国準備 / 便利ツール・ダウンロード / 友達・コミュニティ / 掲示板 / ニュース
+
+記事検索アイコンはヘッダー右側に常時表示。入れ子は1段まで。
+
+### 11.4 モバイルナビ（アコーディオン）
+`components/layout/MobileNav.tsx` をグループ・アコーディオン化。先頭に「記事を検索」、
+続けて上記5グループを `aria-expanded` / `aria-controls` 付きで展開。
+
+### 11.5 トップページ「カテゴリから探す」
+`app/page.tsx` のヒーロー直下（スクロール上部）に14枚のカードを追加
+（`categoryDirectory` in `lib/navigation.ts`）。2列(モバイル)→3→4列(ワイド)。
+ビザ・渡航準備 / 到着後の手続き / 仕事探し / ファーム・セカンドビザ / お金・送金 /
+税金・TFN・ABN / 家探し / 健康・安全 / 英語学習 / 車・免許・交通 / 都市・地域ガイド /
+国内旅行 / 帰国準備 / 便利ツール・ダウンロード。各カードは canonical ハブへリンクし
+短い説明付き。個別記事は載せない。
+
+### 11.6 フッター変更
+`footerNavGroups`（`lib/navigation.ts`）で6グループのサイトマップ化。全公開ハブを
+掲載し、重複を排除。信頼・法務リンク（運営者情報 / 編集方針 / Privacy Policy /
+Terms / お問い合わせ・フィードバック）は別行に分離。既存の有効なカテゴリリンクは
+すべて維持。
+
+### 11.7 アクセシビリティ
+- ドロップダウン／アコーディオンは click とキーボードで操作可、hover 依存にしない。
+- `aria-haspopup` / `aria-expanded` / `aria-controls` を付与。
+- Escape で閉じ、フォーカスがグループ外へ出たら閉じる（デスクトップ）。
+- 全画面モバイルメニュー展開中は背面スクロールを停止、横スクロール抑止
+  （`overflow-x-hidden`）。宛先選択で自動的に閉じる。
+- カードは `focus-visible` のアウトラインで可視フォーカスを確保。ネストした
+  無効な `<a>` は使わずカード全体を1つの `Link` に。
+- アイコンが読み込めなくてもテキストラベルだけで意味が通る。
+
+### 11.8 canonical・整合性
+- ヘッダー／トップ／フッターはすべて `lib/navigation.ts` の単一定義を参照し、
+  ラベルと遷移先を一元管理（並行ナビの排除）。
+- 関連記事（`getAutoRelatedArticles`）・関連ツール（registry）は公開エントリのみを
+  返すため、削除・非正規ページを指さない。
+- リダイレクト元 slug へは一切リンクしていない。
+
+### 11.9 変更ファイル
+- `lib/navigation.ts`（新規・単一の情報源）
+- `components/layout/PrimaryNav.tsx`（新規・デスクトップドロップダウン）
+- `components/layout/MobileNav.tsx`（アコーディオン化）
+- `components/layout/Header.tsx`（グループナビへ差し替え）
+- `components/layout/Footer.tsx`（サイトマップ化）
+- `app/page.tsx`（カテゴリから探すセクション追加）
+
+### 11.10 検証結果
+- `tsc --noEmit`: exit 0
+- `npm run lint`: 0 error
+- `npm run test:content`: 5/5 pass
+- `npm run test:tools`: 36/36 pass
+- `npm run build`: 成功（全ハブルートが静的プリレンダー ○/●）
+
+### 11.11 残る手動確認（推奨）
+- 実機ブラウザでのスクリーンリーダー読み上げ（VoiceOver / NVDA）。
+- キーボードのみでのドロップダウン往復とフォーカストラップ挙動。
+- iOS Safari / Android Chrome でのモバイルメニュー横溢れの最終目視。

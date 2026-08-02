@@ -9,6 +9,7 @@ import { PostCard } from "@/components/forum/PostCard";
 import { AdBanner } from "@/components/ads/AdBanner";
 import { SearchBox } from "@/components/search/SearchBox";
 import { popularTopics } from "@/lib/searchConfig";
+import { categoryDirectory } from "@/lib/navigation";
 import { absoluteUrl } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
@@ -90,6 +91,32 @@ export default async function Home() {
       </section>
 
       <Container className="space-y-12">
+        <section className="space-y-4">
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900">カテゴリから探す</h2>
+            <p className="mt-1 text-sm text-slate-600">
+              知りたいテーマから、必要なガイドにまっすぐたどり着けます。
+            </p>
+          </div>
+          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {categoryDirectory.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-sky-300 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
+                >
+                  <span className="text-sm font-bold text-slate-900">{item.label}</span>
+                  {item.description ? (
+                    <span className="mt-1 text-xs leading-relaxed text-slate-600">
+                      {item.description}
+                    </span>
+                  ) : null}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <section className="space-y-4">
           <div className="flex items-end justify-between">
             <div>
