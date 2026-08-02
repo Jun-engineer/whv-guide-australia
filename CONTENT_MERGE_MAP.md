@@ -10,6 +10,18 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### return-home マイクロバッチ #3（2026-08-02 / 残り2件公開・ハブ完了）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** return-home ハブの最後の2件
+（`reverse-culture-shock` / `australian-police-check-after-return`）はすべて**新規スラッグ**
+（`category: "return-home"` / `hub: "return-home"`）で、既存公開記事との統合・URL潰しは発生しない。分類はいずれも create。
+
+- 2件は検索意図が独立（帰国後の逆カルチャーショック＋キャリア再始動／帰国後・海外からの豪州無犯罪証明取得）。
+- **既存記事との差別化（公開→公開のカニバリ回避）:** `reverse-culture-shock` は `use-wh-experience-in-resume`（履歴書の書き方）と役割を分け、本記事は感情・ウェルビーイングとキャリア再始動の考え方に限定（履歴書手順は既存記事へリンク）。`australian-police-check-after-return` は `police-check-guide`（在豪中のACIC名前ベース）と役割を分け、本記事は海外/AFP指紋ルートに限定。いずれも既存URLは保持し `relatedSlugs` で接続。
+- 孤立記事なし: `/return-home` が公開 return-home 記事12件を自動列挙。`relatedSlugs` は公開/既存 slug のみ参照（dangling 0）。
+- **最終ハブ監査（全て合格）:** `validate:articles`（return-home 12・重複0）／`tsc`（exit 0）／`validate:content`（0 error / 66 warning・dangling 0）／`test:content`（5/5）／`lint`（クリーン）／`build`（成功）。
+- **return-home ハブ完了:** 12/12 published・残り0件。他カテゴリは未着手。
+
 ### return-home マイクロバッチ #2（2026-08-02 / 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** return-home ハブの続き5件

@@ -3,6 +3,18 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: return-home マイクロバッチ #3（残り2件公開・ハブ完了 / commit: feat: complete return home content batch）
+
+return-home（帰国準備）ハブの**最後の2件**を公開し、**return-home ハブを完了（12/12）**しました。開始時の未完了 return-home は2件（≤5）だったため残り全件を処理し、**最終ハブ監査（フルビルド／テスト／Lint）を実施**しました。
+
+- **公開した2件（すべて `category: return-home`・`hub: return-home`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  `reverse-culture-shock`（P2, wellbeing, id a339）— 帰国後の逆カルチャーショックとキャリア再始動。現象理解・生活立て直し・つながり・経験の棚卸し・小さく再始動。相談先を明記。公式: healthdirect Mental health／Beyond Blue／Lifeline。`use-wh-experience-in-resume` と差別化（感情・ウェルビーイング＋キャリア再始動）。
+  `australian-police-check-after-return`（P3, how-to, id a340）— 帰国後・海外から豪州の無犯罪証明を取得する方法。AFP（指紋付きの要否）とACIC名前ベースの違い・目的選択・有効期限。手数料/日数/有効期限は断定せず公式・提出先要件へ。公式: AFP National police checks／ACIC National Police Checking Service。`police-check-guide` と差別化（海外/AFP指紋ルート）。
+- **ソース検証:** 変動しうる情報（相談の目安・取得手順・費用・処理日数・有効期限）は断定せず各公式へ誘導。緊急時は居住国連絡先を使う旨を警告に明記。
+- **最終ハブ監査（全て合格）:** `validate:articles`（return-home 12・重複0・errors なし）／`tsc --noEmit`（exit 0）／`validate:content`（0 error / 66 warning・dangling 0）／`test:content`（5/5 pass）／`lint`（クリーン）／`build`（成功・`/return-home` 静的プリレンダー・sitemap 収録）。
+- **return-home ハブ状態:** 12件すべて published（planned/merged/review/excluded は 0）。薄い/下書きの公開ページなし。
+- **未解決の問題:** なし。**次カテゴリ:** 他カテゴリは未着手。
+
 ## チェックポイント（2026-08-02）: return-home マイクロバッチ #2（5件公開 / commit: feat: publish return home micro-batch 2）
 
 return-home（帰国準備）ハブの続き5件を公開しました（マイクロバッチ運用）。開始時の未完了 return-home は7件（>5）だったため、記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り2件のため継続）。

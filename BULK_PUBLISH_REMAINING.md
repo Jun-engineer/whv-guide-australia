@@ -4,6 +4,21 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: return-home マイクロバッチ #3（残り2件公開・ハブ完了 / commit: feat: complete return home content batch）
+
+return-home（帰国準備）ハブの**最後の2件**を公開し、**return-home ハブを完了（12/12）**しました。開始時点で return-home の未完了は2件（≤5）だったため、残り全件を処理し、**最終ハブ監査（フルビルド／テスト／Lint）を実施**しました。以下が確定状態です。
+
+- **未完了 return-home 件数（開始時）:** 2件（すべて planned・すべて `hub: return-home`）。既存公開の return-home 記事は10件（バッチ#1＝5件、バッチ#2＝5件）。2 ≤ 5 のため残り全件を処理。
+- **分類:** 2件とも **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・既存記事の分割は該当なし（新規追加のみ）。
+- **公開した2件（すべて `category: return-home`・`hub: return-home`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  - `reverse-culture-shock`（P2, wellbeing, id a339）— 意図＝帰国後の逆カルチャーショックの乗り越え方とキャリア再始動（帰国後中心）／対象＝帰国後に居心地の悪さ・無気力を感じる人。現象の理解・症状/経過・生活立て直し・つながり・経験の棚卸し・小さく再始動を整理。つらさが続く場合の相談を明記。処理日数・費用等の断定なし。公式: healthdirect Mental health／Beyond Blue／Lifeline。`use-wh-experience-in-resume`（履歴書の書き方）とは差別化（本記事は感情・ウェルビーイング＋キャリア再始動の考え方）。
+  - `australian-police-check-after-return`（P3, how-to, id a340）— 意図＝帰国後・海外から豪州の無犯罪証明（police check）を取得する方法（帰国後中心）／対象＝他国のビザ・移住・就労で豪州の警察証明が必要な人。海外申請ルート（AFPのNational Police Check、指紋付きの要否）とACIC名前ベースとの違い・目的選択・有効期限を整理。手数料・処理日数・有効期限は断定せずAFP/ACIC公式と提出先要件へ。公式: AFP National police checks／ACIC National Police Checking Service。`police-check-guide`（在豪中のACIC名前ベース）とは差別化（本記事は海外/AFP指紋ルート）。
+- **ソース検証:** 帰国後に変動しうる情報（相談の目安・取得手順・費用・処理日数・有効期限）は断定せず、健康・警察の各公式（healthdirect／Beyond Blue／Lifeline／AFP／ACIC）へ誘導。緊急時は居住国の連絡先を使う旨を警告に明記。
+- **最終ハブ監査（全て合格）:** `validate:articles`（return-home 12件・重複0・article data errors なし）／`tsc --noEmit`（exit 0）／`validate:content`（0 error / 66 warning・dangling 0）／`test:content`（5/5 pass）／`lint`（クリーン）／`build`（成功・`/return-home` を静的プリレンダー・sitemap に `/return-home` 含む）。既存の cannibalization 警告（return-home::how-to 等の同一ハブ内グルーピング）は許容。
+- **return-home ハブ状態:** 12件すべて published（planned/merged/review/excluded は 0）。`/return-home` に全12件が表示され、薄い/下書きの公開ページなし。
+- **未解決の問題:** なし。
+- **次カテゴリ:** 他カテゴリは未着手（本タスクは return-home ハブ完了で終了）。
+
 ## チェックポイント（2026-08-02）: return-home マイクロバッチ #2（5件公開 / commit: feat: publish return home micro-batch 2）
 
 return-home（帰国準備）ハブの続き5件を公開しました（マイクロバッチ運用）。開始時点で return-home の未完了は7件（>5）だったため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り2件のため次回に継続）。以下が確定状態です。
@@ -1186,8 +1201,10 @@ qualifications（9件 / `category: "jobs"` + `hub: "qualifications"`）:
 - ~~`send-luggage-to-japan` — オーストラリアから日本へ荷物を送る方法 _(優先度 P2、意図: comparison)_~~ ✅ 公開済み（2026-08-02 バッチ#2）
 - ~~`keep-australian-bank-account` — 帰国後も豪州銀行口座を残す場合の注意点 _(優先度 P1、意図: finance)_~~ ✅ 公開済み（2026-08-02 バッチ#2）
 - ~~`use-wh-experience-in-resume` — ワーホリ経験を帰国後の履歴書・面接で伝える方法 _(優先度 P1、意図: career)_~~ ✅ 公開済み（2026-08-02 バッチ#2）
-- `reverse-culture-shock` — 帰国後の逆カルチャーショックとキャリア再始動 _(優先度 P2、意図: wellbeing)_ ← **次回開始**
-- `australian-police-check-after-return` — 帰国後に豪州の無犯罪証明が必要になった場合 _(優先度 P3、意図: how-to)_
+- ~~`reverse-culture-shock` — 帰国後の逆カルチャーショックとキャリア再始動 _(優先度 P2、意図: wellbeing)_~~ ✅ 公開済み（2026-08-02 バッチ#3）
+- ~~`australian-police-check-after-return` — 帰国後に豪州の無犯罪証明が必要になった場合 _(優先度 P3、意図: how-to)_~~ ✅ 公開済み（2026-08-02 バッチ#3）
+
+**→ return-home ハブ完了（12/12 公開・残り0件）。**
 
 ### news — ニュース・制度更新 (6件)
 

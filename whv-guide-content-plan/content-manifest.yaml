@@ -3651,7 +3651,7 @@ planned_content:
 - slug: reverse-culture-shock
   title: 帰国後の逆カルチャーショックとキャリア再始動
   hub: return-home
-  status: planned
+  status: published
   type: article
   priority: P2
   intent: wellbeing
@@ -3661,7 +3661,7 @@ planned_content:
 - slug: australian-police-check-after-return
   title: 帰国後に豪州の無犯罪証明が必要になった場合
   hub: return-home
-  status: planned
+  status: published
   type: article
   priority: P3
   intent: how-to

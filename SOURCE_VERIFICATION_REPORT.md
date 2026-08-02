@@ -8,6 +8,17 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## return-home マイクロバッチ #3（2026-08-02 / 残り2件公開・ハブ完了）
+
+return-home ハブの最後の2件。可変・YMYL要素は断定せず、健康・警察の各公式へ誘導。分類は2件とも create。
+
+- **`reverse-culture-shock`（P2, wellbeing, id a339）** — 帰国後の逆カルチャーショックとキャリア再始動（帰国後中心）。症状・経過・対処・キャリア再始動の考え方を整理。相談の目安・費用等は断定せず、つらさが続く場合は専門家へ、緊急時は居住国連絡先を使う旨を警告に明記。`use-wh-experience-in-resume` と差別化。
+  - 公式: healthdirect｜Mental health（https://www.healthdirect.gov.au/mental-health）／ Beyond Blue（https://www.beyondblue.org.au/）／ Lifeline Australia 13 11 14・豪州内向け（https://www.lifeline.org.au/）。
+- **`australian-police-check-after-return`（P3, how-to, id a340）** — 帰国後・海外から豪州の無犯罪証明（police check）を取得する方法（帰国後中心）。AFPのNational Police Check（指紋付きの要否）とACIC名前ベースの違い・目的選択・有効期限を整理。手数料・処理日数・有効期限・指紋要否は断定せず公式・提出先要件へ。`police-check-guide`（在豪ACIC名前ベース）と差別化（海外/AFP指紋ルート）。
+  - 公式: AFP｜National police checks（https://www.afp.gov.au/what-we-do/services/criminal-records/national-police-checks）／ ACIC｜National Police Checking Service（https://www.acic.gov.au/services/national-police-checking-service）。
+- **出国前/出国後の区別:** 両記事とも帰国後アクションが中心（無犯罪証明は出国前取得の選択肢にも触れつつ有効期限に注意を明記）。
+- **最終ハブ監査:** validate:articles / tsc / validate:content（0 error・dangling 0）/ test:content（5/5）/ lint / build いずれも合格。return-home ハブ 12/12 完了。未解決の問題: なし。他カテゴリは未着手。
+
 ## return-home マイクロバッチ #2（2026-08-02 / 5件公開）
 
 return-home ハブの続き5件を公開。各記事のタイトルの主要な問いに関わる規則・手続き・タイミングを公式一次情報に照合しました。changeable（通知日数・Bond上限/差引・RWC要否・登録/保険の返金・送料/日数/関税/免税範囲・口座維持費/利子課税）は断定せず、確認日 2026-08-02 を明記し各公式へ誘導しています。出国前アクションと出国後（海外から）のアクションを明確に区別し、受取口座・電話番号・証拠の保持への警告を記載。
