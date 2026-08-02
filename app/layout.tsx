@@ -8,6 +8,7 @@ import { AuthProvider } from "@/components/auth/AuthProvider";
 import { FloatingFeedback } from "@/components/feedback/FloatingFeedback";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { siteConfig } from "@/lib/siteConfig";
+import { ogImages, twitterImages } from "@/lib/socialImages";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,14 +56,7 @@ export const metadata: Metadata = {
     title: siteConfig.homeTitle,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
+    images: ogImages(siteConfig.ogImage, siteConfig.name),
   },
   twitter: {
     card: "summary_large_image",
@@ -70,7 +64,7 @@ export const metadata: Metadata = {
     creator: siteConfig.twitter,
     title: siteConfig.homeTitle,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    images: twitterImages(siteConfig.ogImage, siteConfig.name),
   },
   icons: {
     icon: [
@@ -97,7 +91,7 @@ export default function RootLayout({
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
-    logo: `${siteConfig.url}/opengraph-image`,
+    logo: `${siteConfig.url}${siteConfig.ogImage}`,
   };
 
   const websiteJsonLd = {

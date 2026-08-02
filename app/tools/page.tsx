@@ -4,13 +4,14 @@ import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
 import { getPublishedTools } from "@/lib/tools/registry";
 import { siteConfig, absoluteUrl } from "@/lib/siteConfig";
+import { buildCategoryMetadata } from "@/lib/socialImages";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildCategoryMetadata("tools", {
   title: "便利ツール・テンプレート",
   description:
     "オーストラリアワーホリの準備・生活・仕事に役立つ無料ツール集。到着後チェックリスト、持ち物リスト、セカンドビザ88日カウンターなど、端末に保存できる実用ツールをまとめています。",
-  alternates: { canonical: "/tools" },
-};
+  path: "/tools",
+});
 
 export default function ToolsHubPage() {
   const tools = getPublishedTools();

@@ -58,7 +58,12 @@ export const siteConfig = {
     "ワーホリ 仕事探し",
     "オーストラリア 生活",
   ],
-  ogImage: "/opengraph-image",
+  /**
+   * Site-wide default social-preview image (Open Graph / Twitter Card).
+   * Static 1200×630 PNG under /public — regenerate with
+   * `node scripts/generate-social-images.mjs`.
+   */
+  ogImage: "/social/australia-working-holiday-compass-social-preview.png",
   twitter: "@whv_guide_au",
   adsenseClient: "ca-pub-5434162081070782",
   /**

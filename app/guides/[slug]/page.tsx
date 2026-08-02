@@ -26,6 +26,7 @@ import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
 import { getArticleBySlug, getAutoRelatedArticles, getCategoryLabel, getAllArticles } from "@/lib/articles";
 import { siteConfig, absoluteUrl } from "@/lib/siteConfig";
+import { ogImages, twitterImages, resolveArticleImage } from "@/lib/socialImages";
 
 type GuideDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -45,6 +46,8 @@ export async function generateMetadata({ params }: GuideDetailPageProps): Promis
     };
   }
 
+  const socialImage = resolveArticleImage(article);
+
   return {
     title: article.title,
     description: article.description,
@@ -59,11 +62,16 @@ export async function generateMetadata({ params }: GuideDetailPageProps): Promis
       url: absoluteUrl(`/guides/${article.slug}`),
       modifiedTime: article.updatedAt,
       siteName: siteConfig.name,
+      locale: siteConfig.locale,
+      images: ogImages(socialImage.path, article.title, socialImage.size),
     },
     twitter: {
       card: "summary_large_image",
+      site: siteConfig.twitter,
+      creator: siteConfig.twitter,
       title: article.title,
       description: article.description,
+      images: twitterImages(socialImage.path, article.title),
     },
   };
 }
@@ -93,7 +101,7 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
     keywords: [getCategoryLabel(article.category), "オーストラリア ワーホリ", article.title].join(", "),
     wordCount: article.content.join("").length,
     mainEntityOfPage: absoluteUrl(`/guides/${article.slug}`),
-    image: absoluteUrl("/opengraph-image"),
+    image: absoluteUrl(resolveArticleImage(article).path),
     author: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -104,7 +112,7 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
       name: siteConfig.name,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/opengraph-image"),
+        url: absoluteUrl(siteConfig.ogImage),
       },
     },
   };

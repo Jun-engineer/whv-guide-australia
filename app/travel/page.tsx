@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { GuideCategoryPage } from "@/components/articles/GuideCategoryPage";
+import { buildCategoryMetadata } from "@/lib/socialImages";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildCategoryMetadata("travel", {
   title: "旅行ガイド",
   description: "オーストラリア国内の旅行プラン・ベストシーズン・国内線・ロードトリップ・キャンプ・東海岸周遊など、ワーホリの旅を計画するためのガイド。",
-  alternates: { canonical: "/travel" },
-};
+  path: "/travel",
+});
 
 export default function TravelPage() {
   return (

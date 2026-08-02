@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { GuideCategoryPage } from "@/components/articles/GuideCategoryPage";
+import { buildCategoryMetadata } from "@/lib/socialImages";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildCategoryMetadata("area", {
   title: "エリアガイド",
   description: "シドニー・メルボルン・ブリスベン・パース・ケアンズなど主要都市の特徴を比較。",
-  alternates: { canonical: "/area" },
-};
+  path: "/area",
+});
 
 export default function AreaPage() {
   return (

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { GuideCategoryPage } from "@/components/articles/GuideCategoryPage";
+import { buildCategoryMetadata } from "@/lib/socialImages";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildCategoryMetadata("health", {
   title: "健康・安全",
   description: "海外保険・Medicare・病院のかかり方から、緊急時の対応・安全対策まで。",
-  alternates: { canonical: "/health" },
-};
+  path: "/health",
+});
 
 export default function HealthPage() {
   return (
