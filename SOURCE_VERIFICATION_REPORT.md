@@ -8,6 +8,17 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## tools マイクロバッチ #2（2026-08-02 / 4件公開）
+
+tools ハブの次の4件を公開。外部の公式データ・閾値が関わる 2件（郵便番号チェッカー・ファームシーズン）に `verifiedAt`＋`officialSources` を付与。予算計算・レジュメチェックはユーザー入力/一般慣行で外部ライブデータに依存しないため officialSources なし。
+
+- **`tool-specified-work-region-checker`（P0, lookup）** — 郵便番号が公表された「地域（regional Australia）」の郵便番号範囲に含まれるかを確認する**参照用**ツール。対象業務・地域・要件は可変かつYMYLのため**断定せず**、範囲外＝対象外とも扱わず、最終判断は移民局へ誘導。データは目安として `POSTCODE_DATA_VERIFIED_AT: 2026-08-02` を各結果下に表示。`verifiedAt: 2026-08-02`。
+  - 出典（accessedAt 2026-08-02）: Department of Home Affairs｜Specified work (417)（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work）／Department of Home Affairs｜Second Working Holiday visa (subclass 417)（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/second-work-holiday-417）。
+  - 注: Home Affairs ページは JS レンダリングで本文抽出不可。郵便番号範囲は公表されている「地域」の定義に基づく構造的データとして encode し、可変要素（対象業務・要件・範囲更新）は各公式で確認するよう強く誘導。偽陰性を避けるため「範囲に含まれない＝対象外」とは表示しない。
+- **`tool-farm-season-calendar`（P0, lookup）** — 州・作物・月から繁忙期の一般的な目安を検索。収穫時期は天候・年により前後する旨、求人状況は雇用主/公式で確認する旨、対象作業の指定業務該当は移民局が判断する旨を明記。`verifiedAt: 2026-08-02`。
+  - 出典（accessedAt 2026-08-02）: Australian Government｜Harvest Trail Information Service（https://www.harvesttrail.gov.au/）。個別の収穫月は一般的な季節目安として提示し、断定を回避。
+- **`tool-weekly-budget-calculator`（P1, calculator）／`tool-resume-checklist`（P1, checklist）** — それぞれユーザー入力の概算・一般的な採用慣行の目安であり、外部の公式閾値/ライブデータに依存しないため officialSources なし。金融アドバイス/確定的な採用基準ではない旨を免責に明記。
+
 ## tools マイクロバッチ #1（2026-08-02 / 3件公開・新カテゴリ初回）
 
 tools（ツール・テンプレート）ハブの最初の3件を公開。外部の公式閾値・データが関わるのは 88日ツールのみで、当該ツールに `verifiedAt` と `officialSources` を付与。到着後・持ち物チェックリストは一般的な準備目安であり外部ライブデータに依存しないため、`verifiedAt: 2026-08-02` のみ付与（officialSources なし）。

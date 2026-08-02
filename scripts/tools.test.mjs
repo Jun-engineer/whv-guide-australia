@@ -16,6 +16,14 @@ import {
   summarizeWorkDays,
   SECOND_VISA_TARGET_DAYS,
 } from "../lib/tools/logic/second-visa.mjs";
+import {
+  normalizePostcode,
+  isValidPostcode,
+  findPostcodeRegion,
+  checkPostcode,
+} from "../lib/tools/logic/postcode.mjs";
+import { monthInSeason, normalizeQuery, filterSeasons } from "../lib/tools/logic/season.mjs";
+import { toAmount, toWholeNumber, computeBudget } from "../lib/tools/logic/budget.mjs";
 
 // ---- checklist.mjs -------------------------------------------------------
 
@@ -135,4 +143,135 @@ test("summarizeWorkDays: reaching the target caps percent at 100", () => {
   assert.ok(s.worked >= SECOND_VISA_TARGET_DAYS);
   assert.equal(s.reached, true);
   assert.equal(s.percent, 100);
+});
+
+// ---- postcode.mjs --------------------------------------------------------
+
+const POSTCODE_REGIONS = [
+  { state: "QLD", stateLabel: "QLD", ranges: [[4655, 4655], [4670, 4680]] },
+  { state: "NT", stateLabel: "NT", ranges: [[800, 899]] },
+];
+
+test("normalizePostcode: pads NT postcodes and trims, rejects junk", () => {
+  assert.equal(normalizePostcode("4655"), "4655");
+  assert.equal(normalizePostcode(" 4655 "), "4655");
+  assert.equal(normalizePostcode("810"), "0810");
+  assert.equal(normalizePostcode(810), "0810");
+  assert.equal(normalizePostcode("46A5"), null);
+  assert.equal(normalizePostcode("46555"), null);
+  assert.equal(normalizePostcode(""), null);
+});
+
+test("isValidPostcode: accepts plausible AU range only", () => {
+  assert.equal(isValidPostcode("4655"), true);
+  assert.equal(isValidPostcode("0810"), true);
+  assert.equal(isValidPostcode("0100"), false); // below 200
+  assert.equal(isValidPostcode("abcd"), false);
+});
+
+test("findPostcodeRegion: matches within inclusive ranges", () => {
+  assert.deepEqual(findPostcodeRegion("4655", POSTCODE_REGIONS), { state: "QLD", stateLabel: "QLD" });
+  assert.deepEqual(findPostcodeRegion("4675", POSTCODE_REGIONS), { state: "QLD", stateLabel: "QLD" });
+  assert.deepEqual(findPostcodeRegion("810", POSTCODE_REGIONS), { state: "NT", stateLabel: "NT" });
+  assert.equal(findPostcodeRegion("3000", POSTCODE_REGIONS), null);
+});
+
+test("checkPostcode: reports validity and regional membership", () => {
+  assert.deepEqual(checkPostcode("4655", POSTCODE_REGIONS), {
+    valid: true,
+    postcode: "4655",
+    inRegional: true,
+    region: { state: "QLD", stateLabel: "QLD" },
+  });
+  assert.deepEqual(checkPostcode("3000", POSTCODE_REGIONS), {
+    valid: true,
+    postcode: "3000",
+    inRegional: false,
+    region: null,
+  });
+  assert.deepEqual(checkPostcode("bad", POSTCODE_REGIONS), {
+    valid: false,
+    postcode: null,
+    inRegional: false,
+    region: null,
+  });
+});
+
+// ---- season.mjs ----------------------------------------------------------
+
+const SEASON_ENTRIES = [
+  { id: "a", cropLabel: "いちご", state: "QLD", keywords: ["strawberry"], months: [6, 7, 8] },
+  { id: "b", cropLabel: "ぶどう", state: "VIC", keywords: ["grape"], months: [2, 3, 4] },
+  { id: "c", cropLabel: "マンゴー", state: "QLD", keywords: ["mango"], months: [10, 11, 12] },
+];
+
+test("monthInSeason: checks membership and rejects out-of-range months", () => {
+  assert.equal(monthInSeason({ months: [6, 7, 8] }, 7), true);
+  assert.equal(monthInSeason({ months: [6, 7, 8] }, 9), false);
+  assert.equal(monthInSeason({ months: [6] }, 0), false);
+  assert.equal(monthInSeason({ months: [6] }, 13), false);
+});
+
+test("normalizeQuery: lowercases and trims", () => {
+  assert.equal(normalizeQuery("  Grape "), "grape");
+  assert.equal(normalizeQuery(42), "");
+});
+
+test("filterSeasons: 'all'/empty filters are ignored", () => {
+  assert.equal(filterSeasons(SEASON_ENTRIES, {}).length, 3);
+  assert.equal(filterSeasons(SEASON_ENTRIES, { state: "all", month: "all" }).length, 3);
+});
+
+test("filterSeasons: combines state, month and crop text (AND)", () => {
+  assert.deepEqual(
+    filterSeasons(SEASON_ENTRIES, { state: "QLD" }).map((e) => e.id),
+    ["a", "c"],
+  );
+  assert.deepEqual(
+    filterSeasons(SEASON_ENTRIES, { month: 7 }).map((e) => e.id),
+    ["a"],
+  );
+  assert.deepEqual(
+    filterSeasons(SEASON_ENTRIES, { crop: "grape" }).map((e) => e.id),
+    ["b"],
+  );
+  assert.deepEqual(
+    filterSeasons(SEASON_ENTRIES, { state: "QLD", month: 11 }).map((e) => e.id),
+    ["c"],
+  );
+});
+
+// ---- budget.mjs ----------------------------------------------------------
+
+test("toAmount: coerces to non-negative finite numbers", () => {
+  assert.equal(toAmount("250"), 250);
+  assert.equal(toAmount(250), 250);
+  assert.equal(toAmount("-5"), 0);
+  assert.equal(toAmount("abc"), 0);
+  assert.equal(toAmount(undefined), 0);
+});
+
+test("toWholeNumber: floors to non-negative integer", () => {
+  assert.equal(toWholeNumber("8.9"), 8);
+  assert.equal(toWholeNumber(-3), 0);
+});
+
+test("computeBudget: sums weekly and derives monthly", () => {
+  const r = computeBudget({ rent: 200, transport: 30, food: 90, phone: 10, other: 20 });
+  assert.equal(r.weekly, 350);
+  assert.equal(r.monthly, Math.round(350 * (52 / 12)));
+  assert.equal(r.requiredSavings, 0);
+});
+
+test("computeBudget: required savings = weekly * weeks + upfront", () => {
+  const r = computeBudget({ rent: 200, food: 100, noIncomeWeeks: 8, upfront: 2000 });
+  assert.equal(r.weekly, 300);
+  assert.equal(r.noIncomeWeeks, 8);
+  assert.equal(r.requiredSavings, 300 * 8 + 2000);
+});
+
+test("computeBudget: ignores invalid/negative inputs safely", () => {
+  const r = computeBudget({ rent: "abc", food: -50, noIncomeWeeks: "x", upfront: "" });
+  assert.equal(r.weekly, 0);
+  assert.equal(r.requiredSavings, 0);
 });

@@ -32,7 +32,7 @@ export type FacetFilter = {
 };
 
 /** ツールの分類。 */
-export type ToolCategory = "checklist" | "calculator";
+export type ToolCategory = "checklist" | "calculator" | "lookup";
 
 /** 公開ツールのメタ情報（Tools ハブ・各ツールページ・関連リンクで共有）。 */
 export type ToolMeta = {

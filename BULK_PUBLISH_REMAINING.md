@@ -4,6 +4,27 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: tools マイクロバッチ #2（4件公開 / commit: feat: publish tools micro-batch 2）
+
+tools（ツール・テンプレート）ハブの**次の4件**を公開しました（マイクロバッチ運用）。開始時点で tools の未完了は11件（>4）だったため、**通常のマイクロバッチ**として記録順の先頭4件のみを処理し、**最終ハブ監査（フルビルド）は実施していません**（残り7件のため次回に継続）。以下が確定状態です。
+
+- **未完了 tools 件数（開始時）:** 11件（すべて planned・すべて `hub: tools`）。既存公開は3件（バッチ#1）。11 > 4 のため記録順の先頭4件のみ処理。
+- **選定した4件（記録順の先頭4件）:** `tool-specified-work-region-checker`, `tool-farm-season-calendar`, `tool-weekly-budget-calculator`, `tool-resume-checklist`。いずれも開始時 `status: planned` をマニフェストで確認済み。
+- **実装方針（前バッチと同一）:** 計算・判定・絞り込みロジックを描画から分離し純粋ロジックを `.mjs`（`lib/tools/logic/`）で実装。`node --test` と TSX 双方から import。単体テストを付与。公式閾値・データは出典明記、外部データが関わるものは `verifiedAt`＋`officialSources`。推計を公式判定（ビザ可否・税/法的助言）として提示しない旨を各免責に明記。モバイル対応・キーボード操作可能（`<label>`/`<fieldset>`/`role="progressbar"`/`aria-live`/フォーカスリング）。結果は平易な日本語で説明。
+- **公開した4件（すべて `hub: tools`・完全実装・プレースホルダーではない）:**
+  - `tool-specified-work-region-checker`（P0, lookup）— 郵便番号を入力し、公表されている「地域（regional Australia）」の郵便番号範囲に含まれるかを確認する**参照用**ツール。**ビザの可否・指定業務の該当性は判定しない**旨を強い免責で明示。範囲に含まれない＝対象外とは断定しない設計（誤った偽陰性を防止）。ロジック `checkPostcode`/`findPostcodeRegion`/`normalizePostcode`（`lib/tools/logic/postcode.mjs`）。データ `lib/tools/data/specified-work-postcodes.ts`（`POSTCODE_DATA_VERIFIED_AT: 2026-08-02`）。`verifiedAt: 2026-08-02`、`officialSources`=Home Affairs（Specified work／Second WHV 417）2件。関連記事 `specified-work-postcodes`/`specified-work-industries`/`88-day-calculation`/`second-visa-guide`/`farm-second-visa`/`six-month-specified-work`。
+  - `tool-farm-season-calendar`（P0, lookup）— 州・作物・月からファームの繁忙期（収穫・作業が多い時期）の一般的な目安を検索。ロジック `filterSeasons`/`monthInSeason`（`lib/tools/logic/season.mjs`）。データ `lib/tools/data/farm-seasons.ts`。`verifiedAt: 2026-08-02`、`officialSources`=Harvest Trail Information Service。収穫時期は目安で年により前後する旨・求人は雇用主/公式で確認する旨を免責に明記。関連記事 `farm-season-calendar`/`harvest-trail-guide`/`specified-work-industries`/`crop-strawberry`/`crop-grape`/`farm-job-english`。
+  - `tool-weekly-budget-calculator`（P1, calculator）— 家賃・交通・食費・通信・その他の週支出、無収入期間、初期費用を入力し、週/月の生活費と必要貯金額の目安を計算。ロジック `computeBudget`/`toAmount`/`toWholeNumber`（`lib/tools/logic/budget.mjs`・不正/負値を安全に0扱い）。入力は localStorage 保存。概算であり金融アドバイスではない旨を明記（外部公式データに依存しないため officialSources なし）。関連記事 `australia-living-cost`/`weekly-budget-template`/`emergency-fund`。
+  - `tool-resume-checklist`（P1, checklist）— 英文レジュメの「入れるべき項目」と「入れないほうがよい項目（NG）」を自己チェック。既存 `ChecklistBoard`＋`computeProgress` を再利用。データ `lib/tools/data/resume-checklist.ts`。一般的な採用慣行の目安で職種/企業により異なる旨を明記（YMYL/外部データなし）。関連記事 `resume-guide`/`cover-letter-guide`/`walk-in-resume`/`job-search-websites`。
+- **YMYL/推計の扱い:** 郵便番号チェッカーは「範囲に含まれるかの参照のみ」「ビザ可否・指定業務該当は判定しない」「範囲外＝対象外ではない」「対象は移民局が判断」を明示。ファームシーズンは目安・年変動あり・雇用主/公式で確認と明記。予算は概算・金融アドバイスではないと明記。全ツールで入力はブラウザにのみ保存・サーバー送信なし。
+- **単体テスト:** `scripts/tools.test.mjs` に postcode/season/budget のテストを追加し **計26ケース**（前13＋新13）全pass。`package.json` の `test:tools` はバッチ#1で追加済み（変更なし）。
+- **発見性・内部リンク:** 4件は登録レジストリ（`lib/tools/registry.ts`）に追加され、`/tools` ハブ・`RelatedToolsBox`（記事詳細）・`app/sitemap.ts` の `toolRoutes`（`getPublishedTools()` から生成）に**自動反映**（ナビ/サイトマップの追加編集は不要）。`ToolCategory` に `"lookup"` を追加。
+- **content-manifest.yaml:** 4件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成（existing 47・planned 338）。
+- **検証（通常バッチ・各1回）:** `test:tools`（26/26 pass）／`validate:content`（0 error / 66 warning・dangling 0・重複 slug/path なし）／`tsc --noEmit`（exit 0）／`validate:articles`（no article data errors）。**フルビルドと最終ハブ監査は通常バッチのため未実施。** 既存の cannibalization 警告（`tools::interactive-tool` 等の同一ハブ内グルーピング）は許容。
+- **未解決の問題:** なし。
+- **次カテゴリ/次項目:** tools 継続。**残り7件**。次は `tool-job-application-tracker`（P2）。以降の記録順: `tool-farm-evidence-tracker`(P0), `tool-return-home-checklist`(P1), `download-resume-template`(P0), `download-cover-letter-template`(P1), `download-housing-inspection-checklist`(P1), `download-emergency-card`(P1)。`download-*` の4件は `type: download` のため、実ファイル生成/配布方法の方針決定が前提。
+- **変更ファイル（本チェックポイント）:** `lib/tools/logic/{postcode,season,budget}.mjs`（新設）、`lib/tools/data/{specified-work-postcodes,farm-seasons,resume-checklist}.ts`（新設）、`components/tools/{SpecifiedWorkRegionChecker,FarmSeasonSearch,WeeklyBudgetCalculator}.tsx`（新設）、`app/tools/{specified-work-region-checker,farm-season-calendar,weekly-budget-calculator,resume-checklist}/page.tsx`（新設）、`lib/tools/{types.ts,registry.ts}`、`scripts/tools.test.mjs`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+
 ## チェックポイント（2026-08-02）: tools マイクロバッチ #1（3件公開・新カテゴリ初回 / commit: feat: publish tools micro-batch）
 
 tools（ツール・テンプレート）ハブの**最初の3件**を公開しました（新規カテゴリの初回・マイクロバッチ運用）。開始時点で tools の未完了は14件（>3）だったため、**通常のマイクロバッチ**として記録順の先頭3件のみを処理し、**最終ハブ監査（フルビルド）は実施していません**（残り11件のため次回に継続）。本バッチは tools ハブの初回で、新カテゴリの基盤（logic/data/registry/共通コンポーネント/ページ/ナビ）整備を伴います。以下が確定状態です。

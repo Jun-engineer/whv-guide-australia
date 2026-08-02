@@ -3761,7 +3761,7 @@ planned_content:
 - slug: tool-specified-work-region-checker
   title: Specified Work対象地域・郵便番号確認ツール
   hub: tools
-  status: planned
+  status: published
   type: interactive-tool
   priority: P0
   intent: interactive-tool
@@ -3771,7 +3771,7 @@ planned_content:
 - slug: tool-farm-season-calendar
   title: 州・地域・作物別ファームシーズン検索
   hub: tools
-  status: planned
+  status: published
   type: interactive-tool
   priority: P0
   intent: interactive-tool
@@ -3781,7 +3781,7 @@ planned_content:
 - slug: tool-weekly-budget-calculator
   title: 週間生活費・必要貯金シミュレーター
   hub: tools
-  status: planned
+  status: published
   type: interactive-tool
   priority: P1
   intent: interactive-tool
@@ -3791,7 +3791,7 @@ planned_content:
 - slug: tool-resume-checklist
   title: 英文レジュメ自己チェックツール
   hub: tools
-  status: planned
+  status: published
   type: interactive-tool
   priority: P1
   intent: interactive-tool

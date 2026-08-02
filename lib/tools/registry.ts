@@ -67,6 +67,93 @@ export const tools: ToolMeta[] = [
       "farm-payslip-evidence",
     ],
   },
+  {
+    slug: "tool-specified-work-region-checker",
+    path: "/tools/specified-work-region-checker",
+    title: "Specified Work対象地域・郵便番号チェッカー",
+    navLabel: "対象地域チェッカー",
+    description:
+      "郵便番号を入力して、公表されている『地域（regional Australia）』の郵便番号範囲に含まれるかを確認できるツール。ビザの可否や指定業務の該当性は判定しません。",
+    category: "lookup",
+    categoryLabel: "地域・郵便番号",
+    icon: "📍",
+    status: "published",
+    verifiedAt: "2026-08-02",
+    officialSources: [
+      {
+        label: "Department of Home Affairs｜Specified work (417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work",
+        accessedAt: "2026-08-02",
+      },
+      {
+        label: "Department of Home Affairs｜Second Working Holiday visa (subclass 417)",
+        url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/second-work-holiday-417",
+        accessedAt: "2026-08-02",
+      },
+    ],
+    relatedArticleSlugs: [
+      "specified-work-postcodes",
+      "specified-work-industries",
+      "88-day-calculation",
+      "second-visa-guide",
+      "farm-second-visa",
+      "six-month-specified-work",
+    ],
+  },
+  {
+    slug: "tool-farm-season-calendar",
+    path: "/tools/farm-season-calendar",
+    title: "州・地域・作物別ファームシーズン検索",
+    navLabel: "ファームシーズン検索",
+    description:
+      "州・作物・月からファームの繁忙期（収穫・作業が多い時期）の目安を検索できるツール。移動やジョブ探しの計画づくりに役立ちます。",
+    category: "lookup",
+    categoryLabel: "検索・カレンダー",
+    icon: "🚜",
+    status: "published",
+    verifiedAt: "2026-08-02",
+    officialSources: [
+      {
+        label: "Australian Government｜Harvest Trail Information Service",
+        url: "https://www.harvesttrail.gov.au/",
+        accessedAt: "2026-08-02",
+      },
+    ],
+    relatedArticleSlugs: [
+      "farm-season-calendar",
+      "harvest-trail-guide",
+      "specified-work-industries",
+      "crop-strawberry",
+      "crop-grape",
+      "farm-job-english",
+    ],
+  },
+  {
+    slug: "tool-weekly-budget-calculator",
+    path: "/tools/weekly-budget-calculator",
+    title: "週間生活費・必要貯金シミュレーター",
+    navLabel: "生活費シミュレーター",
+    description:
+      "家賃・交通・食費などの週の支出と、無収入期間・初期費用を入力して、必要な貯金額の目安を計算するツール。金融アドバイスではありません。",
+    category: "calculator",
+    categoryLabel: "計算・記録",
+    icon: "💰",
+    status: "published",
+    relatedArticleSlugs: ["australia-living-cost", "weekly-budget-template", "emergency-fund"],
+  },
+  {
+    slug: "tool-resume-checklist",
+    path: "/tools/resume-checklist",
+    title: "英文レジュメ自己チェックツール",
+    navLabel: "レジュメ自己チェック",
+    description:
+      "オーストラリアの採用慣行に沿って、英文レジュメに入れるべき項目と入れないほうがよい項目（NG）を自己チェックできるツール。完了状態は端末に保存できます。",
+    category: "checklist",
+    categoryLabel: "チェックリスト",
+    icon: "📄",
+    status: "published",
+    relatedArticleSlugs: ["resume-guide", "cover-letter-guide", "walk-in-resume", "job-search-websites"],
+  },
 ];
 
 /** 公開済みツールを返す（宣言順）。 */
