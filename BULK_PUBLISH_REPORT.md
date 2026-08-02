@@ -3,9 +3,11 @@
 生成日: 2026-07-16
 ブランチ: main
 
-## 🏁 最終 whole-site 監査（2026-08-02・commit: `feat: complete working holiday content library audit`）
+## 🏁 最終 whole-site 監査（2026-08-02・現行 HEAD `2e822a6` に対して再検証）
 
 バルク公開プロジェクトのサイト全体最終監査を実施。リポジトリ・マニフェスト・進捗ファイル・git 履歴を突き合わせ、公開・技術・情報アーキテクチャ・検索の各観点を確認し、利用可能な検証スイートを1回ずつ完走した。**新規記事の生成は行っていない**（残 planned は既に 0 件で、修復を要する欠落ジャーニー・未処理マニフェスト項目は検出されなかった）。
+
+> **再監査の背景:** 前回の監査コミット（`e2fe018`）以降に 3 コミット（サイト内検索・GA4 アナリティクス・ナビゲーション改善・エディトリアルポリシー）が追加されたため、現行 HEAD `2e822a6`（＝`origin/main`）に対して全検証を再実行した。
 
 ### 最終集計（マニフェストが真実の情報源）
 
@@ -30,7 +32,7 @@
 - **マニフェスト／公開:** 全項目が最終ステータス確定（planned/draft/review/archived/excluded = 0）。7件の merged は記事オブジェクトとして存在せず（`/guides/*` を生成しない）、`redirects.ts`→`next.config.ts` で 308 転送され公開露出なし。公開記事は各カテゴリ一覧・ハブ・relatedSlugs・sitemap から到達可能で孤立なし。YMYL 記事は `verifiedAt`＋`OfficialSourceBox`（公式一次情報・免責）を保持。薄い/プレースホルダー/空ページの公開なし。既存の経験ベース記事は保持。
 - **URL／技術:** 重複 slug/path/export 0（`validate:articles`）。dangling 内部リンク 0（`validate:content`）。リダイレクトのチェーン/ループなし・`to` は全て公開記事（validate 済み）。sitemap/構造化データは公開フィルタ（`getAllArticles`／`getPublishedTools`／`getPublishedNewsTemplates`）駆動で未公開を露出しない。ダウンロードはブラウザ内 Blob（`.txt`）で実動作、ツールは単体テスト 36/36 で機能確認。**RSS ルートは本プロジェクトに存在しない（N/A）。**
 - **情報アーキテクチャ:** 21 ハブ構成で、準備→ビザ→到着→SIM/銀行/TFN/myGov→税/ABN/Super→仕事/権利→ファーム/セカンドビザ→住居→交通/車→医療/保険/安全→日常生活→英語→都市/地域→旅行→帰国準備→コミュニティ→ツール→ダウンロードの全ジャーニーをカバー。Footer/Header・カテゴリ一覧・relatedSlugs・パンくずで回遊可能。
-- **検索・発見性:** 公開記事の発見はカテゴリ/ハブページ（公開フィルタ済み）・関連記事・sitemap による。全文サイト内検索インデックスは未実装のため未公開コンテンツの漏洩経路なし（フォーラム検索は forum 投稿のみ対象）。merged ページは記事一覧・sitemap に現れない。
+- **検索・発見性:** 公開記事の発見はカテゴリ/ハブページ（公開フィルタ済み）・関連記事・sitemap に加え、**サイト内全文検索（`/search`）** を教える。検索インデックスは `buildSearchIndex()`＝`getAllArticles()` 経由で **公開記事のみ**（draft/review/archived/merged 除外）を含み、記事本文はインデックス化しない。`/search` は **noindex（index:false, follow:true）かつ sitemap 非掲載** のため、未公開コンテンツの漏洩経路はない（フォーラム検索は forum 投稿のみ対象）。merged ページは記事一覧・sitemap・検索インデックスに現れない。
 
 ### フル検証スイート結果（各1回・修復1回）
 
@@ -53,7 +55,7 @@
 
 ### デプロイ状況・次のステップ
 
-最終チェックポイントコミット `feat: complete working holiday content library audit` をローカル `main` に作成。**`main` へは直接 push していない**（指示に従い CI・ブランチ保護・確立済みデプロイワークフローを迂回しない）。**次のデプロイ手順:** 確立済みワークフロー（コミット→push で CI/デプロイ）に沿って、利用者が `git push origin main`（またはブランチを切って Pull Request を作成）を実行することで CI とデプロイがトリガーされる。監査エージェントは push を行わずコミットで停止。
+最終監査コミット `feat: complete working holiday content library audit`（`e2fe018`）はすでに `origin/main` に取り込まれ、その後の 3 コミット（検索・GA4・ナビ）も含めて **現行 HEAD `2e822a6` は `origin/main` と同一**（`git status` クリーン）。したがってコンテンツライブラリは **確立済みワークフロー（commit → push → CI/デプロイ）で既にデプロイ済み**。本再監査はレポート更新のみで、CI・ブランチ保護・確立済みデプロイワークフローを迂回していない。
 
 ### 推奨する将来の改善
 
