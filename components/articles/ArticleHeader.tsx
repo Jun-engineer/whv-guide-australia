@@ -1,6 +1,6 @@
-import Image from "next/image";
 import type { Article } from "@/types/article";
 import { getCategoryLabel } from "@/lib/articles";
+import { ArticleFigure } from "@/components/articles/ArticleFigure";
 
 type ArticleHeaderProps = {
   article: Article;
@@ -16,21 +16,7 @@ export function ArticleHeader({ article }: ArticleHeaderProps) {
         <p className="mt-4 text-sm text-sky-100">最終更新日: {article.updatedAt}</p>
       </header>
       {article.heroImage ? (
-        <figure>
-          <Image
-            src={article.heroImage.src}
-            alt={article.heroImage.alt}
-            width={1200}
-            height={630}
-            priority
-            className="h-auto w-full rounded-2xl border border-slate-200 bg-white"
-          />
-          {article.heroImage.caption ? (
-            <figcaption className="mt-1 text-xs text-slate-500">
-              {article.heroImage.caption}
-            </figcaption>
-          ) : null}
-        </figure>
+        <ArticleFigure image={article.heroImage} priority sizes="(max-width: 768px) 100vw, 768px" />
       ) : null}
     </div>
   );

@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/Container";
 
 export const metadata: Metadata = {
   title: "運営者情報",
-  description: "WH Guide Australia の運営者情報・免責事項・お問い合わせについて。",
+  description: "オーストラリアワーホリコンパス（旧 WH Guide Australia）の運営者情報・免責事項・お問い合わせについて。",
   alternates: { canonical: "/about" },
 };
 
@@ -15,7 +15,7 @@ export default function AboutPage() {
         <header className="space-y-2">
           <h1 className="text-3xl font-extrabold text-slate-900">運営者情報</h1>
           <p className="text-sm text-slate-600">
-            WH Guide Australia は、オーストラリアのワーキングホリデー渡航者に向けて、ビザ・生活・仕事の情報を日本語でわかりやすく提供するメディアです。
+            オーストラリアワーホリコンパスは、オーストラリアのワーキングホリデー渡航者に向けて、ビザ・生活・仕事の情報を日本語でわかりやすく提供するメディアです。
           </p>
         </header>
 
@@ -28,7 +28,7 @@ export default function AboutPage() {
             </div>
             <div className="flex justify-between gap-4 border-b border-slate-100 py-2">
               <dt className="text-slate-500">サイト名</dt>
-              <dd className="font-medium text-slate-800">WH Guide Australia</dd>
+              <dd className="font-medium text-slate-800">オーストラリアワーホリコンパス（旧 WH Guide Australia）</dd>
             </div>
             <div className="flex justify-between gap-4 py-2">
               <dt className="text-slate-500">お問い合わせ</dt>

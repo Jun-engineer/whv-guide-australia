@@ -30,6 +30,16 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2 text-sm">
+          <Link
+            href="/search"
+            aria-label="記事を検索"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition hover:bg-slate-50 hover:text-sky-700"
+          >
+            <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
+              <path d="M20 20l-3-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </Link>
           <HeaderAuth />
           <MobileNav items={navItems} />
         </div>

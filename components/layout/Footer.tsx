@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Logo } from "@/components/layout/Logo";
+import { siteConfig } from "@/lib/siteConfig";
 
 const guideLinks = [
   { href: "/visa", label: "ビザ" },
@@ -40,7 +41,9 @@ export function Footer() {
         <div>
           <Logo size={36} />
           <p className="mt-3">
-            オーストラリアワーホリの準備・生活・仕事を、初心者向けにわかりやすく案内するガイドサイト。
+            {siteConfig.tagline}
+            <br />
+            オーストラリアワーホリの準備・生活・仕事を、初心者向けにわかりやすく案内する日本語ガイドです。
           </p>
         </div>
         <nav aria-label="ガイド">
@@ -98,7 +101,7 @@ export function Footer() {
             Contact / Request
           </Link>
         </div>
-        <p>© {new Date().getFullYear()} WH Guide Australia</p>
+        <p>© {new Date().getFullYear()} オーストラリアワーホリコンパス（WH Guide Australia）</p>
       </Container>
     </footer>
   );

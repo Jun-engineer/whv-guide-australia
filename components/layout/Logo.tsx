@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteConfig } from "@/lib/siteConfig";
 
 type LogoProps = {
   /** Pixel size of the square badge mark. */
@@ -50,16 +51,22 @@ function LogoMark({ size }: { size: number }) {
 
 export function Logo({ size = 36, showText = true, variant = "default", className }: LogoProps) {
   const primary = variant === "light" ? "text-white" : "text-sky-900";
-  const secondary = variant === "light" ? "text-sky-200" : "text-sky-600";
 
   return (
-    <Link href="/" aria-label="WH Guide Australia ホームへ" className={`flex items-center gap-2.5 ${className ?? ""}`}>
+    <Link
+      href="/"
+      aria-label={`${siteConfig.name} ホームへ`}
+      className={`flex items-center gap-2.5 ${className ?? ""}`}
+    >
       <LogoMark size={size} />
       {showText ? (
-        <span className="flex flex-col leading-none">
-          <span className={`text-base font-extrabold tracking-tight ${primary}`}>WH Guide</span>
-          <span className={`text-[11px] font-semibold uppercase tracking-[0.18em] ${secondary}`}>
-            Australia
+        <span className="leading-none" aria-hidden="true">
+          {/* デスクトップ・通常幅では正式名称、狭いモバイルでは短縮名を表示 */}
+          <span className={`hidden text-base font-extrabold tracking-tight min-[400px]:inline ${primary}`}>
+            {siteConfig.name}
+          </span>
+          <span className={`text-base font-extrabold tracking-tight min-[400px]:hidden ${primary}`}>
+            {siteConfig.shortName}
           </span>
         </span>
       ) : null}

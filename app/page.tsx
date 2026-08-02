@@ -7,7 +7,9 @@ import { getLatestNews, getNewsCategoryLabel } from "@/lib/news";
 import { ArticleList } from "@/components/articles/ArticleList";
 import { PostCard } from "@/components/forum/PostCard";
 import { AdBanner } from "@/components/ads/AdBanner";
-import { siteConfig, absoluteUrl } from "@/lib/siteConfig";
+import { SearchBox } from "@/components/search/SearchBox";
+import { popularTopics } from "@/lib/searchConfig";
+import { absoluteUrl } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   alternates: {
@@ -22,15 +24,6 @@ export default async function Home() {
   const featuredArticles = getFeaturedArticles(4);
   const latestPosts = await getLatestForumPosts(3);
   const latestNews = getLatestNews(3);
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: siteConfig.name,
-    url: siteConfig.url,
-    inLanguage: "ja",
-    description: siteConfig.description,
-  };
 
   const itemListJsonLd = {
     "@context": "https://schema.org",
@@ -48,29 +41,51 @@ export default async function Home() {
     <div className="space-y-12 pb-10">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
-      <section className="bg-[radial-gradient(circle_at_top,_#0ea5e9,_#0369a1_45%,_#0f172a)] py-16 text-white">
+      <section className="bg-[radial-gradient(circle_at_top,_#0ea5e9,_#0369a1_45%,_#0f172a)] py-14 text-white sm:py-16">
         <Container className="space-y-5">
           <p className="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-bold tracking-wide">
-            Working Holiday Starter
+            オーストラリアワーホリコンパス
           </p>
-          <h1 className="max-w-3xl text-4xl font-black leading-tight sm:text-5xl">
-            オーストラリアワーホリを、迷わず進める。
+          <h1 className="max-w-3xl text-3xl font-black leading-tight sm:text-5xl">
+            オーストラリアのワーホリ情報を、準備から帰国まで
           </h1>
           <p className="max-w-2xl text-sky-100">
-            ビザ申請から現地の家探し・仕事探しまで、必要な順番で学べる日本語ガイドです。
+            ビザ・仕事・生活・税金・帰国手続きまで、必要な情報を必要な順番で学べる日本語ガイドです。
           </p>
-          <Link
-            href="/preparation"
-            className="inline-block rounded-full bg-amber-300 px-5 py-3 font-bold text-slate-900"
-          >
-            まず何をすればいいか見る
-          </Link>
+
+          <div className="max-w-2xl pt-1">
+            <SearchBox />
+          </div>
+
+          <div className="flex flex-col gap-3 pt-1 sm:flex-row">
+            <Link
+              href="/preparation"
+              className="inline-flex items-center justify-center rounded-full bg-amber-300 px-5 py-3 font-bold text-slate-900 transition hover:bg-amber-200"
+            >
+              渡航準備から始める
+            </Link>
+            <Link
+              href="/arrival"
+              className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-5 py-3 font-bold text-white transition hover:bg-white/20"
+            >
+              オーストラリア到着後にやること
+            </Link>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2 pt-2">
+            <span className="text-xs font-semibold text-sky-100">人気トピック</span>
+            {popularTopics.map((topic) => (
+              <Link
+                key={topic.href}
+                href={topic.href}
+                className="rounded-full bg-white/15 px-3 py-1 text-sm font-medium text-white transition hover:bg-white/25"
+              >
+                {topic.label}
+              </Link>
+            ))}
+          </div>
         </Container>
       </section>
 

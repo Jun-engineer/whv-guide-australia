@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/Container";
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
   description:
-    "WH Guide Australia のプライバシーポリシー。取得する情報、利用目的、第三者提供、Cookie、お問い合わせ窓口について記載しています。",
+    "オーストラリアワーホリコンパスのプライバシーポリシー。取得する情報、利用目的、第三者提供、Cookie、お問い合わせ窓口について記載しています。",
   alternates: { canonical: "/privacy" },
 };
 

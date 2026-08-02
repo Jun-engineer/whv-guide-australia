@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "WH Guide Australia - オーストラリアワーホリ完全ガイド";
+export const alt = "オーストラリアワーホリコンパス - オーストラリアワーホリ完全ガイド";
 export const size = {
   width: 1200,
   height: 630,
@@ -55,7 +55,7 @@ export default function OpengraphImage() {
             color: "#bae6fd",
           }}
         >
-          WH Guide Australia
+          オーストラリアワーホリコンパス
         </div>
       </div>
     ),

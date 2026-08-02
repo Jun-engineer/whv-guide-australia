@@ -38,8 +38,18 @@ export type ArticleCategory =
 export type ArticleImage = {
   /** /public 配下の画像パス（例: /guides/visa/immiaccount.png） */
   src: string;
+  /** 代替テキスト（必須・内容が分かる説明にする）。 */
   alt: string;
+  /** 画像の説明キャプション（任意）。 */
   caption?: string;
+  /** 撮影者・出典などのクレジット（任意）。 */
+  credit?: string;
+  /** 実寸の幅（px, 任意。指定するとレイアウトシフトを防止）。 */
+  width?: number;
+  /** 実寸の高さ（px, 任意）。 */
+  height?: number;
+  /** 表示位置の意図。hero=記事上部, inline=本文中, gallery=ギャラリー。 */
+  position?: "hero" | "inline" | "gallery";
 };
 
 export type ArticleStep = {
@@ -83,6 +93,8 @@ export type Article = {
   description: string;
   /** 記事上部のヒーロー画像（任意） */
   heroImage?: ArticleImage;
+  /** 本文中・ギャラリーに表示する追加画像（任意）。position で扱いを分ける。 */
+  images?: ArticleImage[];
   content: string[];
   steps: ArticleStep[];
   keyFacts?: ArticleFact[];
@@ -95,6 +107,25 @@ export type Article = {
   relatedSlugs: string[];
   updatedAt: string;
   published: boolean;
+
+  // --- 可読性向上レイヤー（任意。設定された記事のみ表示される） ---
+  /** 冒頭に置く「結論・要点の一言回答」。長い記事の直帰を防ぐ。 */
+  answer?: string;
+  /** 「この記事のポイント」に表示する箇条書き（3〜5項目推奨）。 */
+  points?: string[];
+  /** 「この記事が必要な人」に表示する箇条書き。 */
+  audience?: string[];
+  /** 「よくある間違い」に表示する箇条書き。 */
+  commonMistakes?: string[];
+
+  // --- 検索レイヤー（任意） ---
+  /** 検索・分類用のタグ（日本語/英語どちらも可）。 */
+  tags?: string[];
+  /**
+   * この記事に固有の検索エイリアス（別名・略称・表記ゆれ）。
+   * カテゴリ共通のエイリアスは lib/searchConfig.ts で一括管理する。
+   */
+  searchAliases?: string[];
 
   // --- コンテンツ管理レイヤー（Phase A）向けの任意メタ ---
   /**

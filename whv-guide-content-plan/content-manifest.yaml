@@ -5,7 +5,7 @@ generated_at: '2026-07-16'
 #       existing 47, merged 7（308 恒久リダイレクト）, planned/draft/review/archived/excluded 0。
 # 管理対象 385 件。全検証スイート合格・production build 成功。未解決の問題なし。
 site:
-  name: WH Guide Australia
+  name: オーストラリアワーホリコンパス
   base_url: https://whv-guide-australia.com
   content_language: ja
   default_article_route: /guides/{slug}

@@ -23,12 +23,26 @@ function resolveSiteUrl(): string {
 }
 
 export const siteConfig = {
-  name: "WH Guide Australia",
-  shortName: "WH Guide",
+  /** 公式サイト名（正式名称）。 */
+  name: "オーストラリアワーホリコンパス",
+  /** ヘッダーなどスペースが限られる箇所で使う短縮名。 */
+  shortName: "ワーホリコンパス",
+  /** 旧英語名。alternateName / 運営者情報でのみ使用（レガシー表記）。 */
+  legacyName: "WH Guide Australia",
+  /** サイトのタグライン。 */
+  tagline: "ビザ・仕事・生活を、渡航前から帰国まで。",
+  /** 構造化データ等で使う別名（表記ゆれ・旧名を含む）。 */
+  alternateNames: [
+    "ワーホリコンパス",
+    "WH Guide Australia",
+    "オーストラリアワーホリガイド",
+  ],
+  /** トップページ推奨タイトル。 */
+  homeTitle: "オーストラリアワーホリ完全ガイド｜オーストラリアワーホリコンパス",
   url: resolveSiteUrl(),
   locale: "ja_JP",
   description:
-    "オーストラリアワーホリ向けに、ビザ、渡航準備、現地生活、仕事探し、税金、ファーム、ギグワーク、掲示板までまとめた日本語ガイドサイト。",
+    "オーストラリアのワーキングホリデーに必要な情報をまとめた日本語ガイド。ビザ、渡航準備、仕事、ファーム、税金、家探し、車、医療、帰国手続きまで分かりやすく解説します。",
   keywords: [
     "オーストラリア ワーホリ",
     "ワーキングホリデー",

@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | オーストラリアワーホリ完全ガイド`,
+    default: siteConfig.homeTitle,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: siteConfig.locale,
     url: siteConfig.url,
-    title: `${siteConfig.name} | オーストラリアワーホリ完全ガイド`,
+    title: siteConfig.homeTitle,
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: siteConfig.twitter,
     creator: siteConfig.twitter,
-    title: `${siteConfig.name} | オーストラリアワーホリ完全ガイド`,
+    title: siteConfig.homeTitle,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
@@ -103,14 +103,15 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.name,
-    url: siteConfig.url,
+    alternateName: [...siteConfig.alternateNames],
+    url: `${siteConfig.url}/`,
     inLanguage: "ja",
     description: siteConfig.description,
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: `${siteConfig.url}/community?q={search_term_string}`,
+        urlTemplate: `${siteConfig.url}/search?q={search_term_string}`,
       },
       "query-input": "required name=search_term_string",
     },

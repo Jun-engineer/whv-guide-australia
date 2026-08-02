@@ -8,7 +8,7 @@ import type { ContentHub, ManifestItem } from "@/types/content";
 export const manifestMeta = {
   "manifestVersion": 1,
   "generatedAt": "2026-07-16",
-  "siteName": "WH Guide Australia",
+  "siteName": "オーストラリアワーホリコンパス",
   "baseUrl": "https://whv-guide-australia.com",
   "contentLanguage": "ja",
   "defaultArticleRoute": "/guides/{slug}"

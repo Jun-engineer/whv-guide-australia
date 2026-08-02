@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleHeader } from "@/components/articles/ArticleHeader";
 import { TableOfContents } from "@/components/articles/TableOfContents";
+import { AnswerBox } from "@/components/articles/AnswerBox";
+import { ArticlePoints } from "@/components/articles/ArticlePoints";
+import { AudienceBox } from "@/components/articles/AudienceBox";
+import { CommonMistakes } from "@/components/articles/CommonMistakes";
+import { ArticleImageGallery } from "@/components/articles/ArticleImageGallery";
 import { StepBlock } from "@/components/articles/StepBlock";
 import { WarningBox } from "@/components/articles/WarningBox";
 import { KeyFacts } from "@/components/articles/KeyFacts";
@@ -72,6 +77,9 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
   }
 
   const relatedArticles = getAutoRelatedArticles(article, 3);
+
+  // ヒーロー以外の記事画像（本文中・ギャラリー）をまとめて表示する。
+  const inlineImages = (article.images ?? []).filter((image) => image.position !== "hero");
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -191,19 +199,31 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
         <VerifiedDate verifiedAt={article.verifiedAt} updatedAt={article.updatedAt} />
       ) : null}
 
+      {article.answer ? <AnswerBox answer={article.answer} /> : null}
+
+      {article.points && article.points.length > 0 ? (
+        <ArticlePoints points={article.points} />
+      ) : null}
+
+      {article.audience && article.audience.length > 0 ? (
+        <AudienceBox audience={article.audience} />
+      ) : null}
+
       {article.keyFacts && article.keyFacts.length > 0 ? (
         <KeyFacts facts={article.keyFacts} />
       ) : null}
 
       <TableOfContents steps={article.steps} />
 
-      <article className="space-y-5 rounded-2xl border border-slate-200 bg-white p-6">
+      <article className="space-y-5 rounded-2xl border border-slate-200 bg-white p-6 leading-8 text-slate-700 sm:text-[15px]">
         {article.content.map((paragraph) => (
-          <p key={paragraph} className="leading-relaxed text-slate-700">
+          <p key={paragraph} className="leading-8">
             {paragraph}
           </p>
         ))}
       </article>
+
+      {inlineImages.length > 0 ? <ArticleImageGallery images={inlineImages} /> : null}
 
       <section className="space-y-3">
         {article.steps.map((step, index) => (
@@ -215,6 +235,10 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
 
       {article.phrases && article.phrases.length > 0 ? (
         <PhraseList phrases={article.phrases} />
+      ) : null}
+
+      {article.commonMistakes && article.commonMistakes.length > 0 ? (
+        <CommonMistakes mistakes={article.commonMistakes} />
       ) : null}
 
       <WarningBox items={article.warnings ?? []} />

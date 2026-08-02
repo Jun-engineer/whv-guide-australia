@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/Container";
 export const metadata: Metadata = {
   title: "利用規約",
   description:
-    "WH Guide Australia の利用規約。サービスの利用条件、禁止事項、免責事項、掲示板利用上の注意について記載しています。",
+    "オーストラリアワーホリコンパスの利用規約。サービスの利用条件、禁止事項、免責事項、掲示板利用上の注意について記載しています。",
   alternates: { canonical: "/terms" },
 };
 
@@ -12,7 +12,7 @@ const sections = [
   {
     heading: "第1条（適用）",
     body: [
-      "本規約は、WH Guide Australia（以下「当サイト」）が提供するサービスの利用条件を定めるものです。利用者は、本規約に同意のうえ当サイトを利用するものとします。",
+      "本規約は、オーストラリアワーホリコンパス（以下「当サイト」）が提供するサービスの利用条件を定めるものです。利用者は、本規約に同意のうえ当サイトを利用するものとします。",
     ],
   },
   {

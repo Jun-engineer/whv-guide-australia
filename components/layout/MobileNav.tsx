@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { SearchBox } from "@/components/search/SearchBox";
 
 type NavItem = { href: string; label: string };
 
@@ -11,6 +13,7 @@ type MobileNavProps = {
 
 export function MobileNav({ items }: MobileNavProps) {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   // メニュー展開中は背面スクロールを止める
   useEffect(() => {
@@ -66,6 +69,15 @@ export function MobileNav({ items }: MobileNavProps) {
             id="mobile-nav-panel"
             className="fixed inset-x-0 top-16 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-sky-100 bg-white p-4 shadow-lg"
           >
+            <div className="mb-3">
+              <SearchBox
+                variant="compact"
+                onSubmitQuery={(q) => {
+                  setOpen(false);
+                  router.push(q ? `/search?q=${encodeURIComponent(q)}` : "/search");
+                }}
+              />
+            </div>
             <ul className="space-y-1">
               {items.map((item) => (
                 <li key={item.href}>
