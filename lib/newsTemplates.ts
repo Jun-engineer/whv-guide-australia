@@ -261,6 +261,65 @@ export const NEWS_TEMPLATES: NewsTemplate[] = [
     relatedSlugs: ["bushfire-safety", "flood-cyclone-safety"],
     status: "published",
   },
+  {
+    slug: "scam-alert",
+    path: "/news/templates/scam-alert",
+    title: "詐欺・悪質求人 注意喚起ニュース テンプレート",
+    navLabel: "詐欺・悪質求人",
+    description:
+      "ワーホリを狙う詐欺・悪質求人（求職詐欺、キャッシュバック、ビザ・スポンサー詐欺、なりすまし等）の手口・被害防止・通報先を、公式リンク付きで注意喚起するためのテンプレート。",
+    icon: "🚨",
+    categoryLabel: "詐欺",
+    intro: [
+      "ワーキングホリデーの渡航者は、求職・住居探し・送金・ビザ手続きの各場面で詐欺の標的になりやすいです。まず「どんな手口か」「何をされると危険か」「どこへ通報するか」を簡潔に示してください。",
+      "被害はお金・個人情報・在留資格に関わるYMYLです。特定の企業・個人を断定せず、公式の通報窓口（Scamwatch・Fair Work Ombudsman・ReportCyber）と、緊急時は Triple Zero（000）へ誘導します。",
+      "ビザ違反があっても、賃金の未払い等は Fair Work に相談でき、相談によってビザが取り消されることはない、という保護の存在も併せて伝えると被害の早期相談につながります。",
+    ],
+    fields: [
+      { label: "確認日", required: true, hint: "その手口・アラートを確認した日。" },
+      { label: "詐欺の種類", required: true, hint: "求職詐欺／キャッシュバック／ビザ・スポンサー詐欺／なりすまし（ATO・myGov・銀行）／賃貸詐欺 など。" },
+      { label: "手口", required: true, hint: "接触経路（SNS・メッセージ・求人サイト）と、要求される内容（前払い金・個人情報・銀行情報など）。" },
+      { label: "危険サイン", required: true, hint: "先に金銭を要求／高額・好条件すぎる／急かす／公式外の連絡先・支払方法 など。" },
+      { label: "被害を防ぐ行動", required: true, hint: "支払わない・情報を渡さない・公式サイトで確認・第三者に相談。" },
+      { label: "通報先", required: true, hint: "Scamwatch（詐欺全般）／Fair Work Ombudsman（求人・労働搾取）／ReportCyber（サイバー犯罪）。生命の危険は 000。" },
+      { label: "公式ソースURL", required: true, hint: "上記通報窓口の該当ページ。" },
+    ],
+    notes: [
+      "特定の企業・個人を名指しで「詐欺」と断定しない。あくまで一般的な手口と危険サインとして書く。",
+      "求人詐欺では、仕事の対価として金銭を要求する『キャッシュバック』やビザ・スポンサー費用の請求は違法である旨を Fair Work の情報に基づいて示す（金額・法的判断は断定しない）。",
+      "被害に遭った場合は『銀行へ連絡→パスワード変更→通報』の順など、公式（Scamwatch「I've been scammed」）の手順へ誘導する。",
+      "既存の詐欺・セキュリティ記事（online-scams-cybersecurity／bank-scam-security／rental-scam-examples）へ深掘り導線を張る。",
+    ],
+    skeleton: [
+      "【確認日】YYYY年M月D日",
+      "【種類】（求職詐欺／キャッシュバック／ビザ・スポンサー詐欺／なりすまし／賃貸詐欺 など）",
+      "【手口】（接触経路と要求内容）",
+      "【危険サイン】（先払い要求／好条件すぎる／急かす／公式外の支払 など）",
+      "【被害を防ぐ】支払わない・情報を渡さない・公式で確認・相談する",
+      "【通報先】Scamwatch ／ Fair Work Ombudsman（労働）／ ReportCyber（サイバー）／緊急は 000",
+      "【出典】Scamwatch／Fair Work Ombudsman／ACSC（確認日：YYYY年M月D日）",
+    ],
+    verifiedAt: "2026-08-02",
+    officialSources: [
+      {
+        label: "Scamwatch（ACCC・National Anti-Scam Centre）｜Report a scam",
+        url: "https://www.scamwatch.gov.au/",
+        accessedAt: "2026-08-02",
+      },
+      {
+        label: "Fair Work Ombudsman｜Visa holders and migrants",
+        url: "https://www.fairwork.gov.au/find-help-for/visa-holders-migrants",
+        accessedAt: "2026-08-02",
+      },
+      {
+        label: "Australian Cyber Security Centre｜Report (ReportCyber)",
+        url: "https://www.cyber.gov.au/report-and-recover/report",
+        accessedAt: "2026-08-02",
+      },
+    ],
+    relatedSlugs: ["online-scams-cybersecurity", "bank-scam-security", "rental-scam-examples", "working-rights", "underpayment-unpaid-wages"],
+    status: "published",
+  },
 ];
 
 /** 公開済みのニューステンプレート一覧を返す。 */

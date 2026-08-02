@@ -10,6 +10,10 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### news-template マイクロバッチ #2・最終（2026-08-02 / 1件公開・news-template グループ完了）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** news ハブ `type: news-template` の最後の1件（`news-scam-alert-template`）は**新規スラッグの create**で、#1 で構築済の news-template サブシステム（`/news/templates/*`）にデータ1件を追加したのみ。既存公開URLの統合・置換・分割・リダイレクトは一切発生しない。sitemap・一覧・詳細はレジストリ（`getPublishedNewsTemplates()`）駆動で自動反映。関連ガイドは公開/既存 slug（`online-scams-cybersecurity`／`bank-scam-security`／`rental-scam-examples`／`working-rights`／`underpayment-unpaid-wages`）のみ `/guides/{slug}` へリンクし dangling 0。これで news-template グループ（全６件）と全 planned コンテンツが完了。
+
 ### news-template マイクロバッチ #1（2026-08-02 / P0 5件公開）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** news ハブ `type: news-template` の P0 5件（`news-visa-changes-template`／`news-minimum-wage-template`／`news-tax-super-template`／`news-visa-fee-template`／`news-disaster-alert-template`）はいずれも**新規スラッグの create**で、`/news/templates/*` という新ルート下に専用サブシステム（`types/newsTemplate.ts`／`lib/newsTemplates.ts`／`app/news/templates/{page,[slug]/page}.tsx`）として公開。既存公開URLの統合・置換・分割・リダイレクトは一切発生しない。孤立防止のため `/news` から一覧への導線を追加し、`sitemap.ts` に `/news/templates`＋5パスを登録。各詳細ページの関連ガイドは公開/既存 slug（`whv-complete-guide`／`second-visa-guide`／`working-rights`／`award-rates-penalty-rates`／`underpayment-unpaid-wages`／`tax-return-guide`／`super-guide`／`income-statement-tax-ready`／`payslip-guide`／`bushfire-safety`／`flood-cyclone-safety`）のみ `/guides/{slug}` へリンクし dangling 0。P1 の `news-scam-alert-template` は次バッチへ残す。`validate:content` の `news::news-template` cannibalization 警告は同一ハブ内グルーピングの想定内で許容。

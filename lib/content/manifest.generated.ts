@@ -4506,7 +4506,7 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "news-scam-alert-template",
     "title": "ワーホリ向け詐欺・悪質求人注意喚起テンプレート",
     "hub": "news",
-    "status": "planned",
+    "status": "published",
     "type": "news-template",
     "priority": "P1",
     "path": "/news/templates/scam-alert",

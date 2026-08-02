@@ -4,6 +4,43 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## ✅ コンテンツ生成 完了（2026-08-02）: 全 planned アイテムを公開済み・最終監査の準備完了
+
+**本サイクルのコンテンツ生成は完了しました。** マニフェスト（`whv-guide-content-plan/content-manifest.yaml`）内の `status: planned` は **0件**（`grep -c "status: planned"` = 0）。全ハブの計画コンテンツが `status: published`（または `existing`／`merged`）となり、逐次公開の残タスクはありません。
+
+- **最終公開:** `news-scam-alert-template`（P1・/news/templates/scam-alert）を公開し、news ハブ `type: news-template` グループ（全6件）が完了。これによりグループB（news-template）が完結し、残 planned は 0 件。
+- **状態:** これ以上の新規コンテンツは生成しません（追加生成の指示がない限り）。
+- **次のステップ:** プロジェクトは**全体（サイト全体）最終監査の準備が整いました**。本実行では最終監査は行いません（別実行で実施）。
+
+## チェックポイント（2026-08-02）: news-template マイクロバッチ #2・最終（1件公開・news-template グループ完了 / commit: feat: publish final remaining content micro-batch）
+
+### 残項目インベントリ（本バッチ開始時 planned = 1件）
+
+前回 news-template #1 で P0 5件を公開したため、開始時点の残 planned は **1件**（`news-scam-alert-template`・P1・news ハブ・`type: news-template`）。`grep -c "status: planned"` = 1 で確認。
+
+### 本バッチで選定した一貫グループ（≤5・同一ハブ news・同一検索意図 news-template・記録順の最後の1件）
+news ハブ `news-template` グループの最後に残っていた唯一の項目。前回 #1 で「5件以内」の制約により残していた P1 を処理し、グループB（news-template 全6件）を完結：
+- `news-scam-alert-template`（P1, /news/templates/scam-alert）
+
+### 実装結果（news-template マイクロバッチ #2・最終）
+- **既存サブシステムへ追加（#1 で構築済みのため新規配線なし）:** #1 で新設した news-template サブシステム（`types/newsTemplate.ts`／`lib/newsTemplates.ts`／`app/news/templates/{page,[slug]/page}.tsx`／sitemap 連携）に、データ1件を追加するのみ。sitemap・一覧・詳細はレジストリ（`getPublishedNewsTemplates()`）駆動のため自動反映され、追加の配線変更は不要。
+- **公開した1件（`hub: news`・`type: news-template`・`verifiedAt: 2026-08-02`・分類 create）:**
+  - `news-scam-alert-template`（P1, /news/templates/scam-alert）— ワーホリを狙う詐欺・悪質求人（求職詐欺／キャッシュバック／ビザ・スポンサー詐欺／なりすまし／賃貸詐欺）の手口・危険サイン・被害防止・通報先を、公式リンク付きで注意喚起する編集テンプレート。
+- **分類:** create（新規スラッグ）。統合/リダイレクト/レビュー/除外/分割は該当なし。
+- **YMYL/可変情報の非断定:** 特定の企業・個人を名指しで「詐欺」と断定せず、一般的な手口・危険サインとして提示。キャッシュバックやビザ・スポンサー費用の請求が違法である旨は Fair Work の情報に基づき、金額・法的判断は断定しない。ビザ違反があっても賃金未払いは Fair Work に相談でき相談でビザは取り消されない保護にも言及。
+- **公式ソース（2026-08-02 ライブ確認）:** Scamwatch（ACCC・National Anti-Scam Centre）｜Report a scam（https://www.scamwatch.gov.au/ ・ライブ確認）／Fair Work Ombudsman｜Visa holders and migrants（https://www.fairwork.gov.au/find-help-for/visa-holders-migrants ・キャッシュバック/ビザ・スポンサー費用の違法性・保護をライブ確認）／Australian Cyber Security Centre｜Report (ReportCyber)（https://www.cyber.gov.au/report-and-recover/report ・ライブ確認）。緊急時は Triple Zero（000）を案内。
+- **孤立防止/内部リンク:** `/news` →「ニューステンプレート集」→ 一覧 → 詳細で到達可能。`relatedSlugs` は公開/既存 slug のみ参照（`online-scams-cybersecurity`／`bank-scam-security`／`rental-scam-examples`／`working-rights`／`underpayment-unpaid-wages`）で dangling 0。
+- **mockData への記事追加なし。**
+- **content-manifest.yaml:** `news-scam-alert-template` を `status: planned` → `status: published`。`manifest.generated.ts` 再生成。`status: planned` 残 0 件を確認。
+- **検証（各1回・許可された項目のみ）:**
+  - `validate:articles`: **errors なし**（`OK: no article data errors`）。
+  - `validate:content`（dangling/重複）: **0 error / 66 warning**（dangling 0・`news::news-template` cannibalization は想定内・ベースライン据え置き）。
+  - `tsc --noEmit`: **exit 0**。リペア・リトライなし。
+- **変更ファイル:** `lib/newsTemplates.ts`（1件追加・計6件）／`whv-guide-content-plan/content-manifest.yaml`（1件 published）／`lib/content/manifest.generated.ts`（再生成）／各進捗・検証レポート。型/ページ/sitemap は #1 で整備済みのため変更なし。
+- **範囲順守:** news-template の最後の1件のみ処理。全体最終監査・build/lint/test スイートは未実施（通常マイクロバッチ）。commit は `feat: publish final remaining content micro-batch` 1回のみ。
+- **残りグループ（本バッチ後）:** **なし（planned 0 件）。コンテンツ生成は完了。プロジェクトは全体最終監査の準備完了。**
+- **未解決の問題:** なし。
+
 ## チェックポイント（2026-08-02）: news-template マイクロバッチ #1（P0 5件公開 / commit: feat: publish final remaining content micro-batch）
 
 ### 残項目インベントリ（本バッチ開始時 planned = 6件）

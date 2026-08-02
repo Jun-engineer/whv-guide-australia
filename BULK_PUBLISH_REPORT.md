@@ -3,6 +3,21 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## ✅ コンテンツ生成 完了（2026-08-02）: 全 planned アイテム公開済み
+
+**本サイクルのコンテンツ生成は完了。** マニフェストの `status: planned` は 0 件。以下は最終バッチ（news-template #2）の記録。プロジェクトは全体最終監査の準備完了（本実行では最終監査は未実施）。
+
+## チェックポイント（2026-08-02）: news-template マイクロバッチ #2・最終（1件公開・news-template グループ完了 / commit: feat: publish final remaining content micro-batch）
+
+**news ハブ `type: news-template` の最後の1件**（`news-scam-alert-template`・P1）を公開し、news-template グループ（全6件）と全 planned コンテンツが完了。開始時の残 planned は1件で、記録順の最後の1件のみ処理（≤5）。
+
+- **既存サブシステムへ追加:** #1 で構築した news-template サブシステム（`types/newsTemplate.ts`／`lib/newsTemplates.ts`／`app/news/templates/{page,[slug]/page}.tsx`／sitemap 連携）にデータ1件を追加。sitemap・一覧・詳細はレジストリ駆動で自動反映のため配線変更なし。
+- **公開1件（`hub: news`・`type: news-template`・`verifiedAt: 2026-08-02`・分類 create）:** `news-scam-alert-template`（P1・/news/templates/scam-alert）。求職詐欺／キャッシュバック／ビザ・スポンサー詐欺／なりすまし／賃貸詐欺の手口・危険サイン・被害防止・通報先を公式リンク付きで注意喚起。統合/リダイレクト/レビュー/除外/分割は該当なし。
+- **YMYL 非断定:** 特定の企業・個人を断定せず一般的手口として提示。キャッシュバック/ビザ・スポンサー費用請求の違法性は Fair Work に基づき、法的判断・金額は断定しない。通報先は Scamwatch／Fair Work Ombudsman／ReportCyber、緊急は 000。主要URLは 2026-08-02 にライブ確認。
+- **孤立防止:** `relatedSlugs` は公開/既存 slug のみ（`online-scams-cybersecurity`／`bank-scam-security`／`rental-scam-examples`／`working-rights`／`underpayment-unpaid-wages`）で dangling 0。
+- **検証（許可項目のみ・各1回）:** `validate:articles`（errors なし）／`validate:content`（0 error / 66 warning・dangling 0）／`tsc --noEmit`（exit 0）。リペア・リトライなし。build/lint/test は本バッチ対象外（通常マイクロバッチ）。
+- **残り:** なし（planned 0 件）。**コンテンツ生成完了・全体最終監査の準備完了。**
+
 ## チェックポイント（2026-08-02）: news-template マイクロバッチ #1（P0 5件公開 / commit: feat: publish final remaining content micro-batch）
 
 **news ハブ `type: news-template` の P0 記録順5件**を公開。開始時の残 planned は6件（すべて news-template）で、優先度 P0 の先頭5件のみ処理（≤5）。P1 の `news-scam-alert-template` は次バッチへ残す。
