@@ -3,6 +3,15 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: gig-work マイクロバッチ #2（5件公開 / commit: feat: publish final remaining content micro-batch）
+
+**gig-work ハブの記録順先頭5件**を公開（#1 に続く同一ハブの次グループ）。開始時の残 planned は13件（gig-work 7＋news-template 6）で、同一ハブの近接検索意図の先頭5件のみ処理（≤5）。
+
+- **公開5件（すべて `category: gig-work`・`hub: gig-work`・`verifiedAt: 2026-08-02`・分類 create）:** `delivery-peak-hours`（P1, strategy, a352）／`delivery-safety`（P0, safety, a353）／`delivery-account-deactivation`（P2, problem-solving, a354）／`airtasker-guide`（P2, platform-guide, a355）／`freelance-it-australia`（P1, career, a356）。統合/リダイレクト/レビュー/除外/分割は該当なし。
+- **YMYL 非断定:** 収入・料率・手数料・GST閾値・保険補償範囲・税務上の居住性・二重課税は断定せず ATO／Fair Work／business.gov.au／各社・登録税理士・保険会社へ誘導。緊急時は Triple Zero（000）を案内。交通ルール・アカウント基準は州・各社で変わりうる旨を明記。
+- **アーキテクチャ:** 型/配線/ページ/sitemap/Footer は #1 で整備済のため変更なし。`lib/content/articles/gig-work.ts` に5記事追記（計10件）し、`/gig-work` が自動列挙。
+- **検証（許可項目のみ・各1回）:** `validate:articles`（errors なし・gig-work 10・duplicate slugs 0）／`validate:content`（0 error / 66 warning・dangling 0）／`tsc --noEmit`（exit 0）。リペア・リトライなし。build/lint/test は本バッチ対象外（通常マイクロバッチ）。
+
 ## チェックポイント（2026-08-02）: gig-work マイクロバッチ #1（5件公開・新カテゴリ初回 / commit: feat: publish final remaining content micro-batch）
 
 **gig-work ハブのフードデリバリー系5件**を新カテゴリ `gig-work` として初回公開。開始時の残 planned は18件（gig-work 12＋news-template 6）で、同一ハブ・近接検索意図の先頭5件のみを1グループとして処理（≤5）。

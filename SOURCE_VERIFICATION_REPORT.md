@@ -8,6 +8,10 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## gig-work マイクロバッチ #2（2026-08-02 / 5件公開）
+
+gig-work ハブの5件（`delivery-peak-hours`／`delivery-safety`／`delivery-account-deactivation`／`airtasker-guide`／`freelance-it-australia`）を公開。各記事は画面上に `verifiedAt: 2026-08-02` を表示し `OfficialSourceBox` で出典と免責を明示。可変・YMYL情報（収入・手数料・GST登録閾値・保険補償範囲/除外・税務上の居住性・二重課税・交通ルール・アカウント停止基準）は数値・基準を断定せず、確認日と公式一次情報・各社規約への誘導で対応。照合した公式一次情報（2026-08-02 ライブ確認）: **ATO｜Gig economy and tax**／**ATO｜Applying for an ABN**／**Fair Work Ombudsman｜Independent contractors**（regulated workers 含む）／**business.gov.au｜Sharing economy・Payments and invoicing**（https://business.gov.au/finance/payments-and-invoicing ― 請求・支払の公式案内をライブ確認）／**Australian Government｜Triple Zero (000)**（https://www.infrastructure.gov.au/triple-zero ― 旧 triplezero.gov.au のリダイレクト先・ライブ確認）。フードデリバリーは配車と異なりGST登録閉値未満なら原則登録不要、個人事業主は自分のSuper拠出義務なし、を引き続き正確に反映。契約者/従業員の区分は Fair Work が「個別判断はできず一般情報のみ」とする立場を尊重し、アカウント停止の具体的基準は非公開部分があるため各社規約で確認する旨を明記。
+
 ## gig-work マイクロバッチ #1（2026-08-02 / 5件公開・新カテゴリ初回）
 
 gig-work ハブのフードデリバリー系5件（`gig-work-comparison`／`delivery-abn-tax`／`delivery-insurance`／`delivery-vehicle-comparison`／`delivery-expenses-logbook`）を公開。各記事は画面上に `verifiedAt: 2026-08-02` を表示し `OfficialSourceBox` で出典と免責を明示。可変・YMYL情報（所得税率・GST登録閾値・控除可否・保険補償範囲/除外・車両登録費用・報酬/インセンティブ）は数値を断定せず、確認日と公式一次情報への誘導で対応。照合した公式一次情報（2026-08-02 ライブ確認）: **ATO｜Gig economy and tax**（https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/in-detail/income/gig-economy-and-tax）／**ATO｜Applying for an ABN**／**ATO｜Records you need to keep**／**Fair Work Ombudsman｜Independent contractors**（https://www.fairwork.gov.au/find-help-for/independent-contractors ― regulated workers・2024年8月26日以降のemployee-like制度を確認）／**business.gov.au｜Sharing economy・Contractor responsibilities**／**ABN Lookup**（https://abr.business.gov.au/）／**Triple Zero 000**。重要な事実区別として、フードデリバリーは配車（ride-sourcing）と異なり売上が登録閾値未満なら原則GST登録不要である点、個人事業主（sole trader）は自分自身の Super 拠出義務がない点を正確に反映。契約者/従業員の区分は Fair Work が「個別判断はできず一般情報のみ」とする立場を尊重し断定を回避。
