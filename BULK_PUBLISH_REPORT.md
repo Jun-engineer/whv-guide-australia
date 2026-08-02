@@ -3,6 +3,16 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: downloads カテゴリ最終監査（0件公開・カテゴリ完了確認 / commit: feat: complete downloads content batch）
+
+**downloads（ダウンロード資料）カテゴリの最終ハブ監査**を実施。開始時の未完了 downloads は**0件**（≤5）のため、残り全件（なし）を処理し**最終監査＋フル検証スイートを1回**実行。
+
+- **downloads 項目（4件）はすべて `status: published`（既公開）:** `download-resume-template`（P0）／`download-cover-letter-template`（P1）／`download-housing-inspection-checklist`（P1）／`download-emergency-card`（P1）。いずれも tools マイクロバッチ #3・#4 で公開済み。新規/更新/統合/レビュー/除外は該当なし。マニフェスト上は `hub: tools`、公開ページは `/downloads/*`（専用 `hub: downloads` は無し）。
+- **最終監査（9項目合格）:** ①4件 published（正確）②各ページはブラウザ内 Blob で `.txt` 生成（実リンク動作・emergency-card は公式ソースも掲示）③配布物に個人情報なし（個人情報は localStorage のみ）④非公式テンプレは「ひな型（記入例）」と明記⑤公式フォームの複製なし⑥ダウンロード名は ASCII・用途/使い方/更新日を掲載⑦プレースホルダー/壊れたDLなし⑧レジストリ経由で `/tools`・`RelatedToolsBox`・sitemap に掲載され孤立なし⑨`/tools` に `categoryLabel: テンプレート` で列挙。
+- **フル検証スイート（各1回）:** `tools.test`（36/36 pass）／`content.test`（5/5 pass）／`validate:content`（0 error / 66 warning・dangling 0）／`validate:articles`（errors なし）／`tsc --noEmit`（exit 0）／`lint`（0 error）／`build`（成功・`/downloads/*` 4ルート `○ (Static)`）。
+- **修正1回:** 共有フック `useLocalStorageState.ts`（emergency-card／housing-inspection-checklist が localStorage 利用）の `react-hooks/set-state-in-effect` エラーを、意図的な SSR セーフ・ハイドレーションとして当該行のみ disable＋不要ディレクティブ除去で解消（0 error）。
+- **未解決の問題:** なし。**次:** downloads カテゴリは4件公開済みで完了・監査済み。別カテゴリには着手しない。
+
 ## チェックポイント（2026-08-02）: tools マイクロバッチ #4・最終（3件公開＋ハブ監査完了 / commit: feat: publish tools micro-batch 4 (final)）
 
 tools（ツール・テンプレート）ハブの**残り3件**を公開し、**tools ハブを完了**しました。開始時の未完了 tools は3件（≤4）だったため、**全件処理＋最終ハブ監査（フルビルド）**を実施。

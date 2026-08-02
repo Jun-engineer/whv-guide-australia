@@ -8,6 +8,10 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## downloads カテゴリ最終監査（2026-08-02 / 0件公開・カテゴリ完了）
+
+downloads（ダウンロード資料）カテゴリの最終監査を実施（新規公開0件）。`type: download` 4件はすべて公開済みで、YMYL 重要度の高い `download-emergency-card` のみ `verifiedAt: 2026-08-02` と `officialSources`（Australian Government ― Triple Zero (000)／healthdirect Australia、accessedAt 2026-08-02）を保持。掲載の代表番号は安定した公的連絡先だが「番号・制度は変わりうる・緊急時は最新案内に従う」を免責に明記し、国籍で異なる大使館/領事館はハードコードせず利用者記入とする設計を再確認。`download-resume-template`／`download-cover-letter-template`（ひな型・記入例）と `download-housing-inspection-checklist`（一般的な内見項目の目安）は外部ライブデータに依存しないため officialSources なし（契約/各州情報で確認する旨を明記）。ダウンロード配布物（Blob 生成の `.txt`）に個人情報は含まれず、個人情報はブラウザの localStorage のみに保持しサーバー送信しないことを確認。
+
 ## tools マイクロバッチ #4・最終（2026-08-02 / 3件公開）
 
 tools ハブの残り3件（`download-cover-letter-template`・`download-housing-inspection-checklist`・`download-emergency-card`）を公開し tools ハブを完了。緊急番号を扱う `download-emergency-card` は YMYL 重要度が高いため `verifiedAt: 2026-08-02` と `officialSources`（Australian Government ― Triple Zero (000) / healthdirect Australia、accessedAt 2026-08-02）を付与。掲載の代表番号（000・112・106・132 500・13 11 26・1800 022 222・13 11 14・131 444）は安定した公的連絡先だが、「番号・制度は変わりうる・緊急時は最新の案内に従う」を免責に明記。大使館/領事館は国籍により異なるためハードコードせず利用者が記入する設計（誤値を防止）。`download-cover-letter-template`（カバーレターのひな型）・`download-housing-inspection-checklist`（一般的な内見項目）は外部ライブデータに依存しないため officialSources なし（ひな型/目安であり契約/各州情報で確認する旨を明記）。

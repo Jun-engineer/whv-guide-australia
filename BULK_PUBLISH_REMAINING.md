@@ -4,6 +4,28 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: downloads カテゴリ最終監査（0件公開・カテゴリ完了確認 / commit: feat: complete downloads content batch）
+
+**downloads（ダウンロード資料）カテゴリの最終ハブ監査**を実施しました。開始時点で downloads の未完了は**0件**（≤5）だったため、残り全件（＝なし）を処理し、最終監査＋フル検証スイートを1回実行しました。以下が確定状態です。
+
+- **未完了 downloads 件数（開始時）:** **0件**。マニフェスト上の `type: download` 項目は4件（`download-resume-template` P0／`download-cover-letter-template` P1／`download-housing-inspection-checklist` P1／`download-emergency-card` P1）で、**すべて `status: published`**（tools マイクロバッチ #3・#4 で公開済み）。planned/merged/review/excluded は0件。新規作成・更新・統合・レビュー・除外はいずれも該当なし（既公開のため）。
+- **注記（カテゴリ構造）:** downloads 項目はマニフェスト上 `hub: tools` に属し、公開ページは `/downloads/*`（4ページ）。専用の `hub: downloads`／`category: downloads` は存在しない。tools ハブ完了（14件）に downloads 4件が含まれる。
+- **最終 downloads ハブ監査（9項目すべて合格）:**
+  1. マニフェスト最終状態＝4件すべて published（正確）。
+  2. 各公開ダウンロードページは実ファイルに接続＝ブラウザ内 Blob で `.txt` を生成（サーバー保管ファイル不要・リンク動作OK）。`download-emergency-card` は公式ソース（Triple Zero 000／healthdirect）も掲示。
+  3. ダウンロードファイルに個人情報なし＝テンプレは汎用文面。個人情報は localStorage のみ（サーバー送信なし・配布物に含まれない）。
+  4. 非公式テンプレは明確にラベル＝レジュメ/カバーレターは「ひな型（記入例）・そのまま提出用ではない」と明記。
+  5. 公式フォームの不適切な複製なし＝政府フォームは複製しておらず、テンプレ/チェックリストのみ。
+  6. ファイル名・説明・更新日が正確＝ダウンロード名は ASCII（`resume-*.txt`／`cover-letter-*.txt`／`housing-inspection-checklist.txt`／`emergency-card.txt`）、各ページに用途・使い方・免責を掲載、`verifiedAt`（emergency-card）付与。
+  7. プレースホルダー/壊れたダウンロードの公開なし＝4件すべて完全実装。
+  8. 孤立した公開リソースなし＝レジストリ（`lib/tools/registry.ts`）経由で `/tools` ハブ・`RelatedToolsBox`・sitemap に自動掲載。
+  9. カテゴリ一覧が正確＝4件が `categoryLabel: テンプレート` で `/tools` に列挙。
+- **フル検証スイート（各1回・カテゴリ完了監査）:** `node --test scripts/tools.test.mjs`（36/36 pass）／`node --test scripts/content.test.mjs`（5/5 pass）／`validate:content`（0 error / 66 warning・dangling 0・重複 slug/path なし）／`validate:articles`（no article data errors）／`tsc --noEmit`（exit 0）／`lint`（0 error）／`build`（成功・`/downloads/*` 4ルートすべて `○ (Static)` としてプリレンダー・sitemap/RSS/構造化データ生成）。
+- **修正1回（リトライ枠内）:** `lint` が共有フック `components/tools/useLocalStorageState.ts`（emergency-card／housing-inspection-checklist のダウンロードが localStorage で使用）で `react-hooks/set-state-in-effect` エラー1件を検出。マウント後ハイドレーションの `setValue` を関数更新に変更し、意図的な SSR セーフ・ハイドレーションとして当該行のみ `eslint-disable-next-line` を付与、不要になった `exhaustive-deps` ディレクティブを除去して解消（0 error）。残る `EightyEightDayCalculator.tsx` の未使用変数 warning は既存・downloads と無関係のため据え置き。
+- **未解決の問題:** なし。
+- **次カテゴリ/次項目:** **downloads カテゴリは4件すべて公開済みで完了・監査済み。** 本指示の範囲（downloads）を完了したため、ここで停止（別カテゴリには着手しない）。
+- **変更ファイル（本チェックポイント）:** `components/tools/useLocalStorageState.ts`（lint 修正）、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。マニフェスト・記事・ダウンロード実装への変更なし（既に全件公開済みのため）。
+
 ## チェックポイント（2026-08-02）: tools マイクロバッチ #4・最終（3件公開＋ハブ監査完了 / commit: feat: publish tools micro-batch 4 (final)）
 
 tools（ツール・テンプレート）ハブの**残り3件**を公開し、**tools ハブを完了**しました。開始時点で tools の未完了は3件（≤4）だったため、**全件処理＋最終ハブ監査（フルビルド）**を実施しました。以下が確定状態です。

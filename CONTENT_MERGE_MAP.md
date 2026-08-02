@@ -10,6 +10,14 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### downloads カテゴリ最終監査（2026-08-02 / 0件公開・カテゴリ完了）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** downloads（ダウンロード資料）カテゴリの `type: download` 項目4件（`download-resume-template`／`download-cover-letter-template`／`download-housing-inspection-checklist`／`download-emergency-card`）は tools マイクロバッチ #3・#4 で公開済み。本チェックポイントは新規公開0件の**最終監査のみ**で、URLの統合・置換・分割・リダイレクトは一切発生しない。
+
+- downloads は独立記事（`lib/content/articles`）ではなくレジストリ駆動の `/downloads/*` ページ。`/tools` ハブ・記事詳細の `RelatedToolsBox`・sitemap から到達可能で孤立なし。
+- `validate:content` の cannibalization 警告（`tools::download` の同一ハブ内グルーピング）は設計上の想定内で許容。
+- 監査で lint 修正1件（`components/tools/useLocalStorageState.ts` の `set-state-in-effect`）を実施。コンテンツ/URL への影響なし。
+
 ### tools マイクロバッチ #4・最終（2026-08-02 / 3件公開）
 
 `download-cover-letter-template`・`download-housing-inspection-checklist`・`download-emergency-card` を新規公開し tools ハブを完了（全14件）。いずれも新規 URL（`/downloads/*`）で既存公開ページとの URL 衝突はなく、リダイレクト不要。レジストリ経由で `/tools` ハブ・`RelatedToolsBox`（関連記事）・サイトマップに自動連携。`validate:content` の cannibalization 警告（`tools::download` の同一ハブ内グルーピング）は設計上の想定内で許容。
