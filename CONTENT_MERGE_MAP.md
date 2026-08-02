@@ -10,6 +10,17 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### community マイクロバッチ #2（2026-08-02 / 残り1件公開・ハブ完了）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** community（友達・コミュニティ）ハブの
+最後の1件（`volunteering-guide`）は**新規スラッグ**（`category: "community"` / `hub: "community"`）で、
+既存公開記事との統合・URL潰しは発生しない。分類は create。
+
+- **就労（公開→公開）のカニバリ回避:** `volunteering-guide` は有給の仕事系記事（`job-search-websites`/`facebook-job-groups` 等）と役割を分け、本記事は『無給のボランティアの探し方と就労との違い・安全確認』に限定。有給の求職手順は仕事系記事へ、ビザ上のwork/Specified work該当は断定せず公式（Home Affairs）へ誘導。
+- 孤立記事なし: `/community-guide` が公開 community 記事6件を自動列挙・Footer からも到達可能。`relatedSlugs` は公開/既存 slug のみ参照（dangling 0）。
+- **最終ハブ監査（全て合格）:** `validate:articles`（community 6・重複0）／`tsc`（exit 0）／`validate:content`（0 error / 66 warning・dangling 0）／`test:content`（5/5）／`lint`（クリーン）／`build`（成功）。
+- **community ハブ完了:** 6/6 published・残り0件。他カテゴリは未着手。
+
 ### community マイクロバッチ #1（2026-08-02 / 5件公開・新カテゴリ初回）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** community（友達・コミュニティ）ハブの

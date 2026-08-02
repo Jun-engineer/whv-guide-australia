@@ -4290,7 +4290,7 @@ export const manifestPlannedItems: ManifestItem[] = [
     "slug": "volunteering-guide",
     "title": "ボランティアの探し方｜英語・友達・地域参加",
     "hub": "community",
-    "status": "planned",
+    "status": "published",
     "type": "article",
     "priority": "P3",
     "path": "/guides/volunteering-guide",

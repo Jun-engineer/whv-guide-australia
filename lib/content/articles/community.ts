@@ -313,4 +313,71 @@ export const communityArticles: Article[] = [
     updatedAt: "2026-08-02",
     published: true,
   },
+
+  {
+    id: "a346",
+    title: "ボランティアの探し方｜英語・友達・地域参加",
+    slug: "volunteering-guide",
+    category: "community",
+    hub: "community",
+    priority: "P3",
+    searchIntent: "オーストラリアでのボランティアの探し方と就労（有給の仕事）との違い・安全確認",
+    description:
+      "オーストラリアでボランティアを探す方法と、有給の『仕事（work）』との違い、安全に参加するための確認ポイントを解説します。GoVolunteerなどの公式プラットフォームでの探し方、ボランティアが無給であることの意味、実質的に労働になってしまうケースの見分け方、ワーホリビザの就労条件やSpecified workとの関係で確認すべきことをまとめます。",
+    content: [
+      "結論から言うと、ボランティアは『英語の実践・友達づくり・地域参加』を同時にかなえやすい活動で、経験や人とのつながりを得たい人に向いています。ただしオーストラリアでは、ボランティア（無給で慈善・非営利の活動を手伝う）と、有給の『仕事（work）』は法律上はっきり区別されます。Fair Work Ombudsmanによれば、ボランティアは基本的に無給であり、慈善団体・非営利団体の活動を支える形が典型です。参加する前に『これは本当にボランティアか、それとも本来お金が支払われるべき労働か』を意識しておくことが大切です。",
+      "探し方の基本は、まず信頼できるプラットフォームや団体を使うことです。全国的なボランティア募集サイトのGoVolunteer（Volunteering Australiaが運営）や、各州のVolunteering（州のボランティアセンター）、地域のNPO・チャリティショップ（op shop）・図書館・イベント運営・動物保護・環境保全などが代表的な入口です。関心のある分野（英語を使う受付、動物、環境、フードバンク、フェスティバルなど）で探すと続けやすくなります。日本人コミュニティやSNSのグループにも募集が流れますが、そうした投稿はユーザーによる情報であり、団体の実在や条件は自分で公式サイト等で確認しましょう。",
+      "『就労との違い』はワーホリの人にとって特に重要です。ボランティアはあくまで無給で、対価（賃金）を目的としない活動です。Fair Workは、ボランティアの取り決めであっても、実態が雇用に近づけば（決まった時間の勤務を求められる・指揮命令を受けて通常業務を担う・本来支払われるべき仕事をしている等）、それは雇用関係とみなされ賃金が支払われるべき、としています。『無給でこの仕事をして』『トライアルとして無給で』などと言われた場合、それが正当なボランティアか、実質的な“ただ働き”かを見極める必要があります。判断に迷う場合はFair Workの情報を確認し、必要なら相談してください。",
+      "ワーホリビザ（Working Holiday／Work and Holiday）の就労条件やSpecified work（セカンドビザの指定業務）との関係も、思い込みで判断しないことが大切です。無給のボランティアがビザ上の『work』としてどう扱われるか、またSpecified workの日数としてカウントできるかは、ビザの種類や具体的な取り決めによって条件が異なります。ここで断定はできないため、必ず移民局（Department of Home Affairs）の最新の公式情報で確認し、セカンド/サードビザを狙う場合は指定業務の要件（有給・地域・業種など）と照らし合わせてください。関連する指定業務の記事や公式ページも参考にしましょう。",
+      "安全確認も欠かせません。① 団体が実在し評判があるか（公式サイト・登録番号・口コミ）を確認する、② 活動内容・時間・場所・持ち物・保険の有無を事前に書面やメールで確認する、③ 特に『宿や食事の代わりに働く（work for accommodation：WWOOF・Workaway・HelpXなど）』の取り決めは、実質的に労働だったり、孤立した場所・不十分な待遇のリスクがあるため慎重に見極める、④ 子どもや高齢者・弱い立場の人と関わる活動ではWorking with Children Check等が必要な場合がある、⑤ 個人情報や金銭を求められる募集、参加費として先払いを迫る募集は避ける。ボランティアでも労働安全衛生（WHS）の保護が及ぶ場合があります（Safe Work Australia）。少しでも不安を感じたら参加を見送り、緊急時は000に通報してください。",
+    ],
+    keyFacts: [
+      { label: "得られるもの", value: "英語の実践／友達づくり／地域参加・経験" },
+      { label: "ボランティアの原則", value: "無給・慈善/非営利の活動を手伝う（Fair Work）" },
+      { label: "主な探し方", value: "GoVolunteer・州のボランティアセンター・地域NPO/op shop" },
+      { label: "就労との違い", value: "実態が雇用に近ければ賃金が必要になり得る" },
+      { label: "ビザ上の扱い", value: "work該当・Specified work該当は断定せず移民局で確認" },
+      { label: "安全確認", value: "団体の実在・条件・保険・個人情報/前払い要求に注意" },
+    ],
+    steps: [
+      { title: "関心のある分野を決める", description: "英語を使う受付、動物保護、環境、フードバンク、イベント運営など、続けやすいテーマを選びます。" },
+      { title: "信頼できる入口で探す", description: "GoVolunteer（Volunteering Australia運営）や州のボランティアセンター、地域のNPO・チャリティショップから探します。" },
+      { title: "無給か・労働ではないかを確認する", description: "『無給でこの業務を』と実質的な労働を求められていないか、Fair Workの基準に照らして見極めます。" },
+      { title: "ビザへの影響を公式で確認する", description: "ボランティアがビザ上のworkやSpecified workにどう影響するかは断定せず、移民局の最新情報で確認します。" },
+      { title: "安全と条件をチェックしてから参加する", description: "団体の実在・活動条件・保険・Working with Children Checkの要否を確認し、前払い要求や個人情報要求は避けます。" },
+    ],
+    tips: [
+      "チャリティショップ（op shop）や図書館、地域イベントは、英語の実践と友達づくりを両立しやすい定番のボランティア先です。",
+      "『宿・食事の代わりに働く』取り決めは、無給ボランティアではなく実質的な労働・雇用に該当する場合があります。条件と待遇を書面で確認し、無理のない範囲にとどめましょう。",
+      "ボランティア経験は帰国後の就活でもアピール材料になります。活動内容・期間・担当を記録しておくと役立ちます。",
+    ],
+    warnings: [
+      "この記事はボランティアの一般的な探し方の案内です。ボランティアがビザ上の『work』やSpecified work（セカンド/サードビザの指定業務）にどう扱われるかは、ビザの種類や取り決めで条件が異なります。断定せず、必ず移民局（Department of Home Affairs）の最新の公式情報で確認してください。",
+      "『無給でこの業務をして』『無給トライアルで』などと言われた場合、正当なボランティアではなく、本来賃金が支払われるべき労働（ただ働き）の可能性があります。実態が雇用に近い場合は賃金が発生し得ます。迷ったらFair Work Ombudsmanの情報を確認・相談してください。",
+      "団体の実在・活動条件・保険を事前に確認し、参加費の先払いや不必要な個人情報・身分証を求める募集は避けてください。孤立した場所での住み込み型の取り決めは特に慎重に。少しでも不安を感じたら参加を見送り、緊急時は000に通報してください。",
+    ],
+    faqs: [
+      {
+        question: "ボランティアはワーホリのセカンドビザ（Specified work）にカウントできますか？",
+        answer:
+          "一般にボランティアは無給のため、有給が原則の指定業務（Specified work）としてカウントできるかは取り決めやビザの条件によって異なり、ここで断定はできません。セカンド/サードビザを目指す場合は、必ず移民局（Department of Home Affairs）の最新の公式情報と指定業務の要件を確認してください。",
+      },
+      {
+        question: "ボランティアと『無給の仕事』はどう違いますか？",
+        answer:
+          "ボランティアは無給で、慈善・非営利の活動を支えるものです。一方、決まった時間の勤務を求められ、指揮命令を受けて通常の業務を担うなど実態が雇用に近い場合は、Fair Workの考え方では雇用関係とみなされ賃金が支払われるべきとされます。『無給でこの業務を』と言われたら、正当なボランティアか実質的な労働かを見極めましょう。",
+      },
+    ],
+    verifiedAt: "2026-08-02",
+    officialSources: [
+      { label: "Fair Work Ombudsman｜Unpaid work（ボランティアと有給労働の違い）", url: "https://www.fairwork.gov.au/starting-employment/unpaid-work", accessedAt: "2026-08-02" },
+      { label: "Department of Home Affairs｜Working Holiday visa (417)（就労条件・指定業務）", url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417", accessedAt: "2026-08-02" },
+      { label: "Volunteering Australia / GoVolunteer（ボランティア募集の検索）", url: "https://govolunteer.com.au/", accessedAt: "2026-08-02" },
+      { label: "Safe Work Australia｜Volunteers（ボランティアと労働安全衛生）", url: "https://www.safeworkaustralia.gov.au/safety-topic/managing-health-and-safety/volunteers", accessedAt: "2026-08-02" },
+      { label: "Triple Zero (000)｜緊急通報", url: "https://www.triplezero.gov.au/", accessedAt: "2026-08-02" },
+    ],
+    relatedSlugs: ["make-friends-australia", "japanese-community-groups", "culture-shock-australia", "workplace-english", "online-scams-cybersecurity", "safety-emergency"],
+    updatedAt: "2026-08-02",
+    published: true,
+  },
 ];

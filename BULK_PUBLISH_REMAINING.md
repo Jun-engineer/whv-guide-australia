@@ -4,6 +4,25 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: community マイクロバッチ #2（残り1件公開・ハブ完了 / commit: feat: complete community content batch）
+
+community（友達・コミュニティ）ハブの**最後の1件**を公開し、**community ハブを完了（6/6）**しました。開始時点で community の未完了は1件（≤5）だったため、残り全件を処理し、**最終ハブ監査（フルビルド／テスト／Lint）を実施**しました。以下が確定状態です。
+
+- **未完了 community 件数（開始時）:** 1件（`volunteering-guide`・planned・`hub: community`）。既存公開の community 記事は5件（バッチ#1）。1 ≤ 5 のため残り全件を処理。
+- **分類:** 1件 **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・既存記事の分割は該当なし（新規追加のみ）。
+- **公開した1件（`category: community`・`hub: community`・`verifiedAt: 2026-08-02`・完全公開・分類は create）:**
+  - `volunteering-guide`（P3, social, id a346）— 意図＝オーストラリアでのボランティアの探し方と有給の『仕事（work）』との違い・安全確認／対象＝英語実践・友達づくり・地域参加を目的にボランティアを探す人。GoVolunteer（Volunteering Australia運営）・州のボランティアセンター・地域NPO/op shopでの探し方、ボランティアが無給であること、実態が雇用に近づくと賃金が必要になり得ること（Fair Work）、ワーホリビザの就労条件・Specified workとの関係で確認すべき点、住み込み型（work for accommodation）や個人情報/前払い要求への注意を整理。
+- **就労との区別（ユーザー投稿と検証済みガイダンスの分離）:** SNS/コミュニティの募集はユーザー情報で無保証と明示し、団体の実在・条件は公式で確認するよう誘導。『無給でこの業務を』は実質的な労働（ただ働き）の可能性がある旨を警告し、Fair Work・移民局の公式へ接続。ビザ上のwork該当・Specified work該当は**断定せず**移民局（Home Affairs）で確認するよう明記。
+- **ソース検証（公式一次情報・2026-08-02 ライブ確認）:** Fair Work Ombudsman｜Unpaid work（https://www.fairwork.gov.au/starting-employment/unpaid-work）／Department of Home Affairs｜Working Holiday visa (417)（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417）／Volunteering Australia・GoVolunteer（https://govolunteer.com.au/）／Safe Work Australia｜Volunteers（https://www.safeworkaustralia.gov.au/safety-topic/managing-health-and-safety/volunteers）／Triple Zero 000。可変・YMYL要素（ビザ上の扱い・指定業務カウント可否・有給/無給の線引き）は断定せず各公式へ誘導。
+- **孤立記事なし / 内部リンク:** `relatedSlugs` は公開/既存 slug のみ参照（`make-friends-australia`/`japanese-community-groups`/`culture-shock-australia`/`workplace-english`/`online-scams-cybersecurity`/`safety-emergency`）で dangling 0。`/community-guide` が公開 community 記事6件を自動列挙・Footer から到達可能。
+- **基盤変更なし:** community カテゴリ基盤はバッチ#1で整備済み。本バッチは記事追加とマニフェスト status 更新のみ（`mockData.ts` への記事追加なし）。
+- **content-manifest.yaml:** `volunteering-guide` を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成。
+- **最終ハブ監査（全て合格）:** `validate:articles`（community 6件・重複0・article data errors なし）／`tsc --noEmit`（exit 0）／`validate:content`（0 error / 66 warning・dangling 0）／`test:content`（5/5 pass）／`lint`（クリーン）／`build`（成功・`/community-guide` を静的プリレンダー・`/guides/[slug]` SSG に `volunteering-guide` 収録・sitemap に `/community-guide` 含む）。既存の cannibalization 警告（`community::social` 等の同一ハブ内グルーピング）は許容。
+- **community ハブ状態:** 6件すべて published（planned/merged/review/excluded は 0）。`/community-guide` に全6件が表示され、薄い/下書きの公開ページなし。
+- **未解決の問題:** なし。
+- **次カテゴリ:** 他カテゴリは未着手（本タスクは community ハブ完了で終了）。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/community.ts`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+
 ## チェックポイント（2026-08-02）: community マイクロバッチ #1（5件公開・新カテゴリ初回 / commit: feat: publish community micro-batch）
 
 community（友達・コミュニティ）ハブの**最初の5件**を公開しました（新規カテゴリの初回・マイクロバッチ運用）。開始時点で community の未完了は6件（>5）だったため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り1件のため次回に継続）。本バッチは community ハブの初回で、新カテゴリの基盤整備を伴います。以下が確定状態です。

@@ -3,6 +3,22 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: community マイクロバッチ #2（残り1件公開・ハブ完了 / commit: feat: complete community content batch）
+
+community（友達・コミュニティ）ハブの**最後の1件**を公開し、**community ハブを完了（6/6）**しました。開始時の未完了 community は1件（≤5）だったため残り全件を処理し、**最終ハブ監査（フルビルド／テスト／Lint）を実施**しました。
+
+- **公開した1件（`category: community`・`hub: community`・`verifiedAt: 2026-08-02`・完全公開・分類は create）:**
+  `volunteering-guide`（P3, social, id a346）— オーストラリアでのボランティアの探し方と有給の『仕事』との違い・安全確認。GoVolunteer（Volunteering Australia運営）・州センター・地域NPO/op shopでの探し方、無給であること、実態が雇用に近づけば賃金が必要になり得ること、ワーホリビザの就労条件/Specified workとの関係で確認すべき点、住み込み型（work for accommodation）や個人情報/前払い要求への注意を整理。
+- **作成（created）slug:** 上記1件。**更新/分割（updated/split）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **就労との区別・UGC分離:** SNS/コミュニティ募集はユーザー情報で無保証と明示。『無給でこの業務を』は実質的な労働の可能性を警告しFair Work・移民局公式へ接続。ビザ上のwork/Specified work該当は断定せず移民局で確認するよう明記。可変・YMYL要素は断定せず確認日 2026-08-02 を明記。
+- **公式ソース（2026-08-02 ライブ確認）:** Fair Work Ombudsman｜Unpaid work／Department of Home Affairs｜Working Holiday visa (417)／Volunteering Australia・GoVolunteer／Safe Work Australia｜Volunteers／Triple Zero 000。
+- **孤立記事なし:** `/community-guide` が公開6件を自動列挙・Footer から到達可能。`relatedSlugs` は公開/既存 slug のみ（dangling 0）。
+- **基盤変更なし:** community 基盤はバッチ#1で整備済み。本バッチは記事追加とマニフェスト status 更新のみ。`mockData.ts` への記事追加なし。
+- **content-manifest.yaml:** `volunteering-guide` を `planned` → `published`。`manifest.generated.ts` 再生成。
+- **最終ハブ監査（全て合格）:** `validate:articles`（community 6・重複0・errors なし）／`tsc --noEmit`（exit 0）／`validate:content`（0 error / 66 warning・dangling 0）／`test:content`（5/5 pass）／`lint`（クリーン）／`build`（成功・`/community-guide` 静的プリレンダー・`/guides/[slug]` SSG に `volunteering-guide` 収録・sitemap 収録）。
+- **community ハブ状態:** 6件すべて published（planned/merged/review/excluded は 0）。薄い/下書きの公開ページなし。
+- **未解決の問題:** なし。**次カテゴリ:** 他カテゴリは未着手。
+
 ## チェックポイント（2026-08-02）: community マイクロバッチ #1（5件公開・新カテゴリ初回 / commit: feat: publish community micro-batch）
 
 community（友達・コミュニティ）ハブの**最初の5件**を公開しました（新規カテゴリの初回・マイクロバッチ運用）。開始時の未完了 community は6件（>5）だったため、記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り1件のため次回に継続）。

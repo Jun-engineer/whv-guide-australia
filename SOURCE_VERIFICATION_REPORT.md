@@ -8,6 +8,15 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## community マイクロバッチ #2（2026-08-02 / 残り1件公開・ハブ完了）
+
+community（友達・コミュニティ）ハブの最後の1件を公開。就労（有給の仕事）との違いというYMYL・ビザ関連の事実を、公式一次情報に照合。可変・YMYL要素は断定せず、確認日 2026-08-02 を明記。分類は create。
+
+- **`volunteering-guide`（P3, social, id a346）** — ボランティアの探し方と有給の『仕事（work）』との違い・安全確認。ボランティアは無給で慈善・非営利の活動を支えるもので、実態が雇用に近づけば賃金が支払われるべき（Fair Work）という区別を明示。ビザ上のwork該当・Specified workカウント可否は断定せず移民局へ。住み込み型（work for accommodation）のリスクと安全確認（団体の実在・保険・WWCC・前払い要求回避）を記載。
+  - 公式: Fair Work Ombudsman｜Unpaid work（https://www.fairwork.gov.au/starting-employment/unpaid-work）／Department of Home Affairs｜Working Holiday visa (417)（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417）／Volunteering Australia・GoVolunteer（https://govolunteer.com.au/）／Safe Work Australia｜Volunteers（https://www.safeworkaustralia.gov.au/safety-topic/managing-health-and-safety/volunteers）／Triple Zero 000（https://www.triplezero.gov.au/）。
+- **架空の活動を掲載しない:** 会員数/投稿/イベント等の捧造なし。SNS/コミュニティの募集はユーザー情報で無保証と明示し、団体の実在・条件は公式で確認するよう誘導。
+- **検証（最終ハブ監査）:** validate:articles（community 6・重複0）/ tsc（exit 0）/ validate:content（0 error・dangling 0）/ test:content（5/5）/ lint / build いずれも合格。community ハブ 6/6 完了。未解決の問題: なし。
+
 ## community マイクロバッチ #1（2026-08-02 / 5件公開・新カテゴリ初回）
 
 community（友達・コミュニティ）ハブの先頭5件を公開。交流・メンタル・安全に関する記事のため、主観的な助言（友達作り・慣れ方）と、安全・詐欺・相談窓口といった検証すべき事実を明確に分離。ユーザー投稿（コミュニティ/SNS）は無保証と明示し、重要事項は公式一次情報へ誘導。可変・YMYL要素は断定せず、確認日 2026-08-02 を明記。分類は5件とも create。
