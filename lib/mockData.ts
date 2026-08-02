@@ -31,6 +31,7 @@ export const articleCategories: Array<{ slug: ArticleCategory; name: string }> =
   { slug: "travel", name: "旅行" },
   { slug: "return-home", name: "帰国準備" },
   { slug: "community", name: "友達・コミュニティ" },
+  { slug: "gig-work", name: "ギグワーク・副業" },
 ];
 
 export { articles } from "@/lib/content/articles";

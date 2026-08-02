@@ -47,6 +47,7 @@ const CATEGORY_TO_HUB: Record<ArticleCategory, HubId> = {
   travel: "travel",
   "return-home": "return-home",
   community: "community",
+  "gig-work": "gig-work",
 };
 
 export function categoryToHub(category: ArticleCategory): HubId {

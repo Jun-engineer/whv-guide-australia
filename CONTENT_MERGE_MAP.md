@@ -10,6 +10,10 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### gig-work マイクロバッチ #1（2026-08-02 / 5件公開・新カテゴリ初回）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** gig-work ハブのフードデリバリー系5件（`gig-work-comparison`／`delivery-abn-tax`／`delivery-insurance`／`delivery-vehicle-comparison`／`delivery-expenses-logbook`）はいずれも**新規スラッグの create**で、既存公開URLの統合・置換・分割・リダイレクトは一切発生しない。`relatedSlugs` は公開/既存 slug（`uber-eats-guide`／`doordash-guide`／`abn-guide`／`tax-return-guide`／`super-guide`／`cars-guide`／`license-guide`）のみ参照し dangling 0。未公開 planned（`delivery-safety` 等）へのリンクは張らない。
+
 ### downloads カテゴリ最終監査（2026-08-02 / 0件公開・カテゴリ完了）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** downloads（ダウンロード資料）カテゴリの `type: download` 項目4件（`download-resume-template`／`download-cover-letter-template`／`download-housing-inspection-checklist`／`download-emergency-card`）は tools マイクロバッチ #3・#4 で公開済み。本チェックポイントは新規公開0件の**最終監査のみ**で、URLの統合・置換・分割・リダイレクトは一切発生しない。

@@ -29,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       { path: "/second-visa", priority: 0.8, changeFrequency: "weekly" },
       { path: "/uber-eats", priority: 0.8, changeFrequency: "weekly" },
       { path: "/doordash", priority: 0.8, changeFrequency: "weekly" },
+      { path: "/gig-work", priority: 0.8, changeFrequency: "weekly" },
       { path: "/cars", priority: 0.8, changeFrequency: "weekly" },
       { path: "/food", priority: 0.7, changeFrequency: "weekly" },
       { path: "/clothing", priority: 0.7, changeFrequency: "weekly" },

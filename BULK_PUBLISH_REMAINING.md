@@ -4,6 +4,76 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: gig-work マイクロバッチ #1（5件公開・新カテゴリ初回 / commit: feat: publish final remaining content micro-batch）
+
+### 最終残項目インベントリ（全 planned = 18件）
+
+リポジトリ・マニフェスト・進捗ファイル・git 履歴を突き合わせ、まだ published/merged/archived/review/excluded になっていない**残項目は 18件**（すべて `status: planned`）。他ステータス集計＝published 313・existing 47・merged 7・review 0・excluded 0・draft 0・archived 0。18件をハブ・カテゴリ・検索意図・実装タイプで分類すると次の2グループ。
+
+**グループA — gig-work ハブ（12件・`type: article`・記録順）**
+1. `gig-work-comparison`（P0, comparison）
+2. `delivery-abn-tax`（P0, tax）
+3. `delivery-insurance`（P0, insurance）
+4. `delivery-vehicle-comparison`（P1, comparison）
+5. `delivery-expenses-logbook`（P1, tax）
+6. `delivery-peak-hours`（P1, strategy）
+7. `delivery-safety`（P0, safety）
+8. `delivery-account-deactivation`（P2, problem-solving）
+9. `airtasker-guide`（P2, platform-guide）
+10. `freelance-it-australia`（P1, career）
+11. `japan-remote-work-tax`（P1, tax）
+12. `public-liability-insurance`（P2, insurance）
+
+**グループB — news ハブ（6件・`type: news-template`・`/news/templates/*`・記録順）**
+1. `news-visa-changes-template`（P0）
+2. `news-minimum-wage-template`（P0）
+3. `news-tax-super-template`（P0）
+4. `news-visa-fee-template`（P0）
+5. `news-disaster-alert-template`（P0）
+6. `news-scam-alert-template`（P1）
+
+> 補足: gig-work ハブは既に `uber-eats`・`doordash` カテゴリ（公開済み記事）が属する既存ハブだが、専用の一覧ページ `/gig-work` は未整備。上記12件は新カテゴリ `gig-work` として初回整備を伴う。news グループは実装タイプが `news-template`（記事ではなくニュース用テンプレート）で hub も異なるため、gig-work とは混在させない。
+
+### 本バッチで選定した一貫グループ（≤5・同一ハブ gig-work・フードデリバリー検索意図）
+記録順の先頭5件。いずれもフードデリバリー系ギグワークの「始め方・税金・保険・車両・経費」という近接した検索意図で結束：
+- `gig-work-comparison`（P0, comparison）＝ハブの総論
+- `delivery-abn-tax`（P0, tax）
+- `delivery-insurance`（P0, insurance）
+- `delivery-vehicle-comparison`（P1, comparison）
+- `delivery-expenses-logbook`（P1, tax）
+
+### 残りグループ（本バッチ後）
+- gig-work #2（次グループ・記録順先頭 `delivery-peak-hours`）: `delivery-peak-hours`, `delivery-safety`, `delivery-account-deactivation`, `airtasker-guide`, `freelance-it-australia`。
+- gig-work #3: `japan-remote-work-tax`, `public-liability-insurance`（2件・ハブ最終監査）。
+- news ハブ: `type: news-template` 6件（別実装タイプ・別グループ）。
+
+**次グループ: gig-work（`delivery-peak-hours` から継続）。** ※本バッチは gig-work 先頭5件のみ処理し、news・他カテゴリには着手しない。
+
+（本チェックポイントの実装結果・統合/レビュー/除外・検証結果・変更ファイルは、下記「実装結果」に追記。）
+
+### 実装結果（gig-work マイクロバッチ #1）
+- **公開した5件（すべて `category: gig-work`・`hub: gig-work`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  - `gig-work-comparison`（P0, comparison, id a347）— 稼働中のギグ/デリバリー各サービス（Uber Eats・DoorDash・Menulog・Amazon Flex・Airtasker 等）の性質・向き不向き・共通の始め方（ABN・保険・税）を比較する総論。ライブ料率・報酬・キャンペーンは断定せず各社/公式へ。
+  - `delivery-abn-tax`（P0, tax, id a348）— 配達収入のABN・所得税・GST（フードデリバリーは配車と異なり売上$75,000未満は原則GST登録不要）・Super（個人事業主は自分の分の拠出義務なし）・記録保存。税率/閾値は断定せず ATO へ。
+  - `delivery-insurance`（P0, insurance, id a349）— 個人賠償・対人対物・CTP・所得補償とプラットフォーム補償の範囲/除外を確認。補償内容は変わりうるため各社/保険会社の約款で確認。
+  - `delivery-vehicle-comparison`（P1, comparison, id a350）— 自転車・E-bike・スクーター/バイク・車の費用（購入/レンタル/維持/登録/保険）と地域適性の比較。金額はレンジ・例のみ。
+  - `delivery-expenses-logbook`（P1, tax, id a351）— 経費区分（車両・通信・装備）と走行記録（logbook method）・案分・領収書保管で確定申告に備える方法。可否/割合は ATO・登録税理士へ。
+- **分類:** 5件すべて **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・既存記事の分割は該当なし（新規追加のみ）。
+- **YMYL/可変情報の非断定:** 税率・GST閾値・控除可否・保険補償範囲・登録費用・報酬は断定せず、確認日 2026-08-02 を明記し ATO／Fair Work／business.gov.au／各社・保険会社へ誘導。契約者/従業員の区分は Fair Work が「判断はできない・一般情報のみ」とする点、2024年8月26日以降の regulated worker（employee-like・デジタルプラットフォーム）制度を触れつつ断定を回避。
+- **公式ソース（2026-08-02 ライブ確認）:** ATO｜Gig economy and tax／ATO｜Applying for an ABN／Fair Work Ombudsman｜Independent contractors（regulated workers 含む）／business.gov.au｜Sharing economy・Contractor responsibilities／ABN Lookup／Triple Zero 000。
+- **新カテゴリ整備（community/return-home 前例に準拠）:** `ArticleCategory` に `gig-work` 追加、`lib/content/articles/gig-work.ts` 新規モジュール、`index.ts` 配線、`hubs.ts` の `CATEGORY_TO_HUB` に `"gig-work": "gig-work"`、`mockData.ts` にカテゴリラベル `ギグワーク・副業`（記事は追加せず）、`app/gig-work/page.tsx` 新設（既存ハブ route `/gig-work`）、`sitemap.ts`・Footer（仕事）に `/gig-work` 追加。
+- **孤立記事なし / 内部リンク:** `/gig-work` が公開 gig-work 記事5件を自動列挙・Footer から到達可能。`relatedSlugs` は公開/既存 slug のみ参照（`uber-eats-guide`/`doordash-guide`/`abn-guide`/`tax-return-guide` 等）で dangling 0。未公開 planned（`delivery-safety` 等）は含めず。
+- **mockData への記事追加なし:** カテゴリラベルのみ追加。記事本文は gig-work モジュールのみ。
+- **content-manifest.yaml:** 5件を `status: planned` → `status: published`。`manifest.generated.ts` 再生成。
+- **検証（各1回・許可された項目のみ）:**
+  - `validate:articles`（重複 slug/path/export・影響リンク）: **errors なし**（gig-work: 5、`OK: no article data errors`）。
+  - `validate:content`（dangling/重複）: **0 error / 66 warning**（dangling 0。warning は既存のハブ内カニバリ注意のみでベースライン据え置き）。
+  - `tsc --noEmit`（型チェック）: **exit 0**。
+  - リペア・リトライは発生せず（初回で全項目パス）。
+- **変更ファイル:** `types/article.ts`（ArticleCategory に gig-work 追加）／`lib/content/articles/gig-work.ts`（新規・5記事）／`lib/content/articles/index.ts`（配線）／`lib/content/hubs.ts`（CATEGORY_TO_HUB）／`lib/mockData.ts`（カテゴリラベルのみ）／`app/gig-work/page.tsx`（新規）／`app/sitemap.ts`（`/gig-work`）／`components/layout/Footer.tsx`（`/gig-work`）／`whv-guide-content-plan/content-manifest.yaml`（5件 published）／`lib/content/manifest.generated.ts`（再生成）／各進捗・検証レポート。
+- **範囲順守:** gig-work 先頭5件のみ処理。news・他カテゴリ未着手。全体最終監査・build/lint/test スイートは未実施（本バッチは通常マイクロバッチでハブ完了監査ではない）。commit は `feat: publish final remaining content micro-batch` 1回のみ。
+- **未解決の問題:** なし。
+
 ## チェックポイント（2026-08-02）: downloads カテゴリ最終監査（0件公開・カテゴリ完了確認 / commit: feat: complete downloads content batch）
 
 **downloads（ダウンロード資料）カテゴリの最終ハブ監査**を実施しました。開始時点で downloads の未完了は**0件**（≤5）だったため、残り全件（＝なし）を処理し、最終監査＋フル検証スイートを1回実行しました。以下が確定状態です。

@@ -18,6 +18,7 @@ const workLinks = [
   { href: "/jobs", label: "仕事探し" },
   { href: "/farm", label: "ファーム" },
   { href: "/second-visa", label: "セカンドビザ" },
+  { href: "/gig-work", label: "ギグワーク・副業" },
   { href: "/uber-eats", label: "Uber Eats" },
   { href: "/doordash", label: "DoorDash" },
 ];

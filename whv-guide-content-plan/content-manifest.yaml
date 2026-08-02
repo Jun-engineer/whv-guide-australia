@@ -2119,7 +2119,7 @@ planned_content:
 - slug: gig-work-comparison
   title: オーストラリアのギグワーク比較｜配達・清掃・便利屋・フリーランス
   hub: gig-work
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: comparison
@@ -2129,7 +2129,7 @@ planned_content:
 - slug: delivery-abn-tax
   title: Uber Eats・DoorDashのABN・税金・Superの扱い
   hub: gig-work
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: tax
@@ -2139,7 +2139,7 @@ planned_content:
 - slug: delivery-insurance
   title: フードデリバリーの保険｜自転車・車・スクーターの注意点
   hub: gig-work
-  status: planned
+  status: published
   type: article
   priority: P0
   intent: insurance
@@ -2149,7 +2149,7 @@ planned_content:
 - slug: delivery-vehicle-comparison
   title: 配達は自転車・E-bike・車のどれがいい？費用比較
   hub: gig-work
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: comparison
@@ -2159,7 +2159,7 @@ planned_content:
 - slug: delivery-expenses-logbook
   title: 配達員の経費と走行記録｜確定申告に備える方法
   hub: gig-work
-  status: planned
+  status: published
   type: article
   priority: P1
   intent: tax

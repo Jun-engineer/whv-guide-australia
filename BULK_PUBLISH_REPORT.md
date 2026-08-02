@@ -3,6 +3,15 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: gig-work マイクロバッチ #1（5件公開・新カテゴリ初回 / commit: feat: publish final remaining content micro-batch）
+
+**gig-work ハブのフードデリバリー系5件**を新カテゴリ `gig-work` として初回公開。開始時の残 planned は18件（gig-work 12＋news-template 6）で、同一ハブ・近接検索意図の先頭5件のみを1グループとして処理（≤5）。
+
+- **公開5件（すべて `category: gig-work`・`hub: gig-work`・`verifiedAt: 2026-08-02`・分類 create）:** `gig-work-comparison`（P0, comparison, a347）／`delivery-abn-tax`（P0, tax, a348）／`delivery-insurance`（P0, insurance, a349）／`delivery-vehicle-comparison`（P1, comparison, a350）／`delivery-expenses-logbook`（P1, tax, a351）。統合/リダイレクト/レビュー/除外/分割は該当なし。
+- **新カテゴリ整備:** `ArticleCategory` に `gig-work` 追加、`lib/content/articles/gig-work.ts` 新設、`index.ts`／`hubs.ts`（`CATEGORY_TO_HUB`）配線、`mockData.ts` にラベル `ギグワーク・副業`（記事は追加せず）、`app/gig-work/page.tsx` 新設、`sitemap.ts`・Footer に `/gig-work` 追加。既存 `uber-eats`／`doordash` カテゴリは同ハブのまま別ページで併存。
+- **YMYL 非断定:** 税率・GST閾値・控除可否・保険補償範囲・登録費用・報酬は断定せず ATO／Fair Work／business.gov.au／各社へ誘導。フードデリバリーは配車と異なり売上$75,000未満は原則GST登録不要／個人事業主は自分の Super 拠出義務なし、を正確に区別。
+- **検証（許可項目のみ・各1回）:** `validate:articles`（errors なし・gig-work 5）／`validate:content`（0 error / 66 warning・dangling 0）／`tsc --noEmit`（exit 0）。リペア・リトライなし。build/lint/test は本バッチ対象外（通常マイクロバッチ）。
+
 ## チェックポイント（2026-08-02）: downloads カテゴリ最終監査（0件公開・カテゴリ完了確認 / commit: feat: complete downloads content batch）
 
 **downloads（ダウンロード資料）カテゴリの最終ハブ監査**を実施。開始時の未完了 downloads は**0件**（≤5）のため、残り全件（なし）を処理し**最終監査＋フル検証スイートを1回**実行。

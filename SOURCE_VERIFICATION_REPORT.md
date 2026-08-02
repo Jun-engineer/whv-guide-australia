@@ -8,6 +8,10 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## gig-work マイクロバッチ #1（2026-08-02 / 5件公開・新カテゴリ初回）
+
+gig-work ハブのフードデリバリー系5件（`gig-work-comparison`／`delivery-abn-tax`／`delivery-insurance`／`delivery-vehicle-comparison`／`delivery-expenses-logbook`）を公開。各記事は画面上に `verifiedAt: 2026-08-02` を表示し `OfficialSourceBox` で出典と免責を明示。可変・YMYL情報（所得税率・GST登録閾値・控除可否・保険補償範囲/除外・車両登録費用・報酬/インセンティブ）は数値を断定せず、確認日と公式一次情報への誘導で対応。照合した公式一次情報（2026-08-02 ライブ確認）: **ATO｜Gig economy and tax**（https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/in-detail/income/gig-economy-and-tax）／**ATO｜Applying for an ABN**／**ATO｜Records you need to keep**／**Fair Work Ombudsman｜Independent contractors**（https://www.fairwork.gov.au/find-help-for/independent-contractors ― regulated workers・2024年8月26日以降のemployee-like制度を確認）／**business.gov.au｜Sharing economy・Contractor responsibilities**／**ABN Lookup**（https://abr.business.gov.au/）／**Triple Zero 000**。重要な事実区別として、フードデリバリーは配車（ride-sourcing）と異なり売上が登録閾値未満なら原則GST登録不要である点、個人事業主（sole trader）は自分自身の Super 拠出義務がない点を正確に反映。契約者/従業員の区分は Fair Work が「個別判断はできず一般情報のみ」とする立場を尊重し断定を回避。
+
 ## downloads カテゴリ最終監査（2026-08-02 / 0件公開・カテゴリ完了）
 
 downloads（ダウンロード資料）カテゴリの最終監査を実施（新規公開0件）。`type: download` 4件はすべて公開済みで、YMYL 重要度の高い `download-emergency-card` のみ `verifiedAt: 2026-08-02` と `officialSources`（Australian Government ― Triple Zero (000)／healthdirect Australia、accessedAt 2026-08-02）を保持。掲載の代表番号は安定した公的連絡先だが「番号・制度は変わりうる・緊急時は最新案内に従う」を免責に明記し、国籍で異なる大使館/領事館はハードコードせず利用者記入とする設計を再確認。`download-resume-template`／`download-cover-letter-template`（ひな型・記入例）と `download-housing-inspection-checklist`（一般的な内見項目の目安）は外部ライブデータに依存しないため officialSources なし（契約/各州情報で確認する旨を明記）。ダウンロード配布物（Blob 生成の `.txt`）に個人情報は含まれず、個人情報はブラウザの localStorage のみに保持しサーバー送信しないことを確認。
