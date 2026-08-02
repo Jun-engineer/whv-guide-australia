@@ -3731,7 +3731,7 @@ planned_content:
 - slug: tool-arrival-checklist
   title: 到着後チェックリスト（保存・完了管理）
   hub: tools
-  status: planned
+  status: published
   type: interactive-tool
   priority: P0
   intent: interactive-tool
@@ -3741,7 +3741,7 @@ planned_content:
 - slug: tool-packing-checklist
   title: 持ち物チェックリスト（都市・季節・仕事別）
   hub: tools
-  status: planned
+  status: published
   type: interactive-tool
   priority: P1
   intent: interactive-tool
@@ -3751,7 +3751,7 @@ planned_content:
 - slug: tool-88-day-calculator
   title: セカンドビザ88日カレンダー・勤務記録ツール
   hub: tools
-  status: planned
+  status: published
   type: interactive-tool
   priority: P0
   intent: interactive-tool

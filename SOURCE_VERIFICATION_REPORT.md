@@ -8,6 +8,15 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## tools マイクロバッチ #1（2026-08-02 / 3件公開・新カテゴリ初回）
+
+tools（ツール・テンプレート）ハブの最初の3件を公開。外部の公式閾値・データが関わるのは 88日ツールのみで、当該ツールに `verifiedAt` と `officialSources` を付与。到着後・持ち物チェックリストは一般的な準備目安であり外部ライブデータに依存しないため、`verifiedAt: 2026-08-02` のみ付与（officialSources なし）。
+
+- **`tool-88-day-calculator`（P0, interactive-tool）** — セカンドビザの88日勤務要件を記録・集計する**記録専用**ツール。88日という日数は subclass 417 セカンドビザの一般要件の目安として提示。対象業務（Specified work）・対象地域・証拠要件は可変かつYMYLのため**断定せず**移民局（Home Affairs）の公式ページへ誘導。ビザ可否は判定しない旨を強い免責で明記。`verifiedAt: 2026-08-02`。
+  - 出典（accessedAt 2026-08-02・ライブ確認）: Department of Home Affairs｜Second Working Holiday visa (subclass 417)（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/second-work-holiday-417）／Department of Home Affairs｜Specified work (417)（https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work）。
+  - 注: Home Affairs のページは JS レンダリングのため本文抽出は不可。日数（88日）は構造的・安定した一般要件のため canonical URL を出典として明記し、可変の詳細（対象業務・地域・証拠）は各公式ページで確認するよう誘導。
+- **`tool-arrival-checklist` / `tool-packing-checklist`（P0/P1, interactive-tool）** — 到着後・持ち物の一般的な準備目安。外部の公式閾値・ライブデータに依存しないため officialSources なし。個人の状況で必要項目が異なる旨を免責に明記。`verifiedAt: 2026-08-02`。
+
 ## community マイクロバッチ #2（2026-08-02 / 残り1件公開・ハブ完了）
 
 community（友達・コミュニティ）ハブの最後の1件を公開。就労（有給の仕事）との違いというYMYL・ビザ関連の事実を、公式一次情報に照合。可変・YMYL要素は断定せず、確認日 2026-08-02 を明記。分類は create。

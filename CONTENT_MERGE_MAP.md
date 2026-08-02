@@ -10,6 +10,12 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### tools マイクロバッチ #1（2026-08-02 / 3件公開・新カテゴリ初回）
+
+- 統合・リダイレクトは**該当なし**。3件（`tool-arrival-checklist`, `tool-packing-checklist`, `tool-88-day-calculator`）はすべて新規スラッグの新規追加（create）で、既存公開URLの統合・置換・分割は発生しない。
+- ツールは記事（`lib/content/articles`）ではなく `/tools/*` の独立ページ。`/tools` ハブ・Header/Footer ナビ・記事詳細の `RelatedToolsBox`・sitemap から到達可能で孤立なし。
+- 重複意図: 到着後/持ち物チェックリストは既存記事（`arrival-checklist`/`packing-list` 等）と主題が近いが、記事＝読み物、ツール＝端末保存できる操作機能として役割分担。相互リンクで補完（カニバリではなく補完関係）。
+
 ### community マイクロバッチ #2（2026-08-02 / 残り1件公開・ハブ完了）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** community（友達・コミュニティ）ハブの

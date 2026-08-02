@@ -4,6 +4,27 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: tools マイクロバッチ #1（3件公開・新カテゴリ初回 / commit: feat: publish tools micro-batch）
+
+tools（ツール・テンプレート）ハブの**最初の3件**を公開しました（新規カテゴリの初回・マイクロバッチ運用）。開始時点で tools の未完了は14件（>3）だったため、**通常のマイクロバッチ**として記録順の先頭3件のみを処理し、**最終ハブ監査（フルビルド）は実施していません**（残り11件のため次回に継続）。本バッチは tools ハブの初回で、新カテゴリの基盤（logic/data/registry/共通コンポーネント/ページ/ナビ）整備を伴います。以下が確定状態です。
+
+- **未完了 tools 件数（開始時）:** 14件（すべて planned・すべて `hub: tools`）。既存公開の tools は0件。14 > 3 のため記録順の先頭3件のみ処理。
+- **選定した3件（記録順の先頭3件）:** `tool-arrival-checklist`, `tool-packing-checklist`, `tool-88-day-calculator`。いずれも開始時 `status: planned` であることをマニフェストで確認済み。
+- **実装方針（各ツール）:** 計算・判定ロジックを描画から分離し、純粋ロジックは `.mjs`（`lib/tools/logic/`）として実装。`node --test` と TSX 双方から import。ロジックには単体テストを付与。公式閾値は出典を明記し、外部データが関わるものは `verifiedAt` と `officialSources` を付与。推計を公式判定（ビザ可否・税務助言・法的助言）として提示しない旨を各ツールの免責に明記。操作はモバイル対応・キーボード操作可能（`<label>`/`<fieldset>`/`role="progressbar"`/フォーカスリング）。結果は平易な日本語で説明。
+- **公開した3件（すべて `hub: tools`・完全実装・プレースホルダーではない）:**
+  - `tool-arrival-checklist`（P0, interactive-tool）— 到着後にやることを時系列（Day1／最初の1週間／落ち着いてから）で管理。完了状態を端末（localStorage）に保存し進捗率を表示。ロジック `computeProgress`/`countCompleted`（`lib/tools/logic/checklist.mjs`）。`verifiedAt: 2026-08-02`。関連記事 `arrival-checklist`/`first-30-days-roadmap`/`essential-australia-apps`。
+  - `tool-packing-checklist`（P1, interactive-tool）— 気候・シーズン・仕事のファセットで項目を絞り込める持ち物リスト。絞り込み後の可視項目に対して進捗計算。ロジック `filterItems`/`itemMatchesFacets`。`verifiedAt: 2026-08-02`。関連記事 `packing-list`/`preparation-checklist`/`farm-work-packing`。
+  - `tool-88-day-calculator`（P0, interactive-tool）— セカンドビザの勤務日を記録し、88日に対する進捗と証拠書類の有無を集計する**記録専用**ツール。ビザ可否・指定業務/地域の該当性は**判定しない**旨を強い免責で明示。ロジック `summarizeWorkDays`/`countWorkDays`/`isValidIsoDate`（`lib/tools/logic/second-visa.mjs`）。`verifiedAt: 2026-08-02`、`officialSources`=Home Affairs（Second WHV 417／Specified work）2件（accessedAt 2026-08-02）。関連記事 `88-day-calculation`/`six-month-specified-work`/`second-visa-guide`/`specified-work-industries`/`farm-second-visa`/`farm-payslip-evidence`。
+- **YMYL/推計の扱い:** 88日ツールは「記録・集計のみ」「移民局が可否を判断」「正式な証拠にはならない」を明記。88日は構造的な一般要件の目安として提示し、対象業務・地域・証拠要件は各公式へ誘導（断定を回避）。全ツールで入力はブラウザにのみ保存・サーバー送信なしを明示。
+- **単体テスト:** `scripts/tools.test.mjs`（13ケース）を追加し全pass。`package.json` に `test:tools` を追加。
+- **発見性・内部リンク:** `/tools` ハブ（`getPublishedTools()` をカード列挙・ItemList/BreadcrumbList JSON-LD）を新設。Header ナビと Footer（便利ツール）に `/tools` を追加。記事詳細 `app/guides/[slug]/page.tsx` に `RelatedToolsBox`（`getToolsForArticle(slug)`）を追加し、関連記事から各ツールへ相互リンク。`app/sitemap.ts` に `/tools` と各ツールパスを追加。
+- **基盤変更（新カテゴリ初回）:** `lib/tools/{types.ts,registry.ts,logic/*.mjs,data/*.ts}`、`components/tools/{ToolShell,ChecklistBoard,PackingChecklistTool,EightyEightDayCalculator,RelatedToolsBox,useLocalStorageState}`、`app/tools/{page,arrival-checklist,packing-checklist,88-day-calculator}` を新設。ツールは記事（`lib/content/articles`）ではないため `validate:articles` の対象外。
+- **content-manifest.yaml:** 3件を `status: planned` → `status: published` に更新。`manifest.generated.ts` 再生成（existing 47・planned 338）。
+- **検証（通常バッチ・各1回）:** `test:tools`（13/13 pass）／`validate:content`（0 error / 66 warning・dangling 0・重複 slug/path なし）／`tsc --noEmit`（exit 0）／`validate:articles`（no article data errors）。**フルビルドと最終ハブ監査は通常バッチのため未実施。** 既存の cannibalization 警告（`tools::interactive-tool` 等の同一ハブ内グルーピング）は許容。
+- **未解決の問題:** なし。
+- **次カテゴリ/次項目:** tools 継続。**残り11件**。次は `tool-specified-work-region-checker`（P0）。ただし本項目は**公式の郵便番号ライブデータ**に依存するため、データ源・更新日・出典の確保が前提（次回レビューで方針決定）。以降の記録順: `tool-farm-season-calendar`(P0), `tool-weekly-budget-calculator`(P1), `tool-resume-checklist`(P1), `tool-job-application-tracker`(P2), `tool-farm-evidence-tracker`(P0), `tool-return-home-checklist`(P1), `download-resume-template`(P0), `download-cover-letter-template`(P1), `download-housing-inspection-checklist`(P1), `download-emergency-card`(P1)。
+- **変更ファイル（本チェックポイント）:** `lib/tools/*`（新設）、`components/tools/*`（新設）、`app/tools/*`（新設）、`scripts/tools.test.mjs`（新設）、`app/sitemap.ts`、`app/guides/[slug]/page.tsx`、`components/layout/{Header,Footer}.tsx`、`package.json`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+
 ## チェックポイント（2026-08-02）: community マイクロバッチ #2（残り1件公開・ハブ完了 / commit: feat: complete community content batch）
 
 community（友達・コミュニティ）ハブの**最後の1件**を公開し、**community ハブを完了（6/6）**しました。開始時点で community の未完了は1件（≤5）だったため、残り全件を処理し、**最終ハブ監査（フルビルド／テスト／Lint）を実施**しました。以下が確定状態です。

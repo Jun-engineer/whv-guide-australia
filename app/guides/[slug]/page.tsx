@@ -12,6 +12,7 @@ import { SourceLinks } from "@/components/articles/SourceLinks";
 import { VerifiedDate } from "@/components/articles/VerifiedDate";
 import { OfficialSourceBox } from "@/components/articles/OfficialSourceBox";
 import { RelatedArticles } from "@/components/articles/RelatedArticles";
+import { RelatedToolsBox } from "@/components/tools/RelatedToolsBox";
 import { FeedbackRequestLink } from "@/components/articles/FeedbackRequestLink";
 import { ArticleAd } from "@/components/ads/ArticleAd";
 import { ArticleFeedback } from "@/components/feedback/ArticleFeedback";
@@ -231,6 +232,8 @@ export default async function GuideDetailPage({ params }: GuideDetailPageProps) 
 
       <ArticleFeedback slug={article.slug} title={article.title} />
       <FeedbackRequestLink pageUrl={`/guides/${article.slug}`} />
+
+      <RelatedToolsBox articleSlug={article.slug} />
 
       <RelatedArticles articles={relatedArticles} />
     </Container>

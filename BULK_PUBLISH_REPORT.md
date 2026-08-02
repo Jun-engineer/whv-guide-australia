@@ -3,6 +3,21 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: tools マイクロバッチ #1（3件公開・新カテゴリ初回 / commit: feat: publish tools micro-batch）
+
+tools（ツール・テンプレート）ハブの**最初の3件**を公開しました（新規カテゴリの初回・マイクロバッチ運用）。開始時の未完了 tools は14件（>3）だったため、**通常のマイクロバッチ**として記録順の先頭3件のみ処理し、**最終ハブ監査（フルビルド）は未実施**（残り11件・次回継続）。
+
+- **選定・公開した3件（すべて `hub: tools`・完全実装）:** `tool-arrival-checklist`（P0）／`tool-packing-checklist`（P1）／`tool-88-day-calculator`（P0）。いずれも開始時 planned をマニフェストで確認。
+  - `tool-arrival-checklist` — 到着後にやること（Day1／最初の1週間／落ち着いてから）を端末保存で管理・進捗率表示。
+  - `tool-packing-checklist` — 気候・シーズン・仕事のファセットで絞り込める持ち物リスト。絞り込み後の可視項目に対して進捗計算。
+  - `tool-88-day-calculator` — セカンドビザ88日の勤務日を記録・集計する**記録専用**ツール。ビザ可否・指定業務/地域の該当性は判定しない（強い免責）。
+- **作成（created）slug:** 上記3件。**更新/分割・統合・リダイレクト・レビュー/除外: なし**（新規追加のみ）。
+- **設計原則の遵守:** 計算ロジックを描画から分離（純粋ロジックを `lib/tools/logic/*.mjs` 化）。単体テスト `scripts/tools.test.mjs`（13ケース・全pass）を追加。公式閾値は出典明記、外部データが関わる 88日ツールに `verifiedAt`＋`officialSources`（Home Affairs 2件）。推計を公式判定（ビザ可否・税/法的助言）として提示しない旨を各免責に明記。モバイル対応・キーボード操作可能・結果は平易な日本語で説明。
+- **発見性:** `/tools` ハブ新設、Header/Footer に `/tools` 追加、記事詳細に `RelatedToolsBox`（関連記事から相互リンク）、sitemap に `/tools`＋各ツールパス追加。
+- **検証（通常バッチ・各1回）:** `test:tools`（13/13 pass）／`validate:content`（0 error / 66 warning・dangling 0）／`tsc --noEmit`（exit 0）／`validate:articles`（no article data errors）。フルビルドは通常バッチのため未実施。
+- **content-manifest.yaml:** 3件を published 化・`manifest.generated.ts` 再生成。
+- **未解決の問題:** なし。**次:** tools 継続（残り11件・次は `tool-specified-work-region-checker`（P0）。ただし公式郵便番号ライブデータに依存するため次回レビューで方針決定）。
+
 ## チェックポイント（2026-08-02）: community マイクロバッチ #2（残り1件公開・ハブ完了 / commit: feat: complete community content batch）
 
 community（友達・コミュニティ）ハブの**最後の1件**を公開し、**community ハブを完了（6/6）**しました。開始時の未完了 community は1件（≤5）だったため残り全件を処理し、**最終ハブ監査（フルビルド／テスト／Lint）を実施**しました。

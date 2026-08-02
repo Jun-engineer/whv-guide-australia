@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { getAllArticles, getArticleCategories } from "@/lib/articles";
 import { getAllForumPosts, getForumCategories } from "@/lib/forum";
 import { getAllNews } from "@/lib/news";
+import { getPublishedTools } from "@/lib/tools/registry";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
@@ -38,6 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       { path: "/return-home", priority: 0.8, changeFrequency: "weekly" },
       { path: "/community-guide", priority: 0.8, changeFrequency: "weekly" },
       { path: "/community", priority: 0.9, changeFrequency: "daily" },
+      { path: "/tools", priority: 0.8, changeFrequency: "monthly" },
       { path: "/news", priority: 0.8, changeFrequency: "weekly" },
       { path: "/request", priority: 0.5, changeFrequency: "monthly" },
       { path: "/about", priority: 0.4, changeFrequency: "yearly" },
@@ -91,6 +93,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
+  const toolRoutes: MetadataRoute.Sitemap = getPublishedTools().map((tool) => ({
+    url: `${siteConfig.url}${tool.path}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   const seen = new Set<string>();
   return [
     ...staticRoutes,
@@ -99,6 +108,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...newsRoutes,
     ...forumCategoryRoutes,
     ...forumPostRoutes,
+    ...toolRoutes,
   ].filter((entry) => {
     if (seen.has(entry.url)) {
       return false;

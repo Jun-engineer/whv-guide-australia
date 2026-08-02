@@ -28,6 +28,7 @@ const lifeLinks = [
   { href: "/tfn", label: "TFN" },
   { href: "/tax-return", label: "タックスリターン" },
   { href: "/housing", label: "家探し" },
+  { href: "/tools", label: "便利ツール" },
   { href: "/community", label: "掲示板" },
 ];
 
