@@ -3671,7 +3671,7 @@ planned_content:
 - slug: news-visa-changes-template
   title: ビザ制度変更ニュース用テンプレート
   hub: news
-  status: planned
+  status: published
   type: news-template
   priority: P0
   intent: news-template
@@ -3681,7 +3681,7 @@ planned_content:
 - slug: news-minimum-wage-template
   title: 最低賃金・Award改定ニュース用テンプレート
   hub: news
-  status: planned
+  status: published
   type: news-template
   priority: P0
   intent: news-template
@@ -3691,7 +3691,7 @@ planned_content:
 - slug: news-tax-super-template
   title: 税率・Super・タックスリターン変更ニュース用テンプレート
   hub: news
-  status: planned
+  status: published
   type: news-template
   priority: P0
   intent: news-template
@@ -3701,7 +3701,7 @@ planned_content:
 - slug: news-visa-fee-template
   title: ビザ申請料改定ニュース用テンプレート
   hub: news
-  status: planned
+  status: published
   type: news-template
   priority: P0
   intent: news-template
@@ -3711,7 +3711,7 @@ planned_content:
 - slug: news-disaster-alert-template
   title: 洪水・山火事・サイクロン情報用テンプレート
   hub: news
-  status: planned
+  status: published
   type: news-template
   priority: P0
   intent: news-template

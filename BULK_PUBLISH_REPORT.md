@@ -3,6 +3,17 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: news-template マイクロバッチ #1（P0 5件公開 / commit: feat: publish final remaining content micro-batch）
+
+**news ハブ `type: news-template` の P0 記録順5件**を公開。開始時の残 planned は6件（すべて news-template）で、優先度 P0 の先頭5件のみ処理（≤5）。P1 の `news-scam-alert-template` は次バッチへ残す。
+
+- **新サブシステム（tools パターン踏襲）:** `/news/templates/*` ルートが未存在のため専用サブシステムを新設。`types/newsTemplate.ts`（`NewsTemplate` 型）／`lib/newsTemplates.ts`（データ＋`getPublishedNewsTemplates()`／`getNewsTemplateBySlug()`）／`app/news/templates/page.tsx`（一覧）／`app/news/templates/[slug]/page.tsx`（詳細・`generateStaticParams`＋`generateMetadata`＋BreadcrumbList JSON-LD・`OfficialSourceBox` 再利用）。
+- **公開5件（すべて `hub: news`・`type: news-template`・`verifiedAt: 2026-08-02`・分類 create）:** `news-visa-changes-template`（P0）／`news-minimum-wage-template`（P0）／`news-tax-super-template`（P0）／`news-visa-fee-template`（P0）／`news-disaster-alert-template`（P0）。統合/リダイレクト/レビュー/除外/分割は該当なし。
+- **YMYL 非断定:** 各テンプレートは数値・日付・条件を断定せず、必須項目・注意点・記入スケルトンとして公式確認を促す構造。公式ソースは Home Affairs（417/462/Current visa pricing/Visa Pricing Estimator）・Fair Work Ombudsman/Commission・ATO（Tax rates/Individuals and families）・Bureau of Meteorology・Triple Zero（000）で、主要URLは 2026-08-02 にライブ確認。
+- **孤立防止:** `/news` に「ニューステンプレート集を見る」導線を追加。`sitemap.ts` に `/news/templates`＋5パスを追加。`relatedSlugs` は公開/既存 slug のみ参照。
+- **検証（許可項目のみ・各1回）:** `validate:articles`（errors なし・gig-work 12・duplicate slugs 0）／`validate:content`（0 error / 66 warning・dangling 0・`news::news-template` cannibalization は想定内）／`tsc --noEmit`（exit 0）。リペア・リトライなし。build/lint/test は本バッチ対象外（通常マイクロバッチ）。
+- **残り:** news ハブ `news-scam-alert-template`（P1）1件のみ。
+
 ## チェックポイント（2026-08-02）: gig-work マイクロバッチ #3（2件公開・gig-work ハブ完了 / commit: feat: publish final remaining content micro-batch）
 
 **gig-work ハブの残り全2件**を公開し、gig-work ハブ（全12件）が published となり**完了**。開始時の残 planned は8件（gig-work 2＋news-template 6）で、同一ハブの近接検索意図の2件を処理（≤5）。

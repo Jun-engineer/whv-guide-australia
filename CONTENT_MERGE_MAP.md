@@ -10,6 +10,10 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### news-template マイクロバッチ #1（2026-08-02 / P0 5件公開）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** news ハブ `type: news-template` の P0 5件（`news-visa-changes-template`／`news-minimum-wage-template`／`news-tax-super-template`／`news-visa-fee-template`／`news-disaster-alert-template`）はいずれも**新規スラッグの create**で、`/news/templates/*` という新ルート下に専用サブシステム（`types/newsTemplate.ts`／`lib/newsTemplates.ts`／`app/news/templates/{page,[slug]/page}.tsx`）として公開。既存公開URLの統合・置換・分割・リダイレクトは一切発生しない。孤立防止のため `/news` から一覧への導線を追加し、`sitemap.ts` に `/news/templates`＋5パスを登録。各詳細ページの関連ガイドは公開/既存 slug（`whv-complete-guide`／`second-visa-guide`／`working-rights`／`award-rates-penalty-rates`／`underpayment-unpaid-wages`／`tax-return-guide`／`super-guide`／`income-statement-tax-ready`／`payslip-guide`／`bushfire-safety`／`flood-cyclone-safety`）のみ `/guides/{slug}` へリンクし dangling 0。P1 の `news-scam-alert-template` は次バッチへ残す。`validate:content` の `news::news-template` cannibalization 警告は同一ハブ内グルーピングの想定内で許容。
+
 ### gig-work マイクロバッチ #3（2026-08-02 / 2件公開・gig-work ハブ完了）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** gig-work ハブの2件（`japan-remote-work-tax`／`public-liability-insurance`）はいずれも**新規スラッグの create**で、既存公開URLの統合・置換・分割・リダイレクトは一切発生しない。`relatedSlugs` は公開/既存 slug（`gig-work-comparison`／`freelance-it-australia`／`delivery-abn-tax`／`tax-return-guide`／`super-guide`／`airtasker-guide`／`delivery-insurance`／`abn-guide`／`delivery-safety`）のみ参照し dangling 0。これで gig-work ハブは全12件 published となり完了。

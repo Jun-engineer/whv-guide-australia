@@ -52,6 +52,12 @@ export default function NewsPage() {
         <p className="mt-3 max-w-2xl text-sky-50">
           ビザ申請料の改定や税金・費用の変化など、ワーホリに関わる最新情報とサイトの更新履歴をまとめています。
         </p>
+        <Link
+          href="/news/templates"
+          className="mt-4 inline-flex items-center gap-1 rounded-full bg-white/15 px-4 py-1.5 text-sm font-semibold text-white transition hover:bg-white/25"
+        >
+          ニューステンプレート集を見る →
+        </Link>
       </section>
 
       <ul className="space-y-4">

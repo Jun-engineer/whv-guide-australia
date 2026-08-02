@@ -4,6 +4,52 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: news-template マイクロバッチ #1（P0 5件公開 / commit: feat: publish final remaining content micro-batch）
+
+### 残項目インベントリ（本バッチ開始時 planned = 6件）
+
+gig-work ハブ完了後、開始時点の残 planned は **6件**（すべて news ハブ `type: news-template`・別実装タイプ）。内訳：
+
+**グループB — news ハブ（6件・`type: news-template`・`/news/templates/*`）**
+1. `news-visa-changes-template`（P0, /news/templates/visa-changes）
+2. `news-minimum-wage-template`（P0, /news/templates/minimum-wage）
+3. `news-tax-super-template`（P0, /news/templates/tax-super）
+4. `news-visa-fee-template`（P0, /news/templates/visa-fee）
+5. `news-disaster-alert-template`（P0, /news/templates/disaster-alert）
+6. `news-scam-alert-template`（P1, /news/templates/scam-alert）
+
+### 本バッチで選定した一貫グループ（≤5・同一ハブ news・同一検索意図 news-template・記録順の P0 全5件）
+news ハブの `news-template` グループのうち、優先度 P0 の記録順先頭5件で結束。P1 の `news-scam-alert-template` は「5件以内」の制約により次バッチへ残す：
+- `news-visa-changes-template`（P0）
+- `news-minimum-wage-template`（P0）
+- `news-tax-super-template`（P0）
+- `news-visa-fee-template`（P0）
+- `news-disaster-alert-template`（P0）
+
+### 実装結果（news-template マイクロバッチ #1）
+- **新サブシステム構築（tools パターンを踏襲）:** `type: news-template` は `/news/templates/*` という既存に無いルートを必要とするため、記事（article）とは別に専用サブシステムを新設。`types/newsTemplate.ts`（`NewsTemplate` 型）／`lib/newsTemplates.ts`（データ5件＋`getPublishedNewsTemplates()`／`getNewsTemplateBySlug()`）／`app/news/templates/page.tsx`（一覧）／`app/news/templates/[slug]/page.tsx`（詳細・`generateStaticParams`＋`generateMetadata`＋BreadcrumbList JSON-LD）を新規作成。詳細ページは共通 `OfficialSourceBox` を再利用し、過度な抽象化を避けて `[slug]` ページ内で直接描画。
+- **公開した5件（すべて `hub: news`・`type: news-template`・`verifiedAt: 2026-08-02`・分類 create）:**
+  - `news-visa-changes-template`（P0, /news/templates/visa-changes）— ビザ制度変更の発表日・適用開始日・対象ビザ/対象者・変更内容・経過措置・公式ソースを必須化した編集テンプレート。
+  - `news-minimum-wage-template`（P0, /news/templates/minimum-wage）— 全国最低賃金・アワード改定の金額・適用開始日・確認方法。
+  - `news-tax-super-template`（P0, /news/templates/tax-super）— 税率・しきい値・SG率の会計年度・変更前後・対象者。
+  - `news-visa-fee-template`（P0, /news/templates/visa-fee）— サブクラス別のビザ申請料の旧/新料金と適用日。
+  - `news-disaster-alert-template`（P0, /news/templates/disaster-alert）— 影響地域・警報レベル・とるべき行動・緊急連絡先（000）・更新時刻。
+- **分類:** 5件すべて **create**。統合/リダイレクト/レビュー/除外/分割は該当なし。
+- **YMYL/可変情報の非断定:** 各テンプレートは数値・日付・条件を断定せず、必須項目・執筆注意点・記入スケルトンとして「公式で最新を確認する」ことを促す構造。確認日 2026-08-02 を明記。
+- **公式ソース（2026-08-02 ライブ確認）:** Home Affairs｜Working Holiday visa (417)／Work and Holiday visa (462)／Current visa pricing（ライブ確認）／Visa Pricing Estimator／Fair Work Ombudsman｜Minimum wages（ライブ確認）／Fair Work Commission｜Annual wage reviews／ATO｜Tax rates – Australian resident（ライブ確認）／ATO｜Individuals and families／Bureau of Meteorology｜Warnings and alerts（ライブ確認）／Australian Government｜Triple Zero（000）。
+- **孤立防止/内部リンク:** `/news` ページから「ニューステンプレート集を見る」導線を追加。一覧→詳細→関連ガイド（`/guides/{slug}`）へ接続。`relatedSlugs` は公開/既存 slug のみ参照（`whv-complete-guide`／`second-visa-guide`／`working-rights`／`award-rates-penalty-rates`／`underpayment-unpaid-wages`／`tax-return-guide`／`super-guide`／`income-statement-tax-ready`／`payslip-guide`／`bushfire-safety`／`flood-cyclone-safety`）。
+- **sitemap:** `/news/templates`（静的）＋公開テンプレート5パスを追加。
+- **mockData への記事追加なし。**
+- **content-manifest.yaml:** P0 5件を `status: planned` → `status: published`（`news-scam-alert-template` は planned のまま）。`manifest.generated.ts` 再生成。
+- **検証（各1回・許可された項目のみ）:**
+  - `validate:articles`: **errors なし**（`OK: no article data errors`・gig-work 12・duplicate slugs 0）。
+  - `validate:content`（dangling/重複）: **0 error / 66 warning**（dangling 0・`news::news-template` の cannibalization 警告は想定内・ベースライン据え置き）。
+  - `tsc --noEmit`: **exit 0**。リペア・リトライなし。
+- **変更ファイル:** `types/newsTemplate.ts`（新規）／`lib/newsTemplates.ts`（新規・5件）／`app/news/templates/page.tsx`（新規）／`app/news/templates/[slug]/page.tsx`（新規）／`app/sitemap.ts`（news-template ルート追加）／`app/news/page.tsx`（導線追加）／`whv-guide-content-plan/content-manifest.yaml`（5件 published）／`lib/content/manifest.generated.ts`（再生成）／各進捗・検証レポート。
+- **範囲順守:** news-template の P0 記録順5件のみ処理。全体最終監査・build/lint/test スイートは未実施（通常マイクロバッチ）。commit は `feat: publish final remaining content micro-batch` 1回のみ。
+- **残りグループ（本バッチ後）:** news ハブ `type: news-template` の **`news-scam-alert-template`（P1・/news/templates/scam-alert・brief「手口、被害防止、通報先」）1件のみ**。**次グループ: news-template（`news-scam-alert-template`）でグループB完了予定。**
+- **未解決の問題:** なし。
+
 ## チェックポイント（2026-08-02）: gig-work マイクロバッチ #3（2件公開・gig-work ハブ完了 / commit: feat: publish final remaining content micro-batch）
 
 ### 残項目インベントリ（本バッチ開始時 planned = 8件）

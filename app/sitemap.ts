@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { getAllArticles, getArticleCategories } from "@/lib/articles";
 import { getAllForumPosts, getForumCategories } from "@/lib/forum";
 import { getAllNews } from "@/lib/news";
+import { getPublishedNewsTemplates } from "@/lib/newsTemplates";
 import { getPublishedTools } from "@/lib/tools/registry";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -42,6 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       { path: "/community", priority: 0.9, changeFrequency: "daily" },
       { path: "/tools", priority: 0.8, changeFrequency: "monthly" },
       { path: "/news", priority: 0.8, changeFrequency: "weekly" },
+      { path: "/news/templates", priority: 0.6, changeFrequency: "monthly" },
       { path: "/request", priority: 0.5, changeFrequency: "monthly" },
       { path: "/about", priority: 0.4, changeFrequency: "yearly" },
       { path: "/terms", priority: 0.3, changeFrequency: "yearly" },
@@ -101,6 +103,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  const newsTemplateRoutes: MetadataRoute.Sitemap = getPublishedNewsTemplates().map((template) => ({
+    url: `${siteConfig.url}${template.path}`,
+    lastModified: new Date(template.verifiedAt),
+    changeFrequency: "monthly",
+    priority: 0.5,
+  }));
+
   const seen = new Set<string>();
   return [
     ...staticRoutes,
@@ -110,6 +119,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...forumCategoryRoutes,
     ...forumPostRoutes,
     ...toolRoutes,
+    ...newsTemplateRoutes,
   ].filter((entry) => {
     if (seen.has(entry.url)) {
       return false;
