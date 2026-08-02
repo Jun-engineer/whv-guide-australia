@@ -61,6 +61,18 @@ export const siteConfig = {
   ogImage: "/opengraph-image",
   twitter: "@whv_guide_au",
   adsenseClient: "ca-pub-5434162081070782",
+  /**
+   * Google Analytics 4 Measurement ID.
+   *
+   * This is a public identifier (not a secret) and is safe to ship in the
+   * client bundle. To change it, set `NEXT_PUBLIC_GA_MEASUREMENT_ID` in the
+   * environment; the hard-coded value below is the maintained default.
+   * To disable Analytics entirely, set `NEXT_PUBLIC_GA_MEASUREMENT_ID` to an
+   * empty string. Analytics only loads in production builds (see
+   * `components/analytics/GoogleAnalytics.tsx`).
+   */
+  gaMeasurementId:
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-0SQ2F5Q39G",
 } as const;
 
 export function absoluteUrl(path = ""): string {

@@ -88,6 +88,9 @@ export function Footer() {
           <Link href="/about" className="hover:text-sky-700 hover:underline">
             運営者情報
           </Link>
+          <Link href="/editorial-policy" className="hover:text-sky-700 hover:underline">
+            編集方針
+          </Link>
           <Link href="/news" className="hover:text-sky-700 hover:underline">
             ニュース
           </Link>

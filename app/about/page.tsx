@@ -56,6 +56,9 @@ export default function AboutPage() {
         </section>
 
         <div className="flex flex-wrap gap-3 text-sm">
+          <Link href="/editorial-policy" className="text-sky-700 underline hover:text-sky-800">
+            編集方針・情報の作り方
+          </Link>
           <Link href="/privacy" className="text-sky-700 underline hover:text-sky-800">
             プライバシーポリシー
           </Link>

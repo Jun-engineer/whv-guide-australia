@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { FloatingFeedback } from "@/components/feedback/FloatingFeedback";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { siteConfig } from "@/lib/siteConfig";
 
 const geistSans = Geist({
@@ -123,6 +124,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-sky-50/40 text-slate-900">
+        <GoogleAnalytics />
         <Script
           id="adsbygoogle-init"
           async

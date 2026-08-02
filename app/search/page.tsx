@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   description:
     "オーストラリアワーホリコンパスの記事をキーワードで検索。ビザ、TFN、ファーム、税金、家探し、車・免許などを日本語・英語・略称から探せます。",
   alternates: { canonical: "/search" },
+  // Internal search-results pages offer no standalone value to index and can
+  // generate near-duplicate/thin URLs, so keep them crawlable but out of the
+  // index (Google/AdSense low-value-content guidance).
+  robots: {
+    index: false,
+    follow: true,
+    googleBot: { index: false, follow: true },
+  },
 };
 
 export default function SearchPage() {
