@@ -10,6 +10,21 @@
 2. **提案のみ（公開→公開）** — 生きているページ同士の統合は影響が大きいため、本サイクルでは
    実行せず提案として記録（Phase B で人手判断）。
 
+### community マイクロバッチ #1（2026-08-02 / 5件公開・新カテゴリ初回）
+
+**統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** community（友達・コミュニティ）ハブの
+先頭5件（`make-friends-australia` / `japanese-community-groups` / `homesickness-loneliness` /
+`culture-shock-australia` / `dating-safety-australia`）はすべて**新規スラッグ**（`category: "community"` /
+`hub: "community"`）で、既存公開記事との統合・URL潰しは発生しない。分類はいずれも create。
+
+- 5件は検索意図が独立（友達の作り方／日本人コミュニティ・SNSグループの探し方と詐欺回避／ホームシック・孤独への対処／カルチャーショックと慣れ方／デーティングアプリの安全対策）。
+- **ユーザー投稿（UGC）と検証済みガイダンスの区別:** 記事本文で「日本人コミュニティ・SNSグループの投稿はユーザーによる情報であり無保証」「重要事項は公式で裏取り」を明示。掲示板（`/community`）は実在の対話機能として案内し、法・ビザ・税・労働・賃貸などは検証済みエバーグリーン記事や公式一次情報へリンク。
+- **安全・プライバシー・詐欺対策:** 初対面の安全（公共の場・予定共有・自分で帰る手段）、個人情報の最小化、ロマンス詐欺の見分け方、同意（consent）、緊急/被害時の連絡先（000／1800RESPECT／Scamwatch／IDCARE）を明記。架空の会員数・投稿・イベントは掲載していない。
+- **新カテゴリ整備（travel/return-home の前例に準拠）:** `ArticleCategory` に `community` 追加、`lib/content/articles/community.ts` 新設、`index.ts` 配線、`hubs.ts` の `CATEGORY_TO_HUB` に `community: "community"`、`mockData.ts` にラベル「友達・コミュニティ」（記事は追加せず）、`app/community-guide/page.tsx` 新設（既存フォーラム `/community` と衝突しない `/community-guide` を採用）、`GuideCategoryPage` に任意 `routePath` を追加、`sitemap.ts`・Footer に `/community-guide` 追加。
+- 孤立記事なし: `/community-guide` が公開 community 記事5件を自動列挙・Footer からも到達可能。`relatedSlugs` は公開/既存 slug のみ参照（`volunteering-guide` は未公開のため含めず dangling 0）。既存の `japanese-community-groups`（jobs.ts 参照）・`dating-safety-australia`（visa.ts 参照）へのグローバル dangling が本公開で解決。
+- **検証（マイクロバッチ範囲・各1回・リトライ0回）:** `validate:articles`（community 5・重複 slug/パス/エクスポート 0・OK）／`tsc --noEmit`（exit 0）／`validate:content`（0 error / 66 warning・dangling 0）。
+- **残り community:** 1件（`volunteering-guide` P3）。次回は ≤5 のため全件処理＋最終 community ハブ監査を実施。
+
 ### return-home マイクロバッチ #3（2026-08-02 / 残り2件公開・ハブ完了）
 
 **統合（merged）: なし。リダイレクト: なし。分割（split）: なし。** return-home ハブの最後の2件

@@ -4,6 +4,32 @@
 
 計画コンテンツ（planned）の残タスク一覧と、逐次公開の進捗を記録します。
 
+## チェックポイント（2026-08-02）: community マイクロバッチ #1（5件公開・新カテゴリ初回 / commit: feat: publish community micro-batch）
+
+community（友達・コミュニティ）ハブの**最初の5件**を公開しました（新規カテゴリの初回・マイクロバッチ運用）。開始時点で community の未完了は6件（>5）だったため、通常のマイクロバッチとして記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り1件のため次回に継続）。本バッチは community ハブの初回で、新カテゴリの基盤整備を伴います。以下が確定状態です。
+
+- **未完了 community 件数（開始時）:** 6件（すべて planned・すべて `hub: community`）。既存公開の community 記事は0件。6 > 5 のため記録順の先頭5件のみ処理。
+- **選定した5件（記録順の先頭5件）:** `make-friends-australia`, `japanese-community-groups`, `homesickness-loneliness`, `culture-shock-australia`, `dating-safety-australia`。いずれも開始時 `status: planned` で、published/merged/archived/review/excluded ではないことをマニフェストで確認済み。
+- **分類:** 5件すべて **create**（新規スラッグ）。統合（merge）・リダイレクト・レビュー・除外・既存記事の分割は該当なし（新規追加のみ）。
+- **公開した5件（すべて `category: community`・`hub: community`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  - `make-friends-australia`（P1, social, id a341）— 意図＝ワーホリ中に友達を作る方法／対象＝新生活で人とのつながりが欲しい人。学校・職場・シェアハウス・Meetup・ボランティア・SNS等の出会い方と、初対面の安全（公共の場・予定共有・個人情報/金銭に注意）を整理。主観的助言中心で「合う/合わないは人による」と明示。公式: eSafety（Online dating）／Triple Zero 000。
+  - `japanese-community-groups`（P1, social, id a342）— 意図＝日本人コミュニティ・Facebookグループの探し方と安全な使い方／対象＝日本語で情報交換したい人。「投稿はユーザー情報で無保証」「重要事項は移民局/ATO/Fair Work/州当局で裏取り」を明示。前払い要求・好条件すぎ・実物確認拒否・個人情報要求を危険サインとして提示。公式: Scamwatch（ACCC）／IDCARE 1800 595 160。
+  - `homesickness-loneliness`（P1, wellbeing, id a343）— 意図＝ホームシック・孤独への対処／対象＝海外生活でつらさを感じる人。生活リズム・つながり・適度な連絡を助言しつつ、つらさが続く場合は専門窓口へ、緊急時は000へ誘導。相談先の電話番号を明記（YMYL＝断定を回避）。公式: Lifeline 13 11 14／Beyond Blue 1300 22 4636／healthdirect Mental health 1800 022 222。
+  - `culture-shock-australia`（P2, social, id a344）— 意図＝カルチャーショックと慣れ方／対象＝豪州生活の違いに戸惑う人。文化の傾向は一般化で地域・個人差が大きい旨を明示。労働条件・賃貸ルールなど権利事項は「慣習」でなく公式・検証済み記事で確認するよう誘導。公式: Fair Work Ombudsman（Visa holders and migrants）。
+  - `dating-safety-australia`（P2, safety, id a345）— 意図＝デーティングアプリ・出会いの安全対策／対象＝豪州で恋愛・出会いを探す人。個人情報の守り方・初対面の鉄則・同意（consent）・ロマンス詐欺の見分け方・緊急/被害時の連絡先を記載。オンラインの相手への送金/身分証/私的写真の提供を明確に禁止として警告。公式: eSafety（Online dating）／Scamwatch（Relationship scams）／1800RESPECT 1800 737 732／Triple Zero 000。
+- **UGCと検証済みガイダンスの区別:** コミュニティ/SNSの投稿はユーザー情報で無保証と明示し、法・ビザ・税・労働・賃貸などは検証済みエバーグリーン記事や公式一次情報へリンク。対話機能は既存フォーラム `/community` として案内（未実装機能を実在するかのように見せない）。会員数・投稿・レビュー・イベント等の架空の活動は掲載しない。
+- **安全・プライバシー・詐欺対策・モデレーション:** 初対面の安全、個人情報の最小化、ロマンス詐欺、同意、緊急/被害時の連絡先（000／1800RESPECT／Scamwatch／IDCARE）を各記事に明記。
+- **新カテゴリ整備（travel/return-home 前例に準拠）:** `ArticleCategory` に `community` 追加、`lib/content/articles/community.ts` 新規モジュール、`index.ts` 配線、`hubs.ts` の `CATEGORY_TO_HUB` に `community: "community"`、`mockData.ts` にカテゴリラベル `友達・コミュニティ`（記事は追加せず）、`app/community-guide/page.tsx` 新設（既存フォーラム `/community` と衝突回避のため `/community-guide` を採用）、`GuideCategoryPage` に任意 `routePath` prop 追加（パンくず/canonical を正しく `/community-guide` に）、`sitemap.ts`・Footer に `/community-guide` 追加。
+- **孤立記事なし / 内部リンク:** `/community-guide` が公開 community 記事5件を自動列挙・Footer からも到達可能。`relatedSlugs` は公開/既存 slug のみ参照（未公開の `volunteering-guide` は含めず dangling 回避）。既存の `japanese-community-groups`（jobs.ts 参照）・`dating-safety-australia`（visa.ts 参照）への未解決参照が本公開で解決。
+- **content-manifest.yaml:** 該当5件を `status: planned` → `status: published` に更新。`volunteering-guide` は `planned` のまま。`manifest.generated.ts` 再生成（planned 5件減）。
+- **mockData への記事追加なし:** カテゴリラベルのみ追加。記事本文は Community モジュールのみに追加。
+- **検証（マイクロバッチ範囲・各1回・リトライ0回）:** `validate:articles`（重複 slug/パス/エクスポート 0・community 5件・`OK: no article data errors`。ARTICLE_ORDER omission は既存仕様の warn のみ）、`tsc --noEmit` クリーン（exit 0）、`validate:content` 0 error / 66 warning（想定内の cannibalization のみ・dangling 0）。
+  ※フルビルド/テスト/lint/構造化データ監査は community ハブ完了時（残り5件以下の最終監査）にまとめて実施予定。
+- **残り community slug（1件・planned のまま）:** `volunteering-guide`（P3, social）。
+- **最初の未完了 community slug: `volunteering-guide`**（次回はここから再開。残り1件 ≤ 5 ＝次回は community ハブ最終監査を実施）。
+- **次のバッチ: community（`volunteering-guide` から継続・残り1件で最終監査）。** ※本セッションは community の先頭5件のみ処理し、他カテゴリには着手しない。
+- **変更ファイル（本チェックポイント）:** `lib/content/articles/community.ts`（新規）、`lib/content/articles/index.ts`、`types/article.ts`、`lib/content/hubs.ts`、`lib/mockData.ts`、`components/articles/GuideCategoryPage.tsx`、`app/community-guide/page.tsx`（新規）、`app/sitemap.ts`、`components/layout/Footer.tsx`、`lib/content/manifest.generated.ts`（再生成）、`whv-guide-content-plan/content-manifest.yaml`、`CONTENT_MERGE_MAP.md`、`SOURCE_VERIFICATION_REPORT.md`、`BULK_PUBLISH_REPORT.md`、`BULK_PUBLISH_REMAINING.md`。
+
 ## チェックポイント（2026-08-02）: return-home マイクロバッチ #3（残り2件公開・ハブ完了 / commit: feat: complete return home content batch）
 
 return-home（帰国準備）ハブの**最後の2件**を公開し、**return-home ハブを完了（12/12）**しました。開始時点で return-home の未完了は2件（≤5）だったため、残り全件を処理し、**最終ハブ監査（フルビルド／テスト／Lint）を実施**しました。以下が確定状態です。

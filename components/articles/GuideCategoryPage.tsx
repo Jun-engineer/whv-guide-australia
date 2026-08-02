@@ -9,18 +9,21 @@ import type { ArticleCategory } from "@/types/article";
 type GuideCategoryPageProps = {
   category: ArticleCategory;
   lead: string;
+  /** ハブページの公開URL（category と異なる場合に指定。既定は /{category}）。 */
+  routePath?: string;
 };
 
-export function GuideCategoryPage({ category, lead }: GuideCategoryPageProps) {
+export function GuideCategoryPage({ category, lead, routePath }: GuideCategoryPageProps) {
   const title = getCategoryLabel(category);
   const articles = getArticlesByCategory(category);
+  const categoryPath = routePath ?? `/${category}`;
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "ホーム", item: siteConfig.url },
-      { "@type": "ListItem", position: 2, name: `${title}ガイド`, item: absoluteUrl(`/${category}`) },
+      { "@type": "ListItem", position: 2, name: `${title}ガイド`, item: absoluteUrl(categoryPath) },
     ],
   };
 

@@ -30,6 +30,7 @@ export const articleCategories: Array<{ slug: ArticleCategory; name: string }> =
   { slug: "health", name: "健康・安全" },
   { slug: "travel", name: "旅行" },
   { slug: "return-home", name: "帰国準備" },
+  { slug: "community", name: "友達・コミュニティ" },
 ];
 
 export { articles } from "@/lib/content/articles";

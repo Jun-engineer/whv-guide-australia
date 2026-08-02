@@ -3,6 +3,25 @@
 生成日: 2026-07-16
 ブランチ: main
 
+## チェックポイント（2026-08-02）: community マイクロバッチ #1（5件公開・新カテゴリ初回 / commit: feat: publish community micro-batch）
+
+community（友達・コミュニティ）ハブの**最初の5件**を公開しました（新規カテゴリの初回・マイクロバッチ運用）。開始時の未完了 community は6件（>5）だったため、記録順の先頭5件のみを処理し、最終ハブ監査は実施していません（残り1件のため次回に継続）。
+
+- **公開した5件（すべて `category: community`・`hub: community`・`verifiedAt: 2026-08-02`・完全公開・分類は全て create）:**
+  `make-friends-australia`（P1, social, id a341）, `japanese-community-groups`（P1, social, id a342）,
+  `homesickness-loneliness`（P1, wellbeing, id a343）, `culture-shock-australia`（P2, social, id a344）,
+  `dating-safety-australia`（P2, safety, id a345）。
+- **作成（created）slug:** 上記5件。**更新/分割（updated/split）slug: なし。統合（merged）slug: なし。リダイレクト: なし。レビュー/除外 slug: なし。**
+- **内容:** 友達作り＝出会い方（学校/職場/シェア/Meetup/ボランティア/SNS）＋初対面の安全。日本人コミュニティ＝グループの探し方＋「投稿は無保証・重要事項は公式で裏取り」＋詐欺の危険サイン。ホームシック＝生活リズム/つながり＋相談窓口（緊急は000）。カルチャーショック＝文化の一般化に注意＋権利事項は公式で確認。デーティング安全＝個人情報保護/同意/ロマンス詐欺/緊急連絡先＋送金・身分証・私的写真の提供禁止。可変・YMYL要素は断定せず確認日 2026-08-02 を明記し各公式へ誘導。
+- **UGCと検証済みガイダンスの区別:** コミュニティ/SNS投稿はユーザー情報で無保証と明示し、法/ビザ/税/労働/賃貸は検証済み記事・公式一次情報へリンク。対話機能は既存フォーラム `/community` として案内。会員数/投稿/イベント等の架空の活動は掲載しない。
+- **安全・プライバシー・詐欺・モデレーション:** 初対面の安全・個人情報最小化・ロマンス詐欺・同意・緊急/被害時連絡先（000／1800RESPECT／Scamwatch／IDCARE）を明記。
+- **公式ソース:** eSafety（Online dating）／Triple Zero 000／Scamwatch（ACCC・Relationship scams）／IDCARE 1800 595 160／Lifeline 13 11 14／Beyond Blue 1300 22 4636／healthdirect Mental health 1800 022 222／Fair Work（Visa holders and migrants）／1800RESPECT 1800 737 732。
+- **新カテゴリ整備（travel/return-home 前例に準拠）:** `ArticleCategory` に `community` 追加、`community.ts` 新規モジュール、`index.ts` 配線、`hubs.ts` に `community: "community"`、`mockData.ts` にラベル `友達・コミュニティ`（記事は追加せず）、`app/community-guide/page.tsx` 新設（フォーラム `/community` と衝突回避で `/community-guide`）、`GuideCategoryPage` に任意 `routePath` 追加、`sitemap.ts`・Footer に `/community-guide` 追加。
+- **孤立記事なし:** `/community-guide` が公開5件を自動列挙・Footer から到達可能。`relatedSlugs` は公開/既存 slug のみ（`volunteering-guide` 未公開は除外・dangling 0）。既存の jobs.ts→`japanese-community-groups`・visa.ts→`dating-safety-australia` の参照が本公開で解決。
+- **content-manifest.yaml:** 5件を `planned` → `published`（`volunteering-guide` は planned のまま）。`manifest.generated.ts` 再生成。`mockData.ts` への記事追加なし。
+- **検証（マイクロバッチ範囲・各1回・リトライ0回）:** `validate:articles`（community 5・重複0・エラー0）、`tsc --noEmit`（exit 0）、`validate:content`（0 error / 66 warning・dangling 0）。フルビルド/テスト/lint/構造化データ監査はハブ完了時（残り5件以下）にまとめて実施予定。
+- **残り community:** 1件（次回開始 = `volunteering-guide`・次回は最終ハブ監査）。**他カテゴリは未着手**（"Do not begin another category"）。
+
 ## チェックポイント（2026-08-02）: return-home マイクロバッチ #3（残り2件公開・ハブ完了 / commit: feat: complete return home content batch）
 
 return-home（帰国準備）ハブの**最後の2件**を公開し、**return-home ハブを完了（12/12）**しました。開始時の未完了 return-home は2件（≤5）だったため残り全件を処理し、**最終ハブ監査（フルビルド／テスト／Lint）を実施**しました。

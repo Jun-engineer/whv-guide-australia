@@ -11,6 +11,7 @@ const guideLinks = [
   { href: "/health", label: "健康・安全" },
   { href: "/travel", label: "旅行" },
   { href: "/return-home", label: "帰国準備・次のキャリア" },
+  { href: "/community-guide", label: "友達・コミュニティ" },
 ];
 
 const workLinks = [

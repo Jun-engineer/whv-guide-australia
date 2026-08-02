@@ -8,6 +8,23 @@
 最終確認日（verifiedAt）」を表示し、`OfficialSourceBox` で出典と免責（制度改定の可能性・
 専門的アドバイスではない旨）を明示します。
 
+## community マイクロバッチ #1（2026-08-02 / 5件公開・新カテゴリ初回）
+
+community（友達・コミュニティ）ハブの先頭5件を公開。交流・メンタル・安全に関する記事のため、主観的な助言（友達作り・慣れ方）と、安全・詐欺・相談窓口といった検証すべき事実を明確に分離。ユーザー投稿（コミュニティ/SNS）は無保証と明示し、重要事項は公式一次情報へ誘導。可変・YMYL要素は断定せず、確認日 2026-08-02 を明記。分類は5件とも create。
+
+- **`make-friends-australia`（P1, social, id a341）** — 友達の作り方（学校・職場・シェア・Meetup・ボランティア・SNS）。主観的助言中心で「合う/合わないは人による」と明示。初対面の安全（公共の場・予定共有・個人情報と金銭に注意）を記載。
+  - 公式: eSafety Commissioner｜Online dating（https://www.esafety.gov.au/community/online-dating）／Triple Zero 000（https://www.triplezero.gov.au/）。
+- **`japanese-community-groups`（P1, social, id a342）** — 日本人コミュニティ・Facebookグループの探し方と詐欺回避。「投稿はユーザー情報で無保証」「重要事項は移民局・ATO・Fair Work・州当局で裏取り」を明示。前払い要求・好条件すぎ・実物確認拒否・個人情報要求を危険サインとして提示。
+  - 公式: Scamwatch (ACCC)｜Types of scams（https://www.scamwatch.gov.au/types-of-scams）／IDCARE 1800 595 160（https://www.idcare.org/）。
+- **`homesickness-loneliness`（P1, wellbeing, id a343）** — ホームシック・孤独への対処。YMYL（メンタル）につき断定を避け、生活リズム・つながり・適度な連絡を助言しつつ、つらさが続く場合は専門窓口へ、緊急時は000へ誘導。相談先の電話番号を明記。
+  - 公式: Lifeline 13 11 14（https://www.lifeline.org.au/）／Beyond Blue 1300 22 4636（https://www.beyondblue.org.au/）／healthdirect｜Mental health 1800 022 222（https://www.healthdirect.gov.au/mental-health）。
+- **`culture-shock-australia`（P2, social, id a344）** — カルチャーショックと慣れ方。文化の傾向は一般化であり地域・個人差が大きい旨を明示。労働条件・賃貸ルールなど権利事項は「慣習」でなく公式で確認するよう誘導。
+  - 公式: Fair Work Ombudsman｜Visa holders and migrants（https://www.fairwork.gov.au/find-help-for/visa-holders-migrants）。
+- **`dating-safety-australia`（P2, safety, id a345）** — デーティングアプリ・出会いの安全対策。個人情報の守り方・初対面の鉄則・同意（consent）・ロマンス詐欺の見分け方・緊急/被害時の連絡先を記載。オンラインの相手への送金/身分証/私的写真の提供を明確に禁止として警告。
+  - 公式: eSafety Commissioner｜Online dating（https://www.esafety.gov.au/community/online-dating）／Scamwatch (ACCC)｜Relationship scams（https://www.scamwatch.gov.au/types-of-scams/dating-romance）／1800RESPECT 1800 737 732（https://www.1800respect.org.au/）／Triple Zero 000（https://www.triplezero.gov.au/）。
+- **架空の活動を掲載しない:** 会員数・投稿・レビュー・イベント・コメント等の捏造なし。対話機能は既存フォーラム `/community` として案内（未実装の機能を実在するかのように見せていない）。
+- **検証:** validate:articles（community 5・重複0）／tsc（exit 0）／validate:content（0 error・dangling 0）。未解決の問題: なし。残り community 1件（`volunteering-guide`）。
+
 ## return-home マイクロバッチ #3（2026-08-02 / 残り2件公開・ハブ完了）
 
 return-home ハブの最後の2件。可変・YMYL要素は断定せず、健康・警察の各公式へ誘導。分類は2件とも create。
